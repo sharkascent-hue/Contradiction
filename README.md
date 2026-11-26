@@ -19,15 +19,21 @@ There is no build step and no backend.
 - `tools/`: `build_data.py`, `build_library.py`, `build_search.py` rebuild `data/`, `lib/` and `search/` from downloaded sources;
   `check_content.py` verifies every reference and link in `content/`.
 
-## AI answers (optional)
+## AI guide (optional)
 
-The Ask page works without any server: it finds passages by word matching and shows them.
-The button "Write an answer from these passages" posts the question and those passages to `api/chat`.
-To switch it on, set the environment variable `ANTHROPIC_API_KEY` in the Vercel project
-(Settings → Environment Variables) and redeploy. The function uses the Anthropic SDK with the model `claude-opus-5-5`, streams the
-answer, and has refusal fallbacks enabled. It has only a basic per-instance rate limit; put a real one in
-front of it before opening it to the public, because every answer costs money.
-The function's request handling was tested here; the live model call was not, because no key was available.
+Without a server the Ask page answers from the topic guide (`content/guide.json`). With the AI guide switched on,
+Claude writes the answer, keeps the conversation, cites the passages by number, and looks up more as it writes,
+using three tools that read this site's own published files: `get_passage` (Bible, Quran, hadith by number),
+`search_texts` (the word index in `search/`) and `find_topic` (the guide).
+
+- `server/core.js`: the conversation turn, tools and safety limits. Model `claude-opus-5-5`, streamed, with refusal fallbacks.
+- `api/chat.js`: the same as a Vercel function (needs `ANTHROPIC_API_KEY` in the Vercel project).
+- `worker/`: the same as a Cloudflare Worker (`npx wrangler deploy`, then `npx wrangler secret put ANTHROPIC_API_KEY`).
+- `content/config.json`: set `aiEndpoint` to the worker's address, e.g. `https://contradiction-ai.<name>.workers.dev`.
+  On a host that serves `api/chat` itself, leave it empty.
+
+Every answer costs money (roughly 5 to 10 US cents with Opus). Set a monthly spending limit in the Anthropic Console.
+The server limits each visitor to 6 questions a minute per instance; that is not a substitute for a spending limit.
 
 ## Writing content
 

@@ -12,7 +12,7 @@
   const RTL = { he: 1, ar: 1 };
   const pref = { bible: 'WEB', quran: 'PICK' };
   const VIEW_GROUP = { orthodox: 'christian', catholic: 'christian', protestant: 'christian', sunni: 'muslim', shia: 'muslim' };
-  let M, C, B, G, tr, refRe, refOne, viewFilter = 'all', lastQ, renderId = 0;
+  let M, C, B, G, SITE_CFG = {}, tr, refRe, refOne, viewFilter = 'all', lastQ, renderId = 0;
   const bookName = {}, bookGroup = {}, alias = {}, trById = {}, cache = new Map();
 
   const getJSON = url => fetch(url).then(r => { if (!r.ok) throw new Error(url + ' ' + r.status); return r.json(); });
@@ -843,19 +843,25 @@
   /* ---------- chat ---------- */
   const CHAT_ENDPOINT = 'api/chat';      // served by api/chat.js where the site runs on a host with server functions and an API key
   const GUIDES = [['all', 'All'], ['christian', 'Christian'], ['muslim', 'Muslim'], ['jewish', 'Jewish']];
-  let guide = store.get('guide') || 'all', chatLog = [], aiReady = null;
-  const probeAI = () => aiReady !== null ? Promise.resolve(aiReady) : /github\.io$/.test(location.hostname) ? Promise.resolve(aiReady = false) :
-    fetch(CHAT_ENDPOINT, { method: 'GET' }).then(r => (aiReady = r.status === 405)).catch(() => (aiReady = false));
+  let guide = store.get('guide') || 'all', chatLog = [], lastTopic = null, aiReady = null, aiUrl = null;
+  // The AI guide runs where content/config.json's aiEndpoint points, or at api/chat on hosts that run server functions.
+  const probeAI = () => {
+    if (aiReady !== null) return Promise.resolve(aiReady);
+    aiUrl = (SITE_CFG.aiEndpoint || '').trim() || (/github\.io$/.test(location.hostname) ? '' : CHAT_ENDPOINT);
+    if (!aiUrl) return Promise.resolve(aiReady = false);
+    return fetch(aiUrl, { method: 'GET' }).then(r => r.ok ? r.json() : null).then(j => (aiReady = !!(j && j.ok))).catch(() => (aiReady = false));
+  };
   const avatar = g => '<span class="avatar ' + g + '">' + (GLYPH[g] || '') + '</span>';
   const guideName = g => g === 'all' ? 'all three faiths' : 'the ' + FAITH_ADJ[g] + ' guide';
 
   function emptyChat() {
     const intro = guide === 'all' ? 'Ask about any belief, story or practice. I\'ll show what Christians, Muslims and Jews each say, and where it is in their texts.'
       : 'I answer from the ' + FAITH_ADJ[guide] + ' point of view, with the passages ' + FAITH_PEOPLE[guide] + ' rely on, and I show how the others respond.';
-    return '<div class="empty-chat">' + avatar(guide) + '<h1>' + (guide === 'all' ? 'What would you like to know?' : 'Ask the ' + FAITH_ADJ[guide] + ' guide') + '</h1><p class="muted">' + intro + '</p>' +
+    return '<div class="empty-chat">' + avatar(guide) + (aiReady ? '<p class="eyebrow">AI guide</p>' : '') + '<h1>' + (guide === 'all' ? 'What would you like to know?' : 'Ask the ' + FAITH_ADJ[guide] + ' guide') + '</h1><p class="muted">' + intro + '</p>' +
       '<div class="starter">' + SUGGEST.slice(0, 6).map(s => '<button data-ask="' + esc(s) + '">' + esc(s) + '</button>').join('') + '</div></div>';
   }
   function renderChat() {
+    if (aiReady === null) probeAI().then(ok => { if (ok && !chatLog.length && location.hash.startsWith('#/ask')) { const m = document.getElementById('msgs'); if (m) m.innerHTML = emptyChat(); } });
     app.innerHTML = '<div class="chat"><div class="chat-head"><div class="seg even" role="group" aria-label="Who answers">' +
       GUIDES.map(([g, l]) => '<button data-guide="' + g + '" aria-pressed="' + (g === guide) + '">' + l + '</button>').join('') + '</div></div>' +
       '<div class="msgs" id="msgs">' + (chatLog.length ? chatLog.map(m => m.html).join('') : emptyChat()) + '</div>' +
@@ -865,12 +871,10 @@
     msgs.addEventListener('click', e => {
       const b = e.target.closest('[data-ask]');
       if (b) { e.preventDefault(); send(b.dataset.ask); }
-      const ai = e.target.closest('[data-ai]');
-      if (ai) aiAnswer(ai.closest('.card'), ai.dataset.ai);
     });
     app.querySelectorAll('[data-guide]').forEach(b => b.addEventListener('click', () => {
       guide = b.dataset.guide; store.set('guide', guide);
-      const last = chatLog.length && chatLog[chatLog.length - 1].q;
+      const last = chatLog.length && chatLog.pop().q;      // the new guide answers it instead
       renderChat();
       if (last) send(last);       // answer the last question again in the new voice
     }));
@@ -895,16 +899,85 @@
     bot.previousElementSibling.scrollIntoView({ behavior: 'smooth', block: 'start' });
     const html = await buildAnswer(q, guide).catch(e => '<p>Something went wrong while looking that up: ' + esc(e.message) + '</p>');
     if (rid !== renderId) return;
-    card.innerHTML = html;
-    await fillQuotes(card);
-    await probeAI();
-    if (aiReady && card.querySelector('.passage')) card.insertAdjacentHTML('beforeend', '<p><button class="ghost" data-ai="' + esc(q) + '">✨ Explain it in your own words</button></p>');
-    chatLog.push({ q, guide, html: user + bot.outerHTML });
+    let a = '';
+    if (await probeAI()) {
+      card.innerHTML = '<div class="ai-text"><span class="typing"><i></i><i></i><i></i></span></div><p class="ai-status"></p>' +
+        '<details class="acc sources"><summary>Sources and passages</summary><div class="body">' + html + '</div></details>';
+      await fillQuotes(card);
+      a = await aiTurn(q, card).catch(() => '');
+      if (!a) card.querySelector('.sources').open = true;
+    } else {
+      card.innerHTML = html;
+      await fillQuotes(card);
+    }
+    chatLog.push({ q, a, guide, html: user + bot.outerHTML });
     if (chatLog.length > 30) chatLog.shift();
   }
+
+  // Light formatting for the AI's answer: paragraphs, lists, **bold**, verse links, and [n] citations.
+  function mdLite(text, cites) {
+    const cite = h => h.replace(/\[(\d+(?:\s*[,–-]\s*\d+)*)\]/g, (m, list) => '<sup class="cite">' + list.split(/\s*,\s*/).map(n => {
+      const c = cites[+n];
+      return c ? '<a href="' + esc(c.href || '#') + '" title="' + esc(c.source) + '">' + esc(n) + '</a>' : esc(n);
+    }).join(',') + '</sup>');
+    return text.trim().split(/\n\s*\n/).map(block => {
+      const lines = block.split('\n');
+      if (lines.every(l => /^\s*([-*•]|\d+\.)\s+/.test(l))) {
+        const tag = /^\s*\d+\./.test(lines[0]) ? 'ol' : 'ul';
+        return '<' + tag + '>' + lines.map(l => '<li>' + cite(rich(l.replace(/^\s*([-*•]|\d+\.)\s+/, ''))) + '</li>').join('') + '</' + tag + '>';
+      }
+      const h = /^#{1,4}\s+(.*)$/.exec(block);
+      if (h) return '<h4>' + cite(rich(h[1])) + '</h4>';
+      return '<p>' + cite(rich(lines.join(' '))) + '</p>';
+    }).join('');
+  }
+
+  // One turn with the AI guide. The site's own passages go with the question; the guide can look up more as it writes.
+  async function aiTurn(q, card) {
+    const out = card.querySelector('.ai-text'), status = card.querySelector('.ai-status');
+    const context = [...card.querySelectorAll('.sources .passage')].map(el => ({
+      source: (el.querySelector('.ref') || el).textContent.trim() + (el.querySelector('.why') ? ' (' + el.querySelector('.why').textContent.trim() + ')' : ''),
+      text: ((el.querySelector('.q') || {}).textContent || '').trim().slice(0, 1600), href: el.getAttribute('href') })).filter(p => p.text).slice(0, 24);
+    const cites = {};
+    context.forEach((p, i) => { cites[i + 1] = p; });
+    const history = chatLog.filter(m => m.a).slice(-6).flatMap(m => [{ role: 'user', content: m.q.slice(0, 1500) }, { role: 'assistant', content: m.a.slice(0, 6000) }]);
+    let text = '';
+    try {
+      const r = await fetch(aiUrl, { method: 'POST', headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ messages: history.concat({ role: 'user', content: q.slice(0, 1500) }), guide, context }) });
+      if (!r.ok) { const e = await r.json().catch(() => null); throw new Error(e && e.error ? e.error : 'The AI guide is not available right now.'); }
+      const reader = r.body.getReader(), dec = new TextDecoder();
+      let buf = '';
+      const handle = ev => {
+        if (ev.t === 'text') { text += ev.d; out.innerHTML = mdLite(text, cites) || '<span class="typing"><i></i><i></i><i></i></span>'; status.textContent = ''; }
+        else if (ev.t === 'status') status.textContent = ev.d + '…';
+        else if (ev.t === 'cite') cites[ev.n] = ev;
+        else if (ev.t === 'error') throw new Error(ev.d);
+      };
+      for (;;) {
+        const { done, value } = await reader.read();
+        if (done) break;
+        buf += dec.decode(value, { stream: true });
+        let i;
+        while ((i = buf.indexOf('\n')) >= 0) { const line = buf.slice(0, i).trim(); buf = buf.slice(i + 1); if (line) handle(JSON.parse(line)); }
+      }
+      status.textContent = '';
+      out.insertAdjacentHTML('beforeend', '<p class="ai-foot">AI guide · numbers link to the passages. Check important points against the sources.</p>');
+      return text;
+    } catch (e) {
+      status.textContent = '';
+      out.innerHTML = (text ? mdLite(text, cites) : '') + '<p class="note">' + esc(e.message) + ' Here is what the site\'s guide has on it.</p>';
+      return text;
+    }
+  }
+
   async function buildAnswer(q, g) {
-    const n = qnorm(q), asker = askerOf(n), scope = scopeOf(n), found = matchTopics(n);
-    if (!found.length) return fallbackAnswer(q, n, g);
+    const n = qnorm(q), asker = askerOf(n), scope = scopeOf(n);
+    let found = matchTopics(n);
+    // A short follow-up ("and in the Old Testament?") continues the topic of the last question.
+    if (!found.length && lastTopic && n.trim().split(' ').length <= 12 && chatLog.length) found = [[lastTopic, 1]];
+    if (!found.length) { lastTopic = null; return fallbackAnswer(q, n, g); }
+    lastTopic = found[0][0];
     const t = found[0][0];
     let mode = g !== 'all' && !t.views[g] ? 'all' : g;
     const faiths = ['christian', 'muslim', 'jewish'].filter(f => t.views[f]);
@@ -948,29 +1021,6 @@
         '<a class="passage" href="' + p.href + '"><span class="ref">' + esc(p.source) + '</span><div class="q">' + esc(p.text.slice(0, 420)) + (p.text.length > 420 ? '…' : '') + '</div></a>').join('');
     }
     return body;
-  }
-
-  async function aiAnswer(card, question) {
-    const btn = card.querySelector('[data-ai]'), out = document.createElement('div');
-    out.className = 'summary-card';
-    out.style.marginTop = '14px';
-    btn.closest('p').replaceWith(out);
-    out.innerHTML = '<span class="typing"><i></i><i></i><i></i></span>';
-    const passages = [...card.querySelectorAll('.passage')].map(a => ({ source: a.querySelector('.ref').textContent + (a.querySelector('.why') ? ' (' + a.querySelector('.why').textContent + ')' : ''),
-      text: (a.querySelector('.q') || {}).textContent || '', href: a.getAttribute('href') })).filter(p => p.text).slice(0, 24);
-    const show = text => { out.innerHTML = text.split(/\n\s*\n/).map(par => '<p>' + rich(par).replace(/\[(\d+)\]/g, (m, n) => passages[n - 1] ? '<a class="ref" href="' + passages[n - 1].href + '" title="' + esc(passages[n - 1].source) + '">[' + n + ']</a>' : m) + '</p>').join(''); };
-    try {
-      const r = await fetch(CHAT_ENDPOINT, { method: 'POST', headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ question, guide, passages: passages.map(p => ({ source: p.source, text: p.text })) }) });
-      if (!r.ok || !/text\/plain/.test(r.headers.get('Content-Type') || '')) {
-        const err = await r.json().catch(() => null);
-        throw new Error(err && err.error ? err.error : 'AI answers are not switched on.');
-      }
-      const reader = r.body.getReader(), dec = new TextDecoder();
-      let text = '';
-      for (;;) { const { done, value } = await reader.read(); if (done) break; text += dec.decode(value, { stream: true }); show(text); }
-      out.insertAdjacentHTML('beforeend', '<p class="small muted">Written by an AI from the passages above. Check each point against its source.</p>');
-    } catch (e) { out.innerHTML = '<p class="small muted">' + esc(e.message) + '</p>'; }
   }
 
   /* ---------- the three faiths ---------- */
@@ -1096,6 +1146,7 @@
 
   Promise.all(['data/index.json', 'content/questions.json', 'content/disputes.json', 'content/beliefs.json', 'content/guide.json'].map(getJSON)).then(([m, c, d, b, g]) => {
     M = m; C = c; B = b; G = g;
+    getJSON('content/config.json').then(x => { SITE_CFG = x || {}; }).catch(() => {});
     C.questions = C.questions.concat(d.questions);
     M.translations.forEach(t => { trById[t.id] = t; t.chapters = Object.fromEntries(t.books); });
     setupRefs();
