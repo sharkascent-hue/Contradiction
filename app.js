@@ -1104,7 +1104,7 @@
   const DIR = { 'christian-vs-islam': ['Christian case against Islam', 'christian', 'muslim'], 'islam-vs-christianity': ['Muslim case against Christianity', 'muslim', 'christian'],
     'jewish-vs-christianity': ['Jewish case against Christianity', 'jewish', 'christian'], 'jewish-vs-islam': ['Jewish case against Islam', 'jewish', 'muslim'],
     'christian-vs-judaism': ['Christian case against Judaism', 'christian', 'jewish'], 'islam-vs-judaism': ['Muslim case against Judaism', 'muslim', 'jewish'] };
-  const VERDICT = { strong: 'Strong', partial: 'Partly works', weak: 'Weak', fails: 'Fails' };
+  const VERDICT = { strong: 'Strong', partial: 'Partly works', weak: 'Not proven', fails: 'Fails on the texts' };
   let deb = null, debFilter = 'all';
   const mixDirs = list => { const by = {}; list.forEach(a => (by[a.direction] = by[a.direction] || []).push(a)); const q = Object.values(by), out = [];
     for (let i = 0; out.length < list.length; i++) q.forEach(g => g[i] && out.push(g[i])); return out; };
@@ -1119,6 +1119,7 @@
     const dirs = Object.keys(DIR).filter(k => d.arguments.some(a => a.direction === k));
     const list = d.arguments.filter(a => debFilter === 'all' || a.direction === debFilter);
     app.innerHTML = '<h1>Debates</h1><p class="lede">The arguments apologists actually make, in every direction. Each one shows the texts it relies on, the best reply from the other side, what the texts firmly establish, and a frank verdict on the argument.</p>' +
+      '<a class="vid-banner" href="#/videos"><strong>▶ Recent debates on YouTube</strong><span>The newest videos from Christian, Muslim and Jewish debaters, with the AI’s take</span></a>' +
       '<div class="chips">' + [['all', 'All']].concat(dirs.map(k => [k, DIR[k][0]])).map(([k, l]) => '<button class="chip" data-f="' + k + '" aria-pressed="' + (k === debFilter) + '">' + esc(l) + '</button>').join('') + '</div>' +
       (list.length ? '<div class="deb-grid">' + list.map(debTile).join('') + '</div>' : '<p class="muted">The debates are being researched and will appear here.</p>') +
       '<p class="status">Verdicts judge the argument, not the religion: whether its premises are really in the sources it cites, and whether the conclusion follows. They are drafts and have not been reviewed by scholars.</p>';
@@ -1136,7 +1137,7 @@
     const other = a.other_texts || [];
     app.innerHTML = '<p class="crumbs"><a href="#/debates">Debates</a> › ' + esc(dir[0]) + '</p><h1>' + esc(a.title) + '</h1>' +
       (a.verdict ? '<p><span class="verdict big v-' + a.verdict + '">Verdict: ' + VERDICT[a.verdict] + '</span></p>' : '') +
-      (a.favours ? '<p class="favours">' + (a.favours.side ? '<strong>Makes more sense: ' + esc(a.favours.side) + ' side.</strong> ' : '<strong>Evenly balanced.</strong> ') + esc(a.favours.text.replace(/^Evenly balanced: /, '')) + '</p>' : '') +
+      (a.favours ? '<p class="favours">' + (a.favours.side ? '<strong>Makes more sense: ' + esc(a.favours.side) + ' side.</strong> ' : /^Yes, there are/.test(a.favours.text) ? '' : '<strong>Evenly balanced.</strong> ') + rich(a.favours.text.replace(/^Evenly balanced: /, '')) + '</p>' : '') +
       '<section class="sec v-' + dir[1] + '"><span class="tag">The argument</span>' + people(a.by, 'by') + '<p>' + rich(a.argument) + '</p></section>' +
       (texts.length ? '<div class="section-head"><h2>The texts</h2></div>' + groupsHtml([...new Set(texts.map(t => t.kind))].map(k => [k, texts.filter(t => t.kind === k)])) +
         '<p class="small muted">Tap a passage to read it in context, with the original Arabic, Hebrew or Greek word by word.</p>' : '') +
@@ -1149,6 +1150,36 @@
       '<p><a class="btn brand" href="#/ask/' + encodeURIComponent(a.title) + '">Ask the AI to test this →</a></p>' +
       '<p class="status">Draft. The verdict judges this argument only. Not yet reviewed by scholars.</p>';
     fillQuotes(app);
+  }
+
+  /* ---------- recent debate videos: live from the AI server (?videos), else the saved snapshot content/videos.json ---------- */
+  let vids = null, vidFilter = 'all';
+  const FAITH_NAME = { christian: 'Christian', muslim: 'Muslim', jewish: 'Jewish', neutral: 'Debate hosts' };
+  const vidAsk = v => 'A ' + (v.faith === 'neutral' ? '' : FAITH_NAME[v.faith] + ' ') + 'YouTube channel, ' + v.channel + ', posted a video titled "' + v.title + '"' +
+    (v.desc ? '. Its description: "' + v.desc.slice(0, 300) + '"' : '') + '. You have not watched it; judging from the title and description, what claims is it making, and how do they hold up against the actual texts? Give your verdict.';
+  const loadVids = async () => {
+    const ep = (SITE_CFG.aiEndpoint || '').trim();
+    if (ep) try { const r = await fetch(ep + (ep.includes('?') ? '&' : '?') + 'videos'); if (r.ok) { const j = await r.json(); if (j.videos && j.videos.length) return j; } } catch (e) {}
+    return getJSON('content/videos.json').catch(() => ({ videos: [] }));
+  };
+  async function videos() {
+    document.title = 'Recent debates · Contradiction';
+    const rid = renderId;
+    if (!vids) { app.innerHTML = '<h1>Recent debates</h1><p class="muted">Loading the newest videos…</p>'; vids = await loadVids(); }
+    if (rid !== renderId) return;
+    const list = vids.videos.filter(v => vidFilter === 'all' || v.faith === vidFilter);
+    app.innerHTML = '<p class="crumbs"><a href="#/debates">Debates</a></p><h1>Recent debates</h1><p class="lede">The newest uploads from Christian, Muslim and Jewish debaters and apologists on YouTube. Tap one to watch it here, then ask the AI what it makes of the claims.</p>' +
+      '<div class="chips">' + [['all', 'All']].concat(Object.entries(FAITH_NAME)).map(([k, l]) => '<button class="chip" data-f="' + k + '" aria-pressed="' + (k === vidFilter) + '">' + l + '</button>').join('') + '</div>' +
+      '<div class="vid-grid">' + list.map(v => '<article class="vid" data-i="' + vids.videos.indexOf(v) + '"><button class="thumb" aria-label="Play ' + esc(v.title) + '"><img loading="lazy" src="https://i.ytimg.com/vi/' + encodeURIComponent(v.id) + '/mqdefault.jpg" alt=""><span class="play"></span></button>' +
+        '<div class="vid-body"><span class="eyebrow">' + (v.faith === 'neutral' ? '' : '<i class="dot ' + v.faith + '"></i> ') + esc(v.channel) + '</span><strong>' + esc(v.title) + '</strong><span class="small muted">' + esc(v.date) + (v.views ? ' · ' + v.views.toLocaleString() + ' views' : '') + '</span>' +
+        '<a class="btn" href="#/ask/' + encodeURIComponent(vidAsk(v)) + '">What does the AI think? →</a></div></article>').join('') + '</div>' +
+      (list.length ? '' : '<p class="muted">No videos yet.</p>') +
+      '<p class="status">Updated ' + esc(vids.updated || '') + '. Videos belong to their channels; listing them is not an endorsement. The AI judges the claims from the title and description, not by watching.</p>';
+    app.querySelectorAll('[data-f]').forEach(b => b.addEventListener('click', () => { vidFilter = b.dataset.f; videos(); }));
+    app.querySelectorAll('.vid .thumb').forEach(b => b.addEventListener('click', () => {
+      const v = vids.videos[b.closest('.vid').dataset.i];
+      b.outerHTML = '<div class="thumb"><iframe src="https://www.youtube-nocookie.com/embed/' + encodeURIComponent(v.id) + '?autoplay=1" title="' + esc(v.title) + '" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe></div>';
+    }));
   }
 
   /* ---------- the three faiths ---------- */
@@ -1255,7 +1286,7 @@
   /* ---------- routing ---------- */
   function setTr(t) { tr = t; pref[trById[t].corpus] = t; store.set('tr', t); store.set('tr-' + trById[t].corpus, t); }
   const TAB = { '': '', ask: 'ask', faiths: 'faiths', faith: 'faiths', beliefs: 'faiths', compare: 'faiths', books: 'books', read: 'books', lib: 'lib', go: 'lib',
-    topics: 'topics', t: 'topics', topic: 'topics', q: 'topics', questions: 'topics', search: 'search', debates: 'debates', d: 'debates' };
+    topics: 'topics', t: 'topics', topic: 'topics', q: 'topics', questions: 'topics', search: 'search', debates: 'debates', d: 'debates', videos: 'debates' };
   function route() {
     renderId++;
     const [name, ...a] = decodeURIComponent(location.hash.replace(/^#\/?/, '')).split('/');
@@ -1266,7 +1297,7 @@
     document.body.classList.toggle('chatting', name === 'ask');
     window.scrollTo(0, 0);
     const views = { '': home, questions, q: question, topic, topics, t: tguide, books, read, search: () => search(a.join('/')), about, lib: () => library(a),
-      beliefs, faiths, faith: hub, compare: compareView, go, ask: () => ask(a.join('/')), debates, d: debate };
+      beliefs, faiths, faith: hub, compare: compareView, go, ask: () => ask(a.join('/')), debates, d: debate, videos };
     Promise.resolve((views[name] || notFound)(...a)).catch(e => {
       app.innerHTML = '<h1>Something went wrong</h1><p class="muted">' + esc(e.message) + '</p>';
     });

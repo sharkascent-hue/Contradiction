@@ -27,7 +27,14 @@ LEAN = {
     "resurrection-morning-and-jairus": "arguer", "ending-of-mark": "arguer", "paul-vs-jesus-and-james": "replier", "old-testament-ethics": "arguer",
 }
 SIDE = {"christian": "Christian", "christianity": "Christian", "islam": "Muslim", "jewish": "Jewish", "judaism": "Jewish"}
+JESUS_SIGNS = ("Yes, there are characteristics that point toward it. The Quran gives Jesus things it gives no other prophet: he creates birds from clay and breathes life into them, "
+    "heals the blind and the leper and raises the dead (Quran 3:49, 5:110), is called \"a Word from Him\" and \"a spirit from Him\" (3:45, 4:171), is born of a virgin (19:20), "
+    "is raised up to God (4:158) and returns before the Hour (43:61; Sahih al-Bukhari 3448). Muslims answer that every one of these happens \"by Allah's permission\" (3:49) "
+    "and that \"the likeness of Jesus with Allah is as the likeness of Adam\" (3:59). Status: yet to be proven. The signs are real, but the Islamic texts never call him God, and they have not disproved it either.")
+OVERRIDE = {i: {"side": "", "text": JESUS_SIGNS} for i in ("jesus-word-and-spirit", "jesus-creates-and-gives-life", "jesus-returns-as-judge", "jesus-sinless-in-islam")}
 def favours(a, verdict):
+    if a["id"] in OVERRIDE:
+        return OVERRIDE[a["id"]]
     x, y = (SIDE[w] for w in a["direction"].split("-vs-"))
     side = {"strong": "arguer", "weak": "replier", "fails": "replier"}.get(verdict) or LEAN.get(a["id"])
     if side == "arguer":

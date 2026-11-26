@@ -2,12 +2,22 @@
 // Secrets/vars: ANTHROPIC_API_KEY (secret), SITE_URL (where the site's files are published), ALLOWED_ORIGIN.
 import Anthropic from "@anthropic-ai/sdk";
 import { chatTurn, checkRequest, errorMessage, limited } from "../server/core.js";
+import { latestVideos } from "../server/videos.js";
 
 export default {
   async fetch(request, env, ctx) {
     const cors = { "Access-Control-Allow-Origin": env.ALLOWED_ORIGIN || "*", "Access-Control-Allow-Methods": "GET, POST, OPTIONS", "Access-Control-Allow-Headers": "Content-Type" };
     const json = (status, obj) => new Response(JSON.stringify(obj), { status, headers: { ...cors, "Content-Type": "application/json" } });
     if (request.method === "OPTIONS") return new Response(null, { status: 204, headers: cors });
+    if (request.method === "GET" && new URL(request.url).searchParams.has("videos")) {
+      const cache = caches.default, key = new Request("https://cache.local/videos-v1");
+      let hit = await cache.match(key);
+      if (!hit) {
+        hit = new Response(JSON.stringify(await latestVideos(env.SITE_URL || "https://sharkascent-hue.github.io/Contradiction/")), { headers: { "Content-Type": "application/json", "Cache-Control": "max-age=3600" } });
+        ctx.waitUntil(cache.put(key, hit.clone()));
+      }
+      return new Response(hit.body, { headers: { ...cors, "Content-Type": "application/json", "Cache-Control": "max-age=600" } });
+    }
     if (request.method === "GET") return json(env.ANTHROPIC_API_KEY ? 200 : 503, { ok: !!env.ANTHROPIC_API_KEY });
     if (request.method !== "POST") return json(405, { error: "Use POST." });
     if (!env.ANTHROPIC_API_KEY) return json(503, { error: "The AI guide is not switched on: the server has no API key." });

@@ -1,0 +1,186 @@
+{
+ "channels": [
+  {
+   "name": "Shamounian (Sam Shamoun)",
+   "id": "UC_IXSJtM-BKyy-suKuLwEqw",
+   "faith": "christian",
+   "branch": "Catholic",
+   "note": "Sam Shamoun's official channel; aggressive Christian polemics against Islam, frequent live debates."
+  },
+  {
+   "name": "Apologetics Roadshow (David Wood)",
+   "id": "UCePbPbJ96WvMeMm_VuDkOJA",
+   "faith": "christian",
+   "branch": "Protestant",
+   "note": "David Wood's channel (ex-Acts17); Christian critique of Islam and Muslim apologists."
+  },
+  {
+   "name": "Christian Prince",
+   "id": "UC7wffWCb-k1F7oEyGMR8TTg",
+   "faith": "christian",
+   "branch": "Protestant",
+   "note": "Arabic-speaking Christian polemicist; long live debates with Muslims on Quran and hadith."
+  },
+  {
+   "name": "Wes Huff",
+   "id": "UCJX2EazMKUqBQV048px2aoA",
+   "faith": "christian",
+   "branch": "Protestant",
+   "note": "Canadian New Testament manuscript scholar; apologetics and textual-reliability debates."
+  },
+  {
+   "name": "InspiringPhilosophy",
+   "id": "UC5qDet6sa6rODi7t6wfpg8g",
+   "faith": "christian",
+   "branch": "Protestant",
+   "note": "Michael Jones; philosophy, Bible history and responses to Muslim/Jewish/skeptic critiques."
+  },
+  {
+   "name": "Capturing Christianity",
+   "id": "UCux-_Fze30tFuI_5CArwSmg",
+   "faith": "christian",
+   "branch": "Protestant",
+   "note": "Cameron Bertuzzi; philosophy-of-religion interviews and debates (posts less often lately)."
+  },
+  {
+   "name": "Jay Dyer",
+   "id": "UCnt7Iy8GlmdPwy_Tzyx93bA",
+   "faith": "christian",
+   "branch": "Orthodox",
+   "note": "Eastern Orthodox apologist; debates with Muslims, Protestants, Catholics and atheists."
+  },
+  {
+   "name": "The Counsel of Trent (Trent Horn)",
+   "id": "UCvySGkfy1W8fda287KMj2CA",
+   "faith": "christian",
+   "branch": "Catholic",
+   "note": "Catholic Answers apologist Trent Horn; responses and debates incl. Islam and Judaism topics."
+  },
+  {
+   "name": "Give Me An Answer (Cliffe Knechtle)",
+   "id": "UCKr-liguaGWMf3f94eQXsug",
+   "faith": "christian",
+   "branch": "Protestant",
+   "note": "Cliffe and Stuart Knechtle's campus Q&A, often with Muslim and Jewish students."
+  },
+  {
+   "name": "GodLogic Apologetics",
+   "id": "UCfTJJ9hIy6Us3JVJV_4eKzg",
+   "faith": "christian",
+   "branch": "Protestant",
+   "note": "Street and online apologetics, heavy focus on Christian-Muslim exchanges."
+  },
+  {
+   "name": "Alpha & Omega Ministries (James White)",
+   "id": "UCiQJ59Y5z6__BaV35G-9j-g",
+   "faith": "christian",
+   "branch": "Protestant",
+   "note": "James White's Reformed ministry; Dividing Line and formal debates with Muslims and others."
+  },
+  {
+   "name": "Mohammed Hijab",
+   "id": "UCHDFNoOk8WOXtHo8DIc8efQ",
+   "faith": "muslim",
+   "branch": "Sunni",
+   "note": "British Muslim debater; Speakers' Corner and formal debates with Christians and atheists."
+  },
+  {
+   "name": "Sapience Institute",
+   "id": "UCeZBhrU8xHcik0ZgtDwjsdA",
+   "faith": "muslim",
+   "branch": "Sunni",
+   "note": "Islamic apologetics institute (Hamza Tzortzis, Subboor Ahmad and others)."
+  },
+  {
+   "name": "Blogging Theology",
+   "id": "UC_SLXSHcCwK2RSZTXVL26SA",
+   "faith": "muslim",
+   "branch": "Sunni",
+   "note": "Paul Williams; interviews with scholars on Christian origins, Bible and Islam."
+  },
+  {
+   "name": "The Muslim Lantern",
+   "id": "UCeCAQhKbU2ETNWxWxB94HgA",
+   "faith": "muslim",
+   "branch": "Sunni",
+   "note": "Live-stream dawah debates with Christians, Jews and atheists."
+  },
+  {
+   "name": "Smile 2 Jannah",
+   "id": "UCeccrNGLzk6d0M_vaomD3LQ",
+   "faith": "muslim",
+   "branch": "Sunni",
+   "note": "Dawah conversations with Christians and others, mostly street and campus."
+  },
+  {
+   "name": "Ali Dawah",
+   "id": "UCK9GD2WRxJxbDz9croru9UQ",
+   "faith": "muslim",
+   "branch": "Sunni",
+   "note": "British dawah channel; Speakers' Corner debates and interfaith discussion."
+  },
+  {
+   "name": "Yaqeen Institute",
+   "id": "UC3vHW2h22WE-pNi5WJtRIjg",
+   "faith": "muslim",
+   "branch": "Sunni",
+   "note": "Omar Suleiman's research institute; Islamic apologetics, more lectures than debates."
+  },
+  {
+   "name": "Let the Quran Speak (Shabir Ally)",
+   "id": "UCaADzQEp9eYu9PTmJ28_-HQ",
+   "faith": "muslim",
+   "branch": "Sunni",
+   "note": "Shabir Ally's show; comparative religion and many recorded debates with Christians."
+  },
+  {
+   "name": "The Muslim Skeptic (Daniel Haqiqatjou)",
+   "id": "UCWdkdpfxKpfi6aGT8hwFXtA",
+   "faith": "muslim",
+   "branch": "Sunni",
+   "note": "Daniel Haqiqatjou; Islamic polemics against liberalism, Christianity and modernist Muslims."
+  },
+  {
+   "name": "Tovia Singer",
+   "id": "UCaw8quRcRzjmw0BI1vn-dnA",
+   "faith": "jewish",
+   "branch": "Orthodox Jewish",
+   "note": "Rabbi Tovia Singer (Outreach Judaism / Let's Get Biblical); counter-missionary teaching and debates."
+  },
+  {
+   "name": "TeNaK Talk (Tovia Singer)",
+   "id": "UCKMqpouZ3PKHKD5yku8R7YA",
+   "faith": "jewish",
+   "branch": "Orthodox Jewish",
+   "note": "Tovia Singer's call-in show; frequent live exchanges with Christian callers about Jesus."
+  },
+  {
+   "name": "Jews for Judaism",
+   "id": "UC5qG9wUJNISCbVF8AVp7-xw",
+   "faith": "jewish",
+   "branch": "Orthodox Jewish",
+   "note": "Counter-missionary organisation; main outlet for Rabbi Michael Skobac's talks."
+  },
+  {
+   "name": "Modern-Day Debate",
+   "id": "UC_cd4oF2phaIBD3WsU3f7Xg",
+   "faith": "neutral",
+   "branch": "",
+   "note": "Neutral host of formal moderated debates, many Christian vs Muslim vs Jewish."
+  },
+  {
+   "name": "whatever",
+   "id": "UC37PFGlxWgx4tU6SlhPCdCw",
+   "faith": "neutral",
+   "branch": "",
+   "note": "Whatever podcast (Brian Atlas); panel shows, recently with frequent religion debates."
+  },
+  {
+   "name": "Premier Unbelievable?",
+   "id": "UC0p2OAXVoo9M1Z126B3fe3w",
+   "faith": "neutral",
+   "branch": "",
+   "note": "Premier's Unbelievable?; moderated Christian-vs-other-worldview dialogues, incl. Islam."
+  }
+ ]
+}
