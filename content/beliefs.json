@@ -1,0 +1,1071 @@
+{
+  "traditions": [
+    {
+      "slug": "christianity",
+      "name": "Christianity: what all the churches share",
+      "short": "Christianity (shared)",
+      "faith": "christian",
+      "summary": "The beliefs held in common by Orthodox, Catholic and Protestant Christians, as set out in the Nicene Creed of AD 325 and 381.",
+      "sections": [
+        {
+          "h": "God",
+          "points": [
+            "There is one God, who exists eternally as three persons: Father, Son and Holy Spirit. Christians insist this is one God, not three, and affirm the Shema of Deuteronomy 6:4. See Matthew 28:19 and 2 Corinthians 13:14.",
+            "The doctrine was defined against Arius at the councils of Nicaea (325) and Constantinople (381). Read the [[lib/creed-nicene-creed|Nicene Creed]] and the [[lib/creed-athanasian-creed|Athanasian Creed]]."
+          ]
+        },
+        {
+          "h": "Jesus Christ",
+          "points": [
+            "Jesus is the eternal Son and Word of God who became man. See John 1:1–14 and Philippians 2:5–11.",
+            "He is fully God and fully man, one person in two natures, as defined at Chalcedon in 451. Read the [[lib/creed-chalcedonian-definition|Chalcedonian Definition]].",
+            "He was born of the Virgin Mary (Luke 1:26–35), was crucified under Pontius Pilate, died and was buried, and rose bodily on the third day (1 Corinthians 15:3–8).",
+            "He ascended into heaven and will come again to judge the living and the dead. See Acts 1:9–11 and Matthew 25:31–46."
+          ]
+        },
+        {
+          "h": "The Holy Spirit",
+          "points": [
+            "The Spirit is God, sent to the Church at Pentecost, who gives life and spoke through the prophets. See John 14:16–17 and Acts 2:1–4."
+          ]
+        },
+        {
+          "h": "Scripture",
+          "points": [
+            "The Old and New Testaments are inspired by God (2 Timothy 3:16). All churches accept the same 27 New Testament books.",
+            "The churches differ on the Old Testament list and on who has the authority to interpret it. See [[compare/scripture|Scripture and authority compared]]."
+          ]
+        },
+        {
+          "h": "Sin and salvation",
+          "points": [
+            "Humanity was created good, in the image of God (Genesis 1:27), and fell into sin (Genesis 3:1–24, Romans 3:23).",
+            "Salvation is God's gift through the death and resurrection of Christ. See John 3:16 and Ephesians 2:8–9.",
+            "How grace, faith and works fit together is the main point on which the churches divide. See [[q/faith-or-works|Faith or works?]]"
+          ]
+        },
+        {
+          "h": "The Church and its rites",
+          "points": [
+            "Christ founded a Church and commanded baptism (Matthew 28:19) and the Lord's Supper (Luke 22:19–20, 1 Corinthians 11:23–26).",
+            "Christian life centres on love of God and neighbour (Matthew 22:37–40), the Ten Commandments (Exodus 20:1–17), the Sermon on the Mount (Matthew 5:1–12) and the Lord's Prayer (Matthew 6:9–13)."
+          ]
+        },
+        {
+          "h": "The last things",
+          "points": [
+            "The dead will be raised, all will be judged, and God will make a new heaven and a new earth. See John 5:28–29 and Revelation 21:1–4."
+          ]
+        },
+        {
+          "h": "Other ancient churches",
+          "points": [
+            "The Oriental Orthodox churches (Coptic, Armenian, Ethiopian, Syriac) hold the Nicene Creed but did not accept the wording of Chalcedon in 451. The Church of the East separated after the Council of Ephesus in 431. Both are outside the three families described on this site but share almost all of the above."
+          ]
+        }
+      ],
+      "texts": [
+        [
+          "lib/creed-apostles-creed",
+          "Apostles' Creed"
+        ],
+        [
+          "lib/creed-nicene-creed",
+          "Nicene Creed"
+        ],
+        [
+          "lib/creed-athanasian-creed",
+          "Athanasian Creed"
+        ],
+        [
+          "lib/creed-chalcedonian-definition",
+          "Chalcedonian Definition"
+        ],
+        [
+          "lib/ccel-npnf214",
+          "The Seven Ecumenical Councils"
+        ]
+      ]
+    },
+    {
+      "slug": "orthodox",
+      "name": "Eastern Orthodox Christianity",
+      "short": "Orthodox",
+      "faith": "christian",
+      "summary": "The churches of the Greek, Russian and other Eastern traditions, about 220 million people. They hold everything in the shared Christian list and add the following.",
+      "sections": [
+        {
+          "h": "Authority",
+          "points": [
+            "Authority lies in Holy Tradition: Scripture read within the life of the Church, the seven ecumenical councils (325 to 787), the Fathers and the liturgy. Read the acts of the [[lib/ccel-npnf214|seven councils]].",
+            "No bishop has authority over the whole Church. The Patriarch of Constantinople is “first among equals”. The Orthodox reject the universal jurisdiction and infallibility of the pope. See [[q/peter-and-the-papacy|Peter and the papacy]].",
+            "The Church is a communion of self-governing (autocephalous) churches."
+          ]
+        },
+        {
+          "h": "Scripture",
+          "points": [
+            "The Old Testament is read in the Greek Septuagint tradition and includes the books Protestants call the Apocrypha, plus 3 Maccabees, 1 Esdras and Psalm 151. Read the [[books/LXX|Brenton Septuagint]]."
+          ]
+        },
+        {
+          "h": "The Creed without the Filioque",
+          "points": [
+            "The Spirit proceeds “from the Father” (John 15:26). The Orthodox reject the words “and the Son” (Filioque) that the Western church added to the Creed, both because of what it says and because no council approved the change."
+          ]
+        },
+        {
+          "h": "Salvation",
+          "points": [
+            "Salvation is theosis, union with God: we become “partakers of the divine nature” (2 Peter 1:4). Athanasius put it: God became man so that man might become god. Read On the Incarnation in [[lib/ccel-npnf204|Athanasius' works]].",
+            "It is a lifelong cooperation (synergy) of God's grace and human freedom. See Philippians 2:12–13.",
+            "From Adam we inherit death and a weakened nature, not his personal guilt. The Orthodox usually say “ancestral sin” where the West says “original sin”. See Romans 5:12."
+          ]
+        },
+        {
+          "h": "The mysteries (sacraments)",
+          "points": [
+            "Usually counted as seven. Baptism is by triple immersion, and infants receive baptism, chrismation and communion together.",
+            "The Eucharist is truly the Body and Blood of Christ (John 6:53–56). The Orthodox affirm the change but do not bind themselves to the Western philosophical explanation of it. Leavened bread is used."
+          ]
+        },
+        {
+          "h": "Mary, saints and icons",
+          "points": [
+            "Mary is Theotokos, “God-bearer” (Council of Ephesus, 431), and ever-virgin. Her falling asleep (Dormition) is a great feast. The Roman dogma of the Immaculate Conception (1854) is not accepted.",
+            "Icons are venerated, not worshipped, as defined at the Second Council of Nicaea in 787. Read John of Damascus in [[lib/ccel-npnf209|his Exact Exposition]].",
+            "The saints are asked to pray for us, and the Church prays for the dead. Purgatory as defined in the West is not taught."
+          ]
+        },
+        {
+          "h": "Worship and life",
+          "points": [
+            "The main service is the Divine Liturgy of St John Chrysostom. Fasting is frequent: most Wednesdays and Fridays and four fasting seasons, above all Great Lent.",
+            "The Jesus Prayer and the tradition of inner stillness (hesychasm) are central to Orthodox spirituality.",
+            "Married men may be ordained priests. Bishops are chosen from the monks."
+          ]
+        }
+      ],
+      "texts": [
+        [
+          "go/ccel-creeds2/Longer Catechism",
+          "Longer Catechism of the Orthodox Church (Philaret)"
+        ],
+        [
+          "go/ccel-creeds2/Confession of Dositheus",
+          "Confession of Dositheus (1672)"
+        ],
+        [
+          "go/ccel-creeds2/Orthodox Confession",
+          "Orthodox Confession of Peter Mogila"
+        ],
+        [
+          "lib/ccel-npnf209",
+          "John of Damascus, Exact Exposition of the Orthodox Faith"
+        ],
+        [
+          "lib/ccel-npnf214",
+          "The Seven Ecumenical Councils"
+        ],
+        [
+          "lib/c/Church Fathers: Greek and Latin Fathers, councils",
+          "The Greek Fathers"
+        ]
+      ]
+    },
+    {
+      "slug": "catholic",
+      "name": "Roman Catholicism",
+      "short": "Catholic",
+      "faith": "christian",
+      "summary": "The largest Christian church, about 1.3 billion people, in communion with the Bishop of Rome. It holds everything in the shared Christian list and adds the following.",
+      "sections": [
+        {
+          "h": "Authority",
+          "points": [
+            "God's word comes through Scripture and Sacred Tradition together, interpreted by the teaching office (Magisterium) of the pope and the bishops.",
+            "The pope is the successor of Peter, to whom Christ gave the keys (Matthew 16:18–19, John 21:15–17), and has authority over the whole Church.",
+            "When the pope solemnly defines a doctrine of faith or morals for the whole Church he is preserved from error. This was defined at the First Vatican Council in 1870. Read the [[go/ccel-creeds2/CONCILII VATICANI|decrees of the First Vatican Council]] and [[q/peter-and-the-papacy|Peter and the papacy]].",
+            "The Catholic Church counts 21 ecumenical councils, from Nicaea (325) to Vatican II (1962–65)."
+          ]
+        },
+        {
+          "h": "Scripture",
+          "points": [
+            "The Bible has 73 books. The Old Testament includes Tobit, Judith, Wisdom, Sirach, Baruch and 1–2 Maccabees, confirmed at the Council of Trent in 1546. Read the [[books/DRC|Douay-Rheims]] or the [[books/VUL|Latin Vulgate]]."
+          ]
+        },
+        {
+          "h": "Sin and salvation",
+          "points": [
+            "All inherit original sin from Adam, the loss of original holiness. Baptism removes it. See Romans 5:12–19 and [[go/trent-canons-and-decrees/Session V › Original Sin|Trent on original sin]].",
+            "Justification is by grace. It begins at baptism and truly changes the person within. Faith must be living, “working through love” (Galatians 5:6), and works done in grace have real value (James 2:24). Read [[go/trent-canons-and-decrees/Session VI › Justification|the Council of Trent on justification]].",
+            "Grace can be lost through grave (mortal) sin and restored through confession to a priest. See John 20:22–23."
+          ]
+        },
+        {
+          "h": "The seven sacraments",
+          "points": [
+            "Baptism, confirmation, the Eucharist, penance, anointing of the sick (James 5:14–15), holy orders and matrimony.",
+            "In the Eucharist the bread and wine become the Body and Blood of Christ while keeping their appearance (transubstantiation). The Mass makes present the one sacrifice of the cross. See John 6:53–56 and 1 Corinthians 11:23–29. Read [[go/trent-canons-and-decrees/Session XIII › Sacrament of the Eucharist|Trent on the Eucharist]]."
+          ]
+        },
+        {
+          "h": "Mary and the saints",
+          "points": [
+            "Mary is Mother of God and ever-virgin. She was conceived without original sin (the Immaculate Conception, defined 1854) and was taken body and soul into heaven (the Assumption, defined 1950). See Luke 1:28 and Luke 1:42–48.",
+            "The saints may be asked to pray for us. Catholics distinguish the honour given to saints from the worship owed to God alone."
+          ]
+        },
+        {
+          "h": "After death",
+          "points": [
+            "Heaven, hell and purgatory, a purification after death for those who die in God's grace. The Church prays and offers Mass for the dead. See 2 Maccabees 12:43–46 and 1 Corinthians 3:13–15. Read [[go/trent-canons-and-decrees/Session XXV › Purgatory|Trent on purgatory]] and the [[go/ce-vol-12/Purgatory|Catholic Encyclopedia article]]."
+          ]
+        },
+        {
+          "h": "Church life",
+          "points": [
+            "Only men are ordained. Priests of the Latin rite are normally celibate; Eastern Catholic churches ordain married men.",
+            "The Western Creed includes the Filioque: the Spirit proceeds from the Father “and the Son”.",
+            "The Catechism of the Catholic Church (1992) is the current official summary. It is under copyright and is not stored here. Its predecessor, the [[lib/trent-catechism|Roman Catechism]] of 1566, and the [[lib/c/Catholic Encyclopedia (1913)|Catholic Encyclopedia]] of 1913 are."
+          ]
+        }
+      ],
+      "texts": [
+        [
+          "lib/trent-canons-and-decrees",
+          "Canons and Decrees of the Council of Trent"
+        ],
+        [
+          "lib/trent-catechism",
+          "Catechism of the Council of Trent (Roman Catechism)"
+        ],
+        [
+          "go/ccel-creeds2/CONCILII VATICANI",
+          "Decrees of the First Vatican Council"
+        ],
+        [
+          "lib/c/Catholic Encyclopedia (1913)",
+          "The Catholic Encyclopedia (1913), 16 volumes"
+        ],
+        [
+          "lib/ccel-summa",
+          "Thomas Aquinas, Summa Theologica"
+        ],
+        [
+          "lib/c/Catholic theology",
+          "Augustine, Anselm, Pascal, Newman"
+        ],
+        [
+          "lib/c/Catholic spiritual writers",
+          "Catholic spiritual writers"
+        ],
+        [
+          "lib/c/Church Fathers: Augustine and Chrysostom",
+          "Augustine and Chrysostom"
+        ]
+      ]
+    },
+    {
+      "slug": "protestant",
+      "name": "Protestantism",
+      "short": "Protestant",
+      "faith": "christian",
+      "summary": "The churches that came out of the sixteenth-century Reformation, about 900 million people in many denominations. They hold the shared Christian list and add the following.",
+      "sections": [
+        {
+          "h": "The Reformation principles",
+          "points": [
+            "**Scripture alone** is the final authority for faith and life. Councils, popes and traditions can err and are tested by the Bible. See 2 Timothy 3:16–17 and [[q/scripture-alone-or-tradition|Scripture alone, or Scripture and tradition?]]",
+            "**Grace alone, through faith alone.** A sinner is declared righteous by God because of Christ, and receives this by trusting him, not by works. See Romans 3:28 and Ephesians 2:8–9.",
+            "**Christ alone** is mediator between God and man (1 Timothy 2:5). Good works follow faith as its fruit, not its cause (Ephesians 2:10)."
+          ]
+        },
+        {
+          "h": "Scripture",
+          "points": [
+            "The Bible has 66 books. The Old Testament follows the Hebrew canon. The Apocrypha may be read for example of life but does not establish doctrine. Read the [[books/KJV|King James Version]]."
+          ]
+        },
+        {
+          "h": "Church and ministry",
+          "points": [
+            "All believers are priests before God (1 Peter 2:9). There is no pope, and ministers may marry.",
+            "Forms of government vary: bishops (Anglican, some Lutheran and Methodist), elders (Presbyterian) or the local congregation (Baptist, Congregational)."
+          ]
+        },
+        {
+          "h": "Sacraments",
+          "points": [
+            "Two sacraments were instituted by Christ: baptism and the Lord's Supper.",
+            "On the Supper Protestants differ. Lutherans hold that Christ's body and blood are truly present with the bread and wine. The Reformed hold a real spiritual presence received by faith. Baptists and many evangelicals hold it is a memorial.",
+            "On baptism they differ too. Lutherans, Reformed, Anglicans and Methodists baptise infants. Baptists and Pentecostals baptise only those who profess faith."
+          ]
+        },
+        {
+          "h": "What Protestants reject",
+          "points": [
+            "Prayer to Mary and the saints, the Immaculate Conception and Assumption, purgatory, indulgences, and the sacrifice of the Mass. Mary is honoured as the virgin mother of the Lord (Luke 1:48)."
+          ]
+        },
+        {
+          "h": "The main families",
+          "points": [
+            "**Lutheran.** From Martin Luther, 1517. Read [[lib/ccel-luther-smallcat|Luther's Small Catechism]], the [[lib/ccel-luther-largecatechism|Large Catechism]] and the [[lib/ccel-luther-first-prin|Ninety-five Theses and Reformation treatises]].",
+            "**Reformed and Presbyterian.** From Zwingli and Calvin. Stress on God's sovereignty and predestination. Read [[lib/ccel-institutes|Calvin's Institutes]], the [[lib/creed-westminster-confession-of-faith|Westminster Confession]], the [[lib/creed-heidelberg-catechism|Heidelberg Catechism]] and the [[lib/creed-canons-of-dort|Canons of Dort]].",
+            "**Anglican.** The Church of England and its daughter churches. Keeps bishops and a fixed liturgy, and calls itself both catholic and reformed. Its confession is the Thirty-nine Articles, in [[lib/ccel-creeds3|Creeds of Christendom, volume 3]], and its worship is set out in the [[lib/book-of-common-prayer-1892|Book of Common Prayer]].",
+            "**Baptist.** Believers' baptism by immersion, the independence of each congregation, freedom of conscience. Read the [[lib/creed-london-baptist-1689|1689 London Baptist Confession]].",
+            "**Methodist.** From John Wesley, eighteenth century. God's grace is offered to all and can be resisted; stress on holiness of life. Read [[lib/ccel-wesley-sermons|Wesley's Sermons]].",
+            "**Pentecostal and charismatic.** From the early 1900s. Stress on baptism in the Holy Spirit and gifts such as tongues and healing (Acts 2:1–4, 1 Corinthians 12:4–11).",
+            "**Anabaptist.** Mennonites and others. Believers' baptism, separation of church and state, refusal of violence (Matthew 5:38–45)."
+          ]
+        },
+        {
+          "h": "Disagreements among Protestants",
+          "points": [
+            "**Predestination.** Calvinists hold that God chose whom to save and that grace cannot finally be resisted (Romans 9:10–24, Ephesians 1:4–5). Arminians, including Methodists, hold that Christ died for all and that people can accept or refuse grace (1 Timothy 2:3–4, John 3:16)."
+          ]
+        }
+      ],
+      "texts": [
+        [
+          "lib/c/Creeds, confessions and catechisms",
+          "Protestant confessions and catechisms"
+        ],
+        [
+          "lib/ccel-creeds3",
+          "Creeds of Christendom 3: Protestant creeds (Augsburg, Thirty-nine Articles and others)"
+        ],
+        [
+          "lib/c/Protestant theology",
+          "Luther, Calvin, Wesley, Edwards and others"
+        ],
+        [
+          "lib/easton-bible-dictionary",
+          "Easton's Bible Dictionary (1897)"
+        ]
+      ]
+    },
+    {
+      "slug": "islam",
+      "name": "Islam: what all Muslims share",
+      "short": "Islam (shared)",
+      "faith": "muslim",
+      "summary": "The beliefs and practices common to Sunni and Shia Muslims, about 1.9 billion people.",
+      "sections": [
+        {
+          "h": "God",
+          "points": [
+            "God (Allah) is absolutely one, without partner, parent or child. This is tawhid. See Quran 112:1–4 and Quran 2:255.",
+            "Associating anything with God (shirk) is the gravest sin. See Quran 4:48."
+          ]
+        },
+        {
+          "h": "The articles of faith",
+          "points": [
+            "Belief in God, his angels, his books, his messengers and the Last Day. See Quran 2:285 and Quran 4:136.",
+            "The Sunni list adds the divine decree, from the “hadith of Gabriel” (Sahih Muslim 8). The Shia list of principles adds God's justice and the Imamate. See the Sunni and Shia pages."
+          ]
+        },
+        {
+          "h": "Prophets and books",
+          "points": [
+            "God sent prophets to every people (Quran 16:36), among them Adam, Noah, Abraham, Moses and Jesus. Muhammad is the last, “the seal of the prophets” (Quran 33:40).",
+            "God revealed the Torah to Moses, the Psalms to David and the Gospel to Jesus (Quran 3:3–4, Quran 5:44–48). The Quran is God's own speech, revealed in Arabic to Muhammad and preserved without change (Quran 15:9).",
+            "Most Muslims hold that the earlier books no longer exist in their original form. See [[q/has-the-bible-been-changed|Has the Bible been changed?]]"
+          ]
+        },
+        {
+          "h": "Jesus",
+          "points": [
+            "Jesus (Isa) is the Messiah, born of the Virgin Mary by God's command (Quran 19:16–34), a worker of miracles (Quran 5:110) and a great messenger. He is not God or the Son of God (Quran 4:171, Quran 5:75).",
+            "He was not killed or crucified (Quran 4:157–158) and will return before the Last Day (Sahih al-Bukhari 3448). See [[q/was-jesus-crucified|Was Jesus crucified?]]"
+          ]
+        },
+        {
+          "h": "Human nature and salvation",
+          "points": [
+            "Every child is born in a natural state of submission to God (fitra). There is no inherited sin, and no one bears another's burden. See Quran 30:30, Quran 6:164 and Sahih al-Bukhari 1359.",
+            "Adam sinned, repented and was forgiven (Quran 2:37).",
+            "People are saved by faith and good deeds through God's mercy, and will be judged on the Last Day (Quran 103:1–3, Quran 21:47). Muhammad said that no one enters Paradise by deeds alone, only by God's mercy (Sahih al-Bukhari 5673)."
+          ]
+        },
+        {
+          "h": "Practice",
+          "points": [
+            "The testimony of faith: there is no god but God, and Muhammad is the messenger of God.",
+            "Ritual prayer five times a day facing Mecca, the alms tax (zakat), fasting in Ramadan (Quran 2:183–185) and pilgrimage to Mecca once in a lifetime for those able (Quran 3:97). Sunnis call these with the testimony the five pillars (Sahih al-Bukhari 8).",
+            "Pork, alcohol and interest are forbidden (Quran 5:3, Quran 5:90, Quran 2:275)."
+          ]
+        },
+        {
+          "h": "Law",
+          "points": [
+            "God's law (sharia) is drawn from the Quran and from the example of the Prophet (sunna) as recorded in hadith. Sunni and Shia use different hadith collections and methods. See [[compare/authority|Religious authority compared]]."
+          ]
+        }
+      ],
+      "texts": [
+        [
+          "books/PICK",
+          "The Quran (Pickthall)"
+        ],
+        [
+          "books/HAFS",
+          "The Quran in Arabic"
+        ],
+        [
+          "lib/c/Quran commentary (tafsir)",
+          "Quran commentaries"
+        ],
+        [
+          "lib/hadith-nawawi",
+          "Forty Hadith of an-Nawawi"
+        ]
+      ]
+    },
+    {
+      "slug": "sunni",
+      "name": "Sunni Islam",
+      "short": "Sunni",
+      "faith": "muslim",
+      "summary": "The majority of Muslims, roughly 85 to 90 percent. The name means the people of the Prophet's example and of the community.",
+      "sections": [
+        {
+          "h": "Leadership after the Prophet",
+          "points": [
+            "The Prophet did not name a successor, and the community rightly chose Abu Bakr, whom he had told to lead the prayer during his last illness (Sahih al-Bukhari 678).",
+            "The first four caliphs, Abu Bakr, Umar, Uthman and Ali, are the “Rightly Guided Caliphs”. A caliph is a guardian of the community and its law. He is not infallible and brings no new revelation.",
+            "See [[q/who-should-have-succeeded-muhammad|Who should have succeeded Muhammad?]]"
+          ]
+        },
+        {
+          "h": "The Companions",
+          "points": [
+            "All the Prophet's Companions are honoured and treated as trustworthy transmitters of his teaching. The Prophet's family and his wives, including Aisha, are loved and respected."
+          ]
+        },
+        {
+          "h": "Hadith",
+          "points": [
+            "The six canonical collections are [[lib/hadith-bukhari|Sahih al-Bukhari]] and [[lib/hadith-muslim|Sahih Muslim]], held to be the most reliable, and the Sunan of [[lib/hadith-abudawud|Abu Dawud]], [[lib/hadith-tirmidhi|at-Tirmidhi]], [[lib/hadith-nasai|an-Nasa'i]] and [[lib/hadith-ibnmajah|Ibn Majah]]. The [[lib/hadith-malik|Muwatta of Malik]] is also foundational.",
+            "Each report is graded by its chain of narrators as sound (sahih), good (hasan) or weak (da'if)."
+          ]
+        },
+        {
+          "h": "Law",
+          "points": [
+            "Four schools of law are accepted as equally valid: Hanafi, Maliki, Shafi'i and Hanbali. Their sources are the Quran, the sunna, the consensus of scholars and reasoning by analogy."
+          ]
+        },
+        {
+          "h": "Theology",
+          "points": [
+            "The sixth article of faith is the divine decree: all that happens is by God's knowledge and will (Sahih Muslim 8).",
+            "The main theological schools are the Ash'ari, the Maturidi and the Athari (the approach followed by Salafis). The Quran is held to be the uncreated speech of God."
+          ]
+        },
+        {
+          "h": "The Mahdi and the end",
+          "points": [
+            "A just leader from the Prophet's family, the Mahdi, will appear before the end of time, and Jesus will return (Sahih al-Bukhari 3448). Sunnis do not identify the Mahdi with a known person now in hiding."
+          ]
+        },
+        {
+          "h": "Sufism",
+          "points": [
+            "The Sufi orders, which seek closeness to God through remembrance and discipline, grew mostly within Sunni Islam. Salafi Muslims reject many Sufi practices, such as visiting the tombs of saints to seek blessing."
+          ]
+        }
+      ],
+      "texts": [
+        [
+          "lib/c/Sunni hadith",
+          "All Sunni hadith collections stored here"
+        ],
+        [
+          "lib/hadith-riyad-assalihin",
+          "Riyad as-Salihin"
+        ],
+        [
+          "go/tafsir-ibn-kathir/1",
+          "Tafsir Ibn Kathir"
+        ],
+        [
+          "lib/c/Quran commentary (tafsir)",
+          "Quran commentaries, English and Arabic"
+        ]
+      ]
+    },
+    {
+      "slug": "shia",
+      "name": "Shia Islam",
+      "short": "Shia",
+      "faith": "muslim",
+      "summary": "About 10 to 15 percent of Muslims, the majority in Iran, Iraq, Azerbaijan and Bahrain. The name is short for “the party of Ali”. This page describes the Twelvers, by far the largest branch.",
+      "sections": [
+        {
+          "h": "The Imamate",
+          "points": [
+            "God did not leave the community without a guide. The Prophet, by God's command, named his cousin and son-in-law Ali as his successor at Ghadir Khumm, saying: “For whomever I am his master (mawla), Ali is his master.” The saying is also in Sunni books (Jami' at-Tirmidhi 3713), where it is read as a call to love Ali.",
+            "Shia also cite the saying that the Prophet left behind two weighty things, the Book of God and his family (Sahih Muslim 2408), and that Ali was to him as Aaron was to Moses (Sahih al-Bukhari 4416).",
+            "The Imams are chosen by God, protected from sin and error, and are the authoritative interpreters of the Quran. The earth is never without such a guide. Read the Book of Divine Authority in [[lib/shia-al-kafi-volume-1-kulayni|al-Kafi, volume 1]]. See Quran 33:33.",
+            "See [[q/who-should-have-succeeded-muhammad|Who should have succeeded Muhammad?]]"
+          ]
+        },
+        {
+          "h": "The Twelve Imams",
+          "points": [
+            "Ali, his sons Hasan and Husayn, and nine descendants of Husayn. The twelfth, Muhammad al-Mahdi, was hidden by God in 874 and is still alive. He will return to fill the earth with justice.",
+            "Sunni collections also record a saying about twelve leaders (Sahih Muslim 1821), which Sunnis apply to caliphs."
+          ]
+        },
+        {
+          "h": "The principles of religion",
+          "points": [
+            "Five roots: the oneness of God, the justice of God, prophethood, the Imamate, and the resurrection.",
+            "God's justice means that people have real free will and are answerable for what they do."
+          ]
+        },
+        {
+          "h": "Hadith",
+          "points": [
+            "Teaching is received from the Prophet through the Imams. The four main books are [[lib/shia-al-kafi-volume-1-kulayni|al-Kafi]] of al-Kulayni, [[lib/shia-man-la-yahduruh-al-faqih-volume-1-saduq|Man La Yahduruhu al-Faqih]] of al-Saduq, and [[lib/shia-tahdhib-al-ahkam-volume-1-tusi|Tahdhib al-Ahkam]] and al-Istibsar of al-Tusi.",
+            "[[lib/shia-nahj-al-balagha-radi|Nahj al-Balagha]], the sermons and letters of Ali, is deeply loved.",
+            "Not every Companion is treated as reliable. Those who opposed Ali are criticised."
+          ]
+        },
+        {
+          "h": "Karbala",
+          "points": [
+            "In 680 the Prophet's grandson Husayn was killed with his family and companions at Karbala by the army of the caliph Yazid. Shia mourn this each year on Ashura, and visiting the shrines of the Imams is an important devotion."
+          ]
+        },
+        {
+          "h": "Law and scholars",
+          "points": [
+            "The Ja'fari school of law, named after the sixth Imam. During the Imam's absence, qualified scholars work out the law by reasoning, and an ordinary believer follows a living senior scholar (a marja')."
+          ]
+        },
+        {
+          "h": "Differences in practice",
+          "points": [
+            "The five daily prayers are usually offered at three times of day. Hands are held at the sides, and the forehead is placed on earth or a clay tablet.",
+            "An extra fifth (khums) is paid on yearly surplus income (Quran 8:41).",
+            "Temporary marriage (mut'a) is permitted. Sunnis hold that it was later forbidden.",
+            "A believer may conceal his faith when in danger (taqiyya). See Quran 3:28 and Quran 16:106."
+          ]
+        },
+        {
+          "h": "The Quran",
+          "points": [
+            "Shia and Sunni Muslims read the same Quran. Mainstream Twelver scholars teach that its text is complete and unchanged."
+          ]
+        },
+        {
+          "h": "Other Shia branches",
+          "points": [
+            "**Ismailis** follow a different line after the sixth Imam. The Nizari Ismailis have a living Imam, the Aga Khan.",
+            "**Zaydis**, mainly in Yemen, follow Zayd, a grandson of Husayn, and are closest to Sunnis in law."
+          ]
+        }
+      ],
+      "texts": [
+        [
+          "lib/c/Shia hadith and teachings",
+          "All Shia collections stored here"
+        ],
+        [
+          "lib/shia-nahj-al-balagha-radi",
+          "Nahj al-Balagha"
+        ],
+        [
+          "lib/shia-risalat-al-huquq-abidin",
+          "Treatise on Rights"
+        ]
+      ]
+    },
+    {
+      "slug": "judaism",
+      "name": "Judaism",
+      "short": "Judaism",
+      "faith": "jewish",
+      "summary": "The faith of the Jewish people, about 15 million. Judaism is defined more by practice and belonging than by a fixed creed, so the list below gives what is most widely held.",
+      "sections": [
+        {
+          "h": "God",
+          "points": [
+            "God is one, unique and without body. “Hear, O Israel: the LORD our God, the LORD is one.” See Deuteronomy 6:4–9.",
+            "God cannot become a man and has no partners. For this reason Judaism rejects the Trinity and the incarnation. See [[q/one-god-or-trinity|One God or Trinity?]]"
+          ]
+        },
+        {
+          "h": "Covenant and Torah",
+          "points": [
+            "God made a covenant with Abraham (Genesis 17:1–8) and gave the Torah to Israel through Moses at Sinai (Exodus 19:1–8, Exodus 20:1–17).",
+            "The Torah contains 613 commandments ([[go/sef-makkot/23b|Makkot 23b]]). It is permanent and will not be replaced. See Deuteronomy 4:2 and [[q/is-the-law-of-moses-still-binding|Is the Law of Moses still binding?]]",
+            "Alongside the written Torah stands the oral Torah, written down in the [[lib/c/Mishnah|Mishnah]] (about AD 200) and discussed in the [[lib/c/Babylonian Talmud|Talmud]] (about AD 500)."
+          ]
+        },
+        {
+          "h": "Scripture",
+          "points": [
+            "The Tanakh: Torah (Law), Nevi'im (Prophets) and Ketuvim (Writings). It has the same content as the Protestant Old Testament in a different order. Read the [[books/JPS|JPS 1917 translation]] or the [[books/WLC|Hebrew]]."
+          ]
+        },
+        {
+          "h": "Maimonides' thirteen principles",
+          "points": [
+            "The best-known summary, from the twelfth century: God exists; is one; has no body; is eternal; alone is to be worshipped; speaks through prophets; Moses is the greatest prophet; the Torah is from heaven; it will not be changed; God knows human deeds; he rewards and punishes; the Messiah will come; the dead will be raised.",
+            "Not all Jews treat these as a binding creed. Read Maimonides' code, the [[lib/c/Mishneh Torah (Maimonides)|Mishneh Torah]]."
+          ]
+        },
+        {
+          "h": "Human nature and atonement",
+          "points": [
+            "There is no original sin. Each person has an inclination to good and to evil and is free to choose (Deuteronomy 30:19).",
+            "Each person answers for his own sin, and anyone can return to God by repentance (Ezekiel 18:20–23). Atonement comes through repentance, prayer and charity, and on the Day of Atonement (Leviticus 16:29–31, Hosea 14:2)."
+          ]
+        },
+        {
+          "h": "The Messiah",
+          "points": [
+            "The Messiah is a human king descended from David, still to come, who will gather the exiles, rebuild the Temple and bring peace to the world. See Isaiah 2:2–4, Isaiah 11:1–9 and Ezekiel 37:21–28.",
+            "Jesus is not accepted as Messiah because these things did not happen. See [[q/is-jesus-the-messiah-of-the-prophets|Is Jesus the Messiah of the prophets?]]"
+          ]
+        },
+        {
+          "h": "After death",
+          "points": [
+            "Judaism teaches a World to Come and the resurrection of the dead (Daniel 12:2, [[go/sef-mishnah-sanhedrin/10:1|Mishnah Sanhedrin 10:1]]), but says less about them than Christianity or Islam and stresses life in this world.",
+            "Non-Jews are not required to become Jews. The righteous of all nations have a share in the World to Come if they keep the seven basic laws given to Noah."
+          ]
+        },
+        {
+          "h": "Practice",
+          "points": [
+            "The Sabbath (Exodus 20:8–11), the food laws (Leviticus 11:1–23), circumcision (Genesis 17:10–14), daily prayer, and the yearly festivals (Leviticus 23:1–44).",
+            "Jewish law (halakhah) is set out in codes such as the Mishneh Torah and the [[lib/c/Shulchan Arukh|Shulchan Arukh]] (1565)."
+          ]
+        },
+        {
+          "h": "Movements",
+          "points": [
+            "**Orthodox.** The Torah, written and oral, is from God and the law is binding.",
+            "**Conservative (Masorti).** The law is binding but has developed through history and can develop further.",
+            "**Reform.** Stress on ethics and the prophets. Ritual law is a matter of informed personal choice.",
+            "**Karaites**, a small group, accept only the written Torah and reject the Talmud."
+          ]
+        }
+      ],
+      "texts": [
+        [
+          "books/JPS",
+          "The Tanakh (JPS 1917)"
+        ],
+        [
+          "lib/c/Mishnah",
+          "Mishnah"
+        ],
+        [
+          "lib/c/Babylonian Talmud",
+          "Babylonian Talmud"
+        ],
+        [
+          "lib/c/Midrash",
+          "Midrash"
+        ],
+        [
+          "lib/c/Jewish thought",
+          "Jewish thought (Maimonides, Halevi and others)"
+        ]
+      ]
+    }
+  ],
+  "compare": [
+    {
+      "slug": "god",
+      "title": "God",
+      "rows": [
+        [
+          "christian",
+          "All Christians",
+          "One God in three persons: Father, Son and Holy Spirit (Matthew 28:19). Read the [[lib/creed-athanasian-creed|Athanasian Creed]]."
+        ],
+        [
+          "orthodox",
+          "Orthodox",
+          "The Spirit proceeds from the Father alone (John 15:26)."
+        ],
+        [
+          "catholic",
+          "Catholic and Protestant",
+          "The Spirit proceeds from the Father and the Son (the Filioque)."
+        ],
+        [
+          "muslim",
+          "Sunni and Shia",
+          "God is strictly one, with no persons, partners or son (Quran 112:1–4). The Trinity is rejected by name (Quran 4:171)."
+        ],
+        [
+          "jewish",
+          "Judaism",
+          "God is one and has no body or form (Deuteronomy 6:4). The Trinity and the incarnation are rejected."
+        ]
+      ],
+      "more": [
+        "q/one-god-or-trinity"
+      ]
+    },
+    {
+      "slug": "jesus",
+      "title": "Jesus",
+      "rows": [
+        [
+          "christian",
+          "All Christians",
+          "The Son of God made man, fully God and fully man, crucified for our sins and risen from the dead (John 1:1–14, 1 Corinthians 15:3–8)."
+        ],
+        [
+          "muslim",
+          "Sunni and Shia",
+          "A great prophet and the Messiah, born of the Virgin Mary, not divine (Quran 4:171). Not crucified (Quran 4:157). He will return."
+        ],
+        [
+          "jewish",
+          "Judaism",
+          "Not the Messiah, not a prophet and not divine. Many modern Jewish scholars regard him as a Jewish teacher of the first century. The Talmud contains a few hostile references ([[go/sef-sanhedrin/43a|Sanhedrin 43a]])."
+        ]
+      ],
+      "more": [
+        "q/is-jesus-god",
+        "q/was-jesus-crucified",
+        "q/is-jesus-the-messiah-of-the-prophets"
+      ]
+    },
+    {
+      "slug": "scripture",
+      "title": "Scripture",
+      "rows": [
+        [
+          "orthodox",
+          "Orthodox",
+          "Old Testament from the Septuagint, about 49 to 51 books, plus the 27 of the New Testament. Read within Holy Tradition."
+        ],
+        [
+          "catholic",
+          "Catholic",
+          "73 books (46 Old Testament, 27 New). Read with Sacred Tradition under the teaching office of the Church."
+        ],
+        [
+          "protestant",
+          "Protestant",
+          "66 books (39 Old Testament, 27 New). Scripture alone is the final authority."
+        ],
+        [
+          "muslim",
+          "Sunni and Shia",
+          "The Quran, God's speech in Arabic, 114 surahs. The Torah, Psalms and Gospel were true revelations but are held not to survive unchanged (Quran 5:44–48)."
+        ],
+        [
+          "jewish",
+          "Judaism",
+          "The Tanakh, 24 books by the Jewish count, with the Torah first in authority. Read through the oral Torah of the Mishnah and Talmud."
+        ]
+      ],
+      "more": [
+        "q/has-the-bible-been-changed",
+        "q/scripture-alone-or-tradition"
+      ]
+    },
+    {
+      "slug": "authority",
+      "title": "Religious authority",
+      "rows": [
+        [
+          "orthodox",
+          "Orthodox",
+          "The bishops in council, the seven ecumenical councils and the consensus of the Fathers. No single head on earth."
+        ],
+        [
+          "catholic",
+          "Catholic",
+          "The pope and the bishops in communion with him. The pope can define doctrine infallibly (Matthew 16:18–19)."
+        ],
+        [
+          "protestant",
+          "Protestant",
+          "The Bible, interpreted by the church and the believer. Confessions of faith are subordinate to Scripture."
+        ],
+        [
+          "sunni",
+          "Sunni",
+          "The Quran and the Prophet's example as recorded in hadith, interpreted by scholars of the four schools. No clergy with sacramental power."
+        ],
+        [
+          "shia",
+          "Shia",
+          "The Quran, the Prophet and the twelve infallible Imams. In the absence of the twelfth Imam, senior scholars (maraji') guide the faithful."
+        ],
+        [
+          "jewish",
+          "Judaism",
+          "The Torah as interpreted by the rabbis. The majority view of the sages decides the law: “It is not in heaven” ([[go/sef-bava-metzia/59b|Bava Metzia 59b]])."
+        ]
+      ],
+      "more": [
+        "q/peter-and-the-papacy",
+        "q/who-should-have-succeeded-muhammad",
+        "q/scripture-alone-or-tradition"
+      ]
+    },
+    {
+      "slug": "prophets",
+      "title": "Prophets and Muhammad",
+      "rows": [
+        [
+          "christian",
+          "All Christians",
+          "God spoke through the prophets of Israel and finally through his Son (Hebrews 1:1–2). Public revelation closed with the apostles. Muhammad is not accepted as a prophet."
+        ],
+        [
+          "muslim",
+          "Sunni and Shia",
+          "A line of prophets from Adam to Muhammad, the final messenger (Quran 33:40). All prophets are protected from grave sin."
+        ],
+        [
+          "jewish",
+          "Judaism",
+          "Prophecy ended with Malachi. Moses is the greatest prophet and no later prophet can change his Torah (Deuteronomy 34:10, Deuteronomy 13:1–5). Neither Jesus nor Muhammad is accepted."
+        ]
+      ],
+      "more": [
+        "q/is-muhammad-foretold-in-the-bible"
+      ]
+    },
+    {
+      "slug": "sin",
+      "title": "Sin and human nature",
+      "rows": [
+        [
+          "catholic",
+          "Catholic",
+          "Original sin: all are born without the grace Adam lost. Baptism restores it; an inclination to sin remains."
+        ],
+        [
+          "protestant",
+          "Protestant",
+          "Original sin has corrupted every part of human nature, so that no one can turn to God without grace (Romans 3:10–12)."
+        ],
+        [
+          "orthodox",
+          "Orthodox",
+          "Ancestral sin: we inherit death and weakness from Adam, not his guilt."
+        ],
+        [
+          "muslim",
+          "Sunni and Shia",
+          "No inherited sin. Everyone is born pure and bears only his own deeds (Quran 6:164)."
+        ],
+        [
+          "jewish",
+          "Judaism",
+          "No original sin. Each person has good and evil inclinations and is free to choose (Deuteronomy 30:19)."
+        ]
+      ],
+      "more": [
+        "q/original-sin"
+      ]
+    },
+    {
+      "slug": "salvation",
+      "title": "How a person is saved",
+      "rows": [
+        [
+          "orthodox",
+          "Orthodox",
+          "By grace, through union with Christ in the Church and its mysteries, in a lifelong cooperation with God (2 Peter 1:4)."
+        ],
+        [
+          "catholic",
+          "Catholic",
+          "By grace, received in baptism, lived out in faith working through love, and restored through confession (James 2:24)."
+        ],
+        [
+          "protestant",
+          "Protestant",
+          "By grace alone through faith alone in Christ alone. Works are the fruit of salvation, not its ground (Ephesians 2:8–10)."
+        ],
+        [
+          "muslim",
+          "Sunni and Shia",
+          "By God's mercy, through faith in the one God and righteous deeds, weighed on the Day of Judgment (Quran 21:47). Shia add loyalty to the Imams."
+        ],
+        [
+          "jewish",
+          "Judaism",
+          "The question is put differently: Israel is already in covenant with God and is called to keep his commandments and to repent when it fails (Ezekiel 18:21–23). The righteous of all nations have a share in the World to Come."
+        ]
+      ],
+      "more": [
+        "q/faith-or-works"
+      ]
+    },
+    {
+      "slug": "law",
+      "title": "The Law",
+      "rows": [
+        [
+          "christian",
+          "All Christians",
+          "The moral law stands. The ritual and civil laws of Moses were fulfilled in Christ and do not bind Christians (Acts 15:19–29)."
+        ],
+        [
+          "muslim",
+          "Sunni and Shia",
+          "The sharia given through Muhammad replaces earlier laws. It covers worship, family, trade and criminal law."
+        ],
+        [
+          "jewish",
+          "Judaism",
+          "The Torah's 613 commandments bind the Jewish people for ever. Non-Jews are bound only by the seven laws of Noah."
+        ]
+      ],
+      "more": [
+        "q/is-the-law-of-moses-still-binding",
+        "q/must-christians-agree-with-old-testament"
+      ]
+    },
+    {
+      "slug": "mary",
+      "title": "Mary",
+      "rows": [
+        [
+          "orthodox",
+          "Orthodox",
+          "Mother of God (Theotokos), ever-virgin and all-holy. Asked for her prayers. No dogma of Immaculate Conception."
+        ],
+        [
+          "catholic",
+          "Catholic",
+          "Mother of God, ever-virgin, conceived without sin and assumed into heaven. Asked for her prayers."
+        ],
+        [
+          "protestant",
+          "Protestant",
+          "The virgin mother of Jesus, blessed among women (Luke 1:42). Not prayed to. Most hold she had other children later (Mark 6:3)."
+        ],
+        [
+          "muslim",
+          "Sunni and Shia",
+          "Maryam, a virgin chosen above all women, the only woman named in the Quran, with a surah named after her (Quran 3:42, Quran 19:16–34). Not the mother of God."
+        ],
+        [
+          "jewish",
+          "Judaism",
+          "No religious role."
+        ]
+      ],
+      "more": []
+    },
+    {
+      "slug": "afterlife",
+      "title": "Life after death",
+      "rows": [
+        [
+          "orthodox",
+          "Orthodox",
+          "Resurrection, judgment, heaven and hell. Prayer for the dead, without a defined purgatory."
+        ],
+        [
+          "catholic",
+          "Catholic",
+          "Resurrection, judgment, heaven, hell and purgatory."
+        ],
+        [
+          "protestant",
+          "Protestant",
+          "Resurrection, judgment, heaven and hell. No purgatory."
+        ],
+        [
+          "muslim",
+          "Sunni and Shia",
+          "Questioning in the grave, bodily resurrection, the weighing of deeds, Paradise and Hell (Quran 56:1–56). The Prophet, and for Shia the Imams, may intercede."
+        ],
+        [
+          "jewish",
+          "Judaism",
+          "The World to Come and the resurrection of the dead (Daniel 12:2). Punishment after death is usually seen as temporary."
+        ]
+      ],
+      "more": []
+    },
+    {
+      "slug": "worship",
+      "title": "Worship and practice",
+      "rows": [
+        [
+          "orthodox",
+          "Orthodox",
+          "The Divine Liturgy, seven mysteries, icons, frequent fasting."
+        ],
+        [
+          "catholic",
+          "Catholic",
+          "The Mass, seven sacraments, Sunday obligation, Lent."
+        ],
+        [
+          "protestant",
+          "Protestant",
+          "Preaching of the Bible, congregational singing, two sacraments."
+        ],
+        [
+          "sunni",
+          "Sunni",
+          "Five daily prayers at five times, Friday prayer, Ramadan fast, zakat, hajj."
+        ],
+        [
+          "shia",
+          "Shia",
+          "The same duties, with prayers usually at three times, plus khums, mourning for Husayn and visits to the Imams' shrines."
+        ],
+        [
+          "jewish",
+          "Judaism",
+          "Prayer three times a day, the Sabbath, food laws, festivals, study of Torah."
+        ]
+      ],
+      "more": []
+    },
+    {
+      "slug": "end-times",
+      "title": "The Messiah and the end of the world",
+      "rows": [
+        [
+          "christian",
+          "All Christians",
+          "The Messiah has come: Jesus. He will return in glory to judge and to renew creation (Acts 1:11, Revelation 21:1–4)."
+        ],
+        [
+          "sunni",
+          "Sunni",
+          "The Mahdi will appear, the false messiah (Dajjal) will arise, and Jesus will descend and defeat him (Sahih al-Bukhari 3448)."
+        ],
+        [
+          "shia",
+          "Shia",
+          "The twelfth Imam, now hidden, is the Mahdi and will return with Jesus."
+        ],
+        [
+          "jewish",
+          "Judaism",
+          "The Messiah has not yet come. He will be a human king of David's line who brings peace and gathers Israel (Isaiah 11:1–12)."
+        ]
+      ],
+      "more": [
+        "q/is-jesus-the-messiah-of-the-prophets"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,585 @@
+{
+  "views": {
+    "overview": "Overview",
+    "christian": "Christian view",
+    "orthodox": "Orthodox",
+    "catholic": "Catholic",
+    "protestant": "Protestant",
+    "muslim": "Muslim view",
+    "jewish": "Jewish view",
+    "critics": "Critics & historians",
+    "sunni": "Sunni",
+    "shia": "Shia"
+  },
+  "topics": [
+    {
+      "slug": "paul",
+      "title": "Paul",
+      "blurb": "The apostle who wrote much of the New Testament, and the arguments about him.",
+      "questions": [
+        "paul-prophets-devil",
+        "is-the-law-of-moses-still-binding",
+        "faith-or-works"
+      ],
+      "passages": [
+        "Acts 9:1–22",
+        "Galatians 1:11–24",
+        "Galatians 2:11–14",
+        "2 Corinthians 11:1–33",
+        "2 Corinthians 12:1–10",
+        "1 Corinthians 13:1–13",
+        "Romans 8:1–39",
+        "2 Peter 3:15–16"
+      ]
+    },
+    {
+      "slug": "life-of-jesus",
+      "title": "The life of Jesus",
+      "blurb": "What the Gospels say he did and taught, and how other faiths see him.",
+      "questions": [
+        "good-things-jesus-did",
+        "was-jesus-crucified",
+        "is-jesus-god",
+        "is-jesus-the-messiah-of-the-prophets",
+        "mary-and-jesus-in-the-quran"
+      ],
+      "passages": [
+        "Luke 1:26–38",
+        "Matthew 4:1–11",
+        "Matthew 5:1–48",
+        "Matthew 6:1–34",
+        "Matthew 7:1–29",
+        "John 8:1–11",
+        "John 13:1–17",
+        "Luke 23:26–49",
+        "1 Corinthians 15:3–8",
+        "Quran 19:16–34",
+        "Quran 3:45–55",
+        "Quran 4:157–158"
+      ]
+    },
+    {
+      "slug": "old-testament-war-stories",
+      "title": "Old Testament war stories",
+      "blurb": "The hardest passages about war, captives and women, with the answers given for them.",
+      "questions": [
+        "war-stories-about-women",
+        "answers-to-hard-stories"
+      ],
+      "passages": [
+        "Numbers 31:1–54",
+        "Deuteronomy 21:10–14",
+        "Judges 4:1–24",
+        "Judges 19:1–30",
+        "Judges 21:1–25",
+        "Judith 13:1–20"
+      ]
+    },
+    {
+      "slug": "reading-the-old-testament",
+      "title": "How Christians read the Old Testament",
+      "blurb": "Why Christians keep the Old Testament but don't follow every law in it.",
+      "questions": [
+        "must-christians-agree-with-old-testament",
+        "answers-to-hard-stories",
+        "is-the-law-of-moses-still-binding",
+        "has-the-bible-been-changed"
+      ],
+      "passages": [
+        "Matthew 5:17–48",
+        "Luke 24:25–27",
+        "Acts 15:1–29",
+        "Hebrews 10:1–18",
+        "2 Timothy 3:14–17",
+        "Romans 15:4"
+      ]
+    },
+    {
+      "slug": "comparing-religions",
+      "title": "Christianity, Islam and Judaism compared",
+      "blurb": "Where the three faiths agree and disagree. Each one is described in its own words first.",
+      "questions": [
+        "one-god-or-trinity",
+        "is-jesus-god",
+        "was-jesus-crucified",
+        "has-the-bible-been-changed",
+        "is-muhammad-foretold-in-the-bible",
+        "is-jesus-the-messiah-of-the-prophets",
+        "isaac-or-ishmael",
+        "original-sin",
+        "is-the-law-of-moses-still-binding",
+        "mary-and-jesus-in-the-quran",
+        "criticisms-of-muhammad"
+      ],
+      "passages": [
+        "Deuteronomy 6:4–9",
+        "John 1:1–14",
+        "Quran 112:1–4",
+        "Quran 4:171",
+        "Quran 5:44–48",
+        "Genesis 22:1–19",
+        "Quran 37:99–113",
+        "Isaiah 53:1–12"
+      ]
+    },
+    {
+      "slug": "churches-compared",
+      "title": "Orthodox, Catholic and Protestant",
+      "blurb": "The questions that divide the churches: authority, the pope, faith and works, original sin.",
+      "questions": [
+        "faith-or-works",
+        "peter-and-the-papacy",
+        "scripture-alone-or-tradition",
+        "original-sin"
+      ],
+      "passages": [
+        "Matthew 16:13–19",
+        "Romans 3:21–28",
+        "James 2:14–26",
+        "2 Thessalonians 2:15",
+        "2 Timothy 3:14–17",
+        "John 15:26"
+      ]
+    },
+    {
+      "slug": "sunni-and-shia",
+      "title": "Sunni and Shia",
+      "blurb": "What divides the two great branches of Islam, and what they share.",
+      "questions": [
+        "who-should-have-succeeded-muhammad",
+        "criticisms-of-muhammad"
+      ],
+      "passages": [
+        "Quran 33:33",
+        "Quran 5:55",
+        "Quran 5:67",
+        "Quran 42:38",
+        "Quran 9:40"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "slug": "paul-prophets-devil",
+      "title": "Did Paul mock other prophets and speak with the devil?",
+      "asked": "Why did Paul make fun of other prophets in Christianity and speak to the devil etc?",
+      "short": "No. The Bible never shows Paul mocking the prophets or talking with the devil. A handful of real passages probably got blended into that idea.",
+      "sections": [
+        {
+          "view": "overview",
+          "h": "What the text actually says",
+          "body": [
+            "The New Testament has no scene where Paul mocks the Old Testament prophets, and none where he holds a conversation with the devil. He quotes the prophets constantly as his authority. These are the passages that most likely got mixed together:",
+            [
+              "**The “super-apostles”.** Paul is openly sarcastic about rival preachers in Corinth who were undermining him. They were teachers of his own day, not biblical prophets, and he calls them false apostles. See 2 Corinthians 11:5 and 2 Corinthians 11:13.",
+              "**The false prophet Elymas.** On Cyprus, Paul rebukes a magician the text itself calls a false prophet, and addresses him as a “child of the devil”. This is the nearest thing to Paul “insulting a prophet”. See Acts 13:6–11.",
+              "**The “thorn in the flesh”.** Paul says he was given “a messenger of Satan” to torment him and keep him humble. It is suffering, not a conversation, and nobody knows what it was. Guesses include illness, poor eyesight and persecution. See 2 Corinthians 12:7–9.",
+              "**The slave girl in Philippi.** Paul orders a spirit to leave a fortune-telling slave girl. He speaks to the spirit only to drive it out. See Acts 16:16–18.",
+              "**The clash with Peter.** Paul says he opposed Peter to his face for withdrawing from meals with non-Jewish Christians. A real argument between two leading apostles. See Galatians 2:11–14.",
+              "**The crude remark.** Frustrated with those insisting that non-Jewish converts be circumcised, Paul says he wishes they would go the whole way and mutilate themselves. See Galatians 5:12."
+            ],
+            {
+              "quote": "2 Corinthians 12:7"
+            },
+            "The person who actually speaks with the devil in the New Testament is Jesus, during the temptation in the desert. See Matthew 4:1–11."
+          ]
+        },
+        {
+          "view": "christian",
+          "h": "How Christians see Paul",
+          "body": [
+            "All the main Christian traditions hold Paul to be a true apostle who preached the same gospel as the others. They point out that the Jerusalem leaders accepted his mission (Galatians 2:9, Acts 15:22–29), that 2 Peter calls him “our beloved brother Paul” and treats his letters as scripture (2 Peter 3:15–16), and that Paul himself says he handed on what he had received (1 Corinthians 15:3–8).",
+            "His sharp language is read as the passion of a pastor defending his churches, in the same style as the Old Testament prophets and Jesus' own rebukes (Matthew 23:13–33)."
+          ]
+        },
+        {
+          "view": "muslim",
+          "h": "How many Muslims see Paul",
+          "body": [
+            "Paul is not named in the Quran. Many Muslim writers, medieval and modern, hold that Paul changed the original message of Jesus, who in Islam is a prophet teaching pure monotheism and the keeping of God's law. On this view the teachings of Jesus' divinity, the atoning death and the setting aside of the law come from Paul, not Jesus.",
+            "Christians reply that the earliest sources we have show the Jerusalem apostles in fellowship with Paul, and that the beliefs in question appear in non-Pauline writings too (for example John 1:1–14 and Hebrews 1:1–4)."
+          ]
+        },
+        {
+          "view": "jewish",
+          "h": "How Jewish readers see Paul",
+          "body": [
+            "Jewish tradition has generally seen Paul as the figure most responsible for Christianity's break with Torah observance. Some modern Jewish and Christian scholars read him differently, as a first-century Jew arguing only that non-Jews need not become Jews to join the movement. Paul describes his own Jewish background in Philippians 3:4–6 and Romans 11:1."
+          ]
+        },
+        {
+          "view": "critics",
+          "h": "Critics and historians",
+          "body": [
+            "Some skeptical scholars argue for a gap between “the religion of Jesus” and “the religion about Jesus” that Paul preached. Others answer that Paul's letters are the earliest Christian documents we have, written within about twenty to thirty years of the crucifixion, and that he repeats traditions older than himself. Historians agree the tensions with Peter and with the Jerusalem church were real, because Paul reports them himself (Galatians 2:11–14)."
+          ]
+        }
+      ],
+      "sources": []
+    },
+    {
+      "slug": "good-things-jesus-did",
+      "title": "What good did Jesus do in his life?",
+      "asked": "Tell me about all the good things Jesus did in his life, like being virgin etc., morally etc.",
+      "short": "The Gospels show a man who owned nothing, healed and fed people, welcomed outcasts, taught love of enemies and forgave the men who killed him.",
+      "sections": [
+        {
+          "view": "overview",
+          "h": "How he lived",
+          "body": [
+            [
+              "**Unmarried and celibate.** The Gospels never mention a wife, and Christian tradition holds that he never married. (The “virgin birth” is a different point: it is about his mother Mary conceiving him without a man. See Matthew 1:18–25 and Luke 1:26–38.)",
+              "**Lived simply.** No home, no money, no possessions. See Matthew 8:20.",
+              "**Resisted temptation.** He fasted forty days in the desert and refused the devil's offers of power and wealth. See Matthew 4:1–11."
+            ],
+            {
+              "quote": "Matthew 8:20"
+            }
+          ]
+        },
+        {
+          "view": "overview",
+          "h": "How he treated people",
+          "body": [
+            [
+              "**Healed the sick.** The blind, the paralysed and lepers, who were outcasts. He touched a leper when no one else would. See Mark 1:40–42.",
+              "**Fed the hungry.** He fed thousands with five loaves and two fish. See Matthew 14:13–21.",
+              "**Ate with outcasts.** Tax collectors and “sinners”. Religious leaders criticised him for it. See Mark 2:15–17.",
+              "**Valued women and children.** He spoke with a Samaritan woman in public, to his disciples' surprise (John 4:7–27), and said “let the little children come to me” (Mark 10:13–16).",
+              "**Forgave.** He stopped the stoning of a woman caught in adultery (John 8:1–11), and on the cross prayed for the men killing him (Luke 23:34)."
+            ],
+            {
+              "quote": "Luke 23:34"
+            },
+            "A note on honesty with the text: the story of the adulterous woman (John 8:1–11) is missing from the earliest surviving manuscripts of John. Most churches still receive it as scripture, and many scholars think it preserves a genuine early memory of Jesus."
+          ]
+        },
+        {
+          "view": "overview",
+          "h": "What he taught and how he died",
+          "body": [
+            [
+              "Love your enemies and turn the other cheek. See Matthew 5:38–48.",
+              "Treat others as you want to be treated. See Matthew 7:12.",
+              "Serve instead of chasing status. He washed his disciples' feet, a servant's job. See John 13:1–17.",
+              "Blessed are the poor in spirit, the meek and the peacemakers. See Matthew 5:3–10.",
+              "He did not resist arrest and stopped a disciple from using a sword. See Matthew 26:51–53."
+            ],
+            {
+              "quote": "Matthew 5:44"
+            }
+          ]
+        },
+        {
+          "view": "christian",
+          "h": "What Christians believe about this",
+          "body": [
+            "Christians believe more than that Jesus was good. They confess that he was without sin (Hebrews 4:15, 1 Peter 2:22), that he gave his life willingly for others (John 10:17–18), and that he rose from the dead on the third day (1 Corinthians 15:3–8). Orthodox, Catholic and Protestant churches all share these beliefs."
+          ]
+        },
+        {
+          "view": "muslim",
+          "h": "How Muslims see Jesus",
+          "body": [
+            "Islam honours Jesus (Isa) as one of the greatest prophets and as the Messiah. The Quran teaches his birth from the virgin Mary (Quran 3:45–47, 19:16–34) and his miracles (Quran 5:110). It denies that he is God or the Son of God (Quran 5:116, 4:171), and the common reading of Quran 4:157 is that he was not crucified. Muslims therefore agree with much of this page and disagree on who Jesus is and how his life ended."
+          ]
+        },
+        {
+          "view": "jewish",
+          "h": "How Jewish readers see Jesus",
+          "body": [
+            "Judaism does not accept Jesus as the Messiah or as divine, mainly because the expected signs of the messianic age, such as universal peace (Isaiah 2:2–4) and the ingathering of Israel, did not arrive. Many modern Jewish scholars do see him as a Jewish teacher of his time, and note that much of his moral teaching has parallels in Jewish tradition (compare Matthew 22:37–40 with Deuteronomy 6:4–5 and Leviticus 19:18)."
+          ]
+        },
+        {
+          "view": "critics",
+          "h": "Critics and historians",
+          "body": [
+            "Nearly all historians, religious or not, accept that Jesus existed, was baptised by John and was crucified under Pontius Pilate. The miracles and the resurrection are matters of faith that historical method alone cannot settle. Some critics also raise harder sayings, such as the cursing of the fig tree (Mark 11:12–21) and the warnings of judgment (Matthew 25:31–46), when weighing his moral teaching."
+          ]
+        }
+      ],
+      "sources": []
+    },
+    {
+      "slug": "criticisms-of-muhammad",
+      "title": "What are the main criticisms of Muhammad, and how do Muslims answer them?",
+      "asked": "And then all the bad things Muhammad did, from Islam",
+      "short": "Critics point to his marriage to Aisha, his wars, the fate of the Banu Qurayza and the killing of opponents. Muslims answer each point, and point to the other side of his record.",
+      "sections": [
+        {
+          "view": "overview",
+          "h": "A note on fairness first",
+          "body": [
+            "Muhammad's life draws more criticism than Jesus' partly because he was a ruler and military leader as well as a prophet, so his record includes law, war and politics. The page on Jesus is based on the Gospels as Christians read them. This page lists what critics say, so the two pages are not built the same way, and the Muslim replies below should be read with the same care as the criticisms.",
+            "Most of the criticisms rest on Islamic sources themselves: the hadith collections and early biographies such as Ibn Ishaq's. The Quran and hadith are not yet stored on this site, so these references are not linked."
+          ]
+        },
+        {
+          "view": "critics",
+          "h": "The main criticisms",
+          "body": [
+            [
+              "**Aisha.** Hadith in the most trusted collections say the marriage contract was made when she was six and the marriage was consummated when she was nine (Sahih al-Bukhari 5134, Sahih Muslim 1422). This is the most common criticism.",
+              "**Many wives.** Around eleven to thirteen, more than the four allowed to other Muslim men (Quran 33:50). One was Zaynab, the former wife of his adopted son Zayd (Quran 33:37).",
+              "**Warfare and raids.** He ordered raids on Meccan trade caravans and led a number of battles.",
+              "**Banu Qurayza.** After a siege, the men of this Jewish tribe of Medina were executed, several hundred by most early accounts, and the women and children were enslaved (Ibn Ishaq; compare Quran 33:26).",
+              "**Killing of critics.** Sources describe him approving the killing of people who had attacked him in verse, such as the poet Ka'b ibn al-Ashraf (Sahih al-Bukhari 4037).",
+              "**Slavery and captives.** Captives were taken in war. Safiyya, whose husband was killed at Khaybar, was freed and married by Muhammad."
+            ]
+          ]
+        },
+        {
+          "view": "muslim",
+          "h": "How Muslims respond",
+          "body": [
+            [
+              "**Aisha.** Many Muslim scholars accept the hadith and say such marriages were normal in that time and place, and that no contemporary enemy criticised it. Some modern Muslim writers argue from other dates in the sources that she was older, in her mid to late teens.",
+              "**The wives.** Most of the marriages were to widows or were alliances between tribes, and until the death of his first wife Khadija, when he was about fifty, he had only one wife.",
+              "**Warfare.** The early Muslims were persecuted and driven out of Mecca first, and tribal warfare was the normal condition of seventh-century Arabia. Muslims point to verses that limit fighting (Quran 2:190).",
+              "**Banu Qurayza.** The tribe is said to have broken its treaty and sided with the besieging army in wartime. The sentence was given by an arbitrator the tribe accepted, Sa'd ibn Mu'adh. Some historians also doubt the numbers.",
+              "**Ka'b ibn al-Ashraf.** He is described as having incited Mecca to war against Medina, so Muslims see this as an act of war and not punishment for poetry."
+            ]
+          ]
+        },
+        {
+          "view": "muslim",
+          "h": "The other side of his record",
+          "body": [
+            "Muslims see Muhammad as the best of moral examples (Quran 33:21, 68:4). They point to the general amnesty he gave his old enemies when he took Mecca, the ban on burying infant girls alive (Quran 81:8–9), inheritance rights for women (Quran 4:7), and the repeated commands to give to the poor and protect orphans (Quran 4:10, 93:9–10)."
+          ]
+        },
+        {
+          "view": "christian",
+          "h": "The Christian position",
+          "body": [
+            "Christians do not accept Muhammad as a prophet, because the Quran denies what they hold to be the centre of the faith: that Jesus is the Son of God, died on the cross and rose again (1 Corinthians 15:3–8, 1 John 2:22–23). Christians often contrast Muhammad's use of the sword with Jesus' refusal of it (Matthew 26:52). Muslims reply that Jesus never governed a state, and that the Old Testament prophets Christians honour, such as Moses, Joshua and David, also fought wars (see Numbers 31:1–18)."
+          ]
+        },
+        {
+          "view": "jewish",
+          "h": "The Jewish position",
+          "body": [
+            "Judaism does not accept Muhammad as a prophet, since it holds that the Torah given at Sinai is not replaced (Deuteronomy 13:1–5). Medieval Jewish thinkers such as Maimonides rejected his prophethood while recognising Islam as a strictly monotheistic faith."
+          ]
+        }
+      ],
+      "sources": [
+        "Sahih al-Bukhari 5134; Sahih Muslim 1422 (Aisha)",
+        "Sahih al-Bukhari 4037 (Ka'b ibn al-Ashraf)",
+        "Ibn Ishaq, Sirat Rasul Allah (Banu Qurayza, Khaybar, conquest of Mecca)",
+        "Quran 33:21, 33:26, 33:37, 33:50, 81:8–9, 4:7, 4:10, 2:190"
+      ]
+    },
+    {
+      "slug": "war-stories-about-women",
+      "title": "Which Old Testament war stories involve women?",
+      "asked": "What's a war story in Christianity about women, or something I heard?",
+      "short": "Four passages come up most in arguments about violence in the Bible: Numbers 31, Deuteronomy 21, Judges 19 and Judges 21. There are heroic stories too: Deborah, Jael and Judith.",
+      "sections": [
+        {
+          "view": "overview",
+          "h": "The difficult stories",
+          "body": [
+            [
+              "**The Midianites.** After a war, Moses is angry that the soldiers spared the women. He orders the boys and the women who are not virgins killed, and says the virgin girls may be kept “for yourselves”. The count given later is 32,000. This is the passage critics quote most. See Numbers 31:13–18 and Numbers 31:35.",
+              "**Wives for Benjamin.** The tribe of Benjamin has almost been wiped out in a civil war and has no wives. Israel kills the people of Jabesh-Gilead and takes 400 young women, then lets the Benjamites seize girls who come out to dance at a festival in Shiloh. See Judges 21:8–23.",
+              "**The captive wife law.** A soldier may marry a woman captured in war after she has shaved her head and mourned her parents for a month. If he later rejects her she goes free and may not be sold. See Deuteronomy 21:10–14.",
+              "**The Levite's concubine.** A man hands his concubine to a mob. She is abused all night and dies. He cuts her body into twelve pieces and sends them through Israel, which starts the civil war. See Judges 19:22–30."
+            ],
+            {
+              "quote": "Numbers 31:17–18"
+            }
+          ]
+        },
+        {
+          "view": "overview",
+          "h": "The heroic stories",
+          "body": [
+            [
+              "**Deborah.** A prophetess and judge who leads Israel when its general will not go to battle without her. See Judges 4:4–9.",
+              "**Jael.** She kills the enemy general Sisera with a tent peg while he sleeps in her tent. See Judges 4:17–22.",
+              "**Judith.** She beheads the Assyrian general Holofernes and saves her city. Her book is in Catholic and Orthodox Bibles and among the Apocrypha in Protestant ones. See Judith 13:1–10."
+            ]
+          ]
+        },
+        {
+          "view": "christian",
+          "h": "How Christians respond, in short",
+          "body": [
+            "Christians usually say that these passages describe what happened without approving it, that some of them (Judges 19 and 21) are told precisely to show how low Israel had fallen (Judges 21:25), and that the war laws belonged to ancient Israel and are not instructions for Christians. The full set of answers is on the page “How do Christians answer the hard Old Testament stories?”"
+          ]
+        },
+        {
+          "view": "jewish",
+          "h": "How Jewish tradition reads them",
+          "body": [
+            "These are Jewish scriptures first, and the rabbis struggled with them long before Christians did. The Talmud reads the captive wife law as a reluctant concession to human desire, not an ideal (Kiddushin 21b), and hedges it with restrictions. Jewish tradition reads the Torah's war laws through centuries of rabbinic interpretation and does not treat them as rules for today."
+          ]
+        },
+        {
+          "view": "muslim",
+          "h": "How Muslims see them",
+          "body": [
+            "Muslims honour Moses as a great prophet. Many hold that the Torah as it exists today is not fully preserved, and so do not take every story in it as an accurate record of what the prophets did. Muslim writers often raise these passages when Christians criticise warfare in early Islam."
+          ]
+        },
+        {
+          "view": "critics",
+          "h": "Critics",
+          "body": [
+            "Critics argue that Numbers 31 presents the killing of prisoners and the taking of girls as a command given through Moses, and that “it was a different time” is not an answer if the command came from God. They regard this as one of the strongest moral objections to the Bible."
+          ]
+        }
+      ],
+      "sources": [
+        "Babylonian Talmud, Kiddushin 21b"
+      ]
+    },
+    {
+      "slug": "answers-to-hard-stories",
+      "title": "How do Christians answer the hard Old Testament stories?",
+      "asked": "What's the answer to all of them, since they sound very bad, especially as a Christian?",
+      "short": "There are five main answers, and theologians have worked on them for centuries. Most Christians do not say “this was good”. They say the Bible is honest about human darkness and that Jesus is the answer to it.",
+      "sections": [
+        {
+          "view": "christian",
+          "h": "Five general answers",
+          "body": [
+            [
+              "**Describing is not approving.** Much of the Bible records what people did, not what God wanted. Judges repeats one line as a verdict on the whole period. See Judges 17:6 and Judges 21:25.",
+              "**Jesus is the lens.** Christians read the Old Testament through Jesus, who taught love of enemies and went to the cross instead of fighting. See Matthew 5:43–45 and Matthew 26:52.",
+              "**Ancient context.** Set beside the practice of the nations around it, some of Israel's law restrained what soldiers could do. The captive woman was given a month to mourn and could not be sold. See Deuteronomy 21:13–14. Critics reply that this is still far from good.",
+              "**God's judgment.** Some of the wars are presented as judgment on nations for grave evils such as child sacrifice, not as conquest for its own sake. See Deuteronomy 12:31 and Genesis 15:16.",
+              "**Gradual revelation.** God dealt with people as they were and led them forward step by step. Jesus himself says one law of Moses was given “because of the hardness of your hearts”. See Matthew 19:8 and Hebrews 1:1–2."
+            ],
+            {
+              "quote": "Judges 21:25"
+            },
+            {
+              "quote": "Matthew 19:8"
+            }
+          ]
+        },
+        {
+          "view": "christian",
+          "h": "On the specific stories",
+          "body": [
+            [
+              "**Judges 19 and 21.** Almost universally read as warnings. They sit at the lowest point of the book, and no one in them is held up as an example.",
+              "**Numbers 31.** The hardest one. Defenders note that Midian had drawn Israel into idolatry at Peor (Numbers 25:1–9, Numbers 31:16), and argue that the girls were taken into households as servants or future wives. Many Christians say plainly that it remains very difficult."
+            ]
+          ]
+        },
+        {
+          "view": "orthodox",
+          "h": "Orthodox",
+          "body": [
+            "The Orthodox Church reads the Old Testament with the Church Fathers and in the light of Christ. Fathers such as Origen and Gregory of Nyssa read the war stories as pictures of the soul's battle against sin: the enemies to be destroyed are the passions. The literal history is not denied, but it is not where the meaning for a Christian is found."
+          ]
+        },
+        {
+          "view": "catholic",
+          "h": "Catholic",
+          "body": [
+            "The Second Vatican Council teaches that the Old Testament books are inspired and of lasting value, and also that they “contain some things which are incomplete and temporary” (Dei Verbum 15). Catholic teaching sees God educating his people in stages, with the fullness of revelation in Christ."
+          ]
+        },
+        {
+          "view": "protestant",
+          "h": "Protestant",
+          "body": [
+            "Protestants hold a range of views. Some, following Calvin, stress God's right to judge nations and take the commands at face value. Others stress progressive revelation. Others argue that the texts use the exaggerated war language common in the ancient Near East. All agree that these commands were for one people at one time and give no licence for violence today."
+          ]
+        },
+        {
+          "view": "jewish",
+          "h": "Jewish view",
+          "body": [
+            "Rabbinic tradition ruled that the nations named in the conquest laws can no longer be identified, so those commands cannot be carried out, and it surrounded the remaining laws of war with limits. Jewish commentators have also wrestled openly with the moral difficulty of these texts."
+          ]
+        },
+        {
+          "view": "critics",
+          "h": "Critics",
+          "body": [
+            "Critics find the answers uneven. “Describing is not approving” works for Judges, where no one claims God commanded the crimes, but not for Numbers 31, where the order comes through Moses. They also argue that “judgment” does not explain the killing of children. Many believers admit the force of this and say they hold the question open."
+          ]
+        }
+      ],
+      "sources": [
+        "Origen, Homilies on Joshua",
+        "Gregory of Nyssa, The Life of Moses",
+        "Second Vatican Council, Dei Verbum 15"
+      ]
+    },
+    {
+      "slug": "must-christians-agree-with-old-testament",
+      "title": "Do Christians have to agree with everything in the Old Testament?",
+      "asked": "But we use the Old Testament as Christians, no? We must agree with it, no?",
+      "short": "Christians accept the Old Testament as God's word. That does not mean every act recorded in it was good, or that every law in it applies to Christians.",
+      "sections": [
+        {
+          "view": "christian",
+          "h": "Three things “agreeing with it” does not mean",
+          "body": [
+            "The Church has always kept the Old Testament. In the second century a teacher named Marcion tried to throw it out, and the Church rejected him. The New Testament itself says the older scriptures are inspired and written for our instruction (2 Timothy 3:16, Romans 15:4). But accepting it works differently for different parts:",
+            [
+              "**Not everything in it is a command.** Much of it is history. When David takes another man's wife and has her husband killed, the Bible is not approving. It shows his sin, and the prophet Nathan condemns him for it. See 2 Samuel 11:1–27 and 2 Samuel 12:1–14.",
+              "**Not every law applies today.** The first Christians had to decide whether non-Jewish converts must keep the law of Moses, and the apostles ruled that they need not. See Acts 15:19–29. The New Testament also declares all foods clean (Mark 7:18–19, Acts 10:9–16) and says the sacrifices were fulfilled in Christ (Hebrews 10:1–10).",
+              "**Jesus has the final word.** He says he came to fulfil the law, not abolish it, and then deepens it. See Matthew 5:17 and Matthew 5:38–39. After the resurrection he explains the scriptures as pointing to himself. See Luke 24:27."
+            ],
+            {
+              "quote": "Matthew 5:17"
+            }
+          ]
+        },
+        {
+          "view": "christian",
+          "h": "The traditional three kinds of law",
+          "body": [
+            "Western Christianity, both Catholic (Thomas Aquinas) and Reformed Protestant (the Westminster Confession), has traditionally sorted Old Testament law into three kinds:",
+            [
+              "**Moral law**, such as the Ten Commandments (Exodus 20:1–17). Still binding.",
+              "**Ceremonial law**, such as sacrifices and food rules (Leviticus 11:1–8). Fulfilled in Christ and no longer practised.",
+              "**Civil law**, the national laws of ancient Israel, including punishments and rules of war. Given to that nation for that time."
+            ],
+            "This is why Christians eat pork and do not stone people, though the Old Testament has laws on both. The division is a tool of later theology and is not spelled out in the Bible itself, which some scholars count against it."
+          ]
+        },
+        {
+          "view": "orthodox",
+          "h": "Orthodox",
+          "body": [
+            "The Orthodox Church does not lean on the three-part scheme. It reads the Old Testament in the Septuagint tradition, within the Church's worship and with the Fathers as guides, as a book that is about Christ from beginning to end (Luke 24:44–45, John 5:39)."
+          ]
+        },
+        {
+          "view": "jewish",
+          "h": "Jewish view",
+          "body": [
+            "For Judaism these books are the Tanakh, not an “old” testament. The covenant and its commandments are permanent for the Jewish people (Deuteronomy 29:29), and they are read through the oral tradition recorded in the Talmud. Judaism therefore rejects the claim that any of the law has been fulfilled and set aside."
+          ]
+        },
+        {
+          "view": "muslim",
+          "h": "Muslim view",
+          "body": [
+            "The Quran teaches that God revealed the Torah to Moses and the Gospel to Jesus (Quran 5:44–46), and that the Quran now confirms and stands as judge over the earlier scriptures (Quran 5:48). Many Muslims hold that the text of the earlier books has been changed over time, so where the Bible and the Quran differ, they follow the Quran."
+          ]
+        },
+        {
+          "view": "critics",
+          "h": "Critics",
+          "body": [
+            "Critics say the sorting of laws into kept and not kept looks convenient, and ask why moral rules on some subjects are retained while others in the same chapters are dropped. Christians answer that the New Testament itself makes the distinction, at the council in Acts 15:1–29."
+          ]
+        }
+      ],
+      "sources": [
+        "Thomas Aquinas, Summa Theologiae I–II q.99",
+        "Westminster Confession of Faith, ch. 19"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,119 @@
+:root {
+  --bg: #faf7f1; --panel: #fffdf9; --ink: #23201b; --muted: #6d665b; --line: #e4dccd;
+  --accent: #8a3b1f; --accent-soft: #f3e4d8; --mark: #ffe9a8; --sel: #fff3d1;
+  --c-christian: #8a3b1f; --c-muslim: #1f6b4f; --c-jewish: #2a5298; --c-critics: #5c5c66; --c-overview: #7a6a3a;
+  --serif: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+  --sans: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #17150f; --panel: #1f1c15; --ink: #ece6d8; --muted: #a39a88; --line: #37322a;
+    --accent: #e39a72; --accent-soft: #33261d; --mark: #6b5514; --sel: #2e2816;
+    --c-christian: #e39a72; --c-muslim: #6fc7a3; --c-jewish: #8fb0ec; --c-critics: #b0b0bb; --c-overview: #cdb878;
+  }
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: var(--bg); color: var(--ink); font: 16px/1.6 var(--sans); }
+a { color: var(--accent); text-underline-offset: 2px; }
+.sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+
+.top { position: sticky; top: 0; z-index: 5; display: flex; flex-wrap: wrap; align-items: center; gap: 6px 18px;
+  padding: 10px 16px; background: var(--panel); border-bottom: 1px solid var(--line); }
+.brand { font: 600 1.15rem var(--serif); color: var(--ink); text-decoration: none; margin-right: auto; }
+.brand span { color: var(--accent); }
+.top nav { display: flex; gap: 14px; order: 3; width: 100%; }
+.top nav a { text-decoration: none; color: var(--muted); font-size: .95rem; padding: 2px 0; }
+.top nav a.on { color: var(--ink); box-shadow: 0 2px 0 var(--accent); }
+select, input, button { font: inherit; color: inherit; }
+select, input[type=search] { background: var(--bg); border: 1px solid var(--line); border-radius: 8px; padding: 7px 10px; }
+.trpick select { max-width: 46vw; }
+@media (min-width: 720px) { .top nav { order: 0; width: auto; } }
+
+main { max-width: 760px; margin: 0 auto; padding: 22px 16px 60px; outline: none; }
+h1 { font: 600 1.75rem/1.25 var(--serif); margin: .2em 0 .5em; text-wrap: balance; }
+h2 { font: 600 1.25rem/1.3 var(--serif); margin: 1.8em 0 .5em; }
+h3 { font: 600 1rem var(--sans); margin: 1.4em 0 .4em; }
+.lede { font-size: 1.1rem; color: var(--muted); }
+.muted { color: var(--muted); } .small { font-size: .875rem; }
+.loading { color: var(--muted); padding: 30px 0; }
+
+.searchbox { display: flex; gap: 8px; margin: 14px 0; }
+.searchbox input { flex: 1; min-width: 0; padding: 11px 13px; font-size: 1rem; }
+button, .btn { background: var(--accent); color: var(--panel); border: 0; border-radius: 8px; padding: 9px 14px;
+  cursor: pointer; text-decoration: none; display: inline-block; }
+button.ghost, .btn.ghost { background: transparent; color: var(--accent); border: 1px solid var(--line); }
+
+.cards { display: grid; gap: 10px; padding: 0; margin: 12px 0; list-style: none; }
+.cards a { display: block; padding: 14px 16px; background: var(--panel); border: 1px solid var(--line);
+  border-radius: 12px; text-decoration: none; color: var(--ink); }
+.cards a:hover { border-color: var(--accent); }
+.cards strong { font: 600 1.05rem/1.35 var(--serif); display: block; }
+.cards span { color: var(--muted); font-size: .92rem; display: block; margin-top: 3px; }
+@media (min-width: 720px) { .cards.two { grid-template-columns: 1fr 1fr; } }
+
+.chips { display: flex; flex-wrap: wrap; gap: 6px; margin: 10px 0 4px; }
+.chip { border: 1px solid var(--line); background: var(--panel); color: var(--ink); border-radius: 999px;
+  padding: 5px 12px; font-size: .88rem; cursor: pointer; }
+.chip[aria-pressed=true] { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+
+.asked { border-left: 3px solid var(--line); padding: 2px 0 2px 12px; color: var(--muted); font-style: italic; margin: 0 0 12px; }
+.status { font-size: .85rem; background: var(--accent-soft); border-radius: 8px; padding: 8px 12px; margin: 14px 0; }
+.sec { background: var(--panel); border: 1px solid var(--line); border-left: 4px solid var(--vc, var(--line));
+  border-radius: 10px; padding: 4px 16px 10px; margin: 14px 0; }
+.sec h2 { margin-top: .9em; font-size: 1.12rem; }
+.tag { font: 600 .72rem var(--sans); letter-spacing: .06em; text-transform: uppercase; color: var(--vc); display: block; margin-top: 12px; }
+.v-overview { --vc: var(--c-overview); } .v-critics { --vc: var(--c-critics); }
+.v-christian, .v-orthodox, .v-catholic, .v-protestant { --vc: var(--c-christian); }
+.v-muslim { --vc: var(--c-muslim); } .v-jewish { --vc: var(--c-jewish); }
+.sec li { margin: .45em 0; } .sec ul { padding-left: 1.15em; }
+blockquote.vq { margin: 14px 0; padding: 10px 14px; background: var(--bg); border-radius: 8px; font: 1.05rem/1.6 var(--serif); }
+blockquote.vq cite { display: block; font: .85rem var(--sans); font-style: normal; margin-top: 6px; }
+a.ref { white-space: nowrap; }
+
+.crumbs { font-size: .9rem; color: var(--muted); margin-bottom: 6px; }
+.crumbs a { color: var(--muted); }
+.booklist { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 6px; padding: 0; list-style: none; }
+.booklist a, .chlist a { display: block; padding: 8px 10px; background: var(--panel); border: 1px solid var(--line);
+  border-radius: 8px; text-decoration: none; color: var(--ink); font-size: .95rem; }
+.chlist { display: grid; grid-template-columns: repeat(auto-fill, minmax(48px, 1fr)); gap: 6px; padding: 0; list-style: none; }
+.chlist a { text-align: center; }
+.chapter { font: 1.14rem/1.8 var(--serif); }
+.chapter p { margin: 0; padding: 3px 6px; border-radius: 6px; cursor: pointer; }
+.chapter p.sel { background: var(--sel); }
+.chapter sup { font: 600 .68rem var(--sans); color: var(--accent); margin-right: 5px; }
+.cmp { font: .95rem/1.55 var(--sans); background: var(--panel); border: 1px solid var(--line); border-radius: 10px;
+  padding: 10px 14px; margin: 8px 0 12px; }
+.cmp dt { font-weight: 600; font-size: .8rem; color: var(--muted); margin-top: 8px; }
+.cmp dd { margin: 0; font-family: var(--serif); font-size: 1.02rem; }
+.pager { display: flex; justify-content: space-between; gap: 10px; margin-top: 26px; }
+
+.hit { padding: 10px 0; border-bottom: 1px solid var(--line); }
+.hit a { font-weight: 600; text-decoration: none; font-size: .92rem; }
+.hit p { margin: 2px 0 0; font-family: var(--serif); font-size: 1.05rem; }
+mark { background: var(--mark); color: inherit; border-radius: 3px; padding: 0 1px; }
+.foot { max-width: 760px; margin: 0 auto; padding: 18px 16px 40px; color: var(--muted); font-size: .85rem; border-top: 1px solid var(--line); }
+table { border-collapse: collapse; width: 100%; font-size: .92rem; }
+td, th { text-align: left; vertical-align: top; padding: 8px 10px 8px 0; border-bottom: 1px solid var(--line); }
+
+.chapter.rtl, .orig[dir=rtl] { text-align: right; }
+.chapter:lang(ar), .chapter:lang(he), .orig, .cmp dd:lang(ar), .cmp dd:lang(he) { font-family: "Amiri", "Scheherazade New", "SBL Hebrew", "Noto Naskh Arabic", "Times New Roman", serif; font-size: 1.3rem; line-height: 2; }
+.chapter.rtl sup { margin: 0 0 0 6px; }
+.toc { list-style: none; padding: 0; margin: 12px 0; }
+.toc li { padding: 9px 0; border-bottom: 1px solid var(--line); }
+.toc a { text-decoration: none; }
+.items h3 { font: 600 1.02rem var(--serif); margin: 1.6em 0 .3em; }
+.item { padding: 10px 8px; border-bottom: 1px solid var(--line); border-radius: 6px; }
+.item.sel { background: var(--sel); }
+.item p { margin: .3em 0; font: 1.06rem/1.7 var(--serif); }
+.item p.small { font: .85rem var(--sans); }
+.item .num { font: 600 .75rem var(--sans); color: var(--accent); }
+.top nav { overflow-x: auto; }
+
+.v-sunni, .v-shia { --vc: var(--c-muslim); }
+.top nav { gap: 16px; white-space: nowrap; scrollbar-width: none; }
+details.grp { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; margin: 8px 0; padding: 0 14px; }
+details.grp summary { cursor: pointer; padding: 12px 0; }
+details.grp .hits { padding-bottom: 12px; }
+details.grp button { margin-top: 10px; }
+details.plain summary { cursor: pointer; color: var(--accent); }

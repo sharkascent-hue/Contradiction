@@ -1,0 +1,854 @@
+{
+  "questions": [
+    {
+      "slug": "was-jesus-crucified",
+      "kind": "dispute",
+      "title": "Was Jesus crucified?",
+      "asked": "The Quran says Jesus was not killed or crucified. The New Testament says he was, and builds the faith on it.",
+      "short": "The four Gospels and Paul all report the crucifixion. One verse of the Quran, six centuries later, denies that Jesus was killed or crucified. Each side explains the other's text differently.",
+      "sections": [
+        {
+          "view": "overview",
+          "h": "The passages",
+          "body": [
+            "All four Gospels narrate the crucifixion (Mark 15:22–39, John 19:16–37). The earliest written witness is Paul, about AD 55, quoting a summary he had himself received (1 Corinthians 15:3–8).",
+            {
+              "quote": "1 Corinthians 15:3–4"
+            },
+            "The Quran speaks of it in one place:",
+            {
+              "quote": "Quran 4:157–158"
+            }
+          ]
+        },
+        {
+          "view": "christian",
+          "h": "The Christian position",
+          "body": [
+            "The cross is the centre of Christianity. Paul says that if Christ did not die and rise, the faith is empty (1 Corinthians 15:14–17). Jesus is reported to have foretold his death (Mark 8:31), his mother and a disciple stood at the cross (John 19:25–27), and the writer of John claims to be an eyewitness (John 19:35).",
+            "Christians read the death as foretold in Isaiah 53:4–6 and answer the Quran by pointing to its date: it was written about 600 years after the event, far from where it happened."
+          ]
+        },
+        {
+          "view": "muslim",
+          "h": "The Muslim position",
+          "body": [
+            "God did not let his messenger be killed in disgrace by his enemies, but raised him to himself (Quran 4:158).",
+            "The majority reading of “it was made to appear so to them” is that someone else was made to look like Jesus and was crucified in his place. The classical commentaries give several versions of this. Read the commentary on this verse in [[go/tafsir-jalalayn/4|Tafsir al-Jalalayn on surah 4]] and [[go/tafsir-ibn-kathir/4|Ibn Kathir on surah 4]].",
+            "A minority of Muslim scholars read the verse as denying only the boast that his enemies had defeated him, and note that God says to Jesus “I am taking you” in Quran 3:55, a word that elsewhere means death.",
+            "Muslims add that the Gospels were written decades later by followers who were not all present, and that the disciples had fled (Mark 14:50)."
+          ]
+        },
+        {
+          "view": "jewish",
+          "h": "The Jewish position",
+          "body": [
+            "Judaism has no doctrine about how Jesus died. The Talmud contains a passage saying that Yeshu was put to death on the eve of Passover ([[go/sef-sanhedrin/43a|Sanhedrin 43a]]). It assumes his execution; it does not deny it."
+          ]
+        },
+        {
+          "view": "critics",
+          "h": "Historians",
+          "body": [
+            "Historians of every background treat the crucifixion under Pontius Pilate as one of the most secure facts about Jesus. It is mentioned outside the New Testament by the Roman historian Tacitus (Annals 15.44) and by the Jewish historian Josephus (Antiquities 18.3.3, a passage Christians later expanded). Read [[lib/ccel-josephus-complete|Josephus]].",
+            "The idea that Jesus only seemed to suffer was held by some second-century groups, and Ignatius of Antioch argued against it about AD 110. Read his letters in [[lib/ccel-anf01|Ante-Nicene Fathers, volume 1]]. Some historians think the Quranic verse echoes such ideas; Muslims hold that it is revelation and needs no source."
+          ]
+        }
+      ],
+      "sources": [
+        "Tacitus, Annals 15.44",
+        "Josephus, Antiquities of the Jews 18.3.3",
+        "Babylonian Talmud, Sanhedrin 43a"
+      ]
+    },
+    {
+      "slug": "is-jesus-god",
+      "kind": "dispute",
+      "title": "Did Jesus claim to be God?",
+      "asked": "Muslims and Jews say Jesus never claimed to be God and that the Bible itself shows him praying to God. Christians say the New Testament teaches that he is God.",
+      "short": "Both sides quote the Gospels. Christians answer the “human” verses with the teaching that Jesus is both God and man.",
+      "sections": [
+        {
+          "view": "overview",
+          "h": "Passages quoted for his divinity",
+          "body": [
+            [
+              "The Word was God and became flesh. See John 1:1 and John 1:14.",
+              "“Before Abraham was, I am.” See John 8:58, with Exodus 3:14.",
+              "“I and the Father are one.” See John 10:30–33.",
+              "Thomas calls him “My Lord and my God.” See John 20:28.",
+              "He forgives sins, which only God can do. See Mark 2:5–7.",
+              "He is condemned for blasphemy. See Mark 14:61–64.",
+              "Paul: in him “all the fullness of the Godhead” lives. See Colossians 2:9 and Philippians 2:5–11."
+            ],
+            {
+              "quote": "John 20:28"
+            }
+          ]
+        },
+        {
+          "view": "overview",
+          "h": "Passages quoted against it",
+          "body": [
+            [
+              "“Why do you call me good? No one is good but one, that is, God.” See Mark 10:18.",
+              "“The Father is greater than I.” See John 14:28.",
+              "He calls the Father “the only true God”. See John 17:3.",
+              "He does not know the day or the hour. See Mark 13:32.",
+              "He prays, and says “my God and your God”. See Matthew 26:39 and John 20:17.",
+              "Peter calls him “a man approved by God”. See Acts 2:22."
+            ],
+            {
+              "quote": "John 17:3"
+            }
+          ]
+        },
+        {
+          "view": "christian",
+          "h": "The Christian answer",
+          "body": [
+            "Christ is one person with two natures, divine and human, as defined at Chalcedon in 451. As man he prays, grows and suffers. As God he is worshipped (Matthew 28:17) and shares the divine name (Matthew 28:19). The “lesser” sayings describe the Son who humbled himself to become man (Philippians 2:6–8). Read the [[lib/creed-chalcedonian-definition|Chalcedonian Definition]] and [[lib/creed-athanasian-creed|Athanasian Creed]]."
+          ]
+        },
+        {
+          "view": "muslim",
+          "h": "The Muslim answer",
+          "body": [
+            "Jesus was a servant and messenger of God. In the Quran his first words are “I am the servant of God” (Quran 19:30). He and his mother ate food like other people (Quran 5:75). He told Israel to worship “God, my Lord and your Lord” (Quran 5:72), and on the Last Day he will deny ever asking to be worshipped (Quran 5:116–117).",
+            {
+              "quote": "Quran 5:75"
+            },
+            "Muslims read “son of God” in the Bible as a title for someone close to God, as when Israel is called God's firstborn son (Exodus 4:22)."
+          ]
+        },
+        {
+          "view": "jewish",
+          "h": "The Jewish answer",
+          "body": [
+            "“God is not a man” (Numbers 23:19), and Israel saw no form at Sinai (Deuteronomy 4:15–16). The worship of a man as God is, for a Jew, a breach of the first commandments (Exodus 20:2–5)."
+          ]
+        },
+        {
+          "view": "critics",
+          "h": "Historians",
+          "body": [
+            "Scholars agree that the clearest statements come from John, the latest Gospel. They disagree about how early the belief is. Some hold that it grew over decades. Others point out that Paul's letters, the earliest Christian writings, already place Jesus beside God in worship (1 Corinthians 8:6, Philippians 2:9–11)."
+          ]
+        }
+      ],
+      "sources": []
+    },
+    {
+      "slug": "one-god-or-trinity",
+      "kind": "dispute",
+      "title": "One God or Trinity?",
+      "asked": "Jews and Muslims say the Trinity contradicts the oneness of God taught by Moses and repeated by Jesus. Christians say the Trinity is the one God.",
+      "short": "All three faiths confess one God. The dispute is whether the one God can exist as Father, Son and Holy Spirit.",
+      "sections": [
+        {
+          "view": "overview",
+          "h": "The passages",
+          "body": [
+            {
+              "quote": "Deuteronomy 6:4"
+            },
+            "Jesus quotes this as the first commandment (Mark 12:29). The New Testament also speaks of three together: Matthew 28:19, 2 Corinthians 13:14 and John 1:1.",
+            {
+              "quote": "Matthew 28:19"
+            },
+            {
+              "quote": "Quran 4:171"
+            }
+          ]
+        },
+        {
+          "view": "christian",
+          "h": "The Christian position",
+          "body": [
+            "God is one being in three persons. Christians do not confess three gods, and the creeds condemn that idea. The word “Trinity” is not in the Bible; it was first used around AD 200 to sum up what the Bible says about the Father, the Son and the Spirit. Read the [[lib/creed-athanasian-creed|Athanasian Creed]].",
+            "An honest note on the text: the clearest “Trinity verse” in the King James Version, 1 John 5:7, is missing from the early Greek manuscripts and from modern translations. Tap the verse at 1 John 5:7 to compare editions. The doctrine does not rest on it."
+          ]
+        },
+        {
+          "view": "muslim",
+          "h": "The Muslim position",
+          "body": [
+            "God is one in every sense (Quran 112:1–4). The Quran tells Christians “say not Three” (Quran 4:171) and calls it unbelief to say that God is “the third of three” (Quran 5:73).",
+            "Christians object that Quran 5:116 seems to describe a Trinity of God, Jesus and Mary, which no church teaches. Muslims reply that the verse does not define the Trinity; it condemns the worship of Jesus and of Mary, both of which existed. See [[q/mary-and-jesus-in-the-quran|Mary and Jesus in the Quran]]."
+          ]
+        },
+        {
+          "view": "jewish",
+          "h": "The Jewish position",
+          "body": [
+            "The Shema allows no division in God. “I am the LORD, and there is none else” (Isaiah 45:5).",
+            "Christians have pointed to the plural in “Let us make man” (Genesis 1:26). Rashi explains that God is speaking to the angels, to teach humility. Read [[go/sef-rashi-on-genesis/1|Rashi on Genesis 1]]."
+          ]
+        },
+        {
+          "view": "critics",
+          "h": "Historians",
+          "body": [
+            "The doctrine was given its fixed wording at the councils of Nicaea (325) and Constantinople (381), after long argument. Christians see this as the Church making explicit what it had always believed. Critics see a development beyond what the first Christians taught. Read the debates in [[lib/ccel-npnf214|The Seven Ecumenical Councils]]."
+          ]
+        }
+      ],
+      "sources": []
+    },
+    {
+      "slug": "has-the-bible-been-changed",
+      "kind": "dispute",
+      "title": "Has the Bible been changed?",
+      "asked": "Most Muslims hold that the Torah and the Gospel were altered, so that where the Bible differs from the Quran the Bible is wrong. Jews and Christians say the text has been faithfully handed down.",
+      "short": "The Quran both accuses some of the People of the Book of distorting scripture and tells them to judge by what they have. Muslims, Christians and Jews read those verses differently, and the manuscripts can be checked.",
+      "sections": [
+        {
+          "view": "overview",
+          "h": "What the Quran says",
+          "body": [
+            "Verses cited for alteration: Quran 2:75, Quran 2:79, Quran 3:78 and Quran 5:13.",
+            {
+              "quote": "Quran 2:79"
+            },
+            "Verses cited for the soundness of the earlier books: Quran 5:43, Quran 5:47, Quran 5:68 and Quran 10:94.",
+            {
+              "quote": "Quran 5:47"
+            }
+          ]
+        },
+        {
+          "view": "muslim",
+          "h": "The Muslim position",
+          "body": [
+            "Muslim scholars have held two views. Some early commentators understood the distortion as twisting the meaning or hiding passages, with the text itself left in place. Others, most forcefully Ibn Hazm in the eleventh century, argued that the text itself was changed. The second view is the common one today.",
+            "Muslims also say that the Gospel given to Jesus was a revelation from God, and that the four Gospels are later accounts written by others about him. So the verses that praise the Gospel are not about Matthew, Mark, Luke and John as they stand."
+          ]
+        },
+        {
+          "view": "christian",
+          "h": "The Christian position",
+          "body": [
+            "The Bible that existed in Muhammad's lifetime is the Bible we have. Complete Greek Bibles survive from the fourth century, and papyrus copies of the Gospels from the second and third, long before Islam. The Quran tells the Christians of its own day to judge by the Gospel (Quran 5:47), which makes no sense if it was already corrupt.",
+            "Christians admit the places where manuscripts differ. The main ones are marked in modern Bibles: the ending of Mark (Mark 16:9–20), the woman caught in adultery (John 8:1–11) and 1 John 5:7. None changes a doctrine."
+          ]
+        },
+        {
+          "view": "jewish",
+          "h": "The Jewish position",
+          "body": [
+            "Torah scrolls are copied by hand under strict rules, and a scroll with an error may not be used. The eighth of Maimonides' principles is that the Torah we have is the one given to Moses. The Dead Sea Scrolls, a thousand years older than the medieval copies, show that the text was handed down with great care."
+          ]
+        },
+        {
+          "view": "critics",
+          "h": "Scholars",
+          "body": [
+            "Textual scholars find many thousands of small differences among biblical manuscripts and a text that is nonetheless stable in substance as far back as the manuscripts reach. They find no trace of a different, “Islamic” Torah or Gospel.",
+            "They also raise questions that neither side's traditional view covers: who wrote the books of Moses, and how the Gospels took shape in the decades after Jesus.",
+            "The Quran has a textual history too. The caliph Uthman had a standard copy made and other copies burned (Sahih al-Bukhari 4987), and the Arabic is recited in several accepted readings. Compare them under [[books/WARSH|the Arabic readings]]."
+          ]
+        }
+      ],
+      "sources": [
+        "Ibn Hazm, al-Fisal (not stored)"
+      ]
+    },
+    {
+      "slug": "is-muhammad-foretold-in-the-bible",
+      "kind": "dispute",
+      "title": "Is Muhammad foretold in the Bible?",
+      "asked": "The Quran says Muhammad is described in the Torah and the Gospel. Jews and Christians say the passages Muslims point to are about someone else.",
+      "short": "Muslims cite a handful of passages, above all Deuteronomy 18 and the “Comforter” of John 14 to 16. Here is each one with the replies.",
+      "sections": [
+        {
+          "view": "overview",
+          "h": "The claim",
+          "body": [
+            {
+              "quote": "Quran 7:157"
+            },
+            "Jesus is also said to have announced a messenger to come after him “whose name is Ahmad” (Quran 61:6)."
+          ]
+        },
+        {
+          "view": "muslim",
+          "h": "The passages Muslims cite",
+          "body": [
+            [
+              "**A prophet like Moses.** God will raise up a prophet “from among their brethren, like you”. Muslims argue that the brethren of the Israelites are the Ishmaelites, and that Muhammad, a lawgiver and ruler, resembles Moses more than Jesus does. See Deuteronomy 18:15–19.",
+              "**The Comforter.** Jesus promises another helper who will come after him and “guide you into all truth”, speaking only what he hears. See John 14:16 and John 16:7–14.",
+              "**The servant of Isaiah 42.** A servant who brings law to the nations, with Kedar (a son of Ishmael) rejoicing. See Isaiah 42:1–13.",
+              "**Mount Paran.** God “shined forth from mount Paran”, the home of Ishmael. See Deuteronomy 33:2 and Genesis 21:21.",
+              "**“That prophet”.** John the Baptist is asked whether he is the Christ, Elijah or “the prophet”, three different figures. See John 1:19–21."
+            ]
+          ]
+        },
+        {
+          "view": "christian",
+          "h": "The Christian reply",
+          "body": [
+            [
+              "“Brethren” in Deuteronomy means fellow Israelites, as in the same book's law for the king (Deuteronomy 17:15). The apostles apply the prophecy to Jesus (Acts 3:22–26).",
+              "The Comforter is the Holy Spirit, who cannot be seen, lives in the disciples, and was promised to them “not many days from now”. See John 14:17, Acts 1:4–5 and Acts 2:1–4.",
+              "Matthew applies Isaiah 42 to Jesus (Matthew 12:15–21)."
+            ]
+          ]
+        },
+        {
+          "view": "jewish",
+          "h": "The Jewish reply",
+          "body": [
+            "Deuteronomy 18 promises a line of prophets within Israel, beginning with Joshua. Any prophet who changes the Torah is to be rejected (Deuteronomy 13:1–5). The servant of Isaiah is Israel, named as such in Isaiah 41:8 and Isaiah 49:3."
+          ]
+        },
+        {
+          "view": "critics",
+          "h": "Scholars",
+          "body": [
+            "Some Muslim writers have proposed that the Greek word in John was originally “periklytos” (praised one, like Ahmad) and not “parakletos” (helper). No manuscript of John has that reading. The use of the Comforter passages for Muhammad is very old: Ibn Ishaq's eighth-century biography already quotes them."
+          ]
+        }
+      ],
+      "sources": [
+        "Ibn Ishaq, Sirat Rasul Allah (not stored)"
+      ]
+    },
+    {
+      "slug": "is-jesus-the-messiah-of-the-prophets",
+      "kind": "dispute",
+      "title": "Is Jesus the Messiah foretold by the prophets?",
+      "asked": "Christians say Jesus fulfilled the prophecies of the Hebrew Bible. Jews say he did not do what the Messiah must do, and that the proof-texts are misread.",
+      "short": "This is the oldest argument between Judaism and Christianity. It turns on a few passages and on what the Messiah is expected to accomplish.",
+      "sections": [
+        {
+          "view": "overview",
+          "h": "The passages in dispute",
+          "body": [
+            [
+              "**The virgin, or the young woman.** Matthew quotes Isaiah from the Greek, which has “virgin”. The Hebrew word is “almah”. Compare the editions at Isaiah 7:14 and see Matthew 1:22–23.",
+              "**The suffering servant.** “He was wounded for our transgressions.” See Isaiah 53:1–12.",
+              "**Born in Bethlehem.** See Micah 5:2.",
+              "**The king on a donkey.** See Zechariah 9:9.",
+              "**“They pierced my hands and my feet”**, or in the Hebrew text “like a lion”. See Psalm 22:16.",
+              "**The new covenant.** See Jeremiah 31:31–34.",
+              "**What the Messiah will do.** Universal peace, the ingathering of Israel, the Temple restored. See Isaiah 2:2–4, Isaiah 11:1–9 and Ezekiel 37:21–28."
+            ],
+            {
+              "quote": "Isaiah 53:5"
+            }
+          ]
+        },
+        {
+          "view": "christian",
+          "h": "The Christian position",
+          "body": [
+            "The Messiah comes twice: first to suffer and die for sins, then in glory to judge and reign. Jesus himself taught that the scriptures required the Messiah to suffer first (Luke 24:25–27, Luke 24:44–47).",
+            "The servant of Isaiah 53 is innocent and dies for the sins of others, which Christians say cannot describe the nation of Israel. The first Christians, themselves Jews, read it of Jesus (Acts 8:30–35)."
+          ]
+        },
+        {
+          "view": "jewish",
+          "h": "The Jewish position",
+          "body": [
+            [
+              "The Messiah's tasks are plain and public, and they have not happened. The Hebrew Bible knows nothing of a second coming.",
+              "“Almah” means a young woman. The child is a sign for King Ahaz in his own time (Isaiah 7:15–16).",
+              "Isaiah names the servant: “You, Israel, are my servant” (Isaiah 41:8, Isaiah 49:3). Chapter 53 is the nations' astonishment at Israel's suffering.",
+              "The Messiah must descend from David through his father. A man with no human father cannot.",
+              "A teacher who sets aside the commandments fails the test of Deuteronomy 13:1–5."
+            ],
+            "Read the classical commentaries under [[lib/c/Commentaries on the Hebrew Bible|Commentaries on the Hebrew Bible]]."
+          ]
+        },
+        {
+          "view": "muslim",
+          "h": "The Muslim position",
+          "body": [
+            "The Quran calls Jesus the Messiah (Quran 3:45) and affirms the virgin birth. It uses the title for a prophet sent to Israel, without the meanings Christians attach to it: he is not divine and did not die for sins."
+          ]
+        },
+        {
+          "view": "critics",
+          "h": "Scholars",
+          "body": [
+            "Most scholars agree that “virgin” in Matthew comes from the Greek translation, and that Isaiah 7 first addressed the crisis of its own day. Christians reply that prophecy can have a near and a further fulfilment. On Isaiah 53, scholars note that both an individual and a collective reading are ancient."
+          ]
+        }
+      ],
+      "sources": []
+    },
+    {
+      "slug": "isaac-or-ishmael",
+      "kind": "dispute",
+      "title": "Which son did Abraham nearly sacrifice: Isaac or Ishmael?",
+      "asked": "Genesis says God told Abraham to offer Isaac. Most Muslims today say the son was Ishmael.",
+      "short": "Genesis names Isaac. The Quran tells the story without naming the son, and Muslim scholars have argued for both.",
+      "sections": [
+        {
+          "view": "overview",
+          "h": "The passages",
+          "body": [
+            {
+              "quote": "Genesis 22:2"
+            },
+            "The Quran's account is in Quran 37:99–113. The son is not named. The announcement of Isaac's birth follows the story, in Quran 37:112.",
+            {
+              "quote": "Quran 37:102"
+            }
+          ]
+        },
+        {
+          "view": "muslim",
+          "h": "The Muslim position",
+          "body": [
+            "Most Muslims today hold that it was Ishmael, Abraham's firstborn. Their reasons: the good news of Isaac comes after the sacrifice story, so the story must be about the other son; and Genesis says “your only son”, which was true only of Ishmael before Isaac was born. On this view the name Isaac was written into Genesis later.",
+            "Early Muslim scholars were divided, and reports for both sons are preserved in the classical commentaries. Read [[go/tafsir-ibn-kathir/37|Ibn Kathir on surah 37]]. The sacrifice is commemorated every year at Eid al-Adha."
+          ]
+        },
+        {
+          "view": "jewish",
+          "h": "The Jewish position",
+          "body": [
+            "The binding of Isaac (the Akedah) is one of the central stories of Judaism and is read at the New Year. Isaac is called the “only son” because he is the son of the promise, after Ishmael has been sent away (Genesis 21:12–14). Read [[go/sef-rashi-on-genesis/22|Rashi on Genesis 22]]."
+          ]
+        },
+        {
+          "view": "christian",
+          "h": "The Christian position",
+          "body": [
+            "It was Isaac. The New Testament says so twice (Hebrews 11:17–19, James 2:21) and sees in the story a picture of God giving his own Son (Romans 8:32)."
+          ]
+        },
+        {
+          "view": "critics",
+          "h": "Scholars",
+          "body": [
+            "Every known copy of Genesis, including the Greek translation made before the time of Jesus, names Isaac. The Quran, about a thousand years later than Genesis in its present form, leaves the son unnamed."
+          ]
+        }
+      ],
+      "sources": []
+    },
+    {
+      "slug": "original-sin",
+      "kind": "dispute",
+      "title": "Do we inherit Adam's sin?",
+      "asked": "Western Christianity teaches original sin. Judaism and Islam say each person answers only for his own sins, and the Hebrew Bible seems to agree.",
+      "short": "Paul says that through one man sin and death came to all. Ezekiel and the Quran say that no one bears another's sin. The Christian traditions themselves explain the inheritance in different ways.",
+      "sections": [
+        {
+          "view": "overview",
+          "h": "The passages",
+          "body": [
+            {
+              "quote": "Romans 5:12"
+            },
+            "Also cited for it: Psalm 51:5, Romans 5:18–19 and 1 Corinthians 15:21–22.",
+            {
+              "quote": "Ezekiel 18:20"
+            },
+            "Also cited against it: Deuteronomy 24:16 and Quran 6:164."
+          ]
+        },
+        {
+          "view": "catholic",
+          "h": "Catholic",
+          "body": [
+            "Adam lost the holiness in which he was created, and all his descendants are born without it. This is a state, not a personal fault. Baptism restores grace, though an inclination to sin remains. Ezekiel speaks of personal sins, which is a different matter. Read [[go/trent-canons-and-decrees/Session V › Original Sin|Trent on original sin]]."
+          ]
+        },
+        {
+          "view": "protestant",
+          "h": "Protestant",
+          "body": [
+            "The Reformers taught that the fall corrupted the whole of human nature, mind and will included, so that no one seeks God unless grace comes first (Romans 3:10–12, Ephesians 2:1–5). Read the [[lib/creed-westminster-confession-of-faith|Westminster Confession]], chapter 6."
+          ]
+        },
+        {
+          "view": "orthodox",
+          "h": "Orthodox",
+          "body": [
+            "The East speaks of ancestral sin. We inherit mortality and a tendency to sin, and are born into a broken world. We do not inherit Adam's guilt."
+          ]
+        },
+        {
+          "view": "jewish",
+          "h": "The Jewish position",
+          "body": [
+            "There is no inherited guilt. Adam's sin brought death, but each person is born innocent and able to master sin: “you may rule over it” (Genesis 4:7). Repentance is always open (Ezekiel 18:21–23)."
+          ]
+        },
+        {
+          "view": "muslim",
+          "h": "The Muslim position",
+          "body": [
+            "Adam and Eve sinned, asked forgiveness and were forgiven (Quran 7:23, Quran 2:37). Nothing was passed on. Every child is born pure (Sahih al-Bukhari 1359). Since there is no inherited debt, no one needs to die for the sins of others."
+          ]
+        },
+        {
+          "view": "critics",
+          "h": "Scholars",
+          "body": [
+            "The Western doctrine owes much to Augustine, who read Romans 5:12 in a Latin translation that said “in whom all sinned”. The Greek says “because all sinned”. This is one reason the Greek-speaking East developed the doctrine differently. Read Augustine's anti-Pelagian works in [[lib/ccel-npnf105|Nicene and Post-Nicene Fathers 1.5]]."
+          ]
+        }
+      ],
+      "sources": []
+    },
+    {
+      "slug": "is-the-law-of-moses-still-binding",
+      "kind": "dispute",
+      "title": "Is the Law of Moses still binding?",
+      "asked": "Jews say the Torah is an eternal covenant. Jesus said he did not come to abolish the law. Yet Christians do not keep the Sabbath, the food laws or circumcision, and Islam says a new law has come.",
+      "short": "Judaism says the Torah stands for ever. Christianity says it was fulfilled in Christ. Islam says God gave each community its own law and the last one replaces the others.",
+      "sections": [
+        {
+          "view": "overview",
+          "h": "The passages",
+          "body": [
+            {
+              "quote": "Matthew 5:17–18"
+            },
+            "On the Torah's permanence: Deuteronomy 4:2, Exodus 31:16–17 and Leviticus 16:34.",
+            "On its fulfilment: Acts 15:19–29, Galatians 3:23–25, Romans 10:4 and Hebrews 8:13.",
+            {
+              "quote": "Quran 5:48"
+            }
+          ]
+        },
+        {
+          "view": "jewish",
+          "h": "The Jewish position",
+          "body": [
+            "The commandments are called everlasting again and again, and nothing may be added or taken away (Deuteronomy 4:2). The “new covenant” of Jeremiah is the same Torah written on the heart, not a different law (Jeremiah 31:31–34). The Torah binds Jews only; other nations have the seven laws of Noah."
+          ]
+        },
+        {
+          "view": "christian",
+          "h": "The Christian position",
+          "body": [
+            "Christ fulfilled the law, and the apostles ruled that non-Jewish believers need not keep the law of Moses (Acts 15:19–29). The food laws and festivals were “a shadow of things to come” (Colossians 2:16–17, Mark 7:18–19). The moral law remains and is summed up in love (Romans 13:8–10). See [[q/must-christians-agree-with-old-testament|Do Christians have to agree with everything in the Old Testament?]]"
+          ]
+        },
+        {
+          "view": "muslim",
+          "h": "The Muslim position",
+          "body": [
+            "God gave each community a law and a way (Quran 5:48). Jesus confirmed the Torah and made lawful some of what had been forbidden (Quran 3:50). The law brought by Muhammad is final. Many Muslims add that it was Paul, and not Jesus, who set the law aside, and point to Matthew 5:17–19."
+          ]
+        },
+        {
+          "view": "critics",
+          "h": "Scholars",
+          "body": [
+            "Scholars widely note the tension between Matthew's Jesus, who upholds every stroke of the law, and Paul's letters. Some resolve it by reading Paul as speaking only about non-Jews, who were never under the Torah."
+          ]
+        }
+      ],
+      "sources": []
+    },
+    {
+      "slug": "faith-or-works",
+      "kind": "dispute",
+      "title": "Are we saved by faith alone, or by faith and works?",
+      "asked": "Paul says a person is justified by faith apart from works. James says a person is justified by works and not by faith only. This is the main dispute between Protestants and Catholics.",
+      "short": "Paul and James seem to say opposite things in almost the same words. Each church has its way of reading them together.",
+      "sections": [
+        {
+          "view": "overview",
+          "h": "The passages",
+          "body": [
+            {
+              "quote": "Romans 3:28"
+            },
+            {
+              "quote": "James 2:24"
+            },
+            "Also: Ephesians 2:8–10, Galatians 2:16, James 2:14–26, Matthew 7:21 and Matthew 25:31–46."
+          ]
+        },
+        {
+          "view": "protestant",
+          "h": "Protestant",
+          "body": [
+            "God counts the sinner righteous because of Christ, and this is received by faith alone. Paul and James use “justify” differently: Paul means how a sinner is accepted by God; James means how faith is shown to be real. Faith without works is dead, which means it was never true faith. Read the [[lib/creed-westminster-confession-of-faith|Westminster Confession]], chapter 11, and Luther's [[lib/ccel-luther-first-prin|Freedom of a Christian]].",
+            "Luther called James “an epistle of straw” beside Paul, though he kept it in his Bible."
+          ]
+        },
+        {
+          "view": "catholic",
+          "h": "Catholic",
+          "body": [
+            "The first grace of justification cannot be earned. After it, a person in grace grows in righteousness through good works, which are themselves God's gift. The Council of Trent rejected “faith alone” if it means that nothing else is required. Read [[go/trent-canons-and-decrees/Session VI › Justification|Trent's decree and canons on justification]].",
+            "In 1999 the Catholic Church and the Lutheran World Federation signed a joint declaration saying they now share a common understanding of the basic truths of justification."
+          ]
+        },
+        {
+          "view": "orthodox",
+          "h": "Orthodox",
+          "body": [
+            "The East did not have this argument and sees it as framed in Western, legal terms. Salvation is healing and union with God. Faith and works are two sides of one life in Christ (Philippians 2:12–13)."
+          ]
+        },
+        {
+          "view": "muslim",
+          "h": "The Muslim position",
+          "body": [
+            "The Quran constantly joins “those who believe and do righteous deeds” (Quran 2:25, Quran 103:1–3). Deeds are weighed, yet no one enters Paradise except by God's mercy (Sahih al-Bukhari 5673)."
+          ]
+        },
+        {
+          "view": "jewish",
+          "h": "The Jewish position",
+          "body": [
+            "Judaism centres on doing God's commandments. “What does the LORD require of you, but to do justly, to love mercy, and to walk humbly with your God?” (Micah 6:8). The verse Paul quotes, Habakkuk 2:4, is read as “the righteous shall live by his faithfulness”."
+          ]
+        }
+      ],
+      "sources": [
+        "Joint Declaration on the Doctrine of Justification, 1999 (not stored)"
+      ]
+    },
+    {
+      "slug": "peter-and-the-papacy",
+      "kind": "dispute",
+      "title": "Did Jesus make Peter the head of the Church?",
+      "asked": "Catholics say Christ gave Peter, and the popes after him, authority over the whole Church. Orthodox and Protestants deny it.",
+      "short": "Everything turns on “You are Peter, and on this rock I will build my church”, and on whether what was given to Peter passed to the bishops of Rome.",
+      "sections": [
+        {
+          "view": "overview",
+          "h": "The passages",
+          "body": [
+            {
+              "quote": "Matthew 16:18–19"
+            },
+            "Also cited for Peter's office: John 21:15–17 and Luke 22:31–32.",
+            "Cited against a supreme office: Galatians 2:11–14 (Paul rebukes Peter), Matthew 18:18 (all the apostles bind and loose), Acts 15:13–21 (James sums up the council) and 1 Peter 5:1 (Peter calls himself a fellow elder)."
+          ]
+        },
+        {
+          "view": "catholic",
+          "h": "Catholic",
+          "body": [
+            "The rock is Peter himself; in Aramaic the name and the word are the same. The keys recall the chief steward of the king's house, an office that is handed on (Isaiah 22:20–22). Peter died in Rome, and its bishops succeed him. Irenaeus, about AD 180, says every church must agree with Rome. Read him in [[lib/ccel-anf01|Ante-Nicene Fathers 1]] (Against Heresies, book 3, chapter 3). The definition of 1870 is in the [[go/ccel-creeds2/CONCILII VATICANI|decrees of the First Vatican Council]]."
+          ]
+        },
+        {
+          "view": "orthodox",
+          "h": "Orthodox",
+          "body": [
+            "Peter was first among the apostles, and Rome was first among the churches in honour. That is a primacy of honour, not of rule over other bishops, and it depended on Rome keeping the faith. The Orthodox reject papal supremacy and infallibility as later inventions. This and the Filioque led to the break of 1054."
+          ]
+        },
+        {
+          "view": "protestant",
+          "h": "Protestant",
+          "body": [
+            "The rock is the faith Peter confessed, or Christ himself (1 Corinthians 3:11, Ephesians 2:20). Nothing in the text speaks of successors. Peter erred and was corrected (Galatians 2:11–14). Read [[lib/ccel-institutes|Calvin's Institutes]], book 4."
+          ]
+        },
+        {
+          "view": "critics",
+          "h": "Historians",
+          "body": [
+            "Most historians think the church at Rome was led by a group of elders at first, and that a single bishop emerged there during the second century. The letter known as 1 Clement, written from Rome about AD 96, is in [[lib/ccel-anf01|Ante-Nicene Fathers 1]]."
+          ]
+        }
+      ],
+      "sources": []
+    },
+    {
+      "slug": "scripture-alone-or-tradition",
+      "kind": "dispute",
+      "title": "Scripture alone, or Scripture and tradition?",
+      "asked": "Protestants say the Bible alone is the final authority. Catholics and Orthodox say the Bible must be read with the tradition of the Church that produced it.",
+      "short": "The same argument appears in all three faiths: is the written text enough, or does it need an authorised tradition beside it?",
+      "sections": [
+        {
+          "view": "overview",
+          "h": "The passages",
+          "body": [
+            {
+              "quote": "2 Timothy 3:16–17"
+            },
+            {
+              "quote": "2 Thessalonians 2:15"
+            },
+            "Also: Acts 17:11 and Mark 7:8–13 on one side; 1 Corinthians 11:2, 1 Timothy 3:15 and John 21:25 on the other."
+          ]
+        },
+        {
+          "view": "protestant",
+          "h": "Protestant",
+          "body": [
+            "Scripture is God-breathed and makes the believer “thoroughly furnished”. Traditions must be tested by it, as the Bereans tested Paul (Acts 17:11) and as Jesus condemned traditions that cancel God's word (Mark 7:8–13). Tradition is valued as a guide, not as a second source."
+          ]
+        },
+        {
+          "view": "catholic",
+          "h": "Catholic",
+          "body": [
+            "The apostles taught by word of mouth as well as by letter (2 Thessalonians 2:15), and the Church is “the pillar and ground of the truth” (1 Timothy 3:15). The Bible nowhere lists its own books; the Church did that. So Scripture, Tradition and the teaching office stand together. Read [[go/trent-canons-and-decrees/Session IV › Canonical Scriptures|Trent on Scripture and tradition]]."
+          ]
+        },
+        {
+          "view": "orthodox",
+          "h": "Orthodox",
+          "body": [
+            "Scripture is the heart of Tradition, not a separate thing set against it. It is read rightly inside the worshipping Church, with the Fathers and councils."
+          ]
+        },
+        {
+          "view": "jewish",
+          "h": "The same question in Judaism",
+          "body": [
+            "Rabbinic Judaism holds that an oral Torah was given with the written one and is recorded in the [[lib/c/Mishnah|Mishnah]] and Talmud. The Karaites rejected the oral law and kept to the written text alone."
+          ]
+        },
+        {
+          "view": "muslim",
+          "h": "The same question in Islam",
+          "body": [
+            "Nearly all Muslims hold that the Quran must be read with the Prophet's example recorded in hadith (Quran 59:7). A small modern movement accepts the Quran alone. Sunni and Shia then differ on which hadith are reliable."
+          ]
+        },
+        {
+          "view": "critics",
+          "h": "Historians",
+          "body": [
+            "The first surviving list of exactly the 27 New Testament books is in a letter of Athanasius from the year 367. Read it in [[lib/ccel-npnf204|Athanasius' works]] (Festal Letter 39)."
+          ]
+        }
+      ],
+      "sources": []
+    },
+    {
+      "slug": "who-should-have-succeeded-muhammad",
+      "kind": "dispute",
+      "title": "Who should have succeeded Muhammad?",
+      "asked": "Sunnis say the Prophet left the choice of leader to the community, which chose Abu Bakr. Shia say he appointed Ali by God's command.",
+      "short": "This is the question that divides Sunni and Shia Islam. Both sides appeal to sayings found in the other's books.",
+      "sections": [
+        {
+          "view": "overview",
+          "h": "The texts both sides discuss",
+          "body": [
+            [
+              "**Ghadir Khumm.** “For whomever I am his mawla, Ali is his mawla.” Recorded in Sunni collections: Jami' at-Tirmidhi 3713.",
+              "**The two weighty things.** The Prophet leaves behind the Book of God and his family: Sahih Muslim 2408.",
+              "**Aaron and Moses.** “You are to me as Aaron was to Moses, except that there is no prophet after me”: Sahih al-Bukhari 4416.",
+              "**The pen and paper.** In his last illness the Prophet asks for writing materials so that they will not go astray, and is not given them: Sahih al-Bukhari 114.",
+              "**Abu Bakr leads the prayer** in the Prophet's last illness: Sahih al-Bukhari 678.",
+              "**The Quran.** Quran 5:55, Quran 33:33 and Quran 5:67 are cited by Shia; Quran 42:38 (consultation) and Quran 9:40 (Abu Bakr in the cave) by Sunnis."
+            ]
+          ]
+        },
+        {
+          "view": "sunni",
+          "h": "The Sunni position",
+          "body": [
+            "The Prophet named no successor. The Muslims met and gave their allegiance to Abu Bakr, his closest companion, whom he had put forward to lead the prayer. Believers decide their affairs by consultation (Quran 42:38).",
+            "“Mawla” at Ghadir Khumm means a friend and one to be loved; the saying defends Ali against critics and does not appoint a ruler. Ali himself later gave allegiance to the first three caliphs and served as the fourth. The Prophet's “household” in Quran 33:33 includes his wives, who are addressed in the verses around it."
+          ]
+        },
+        {
+          "view": "shia",
+          "h": "The Shia position",
+          "body": [
+            "Leadership of the community is a divine office and cannot be left to chance. At Ghadir Khumm, before a great crowd returning from the last pilgrimage, the Prophet took Ali's hand and declared him mawla, meaning master, right after asking “Am I not closer to you than your own selves?” Shia hold that Quran 5:67 commanded this announcement.",
+            "While Ali was burying the Prophet, a small group settled the succession without him. Ali kept the peace for the sake of Islam but did not give up his right. Read his own words in the third sermon of [[lib/shia-nahj-al-balagha-radi|Nahj al-Balagha]] and the Book of Divine Authority in [[lib/shia-al-kafi-volume-1-kulayni|al-Kafi]]."
+          ]
+        },
+        {
+          "view": "critics",
+          "h": "Historians",
+          "body": [
+            "Historians accept that the Ghadir Khumm saying is early and that the succession was disputed from the first day. They differ on what the Prophet intended. The split hardened through later events: the civil war of 656 to 661 and the killing of Husayn at Karbala in 680. The developed doctrine of twelve Imams took shape over the following two centuries."
+          ]
+        }
+      ],
+      "sources": []
+    },
+    {
+      "slug": "mary-and-jesus-in-the-quran",
+      "kind": "dispute",
+      "title": "Does the Quran get Mary and Jesus wrong?",
+      "asked": "Christian critics say the Quran confuses Mary with Miriam the sister of Aaron, misdescribes the Trinity, and takes stories about the child Jesus from late legends. Muslims answer each point.",
+      "short": "Three objections Christians often raise against the Quran's account of Mary and Jesus, with the Muslim replies.",
+      "sections": [
+        {
+          "view": "overview",
+          "h": "1. “Sister of Aaron”",
+          "body": [
+            {
+              "quote": "Quran 19:28"
+            },
+            "Mary the mother of Jesus is addressed as “sister of Aaron”, and her father is called Imran (Quran 66:12). In the Bible, Miriam the sister of Aaron and Moses is the daughter of Amram and lived more than a thousand years earlier (Exodus 15:20, Numbers 26:59)."
+          ]
+        },
+        {
+          "view": "critics",
+          "h": "The objection",
+          "body": [
+            "Critics say the two women have been confused, since both are called Maryam in Arabic."
+          ]
+        },
+        {
+          "view": "muslim",
+          "h": "The Muslim reply",
+          "body": [
+            "The objection was put to Muhammad's companions by the Christians of Najran. He answered that people used to name their children after the prophets and the righteous who came before them (Sahih Muslim 2135). “Sister of Aaron” is taken as a title of honour or of descent, in the way Jesus is called “son of David”. Luke says that Mary's relative Elizabeth was “of the daughters of Aaron” (Luke 1:5, Luke 1:36)."
+          ]
+        },
+        {
+          "view": "overview",
+          "h": "2. The Trinity and Mary",
+          "body": [
+            {
+              "quote": "Quran 5:116"
+            }
+          ]
+        },
+        {
+          "view": "christian",
+          "h": "The objection",
+          "body": [
+            "No church has ever taught that Mary is a person of the Trinity. Christians say the Quran is answering a doctrine they do not hold."
+          ]
+        },
+        {
+          "view": "muslim",
+          "h": "The Muslim reply",
+          "body": [
+            "The verse does not say what the Trinity is. It rejects taking Jesus and his mother as objects of worship, and prayer and devotion offered to Mary were, and are, common among Christians. The Trinity itself is addressed elsewhere (Quran 4:171, Quran 5:73)."
+          ]
+        },
+        {
+          "view": "overview",
+          "h": "3. The child Jesus",
+          "body": [
+            "The Quran says Jesus spoke as a baby in the cradle (Quran 19:29–33) and made birds of clay that came to life (Quran 3:49). Neither is in the four Gospels. Both appear in Christian writings outside the Bible: the clay birds in the Infancy Gospel of Thomas, and the speaking infant in the Arabic Gospel of the Infancy. Read them in [[lib/ccel-anf08|Ante-Nicene Fathers 8]]."
+          ]
+        },
+        {
+          "view": "christian",
+          "h": "The objection",
+          "body": [
+            "The churches rejected these books as late legends. Critics conclude that the Quran reflects stories that were circulating among Christians in Arabia."
+          ]
+        },
+        {
+          "view": "muslim",
+          "h": "The Muslim reply",
+          "body": [
+            "For Muslims the Quran is revealed by God and does not depend on any earlier book. Where a rejected writing agrees with it, that writing has kept a true memory that the four Gospels left out."
+          ]
+        }
+      ],
+      "sources": [
+        "Infancy Gospel of Thomas; Arabic Gospel of the Infancy (both in Ante-Nicene Fathers 8)"
+      ]
+    }
+  ]
+}

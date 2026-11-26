@@ -1,0 +1,9 @@
+{
+  "name": "scripture-qa",
+  "private": true,
+  "type": "module",
+  "description": "Static site; api/chat.js is an optional serverless function for AI-written answers.",
+  "dependencies": {
+    "@anthropic-ai/sdk": "^1.14.0"
+  }
+}
