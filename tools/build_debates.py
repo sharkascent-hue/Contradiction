@@ -37,7 +37,9 @@ JESUS_SIGNS = ("Yes, there are characteristics that point toward it. The Quran g
     "is raised up to God (4:158) and returns before the Hour (43:61; Sahih al-Bukhari 3448). Muslims answer that every one of these happens \"by Allah's permission\" (3:49) "
     "and that \"the likeness of Jesus with Allah is as the likeness of Adam\" (3:59). "
     "Status, claim by claim: that Jesus has unique, God-like abilities in Islam's own books is proven by the texts (in 3:49 he says \"I create\", akhluqu, the verb used for God's creating, and no other prophet does this). "
-    "That these point to him being divine is a strong point for the Christian side, not disproven, though not proven either, since no Islamic text calls him God.")
+    "That these point to him being divine is a strong point for the Christian side, not disproven. "
+    "Overall: read together, this sounds like more than a prophet. He is the only one who creates life, raises the dead, comes back and rules the earth, which fits what Christians say about him. "
+    "Islam and its scholars deny that he is God (Quran 5:116-117), so the texts give no definite answer either way.")
 OVERRIDE = {i: {"side": "", "text": JESUS_SIGNS} for i in ("jesus-word-and-spirit", "jesus-creates-and-gives-life", "jesus-returns-as-judge", "jesus-sinless-in-islam")}
 def favours(a, verdict):
     if a["id"] in OVERRIDE:
