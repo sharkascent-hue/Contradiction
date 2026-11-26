@@ -9,7 +9,7 @@ Verdicts are set here, in VERDICTS, after reading each assessment.
 import json, re, sys
 
 VERDICTS = {
-    "islamic-dilemma": "strong", "jesus-word-and-spirit": "weak", "jesus-creates-and-gives-life": "weak", "jesus-sinless-in-islam": "partial",
+    "islamic-dilemma": "strong", "jesus-word-and-spirit": "partial", "jesus-creates-and-gives-life": "partial", "jesus-sinless-in-islam": "partial",
     "jesus-returns-as-judge": "weak", "crucifixion-denial-vs-history": "strong", "deceptive-god-objection": "partial",
     "quran-5-116-trinity-of-mary": "partial", "mary-sister-of-aaron": "partial", "apocryphal-parallels": "strong",
     "dhul-qarnayn-muddy-spring": "partial", "satanic-verses": "partial", "quran-textual-history": "partial", "muhammad-character": "partial",
@@ -35,7 +35,9 @@ SIDE = {"christian": "Christian", "christianity": "Christian", "islam": "Muslim"
 JESUS_SIGNS = ("Yes, there are characteristics that point toward it. The Quran gives Jesus things it gives no other prophet: he creates birds from clay and breathes life into them, "
     "heals the blind and the leper and raises the dead (Quran 3:49, 5:110), is called \"a Word from Him\" and \"a spirit from Him\" (3:45, 4:171), is born of a virgin (19:20), "
     "is raised up to God (4:158) and returns before the Hour (43:61; Sahih al-Bukhari 3448). Muslims answer that every one of these happens \"by Allah's permission\" (3:49) "
-    "and that \"the likeness of Jesus with Allah is as the likeness of Adam\" (3:59). Status: yet to be proven. The signs are real, but the Islamic texts never call him God, and they have not disproved it either.")
+    "and that \"the likeness of Jesus with Allah is as the likeness of Adam\" (3:59). "
+    "Status, claim by claim: that Jesus has unique, God-like abilities in Islam's own books is proven by the texts (in 3:49 he says \"I create\", akhluqu, the verb used for God's creating, and no other prophet does this). "
+    "That these point to him being divine is a strong point for the Christian side, not disproven, though not proven either, since no Islamic text calls him God.")
 OVERRIDE = {i: {"side": "", "text": JESUS_SIGNS} for i in ("jesus-word-and-spirit", "jesus-creates-and-gives-life", "jesus-returns-as-judge", "jesus-sinless-in-islam")}
 def favours(a, verdict):
     if a["id"] in OVERRIDE:
