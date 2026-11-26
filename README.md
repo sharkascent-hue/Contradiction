@@ -26,13 +26,13 @@ Claude writes the answer, keeps the conversation, cites the passages by number, 
 using three tools that read this site's own published files: `get_passage` (Bible, Quran, hadith by number),
 `search_texts` (the word index in `search/`) and `find_topic` (the guide).
 
-- `server/core.js`: the conversation turn, tools and safety limits. Model `claude-opus-5-5`, streamed, with refusal fallbacks.
+- `server/core.js`: the conversation turn, tools and safety limits. Model `claude-sonnet-5-5`, streamed, with refusal fallbacks.
 - `api/chat.js`: the same as a Vercel function (needs `ANTHROPIC_API_KEY` in the Vercel project).
 - `worker/`: the same as a Cloudflare Worker (`npx wrangler deploy`, then `npx wrangler secret put ANTHROPIC_API_KEY`).
 - `content/config.json`: set `aiEndpoint` to the worker's address, e.g. `https://contradiction-ai.<name>.workers.dev`.
   On a host that serves `api/chat` itself, leave it empty.
 
-Every answer costs money (roughly 5 to 10 US cents with Opus). Set a monthly spending limit in the Anthropic Console.
+Every answer costs money (roughly 2 to 5 US cents with Sonnet). Set a monthly spending limit in the Anthropic Console.
 The server limits each visitor to 6 questions a minute per instance; that is not a substitute for a spending limit.
 
 ## Writing content

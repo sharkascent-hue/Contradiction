@@ -16,7 +16,7 @@
 // Used by api/chat.js (Vercel) and worker/index.js (Cloudflare Workers).
 import Anthropic from "@anthropic-ai/sdk";
 
-export const MODEL = "claude-opus-5-5";
+export const MODEL = "claude-sonnet-5-5";   // Sonnet 5.5: strong answers at about half the cost of Opus
 const MAX_TURNS = 12, MAX_MSG = 6000, MAX_QUESTION = 1500, MAX_CONTEXT = 24, MAX_PASSAGE = 1600, MAX_TOOL_ROUNDS = 6;
 
 const SYSTEM = `You are the guide on Contradiction, a website that explains Christianity, Islam and Judaism side by side. The site holds the scriptures (the Bible in several editions, the Quran, the Hebrew Bible), the Sunni and Shia hadith collections, Quran commentaries, the Mishnah and Talmud, the creeds and confessions of the churches, the Church Fathers and much more. Readers come from all three faiths and from none, and many arrive with a real question about what their own faith or someone else's teaches.
