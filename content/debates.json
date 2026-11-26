@@ -5,6 +5,10 @@
    "title": "If the Quran tells Christians to judge by the Gospel, can Muslims also say the Gospel is corrupted?",
    "direction": "christian-vs-islam",
    "verdict": "strong",
+   "favours": {
+    "side": "Christian",
+    "text": "On this question the Christian side makes more sense on the texts. The Muslim replies have not overturned it so far."
+   },
    "by": [
     "David Wood",
     "Alan Shlemon (Stand to Reason)",
@@ -75,6 +79,10 @@
    "title": "Does calling Jesus 'a Word from God' and 'a Spirit from Him' make him divine?",
    "direction": "christian-vs-islam",
    "verdict": "weak",
+   "favours": {
+    "side": "Muslim",
+    "text": "On this question the Muslim side makes more sense on the texts. The Christian argument has not shown what it claims."
+   },
    "by": [
     "Sam Shamoun"
    ],
@@ -126,6 +134,10 @@
    "title": "Does the Quran's Jesus create birds and raise the dead as only God can?",
    "direction": "christian-vs-islam",
    "verdict": "weak",
+   "favours": {
+    "side": "Muslim",
+    "text": "On this question the Muslim side makes more sense on the texts. The Christian argument has not shown what it claims."
+   },
    "by": [
     "Sam Shamoun (quoting Samir Khalil Samir)",
     "David Wood (judging and raising the dead as divine prerogatives)"
@@ -173,6 +185,10 @@
    "title": "If Islamic sources present Jesus alone as sinless, does that point beyond prophethood?",
    "direction": "christian-vs-islam",
    "verdict": "partial",
+   "favours": {
+    "side": "Muslim",
+    "text": "On this question the Muslim side makes more sense on the texts. The Christian argument has not shown what it claims."
+   },
    "by": [
     "Sam Shamoun"
    ],
@@ -228,6 +244,10 @@
    "title": "Islam says Jesus returns to judge; since only God judges, is Jesus God?",
    "direction": "christian-vs-islam",
    "verdict": "weak",
+   "favours": {
+    "side": "Muslim",
+    "text": "On this question the Muslim side makes more sense on the texts. The Christian argument has not shown what it claims."
+   },
    "by": [
     "Sam Shamoun",
     "David Wood"
@@ -310,6 +330,10 @@
    "title": "Does the Quran's denial of the crucifixion (4:157) go against the historical evidence?",
    "direction": "christian-vs-islam",
    "verdict": "strong",
+   "favours": {
+    "side": "Christian",
+    "text": "On this question the Christian side makes more sense on the texts. The Muslim replies have not overturned it so far."
+   },
    "by": [
     "David Wood",
     "James White (book chapter 6, per review)"
@@ -360,6 +384,10 @@
    "title": "If God made someone look like Jesus, did God deceive Jesus's followers and start Christianity?",
    "direction": "christian-vs-islam",
    "verdict": "partial",
+   "favours": {
+    "side": "",
+    "text": "Evenly balanced: each side has real texts on its side, and neither has disproved the other."
+   },
    "by": [
     "David Wood"
    ],
@@ -406,6 +434,10 @@
    "title": "Does the Quran think the Christian Trinity is God, Jesus and Mary?",
    "direction": "christian-vs-islam",
    "verdict": "partial",
+   "favours": {
+    "side": "Christian",
+    "text": "On this question the Christian side makes more sense on the texts. The Muslim replies have not overturned it so far."
+   },
    "by": [
     "Sam Shamoun"
    ],
@@ -452,6 +484,10 @@
    "title": "Does the Quran confuse Mary, mother of Jesus, with Miriam, sister of Aaron and Moses?",
    "direction": "christian-vs-islam",
    "verdict": "partial",
+   "favours": {
+    "side": "Christian",
+    "text": "On this question the Christian side makes more sense on the texts. The Muslim replies have not overturned it so far."
+   },
    "by": [
     "Answering Islam, 'Qur'an Contradiction' series",
     "Sam Shamoun"
@@ -505,6 +541,10 @@
    "title": "Do Quranic stories about Jesus and the Seven Sleepers come from earlier Christian legends?",
    "direction": "christian-vs-islam",
    "verdict": "strong",
+   "favours": {
+    "side": "Christian",
+    "text": "On this question the Christian side makes more sense on the texts. The Muslim replies have not overturned it so far."
+   },
    "by": [
     "Masud Masihiyyen (Answering Islam), replying to Bassam Zawadi",
     "Sam Shamoun (earlier exchange with Zawadi, referenced by Masihiyyen)"
@@ -566,6 +606,10 @@
    "title": "Does Quran 18:86 say the sun sets in a muddy spring?",
    "direction": "christian-vs-islam",
    "verdict": "partial",
+   "favours": {
+    "side": "",
+    "text": "Evenly balanced: each side has real texts on its side, and neither has disproved the other."
+   },
    "by": [
     "Answering Islam, 'Contradictions in the Qur'an' list (ed. Jochen Katz)"
    ],
@@ -615,6 +659,10 @@
    "title": "Did Muhammad once recite verses praising pagan goddesses (the 'Satanic verses')?",
    "direction": "christian-vs-islam",
    "verdict": "partial",
+   "favours": {
+    "side": "Muslim",
+    "text": "On this question the Muslim side makes more sense on the texts. The Christian argument has not shown what it claims."
+   },
    "by": [
     "David Wood (in debate with Ali Ataie, per review)"
    ],
@@ -663,6 +711,10 @@
    "title": "Was the Quran perfectly preserved, given Uthman's recension, the Sana'a palimpsest and the variant readings?",
    "direction": "christian-vs-islam",
    "verdict": "partial",
+   "favours": {
+    "side": "",
+    "text": "Evenly balanced: each side has real texts on its side, and neither has disproved the other."
+   },
    "by": [
     "Jay Smith",
     "James White (What Every Christian Needs to Know About the Qur'an, ch. 11, per review)"
@@ -726,6 +778,10 @@
    "title": "Do the earliest Islamic sources show Muhammad acting in ways that undercut his prophethood?",
    "direction": "christian-vs-islam",
    "verdict": "partial",
+   "favours": {
+    "side": "",
+    "text": "Evenly balanced: each side has real texts on its side, and neither has disproved the other."
+   },
    "by": [
     "David Wood"
    ],
@@ -770,6 +826,10 @@
    "title": "Does Jesus ever say 'I am God, worship me'?",
    "direction": "islam-vs-christianity",
    "verdict": "weak",
+   "favours": {
+    "side": "Christian",
+    "text": "On this question the Christian side makes more sense on the texts. The Muslim argument has not shown what it claims."
+   },
    "by": [
     "Zakir Naik",
     "Ahmed Deedat",
@@ -842,6 +902,10 @@
    "title": "Does Jesus deny being God in Mark 10:18 ('Why do you call me good? No one is good but God')?",
    "direction": "islam-vs-christianity",
    "verdict": "partial",
+   "favours": {
+    "side": "Muslim",
+    "text": "On this question the Muslim side makes more sense on the texts. The Christian replies have not overturned it so far."
+   },
    "by": [
     "Shabir Ally",
     "Ijaz Ahmad (Blogging Theology)"
@@ -886,6 +950,10 @@
    "title": "Do John 14:28, John 17:3 and Mark 13:32 show that Jesus is less than God?",
    "direction": "islam-vs-christianity",
    "verdict": "partial",
+   "favours": {
+    "side": "Christian",
+    "text": "On this question the Christian side makes more sense on the texts. The Muslim argument has not shown what it claims."
+   },
    "by": [
     "Shabir Ally",
     "Ahmed Deedat",
@@ -947,6 +1015,10 @@
    "title": "When Jesus says 'I and the Father are one', is he claiming deity, or using 'gods' as Psalm 82 does?",
    "direction": "islam-vs-christianity",
    "verdict": "partial",
+   "favours": {
+    "side": "",
+    "text": "Evenly balanced: each side has real texts on its side, and neither has disproved the other."
+   },
    "by": [
     "Shabir Ally",
     "Zakir Naik (on John 10:30 and 14:9)"
@@ -995,6 +1067,10 @@
    "title": "Is the clearest Trinitarian verse, 1 John 5:7, a later addition, and is the Trinity in the Bible at all?",
    "direction": "islam-vs-christianity",
    "verdict": "partial",
+   "favours": {
+    "side": "",
+    "text": "Evenly balanced: each side has real texts on its side, and neither has disproved the other."
+   },
    "by": [
     "Ahmed Deedat (Is the Bible God's Word?), as presented by islam.wiki",
     "Mohammed Hijab"
@@ -1043,6 +1119,10 @@
    "title": "Is the doctrine of the Trinity logically coherent?",
    "direction": "islam-vs-christianity",
    "verdict": "partial",
+   "favours": {
+    "side": "",
+    "text": "Evenly balanced: each side has real texts on its side, and neither has disproved the other."
+   },
    "by": [
     "Mohammed Hijab (debates with William Lane Craig and David Wood)"
    ],
@@ -1079,6 +1159,10 @@
    "title": "Do Matthew and Luke give contradictory genealogies of Jesus?",
    "direction": "islam-vs-christianity",
    "verdict": "partial",
+   "favours": {
+    "side": "Muslim",
+    "text": "On this question the Muslim side makes more sense on the texts. The Christian replies have not overturned it so far."
+   },
    "by": [
     "Rahmatullah Kairanawi ('al-Hindi', Izhar ul-Haqq, 1864), as summarized by Islamweb fatwa 2105"
    ],
@@ -1116,6 +1200,10 @@
    "title": "Did Judas hang himself (Matthew 27:5) or fall and burst open (Acts 1:18)?",
    "direction": "islam-vs-christianity",
    "verdict": "strong",
+   "favours": {
+    "side": "Muslim",
+    "text": "On this question the Muslim side makes more sense on the texts. The Christian replies have not overturned it so far."
+   },
    "by": [
     "Muslim polemical discrepancy lists (Islamweb fatwa 2105 cites al-Hindi's count of 125 Gospel contradictions; Judas is not among the items quoted on that page)",
     "Bart Ehrman (non-Muslim scholar whose work Muslim debaters frequently cite)"
@@ -1158,6 +1246,10 @@
    "title": "Was Jesus crucified on Passover or the day before, and at the third hour or after the sixth?",
    "direction": "islam-vs-christianity",
    "verdict": "partial",
+   "favours": {
+    "side": "Muslim",
+    "text": "On this question the Muslim side makes more sense on the texts. The Christian replies have not overturned it so far."
+   },
    "by": [
     "Muslim debaters drawing on critical scholarship (e.g. Shabir Ally; Paul Williams)"
    ],
@@ -1195,6 +1287,10 @@
    "title": "Do the Gospels disagree on details of the resurrection morning and of Jairus's daughter?",
    "direction": "islam-vs-christianity",
    "verdict": "partial",
+   "favours": {
+    "side": "Muslim",
+    "text": "On this question the Muslim side makes more sense on the texts. The Christian replies have not overturned it so far."
+   },
    "by": [
     "Rahmatullah Kairanawi tradition of Gospel-discrepancy lists (Islamweb fatwa 2105)"
    ],
@@ -1267,6 +1363,10 @@
    "title": "Was the ending of Mark (16:9-20), with its snake-handling and poison promise, added later?",
    "direction": "islam-vs-christianity",
    "verdict": "partial",
+   "favours": {
+    "side": "Muslim",
+    "text": "On this question the Muslim side makes more sense on the texts. The Christian replies have not overturned it so far."
+   },
    "by": [
     "Ahmed Deedat (as presented by islam.wiki)"
    ],
@@ -1302,6 +1402,10 @@
    "title": "Was Jesus really 'three days and three nights' in the tomb, as he said he would be (Matthew 12:40)?",
    "direction": "islam-vs-christianity",
    "verdict": "weak",
+   "favours": {
+    "side": "Christian",
+    "text": "On this question the Christian side makes more sense on the texts. The Muslim argument has not shown what it claims."
+   },
    "by": [
     "Ahmed Deedat ('What Was the Sign of Jonah?')"
    ],
@@ -1361,6 +1465,10 @@
    "title": "Did Paul replace Jesus's law-keeping message with salvation by faith alone, against Jesus and James?",
    "direction": "islam-vs-christianity",
    "verdict": "partial",
+   "favours": {
+    "side": "Christian",
+    "text": "On this question the Christian side makes more sense on the texts. The Muslim argument has not shown what it claims."
+   },
    "by": [
     "Shabir Ally",
     "Paul Williams",
@@ -1430,6 +1538,10 @@
    "title": "Is the 'prophet like Moses' of Deuteronomy 18:18 Muhammad?",
    "direction": "islam-vs-christianity",
    "verdict": "weak",
+   "favours": {
+    "side": "Christian",
+    "text": "On this question the Christian side makes more sense on the texts. The Muslim argument has not shown what it claims."
+   },
    "by": [
     "Ahmed Deedat ('What the Bible Says About Muhammad')"
    ],
@@ -1496,6 +1608,10 @@
    "title": "Is the Paraclete Jesus promised in John 14-16 a prophecy of Muhammad?",
    "direction": "islam-vs-christianity",
    "verdict": "fails",
+   "favours": {
+    "side": "Christian",
+    "text": "On this question the Christian side makes more sense on the texts. The Muslim argument has not shown what it claims."
+   },
    "by": [
     "Ahmed Deedat (as presented by islam.wiki)",
     "David Benjamin Keldani (1928), per Wikipedia"
@@ -1550,6 +1666,10 @@
    "title": "Is it unjust for an innocent man to die for others' sins, given Ezekiel 18:20?",
    "direction": "islam-vs-christianity",
    "verdict": "partial",
+   "favours": {
+    "side": "",
+    "text": "Evenly balanced: each side has real texts on its side, and neither has disproved the other."
+   },
    "by": [
     "Shabir Ally (debate with James White, Seattle, 19 Oct 2007, and follow-up articles, as quoted by Shamoun)",
     "Islam Question & Answer (islamqa.info)"
@@ -1629,6 +1749,10 @@
    "title": "Do Old Testament commands to destroy whole peoples undermine Christian moral objections to Islam?",
    "direction": "islam-vs-christianity",
    "verdict": "partial",
+   "favours": {
+    "side": "Muslim",
+    "text": "On this question the Muslim side makes more sense on the texts. The Christian replies have not overturned it so far."
+   },
    "by": [
     "Ali Ataie (debate with David Wood, per review)"
    ],
@@ -1680,6 +1804,10 @@
    "title": "Does Isaiah 7:14 predict a virgin birth, or a young woman's child in King Ahaz's day?",
    "direction": "jewish-vs-christianity",
    "verdict": "strong",
+   "favours": {
+    "side": "Jewish",
+    "text": "On this question the Jewish side makes more sense on the texts. The Christian replies have not overturned it so far."
+   },
    "by": [
     "Rabbi Dovid Rosenfeld (Aish.com), pointing readers to Rabbi Tovia Singer"
    ],
@@ -1725,6 +1853,10 @@
    "title": "Is the suffering servant of Isaiah 53 the nation of Israel or the Messiah?",
    "direction": "jewish-vs-christianity",
    "verdict": "partial",
+   "favours": {
+    "side": "",
+    "text": "Evenly balanced: each side has real texts on its side, and neither has disproved the other."
+   },
    "by": [
     "Rabbi Tovia Singer (Outreach Judaism)"
    ],
@@ -1793,6 +1925,10 @@
    "title": "Did Jesus fail the Jewish criteria for the Messiah (Temple, ingathering, peace)?",
    "direction": "jewish-vs-christianity",
    "verdict": "strong",
+   "favours": {
+    "side": "Jewish",
+    "text": "On this question the Jewish side makes more sense on the texts. The Christian replies have not overturned it so far."
+   },
    "by": [
     "Maimonides (Mishneh Torah, Kings and Wars 11:4)",
     "Rabbi Tovia Singer (quoted by Luke Lancaster, Catholic Answers)",
@@ -1849,6 +1985,10 @@
    "title": "Does the Torah foretell Muhammad as the 'prophet from among your brethren'?",
    "direction": "jewish-vs-islam",
    "verdict": "strong",
+   "favours": {
+    "side": "Jewish",
+    "text": "On this question the Jewish side makes more sense on the texts. The Muslim replies have not overturned it so far."
+   },
    "by": [
     "Maimonides (Epistle to Yemen, 1173/4)"
    ],
@@ -1898,6 +2038,10 @@
    "title": "Did Jews ever call Ezra ('Uzayr) the son of God, as Quran 9:30 says?",
    "direction": "jewish-vs-islam",
    "verdict": "strong",
+   "favours": {
+    "side": "Jewish",
+    "text": "On this question the Jewish side makes more sense on the texts. The Muslim replies have not overturned it so far."
+   },
    "by": [
     "Encyclopaedia Judaica and the 1906 Jewish Encyclopedia (as summarized in Wikipedia 'Uzair')"
    ],

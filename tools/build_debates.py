@@ -20,6 +20,21 @@ VERDICTS = {
     "atonement-ezekiel-18": "partial", "old-testament-ethics": "partial", "isaiah-7-14-almah": "strong", "isaiah-53-servant": "partial",
     "messiah-criteria": "strong", "deuteronomy-18-not-muhammad": "strong", "uzayr-son-of-god": "strong",
 }
+# For "partly works" verdicts: which side the texts lean to ("arguer" or "replier"); absent means evenly balanced.
+LEAN = {
+    "jesus-sinless-in-islam": "replier", "quran-5-116-trinity-of-mary": "arguer", "mary-sister-of-aaron": "arguer", "satanic-verses": "replier",
+    "mark-10-18-why-call-me-good": "arguer", "subordination-texts": "replier", "genealogies-of-jesus": "arguer", "crucifixion-day-and-hour": "arguer",
+    "resurrection-morning-and-jairus": "arguer", "ending-of-mark": "arguer", "paul-vs-jesus-and-james": "replier", "old-testament-ethics": "arguer",
+}
+SIDE = {"christian": "Christian", "christianity": "Christian", "islam": "Muslim", "jewish": "Jewish", "judaism": "Jewish"}
+def favours(a, verdict):
+    x, y = (SIDE[w] for w in a["direction"].split("-vs-"))
+    side = {"strong": "arguer", "weak": "replier", "fails": "replier"}.get(verdict) or LEAN.get(a["id"])
+    if side == "arguer":
+        return {"side": x, "text": "On this question the %s side makes more sense on the texts. The %s replies have not overturned it so far." % (x, y)}
+    if side == "replier":
+        return {"side": y, "text": "On this question the %s side makes more sense on the texts. The %s argument has not shown what it claims." % (y, x)}
+    return {"side": "", "text": "Evenly balanced: each side has real texts on its side, and neither has disproved the other."}
 SITE_REF = re.compile(r"^(Quran \d+(:\d+(-\d+)?)?|(Sahih al-Bukhari|Sahih Muslim|Sunan Abi Dawud|Jami' at-Tirmidhi|Sunan an-Nasa'i|Sunan Ibn Majah|Muwatta Malik) \d+|Mishnah [A-Z][a-z]+( [A-Z][a-z]+)? \d+:\d+|[1-3]? ?[A-Z][a-z]+( of [A-Z][a-z]+| [A-Z][a-z]+)? \d+(:\d+([-–]\d+)?)?(, ?\d+(:\d+)?([-–]\d+)?)*|[A-Z][a-z]+( [A-Z][a-z]+)? \d{1,3}[ab])$")
 
 out = []
@@ -33,7 +48,7 @@ for path in sys.argv[1:]:
             else:
                 other.append({"ref": t["ref"], "note": t.get("note", ""), "checked": bool(t.get("confirmed"))})
         out.append({
-            "id": a["id"], "title": a["title"], "direction": a["direction"], "verdict": VERDICTS.get(a["id"], ""),
+            "id": a["id"], "title": a["title"], "direction": a["direction"], "verdict": VERDICTS.get(a["id"], ""), "favours": favours(a, VERDICTS.get(a["id"], "")),
             "by": [p["name"] for p in a.get("proponents", [])], "argument": a["argument"],
             "texts": texts, "other_texts": other,
             "response_by": a["response"].get("by", []), "response": a["response"]["text"],

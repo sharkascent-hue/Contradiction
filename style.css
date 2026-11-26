@@ -375,3 +375,5 @@ sup.cite a:hover { background: var(--chr); color: #fff; }
 .chk { display: inline-block; font-size: .75rem; font-weight: 600; padding: .1rem .5rem; border-radius: 999px; margin-left: .3rem; }
 .chk.ok { background: #e6f6ee; color: #0b7a52; }
 .chk.no { background: #fdf1e3; color: #9a5b0b; }
+.favours { background: #fff; border: 1px solid var(--line, #e7e2d9); border-radius: 14px; padding: .8rem 1rem; margin: .2rem 0 1rem; }
+.seg.canon { margin-bottom: 10px; }
