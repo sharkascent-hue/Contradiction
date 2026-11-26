@@ -1,1 +1,1931 @@
-{"arguments": []}
+{
+ "arguments": [
+  {
+   "id": "islamic-dilemma",
+   "title": "If the Quran tells Christians to judge by the Gospel, can Muslims also say the Gospel is corrupted?",
+   "direction": "christian-vs-islam",
+   "verdict": "strong",
+   "by": [
+    "David Wood",
+    "Alan Shlemon (Stand to Reason)",
+    "Sam Shamoun",
+    "GotQuestions.org (unsigned)"
+   ],
+   "argument": "The Quran tells 'the People of the Gospel' to judge by what God revealed in it (5:47), says Jews and Christians stand on nothing until they uphold the Torah and Gospel (5:68), and tells Muhammad to ask those who read the earlier scripture if he is in doubt (10:94). These commands assume that the Torah and Gospel in the hands of 7th-century Jews and Christians were reliable. But those Gospels teach that Jesus is the Son of God, died on the cross and rose, which the Quran denies (4:157, 4:171). So either the Gospel is reliable, and it contradicts the Quran, or it is corrupt, and the Quran was wrong to send people to it. Wood and Shlemon add that the Quran speaks of the Gospel as 'with them' (7:157) and that the four Gospels already circulated together in codices older than Islam, so the 'Gospel' meant can only be the one Christians actually had.",
+   "texts": [
+    {
+     "ref": "Quran 5:47",
+     "note": ""
+    },
+    {
+     "ref": "Quran 5:68",
+     "note": ""
+    },
+    {
+     "ref": "Quran 10:94",
+     "note": ""
+    },
+    {
+     "ref": "Quran 5:46",
+     "note": ""
+    },
+    {
+     "ref": "Quran 3:3",
+     "note": ""
+    },
+    {
+     "ref": "Quran 7:157",
+     "note": "'whom they find written in what they have of the Torah and the Gospel'"
+    },
+    {
+     "ref": "Quran 4:47",
+     "note": "'confirming that which is with you'"
+    },
+    {
+     "ref": "Quran 6:115",
+     "note": "'None can alter His words'"
+    },
+    {
+     "ref": "Quran 18:27",
+     "note": ""
+    }
+   ],
+   "other_texts": [],
+   "response_by": [
+    "Imam Tom (Yaqeen Institute, 'Imam Tom Weekly')",
+    "Paul Williams (as quoted by Sam Shamoun)",
+    "Classical tahrif doctrine (Ibn Hazm), summarized in the Wikipedia article 'Tahrif'",
+    "Gabriel Said Reynolds (academic, reported second-hand)"
+   ],
+   "response": "Muslim respondents read 5:47 in its setting (5:41-50): the passage rebukes Jews and Christians for not following their own scripture or the Prophet, and 5:48 calls the Quran a 'criterion' (muhaymin) over earlier scripture, so the Quran, not the Bible, has the last word. Imam Tom points to 5:14 ('they forgot a portion of that of which they were reminded') as the Quran's own statement that Christians had already lost part of their revelation. Other verses accuse some People of the Book of distorting words (2:75, 4:46, 5:13), of twisting scripture with their tongues (3:78) and of writing books with their own hands and calling them God's (2:79). Many Muslims also hold that the Injil is the revelation given to Jesus, not the four Gospels written about him. The view that the actual text was corrupted (tahrif al-nass) was set out in detail by Ibn Hazm in the 11th century; others held that the meaning was distorted (tahrif al-ma'na).",
+   "facts": "Checkable: the Quran tells the People of the Gospel to judge by what God revealed 'therein' (5:47) and speaks of the Torah and Gospel as being 'with them' (7:157; cf. 4:47). It also accuses some of them of distorting words, of forgetting a portion of what they were told (5:14), and of writing scripture by hand (2:79), but no verse names a time when the Gospel text was replaced. Interpretation: whether 'the Gospel' means the four Gospels, and whether the distortion verses mean changes to the text or to its meaning, are disputed. The Wikipedia summary of the scholarship says the full doctrine of textual corruption was developed later, most influentially by Ibn Hazm.",
+   "assessment": "This is one of the strongest Christian arguments, because it uses the Quran's own present-tense commands to the Christians of its day. Its strongest premise is that 5:47 and 7:157 assume a Gospel that could be read in the 7th century. Its weakest is the step from 'the Quran affirms the Gospel' to 'the Quran affirms every verse of the present New Testament'. The 'forgot a portion' and distortion verses give Muslims a textual footing, though not a decisive one, for a partial-corruption reading.",
+   "sources": [
+    "https://www.equip.org/articles/facing-islamic-challenge/",
+    "https://www.str.org/w/is-the-quran-s-injil-the-same-as-the-new-testament-gospels-",
+    "https://answering-islam.org/authors/shamoun/rebuttals/williams/quran_on_bible2.html",
+    "https://www.gotquestions.org/Islamic-dilemma.html",
+    "https://yaqeeninstitute.org/watch/series/imam-tom-live/debunking-the-islamic-dilemma-imam-tom-weekly.md",
+    "https://en.wikipedia.org/wiki/Tahrif",
+    "https://www.catholic.com/magazine/online-edition/does-the-quran-teach-that-the-bible-was-corrupted-over-time"
+   ]
+  },
+  {
+   "id": "jesus-word-and-spirit",
+   "title": "Does calling Jesus 'a Word from God' and 'a Spirit from Him' make him divine?",
+   "direction": "christian-vs-islam",
+   "verdict": "weak",
+   "by": [
+    "Sam Shamoun"
+   ],
+   "argument": "The Quran calls Jesus 'a word from Him' (3:45) and 'His word which He directed to Mary and a spirit from Him' (4:171). Hadith repeat the titles: whoever testifies that Jesus is 'His Word which He bestowed on Mary and a Spirit' will enter Paradise (Sahih al-Bukhari 3435). Shamoun argues that this language implies Jesus existed with God before being 'cast' into Mary. Since Sunni Muslims hold that God's speech (the Quran) is uncreated, he argues that calling Jesus God's Word points to an eternal, divine nature, close to John 1:1.",
+   "texts": [
+    {
+     "ref": "Quran 3:45",
+     "note": ""
+    },
+    {
+     "ref": "Quran 4:171",
+     "note": ""
+    },
+    {
+     "ref": "Quran 19:34",
+     "note": "'the word of truth' (qawl al-haqq)"
+    },
+    {
+     "ref": "Sahih al-Bukhari 3435",
+     "note": "Jesus is 'His Word which He bestowed on Mary and a Spirit created by Him' (Khan translation)"
+    },
+    {
+     "ref": "John 1:1",
+     "note": ""
+    }
+   ],
+   "other_texts": [
+    {
+     "ref": "Sahih Muslim, Book 1, No. 43 (old numbering)",
+     "note": "cited by Shamoun in an older numbering; modern number not checked",
+     "checked": false
+    }
+   ],
+   "response_by": [
+    "Ibn Kathir (Tafsir on 4:171)",
+    "Abu 'Ubayd, glossed in Sahih al-Bukhari's chapter heading to 3435"
+   ],
+   "response": "Classical exegesis takes 'word' to mean the word of command, 'Be!', by which Jesus was created without a father. Al-Bukhari's chapter heading quotes Abu 'Ubayd: 'His word' means 'Be, and it was'. Ibn Kathir explains 'a spirit from Him' as a spirit created by God and breathed into Mary through Gabriel. The same verse (4:171) calls Jesus 'but a messenger', forbids saying 'Three' and denies God has a son, and 3:59 compares Jesus to Adam, created from dust by the word 'Be'. 'Spirit from Him' (ruhun minhu) is also used of ordinary believers whom God 'supported with spirit from Him' (58:22), and 45:13 says everything in creation is 'all from Him'.",
+   "facts": "Checkable: the Quran does use 'word' (kalima) and 'spirit from Him' (ruh minhu) of Jesus, and Bukhari 3435 repeats both. The same verses call him only a messenger and reject 'Three', and 'spirit from Him' is used of believers in 58:22. Interpretation: equating Jesus as God's 'word' with the uncreated speech of later Sunni theology is Shamoun's inference; the earliest commentary quoted by al-Bukhari reads 'word' as the creative command 'Be'.",
+   "assessment": "The titles are real and unusual (no other prophet is called God's word in the Quran), so the question is legitimate. But the argument has to read 4:171 against its own conclusion ('do not say Three'). It also moves without warrant from 'a word from God' to 'God's eternal speech'. As an argument about what the Quran teaches it is weak; as an observation that the Quran uses language shared with Christian Logos theology it has some force.",
+   "sources": [
+    "https://answering-islam.org/authors/shamoun/q_confirms_t3a.html",
+    "https://api.quran.com/api/v4/tafsirs/169/by_ayah/4:171",
+    "https://en.tohed.com/hadith/bukhari/3435"
+   ]
+  },
+  {
+   "id": "jesus-creates-and-gives-life",
+   "title": "Does the Quran's Jesus create birds and raise the dead as only God can?",
+   "direction": "christian-vs-islam",
+   "verdict": "weak",
+   "by": [
+    "Sam Shamoun (quoting Samir Khalil Samir)",
+    "David Wood (judging and raising the dead as divine prerogatives)"
+   ],
+   "argument": "In 3:49 and 5:110 Jesus fashions a bird from clay, breathes into it, and it becomes a bird; he also heals the blind and leper and brings the dead to life. Shamoun, quoting Samir Khalil Samir, notes that the verb used (khalaqa, 'create') usually has God as its subject in the Quran. He also notes that 'breathing into' clay echoes God creating Adam (38:71-72, 15:29). He concludes that the Quran shows Jesus doing God's own creative and life-giving work. Wood adds that both the Bible and the Quran treat raising the dead as God's prerogative (22:6-7).",
+   "texts": [
+    {
+     "ref": "Quran 3:49",
+     "note": ""
+    },
+    {
+     "ref": "Quran 5:110",
+     "note": ""
+    },
+    {
+     "ref": "Quran 38:71-72",
+     "note": "read via Shamoun's quotation"
+    },
+    {
+     "ref": "Quran 15:29",
+     "note": ""
+    },
+    {
+     "ref": "Quran 29:17",
+     "note": "Samir's quotation cites 'Q 20:17' for the non-divine use takhluquna ifkan; the phrase is actually in 29:17 ('you produce a falsehood')"
+    }
+   ],
+   "other_texts": [],
+   "response_by": [
+    "The Quranic text itself",
+    "Ibn Kathir",
+    "Samir Khalil Samir (noting the Muslim reading)"
+   ],
+   "response": "Both verses repeat 'by permission of Allah' (bi-idhni Allah) for each miracle, which Muslim readers take as the point of the passage: the miracles are signs God gives a messenger, not powers Jesus has of himself. The Quran calls God 'the best of creators' (ahsan al-khaliqin, 23:14 and 37:125), which implies that the word 'create' can be used of others in a lesser sense. Muslim tradition, as Samir himself notes, reads khalaqa here as 'shape, fashion'. Ibn Kathir describes Jesus's miracles, including the clay bird, as done 'by Allah's leave'. Moses's staff turning into a serpent is treated the same way.",
+   "facts": "Checkable: 3:49 and 5:110 say Jesus 'designs' or 'creates' (akhluqu / takhluqu) a bird shape from clay and breathes into it, and that each miracle happens 'by permission of Allah'. 23:14 and 37:125 call God 'the best of creators'. Interpretation: whether khalaqa here carries its full divine sense or the lesser sense of 'fashion' is a matter of reading. The repeated permission clause is undisputed.",
+   "assessment": "The verbal echo of Adam's creation is real and interesting. It is good evidence that the passage draws on Christian traditions; the clay-bird story is in the Infancy Gospel of Thomas. As proof that the Quran ascribes divinity to Jesus it is weak: the text says 'by Allah's permission' at every step, and 'best of creators' shows the verb is not reserved for God alone. The weakest premise is that the verb alone outweighs the qualifier attached to it.",
+   "sources": [
+    "https://answering-islam.org/authors/shamoun/q_confirms_t3b.html",
+    "https://www.equip.org/articles/facing-islamic-challenge/",
+    "https://api.quran.com/api/v4/tafsirs/169/by_ayah/4:157"
+   ]
+  },
+  {
+   "id": "jesus-sinless-in-islam",
+   "title": "If Islamic sources present Jesus alone as sinless, does that point beyond prophethood?",
+   "direction": "christian-vs-islam",
+   "verdict": "partial",
+   "by": [
+    "Sam Shamoun"
+   ],
+   "argument": "In the intercession hadith, Adam, Noah, Abraham and Moses each mention a sin or failing and decline to intercede, but 'Jesus will not mention any sin' (Sahih al-Bukhari 4712). Another hadith says Satan touches every newborn except Mary and her son (Sahih al-Bukhari 3431), and the angel calls Jesus 'a pure boy' (19:19). Shamoun quotes Qatada, via al-Tabari, as saying that Jesus and his mother did not commit the sins other children of Adam commit. Meanwhile the Quran tells Muhammad to ask forgiveness 'for your sin' (47:19; cf. 48:2, 40:55). Shamoun argues that this makes Jesus uniquely holy in Islam's own sources, which fits the Christian claim and sits poorly with Muhammad being the greater prophet.",
+   "texts": [
+    {
+     "ref": "Sahih al-Bukhari 4712",
+     "note": ""
+    },
+    {
+     "ref": "Sahih al-Bukhari 3431",
+     "note": ""
+    },
+    {
+     "ref": "Quran 19:19",
+     "note": ""
+    },
+    {
+     "ref": "Quran 47:19",
+     "note": ""
+    },
+    {
+     "ref": "Quran 48:2",
+     "note": ""
+    },
+    {
+     "ref": "Quran 40:55",
+     "note": ""
+    }
+   ],
+   "other_texts": [
+    {
+     "ref": "Qatada via al-Tabari, quoted in Mahmoud Ayoub, The Qur'an and Its Interpreters vol. 2 p. 94",
+     "note": "quoted second-hand by Shamoun; not checked in the original",
+     "checked": false
+    }
+   ],
+   "response_by": [
+    "Omar Alhabeshi (as quoted by Shamoun)",
+    "Standard Sunni doctrine of prophetic protection ('isma)"
+   ],
+   "response": "Alhabeshi cites the hadith 'Every son of Adam sins, and the best of sinners are those who repent' (Jami' at-Tirmidhi 2499; Sunan Ibn Majah 4251) to argue that Islam does not make Jesus sinless in an absolute sense. He also points to John the Baptist, whom the Quran describes with 'purity' and as 'not a disobedient tyrant' (19:13-14), and asks where any text says John sinned. Muslims hold that all prophets are protected from serious sin, so Jesus's not mentioning a sin in the intercession hadith does not make him divine. The Quran insists that the Messiah is God's servant (4:172, 43:59).",
+   "facts": "Checkable: Bukhari 4712 says Jesus 'will not mention any sin', and Bukhari 3431 exempts Mary and her son from Satan's touch at birth. The Quran addresses Muhammad's 'sin' (dhanb) in 47:19 and 48:2 and calls John 'pure' in 19:13. Tirmidhi 2499 is graded gharib by al-Tirmidhi himself (hasan by al-Albani, weak by Zubair Ali Zai). Interpretation: no Islamic text infers divinity from sinlessness; that step is Shamoun's.",
+   "assessment": "The textual observation is sound and well sourced: Islamic tradition does single out Jesus and Mary in ways it does not single out Muhammad. The inference to divinity is the weak link, since sinlessness is not a divine attribute in Islamic (or even all Christian) theology. The Muslim reply that relies on Tirmidhi 2499 rests on a hadith of disputed strength.",
+   "sources": [
+    "https://answering-islam.org/Responses/Abualrub/sinless_jesus.htm",
+    "https://answering-islam.org/authors/shamoun/q_confirms_t3a.html",
+    "https://en.tohed.com/hadith/tirmidhi/2499"
+   ]
+  },
+  {
+   "id": "jesus-returns-as-judge",
+   "title": "Islam says Jesus returns to judge; since only God judges, is Jesus God?",
+   "direction": "christian-vs-islam",
+   "verdict": "weak",
+   "by": [
+    "Sam Shamoun",
+    "David Wood"
+   ],
+   "argument": "The Quran says judgment belongs to God alone (6:114, 40:12) and that God shares His rule with no one (18:26). Hadith say Jesus will descend 'as a just judge' (hakaman 'adlan), break the cross, kill the pig and abolish the jizya (Sahih al-Bukhari 3448). In Christ-just-ruler Shamoun argues that this gives Jesus Allah's own roles: he judges, abrogates Quranic rulings such as the jizya of 9:29 (as only Allah abrogates, 2:106), and descends with angels as Allah does (89:22). In other articles he adds that the New Testament gives all judgment to the Son 'so that all may honor the Son just as they honor the Father' (John 5:22-23). Shamoun and Wood conclude that the role of final judge makes Jesus divine, and that Islam's sources contradict themselves.",
+   "texts": [
+    {
+     "ref": "Sahih al-Bukhari 3448",
+     "note": "Arabic hakaman 'adlan: 'will judge mankind justly (as a just ruler)'; related wording hakaman muqsitan in other narrations"
+    },
+    {
+     "ref": "Quran 6:114",
+     "note": ""
+    },
+    {
+     "ref": "Quran 40:12",
+     "note": ""
+    },
+    {
+     "ref": "Quran 18:26",
+     "note": "'He shares not His legislation (hukm) with anyone'"
+    },
+    {
+     "ref": "Quran 22:56",
+     "note": "'[All] sovereignty that Day is for Allah; He will judge between them'"
+    },
+    {
+     "ref": "Quran 1:4",
+     "note": "'Sovereign of the Day of Recompense'"
+    },
+    {
+     "ref": "Quran 82:19",
+     "note": ""
+    },
+    {
+     "ref": "Quran 3:55",
+     "note": "God: 'to Me is your return, and I will judge between you'"
+    },
+    {
+     "ref": "Quran 4:159",
+     "note": "Jesus will be a 'witness' against them on the Day of Resurrection"
+    },
+    {
+     "ref": "Quran 43:61",
+     "note": "Jesus is 'knowledge'/'a sign' of the Hour; mainstream tafsir (Ibn Kathir, Jalalayn) reads it as his descent being a sign"
+    },
+    {
+     "ref": "Quran 31:34",
+     "note": "'Allah [alone] has knowledge of the Hour'"
+    },
+    {
+     "ref": "John 5:22-23",
+     "note": ""
+    },
+    {
+     "ref": "Acts 17:31",
+     "note": "God will judge 'by the man whom he has ordained'"
+    }
+   ],
+   "other_texts": [],
+   "response_by": [
+    "Rehab Jamal (Explore Islam)",
+    "Ibn Kathir (Tafsir on 43:61)"
+   ],
+   "response": "In Islamic belief the returning Jesus is an earthly ruler and arbiter (hakam) who rules by the law brought by Muhammad, not the judge of the Last Day. Rehab Jamal cites 22:56: on that Day all sovereignty belongs to God, and He judges. The Quran gives Jesus the role of a 'witness' on the Day of Resurrection (4:159), not judge, and repeatedly has God say 'I will judge between you' (3:55). Abolishing the jizya is presented as something the Prophet foretold, so it is Muhammad's law that sets the limit, not new legislation by Jesus. The hadith calls Jesus 'just' and 'arbiter', words that can describe any human ruler. 43:61 is read as Jesus's descent being a sign of the Hour, while the knowledge of the Hour's time belongs to God alone (31:34, 7:187).",
+   "facts": "Checkable: Bukhari 3448 uses hakam ('adl), meaning an arbiter or ruler who judges justly, of Jesus's return to earth before the Hour. The Quran repeatedly says judgment on the Last Day belongs to God (1:4, 22:56, 82:19, 3:55) and gives Jesus the role of witness (4:159). Interpretation: equating a this-worldly 'just ruler' with the divine Judge of the Last Day is Shamoun's inference, not something any Islamic text states. In the New Testament, by contrast, Jesus is the eschatological judge (John 5:22; Acts 17:31; 2 Corinthians 5:10).",
+   "assessment": "As an argument from the Islamic sources, this is one of the weaker Christian arguments: the hadith describe an earthly ruling role before the Hour, and the Quran keeps Last-Day judgment with God. Shamoun's best point is narrower: the returning Jesus ends the jizya and other rulings, which shows unusual authority. The New Testament version (Jesus as final judge, John 5:22-23) is a much stronger basis for the Christian claim, but it is a separate argument that does not depend on Islamic texts.",
+   "sources": [
+    "https://answering-islam.org/authors/shamoun/christ-just-ruler.html",
+    "https://answering-islam.org/authors/shamoun/judge_of_earth.html",
+    "https://answering-islam.org/Shamoun/jesus_as_judge.htm",
+    "https://www.equip.org/articles/facing-islamic-challenge/",
+    "https://explore-islam.com/?p=23924",
+    "https://en.tohed.com/hadith/bukhari/3448",
+    "https://api.quran.com/api/v4/tafsirs/169/by_ayah/43:61"
+   ]
+  },
+  {
+   "id": "crucifixion-denial-vs-history",
+   "title": "Does the Quran's denial of the crucifixion (4:157) go against the historical evidence?",
+   "direction": "christian-vs-islam",
+   "verdict": "strong",
+   "by": [
+    "David Wood",
+    "James White (book chapter 6, per review)"
+   ],
+   "argument": "4:157 says the Jews 'did not kill him, nor did they crucify him; but it was made to appear so to them'. Wood argues that Jesus's crucifixion is one of the best-attested events of ancient history. It appears in all four Gospels, Acts and Paul's letters, and in an early creed: 'Christ died for our sins... was buried... was raised' (1 Corinthians 15:3-4). It is also reported by non-Christian writers: Josephus, Tacitus, Lucian of Samosata and the Talmud. A text written about six centuries later, with no independent sources, cannot outweigh this. White's book likewise has a chapter on Muslims using the Quran 'to defy history'.",
+   "texts": [
+    {
+     "ref": "Quran 4:157",
+     "note": ""
+    },
+    {
+     "ref": "Quran 4:158",
+     "note": ""
+    },
+    {
+     "ref": "1 Corinthians 15:3",
+     "note": ""
+    },
+    {
+     "ref": "Quran 19:33",
+     "note": "'peace on me the day I was born and the day I will die and the day I am raised alive'"
+    }
+   ],
+   "other_texts": [
+    {
+     "ref": "Tacitus, Annals 15.44; Josephus, Antiquities 18.63-64",
+     "note": "cited by Wood; not checked in the originals for this file",
+     "checked": false
+    }
+   ],
+   "response_by": [
+    "Mainstream Sunni exegesis (Ibn Kathir)",
+    "Mahmoud Ayoub",
+    "Todd Lawson (The Crucifixion and the Qur'an)"
+   ],
+   "response": "The mainstream Muslim reply is that 4:157 itself predicts the reports: those who differ 'are in doubt about it... they have no knowledge of it except the following of assumption'. Ibn Kathir accepts that a crucifixion happened in Jerusalem, but of someone made to look like Jesus. So the historical sources, which report what observers believed they saw, are consistent with the Quran. For Muslims, revelation is a better source than reports at second or third hand. A minority of modern Muslim scholars, notably Mahmoud Ayoub, read 4:157 as denying that the Jews had the power to destroy Jesus, not denying that he died on the cross. Todd Lawson's book surveys this range of Muslim readings.",
+   "facts": "Checkable: 4:157 denies that 'they' killed or crucified Jesus and says 'it was made to appear so to them'; 4:158 says God raised him to Himself. The New Testament, including the early creed quoted in 1 Corinthians 15:3, says he died. Non-Christian ancient writers report his execution (Wood's citations; not separately checked here). Interpretation: the substitution theory is not stated in the Quran; it comes from exegetical reports such as the Ibn 'Abbas narration given by Ibn Kathir.",
+   "assessment": "On ordinary historical method the Christian side is far stronger: Jesus's crucifixion is accepted by almost all historians, including non-Christian ones, and the Quranic denial comes 600 years later without independent sources. The Muslim reply mostly moves the dispute from history to revelation. That move is coherent within Islam but gives a historian nothing to check. Ayoub's reading would remove the conflict, but it is a minority view that most classical exegetes would not have recognized.",
+   "sources": [
+    "https://answering-islam.org/Authors/Wood/deceptive_god.htm",
+    "https://www.thegospelcoalition.org/themelios/review/what-every-christian-needs-to-know-about-the-quran/",
+    "https://api.quran.com/api/v4/tafsirs/169/by_ayah/4:157",
+    "https://en.wikipedia.org/wiki/Islamic_views_on_Jesus%27_death"
+   ]
+  },
+  {
+   "id": "deceptive-god-objection",
+   "title": "If God made someone look like Jesus, did God deceive Jesus's followers and start Christianity?",
+   "direction": "christian-vs-islam",
+   "verdict": "partial",
+   "by": [
+    "David Wood"
+   ],
+   "argument": "The Quran says Jesus's disciples were Muslims (3:52; 5:111) and that God 'made it appear' that Jesus was crucified (4:157). Wood argues that this deception fooled not only Jesus's enemies but his own disciples, who went on to preach his death and resurrection. 61:14 says God 'supported those who believed against their enemy, and they became dominant'. Wood argues the only followers of Jesus who ever became dominant were orthodox Christians. So on Islam's own premises God either did not foresee that he was starting the world's largest 'false' religion, or did so on purpose. Either way, Wood concludes, God is ignorant or deceptive, and Jesus failed as a prophet.",
+   "texts": [
+    {
+     "ref": "Quran 4:157",
+     "note": "wa-lakin shubbiha lahum, 'but it was made to appear so to them'"
+    },
+    {
+     "ref": "Quran 3:52",
+     "note": ""
+    },
+    {
+     "ref": "Quran 5:111",
+     "note": ""
+    },
+    {
+     "ref": "Quran 61:14",
+     "note": ""
+    },
+    {
+     "ref": "Quran 3:55",
+     "note": ""
+    }
+   ],
+   "other_texts": [],
+   "response_by": [
+    "Ibn Kathir (reporting Ibn 'Abbas)",
+    "Mahmoud Ayoub (minority reading)",
+    "The Quranic theme of divine counter-plotting (3:54)"
+   ],
+   "response": "Ibn Kathir gives a report from Ibn 'Abbas, with a chain he calls authentic, in which Jesus asks the disciples for a volunteer to take on his likeness. A young man volunteers, and the disciples know what happened. In this account they then split into factions, and the faithful group is later overpowered, so the later Christian error is a human corruption, not God's lie. The deception in 4:157 is aimed at those plotting to kill Jesus, in line with 'they planned, and Allah planned, and Allah is the best of planners' (3:54). Muslims read 'those who believed' in 61:14 and 3:55 as monotheist followers of Jesus, not as later Trinitarian Christians. Ayoub's minority reading removes the 'appearance' problem altogether.",
+   "facts": "Checkable: the Quran says the disciples called themselves Muslims (3:52), says 'it was made to appear so to them' (4:157), and says God made Jesus's believing followers 'dominant' (61:14) and 'superior... until the Day of Resurrection' (3:55). The volunteer-substitute story is a report preserved in tafsir, not a Quranic statement. Interpretation: who 'them' refers to in 4:157, and who the 'believers' of 61:14 are, are open questions.",
+   "assessment": "This is a strong philosophical challenge, because the Quran does say God caused a misleading appearance and that Jesus's followers prevailed. Its weakest premise is that the disciples were deceived; the Quran never says so, and the main tafsir account has them in the know. The Muslim reply is coherent but relies on extra-Quranic reports, and it does not explain why no trace of the early Muslim faction survives, which is Wood's historical point.",
+   "sources": [
+    "https://answering-islam.org/Authors/Wood/deceptive_god.htm",
+    "https://api.quran.com/api/v4/tafsirs/169/by_ayah/4:157",
+    "https://en.wikipedia.org/wiki/Islamic_views_on_Jesus%27_death"
+   ]
+  },
+  {
+   "id": "quran-5-116-trinity-of-mary",
+   "title": "Does the Quran think the Christian Trinity is God, Jesus and Mary?",
+   "direction": "christian-vs-islam",
+   "verdict": "partial",
+   "by": [
+    "Sam Shamoun"
+   ],
+   "argument": "At 5:116 God asks Jesus whether he told people 'Take me and my mother as deities besides Allah'. 5:73 condemns those who say 'Allah is the third of three', and 5:75 adds that Jesus and his mother 'both used to eat food'. Shamoun argues that read together these show the Quran's author thought Christians worship a triad of Father, Mary and Jesus. He quotes E. M. Wherry and Sale, who report that the commentators al-Baydawi and the Jalalayn read the 'three' as God, Jesus and Mary. Orthodox Christianity has never counted Mary as a person of the Trinity, so, he argues, the Quran misrepresents the doctrine it condemns.",
+   "texts": [
+    {
+     "ref": "Quran 5:116",
+     "note": ""
+    },
+    {
+     "ref": "Quran 5:73",
+     "note": ""
+    },
+    {
+     "ref": "Quran 5:75",
+     "note": ""
+    },
+    {
+     "ref": "Quran 4:171",
+     "note": ""
+    },
+    {
+     "ref": "Quran 9:31",
+     "note": "'they have taken their scholars and monks as lords besides Allah, and the Messiah'"
+    }
+   ],
+   "other_texts": [],
+   "response_by": [
+    "Quran.com answer note (citing Mohar Ali and Epiphanius)",
+    "Ibn Kathir (reporting al-Suddi and Mujahid)"
+   ],
+   "response": "Muslim respondents note that 5:116 does not mention the Trinity or the number three. On this reading it condemns the worship of Jesus and of Mary, a separate charge from 'Allah is the third of three' (5:73). Quran.com's note quotes Mohar Ali ('There is no allusion to the doctrine of the Trinity here'). It also cites Epiphanius of Salamis (d. 403), who describes the Collyridians, a sect in Arabia that offered cakes to Mary, as evidence that Marian devotion verging on worship existed. Just as 9:31 says Christians took their monks 'as lords' without implying that monks are in the Trinity, 5:116 can criticise Marian veneration without defining the Trinity. Ibn Kathir does record al-Suddi linking 5:73 to taking Jesus and his mother as gods, which shows the classical exegesis was divided.",
+   "facts": "Checkable: 5:116 speaks of taking Jesus 'and my mother' as two gods besides God. 5:73 rejects 'the third of three' without naming the three. 4:171 says only 'do not say Three'. No verse lists Father, Son and Holy Spirit. Some classical commentators (al-Suddi, quoted by Ibn Kathir) did connect 5:73 with Jesus and Mary. Interpretation: whether the Quran describes a mistaken Trinity or criticises separate practices is a reading of how the verses fit together.",
+   "assessment": "The argument is plausible but not proven. The text never states that Mary is one of the 'three', and the Muslim reply that the verses address different errors fits the wording. But the closeness of 5:73 and 5:116 in one surah, and the fact that classical exegetes themselves linked them, makes the Christian reading reasonable. The Collyridian evidence is thin (one hostile 4th-century source), so the reply's historical support is weaker than its textual support.",
+   "sources": [
+    "https://answering-islam.org/Shamoun/quran_trinity.htm",
+    "https://quran.com/5:116/answers/32",
+    "https://api.quran.com/api/v4/tafsirs/169/by_ayah/5:73",
+    "https://api.quran.com/api/v4/tafsirs/169/by_ayah/5:116"
+   ]
+  },
+  {
+   "id": "mary-sister-of-aaron",
+   "title": "Does the Quran confuse Mary, mother of Jesus, with Miriam, sister of Aaron and Moses?",
+   "direction": "christian-vs-islam",
+   "verdict": "partial",
+   "by": [
+    "Answering Islam, 'Qur'an Contradiction' series",
+    "Sam Shamoun"
+   ],
+   "argument": "Mary's people address her as 'O sister of Aaron' (19:28). Elsewhere she is 'the daughter of Imran' (66:12), and her mother is 'the wife of Imran' (3:35). In the Bible, Amram (Imran) is the father of Aaron, Moses and Miriam (Numbers 26:59; Exodus 6:20), and Miriam is called 'the sister of Aaron' (Exodus 15:20). Mary and Miriam have the same name in Hebrew and Arabic (Maryam). Critics argue that this cluster of names shows the Quran merged two women who lived roughly 1,300-1,400 years apart.",
+   "texts": [
+    {
+     "ref": "Quran 19:28",
+     "note": ""
+    },
+    {
+     "ref": "Quran 66:12",
+     "note": ""
+    },
+    {
+     "ref": "Quran 3:35",
+     "note": ""
+    },
+    {
+     "ref": "Numbers 26:59",
+     "note": ""
+    },
+    {
+     "ref": "Exodus 15:20",
+     "note": ""
+    },
+    {
+     "ref": "Exodus 6:20",
+     "note": "Amram's sons Aaron and Moses"
+    }
+   ],
+   "other_texts": [],
+   "response_by": [
+    "Sahih Muslim 2135 (the Prophet's own answer)",
+    "Ibn Kathir (Tafsir on 19:28)",
+    "Ibn Anwar (as quoted by Shamoun)"
+   ],
+   "response": "The objection is recorded in Islam's own sources. Al-Mughira ibn Shu'ba reports that Christians of Najran raised it, and the Prophet answered: 'They used to name people after the prophets and righteous persons who had gone before them' (Sahih Muslim 2135). Ibn Kathir gives several readings: 'sister of Aaron' can mean 'one resembling Aaron in worship'; it can be a tribal idiom, like calling a man of Tamim 'brother of Tamim' (she was of Aaron's priestly line); or it can refer to a different righteous man named Aaron. Ibn Anwar notes that the Quran never calls Mary Moses's sister, and that nothing proves Mary had no brother called Aaron.",
+   "facts": "Checkable: 19:28 says 'sister of Aaron', 66:12 'daughter of Imran', and 3:35 'the wife of Imran'. In the Bible, Amram/Imran's children are Aaron, Moses and Miriam, and Miriam is 'the sister of Aaron'. Sahih Muslim 2135 shows the objection was raised by Christians in the Prophet's lifetime and answered with the naming-custom explanation. Interpretation: whether 'sister' is literal, tribal or a matter of resemblance cannot be settled from the text alone.",
+   "assessment": "Each name on its own can be explained (Semitic 'sister/brother/daughter of' idioms are real, and Elizabeth is 'of the daughters of Aaron' in Luke 1:5). What gives the critic's case its strength is that the names come together: Maryam, sister of Aaron, daughter of Imran. The Muslim reply is early and grounded in the sources, but it has to explain all three links at once. The argument shows a striking pattern; it does not prove confusion.",
+   "sources": [
+    "https://answering-islam.org/Quran/Contra/qbhc06.html",
+    "https://answering-islam.org/authors/shamoun/rebuttals/ibnanwar/mary_aaron.html",
+    "https://en.tohed.com/hadith/muslim/2135/",
+    "https://www.abuaminaelias.com/dailyhadithonline/2012/10/05/sister-harun-quran/",
+    "https://api.quran.com/api/v4/tafsirs/169/by_ayah/19:28"
+   ]
+  },
+  {
+   "id": "apocryphal-parallels",
+   "title": "Do Quranic stories about Jesus and the Seven Sleepers come from earlier Christian legends?",
+   "direction": "christian-vs-islam",
+   "verdict": "strong",
+   "by": [
+    "Masud Masihiyyen (Answering Islam), replying to Bassam Zawadi",
+    "Sam Shamoun (earlier exchange with Zawadi, referenced by Masihiyyen)"
+   ],
+   "argument": "Several Quranic stories match texts outside the Bible. Jesus making clay birds (3:49, 5:110) appears in the Infancy Gospel of Thomas, which scholars date to the mid-to-late 2nd century and in which the five-year-old Jesus makes twelve clay sparrows and brings them to life. The story of the sleepers in the cave (18:9-26) matches the late-antique Christian legend of the Seven Sleepers of Ephesus, attested in Syriac by Jacob of Serugh (c. 450-521). The Quran's Dhul-Qarnayn passage parallels the Syriac Alexander Legend. Critics argue that the Quran retells legends circulating among Christians in its environment, sometimes with changes, rather than receiving independent revelation.",
+   "texts": [
+    {
+     "ref": "Quran 3:49",
+     "note": ""
+    },
+    {
+     "ref": "Quran 5:110",
+     "note": ""
+    },
+    {
+     "ref": "Quran 3:46",
+     "note": "Jesus speaks in the cradle"
+    },
+    {
+     "ref": "Quran 18:9",
+     "note": ""
+    },
+    {
+     "ref": "Quran 18:22",
+     "note": "the number of sleepers is disputed: three, five or seven"
+    },
+    {
+     "ref": "Quran 18:25",
+     "note": "'three hundred years and exceeded by nine'"
+    }
+   ],
+   "other_texts": [
+    {
+     "ref": "Infancy Gospel of Thomas (clay sparrows episode)",
+     "note": "dating per Wikipedia summary",
+     "checked": true
+    },
+    {
+     "ref": "Jacob of Serugh, homily on the Seven Sleepers",
+     "note": "per Wikipedia summary",
+     "checked": true
+    }
+   ],
+   "response_by": [
+    "Bassam Zawadi (as quoted by Masihiyyen)",
+    "Islamweb fatwa 367270"
+   ],
+   "response": "Zawadi argues that 'similarity does not equal sameness'. Christian apologists reject the claim that a similar pagan story shows the Gospels borrowed, and the same standard should apply to the Quran. Since Islam holds that the Gospels Christians have contain only part of the truth, a true event (the clay bird, the cradle speech) could have survived in oral or apocryphal tradition and been confirmed by revelation. The Quran also differs in ways that matter: one bird rather than twelve, made 'by Allah's permission' as a sign rather than a child's Sabbath game. Islamweb's fatwa says the Quran is God's speech from His own knowledge and does not depend on any earlier book. The Quran itself records that opponents accused Muhammad of copying 'legends of the former peoples' (25:5) and of being taught by a foreigner (16:103), and it rejects the charge.",
+   "facts": "Checkable: the clay-bird miracle is not in the canonical Gospels but is in the Infancy Gospel of Thomas (2nd century). The Seven Sleepers legend is attested in Christian sources from the 5th-6th centuries. The Quran's cave story (18:9-26) follows the same basic plot. The Quran records that the 'old legends' accusation was made in Muhammad's lifetime (25:5). Interpretation: whether the parallels show dependence or a shared true tradition depends on one's prior view of revelation.",
+   "assessment": "On historical-critical grounds the parallels are strong evidence that the Quran was in conversation with Christian lore current in late antiquity, and most non-Muslim scholars accept this. The Muslim reply is coherent for a believer (God may confirm true elements of earlier traditions), but it cannot be checked and does not explain why the parallels cluster in non-canonical sources. The Christian argument is weakest when it claims plain copying; the differences are real, and the Quran reshapes the stories theologically.",
+   "sources": [
+    "https://answering-islam.org/authors/masihiyyen/rebuttals/zawadi/infancy_gospels.html",
+    "https://www.islamweb.net/en/fatwa/367270/",
+    "https://en.wikipedia.org/wiki/Seven_Sleepers"
+   ]
+  },
+  {
+   "id": "dhul-qarnayn-muddy-spring",
+   "title": "Does Quran 18:86 say the sun sets in a muddy spring?",
+   "direction": "christian-vs-islam",
+   "verdict": "partial",
+   "by": [
+    "Answering Islam, 'Contradictions in the Qur'an' list (ed. Jochen Katz)"
+   ],
+   "argument": "18:86 says Dhul-Qarnayn 'reached the setting of the sun' and 'found it setting in a spring of dark mud', and 18:90 says he reached 'the rising of the sun'. The critic argues that this speaks of a place where the sun sets, as if the earth had an edge. A hadith in Sunan Abi Dawud (4002) has Muhammad say of the setting sun, 'It sets in a spring of warm water (hamiya)'. In Sahih al-Bukhari 3199 the sun goes and prostrates beneath the Throne each night. The critic adds that the figure is usually identified with Alexander the Great, a pagan, which makes his monotheist preaching unhistorical.",
+   "texts": [
+    {
+     "ref": "Quran 18:86",
+     "note": ""
+    },
+    {
+     "ref": "Quran 18:90",
+     "note": ""
+    },
+    {
+     "ref": "Sunan Abi Dawud 4002",
+     "note": "'It sets in a spring of warm water (hamiya)'; al-Albani: sahih in chain. Some editions number it 3991"
+    },
+    {
+     "ref": "Sahih al-Bukhari 3199",
+     "note": "sun 'goes till it prostrates itself underneath the Throne'"
+    }
+   ],
+   "other_texts": [
+    {
+     "ref": "Syriac Alexander Legend (per Wikipedia / Kevin van Bladel)",
+     "note": "",
+     "checked": true
+    }
+   ],
+   "response_by": [
+    "Ibn Kathir (Tafsir on 18:86)",
+    "Islam Question & Answer (islamqa.info, answer 176375)",
+    "Randy Desmond (Muslim reply hosted on the same page)"
+   ],
+   "response": "The verb is 'he found it' (wajadaha): the verse describes what Dhul-Qarnayn saw, not where the sun goes. Ibn Kathir: he reached the furthest point westward he could, and 'saw the sun as if it were setting in the ocean'. He adds that the idea of reaching the sun's place in the sky is impossible and that such tales come from the People of the Book's storytellers. Randy Desmond makes the same point about perspective and notes that maghrib simply means 'west' or 'sunset'. IslamQA examines the Abu Dawud hadith and argues that the 'warm spring' wording comes through only one narrator, al-Hakam ibn 'Utayba. It holds that the better-attested version, in which the sun prostrates beneath the Throne (Bukhari 3199, Muslim 159), is the correct wording. The two readings hami'a ('muddy') and hamiya ('hot') are both recognized qira'at.",
+   "facts": "Checkable: 18:86 uses 'he found it setting' (wajadaha taghrubu) in 'ayn hami'a (dark-mud spring; variant reading hamiya, 'hot'). Abu Dawud 4002 attributes the 'warm spring' phrase to the Prophet; IslamQA argues this wording is an anomalous transmission. Bukhari 3199 describes the sun prostrating under the Throne. Interpretation: whether the verse is phenomenological ('as it appeared to him') or cosmological is contested. Most Western historians link the episode to the Syriac Alexander Legend.",
+   "assessment": "On the verse alone, the 'appearance' reading is grammatically available and was held by Ibn Kathir, so the critic's case is not decisive. The hadith evidence is where the challenge has more bite. Abu Dawud 4002 attributes a literal-sounding statement to the Prophet, and the defence has to argue that this wording is a narrator's error. The Alexander-legend parallel is the most historically weighty part of the critique, though it is a separate argument from the sunset question.",
+   "sources": [
+    "https://answering-islam.org/Quran/Contra/qe003.html",
+    "https://api.quran.com/api/v4/tafsirs/169/by_ayah/18:86",
+    "https://islamqa.info/en/answers/176375",
+    "https://en.tohed.com/hadith/abu-dawud/4002"
+   ]
+  },
+  {
+   "id": "satanic-verses",
+   "title": "Did Muhammad once recite verses praising pagan goddesses (the 'Satanic verses')?",
+   "direction": "christian-vs-islam",
+   "verdict": "partial",
+   "by": [
+    "David Wood (in debate with Ali Ataie, per review)"
+   ],
+   "argument": "Early biographies and commentaries (al-Waqidi, Ibn Sa'd, Ibn Ishaq and al-Tabari's tafsir) report that while reciting 53:19-20 ('Have you considered al-Lat and al-'Uzza, and Manat, the third?'), Muhammad added words praising the goddesses as 'exalted gharaniq whose intercession is hoped for'. He later retracted them as Satan's suggestion. Critics connect this with 22:52, which says Satan 'threw into' the recitation of every prophet before God cancelled it, and with 17:73-74, which says Muhammad 'almost inclined' to his opponents. Sahih al-Bukhari 4862 records that when Muhammad prostrated at the end of Surat al-Najm, Muslims and pagans prostrated together. Wood argues that a prophet who could mistake Satan's words for God's cannot be trusted as a channel of revelation.",
+   "texts": [
+    {
+     "ref": "Quran 53:19-20",
+     "note": ""
+    },
+    {
+     "ref": "Quran 22:52-53",
+     "note": ""
+    },
+    {
+     "ref": "Quran 17:73-74",
+     "note": ""
+    },
+    {
+     "ref": "Sahih al-Bukhari 4862",
+     "note": "the pagans prostrated with the Prophet at the end of al-Najm; it does not mention the gharaniq words"
+    }
+   ],
+   "other_texts": [
+    {
+     "ref": "al-Tabari, Tafsir on 22:52; Ibn Ishaq/Ibn Sa'd",
+     "note": "reported via Wikipedia and Shahab Ahmed; not checked in the originals",
+     "checked": false
+    }
+   ],
+   "response_by": [
+    "Muhammad Nasiruddin al-Albani (Nasb al-majaniq li-nasf qissat al-gharaniq)",
+    "Muhammad Husayn Haykal",
+    "Muhammad Abduh",
+    "Qadi Iyad and later medieval ulama (per Shahab Ahmed)"
+   ],
+   "response": "Most Muslim scholars since the medieval period reject the story. Al-Albani wrote a whole treatise attacking its chains of transmission, and the story is absent from the canonical hadith collections. Haykal argues that the flow of surah 53, which goes straight on to attack the goddesses as 'names you have named', leaves no room for the added verses. Abduh observes that Arabs never called their goddesses gharaniq. Objections to the story's historicity were raised as early as the 10th century, and by the 13th century most ulama rejected it as incompatible with prophetic protection ('isma). Some Shi'i writers say the pagans shouted the words to make it seem the Prophet had said them.",
+   "facts": "Checkable: the incident is narrated in early sira and tafsir works (al-Waqidi, Ibn Sa'd, al-Tabari) but not in Bukhari or Muslim. Bukhari 4862 records only the shared prostration. 22:52 says Satan 'throws into' prophets' recitations and God abolishes it. Shahab Ahmed found that early Muslims widely accepted the story and later scholars rejected it. Interpretation: Western historians (Muir, Watt, Rodinson) long accepted it on the 'criterion of embarrassment'; more recent scholarship (per Sean Anthony) leans toward doubting it.",
+   "assessment": "The Christian argument is right that the story is early, Muslim-transmitted and was once widely accepted. It overreaches when it presents the story as established fact: its chains are weak by hadith standards, and modern academic opinion is divided. The 'embarrassment' argument is weakened by Shahab Ahmed's point that early Muslims did not find it embarrassing. This is best presented as an open historical question.",
+   "sources": [
+    "https://answering-islam.org/Authors/Wildcat/wood_ataie_debate.htm",
+    "https://en.wikipedia.org/wiki/Satanic_Verses"
+   ]
+  },
+  {
+   "id": "quran-textual-history",
+   "title": "Was the Quran perfectly preserved, given Uthman's recension, the Sana'a palimpsest and the variant readings?",
+   "direction": "christian-vs-islam",
+   "verdict": "partial",
+   "by": [
+    "Jay Smith",
+    "James White (What Every Christian Needs to Know About the Qur'an, ch. 11, per review)"
+   ],
+   "argument": "Muslims often claim the Quran has been preserved letter for letter (15:9). Critics point to Islam's own records. Abu Bakr had Zayd ibn Thabit collect the Quran from scraps and men's memories, and Zayd found the end of surah 9 with only one man (Sahih al-Bukhari 4986). Uthman then standardized a text and ordered every other copy burned (Sahih al-Bukhari 4987). Ibn Mas'ud reportedly did not count the last two surahs as Quran (Sahih al-Bukhari 4977), and 'Aisha reports a verse on ten sucklings that was still recited when the Prophet died (Sahih Muslim 1452). Jay Smith stresses the canonical readings (qira'at), such as Hafs and Warsh, which he says differ in places like 3:146 (qatala, 'fought', vs qutila, 'killed'). He notes the seven readings were chosen by Ibn Mujahid in the 10th century, and that the lower text of the Sana'a palimpsest differs from the Uthmanic text.",
+   "texts": [
+    {
+     "ref": "Quran 15:9",
+     "note": ""
+    },
+    {
+     "ref": "Sahih al-Bukhari 4986",
+     "note": ""
+    },
+    {
+     "ref": "Sahih al-Bukhari 4987",
+     "note": ""
+    },
+    {
+     "ref": "Sahih al-Bukhari 4977",
+     "note": ""
+    },
+    {
+     "ref": "Sahih Muslim 1452",
+     "note": ""
+    },
+    {
+     "ref": "Sahih al-Bukhari 4992",
+     "note": "'this Qur'an has been revealed in seven ahruf'"
+    },
+    {
+     "ref": "Quran 3:146",
+     "note": "claimed by Smith; specific reading difference not independently verified here"
+    }
+   ],
+   "other_texts": [
+    {
+     "ref": "Sana'a palimpsest (DAM 01-27.1)",
+     "note": "per Wikipedia summary of Sadeghi & Goudarzi 2012 and Hilali",
+     "checked": true
+    }
+   ],
+   "response_by": [
+    "Ammar Khatib and Nazir Khan (Yaqeen Institute)",
+    "Mohammed Hijab (debate with Jay Smith)",
+    "Behnam Sadeghi (academic, per Wikipedia)"
+   ],
+   "response": "Khatib and Khan argue that the canonical readings all fit the consonantal skeleton of the Uthmanic codex, follow Arabic grammar and have authentic chains back to the Prophet. In their account the Prophet himself taught the Quran 'in seven ahruf' (Bukhari 4992), so variant readings are part of the revelation, not corruption. They estimate that only about 0.9% of words have an alternative reading in Ibn Mujahid's list (703 places in about 77,400 words). Readings that differ from the Uthmanic text were, in their account, abrogated, abandoned by consensus, or were glosses for teaching. Hijab argues that the Quran was preserved mainly by memorization, with the written text as a check. He says the variants critics count are mostly recitation differences, and that the Bible has far more variants. Academically, Sadeghi treats the Sana'a lower text as a non-Uthmanic 'Companion codex', and finds its variants rarely change the basic meaning.",
+   "facts": "Checkable: Bukhari 4986-4987 describe Abu Bakr's collection and Uthman's standardization, including the burning of other copies. Bukhari 4977 records Ibn Mas'ud's view of the last two surahs, and Muslim 1452 'Aisha's report of an abrogated suckling verse. The Sana'a lower text is a pre-Uthmanic or non-Uthmanic text with word-level variants (Sadeghi & Goudarzi 2012). Canonical qira'at do differ in wording at hundreds of points. Interpretation: whether this counts as 'preservation' depends on whether one means a single wording or a controlled range of authorized readings.",
+   "assessment": "The Christian argument is strong against the popular claim that there has never been 'a single letter' of variation. Islamic sources themselves record standardization, differing codices and abrogated wording. It is much weaker against the scholarly Muslim position, which openly accepts multiple authorized readings and an Uthmanic standard; modern academic study (for example Sadeghi) finds the Uthmanic text very stably transmitted after its standardization. Smith's specific figures (for example '93,000 dots and vowels') are not sourced in what I read and should not be repeated without checking.",
+   "sources": [
+    "https://omny.fm/shows/let-us-reason/426-is-the-quran-perfectly-preserved-with-dr-jay-s",
+    "https://sozai.app/transcript/jay-smith-vs-muhammad-hijab-debate/index.md",
+    "https://www.thegospelcoalition.org/themelios/review/what-every-christian-needs-to-know-about-the-quran/",
+    "https://yaqeeninstitute.org/read/paper/the-origins-of-the-variant-readings-of-the-quran",
+    "https://en.wikipedia.org/wiki/Sanaa_manuscript"
+   ]
+  },
+  {
+   "id": "muhammad-character",
+   "title": "Do the earliest Islamic sources show Muhammad acting in ways that undercut his prophethood?",
+   "direction": "christian-vs-islam",
+   "verdict": "partial",
+   "by": [
+    "David Wood"
+   ],
+   "argument": "Wood argues from Muslim sources that Muhammad's conduct is not that of a true prophet. Sahih al-Bukhari 5134 says Muhammad married 'Aisha when she was six and consummated the marriage when she was nine. Sahih al-Bukhari 3043 records the judgment on the Banu Qurayza that their fighting men be killed and their children taken captive, which Muhammad approved. Ibn Ishaq's biography reports that he sanctioned the killing of critics such as the poets Asma bint Marwan and Abu 'Afak. Wood also cites reports that Muhammad feared he was possessed, was bewitched, and contemplated suicide. He argues that a prophet held up as the perfect moral example (33:21) should not need special pleading for such acts.",
+   "texts": [
+    {
+     "ref": "Sahih al-Bukhari 5134",
+     "note": ""
+    },
+    {
+     "ref": "Sahih al-Bukhari 3043",
+     "note": ""
+    },
+    {
+     "ref": "Quran 33:21",
+     "note": "'an excellent pattern' (uswa hasana)"
+    }
+   ],
+   "other_texts": [
+    {
+     "ref": "Ibn Ishaq, Sirat Rasul Allah (Guillaume tr.), on Asma bint Marwan",
+     "note": "primary text not checked; reported via debate review",
+     "checked": false
+    }
+   ],
+   "response_by": [
+    "Jonathan A. C. Brown and Asadullah Ali al-Andalusi (Yaqeen Institute)",
+    "Ali Ataie (debate with Wood)",
+    "Joshua Little (Oxford DPhil thesis, reported by Javad T. Hashmi)"
+   ],
+   "response": "Brown and al-Andalusi accept the traditional ages. They argue that judging a 7th-century marriage by modern Western norms is 'presentism'. In their account, life expectancy, marriage norms in Roman and Jewish late antiquity, and puberty-based ideas of adulthood made such marriages unremarkable then, and the delay before consummation showed concern to avoid harm. A different Muslim-friendly line, from Joshua Little's Oxford thesis, holds that the age report is an 8th-century Iraqi fabrication traceable to Hisham ibn 'Urwa. In debate, Ali Ataie accepted some episodes (the killing of Ka'b ibn al-Ashraf) but argued that Ibn Ishaq's biography is unreliable for others, such as the killings of Asma bint Marwan and Abu 'Afak. He also pointed to Muhammad's mercy at the conquest of Mecca.",
+   "facts": "Checkable: Bukhari 5134 gives ages six and nine for 'Aisha, and Bukhari 3043 records Sa'd's judgment on the Banu Qurayza. The Asma bint Marwan story is in Ibn Ishaq's sira, not in Bukhari or Muslim (per the debate review; not independently checked). Interpretation: moral evaluation across 14 centuries is a philosophical question, and the age report's historicity is now disputed in academic work (Little) as well as defended (Brown).",
+   "assessment": "The argument's factual base for 'Aisha and the Banu Qurayza is solid, because it rests on Sahih al-Bukhari. Its moral step depends on premises the site should state openly: either universal moral standards, or the claim that a final prophet should model norms valid for all times. Incidents taken only from Ibn Ishaq are weaker, and Ataie is right that source criticism applies. Even-handedness also requires noting that similar 'moral objection' arguments are made against Old Testament figures.",
+   "sources": [
+    "https://answering-islam.org/Authors/Wildcat/wood_ataie_debate.htm",
+    "https://yaqeeninstitute.org/read/paper/understanding-aishas-age-an-interdisciplinary-approach",
+    "https://newlinesmag.com/essays/oxford-study-sheds-light-on-muhammad-underage-wife-aisha/"
+   ]
+  },
+  {
+   "id": "jesus-never-says-i-am-god",
+   "title": "Does Jesus ever say 'I am God, worship me'?",
+   "direction": "islam-vs-christianity",
+   "verdict": "weak",
+   "by": [
+    "Zakir Naik",
+    "Ahmed Deedat",
+    "Shabir Ally"
+   ],
+   "argument": "If the central Christian doctrine were true, the Muslim argument runs, Jesus would have stated it plainly. Naik challenges Christians to produce one unambiguous verse where Jesus says 'I am God' or 'worship me'. Instead Jesus prays to God, calls the Father 'the only true God' (John 17:3) and says 'my God and your God' (John 20:17). Deedat and Ally argue that the verses Christians use are indirect and depend on interpretation, while the plain statements point the other way. On this reading the Gospels present Jesus as a prophet and Messiah, which matches the Quran (5:72, 5:117).",
+   "texts": [
+    {
+     "ref": "John 17:3",
+     "note": ""
+    },
+    {
+     "ref": "John 20:17",
+     "note": ""
+    },
+    {
+     "ref": "Mark 12:29",
+     "note": "Jesus quotes the Shema"
+    },
+    {
+     "ref": "Quran 5:72",
+     "note": ""
+    },
+    {
+     "ref": "Quran 5:117",
+     "note": ""
+    },
+    {
+     "ref": "Mark 2:5-7",
+     "note": ""
+    },
+    {
+     "ref": "John 8:58",
+     "note": ""
+    },
+    {
+     "ref": "Mark 14:62",
+     "note": ""
+    },
+    {
+     "ref": "John 5:22-23",
+     "note": ""
+    },
+    {
+     "ref": "Matthew 28:9",
+     "note": ""
+    },
+    {
+     "ref": "John 20:28",
+     "note": ""
+    }
+   ],
+   "other_texts": [],
+   "response_by": [
+    "David Wood",
+    "Sam Shamoun"
+   ],
+   "response": "Wood replies that the demand for a specific sentence sets a standard the Quran itself would not pass for many doctrines. He also argues that Jesus makes claims which, by both biblical and Quranic standards, only God can make. Jesus forgives sins (Mark 2:5-7, where the scribes object 'who can forgive sins but God alone?'). He says 'before Abraham came into existence, I AM' (John 8:58), and he claims he will sit at God's right hand and come on the clouds (Mark 14:62). He says all judgment is given to him 'so that all may honor the Son just as they honor the Father' (John 5:22-23), and he accepts worship (Matthew 28:9) and Thomas's 'My Lord and my God' (John 20:28). Christians argue these are claims to deity made in the Jewish idiom of the time.",
+   "facts": "Checkable: no Gospel verse has Jesus say the exact words 'I am God, worship me'. The Gospels do contain John 8:58 ('I AM'), Mark 14:62, John 5:22-23, Thomas's confession in John 20:28 (not rebuked), and the worship in Matthew 28:9. They also contain John 17:3 and 20:17, where Jesus speaks of the Father as 'the only true God' and 'my God'. Interpretation: whether the indirect claims amount to a claim of deity is the core dispute.",
+   "assessment": "The challenge is rhetorically effective, but as an argument it is weak, because it requires one form of words. The Christian case has always rested on claims and actions with divine connotations, especially in John. The Muslim argument is strongest against using the Synoptic Gospels alone, where explicit deity claims are fewer and more debated by scholars. It is weakest where it ignores John 8:58 and 20:28.",
+   "sources": [
+    "https://answering-islam.org/authors/shamoun/rebuttals/naik/jesus_divinity.html",
+    "https://luk.staff.ugm.ac.id/kmi/off/Islam/Deedat/res_res.html",
+    "https://answering-islam.org/Responses/Shabir-Ally/misunderstood.htm",
+    "https://www.equip.org/articles/facing-islamic-challenge/"
+   ]
+  },
+  {
+   "id": "mark-10-18-why-call-me-good",
+   "title": "Does Jesus deny being God in Mark 10:18 ('Why do you call me good? No one is good but God')?",
+   "direction": "islam-vs-christianity",
+   "verdict": "partial",
+   "by": [
+    "Shabir Ally",
+    "Ijaz Ahmad (Blogging Theology)"
+   ],
+   "argument": "When a man calls Jesus 'good teacher', Jesus replies, 'Why do you call me good? No one is good except one, God' (Mark 10:18; Luke 18:19). Ally argues this is a clear distinction between Jesus and God, and that the earliest Gospel authors did not regard Jesus as God. He also notes that Matthew's version (19:17) changes the question to 'Why do you ask me about what is good?' in some manuscripts. Ally reads this as a later author softening an awkward saying. Ijaz Ahmad argues that the saying would naturally have been heard as a denial, and that only theological commitment leads Christians to read it otherwise.",
+   "texts": [
+    {
+     "ref": "Mark 10:18",
+     "note": ""
+    },
+    {
+     "ref": "Matthew 19:17",
+     "note": "the WEB has 'Why do you call me good?'; the critical text reads 'Why do you ask me about what is good?' - the variant itself was not checked in a critical apparatus here"
+    },
+    {
+     "ref": "Luke 18:19",
+     "note": ""
+    },
+    {
+     "ref": "Mark 10:21",
+     "note": ""
+    },
+    {
+     "ref": "Mark 2:7",
+     "note": ""
+    }
+   ],
+   "other_texts": [],
+   "response_by": [
+    "Christian interpreters generally; Richard Bauckham as cited by a commenter (Ken Temple) on Blogging Theology - Bauckham not read directly"
+   ],
+   "response": "Christian interpreters read the question as a challenge, not a denial: if only God is good, then the man must consider what he is implying by calling Jesus good. In the same passage Jesus asks the man to give up everything and 'follow me' (Mark 10:21), which puts allegiance to himself where the Torah puts allegiance to God. Bauckham is reported (in a comment thread, not a source read directly here) as calling it a deliberate double meaning. Christians add that Mark elsewhere has Jesus forgive sins (2:5-7), which the scribes say only God can do.",
+   "facts": "Checkable: Mark 10:18 has Jesus say 'Why do you call me good? No one is good except one, God'. Mark's Gospel also has Jesus forgive sins in a way the scribes call blasphemy (2:7). Interpretation: whether the question is a disclaimer or a riddle cannot be settled from the verse alone. The Matthew 19:17 difference is a real textual and redactional point (not checked against a critical apparatus here).",
+   "assessment": "This is one of the stronger Muslim proof-texts, because its plain sense is a distinction between Jesus and God, and Matthew's reworking suggests early readers found it awkward. The Christian 'riddle' reading is possible but has to bring in context and theology. The argument is weakest if it treats one saying as overriding Mark's other material about Jesus's authority.",
+   "sources": [
+    "https://answering-islam.org/Responses/Shabir-Ally/misunderstood.htm",
+    "https://bloggingtheology.net/2018/05/27/what-if-jesus-said-i-am-not-god"
+   ]
+  },
+  {
+   "id": "subordination-texts",
+   "title": "Do John 14:28, John 17:3 and Mark 13:32 show that Jesus is less than God?",
+   "direction": "islam-vs-christianity",
+   "verdict": "partial",
+   "by": [
+    "Shabir Ally",
+    "Ahmed Deedat",
+    "Mohammed Hijab (debate with David Wood)"
+   ],
+   "argument": "Jesus says 'the Father is greater than I' (John 14:28) and calls the Father 'the only true God' (John 17:3). He also says that no one knows the day or hour of the end, 'not even the Son, but only the Father' (Mark 13:32; Matthew 24:36). Ally adds that Jesus could not do mighty works in his hometown (Mark 6:5), and that he went to a fig tree not knowing it had no fruit (Mark 11:12-14). Ally argues that God is all-knowing and all-powerful, so a being who lacks knowledge and is less than the Father is not God. He says the 'two natures' solution makes things worse, since it has a divine nature acting on the limited knowledge of a human nature.",
+   "texts": [
+    {
+     "ref": "John 14:28",
+     "note": ""
+    },
+    {
+     "ref": "John 17:3",
+     "note": ""
+    },
+    {
+     "ref": "Mark 13:32",
+     "note": ""
+    },
+    {
+     "ref": "Matthew 24:36",
+     "note": ""
+    },
+    {
+     "ref": "Mark 6:5",
+     "note": ""
+    },
+    {
+     "ref": "Philippians 2:6-7",
+     "note": ""
+    },
+    {
+     "ref": "John 17:5",
+     "note": ""
+    },
+    {
+     "ref": "Mark 11:13",
+     "note": ""
+    }
+   ],
+   "other_texts": [],
+   "response_by": [
+    "Sam Shamoun",
+    "Augustine (Tractates on John 105, quoted by Shamoun)",
+    "David Wood"
+   ],
+   "response": "Shamoun and Wood answer with the doctrine of the Incarnation. Jesus, 'existing in the form of God', took the form of a servant (Philippians 2:6-7), so statements of limitation describe his human state, and 'greater' can mean greater in role or position, not in nature. Shamoun argues that 'a nature does not act; a person does': the one person of Christ acts through either nature. On John 17:3, Shamoun quotes Augustine, who reads the verse as 'that they may know you and Jesus Christ... as the only true God'. He notes that the same passage has Jesus claim to share the Father's glory 'before the world existed' (John 17:5). On Mark 6:5, Shamoun points out that the text links the lack of miracles to the people's unbelief and says Jesus still healed some.",
+   "facts": "Checkable: all the cited verses say what the Muslim apologists say they say: the Father is 'greater', the Son does not know the hour, the Father is 'the only true God'. Philippians 2:6-7 and John 17:5 are also in the text and are used by Christians to frame these as statements about the incarnate state. Interpretation: whether two-nature Christology is a coherent explanation or an ad hoc device is a philosophical dispute, not one the texts settle.",
+   "assessment": "These texts are genuine evidence of subordination language in the New Testament, which Christian theology itself has always had to explain (it was central to the 4th-century Arian controversy). The Muslim argument succeeds in showing that a simple 'Jesus is the Father' view is unbiblical. It does not refute classical two-nature Christology, which was built precisely to account for these verses. Both sides' strongest material comes from the same Gospel (John).",
+   "sources": [
+    "https://answering-islam.org/Responses/Shabir-Ally/omnipotent.htm",
+    "https://answering-islam.org/authors/shamoun/rebuttals/ally/did_jesus_claim4b.html",
+    "https://luk.staff.ugm.ac.id/kmi/off/Islam/Deedat/res_res.html",
+    "https://sozai.app/transcript/trinity-or-tawhid-david-wood-mohammed-hijab-debate/index.md"
+   ]
+  },
+  {
+   "id": "john-10-30-psalm-82",
+   "title": "When Jesus says 'I and the Father are one', is he claiming deity, or using 'gods' as Psalm 82 does?",
+   "direction": "islam-vs-christianity",
+   "verdict": "partial",
+   "by": [
+    "Shabir Ally",
+    "Zakir Naik (on John 10:30 and 14:9)"
+   ],
+   "argument": "Christians often quote John 10:30 ('I and the Father are one'), after which the Jews pick up stones, saying he, a man, makes himself God. Ally argues that the context shows the Jews misunderstood. Jesus answers by quoting Psalm 82:6, 'I said, you are gods', and argues that if Scripture calls humans 'gods', they should not accuse him of blasphemy for saying 'I am God's Son' (John 10:34-36). On this reading Jesus explains his words as figurative, and 'one' means one in purpose, as he prays that the disciples may be one (John 17:21).",
+   "texts": [
+    {
+     "ref": "John 10:30",
+     "note": ""
+    },
+    {
+     "ref": "John 10:34",
+     "note": ""
+    },
+    {
+     "ref": "Psalm 82:6",
+     "note": ""
+    },
+    {
+     "ref": "John 10:33",
+     "note": ""
+    },
+    {
+     "ref": "John 10:28-29",
+     "note": ""
+    },
+    {
+     "ref": "John 10:39",
+     "note": ""
+    }
+   ],
+   "other_texts": [],
+   "response_by": [
+    "Sam Shamoun"
+   ],
+   "response": "Shamoun argues that Ally equivocates on 'gods'. In Psalm 82 the 'gods' are judges condemned to 'die like men', and Jesus's argument is from the lesser to the greater. If even those to whom God's word came could be called 'gods', how much more the one 'whom the Father sanctified and sent into the world'. In the same context Jesus claims that no one can snatch his sheep from his hand and no one can snatch them from the Father's hand (10:28-29), a parallel that equates his power with the Father's. Shamoun notes that the Jews try again to seize him after his explanation (10:39), which suggests they did not hear it as a retraction.",
+   "facts": "Checkable: John 10:30-36 contains both 'I and the Father are one' and the appeal to Psalm 82:6 ('you are gods'). The Jews' charge is that he, 'being a man, makes himself God' (10:33). Interpretation: whether Jesus's Psalm 82 reply is a retraction or an a fortiori argument depends on reading the whole paragraph, including verses 28-29 and 39.",
+   "assessment": "Ally deserves credit for insisting on context, and the Psalm 82 reply does show that Jesus did not answer with a blunt 'yes, I am God'. But the a fortiori reading fits the logic of the argument at least as well. Verse 39, where they again try to seize him, cuts against the 'misunderstanding cleared up' reading. Neither side can claim the passage settles the question.",
+   "sources": [
+    "https://answering-islam.org/Responses/Shabir-Ally/misunderstood.htm",
+    "https://answering-islam.org/authors/shamoun/rebuttals/naik/jesus_divinity.html"
+   ]
+  },
+  {
+   "id": "comma-johanneum",
+   "title": "Is the clearest Trinitarian verse, 1 John 5:7, a later addition, and is the Trinity in the Bible at all?",
+   "direction": "islam-vs-christianity",
+   "verdict": "partial",
+   "by": [
+    "Ahmed Deedat (Is the Bible God's Word?), as presented by islam.wiki",
+    "Mohammed Hijab"
+   ],
+   "argument": "The King James Version of 1 John 5:7 reads: 'For there are three that bear record in heaven, the Father, the Word, and the Holy Ghost: and these three are one.' Deedat made much of the fact that modern translations, such as the RSV, drop the words because they are not in the old Greek manuscripts. Muslims argue that if the only verse stating the Trinity outright was added later, the doctrine itself was added later. The word 'Trinity' never appears in the Bible, and Hijab argues that the co-equal, co-eternal formula was fixed by 4th-century councils, not taught by Jesus, who quoted the Shema ('the Lord our God is one Lord').",
+   "texts": [
+    {
+     "ref": "1 John 5:7",
+     "note": "KJV text confirmed; the 'heavenly witnesses' clause is absent from critical editions"
+    },
+    {
+     "ref": "Deuteronomy 6:4",
+     "note": ""
+    },
+    {
+     "ref": "Matthew 28:19",
+     "note": ""
+    },
+    {
+     "ref": "John 1:1",
+     "note": ""
+    },
+    {
+     "ref": "1 Corinthians 8:6",
+     "note": ""
+    }
+   ],
+   "other_texts": [],
+   "response_by": [
+    "NET Bible translators' note",
+    "Christian textual critics generally (Daniel Wallace; NA/UBS editions)",
+    "David Wood"
+   ],
+   "response": "Christian scholars agree the Comma is not original. The NET Bible note says the evidence 'both external and internal, is decidedly against its authenticity'. It is found in only nine late Greek manuscripts (four in the margin), the oldest with it in the text being from the 14th century. It entered Erasmus's Greek New Testament only in his 1522 third edition. But Christians deny that the doctrine depended on it: it was formulated centuries before the Comma was known in Greek. They base it on texts such as the baptismal formula 'in the name of the Father and of the Son and of the Holy Spirit' (Matthew 28:19), John 1:1, and 1 Corinthians 8:6. Wood argues that Christians hold the Trinity because of how God revealed himself in Jesus and the Spirit, and that councils gave the language, not the belief.",
+   "facts": "Checkable: the 'three in heaven' clause is absent from all early Greek manuscripts and from modern critical texts; the earliest Greek manuscript with it in the text is 14th-century (629). Its earliest clear use is in 4th-century Latin (the Liber Apologeticus, probably by Priscillian). The word 'Trinity' does not occur in the Bible. Matthew 28:19 does link Father, Son and Spirit in one 'name'. Interpretation: whether the New Testament as a whole implies the later doctrine is a theological dispute.",
+   "assessment": "The Muslim argument is correct on the fact: 1 John 5:7 is a late addition, and Christian scholars say so. It overreaches when it infers that the doctrine was added along with it: the Trinity was defined (Nicaea 325, Constantinople 381) long before the Comma entered the Greek text. The real question, whether the New Testament teaches what the councils defined, has to be argued from other texts, where the Muslim case (subordination language, absence of the formula) and the Christian case (triadic passages, divine claims) both have material.",
+   "sources": [
+    "https://islam.wiki/books/is-the-bible-gods-word/1",
+    "https://sozai.app/transcript/trinity-or-tawhid-david-wood-mohammed-hijab-debate/index.md",
+    "https://biblia.com/bible/gs-netbible/1Jn5.7",
+    "https://en.wikipedia.org/wiki/Johannine_Comma"
+   ]
+  },
+  {
+   "id": "trinity-coherence",
+   "title": "Is the doctrine of the Trinity logically coherent?",
+   "direction": "islam-vs-christianity",
+   "verdict": "partial",
+   "by": [
+    "Mohammed Hijab (debates with William Lane Craig and David Wood)"
+   ],
+   "argument": "Hijab argues that three distinct persons, each fully God, who are nonetheless one God, is either a contradiction or a disguised polytheism. Against Craig's model, he argues that a being with three centres of consciousness is like conjoined twins or the three-headed Cerberus: more than one person and so more than one god. He also argues that if three persons each fully perform one act, such as creating the world, the act is over-determined, while if each does a part, none is fully God. Against Wood he calls the hypostatic union (one person, two natures) a 'square circle'. He argues that early Christian writers before Nicaea were often subordinationist, so the 'co-equal' doctrine is a later construction.",
+   "texts": [
+    {
+     "ref": "Quran 112:1-4",
+     "note": "112:1 confirmed; the surah as a whole cited by Hijab"
+    },
+    {
+     "ref": "Quran 5:73",
+     "note": ""
+    },
+    {
+     "ref": "Deuteronomy 6:4",
+     "note": ""
+    }
+   ],
+   "other_texts": [],
+   "response_by": [
+    "William Lane Craig",
+    "David Wood"
+   ],
+   "response": "Craig replies that analogies like Cerberus are thought experiments meant to show that one being can have more than one centre of consciousness, not literal models; God is immaterial and not divisible like an animal. To 'three persons could disagree', he answers that perfectly good and wise persons would always will the same best option. To the over-determination worry he offered an analogy of two matches lighting one flame; the reviewer judged Hijab's reply, that two matches make a bigger flame while three persons do not make a bigger universe, the more effective point. Wood argues that Christians accept the doctrine because God revealed himself as Father, Son and Spirit. He also argues that Islam faces parallel puzzles about God's attributes and the uncreated Quran.",
+   "facts": "Checkable: this is mainly a philosophical argument, not a textual one. The texts involved are the monotheistic confessions in both scriptures (Deuteronomy 6:4; Quran 112) and the Nicene and Athanasian creeds' language of three persons in one essence. Interpretation: the debates are about models (social, Latin, relative-identity) that go beyond what any scripture says.",
+   "assessment": "This is a serious philosophical objection that Christian philosophers themselves debate, and no single model of the Trinity has won agreement. Hijab's strongest premise is that 'person' must mean something; his weakest is that any model with three centres of consciousness is polytheism, which assumes what it must prove. The reviewer we read scored the Craig debate for Hijab on substance, but that is one reviewer's judgment. The site should present it as a live dispute in philosophy of religion.",
+   "sources": [
+    "https://againstthedyinglight.substack.com/p/craig-v-hijab-the-trinity-debate",
+    "https://sozai.app/transcript/trinity-or-tawhid-david-wood-mohammed-hijab-debate/index.md"
+   ]
+  },
+  {
+   "id": "genealogies-of-jesus",
+   "title": "Do Matthew and Luke give contradictory genealogies of Jesus?",
+   "direction": "islam-vs-christianity",
+   "verdict": "partial",
+   "by": [
+    "Rahmatullah Kairanawi ('al-Hindi', Izhar ul-Haqq, 1864), as summarized by Islamweb fatwa 2105"
+   ],
+   "argument": "Matthew says Joseph's father was Jacob and traces the line through Solomon son of David (Matthew 1:16). Luke says Joseph was the son of Heli and traces it through Nathan son of David (Luke 3:23). The two lists also differ greatly in length between David and Jesus. Al-Hindi's catalogue of Gospel discrepancies, summarized by Islamweb, presents this as proof the Gospels are not revelation: an inspired author would know Jesus's ancestors. Islamweb adds that tracing a virgin-born Jesus through Joseph at all is odd.",
+   "texts": [
+    {
+     "ref": "Matthew 1:16",
+     "note": ""
+    },
+    {
+     "ref": "Luke 3:23",
+     "note": ""
+    },
+    {
+     "ref": "Matthew 1:1-17",
+     "note": "full list not pulled; generation counts from Wikipedia"
+    }
+   ],
+   "other_texts": [],
+   "response_by": [
+    "Julius Africanus (levirate-marriage solution, reported by Eusebius)",
+    "Annius of Viterbo and later Protestant commentators (Luke gives Mary's line)",
+    "Raymond E. Brown (critical scholar, not a harmonizer)"
+   ],
+   "response": "The oldest Christian answer, from Julius Africanus (3rd century), is that Jacob and Heli were half-brothers. Under levirate law, one was Joseph's natural father and the other his legal father, so both lists are true in different senses. A later harmonization, revived in 1498 by Annius of Viterbo, holds that Luke traces Mary's line, with Heli as her father; Luke's wording 'the son (as was supposed) of Joseph' is read as a hint of this. Many Christian scholars do not rely on harmonization. Raymond Brown, for example, regards the genealogies as theological constructions that 'tell us nothing certain' about Jesus's grandparents, and does not treat their difference as a problem for faith.",
+   "facts": "Checkable: Matthew names Jacob, Luke names Heli, as Joseph's father, and the lines run through Solomon and Nathan respectively. The two lists overlap only around David, Shealtiel and Zerubbabel. Harmonizations go back to the 3rd century (Africanus), so the problem was noticed early. Interpretation: the 'Mary's line' reading has no explicit support in Luke's text, and Brown calls it a 'pious deduction'.",
+   "assessment": "The discrepancy is real and was recognized by early Christians themselves. It counts against a strict, word-for-word inerrancy view of the Gospels. Whether that view is a Christian necessity is disputed among Christians, and the argument does little against Christians who accept the Gospels as theologically shaped history. The harmonizations are possible but cannot be proven.",
+   "sources": [
+    "https://www.islamweb.net/en/fatwa/2105/distorting-the-gospels",
+    "https://en.wikipedia.org/wiki/Genealogy_of_Jesus"
+   ]
+  },
+  {
+   "id": "judas-death",
+   "title": "Did Judas hang himself (Matthew 27:5) or fall and burst open (Acts 1:18)?",
+   "direction": "islam-vs-christianity",
+   "verdict": "strong",
+   "by": [
+    "Muslim polemical discrepancy lists (Islamweb fatwa 2105 cites al-Hindi's count of 125 Gospel contradictions; Judas is not among the items quoted on that page)",
+    "Bart Ehrman (non-Muslim scholar whose work Muslim debaters frequently cite)"
+   ],
+   "argument": "Matthew says Judas threw the silver into the temple and 'went away and hanged himself', and the priests used the money to buy the potter's field (Matthew 27:5-7). Acts says Judas himself 'obtained a field' with his reward and, 'falling headlong, his body burst open, and all his intestines gushed out', so the field was called Akeldama, 'field of blood' (Acts 1:18-19). The accounts differ on the manner of death, on who bought the field, and on why it was called the field of blood. Ehrman says the two accounts are 'at odds', and Muslim debaters use this as a clear case of contradiction.",
+   "texts": [
+    {
+     "ref": "Matthew 27:5",
+     "note": ""
+    },
+    {
+     "ref": "Matthew 27:7",
+     "note": ""
+    },
+    {
+     "ref": "Acts 1:18",
+     "note": ""
+    },
+    {
+     "ref": "Acts 1:19",
+     "note": ""
+    }
+   ],
+   "other_texts": [],
+   "response_by": [
+    "Traditional harmonization (Augustine and later apologists; e.g. the BibleHub Q&A summaries)",
+    "Mike Licona (compositional-devices approach)"
+   ],
+   "response": "The traditional harmonization is sequential. Judas hanged himself, the body later fell (the rope or branch gave way, or it was taken down) and burst. The priests bought the field with Judas's money, so Acts can say in a looser sense that he 'obtained' it. Some argue that the Greek prenes genomenos can mean 'swelling up' rather than 'falling headlong', which would fit a body that had been hanging. Scholars such as Licona argue more generally that ancient writers felt free to tell the same event differently, and that differences in peripheral details do not undermine the core report.",
+   "facts": "Checkable: Matthew says Judas hanged himself and the priests bought the field; Acts says Judas acquired a field and fell and burst open. Both connect a 'field of blood' with Judas. Interpretation: whether the two can be combined is a judgment about plausibility; nothing in either text mentions the other's account.",
+   "assessment": "This is one of the stronger 'contradiction' examples, because the accounts differ on several specific points, not only on emphasis. Harmonization is logically possible but adds details neither text gives. Most critical scholars (Ehrman, and many non-inerrantist Christians) treat them as two independent traditions. The argument tells against strict inerrancy more than against the general reliability of the Gospels on Jesus himself, since Judas's death is a side issue in both books.",
+   "sources": [
+    "https://www.islamweb.net/en/fatwa/2105/distorting-the-gospels",
+    "https://ehrmanblog.org/the-death-of-judas-in-the-nt/",
+    "https://christianitytoday.com/ct/2017/may/michael-licona-gospel-differences-interview.html"
+   ]
+  },
+  {
+   "id": "crucifixion-day-and-hour",
+   "title": "Was Jesus crucified on Passover or the day before, and at the third hour or after the sixth?",
+   "direction": "islam-vs-christianity",
+   "verdict": "partial",
+   "by": [
+    "Muslim debaters drawing on critical scholarship (e.g. Shabir Ally; Paul Williams)"
+   ],
+   "argument": "In Mark, the Last Supper is the Passover meal, eaten 'on the first day of unleavened bread, when they sacrificed the Passover' (Mark 14:12), so the crucifixion falls on Passover day itself (15 Nisan). In John, Jesus is still before Pilate on 'the Preparation Day of the Passover, at about the sixth hour' (John 19:14), so the crucifixion falls on 14 Nisan, when the lambs were killed. Mark also says 'it was the third hour, and they crucified him' (Mark 15:25), while in John the sentence is not yet passed at the sixth hour. The argument is that the Gospels disagree on both the day and the hour of the central event of Christianity.",
+   "texts": [
+    {
+     "ref": "Mark 14:12",
+     "note": ""
+    },
+    {
+     "ref": "Mark 15:25",
+     "note": ""
+    },
+    {
+     "ref": "John 19:14",
+     "note": ""
+    }
+   ],
+   "other_texts": [],
+   "response_by": [
+    "Andreas Kostenberger",
+    "D. A. Carson",
+    "Colin Humphreys / Annie Jaubert (calendar theories)",
+    "William Barclay (theological reading)"
+   ],
+   "response": "Several explanations have been offered. Carson argues that 'Preparation of the Passover' can mean the Friday of Passover week, not the day before Passover. Kostenberger argues that first-century time was estimated to the nearest three-hour block, so 'third' and 'about the sixth' hour need not conflict sharply. Jaubert (1957) and Humphreys propose that the Synoptics and John follow different calendars. Others, including Barclay, accept that John has placed the death at the hour the Passover lambs were slaughtered for theological reasons, presenting Jesus as the Lamb of God.",
+   "facts": "Checkable: Mark 14:12 places the Last Supper on the day the Passover lamb was sacrificed; John 19:14 places the trial on the Preparation of the Passover at about the sixth hour; Mark 15:25 has the crucifixion at the third hour. Interpretation: the calendar and time-reckoning theories are scholarly proposals, and critics such as William Telford reject Humphreys's as artificial.",
+   "assessment": "The day discrepancy is one of the most widely recognized tensions in Gospel scholarship, and the Muslim argument is on solid ground in pointing it out. All the solutions are contested. The argument does not, however, touch the point Christians and Muslims actually dispute, since all four Gospels agree that Jesus was crucified on a Friday around Passover under Pilate.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Chronology_of_Jesus"
+   ]
+  },
+  {
+   "id": "resurrection-morning-and-jairus",
+   "title": "Do the Gospels disagree on details of the resurrection morning and of Jairus's daughter?",
+   "direction": "islam-vs-christianity",
+   "verdict": "partial",
+   "by": [
+    "Rahmatullah Kairanawi tradition of Gospel-discrepancy lists (Islamweb fatwa 2105)"
+   ],
+   "argument": "At the tomb, Matthew has 'Mary Magdalene and the other Mary' come 'as it began to dawn' (28:1). Mark has three women come 'when the sun had risen' (16:1-2), Luke names Mary Magdalene, Joanna, Mary the mother of James and 'other women' (24:10), and John has Mary Magdalene come 'while it was still dark' (20:1). Matthew has one angel who rolls away the stone (28:2), Mark a 'young man' sitting inside (16:5), Luke 'two men' (24:4) and John 'two angels' (20:12). In Mark, Jairus says his daughter 'is at the point of death' (Mark 5:23; Luke 8:42 'she was dying'), while in Matthew the ruler says 'my daughter has just died' (Matthew 9:18). Muslim apologists argue that witnesses guided by the same Spirit would not differ on such facts.",
+   "texts": [
+    {
+     "ref": "Matthew 28:1",
+     "note": ""
+    },
+    {
+     "ref": "Matthew 28:2",
+     "note": ""
+    },
+    {
+     "ref": "Mark 16:1",
+     "note": ""
+    },
+    {
+     "ref": "Mark 16:2",
+     "note": ""
+    },
+    {
+     "ref": "Mark 16:5",
+     "note": ""
+    },
+    {
+     "ref": "Luke 24:4",
+     "note": ""
+    },
+    {
+     "ref": "Luke 24:10",
+     "note": ""
+    },
+    {
+     "ref": "John 20:1",
+     "note": ""
+    },
+    {
+     "ref": "John 20:12",
+     "note": ""
+    },
+    {
+     "ref": "Mark 5:23",
+     "note": ""
+    },
+    {
+     "ref": "Matthew 9:18",
+     "note": ""
+    },
+    {
+     "ref": "Luke 8:42",
+     "note": ""
+    }
+   ],
+   "other_texts": [],
+   "response_by": [
+    "Michael R. Licona (Why Are There Differences in the Gospels?, Oxford University Press, 2017)"
+   ],
+   "response": "Licona compares the Gospels with Plutarch, who tells the same events differently in different Lives. He identifies standard compositional devices: compressing events, moving them in time, and 'literary spotlighting', where an author names only one person even when he knows several were present. On this view one angel versus two, or one woman versus several, is spotlighting, not contradiction. Matthew's shorter Jairus story compresses Mark's two-stage report (dying, then dead) into one statement. Licona says the differences are in peripheral details while the core events (an empty tomb found by women early on the first day) stay the same.",
+   "facts": "Checkable: the four accounts differ on the number and names of the women, the time (dawn, sunrise, still dark), and the number of angels or men. Matthew's ruler says his daughter has already died while Mark's says she is dying. All four agree that women including Mary Magdalene found the tomb empty early on the first day of the week. Interpretation: whether these are 'contradictions' or acceptable ancient compression depends on what genre the Gospels are taken to be.",
+   "assessment": "The differences are real and checkable, and they disprove a mechanical-dictation view of the Gospels. Licona's genre argument is a serious scholarly answer, but it concedes that the authors altered details, which some Christians themselves resist. The Muslim argument is weakest if it implies the accounts disagree on the main claims; the core story is the same in all four.",
+   "sources": [
+    "https://www.islamweb.net/en/fatwa/2105/distorting-the-gospels",
+    "https://christianitytoday.com/ct/2017/may/michael-licona-gospel-differences-interview.html",
+    "https://www.thegospelcoalition.org/themelios/review/why-are-there-differences-in-the-gospels-ancient-biography/"
+   ]
+  },
+  {
+   "id": "ending-of-mark",
+   "title": "Was the ending of Mark (16:9-20), with its snake-handling and poison promise, added later?",
+   "direction": "islam-vs-christianity",
+   "verdict": "partial",
+   "by": [
+    "Ahmed Deedat (as presented by islam.wiki)"
+   ],
+   "argument": "Mark 16:9-20 gives resurrection appearances and promises that believers will 'pick up serpents' and that 'if they drink any deadly thing, it will in no way hurt them' (16:18). Deedat pointed out that these verses are missing from the oldest manuscripts and treated them as an example of the Bible being edited. The earliest Gospel would then end at 16:8, with the women fleeing and telling no one, and with no appearance of the risen Jesus at all. If verses could be added to a Gospel, the argument runs, the Bible cannot be the preserved word of God.",
+   "texts": [
+    {
+     "ref": "Mark 16:8",
+     "note": ""
+    },
+    {
+     "ref": "Mark 16:9",
+     "note": ""
+    },
+    {
+     "ref": "Mark 16:17-18",
+     "note": ""
+    }
+   ],
+   "other_texts": [],
+   "response_by": [
+    "Bruce Metzger / mainstream Christian textual criticism (per Wikipedia)"
+   ],
+   "response": "Most Christian scholars agree that 16:9-20 was not written by Mark: Codex Sinaiticus and Codex Vaticanus (both 4th century) end at 16:8, and Eusebius said accurate copies ended there. Modern Bibles mark the passage as doubtful. They reply that this is an example of textual criticism working: the addition is known because the manuscripts preserve the evidence. They add that the ending is old (Irenaeus quotes 16:19 around 180), that it mostly summarizes appearances reported in the other Gospels, and that no doctrine depends on it alone.",
+   "facts": "Checkable: the two oldest complete Greek manuscripts end Mark at 16:8. A shorter ending and the Freer Logion also circulated. Irenaeus (c. 180) knew 16:19. Mark 16:8 as it stands has no resurrection appearance. Interpretation: whether Mark ended at 16:8 on purpose or lost his original ending is debated.",
+   "assessment": "The factual claim is correct and accepted by Christian scholars, so the argument succeeds against anyone who claims the Bible text has never changed. It is weaker as an argument against Christian belief, since the appearances are reported in Matthew, Luke, John and 1 Corinthians 15. A fair page should note that Christian scholarship itself identified and labels the addition.",
+   "sources": [
+    "https://islam.wiki/books/is-the-bible-gods-word/1",
+    "https://en.wikipedia.org/wiki/Mark_16"
+   ]
+  },
+  {
+   "id": "sign-of-jonah",
+   "title": "Was Jesus really 'three days and three nights' in the tomb, as he said he would be (Matthew 12:40)?",
+   "direction": "islam-vs-christianity",
+   "verdict": "weak",
+   "by": [
+    "Ahmed Deedat ('What Was the Sign of Jonah?')"
+   ],
+   "argument": "Jesus offers 'no sign but the sign of Jonah': 'as Jonah was three days and three nights in the belly of the whale, so will the Son of Man be three days and three nights in the heart of the earth' (Matthew 12:40). Deedat makes two points. First, Jonah was alive in the fish, so if the sign is 'as Jonah', Jesus should have been alive in the tomb, which fits the Muslim view that he did not die on the cross. Second, from Friday evening to Sunday before dawn is at most one and a half days and two nights, not three days and three nights. Since Jesus staked his claim on this one sign, Deedat argues, Christian belief fails its own test.",
+   "texts": [
+    {
+     "ref": "Matthew 12:40",
+     "note": ""
+    },
+    {
+     "ref": "Matthew 12:39",
+     "note": ""
+    },
+    {
+     "ref": "Esther 4:16",
+     "note": ""
+    },
+    {
+     "ref": "Esther 5:1",
+     "note": ""
+    },
+    {
+     "ref": "1 Samuel 30:12-13",
+     "note": ""
+    },
+    {
+     "ref": "Pesachim 4a",
+     "note": ""
+    },
+    {
+     "ref": "1 Corinthians 15:4",
+     "note": ""
+    }
+   ],
+   "other_texts": [
+    {
+     "ref": "Jerusalem Talmud Shabbat 9:3",
+     "note": "discussion of counting onot (day/night 'terms'); the popular quote 'part of an onah is as the whole' not found verbatim in the Guggenheimer translation",
+     "checked": true
+    }
+   ],
+   "response_by": [
+    "Christian apologists appealing to Jewish inclusive reckoning (e.g. BibleHub Q&A summaries)"
+   ],
+   "response": "Christians reply that 'three days and three nights' was an idiom for parts of three days, not 72 hours. Esther tells the Jews to fast 'three days, night or day' and then goes to the king 'on the third day' (Esther 4:16, 5:1). 1 Samuel 30:12-13 uses 'three days and three nights' alongside 'three days ago'. The Talmud holds that in some legal matters 'part of the day is like an entire day' (Pesachim 4a). Apologists also cite a saying of R. Eleazar ben Azariah in the Jerusalem Talmud (Shabbat 9:3) about counting 'terms' (onot). The New Testament itself says 'on the third day' many times (e.g. 1 Corinthians 15:4). As to Jonah being alive, Christians answer that Jesus compares the length of time, not Jonah's state; the earliest believers already read the sign as death and resurrection.",
+   "facts": "Checkable: Matthew 12:40 says 'three days and three nights'. Esther 4:16 to 5:1 shows 'three days, night or day' ending 'on the third day'. 1 Samuel 30:12-13 uses both expressions for one period, and Pesachim 4a states that 'part of the day is like an entire day' for mourning law. The Jerusalem Talmud passage cited by apologists concerns counting 'terms' in purity law; the popular quotation 'a part of an onah is as the whole' was not found verbatim in the translation checked. Interpretation: whether Jesus's sign refers to time or to state is a reading of the saying.",
+   "assessment": "The time objection is real if the phrase is read literally, but there is solid biblical evidence that the idiom allowed inclusive counting (Esther; 1 Samuel 30). The rabbinic parallels are weaker than often claimed. The 'Jonah was alive' inference reads more into the comparison than the verse states. On balance the Christian reply is stronger here, though the site should not repeat the inexact Talmud quotation.",
+   "sources": [
+    "https://luk.staff.ugm.ac.id/kmi/off/Islam/Deedat/Jonah.html",
+    "https://www.sefaria.org/Esther.5.1",
+    "https://www.sefaria.org/Pesachim.4a",
+    "https://www.sefaria.org/Jerusalem_Talmud_Shabbat.9.3"
+   ]
+  },
+  {
+   "id": "paul-vs-jesus-and-james",
+   "title": "Did Paul replace Jesus's law-keeping message with salvation by faith alone, against Jesus and James?",
+   "direction": "islam-vs-christianity",
+   "verdict": "partial",
+   "by": [
+    "Shabir Ally",
+    "Paul Williams",
+    "Al-Kadhi (Muslim writer answered by Answering Islam)"
+   ],
+   "argument": "Jesus said, 'Don't think that I came to destroy the law or the prophets. I didn't come to destroy, but to fulfill' (Matthew 5:17), and told the rich man to 'keep the commandments' (Matthew 19:17). Paul wrote that 'a man is justified by faith apart from the works of the law' (Romans 3:28) and 'not by the works of the law' (Galatians 2:16). James, Jesus's brother, wrote that 'by works, a man is justified, and not only by faith' (James 2:24). Muslim writers argue that Paul, who never met the earthly Jesus, made original sin, atonement and Jesus's divinity central, and that these are absent from Jesus's own teaching. On this view the law-keeping message of Jesus and the Jerusalem church is closer to Islam.",
+   "texts": [
+    {
+     "ref": "Matthew 5:17",
+     "note": ""
+    },
+    {
+     "ref": "Matthew 19:17",
+     "note": ""
+    },
+    {
+     "ref": "Romans 3:28",
+     "note": ""
+    },
+    {
+     "ref": "Galatians 2:16",
+     "note": ""
+    },
+    {
+     "ref": "James 2:24",
+     "note": ""
+    },
+    {
+     "ref": "Acts 21:20",
+     "note": "Jerusalem believers 'all zealous for the law'"
+    },
+    {
+     "ref": "Galatians 2:9",
+     "note": ""
+    },
+    {
+     "ref": "Acts 15:19",
+     "note": ""
+    },
+    {
+     "ref": "Romans 3:31",
+     "note": ""
+    },
+    {
+     "ref": "Mark 10:45",
+     "note": ""
+    }
+   ],
+   "other_texts": [],
+   "response_by": [
+    "Sam Shamoun",
+    "Christian Research Institute (equip.org)",
+    "Answering Islam (reply to Al-Kadhi)"
+   ],
+   "response": "Christian respondents argue that Paul was approved by the Jerusalem leaders. James, Peter and John 'gave to me and Barnabas the right hand of fellowship' (Galatians 2:9), and at the Jerusalem council James himself ruled that Gentile converts should not be burdened with the law (Acts 15:19). Paul says faith does not nullify the law: 'we establish the law' (Romans 3:31). In Romans and Galatians 'works of the law' refers to things like circumcision required of Gentiles, while James attacks a 'faith' with no deeds, so the two address different errors. Shamoun adds that Jesus himself set his own authority beside the Torah ('but I say to you', Matthew 5), and that Jesus taught his death as a ransom (Mark 10:45), so the atonement is not Paul's invention.",
+   "facts": "Checkable: Matthew 5:17, Romans 3:28 and James 2:24 say what is quoted, and James 2:24 directly rejects justification 'by faith only'. Galatians 2:9 and Acts 15:19 show the Jerusalem leaders accepting Paul's Gentile mission; Acts 21:20 shows the Jerusalem believers were 'zealous for the law'. Interpretation: whether Paul and James contradict or complement each other has been debated within Christianity since Luther. The 'Paul invented Christianity' thesis is also argued by some secular scholars, and rejected by others.",
+   "assessment": "There is real tension between the Pauline and Jacobean formulas, and Christians have argued about it for centuries, so the Muslim argument has textual grounds. It is weakest in claiming Paul broke with the Jerusalem apostles: the earliest sources (Galatians 2, Acts 15) show disagreement but also recognition. It also has to explain why the Synoptic Jesus already speaks of his death as a ransom (Mark 10:45).",
+   "sources": [
+    "https://answering-islam.org/authors/shamoun/rebuttals/ally/paul_circumcision.html",
+    "https://answering-islam.org/authors/shamoun/rebuttals/williams/false_accusations4.html",
+    "https://answering-islam.org/Responses/Al-Kadhi/r01.2.0.html",
+    "https://www.equip.org/article/is-islam-the-end-of-christianity-part-two"
+   ]
+  },
+  {
+   "id": "deuteronomy-18-18-muhammad",
+   "title": "Is the 'prophet like Moses' of Deuteronomy 18:18 Muhammad?",
+   "direction": "islam-vs-christianity",
+   "verdict": "weak",
+   "by": [
+    "Ahmed Deedat ('What the Bible Says About Muhammad')"
+   ],
+   "argument": "God tells Moses: 'I will raise them up a prophet from among their brothers, like you. I will put my words in his mouth' (Deuteronomy 18:18). Deedat argues that Jesus is unlike Moses and Muhammad is like him. Moses and Muhammad had a father and mother, married, had children, were accepted as leaders by their people, brought new laws, and died natural deaths and were buried; in Christian belief Jesus differs on each point. 'Their brothers', he argues, means the brothers of the Israelites, the Ishmaelites (Arabs), not Israelites themselves. Muhammad, who recited words given to him, fits 'I will put my words in his mouth', and the Quran says Muhammad is written of in the Torah (7:157).",
+   "texts": [
+    {
+     "ref": "Deuteronomy 18:18",
+     "note": ""
+    },
+    {
+     "ref": "Deuteronomy 18:15",
+     "note": "'from among you, of your brothers'"
+    },
+    {
+     "ref": "Quran 7:157",
+     "note": ""
+    },
+    {
+     "ref": "Quran 46:10",
+     "note": "a witness from the Children of Israel testified to something similar"
+    },
+    {
+     "ref": "Deuteronomy 17:15",
+     "note": ""
+    },
+    {
+     "ref": "Deuteronomy 34:10",
+     "note": ""
+    },
+    {
+     "ref": "Numbers 20:14",
+     "note": ""
+    },
+    {
+     "ref": "Acts 3:22",
+     "note": ""
+    },
+    {
+     "ref": "John 1:21",
+     "note": ""
+    }
+   ],
+   "other_texts": [
+    {
+     "ref": "Maimonides, Epistle to Yemen (Iggeret Teiman), Cohen tr., section X",
+     "note": "",
+     "checked": true
+    }
+   ],
+   "response_by": [
+    "Christian commentators (Acts 3:22 reading)",
+    "Maimonides (Epistle to Yemen) - a Jewish response used by Christians too"
+   ],
+   "response": "Respondents point to the parallel verse, 18:15: God will raise up a prophet 'from among you, of your brothers'. In Deuteronomy 'your brothers' regularly means fellow Israelites; the king must be 'one from among your brothers', not 'a foreigner' (17:15). Maimonides (12th century) says the phrase 'from the midst of thee' was added precisely so that 'brethren' could not be taken to include Esau or Ishmael. He also notes that 'like unto me' cannot mean equal to Moses, since 'there has not arisen a prophet since in Israel like Moses' (34:10). Christians add that Acts 3:22 applies the verse to Jesus, and that John 1:21 shows a single 'Prophet' was expected within Israel.",
+   "facts": "Checkable: 18:15 says 'from among you, of your brothers' and 18:18 'from among their brothers'. 17:15 uses 'brother' to mean a fellow Israelite as opposed to 'a foreigner', while Numbers 20:14 calls Edom (Esau) Israel's 'brother'. Deuteronomy 34:10 says no prophet like Moses had arisen 'in Israel'. Interpretation: the list of Moses-Muhammad likenesses is selective in both directions (Jesus also gave a law-like teaching, was rejected and so on).",
+   "assessment": "The 'brothers' argument is the weak point: within Deuteronomy the nearest parallel (17:15) and 18:15's 'from among you' point to Israelites, as both Jewish and Christian commentators note. Deedat's likeness list is clever but depends on which traits one picks. Deuteronomy 34:10 shows that 'a prophet like Moses' was an open expectation, which is why both Christians and Muslims claim the verse; it is not the Muslim argument's strong point.",
+   "sources": [
+    "https://luk.staff.ugm.ac.id/kmi/off/Islam/Deedat/bib_muha.html",
+    "https://en.wikisource.org/wiki/Epistle_to_Yemen/X"
+   ]
+  },
+  {
+   "id": "paraclete-as-muhammad",
+   "title": "Is the Paraclete Jesus promised in John 14-16 a prophecy of Muhammad?",
+   "direction": "islam-vs-christianity",
+   "verdict": "fails",
+   "by": [
+    "Ahmed Deedat (as presented by islam.wiki)",
+    "David Benjamin Keldani (1928), per Wikipedia"
+   ],
+   "argument": "Jesus promises 'another Counselor' (parakletos) who will come only after he goes away (John 14:16; 16:7). The Paraclete will guide into all truth and 'not speak from himself; but whatever he hears, he will speak' (16:13). Quran 61:6 says Jesus announced 'a messenger to come after me, whose name is Ahmad'. Deedat and earlier Keldani argued that the original Greek was periklytos ('praised one', in Arabic Ahmad), later changed to parakletos. They also argue that the Holy Spirit was already active before Jesus left, so the condition 'if I don't go away, the Counselor won't come' fits a later human prophet better.",
+   "texts": [
+    {
+     "ref": "John 14:16",
+     "note": ""
+    },
+    {
+     "ref": "John 16:7",
+     "note": ""
+    },
+    {
+     "ref": "John 16:13",
+     "note": ""
+    },
+    {
+     "ref": "Quran 61:6",
+     "note": ""
+    },
+    {
+     "ref": "John 14:26",
+     "note": ""
+    },
+    {
+     "ref": "John 14:17",
+     "note": ""
+    },
+    {
+     "ref": "John 15:26",
+     "note": ""
+    }
+   ],
+   "other_texts": [],
+   "response_by": [
+    "Answering Islam ('Paraclete and Periklutos')",
+    "Wikipedia summary citing Guthrie & Bishop, W. Montgomery Watt and Sean Anthony"
+   ],
+   "response": "No known Greek manuscript reads periklytos; all read parakletos, and the evidence goes back to the 3rd century. The text itself identifies the Paraclete: 'the Counselor, the Holy Spirit, whom the Father will send in my name' (John 14:26), 'the Spirit of truth... he lives with you, and will be in you' (14:17), whom 'the world can't receive' because it 'doesn't see him'. These are hard to apply to a human prophet born six centuries later. Historically, according to Sean Anthony, Ibn Ishaq does not link the passage to Ahmad; the connection first appears in Ibn Hisham and Ibn Qutayba.",
+   "facts": "Checkable: all Greek manuscripts read parakletos; John 14:26 names the Paraclete as 'the Holy Spirit', and 14:17 says he 'lives with you, and will be in you'. 61:6 does contain the name 'Ahmad'. Interpretation: the periklytos theory is a conjecture without manuscript support; whether 16:7's 'if I go' condition fits the Spirit is a theological question answered by John 7:39-type passages (not checked here).",
+   "assessment": "This is one of the weakest Muslim arguments on the texts. The proposed original reading has no manuscript support, and the passage explicitly calls the Paraclete the Holy Spirit, invisible to the world and indwelling the disciples. The argument survives only if one assumes the text was altered at exactly this point, which is the conclusion it needs to prove.",
+   "sources": [
+    "https://islam.wiki/books/what-the-bible-says-about-muhammad/3",
+    "https://en.wikipedia.org/wiki/Paraclete",
+    "https://answering-islam.org/Index/P/paraclete_and_periklutos.html"
+   ]
+  },
+  {
+   "id": "atonement-ezekiel-18",
+   "title": "Is it unjust for an innocent man to die for others' sins, given Ezekiel 18:20?",
+   "direction": "islam-vs-christianity",
+   "verdict": "partial",
+   "by": [
+    "Shabir Ally (debate with James White, Seattle, 19 Oct 2007, and follow-up articles, as quoted by Shamoun)",
+    "Islam Question & Answer (islamqa.info)"
+   ],
+   "argument": "'The soul who sins, he shall die. The son shall not bear the iniquity of the father, neither shall the father bear the iniquity of the son' (Ezekiel 18:20; cf. Deuteronomy 24:16). The Quran says the same many times: 'no bearer of burdens will bear the burden of another' (6:164, 17:15, 35:18, 39:7). Muslims argue that punishing a sinless person in place of the guilty is unjust by the Bible's own standard. They also argue that inherited guilt from Adam (Romans 5:12) is excluded by Ezekiel 18, and that God forgives the repentant directly (Ezekiel 18:21-23). When James White answered with 'corporate justice', citing Achan's family being stoned with him (Joshua 7), Ally replied that this was simply another injustice: 'Two wrongs do not make a right.'",
+   "texts": [
+    {
+     "ref": "Ezekiel 18:20",
+     "note": ""
+    },
+    {
+     "ref": "Deuteronomy 24:16",
+     "note": ""
+    },
+    {
+     "ref": "Quran 6:164",
+     "note": ""
+    },
+    {
+     "ref": "Quran 17:15",
+     "note": ""
+    },
+    {
+     "ref": "Quran 35:18",
+     "note": ""
+    },
+    {
+     "ref": "Quran 39:7",
+     "note": ""
+    },
+    {
+     "ref": "Romans 5:12",
+     "note": ""
+    },
+    {
+     "ref": "Isaiah 53:5",
+     "note": ""
+    },
+    {
+     "ref": "Leviticus 17:11",
+     "note": ""
+    },
+    {
+     "ref": "Quran 29:12-13",
+     "note": ""
+    },
+    {
+     "ref": "Quran 16:25",
+     "note": ""
+    },
+    {
+     "ref": "Sahih Muslim 2767",
+     "note": ""
+    },
+    {
+     "ref": "Joshua 7:24-26",
+     "note": "verse 25 checked"
+    }
+   ],
+   "other_texts": [],
+   "response_by": [
+    "David Wood",
+    "James White",
+    "Sam Shamoun"
+   ],
+   "response": "Wood replies that Ezekiel 18 forbids punishing children for parents' crimes against their will; it does not rule out a willing substitute who takes on the penalty, which the same Hebrew Bible foresees (Isaiah 53:5, 'he was pierced for our transgressions'; Leviticus 17:11). He argues the Quran is not consistent here either. It says misleaders will carry 'burdens along with their own burdens' (29:13; 16:25). And Sahih Muslim 2767 says that on the Day of Resurrection God will hand each Muslim a Jew or Christian and say 'That is your rescue from Hell-Fire'. If the Quran's principle allows that, Wood argues, it cannot rule out a sinless volunteer dying for sinners. White argues that the Bible knows corporate as well as individual responsibility (Achan), so the objection assumes a purely individualist model of justice.",
+   "facts": "Checkable: Ezekiel 18:20 and the Quranic 'no bearer of burdens' verses say what is quoted. Isaiah 53:5 and Leviticus 17:11 speak of atonement through another's suffering or blood. Quran 29:13 and 16:25 speak of misleaders bearing others' burdens, and Muslim 2767 does say Jews and Christians will be a Muslim's 'rescue' (fikak) from the Fire. Interpretation: Muslim scholars generally read 29:13 as the misleaders' own sin of misleading, and Muslim 2767 as the unbeliever taking his own place in Hell, not a Muslim's punishment; those readings were not checked in a source read here.",
+   "assessment": "Both sides have a fair point. Ezekiel 18 is about human justice and inherited guilt, so it does not squarely address voluntary substitution, which weakens the Muslim proof-text. But penal substitution is philosophically contested even among Christians, and the Muslim intuition that guilt cannot be transferred is widely shared. Wood's appeal to Muslim 2767 is a sharp counterpoint, though it depends on a reading of that hadith that Muslims dispute.",
+   "sources": [
+    "https://answering-islam.org/Responses/Shabir-Ally/corporate_justice.htm",
+    "https://islamqa.info/en/answers/42573/what-does-islam-say-about-redemption",
+    "https://www.equip.org/articles/facing-islamic-challenge/"
+   ]
+  },
+  {
+   "id": "old-testament-ethics",
+   "title": "Do Old Testament commands to destroy whole peoples undermine Christian moral objections to Islam?",
+   "direction": "islam-vs-christianity",
+   "verdict": "partial",
+   "by": [
+    "Ali Ataie (debate with David Wood, per review)"
+   ],
+   "argument": "When Christian apologists criticize violence in Muhammad's career, Muslim debaters such as Ataie answer by pointing to the 'violent verses' of the Bible. God commands Saul: 'go and strike Amalek, and utterly destroy all that they have... kill both man and woman, infant and nursing baby' (1 Samuel 15:3). Of Canaanite cities: 'you shall save alive nothing that breathes' (Deuteronomy 20:16). After the Midianite war, Moses orders the killing of every male child and every non-virgin woman (Numbers 31:17). The argument is that Christians who accept these as God's commands cannot consistently condemn Muhammad's wars or the Banu Qurayza judgment as proof he was not a prophet.",
+   "texts": [
+    {
+     "ref": "1 Samuel 15:3",
+     "note": ""
+    },
+    {
+     "ref": "Deuteronomy 20:16",
+     "note": ""
+    },
+    {
+     "ref": "Numbers 31:17",
+     "note": ""
+    },
+    {
+     "ref": "Jeremiah 25:9",
+     "note": ""
+    },
+    {
+     "ref": "1 Samuel 27:8",
+     "note": ""
+    },
+    {
+     "ref": "1 Samuel 30:1",
+     "note": ""
+    },
+    {
+     "ref": "Quran 9:29",
+     "note": ""
+    }
+   ],
+   "other_texts": [],
+   "response_by": [
+    "Paul Copan (Is God a Moral Monster?, 2011)"
+   ],
+   "response": "Copan argues that the 'utterly destroy' (herem) language is conventional ancient Near Eastern war hyperbole. The same term is used of Judah in Jeremiah 25:9, yet the book goes on to describe many survivors. He notes that Amalekites appear again soon after 1 Samuel 15 (1 Samuel 27:8; 30:1). He argues that the commands were limited to a specific time and place, not ongoing rules, that they were judgments on particular wickedness rather than ethnic hatred, and that Israel was warned it would be judged in the same way. Wood, by contrast, argues that the Quran commands ongoing fighting (for example 9:29), so the cases are not parallel.",
+   "facts": "Checkable: 1 Samuel 15:3, Deuteronomy 20:16 and Numbers 31:17 contain the commands quoted. Amalekites appear raiding again in 1 Samuel 27:8 and 30:1, and Jeremiah 25:9 uses 'utterly destroy' of Judah, which survives. Quran 9:29 commands fighting certain People of the Book until they pay the jizya. Interpretation: whether herem is hyperbole and whether the Quranic commands are bounded or general are disputed by scholars on each side.",
+   "assessment": "As a consistency argument (tu quoque) this is effective: both scriptures contain divinely commanded warfare, and neither tradition can treat violence as proof of the other's falsehood without explaining its own texts. It does not show either set of texts is morally acceptable. Copan's hyperbole defence has textual support (Amalekite survivors) but critics say it does not remove the moral problem of the command itself.",
+   "sources": [
+    "https://answering-islam.org/Authors/Wildcat/wood_ataie_debate.htm",
+    "https://modernreformation.org/resources/interviews/is-god-a-moral-monster-q-a-with-paul-copan"
+   ]
+  },
+  {
+   "id": "isaiah-7-14-almah",
+   "title": "Does Isaiah 7:14 predict a virgin birth, or a young woman's child in King Ahaz's day?",
+   "direction": "jewish-vs-christianity",
+   "verdict": "strong",
+   "by": [
+    "Rabbi Dovid Rosenfeld (Aish.com), pointing readers to Rabbi Tovia Singer"
+   ],
+   "argument": "Matthew 1:23 quotes Isaiah 7:14 as 'the virgin shall be with child', but the Hebrew word is almah, which means a young woman without regard to virginity. Hebrew has a specific word for virgin, betulah, which Isaiah does not use, and Proverbs 30:19 uses almah where a sexual relationship is in view. Isaiah says 'the' young woman, a specific woman Ahaz could identify. The sign is tied to Ahaz's crisis: before the child knows good from evil, the two kings Ahaz fears will be gone (7:16). A birth seven centuries later could not reassure Ahaz, and in any case a virgin birth could not serve as a visible sign.",
+   "texts": [
+    {
+     "ref": "Isaiah 7:14",
+     "note": "JPS: 'the young woman is with child'; WEB: 'the virgin will conceive'"
+    },
+    {
+     "ref": "Isaiah 9:6",
+     "note": ""
+    },
+    {
+     "ref": "Isaiah 7:16",
+     "note": ""
+    },
+    {
+     "ref": "Proverbs 30:19",
+     "note": "JPS: 'how a man has his way with a maiden'"
+    },
+    {
+     "ref": "Matthew 1:23",
+     "note": ""
+    }
+   ],
+   "other_texts": [],
+   "response_by": [
+    "Michael L. Brown (Answering Jewish Objections to Jesus vol. 3, as summarized by Jews for Jesus)",
+    "Jews for Jesus"
+   ],
+   "response": "Brown concedes that almah 'does not specifically mean virgin'; its basic sense is a young woman of marriageable age. But he argues that betulah is also not a strictly technical word for virgin (Jews for Jesus summarizes his detailed case in vol. 3, section 4.3), and that in Isaiah's culture a young unmarried almah would be presumed to be a virgin. The Septuagint, made by Jewish translators before Christianity, rendered almah here as parthenos ('virgin'), so Matthew follows an existing Jewish reading. Christian interpreters also connect the child named Immanuel ('God with us') to the royal child of 9:6 ('Mighty God'), arguing for a fulfilment beyond Ahaz's time, though many accept a first, near fulfilment in Isaiah's day.",
+   "facts": "Checkable: the Hebrew has ha-almah ('the young woman'), not betulah; the LXX has parthenos; Matthew 1:23 follows the Greek. Isaiah 7:16 ties the sign to the defeat of Ahaz's enemies before the child knows good and evil. Interpretation: whether a double or later fulfilment is allowed, and how much parthenos tells us about the meaning of the Hebrew, are disputed.",
+   "assessment": "On the Hebrew and the immediate context, the Jewish reading is stronger: almah does not specify virginity, and the sign is framed for Ahaz's lifetime, as most modern translations and many Christian scholars accept. The Christian case rests mainly on the Septuagint and on reading Isaiah 7-11 as a messianic unit. Those are real arguments, but they belong to how Matthew read Isaiah more than to what Isaiah 7:14 says on its own.",
+   "sources": [
+    "https://aish.com/does-isaiah-714-refer-to-a-virgin-birth/",
+    "https://jewsforjesus.org/answers/almah-virgin-or-young-maiden",
+    "https://jewsforjesus.org/answers/prophecy/does-almah-mean-young-woman-or-virgin"
+   ]
+  },
+  {
+   "id": "isaiah-53-servant",
+   "title": "Is the suffering servant of Isaiah 53 the nation of Israel or the Messiah?",
+   "direction": "jewish-vs-christianity",
+   "verdict": "partial",
+   "by": [
+    "Rabbi Tovia Singer (Outreach Judaism)"
+   ],
+   "argument": "Singer argues that Isaiah 52:13 to 53:12 is the fourth of the Servant Songs, and the earlier songs name the servant explicitly as Israel/Jacob (41:8-9, 44:1, 44:21, 45:4, 49:3). The speakers in chapter 53 are the astonished 'kings' of 52:15, who in the messianic age confess that they despised Israel and that its suffering came from their own wickedness. He says this is the prevailing rabbinic reading (Rashi, Ibn Ezra, Kimchi, Nachmanides and others). He also notes that it is not a medieval invention: Origen (c. 248) reported that Jews of his day applied the passage to 'the whole people, regarded as one individual'.",
+   "texts": [
+    {
+     "ref": "Isaiah 49:3",
+     "note": ""
+    },
+    {
+     "ref": "Isaiah 52:13",
+     "note": ""
+    },
+    {
+     "ref": "Isaiah 53:3",
+     "note": ""
+    },
+    {
+     "ref": "Isaiah 53:5",
+     "note": ""
+    },
+    {
+     "ref": "Isaiah 53:8",
+     "note": ""
+    },
+    {
+     "ref": "Isaiah 53:9",
+     "note": ""
+    },
+    {
+     "ref": "Isaiah 1:4",
+     "note": ""
+    },
+    {
+     "ref": "Sanhedrin 98b",
+     "note": "'the leper of the house of Rabbi' quoting Isaiah 53:4"
+    },
+    {
+     "ref": "Isaiah 41:8",
+     "note": ""
+    }
+   ],
+   "other_texts": [
+    {
+     "ref": "Origen, Contra Celsum 1.55",
+     "note": "quoted by Singer; not checked",
+     "checked": false
+    }
+   ],
+   "response_by": [
+    "Jews for Jesus ('Isaiah 53: A Definitive Messianic Guide')",
+    "Michael L. Brown (common Christian arguments)"
+   ],
+   "response": "Christian respondents point out that ancient Jewish sources also read the passage messianically. Targum Jonathan identifies the servant as the Messiah. The Babylonian Talmud says the rabbis gave the Messiah's name as 'the leper of the house of Rabbi', quoting Isaiah 53:4 (Sanhedrin 98b). Maimonides' Epistle to Yemen is also listed by the Wikipedia summary among messianic readings. Textually, the servant is innocent ('he had done no violence, nor was any deceit in his mouth', 53:9) and suffers 'for the disobedience of my people' (53:8), while Isaiah elsewhere calls Israel 'a sinful nation' (1:4). Christians argue that this distinguishes the servant from the nation he suffers for.",
+   "facts": "Checkable: earlier Servant Songs explicitly call the servant 'Israel' (49:3). Isaiah 53:8-9 describes the servant as innocent and stricken 'for the disobedience of my people'. Targum Jonathan and Sanhedrin 98b apply parts of the passage to the Messiah, and Origen reports a national reading among Jews in the 3rd century. Interpretation: both national and individual readings are ancient within Judaism; Christian identification with Jesus rests on New Testament usage (Acts 8:32-35).",
+   "assessment": "Both sides can cite early Jewish evidence, so neither 'the messianic reading is a Christian invention' nor 'the national reading is a medieval reaction to Christianity' holds up. The national reading has the strongest support from the surrounding chapters; the individual reading has the strongest support from 53:8-9, where the servant suffers for 'my people'. The site should present this as a genuine exegetical dispute.",
+   "sources": [
+    "https://outreachjudaism.org/?p=2891",
+    "https://jewsforjesus.org/messianic-prophecies/the-messiah-would-be-the-suffering-servant",
+    "https://en.wikipedia.org/wiki/Isaiah_53",
+    "https://www.sefaria.org/Sanhedrin.98b"
+   ]
+  },
+  {
+   "id": "messiah-criteria",
+   "title": "Did Jesus fail the Jewish criteria for the Messiah (Temple, ingathering, peace)?",
+   "direction": "jewish-vs-christianity",
+   "verdict": "strong",
+   "by": [
+    "Maimonides (Mishneh Torah, Kings and Wars 11:4)",
+    "Rabbi Tovia Singer (quoted by Luke Lancaster, Catholic Answers)",
+    "Rabbi Yitzchak Breitowitz (as cited by Lancaster)"
+   ],
+   "argument": "Maimonides gives the test: a king from the house of David who studies Torah, keeps the commandments, leads Israel in observance and fights God's wars may be presumed to be the Messiah. If he succeeds, builds the Temple in its place and gathers the dispersed of Israel, he is definitely the Messiah. Jesus did none of these. He did not rebuild the Temple, which was destroyed in 70 CE; he did not gather the exiles; and the world-wide peace promised in Isaiah 2:4 did not come. Singer: 'If Jesus were the Messiah, you would know it from reading the newspaper.' Breitowitz adds that Jesus set aside parts of the Torah (Mark 7:19), which the Messiah may not do (Deuteronomy 30:16), and a Messiah who dies at the hands of Rome has failed.",
+   "texts": [
+    {
+     "ref": "Isaiah 2:4",
+     "note": ""
+    },
+    {
+     "ref": "Mark 7:19",
+     "note": ""
+    },
+    {
+     "ref": "Deuteronomy 30:16",
+     "note": ""
+    },
+    {
+     "ref": "Jeremiah 31:31",
+     "note": ""
+    },
+    {
+     "ref": "Daniel 9:26",
+     "note": ""
+    },
+    {
+     "ref": "Luke 22:30",
+     "note": ""
+    }
+   ],
+   "other_texts": [
+    {
+     "ref": "Mishneh Torah, Kings and Wars 11:4",
+     "note": "",
+     "checked": true
+    }
+   ],
+   "response_by": [
+    "Luke Lancaster (Catholic Answers)",
+    "Michael L. Brown (Answering Jewish Objections to Jesus vol. 1)"
+   ],
+   "response": "Christians answer that the prophecies do not say they must all be fulfilled in one coming. Jesus implied that the promises of peace would be fulfilled at his return (Matthew 24), and some Jewish texts also expected a Messiah who first suffers and later triumphs. The new covenant was expected to differ from the Sinai covenant (Jeremiah 31:31-32), so changes to the Torah are not automatically disqualifying. Daniel 9:26 says an anointed one will be 'cut off', which Lancaster (following Brant Pitre and John Collins) takes as a Hebrew idiom for being put to death. Isaiah 53 is read as foretelling a dying servant. The twelve apostles are read as the start of the regathering of the twelve tribes (Luke 22:30).",
+   "facts": "Checkable: Maimonides' criteria in Kings 11:4 are as quoted (Davidic king, Torah observance, rebuilding the Temple, ingathering of exiles). The Temple was destroyed in 70 CE and has not been rebuilt. Jeremiah 31:31 promises a 'new covenant'. Interpretation: whether the Messiah's work may be split across two comings is the crux, and the Hebrew Bible does not explicitly describe a second coming.",
+   "assessment": "On the plain criteria held in mainstream rabbinic Judaism, the Jewish objection is strong: the defining public acts of the Messianic age have not happened. The Christian reply (two comings) is internally consistent but is a reinterpretation that the Hebrew Bible does not state outright. It depends on prior acceptance of Jesus's resurrection. This argument therefore mostly measures each tradition's definition of 'Messiah' rather than settling the question.",
+   "sources": [
+    "https://www.sefaria.org/Mishneh_Torah,_Kings_and_Wars.11.4",
+    "https://www.catholic.com/magazine/online-edition/some-jewish-objections-to-jesus"
+   ]
+  },
+  {
+   "id": "deuteronomy-18-not-muhammad",
+   "title": "Does the Torah foretell Muhammad as the 'prophet from among your brethren'?",
+   "direction": "jewish-vs-islam",
+   "verdict": "strong",
+   "by": [
+    "Maimonides (Epistle to Yemen, 1173/4)"
+   ],
+   "argument": "Muslims, from medieval polemicists to Deedat, argue that Deuteronomy 18:15-18 and the Quran's claim that Muhammad is 'written in the Torah' (7:157) point to an Arab prophet from the Israelites' 'brethren', the Ishmaelites. Maimonides answers that the verse must be read in context: it follows bans on divination and promises Israel a prophet who will live 'in the midst of thee'. 'From the midst of thee, of thy brethren, like unto me' means a Jew. The words were added because 'of thy brethren' alone might have been misunderstood to include Esau or Ishmael, since Israel calls Edom 'brother' (Numbers 20:14). 'Like unto me' does not mean equal to Moses, since 'there hath not arisen a prophet since in Israel like unto Moses' (34:10), and the prophet foretold is not one who brings a new law.",
+   "texts": [
+    {
+     "ref": "Deuteronomy 18:15",
+     "note": ""
+    },
+    {
+     "ref": "Deuteronomy 18:18",
+     "note": ""
+    },
+    {
+     "ref": "Numbers 20:14",
+     "note": ""
+    },
+    {
+     "ref": "Deuteronomy 34:10",
+     "note": ""
+    },
+    {
+     "ref": "Quran 7:157",
+     "note": ""
+    },
+    {
+     "ref": "Quran 61:6",
+     "note": ""
+    }
+   ],
+   "other_texts": [],
+   "response_by": [
+    "Ahmed Deedat",
+    "The apostate Maimonides was answering (identified by Haggai Mazuz as al-Samaw'al al-Maghribi, author of Ifham al-Yahud)"
+   ],
+   "response": "Deedat argues that if the prophet were to be an Israelite the text would say 'from among yourselves', and that 18:18 says 'from among their brethren'. In his reading Israel's brethren are Ishmael's descendants, Abraham's other line, and Muhammad matches Moses in birth, marriage, family, leadership, law-giving and natural death. He reads Deuteronomy 34:10 ('there has not arisen... in Israel') as showing the prophet would arise outside Israel. The anonymous Jewish apostate whom Maimonides answered (possibly al-Samaw'al al-Maghribi, a 12th-century convert to Islam) used selected Torah passages in the same way.",
+   "facts": "Checkable: 18:15 says 'from the midst of thee, of thy brethren' and 18:18 'from among their brethren'. Deuteronomy uses 'brother' for fellow Israelites (17:15) and once calls Edom Israel's 'brother' (Numbers 20:14). 34:10 says no prophet like Moses had arisen 'in Israel'. The Quran claims Muhammad is described in the Torah (7:157) but does not cite Deuteronomy 18. Interpretation: the identity of the promised prophet is read differently by Jews (a line of Israelite prophets), Christians (Jesus, Acts 3:22) and Muslims (Muhammad).",
+   "assessment": "Maimonides' contextual argument is strong. 18:15's 'from the midst of thee' and the use of 'brother' in 17:15 make an Israelite referent the natural reading. The Muslim reading depends mainly on 18:18 taken in isolation and on a selective list of likenesses. The Quran's general claim (7:157) is a theological statement that cannot be checked against a specific Torah verse.",
+   "sources": [
+    "https://en.wikisource.org/wiki/Epistle_to_Yemen/X",
+    "https://luk.staff.ugm.ac.id/kmi/off/Islam/Deedat/bib_muha.html",
+    "https://en.wikipedia.org/wiki/Epistle_to_Yemen"
+   ]
+  },
+  {
+   "id": "uzayr-son-of-god",
+   "title": "Did Jews ever call Ezra ('Uzayr) the son of God, as Quran 9:30 says?",
+   "direction": "jewish-vs-islam",
+   "verdict": "strong",
+   "by": [
+    "Encyclopaedia Judaica and the 1906 Jewish Encyclopedia (as summarized in Wikipedia 'Uzair')"
+   ],
+   "argument": "Quran 9:30 says: 'The Jews say, Ezra is the son of Allah; and the Christians say, The Messiah is the son of Allah.' Jewish scholars object that no such belief is found anywhere in Jewish literature. Ezra is honoured as the scribe who restored the Torah, but never as divine or as God's son. The Encyclopaedia Judaica calls the Quranic statement 'an enigma' for this reason. The 1906 Jewish Encyclopedia suggests it is a hostile metaphor for Jewish reverence for Ezra. The objection is that the Quran attributes to Jews a belief they did not hold.",
+   "texts": [
+    {
+     "ref": "Quran 9:30",
+     "note": ""
+    },
+    {
+     "ref": "Quran 9:31",
+     "note": ""
+    }
+   ],
+   "other_texts": [],
+   "response_by": [
+    "Ibn Kathir (Tafsir on 9:30)",
+    "Ibn Hazm (as reported by Ibrahim Awad)",
+    "Gordon Newby (academic)",
+    "Shorter Jewish Encyclopedia / H. Z. Hirschberg (Yemenite-Jewish hypothesis)"
+   ],
+   "response": "Ibn Kathir simply takes the verse as reporting what (some) Jews claimed. Ibn Hazm, according to Ibrahim Awad, attributed the belief to a Sadducee group in Yemen. Gordon Newby suggests that Jews of the Hijaz may have counted Ezra among the 'Bene Elohim' ('sons of God') because of his piety, possibly linked to mystical traditions identifying Ezra with Enoch or Metatron (3 Enoch). The Shorter Jewish Encyclopedia and Hirschberg suggest a local Yemenite oral tradition, perhaps linked to 2 Esdras, in which Ezra was regarded as messianic. Muslim interpreters stress that the verse concerns a particular group known to the Prophet, not all Jews at all times.",
+   "facts": "Checkable: 9:30 states that 'the Jews' say Ezra is the son of God. Mainstream Jewish literature known today contains no such belief, as Jewish reference works say. The explanations offered (Yemenite or Hijazi sects, Enoch-Metatron speculation) are hypotheses without direct documentary evidence of Jews calling Ezra God's son. Interpretation: whether 'the Jews' means all Jews or a specific local group is a reading of the verse.",
+   "assessment": "The Jewish objection is strong on the evidence: no Jewish text calls Ezra the son of God, and the Muslim and academic explanations are conjectures about lost local groups. The best Muslim reply is that the verse may refer to a small, now-unattested group in 7th-century Arabia, which cannot be disproven but also cannot be shown. The site should state the textual fact clearly and present the explanations as hypotheses.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Uzair",
+    "https://api.quran.com/api/v4/tafsirs/169/by_ayah/9:30"
+   ]
+  }
+ ]
+}

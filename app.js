@@ -147,7 +147,7 @@
       '<div class="topic-grid">' + POPULAR.map(id => G.topics.find(t => t.id === id)).filter(Boolean).map(t => '<a href="#/t/' + t.id + '">' + esc(t.title) + '</a>').join('') + '</div>' +
       '<div class="section-head"><h2>Read the texts</h2></div>' + readGrid();
     bindAsk();
-    loadDebates().then(d => { const el = document.getElementById('home-deb'); if (el) el.innerHTML = d.arguments.length ? d.arguments.slice(0, 8).map(debTile).join('') : '<p class="muted small">Coming soon.</p>'; });
+    loadDebates().then(d => { const el = document.getElementById('home-deb'); if (el) el.innerHTML = d.arguments.length ? mixDirs(d.arguments).slice(0, 8).map(debTile).join('') : '<p class="muted small">Coming soon.</p>'; });
   }
   const questionCards = qs => '<ul class="cards">' + qs.map(q =>
     '<li><a href="#/q/' + q.slug + '"><strong>' + esc(q.title) + '</strong><span>' + esc(q.short) + '</span></a></li>').join('') + '</ul>';
@@ -1069,6 +1069,8 @@
     'christian-vs-judaism': ['Christian case against Judaism', 'christian', 'jewish'], 'islam-vs-judaism': ['Muslim case against Judaism', 'muslim', 'jewish'] };
   const VERDICT = { strong: 'Strong', partial: 'Partly works', weak: 'Weak', fails: 'Fails' };
   let deb = null, debFilter = 'all';
+  const mixDirs = list => { const by = {}; list.forEach(a => (by[a.direction] = by[a.direction] || []).push(a)); const q = Object.values(by), out = [];
+    for (let i = 0; out.length < list.length; i++) q.forEach(g => g[i] && out.push(g[i])); return out; };
   const loadDebates = () => deb ? Promise.resolve(deb) : getJSON('content/debates.json').then(d => (deb = d)).catch(() => (deb = { arguments: [] }));
   const debTile = a => { const d = DIR[a.direction] || ['', '', ''];
     return '<a class="dispute-tile" href="#/d/' + a.id + '"><span class="eyebrow">' + esc(d[0]) + '</span><strong>' + esc(a.title) + '</strong><span>' + esc(a.argument) + '</span>' +
@@ -1093,12 +1095,15 @@
     document.title = a.title + ' · Contradiction';
     const dir = DIR[a.direction] || ['', '', ''];
     const people = (list, cls) => list && list.length ? '<p class="small muted">' + (cls === 'by' ? 'Made by ' : 'Answered by ') + esc(list.join(', ')) + '</p>' : '';
-    const texts = (a.texts || []).map(ref => ({ ref, why: '', kind: refKind(ref) }));
+    const texts = (a.texts || []).map(t => typeof t === 'string' ? { ref: t, why: '' } : { ref: t.ref, why: t.note || '' }).map(t => Object.assign(t, { kind: refKind(t.ref) }));
+    const other = a.other_texts || [];
     app.innerHTML = '<p class="crumbs"><a href="#/debates">Debates</a> › ' + esc(dir[0]) + '</p><h1>' + esc(a.title) + '</h1>' +
       (a.verdict ? '<p><span class="verdict big v-' + a.verdict + '">Verdict: ' + VERDICT[a.verdict] + '</span></p>' : '') +
       '<section class="sec v-' + dir[1] + '"><span class="tag">The argument</span>' + people(a.by, 'by') + '<p>' + rich(a.argument) + '</p></section>' +
       (texts.length ? '<div class="section-head"><h2>The texts</h2></div>' + groupsHtml([...new Set(texts.map(t => t.kind))].map(k => [k, texts.filter(t => t.kind === k)])) +
         '<p class="small muted">Tap a passage to read it in context, with the original Arabic, Hebrew or Greek word by word.</p>' : '') +
+      (other.length ? '<div class="section-head"><h2>Other sources it cites</h2></div><ul class="other-src">' + other.map(o => '<li><strong>' + esc(o.ref) + '</strong>' + (o.note ? ' <span class="muted">' + esc(o.note) + '</span>' : '') +
+        ' <span class="chk ' + (o.checked ? 'ok' : 'no') + '">' + (o.checked ? 'checked' : 'not checked yet') + '</span></li>').join('') + '</ul>' : '') +
       '<section class="sec v-' + dir[2] + '"><span class="tag">The best reply</span>' + people(a.response_by, 'resp') + '<p>' + rich(a.response) + '</p></section>' +
       '<section class="sec v-overview"><span class="tag">What the texts establish</span><p>' + rich(a.facts) + '</p></section>' +
       '<section class="sec v-critics"><span class="tag">Assessment</span><p>' + rich(a.assessment) + '</p></section>' +

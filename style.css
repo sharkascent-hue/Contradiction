@@ -368,3 +368,10 @@ sup.cite a:hover { background: var(--chr); color: #fff; }
 .verdict.big { font-size: .9rem; padding: 6px 14px; margin: 0; }
 .verdict.v-strong { background: #e6f7ee; color: #0b7a4b; } .verdict.v-partial { background: #fff4db; color: #8a5a00; }
 .verdict.v-weak { background: #ffece6; color: #b3401a; } .verdict.v-fails { background: #fde8ea; color: #b4232f; }
+
+/* debates: other sources */
+.other-src { list-style: none; padding: 0; margin: 0 0 1.2rem; display: grid; gap: .5rem; }
+.other-src li { background: var(--card, #fff); border: 1px solid var(--line, #e7e2d9); border-radius: 12px; padding: .7rem .9rem; font-size: .95rem; }
+.chk { display: inline-block; font-size: .75rem; font-weight: 600; padding: .1rem .5rem; border-radius: 999px; margin-left: .3rem; }
+.chk.ok { background: #e6f6ee; color: #0b7a52; }
+.chk.no { background: #fdf1e3; color: #9a5b0b; }
