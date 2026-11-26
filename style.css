@@ -396,10 +396,56 @@ sup.cite a:hover { background: var(--chr); color: #fff; }
 .extra-list a:hover { border-color: #c9c2b5; }
 .seg.jump { margin: 14px 0 4px; }
 
-/* copy buttons */
-.copy-btn { font: 600 .78rem var(--ui, inherit); padding: .3rem .7rem; border-radius: 999px; border: 1px solid var(--line, #e2dcd1); background: #fff; color: inherit; cursor: pointer; margin-right: .4rem; }
-.copy-btn:hover { background: #f4f1ea; }
+/* copy and share buttons: small round icons at the top right, like a chat app */
+.copy-btn { display: inline-grid; place-items: center; width: 32px; height: 32px; padding: 0; border-radius: 50%; border: 1px solid var(--line, #e2dcd1); background: #fff; color: #5b5b66; cursor: pointer; float: right; margin: -2px 0 6px 8px; transition: background .15s, color .15s; }
+.copy-btn:hover { background: #f1eee7; color: #17171c; }
 .copy-btn.done { background: #e6f6ee; color: #0b7a52; border-color: #bfe8d3; }
-.copy-btn.mini { float: right; margin: 0 0 4px 8px; padding: .2rem .6rem; font-size: .72rem; opacity: .75; }
-.copy-btn.mini:hover { opacity: 1; }
+.tools { float: right; display: flex; gap: 6px; margin: -4px -4px 6px 10px; }
+.tools .copy-btn { float: none; margin: 0; }
+.passage .copy-btn { width: 28px; height: 28px; opacity: .7; }
+.passage .copy-btn:hover { opacity: 1; }
 .passage { position: relative; }
+p .share-btn { float: none; vertical-align: middle; margin: 0 0 0 6px; }
+
+/* hadith grades */
+.grade { margin: .5rem 0 0; }
+.gr { display: inline-block; font-size: .75rem; font-weight: 700; padding: .12rem .6rem; border-radius: 999px; }
+.gr.sahih { background: #e6f6ee; color: #0b7a52; }
+.gr.hasan { background: #eef3ff; color: #1d4ed8; }
+.gr.daif { background: #fdf1e3; color: #9a5b0b; }
+.gr.mawdu { background: #fde8e8; color: #b42318; }
+.gr.other { background: #f1eee7; color: #55555f; }
+
+/* same story, side by side */
+.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; align-items: start; }
+@media (max-width: 760px) { .two-col { grid-template-columns: 1fr; } }
+.diff { display: grid; gap: 12px; margin-bottom: 1.2rem; }
+.diff-row { display: grid; grid-template-columns: 1fr 1fr; gap: 0 14px; background: #fff; border: 1px solid var(--line, #e7e2d9); border-radius: 16px; padding: 14px 16px; }
+.diff-point { grid-column: 1 / -1; font-weight: 700; margin-bottom: 8px; font-size: 1.05rem; }
+.diff-b, .diff-q { font-size: .97rem; }
+.diff-b .tag { color: var(--chr, #2563eb); } .diff-q .tag { color: var(--isl, #0f9d6e); }
+.diff-row .tag { display: block; font-size: .72rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; margin-bottom: 2px; }
+.diff-note { grid-column: 1 / -1; margin-top: 10px; padding-top: 10px; border-top: 1px dashed var(--line, #e7e2d9); font-size: .92rem; opacity: .8; }
+@media (max-width: 560px) { .diff-row { grid-template-columns: 1fr; gap: 8px; } }
+
+/* translations */
+.bigword { font-size: 2.4rem; line-height: 1.5; text-align: center; margin: .4rem 0 0; }
+.readings { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px; margin: 12px 0 16px; }
+.readings div { background: #fff; border: 1px solid var(--line, #e7e2d9); border-radius: 14px; padding: 10px 14px; display: flex; flex-direction: column; gap: 2px; }
+.readings span { font-size: .86rem; opacity: .7; }
+.editions { display: grid; gap: 8px; margin-bottom: 14px; }
+.ed { background: #fff; border: 1px solid var(--line, #e7e2d9); border-radius: 14px; padding: 10px 14px; }
+.ed .tag { font-size: .72rem; font-weight: 700; letter-spacing: .05em; text-transform: uppercase; opacity: .6; }
+.ed p { margin: 4px 0 0; }
+
+/* timeline */
+.tl { position: relative; margin: 18px 0; padding-left: 6px; }
+.tl-row { display: grid; grid-template-columns: 110px 1fr; gap: 14px; padding: 0 0 18px; position: relative; }
+.tl-year { font-weight: 700; text-align: right; padding-top: 12px; font-size: .95rem; }
+.tl-body { background: #fff; border: 1px solid var(--line, #e7e2d9); border-left: 4px solid #999; border-radius: 14px; padding: 12px 16px; }
+.tl-body strong { display: block; margin: 2px 0; }
+.tl-body p { margin: 4px 0; font-size: .96rem; }
+.tl-body .tag { font-size: .7rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; opacity: .6; }
+.f-jewish .tl-body { border-left-color: var(--jud, #7c3aed); } .f-christian .tl-body { border-left-color: var(--chr, #2563eb); } .f-muslim .tl-body { border-left-color: var(--isl, #0f9d6e); }
+@media (max-width: 560px) { .tl-row { grid-template-columns: 1fr; gap: 2px; } .tl-year { text-align: left; padding-top: 0; } }
+.trainer-head .seg button[disabled] { opacity: .35; }
