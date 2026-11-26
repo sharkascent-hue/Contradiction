@@ -106,13 +106,16 @@
     if (!f) return;
     const ta = f.q, grow = () => { ta.style.height = 'auto'; ta.style.height = Math.min(ta.scrollHeight, 140) + 'px'; };
     ta.addEventListener('input', grow);
-    ta.addEventListener('keydown', e => { if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); f.requestSubmit(); } });
-    f.addEventListener('submit', e => {
-      e.preventDefault();
+    const go = () => {
       const q = ta.value.trim();
       if (!q) return ta.focus();
       if (onSubmit) { ta.value = ''; grow(); onSubmit(q); } else location.hash = '#/ask/' + encodeURIComponent(q);
+    };
+    // Enter sends (Shift+Enter makes a new line). Not while an input method is still composing a character.
+    ta.addEventListener('keydown', e => {
+      if ((e.key === 'Enter' || e.keyCode === 13) && !e.shiftKey && !e.isComposing) { e.preventDefault(); go(); }
     });
+    f.addEventListener('submit', e => { e.preventDefault(); go(); });
   }
   const faithCards = () => '<div class="faith-cards">' + Object.keys(HUBS).map(k => { const h = HUBS[k];
     return '<a class="faith-card ' + h.key + '" href="#/faith/' + k + '"><span class="glyph">' + h.glyph + '</span><strong>' + h.name + '</strong><span>' + h.sub + '</span><span class="arrow">→</span></a>'; }).join('') + '</div>';
