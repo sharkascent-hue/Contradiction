@@ -878,7 +878,9 @@
   const GUIDES = [['all', 'All'], ['christian', 'Christian'], ['muslim', 'Muslim'], ['jewish', 'Jewish']];
   let guide = store.get('guide') || 'all', chatLog = [], lastTopic = null, aiReady = null, aiUrl = null;
   // The AI guide runs where content/config.json's aiEndpoint points, or at api/chat on hosts that run server functions.
-  const probeAI = () => {
+  let aiProbe = null;
+  const probeAI = () => aiProbe || (aiProbe = probeOnce());
+  const probeOnce = () => {
     if (aiReady !== null) return Promise.resolve(aiReady);
     aiUrl = (SITE_CFG.aiEndpoint || '').trim() || (/github\.io$/.test(location.hostname) ? '' : CHAT_ENDPOINT);
     if (!aiUrl) return Promise.resolve(aiReady = false);
@@ -894,7 +896,8 @@
       '<div class="starter">' + SUGGEST.slice(0, 6).map(s => '<button data-ask="' + esc(s) + '">' + esc(s) + '</button>').join('') + '</div></div>';
   }
   function renderChat() {
-    if (aiReady === null) probeAI().then(ok => { if (ok && !chatLog.length && location.hash.startsWith('#/ask')) { const m = document.getElementById('msgs'); if (m) m.innerHTML = emptyChat(); } });
+    // Once the AI check finishes, refresh the welcome screen, but only if no question has been asked yet.
+    if (aiReady === null) probeAI().then(ok => { const m = document.getElementById('msgs'); if (ok && m && !m.querySelector('.msg')) m.innerHTML = emptyChat(); });
     app.innerHTML = '<div class="chat"><div class="chat-head"><div class="seg even" role="group" aria-label="Who answers">' +
       GUIDES.map(([g, l]) => '<button data-guide="' + g + '" aria-pressed="' + (g === guide) + '">' + l + '</button>').join('') + '</div></div>' +
       '<div class="msgs" id="msgs">' + (chatLog.length ? chatLog.map(m => m.html).join('') : emptyChat()) + '</div>' +
