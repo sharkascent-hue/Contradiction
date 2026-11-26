@@ -1,9 +1,9 @@
-/* Scripture Q&A: static, hash-routed.
+/* Contradiction: static, hash-routed.
    Scripture in data/<EDITION>/<BOOK>.json, other texts in lib/<work>/, word index in search/,
-   answers in content/questions.json and disputes.json, belief summaries in content/beliefs.json. */
+   answers in content/questions.json and disputes.json, belief summaries in content/beliefs.json,
+   the topic guide behind Ask in content/guide.json. */
 (() => {
   const app = document.getElementById('app');
-  const trSel = document.getElementById('tr');
   const esc = s => String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
   const store = { get: k => { try { return localStorage.getItem(k); } catch (e) { return null; } },
                   set: (k, v) => { try { localStorage.setItem(k, v); } catch (e) {} } };
@@ -12,7 +12,7 @@
   const RTL = { he: 1, ar: 1 };
   const pref = { bible: 'WEB', quran: 'PICK' };
   const VIEW_GROUP = { orthodox: 'christian', catholic: 'christian', protestant: 'christian', sunni: 'muslim', shia: 'muslim' };
-  let M, C, B, tr, refRe, refOne, viewFilter = 'all', lastQ, renderId = 0;
+  let M, C, B, G, tr, refRe, refOne, viewFilter = 'all', lastQ, renderId = 0;
   const bookName = {}, bookGroup = {}, alias = {}, trById = {}, cache = new Map();
 
   const getJSON = url => fetch(url).then(r => { if (!r.ok) throw new Error(url + ' ' + r.status); return r.json(); });
@@ -81,56 +81,102 @@
   }
 
   /* ---------- views ---------- */
+  /* ---------- shared pieces ---------- */
   const isDispute = q => q.kind === 'dispute';
+  const SEND_SVG = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg>';
+  const HUBS = {
+    christianity: { key: 'christian', name: 'Christianity', glyph: '✝', branches: [['christianity', 'All'], ['orthodox', 'Orthodox'], ['catholic', 'Catholic'], ['protestant', 'Protestant']],
+      blurb: 'About 2.4 billion people. One God as Father, Son and Holy Spirit, and Jesus as God made man, who died and rose again.', sub: 'Orthodox · Catholic · Protestant' },
+    islam: { key: 'muslim', name: 'Islam', glyph: '☪', branches: [['islam', 'All'], ['sunni', 'Sunni'], ['shia', 'Shia']],
+      blurb: 'About 1.9 billion people. One God, Allah, whose final revelation is the Quran, given to Muhammad, the last prophet.', sub: 'Sunni · Shia' },
+    judaism: { key: 'jewish', name: 'Judaism', glyph: '✡', branches: [['judaism', 'Judaism']],
+      blurb: 'About 15 million people. The one God of Abraham, his covenant with Israel, and the Torah given at Sinai.', sub: 'Orthodox · Conservative · Reform' } };
+  const hubOf = slug => Object.keys(HUBS).find(h => HUBS[h].branches.some(b => b[0] === slug));
+  const FAITH_ADJ = { christian: 'Christian', muslim: 'Muslim', jewish: 'Jewish' };
+  const FAITH_PEOPLE = { christian: 'Christians', muslim: 'Muslims', jewish: 'Jews' };
+  const GLYPH = { christian: '✝', muslim: '☪', jewish: '✡', all: '' };
+  const art = w => w === 'Jewish' ? 'Jewish' : 'a ' + w;
+  const POPULAR = ['trinity', 'jesus-divinity', 'crucifixion', 'salvation', 'afterlife', 'muhammad-in-bible', 'bible-changed', 'sunni-shia', 'food-laws', 'prayer', 'messiah', 'original-sin'];
+  const SUGGEST = ['Explain the Trinity to me, I\'m a Muslim', 'Where is the Trinity in the Old and New Testament?', 'Was Jesus crucified?', 'Is Muhammad in the Bible?',
+    'Why don\'t Jews believe in Jesus?', 'What happens after we die?', 'Is pork forbidden?', 'What\'s the difference between Sunni and Shia?'];
+  const askBox = ph => '<form class="askbox"><textarea name="q" rows="1" placeholder="' + esc(ph) + '" aria-label="Your question" enterkeyhint="send"></textarea>' +
+    '<button class="send" aria-label="Ask">' + SEND_SVG + '</button></form>';
+  function bindAsk(onSubmit) {
+    const f = app.querySelector('form.askbox');
+    if (!f) return;
+    const ta = f.q, grow = () => { ta.style.height = 'auto'; ta.style.height = Math.min(ta.scrollHeight, 140) + 'px'; };
+    ta.addEventListener('input', grow);
+    ta.addEventListener('keydown', e => { if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); f.requestSubmit(); } });
+    f.addEventListener('submit', e => {
+      e.preventDefault();
+      const q = ta.value.trim();
+      if (!q) return ta.focus();
+      if (onSubmit) { ta.value = ''; grow(); onSubmit(q); } else location.hash = '#/ask/' + encodeURIComponent(q);
+    });
+  }
+  const faithCards = () => '<div class="faith-cards">' + Object.keys(HUBS).map(k => { const h = HUBS[k];
+    return '<a class="faith-card ' + h.key + '" href="#/faith/' + k + '"><span class="glyph">' + h.glyph + '</span><strong>' + h.name + '</strong><span>' + h.sub + '</span><span class="arrow">→</span></a>'; }).join('') + '</div>';
+  const disputeTile = q => {
+    const fs = [...new Set(q.sections.map(s => VIEW_GROUP[s.view] || s.view).filter(v => FAITH_ADJ[v]))];
+    return '<a class="dispute-tile" href="#/q/' + q.slug + '"><strong>' + esc(q.title) + '</strong><span>' + esc(q.short) + '</span><span class="vs">' +
+      fs.map(f => '<i class="dot ' + f + '" title="' + FAITH_ADJ[f] + ' view"></i>').join('') + '</span></a>';
+  };
+  const readGrid = () => '<div class="read-grid">' + [
+    ['#/books/WEB', 'The Bible', '9 editions, incl. Hebrew and Greek'], ['#/books/PICK', 'The Quran', '6 translations, 8 Arabic readings'],
+    ['#/lib/c/' + encodeURIComponent('Sunni hadith'), 'Hadith', 'Sunni and Shia collections'], ['#/lib/c/' + encodeURIComponent('Babylonian Talmud'), 'Talmud', 'Mishnah and Gemara'],
+    ['#/lib/c/' + encodeURIComponent('Quran commentary (tafsir)'), 'Quran commentary', 'Classic tafsir'], ['#/lib/c/' + encodeURIComponent('Church Fathers: Ante-Nicene (to AD 325)'), 'Church Fathers', 'The early Church'],
+    ['#/lib/c/' + encodeURIComponent('Creeds, confessions and catechisms'), 'Creeds', 'What the churches confess'], ['#/search', 'Search everything', 'Every word, every text']
+  ].map(x => '<a href="' + x[0] + '"><strong>' + x[1] + '</strong><span>' + x[2] + '</span></a>').join('') + '</div>';
+
   function home() {
-    document.title = 'Scripture Q&A';
+    document.title = 'Contradiction · Christianity, Islam and Judaism, side by side';
     const disputes = C.questions.filter(isDispute);
     app.innerHTML =
-      '<h1>Ask the hard questions. Read the actual texts.</h1>' +
-      '<p class="lede">The Bible, the Quran, the hadith, the Talmud and the Church Fathers in one place, with answers that quote the text and show how Christians, Muslims, Jews and critics each read it.</p>' +
-      searchForm('').replace('<form ', '<form data-ask="1" ').replace(/placeholder="[^"]*"/, 'placeholder="Ask a question, or search a word or verse"') +
-      '<h2>What each tradition believes</h2>' + beliefCards() +
-      '<ul class="cards"><li><a href="#/compare"><strong>Compare them topic by topic</strong><span>God, Jesus, scripture, salvation, the law and more, side by side.</span></a></li></ul>' +
-      '<h2>Where the faiths disagree</h2>' + questionCards(disputes.slice(0, 5)) +
-      '<p><a href="#/questions">All ' + disputes.length + ' disputes and ' + (C.questions.length - disputes.length) + ' questions</a></p>' +
-      '<h2>Questions</h2>' + questionCards(C.questions.filter(q => !isDispute(q))) +
-      '<h2>Topics</h2><ul class="cards two">' + C.topics.map(t =>
-        '<li><a href="#/topic/' + t.slug + '"><strong>' + esc(t.title) + '</strong><span>' + esc(t.blurb) + '</span></a></li>').join('') + '</ul>' +
-      '<h2>Read the Bible</h2>' + trCards('bible') + '<h2>Read the Quran</h2>' + trCards('quran') +
-      '<h2>Library</h2><ul class="cards"><li><a href="#/lib"><strong>Hadith, Talmud, commentaries, creeds and Church Fathers</strong><span>Sunni and Shia hadith, Quran commentaries, the Mishnah, both Talmuds and the Midrash, the creeds and confessions of the churches, the Fathers, Aquinas, Luther, Calvin and Wesley.</span></a></li></ul>';
-    bindSearch();
+      '<section class="hero"><p class="eyebrow">Christianity · Islam · Judaism</p><h1>Ask anything. See what <em>each faith</em> really says.</h1>' +
+      '<p class="lede">Beliefs, disagreements and the actual passages from the Bible, Quran, hadith and Talmud, side by side.</p>' +
+      askBox('Ask anything…') +
+      '<div class="suggest">' + SUGGEST.map(s => '<a class="chip" href="#/ask/' + encodeURIComponent(s) + '">' + esc(s) + '</a>').join('') + '</div></section>' +
+      '<div class="section-head"><h2>The three faiths</h2><a href="#/faiths">Compare them →</a></div>' + faithCards() +
+      '<div class="section-head"><h2>Where they disagree</h2><a href="#/questions">See all</a></div>' +
+      '<div class="tile-row">' + disputes.map(disputeTile).join('') + '</div>' +
+      '<div class="section-head"><h2>Explore by topic</h2><a href="#/topics">All ' + G.topics.length + ' topics</a></div>' +
+      '<div class="topic-grid">' + POPULAR.map(id => G.topics.find(t => t.id === id)).filter(Boolean).map(t => '<a href="#/t/' + t.id + '">' + esc(t.title) + '</a>').join('') + '</div>' +
+      '<div class="section-head"><h2>Read the texts</h2></div>' + readGrid();
+    bindAsk();
   }
-  const trCards = corpus => '<ul class="cards two">' + M.translations.filter(t => t.corpus === corpus).map(t =>
-    '<li><a href="#/books/' + t.id + '"><strong>' + esc(t.name.replace(/^Quran: /, '')) + '</strong><span>' + esc(t.tradition) + ' · ' + esc(t.sub) + '</span></a></li>').join('') + '</ul>';
   const questionCards = qs => '<ul class="cards">' + qs.map(q =>
     '<li><a href="#/q/' + q.slug + '"><strong>' + esc(q.title) + '</strong><span>' + esc(q.short) + '</span></a></li>').join('') + '</ul>';
   const searchForm = q => '<form class="searchbox" role="search"><input type="search" name="q" value="' + esc(q) +
     '" placeholder="Search every text, e.g. forgiveness, or John 3:16" aria-label="Search"><button>Search</button></form>';
   function bindSearch() {
     const f = app.querySelector('form.searchbox');
-    // A full question goes to Ask; a word, phrase or verse reference goes to Search.
-    if (f) f.addEventListener('submit', e => {
-      e.preventDefault();
-      const q = f.q.value.trim(), asking = f.dataset.ask && (/\?$/.test(q) || q.split(/\s+/).length >= 4) && !/^".*"$/.test(q);
-      location.hash = (asking ? '#/ask/' : '#/search/') + encodeURIComponent(q);
-    });
+    if (f) f.addEventListener('submit', e => { e.preventDefault(); location.hash = '#/search/' + encodeURIComponent(f.q.value.trim()); });
   }
 
   function questions() {
-    document.title = 'Questions · Scripture Q&A';
-    app.innerHTML = '<h1>Questions and disputes</h1><p class="lede">Each page quotes the texts and sets the views of each faith side by side.</p>' +
-      '<h2>Where the faiths disagree</h2>' + questionCards(C.questions.filter(isDispute)) +
-      '<h2>Questions</h2>' + questionCards(C.questions.filter(q => !isDispute(q)));
+    document.title = 'Questions · Contradiction';
+    app.innerHTML = '<h1>Big questions</h1><p class="lede">Where the faiths disagree, with each side in its own words and the passages behind it.</p>' +
+      '<div class="section-head"><h2>Where they disagree</h2></div>' + questionCards(C.questions.filter(isDispute)) +
+      '<div class="section-head"><h2>Hard questions</h2></div>' + questionCards(C.questions.filter(q => !isDispute(q)));
+  }
+
+  function topics() {
+    document.title = 'Topics · Contradiction';
+    const sorted = [...G.topics].sort((a, b) => a.title.localeCompare(b.title));
+    app.innerHTML = '<h1>Topics</h1><p class="lede">Each topic shows what Christians, Muslims and Jews believe, and where it is in their texts.</p>' +
+      '<div class="topic-grid">' + sorted.map(t => '<a href="#/t/' + t.id + '">' + esc(t.title) + '</a>').join('') + '</div>' +
+      '<div class="section-head"><h2>Reading guides</h2></div><ul class="cards two">' + C.topics.map(t =>
+        '<li><a href="#/topic/' + t.slug + '"><strong>' + esc(t.title) + '</strong><span>' + esc(t.blurb) + '</span></a></li>').join('') + '</ul>';
   }
 
   function topic(slug) {
     const t = C.topics.find(x => x.slug === slug);
     if (!t) return notFound();
-    document.title = t.title + ' · Scripture Q&A';
+    document.title = t.title + ' · Contradiction';
     const qs = t.questions.map(s => C.questions.find(q => q.slug === s)).filter(Boolean);
-    app.innerHTML = '<p class="crumbs"><a href="#/">Home</a> › Topic</p><h1>' + esc(t.title) + '</h1><p class="lede">' + esc(t.blurb) + '</p>' +
-      '<h2>Questions</h2>' + questionCards(qs) +
-      (t.passages.length ? '<h2>Key passages</h2><ul class="booklist">' + t.passages.map(p => {
+    app.innerHTML = '<p class="crumbs"><a href="#/topics">Topics</a></p><h1>' + esc(t.title) + '</h1><p class="lede">' + esc(t.blurb) + '</p>' +
+      '<div class="section-head"><h2>Questions</h2></div>' + questionCards(qs) +
+      (t.passages.length ? '<div class="section-head"><h2>Key passages</h2></div><ul class="booklist">' + t.passages.map(p => {
         const r = parseRef(p); return '<li><a href="' + refHref(r) + '">' + esc(p) + '</a></li>';
       }).join('') + '</ul>' : '');
   }
@@ -138,7 +184,7 @@
   function question(slug) {
     const q = C.questions.find(x => x.slug === slug);
     if (!q) return notFound();
-    document.title = q.title + ' · Scripture Q&A';
+    document.title = q.title + ' · Contradiction';
     const groups = ['all', 'christian', 'muslim', 'jewish', 'critics'].filter(g => g === 'all' ||
       q.sections.some(s => (VIEW_GROUP[s.view] || s.view) === g));
     if (!groups.includes(viewFilter) || lastQ !== slug) viewFilter = 'all';
@@ -176,14 +222,15 @@
   function books(t) {
     if (!trById[t]) t = tr;
     setTr(t);
-    document.title = trById[t].name + ' · Scripture Q&A';
-    let h = '<p class="crumbs"><a href="#/">Home</a> › Read</p><h1>' + esc(trById[t].name) + '</h1><p class="muted small">' + esc(trById[t].licence) + '</p>';
+    document.title = trById[t].name + ' · Contradiction';
+    let h = '<p class="crumbs">Read</p><h1>' + esc(trById[t].corpus === 'quran' ? 'The Quran' : 'The Bible') + '</h1><div class="reader-bar">' + pickerBtn(t) + '</div><p class="muted small">' + esc(trById[t].tradition) + '. ' + esc(trById[t].licence) + '</p>';
     for (const g in GROUPS) {
       const list = trById[t].books.filter(b => bookGroup[b[0]] === g);
       if (list.length) h += '<h2>' + GROUPS[g] + '</h2><ul class="booklist">' + list.map(b =>
         '<li><a href="#/read/' + t + '/' + b[0] + '">' + esc(bookName[b[0]]) + '</a></li>').join('') + '</ul>';
     }
     app.innerHTML = h;
+    bindPicker();
   }
 
   async function read(t, code, ch, vs) {
@@ -196,11 +243,12 @@
     }
     setTr(t);
     const n = trById[t].chapters[code], id = renderId, lang = trById[t].lang;
-    const crumbs = '<p class="crumbs"><a href="#/books/' + t + '">' + esc(trById[t].name) + '</a> › <a href="#/read/' + t + '/' + code + '">' + esc(bookName[code]) + '</a></p>';
+    const crumbs = '<div class="reader-bar"><p class="crumbs" style="margin:0;flex:1"><a href="#/books/' + t + '">' + (trById[t].corpus === 'quran' ? 'Quran' : 'Bible') + '</a> › <a href="#/read/' + t + '/' + code + '">' + esc(bookName[code]) + '</a></p>' + pickerBtn(t) + '</div>';
     if (!ch && n > 1) {
-      document.title = bookName[code] + ' · Scripture Q&A';
+      document.title = bookName[code] + ' · Contradiction';
       app.innerHTML = crumbs + '<h1>' + esc(bookName[code]) + '</h1><ul class="chlist">' +
         Array.from({ length: n }, (_, i) => '<li><a href="#/read/' + t + '/' + code + '/' + (i + 1) + '">' + (i + 1) + '</a></li>').join('') + '</ul>';
+      bindPicker();
       return;
     }
     ch = Math.min(Math.max(+ch || 1, 1), n);
@@ -216,6 +264,7 @@
         '><sup>' + (i + 1) + '</sup>' + esc(txt) + '</p>' : '').join('') + '</div>' +
       '<div class="pager">' + (ch > 1 ? '<a class="btn ghost" href="' + link(ch - 1) + '">← Chapter ' + (ch - 1) + '</a>' : '<span></span>') +
       (ch < n ? '<a class="btn ghost" href="' + link(ch + 1) + '">Chapter ' + (ch + 1) + ' →</a>' : '') + '</div>';
+    bindPicker();
     const box = app.querySelector('.chapter');
     box.addEventListener('click', e => {
       const p = e.target.closest('p[data-v]');
@@ -281,7 +330,7 @@
   };
 
   async function search(q) {
-    document.title = (q ? q + ' · ' : '') + 'Search · Scripture Q&A';
+    document.title = (q ? q + ' · ' : '') + 'Search · Contradiction';
     const r = q && parseRef(q);
     if (r && r.label.length === q.length && trFor(r.code)) { location.replace(refHref(r)); return; }
     if (smode === 'edition') return searchEdition(q);
@@ -402,7 +451,7 @@
   }
 
   async function about() {
-    document.title = 'About · Scripture Q&A';
+    document.title = 'About · Contradiction';
     const id = renderId;
     const [lib, skipped] = await Promise.all([loadLib(), getJSON('lib/skipped.json').catch(() => [])]);
     if (id !== renderId) return;
@@ -450,7 +499,7 @@
   }
 
   function libHome(coll) {
-    document.title = 'Library · Scripture Q&A';
+    document.title = 'Library · Contradiction';
     if (coll) {
       const ws = L.filter(w => w.c === coll);
       if (!ws.length) return notFound();
@@ -480,7 +529,7 @@
   async function libWork(w) {
     const id = renderId, toc = await loadToc(w.id);
     if (id !== renderId) return;
-    document.title = w.t + ' · Scripture Q&A';
+    document.title = w.t + ' · Contradiction';
     app.innerHTML = libCrumbs(w) + '<h1>' + esc(w.t) + '</h1>' + (w.a ? '<p class="lede">' + esc(w.a) + '</p>' : '') + libSearchForm(w, '') +
       '<ul class="toc">' + toc.map((p, i) => '<li><a href="#/lib/' + w.id + '/' + i + '">' + esc(p[0]) + '</a> <span class="muted small">' + p[1] + '</span></li>').join('') + '</ul>' +
       '<p class="status">' + esc(w.l) + '</p>';
@@ -538,8 +587,7 @@
 
 
 
-  /* ---------- ask: find the passages that bear on a question, then (optionally) have an AI write the answer ---------- */
-  const CHAT_ENDPOINT = 'api/chat';      // served by api/chat.js when the site is deployed with an API key
+  /* ---------- retrieval: passages that share words with a question ---------- */
   const QSTOP = new Set('does did do done tell says think thinks according mean means really ever true false right wrong explain between difference different happen happens happened get got make made many much thing things something anything someone people person religion religions faith faiths teach teaches teaching view views'.split(' '));
   const SYN = [['jesus', 'christ', 'isa'], ['god', 'allah', 'lord'], ['muhammad', 'mohammed', 'mahomet', 'muhammed'], ['mary', 'maryam'], ['moses', 'musa'],
     ['abraham', 'ibrahim'], ['prayer', 'pray', 'prayers', 'praying', 'salat'], ['fasting', 'fast', 'fasts', 'fasted'], ['charity', 'alms', 'almsgiving', 'zakat'],
@@ -561,34 +609,19 @@
   };
   // How many passages to take from each collection, so that every tradition is heard.
   const QUOTA = { 'scr-WEB': 4, 'scr-PICK': 4, 'Sunni hadith': 3, 'Shia hadith and teachings': 2, 'Quran commentary (tafsir)': 2 };
-  const askForm = q => '<form class="searchbox" role="search"><input type="search" name="q" value="' + esc(q) + '" placeholder="e.g. What happens after death?" aria-label="Your question"><button>Ask</button></form>';
-
-  async function ask(q) {
-    document.title = (q ? q + ' · ' : '') + 'Ask · Scripture Q&A';
-    const id = renderId;
-    app.innerHTML = '<h1>Ask a question</h1>' + askForm(q) + '<div id="res"></div>';
-    app.querySelector('form').addEventListener('submit', e => { e.preventDefault(); location.hash = '#/ask/' + encodeURIComponent(e.target.q.value.trim()); });
-    const res = document.getElementById('res');
-    if (!q) {
-      res.innerHTML = '<p class="muted">Ask in your own words. The site finds the passages in every tradition\'s texts that bear on the question and shows them side by side.</p>' +
-        '<ul class="booklist">' + ['What happens after death?', 'Can sins be forgiven?', 'How should the poor be treated?', 'What is said about Mary?', 'Is fasting required?', 'Who is the Messiah?'].map(x =>
-          '<li><a href="#/ask/' + encodeURIComponent(x) + '">' + x + '</a></li>').join('') + '</ul>';
-      app.querySelector('input').focus();
-      return;
-    }
-    res.innerHTML = '<p class="loading">Looking through the texts…</p>';
+  // Passages that share words with a question, a few from each tradition: used when no guide topic fits.
+  async function retrieve(q) {
     await Promise.all([loadSM(), loadLib()]);
     const words = [...new Set((norm(q).match(/[a-z]{2,24}|\d{3,4}/g) || []).filter(w => !SM.stopSet.has(w) && !QSTOP.has(w)))];
     const pages = C.questions.map(x => [x, words.filter(w => norm(x.title + ' ' + x.short + ' ' + x.asked).includes(w)).length])
       .filter(x => words.length && x[1] >= Math.max(1, Math.ceil(words.length / 2))).sort((a, b) => b[1] - a[1]).slice(0, 4).map(x => x[0]);
-    if (!words.length) { res.innerHTML = '<p>Try a question with a more specific word in it.</p>'; return; }
+    if (!words.length) return null;
     // Score every section. A question word counts once (variants included) and weighs more the rarer it is;
     // it counts triple when it is in the section's title or headings; long sections are marked down.
     const groups = await Promise.all(words.map(async w => {
       const vs = variants(w), lists = await Promise.all(vs.map(postings)), heads = await Promise.all(vs.map(v => postings('T' + v)));
       return { vs, lists, heads, df: Math.max(1, ...lists.map(l => l.length)) };
     }));
-    if (id !== renderId) return;
     const N = SM.docs, count = new Uint8Array(N), score = new Float32Array(N);
     groups.forEach(g => {
       const seen = new Uint8Array(N), idf = Math.log(1 + N / g.df);
@@ -657,88 +690,359 @@
       used[p.key] = (used[p.key] || 0) + 1; usedFaith[p.faith] = (usedFaith[p.faith] || 0) + 1;
       return true;
     });
-    if (id !== renderId) return;
     const order = ['bible', 'quran', 'christian', 'islam', 'judaism'];
     passages.sort((a, b) => order.indexOf(a.faith) - order.indexOf(b.faith));
-    const HEAD = { bible: 'The Bible', quran: 'The Quran', christian: 'Christian sources', islam: 'Islamic sources', judaism: 'Jewish sources' };
-    const hl = new RegExp('\\b(' + groups.flatMap(g => g.vs).map(w => w.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')).join('|') + ')\\b', 'gi');
-    let last = '';
-    res.innerHTML = (pages.length ? '<h2>Answered on this site</h2>' + questionCards(pages) : '') +
-      (passages.length ? '<section class="sec v-overview" id="ai"><h2>Answer</h2><p class="muted small">An AI can write a short answer using only the ' + passages.length + ' passages below, citing each one.</p><button>Write an answer from these passages</button></section>' : '') +
-      '<h2>What the texts say</h2>' + (passages.length ? '' : '<p>No passages found. Try different words.</p>') +
-      passages.map((p, i) => (HEAD[p.faith] !== last ? '<h3>' + (last = HEAD[p.faith]) + '</h3>' : '') +
-        '<div class="hit" id="p' + (i + 1) + '"><a href="' + p.href + '"><span class="num">[' + (i + 1) + ']</span> ' + esc(p.source) + '</a><p>' + esc(p.text.slice(0, 700)).replace(hl, '<mark>$1</mark>') + (p.text.length > 700 ? '…' : '') + '</p></div>').join('') +
-      '<p class="muted small">These passages were chosen by matching the words of your question, a few from each tradition, so some will be off the point. They are a starting point, not a ruling. Use <a href="#/search/' + encodeURIComponent(words.join(' ')) + '">Search</a> to see every match.</p>';
-    const box = document.getElementById('ai');
-    if (box) box.querySelector('button').addEventListener('click', () => aiAnswer(box, q, passages));
+    return { passages, words, pages };
   }
 
-  async function aiAnswer(box, question, passages) {
-    const out = document.createElement('div');
-    box.querySelector('button').remove();
-    box.querySelector('p').textContent = 'Writing…';
-    box.appendChild(out);
-    const show = text => {
-      out.innerHTML = text.split(/\n\s*\n/).map(par => '<p>' + rich(par).replace(/\[(\d+)\]/g, (m, n) => passages[n - 1] ? '<a class="ref" href="' + passages[n - 1].href + '" title="' + esc(passages[n - 1].source) + '">[' + n + ']</a>' : m) + '</p>').join('');
-    };
+  /* ---------- topic guide: passages, matching, answers ---------- */
+  const talmudOne = new RegExp('^' + talmudRe.source.replace(/^\\b/, ''));
+  const hadithOne = new RegExp('^(' + Object.keys(HADITH).join('|') + ') (\\d+)$');
+  const KIND = { ot: 'Old Testament', dc: 'Deuterocanon (Catholic & Orthodox Bibles)', nt: 'New Testament', quran: 'Quran', hadith: 'Hadith',
+    'islam-docs': 'Islamic commentary and texts', jewish: 'Jewish writings', 'christian-docs': 'Creeds and Church writings', other: 'Other' };
+  const KIND_ORDER = { all: ['ot', 'nt', 'dc', 'quran', 'hadith', 'islam-docs', 'jewish', 'christian-docs', 'other'],
+    christian: ['ot', 'nt', 'dc', 'christian-docs', 'quran', 'hadith', 'islam-docs', 'jewish', 'other'],
+    muslim: ['quran', 'hadith', 'islam-docs', 'ot', 'nt', 'dc', 'jewish', 'christian-docs', 'other'],
+    jewish: ['ot', 'jewish', 'nt', 'dc', 'quran', 'hadith', 'islam-docs', 'christian-docs', 'other'] };
+  const linkParts = ref => /^\[\[([^|\]]+)\|([^\]]+)\]\]$/.exec(ref);
+  function refKind(ref) {
+    const l = linkParts(ref);
+    if (l) return /tafsir|shia-|hadith-/.test(l[1]) ? 'islam-docs' : /sef-/.test(l[1]) ? 'jewish' : 'christian-docs';
+    if (hadithOne.test(ref)) return 'hadith';
+    if (/^Mishnah /.test(ref) || talmudOne.test(ref)) return 'jewish';
+    const r = parseRef(ref);
+    if (!r) return 'other';
+    const g = bookGroup[r.code];
+    return g === 'quran' ? 'quran' : g === 'nt' ? 'nt' : g === 'dc' ? 'dc' : 'ot';
+  }
+  function refLink(ref) {
+    const l = linkParts(ref);
+    if (l) return '#/' + encodeURI(l[1]);
+    let m = hadithOne.exec(ref);
+    if (m) return '#/go/' + HADITH[m[1]] + '/' + m[2];
+    m = /^Mishnah ([A-Z][a-z]+(?: [A-Z][a-z]+)?) (\d+:\d+)/.exec(ref);
+    if (m) return '#/go/sef-mishnah-' + slugify(m[1]) + '/' + m[2];
+    m = talmudOne.exec(ref);
+    if (m) return '#/go/sef-' + slugify(m[1]) + '/' + m[2];
+    const r = parseRef(ref);
+    return r ? refHref(r) : '#/search/' + encodeURIComponent(ref);
+  }
+  const refLabel = ref => { const l = linkParts(ref); return l ? l[2] : ref; };
+  // The words of a passage: verses from the Bible or Quran, or a hadith by number. Other sources are links only.
+  async function quoteText(ref) {
+    const cut = (s, n) => s.length > n ? s.slice(0, n).replace(/\s+\S*$/, '') + '…' : s;
+    const m = hadithOne.exec(ref);
+    if (m) {
+      const id = HADITH[m[1]], nums = await getJSON('lib/' + id + '/nums.json');
+      const at = nums[m[2]];
+      if (!at) return null;
+      const it = (await loadPart(id, at[0])).items[at[1]];
+      return it && it.e ? cut(it.e, 420) : null;
+    }
+    if (linkParts(ref) || /^Mishnah /.test(ref) || talmudOne.test(ref)) return null;
+    const r = parseRef(ref);
+    if (!r) return null;
+    const isQ = corpusOf(r.code) === 'quran';
+    const first = isQ ? (trById[pref.quran].lang === 'en' ? pref.quran : 'PICK') : (trById[pref.bible].lang === 'en' && has(pref.bible, r.code) ? pref.bible : 'WEB');
+    for (const t of [first].concat(M.translations.filter(x => x.lang === 'en' && has(x.id, r.code)).map(x => x.id))) {
+      if (!has(t, r.code)) continue;
+      const ch = (await loadBook(t, r.code))[r.ch - 1] || [];
+      const vs = r.v1 ? ch.slice(r.v1 - 1, r.v2) : ch.slice(0, 2);
+      const txt = vs.join(' ').trim();
+      if (txt) return cut(txt, r.v2 - r.v1 > 3 || !r.v1 ? 360 : 520);
+    }
+    return null;
+  }
+  function passageList(t, { guide = 'all', scope = new Set() } = {}) {
+    const all = [];
+    t.texts.forEach(g => g.refs.forEach(([ref, why]) => all.push({ ref, why, kind: refKind(ref) })));
+    let shown = scope.size ? all.filter(p => scope.has(p.kind)) : all;
+    if (shown.length < 2) shown = all;      // the books named are the subject, not a filter (e.g. "what is the Talmud")
+    const order = KIND_ORDER[guide] || KIND_ORDER.all;
+    const groups = order.map(k => [k, shown.filter(p => p.kind === k)]).filter(g => g[1].length);
+    return { groups, hidden: all.length - shown.length, total: all.length };
+  }
+  const passageHtml = p => '<a class="passage k-' + p.kind + '" href="' + refLink(p.ref) + '"><span class="ref">' + esc(refLabel(p.ref)) + '</span>' +
+    (p.why ? '<span class="why">' + esc(p.why) + '</span>' : '') +
+    (linkParts(p.ref) || /^Mishnah /.test(p.ref) || talmudOne.test(p.ref) ? '' : '<div class="q" data-quote-ref="' + esc(p.ref) + '"><span class="shimmer"></span><span class="shimmer short"></span></div>') + '</a>';
+  const groupsHtml = groups => groups.map(([k, ps]) => '<div class="pgroup">' + esc(KIND[k]) + ' <span class="badge">' + ps.length + '</span></div>' + ps.map(passageHtml).join('')).join('');
+  async function fillQuotes(root) {
+    await Promise.all([...root.querySelectorAll('[data-quote-ref]')].map(async el => {
+      const text = await quoteText(el.dataset.quoteRef).catch(() => null);
+      if (text) { el.textContent = text; el.removeAttribute('data-quote-ref'); } else el.remove();
+    }));
+  }
+  const relatedLabel = path => {
+    const [kind, slug] = path.split('/');
+    if (kind === 'q') { const q = C.questions.find(x => x.slug === slug); return q && q.title; }
+    if (kind === 'compare') { const c = B.compare.find(x => x.slug === slug); return c && 'Compare: ' + c.title; }
+    if (kind === 'beliefs') { const t = B.traditions.find(x => x.slug === slug); return t && t.name; }
+    if (kind === 'topic') { const t = C.topics.find(x => x.slug === slug); return t && t.title; }
+    return null;
+  };
+  const relatedHtml = t => {
+    const items = (t.related || []).map(p => [p, relatedLabel(p)]).filter(x => x[1]);
+    return items.length ? '<div class="chips">' + items.map(([p, l]) => '<a class="chip" href="#/' + p + '">' + esc(l) + ' →</a>').join('') + '</div>' : '';
+  };
+  const viewsHtml = (t, order) => '<div class="views' + (order.length === 3 ? ' three' : '') + '">' + order.filter(f => t.views[f]).map(f =>
+    '<div class="view ' + f + '"><div class="who"><span class="glyph-s">' + GLYPH[f] + '</span> ' + FAITH_ADJ[f] + ' view</div><p>' + rich(t.views[f]) + '</p></div>').join('') + '</div>';
+
+  // #/t/<id>: one topic, every faith, every passage.
+  async function tguide(id) {
+    const t = G.topics.find(x => x.id === id);
+    if (!t) return notFound();
+    document.title = t.title + ' · Contradiction';
+    const { groups } = passageList(t);
+    app.innerHTML = '<p class="crumbs"><a href="#/topics">Topics</a></p><h1>' + esc(t.title) + '</h1>' +
+      '<div class="summary-card">' + rich(t.summary) + '</div>' +
+      '<div class="section-head"><h2>What each faith says</h2></div>' + viewsHtml(t, ['christian', 'muslim', 'jewish']) +
+      '<div class="section-head"><h2>Where it is in the texts</h2></div>' + groupsHtml(groups) +
+      (t.related && t.related.length ? '<div class="section-head"><h2>Go deeper</h2></div>' + relatedHtml(t) : '') +
+      '<p><a class="btn brand" href="#/ask/' + encodeURIComponent('Tell me about ' + t.title.replace(/\?$/, '')) + '">Ask about this →</a></p>' +
+      '<p class="status">Draft summary. Not yet reviewed by a priest, imam, rabbi or scholar.</p>';
+    fillQuotes(app);
+  }
+
+  // Reading a question: which topic, who is asking, and which books they want.
+  const qnorm = q => ' ' + norm(q).replace(/['’]s\b/g, '').replace(/[^a-z0-9]+/g, ' ').trim() + ' ';
+  const QSTEM = { jews: 'jew', jewish: 'jew', judaism: 'jew', muslims: 'muslim', islam: 'muslim', islamic: 'muslim', christians: 'christian', christianity: 'christian' };
+  const QSTOPW = new Set('of the a an in on about do does did is are was were what how why who whom to for and or it this that think thinks say says believe believes view'.split(' '));
+  const bag = s => new Set(s.trim().split(' ').filter(w => w && !QSTOPW.has(w)).map(w => QSTEM[w] || (w.length > 3 ? w.replace(/s$/, '') : w)));
+  // Exact phrases score most; failing that, an alias whose words all appear somewhere in the question.
+  function matchTopics(n) {
+    const qb = bag(n);
+    return G.topics.map(t => {
+      let s = 0;
+      for (const a of t.q) {
+        if (n.includes(' ' + a + ' ') || n.includes(' ' + a + 's ')) { s += a.split(' ').length * 3 + a.length / 20; continue; }
+        const ab = bag(a);
+        if (ab.size >= 2 && [...ab].every(w => qb.has(w))) s += ab.size * 2;
+      }
+      const title = ' ' + norm(t.title).replace(/[^a-z0-9]+/g, ' ').trim() + ' ';
+      if (n.includes(title)) s += 4;
+      return [t, s];
+    }).filter(x => x[1] > 0).sort((a, b) => b[1] - a[1]);
+  }
+  function askerOf(n) {
+    const m = n.match(/ (?:i m|im|i am|iam|as a|as an|being a|me a|for a)(?: a| an)? (muslim|christian|jew|jewish|catholic|orthodox|protestant|sunni|shia|shiite|atheist|agnostic|hindu|buddhist|sikh|evangelical|baptist) /);
+    if (!m) return null;
+    const w = m[1];
+    return /muslim|sunni|shia|shiite/.test(w) ? 'muslim' : /christian|catholic|orthodox|protestant|evangelical|baptist/.test(w) ? 'christian' : /jew/.test(w) ? 'jewish' : 'other';
+  }
+  function scopeOf(n) {
+    const s = new Set();
+    if (/ (old testament|hebrew bible|tanakh|tanach|torah|ot) /.test(n) || (/ testaments? /.test(n) && / old /.test(n))) s.add('ot');
+    if (/ (new testament|gospel|gospels|nt|epistles) /.test(n) || (/ testaments? /.test(n) && / new /.test(n))) s.add('nt');
+    if (/ bible /.test(n) && !s.size) { s.add('ot'); s.add('nt'); s.add('dc'); }
+    if (/ (quran|koran|qur an) /.test(n)) s.add('quran');
+    if (/ (hadith|hadiths|sunnah|bukhari) /.test(n)) s.add('hadith');
+    if (/ (talmud|mishnah|rabbis|rabbinic) /.test(n)) s.add('jewish');
+    return s;
+  }
+
+  /* ---------- chat ---------- */
+  const CHAT_ENDPOINT = 'api/chat';      // served by api/chat.js where the site runs on a host with server functions and an API key
+  const GUIDES = [['all', 'All'], ['christian', 'Christian'], ['muslim', 'Muslim'], ['jewish', 'Jewish']];
+  let guide = store.get('guide') || 'all', chatLog = [], aiReady = null;
+  const probeAI = () => aiReady !== null ? Promise.resolve(aiReady) : /github\.io$/.test(location.hostname) ? Promise.resolve(aiReady = false) :
+    fetch(CHAT_ENDPOINT, { method: 'GET' }).then(r => (aiReady = r.status === 405)).catch(() => (aiReady = false));
+  const avatar = g => '<span class="avatar ' + g + '">' + (GLYPH[g] || '') + '</span>';
+  const guideName = g => g === 'all' ? 'all three faiths' : 'the ' + FAITH_ADJ[g] + ' guide';
+
+  function emptyChat() {
+    const intro = guide === 'all' ? 'Ask about any belief, story or practice. I\'ll show what Christians, Muslims and Jews each say, and where it is in their texts.'
+      : 'I answer from the ' + FAITH_ADJ[guide] + ' point of view, with the passages ' + FAITH_PEOPLE[guide] + ' rely on, and I show how the others respond.';
+    return '<div class="empty-chat">' + avatar(guide) + '<h1>' + (guide === 'all' ? 'What would you like to know?' : 'Ask the ' + FAITH_ADJ[guide] + ' guide') + '</h1><p class="muted">' + intro + '</p>' +
+      '<div class="starter">' + SUGGEST.slice(0, 6).map(s => '<button data-ask="' + esc(s) + '">' + esc(s) + '</button>').join('') + '</div></div>';
+  }
+  function renderChat() {
+    app.innerHTML = '<div class="chat"><div class="chat-head"><div class="seg even" role="group" aria-label="Who answers">' +
+      GUIDES.map(([g, l]) => '<button data-guide="' + g + '" aria-pressed="' + (g === guide) + '">' + l + '</button>').join('') + '</div></div>' +
+      '<div class="msgs" id="msgs">' + (chatLog.length ? chatLog.map(m => m.html).join('') : emptyChat()) + '</div>' +
+      '<div class="composer">' + askBox(guide === 'all' ? 'Ask a question…' : 'Ask the ' + FAITH_ADJ[guide] + ' guide…') + '</div></div>';
+    bindAsk(q => send(q));
+    const msgs = document.getElementById('msgs');
+    msgs.addEventListener('click', e => {
+      const b = e.target.closest('[data-ask]');
+      if (b) { e.preventDefault(); send(b.dataset.ask); }
+      const ai = e.target.closest('[data-ai]');
+      if (ai) aiAnswer(ai.closest('.card'), ai.dataset.ai);
+    });
+    app.querySelectorAll('[data-guide]').forEach(b => b.addEventListener('click', () => {
+      guide = b.dataset.guide; store.set('guide', guide);
+      const last = chatLog.length && chatLog[chatLog.length - 1].q;
+      renderChat();
+      if (last) send(last);       // answer the last question again in the new voice
+    }));
+  }
+  function send(q) {
+    history.replaceState(null, '', '#/ask/' + encodeURIComponent(q));
+    answer(q);
+  }
+  async function ask(q) {
+    document.title = 'Ask · Contradiction';
+    renderChat();
+    const last = chatLog.length && chatLog[chatLog.length - 1];
+    if (q && !(last && last.q === q && last.guide === guide)) await answer(q);
+    else { const m = document.getElementById('msgs'); if (chatLog.length) m.lastElementChild.scrollIntoView({ block: 'start' }); else app.querySelector('textarea').focus(); }
+  }
+  async function answer(q) {
+    const msgs = document.getElementById('msgs'), rid = renderId;
+    if (!chatLog.length) msgs.innerHTML = '';
+    const user = '<div class="msg user"><div class="bubble">' + esc(q) + '</div></div>';
+    msgs.insertAdjacentHTML('beforeend', user + '<div class="msg bot">' + avatar(guide) + '<div class="card"><span class="typing"><i></i><i></i><i></i></span></div></div>');
+    const bot = msgs.lastElementChild, card = bot.querySelector('.card');
+    bot.previousElementSibling.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    const html = await buildAnswer(q, guide).catch(e => '<p>Something went wrong while looking that up: ' + esc(e.message) + '</p>');
+    if (rid !== renderId) return;
+    card.innerHTML = html;
+    await fillQuotes(card);
+    await probeAI();
+    if (aiReady && card.querySelector('.passage')) card.insertAdjacentHTML('beforeend', '<p><button class="ghost" data-ai="' + esc(q) + '">✨ Explain it in your own words</button></p>');
+    chatLog.push({ q, guide, html: user + bot.outerHTML });
+    if (chatLog.length > 30) chatLog.shift();
+  }
+  async function buildAnswer(q, g) {
+    const n = qnorm(q), asker = askerOf(n), scope = scopeOf(n), found = matchTopics(n);
+    if (!found.length) return fallbackAnswer(q, n, g);
+    const t = found[0][0];
+    let mode = g !== 'all' && !t.views[g] ? 'all' : g;
+    const faiths = ['christian', 'muslim', 'jewish'].filter(f => t.views[f]);
+    let intro = '';
+    if (asker && FAITH_ADJ[asker]) {
+      const others = faiths.filter(f => f !== asker).map(f => FAITH_PEOPLE[f]);
+      intro = mode !== 'all' && mode !== asker
+        ? 'You said you\'re ' + art(FAITH_ADJ[asker]) + ', so here is how ' + FAITH_PEOPLE[mode] + ' see it, the passages they rely on, and how ' + FAITH_PEOPLE[asker] + ' respond.'
+        : mode === asker ? 'Here is the ' + FAITH_ADJ[asker] + ' position with its sources, and how others see it.'
+        : others.length ? 'Since you\'re ' + art(FAITH_ADJ[asker]) + ', here is how ' + others.join(' and ') + ' understand it, the passages they use, and where your own tradition answers.' : '';
+    } else if (asker === 'other') intro = 'Here is how each faith understands it, explained from the beginning, with the passages.';
+    if (g !== 'all' && mode === 'all') intro = (intro ? intro + ' ' : '') + 'This topic is mainly about ' + faiths.map(f => FAITH_PEOPLE[f]).join(' and ') + ', so all views are shown.';
+    const order = mode !== 'all' ? [mode].concat(faiths.filter(f => f !== mode))
+      : asker && faiths.includes(asker) ? faiths.filter(f => f !== asker).concat(asker) : faiths;
+    const { groups, hidden, total } = passageList(t, { guide: mode, scope });
+    const scopeNote = scope.size && hidden ? '<p class="note">Showing ' + [...scope].filter(k => KIND[k] && k !== 'dc').map(k => KIND[k]).join(' and ') + ', as you asked (' + hidden + ' more passages from other books are on the topic page).</p>' : '';
+    let body = '<h3>' + esc(t.title) + '</h3>' + (intro ? '<p class="note">' + esc(intro) + '</p>' : '');
+    if (mode === 'all') body += '<p>' + rich(t.summary) + '</p>' + viewsHtml(t, order);
+    else body += viewsHtml(t, [mode]) + '<details class="acc"><summary>How ' + order.slice(1).map(f => FAITH_PEOPLE[f]).join(' and ') + ' see it</summary><div class="body" style="padding-left:18px">' + viewsHtml(t, order.slice(1)) + '</div></details>';
+    body += '<div class="pgroup" style="margin-top:20px;font-family:var(--display);font-size:1.1rem">Where it is in the texts</div>' + scopeNote +
+      (groups.length ? groupsHtml(groups) : '<p class="muted">No passages from those books are listed for this topic. <a href="#/t/' + t.id + '">See all ' + total + ' passages</a>.</p>');
+    body += '<div class="chips"><a class="chip" href="#/t/' + t.id + '">Open the full topic →</a>' + (t.related || []).map(p => [p, relatedLabel(p)]).filter(x => x[1]).slice(0, 3)
+      .map(([p, l]) => '<a class="chip" href="#/' + p + '">' + esc(l) + '</a>').join('') + '</div>';
+    if (found.length > 1) body += '<p class="small muted" style="margin-top:12px">Also related:</p><div class="more-topics">' +
+      found.slice(1, 5).map(([x]) => '<button class="chip" data-ask="' + esc(x.title.replace(/\?$/, '')) + '">' + esc(x.title) + '</button>').join('') + '</div>';
+    return body;
+  }
+  async function fallbackAnswer(q, n, g) {
+    const words = n.trim().split(' ').filter(w => w.length > 2);
+    const near = G.topics.map(t => [t, words.filter(w => (' ' + t.q.join(' ') + ' ' + norm(t.title) + ' ').includes(' ' + w)).length]).filter(x => x[1]).sort((a, b) => b[1] - a[1]).slice(0, 5);
+    const r = await retrieve(q);
+    let body = '<h3>From the texts</h3><p>' + (r && r.passages.length
+      ? 'I don\'t have a guide entry on that yet, so here are passages from each tradition that use the words in your question. Some may be off the point.'
+      : 'I couldn\'t find that in the texts. Try different words, or pick a topic below.') + '</p>';
+    if (near.length) body += '<p class="small muted">Did you mean:</p><div class="more-topics">' + near.map(([t]) => '<button class="chip" data-ask="' + esc(t.title.replace(/\?$/, '')) + '">' + esc(t.title) + '</button>').join('') + '</div>';
+    if (r && r.pages.length) body += '<div class="pgroup" style="margin-top:16px">Answered on this site</div>' + r.pages.map(p => '<a class="passage" href="#/q/' + p.slug + '"><span class="ref">' + esc(p.title) + '</span><span class="why">' + esc(p.short) + '</span></a>').join('');
+    if (r && r.passages.length) {
+      const HEAD = { bible: 'The Bible', quran: 'The Quran', christian: 'Christian sources', islam: 'Islamic sources', judaism: 'Jewish sources' };
+      let last = '';
+      body += r.passages.map(p => (HEAD[p.faith] !== last ? '<div class="pgroup">' + (last = HEAD[p.faith]) + '</div>' : '') +
+        '<a class="passage" href="' + p.href + '"><span class="ref">' + esc(p.source) + '</span><div class="q">' + esc(p.text.slice(0, 420)) + (p.text.length > 420 ? '…' : '') + '</div></a>').join('');
+    }
+    return body;
+  }
+
+  async function aiAnswer(card, question) {
+    const btn = card.querySelector('[data-ai]'), out = document.createElement('div');
+    out.className = 'summary-card';
+    out.style.marginTop = '14px';
+    btn.closest('p').replaceWith(out);
+    out.innerHTML = '<span class="typing"><i></i><i></i><i></i></span>';
+    const passages = [...card.querySelectorAll('.passage')].map(a => ({ source: a.querySelector('.ref').textContent + (a.querySelector('.why') ? ' (' + a.querySelector('.why').textContent + ')' : ''),
+      text: (a.querySelector('.q') || {}).textContent || '', href: a.getAttribute('href') })).filter(p => p.text).slice(0, 24);
+    const show = text => { out.innerHTML = text.split(/\n\s*\n/).map(par => '<p>' + rich(par).replace(/\[(\d+)\]/g, (m, n) => passages[n - 1] ? '<a class="ref" href="' + passages[n - 1].href + '" title="' + esc(passages[n - 1].source) + '">[' + n + ']</a>' : m) + '</p>').join(''); };
     try {
       const r = await fetch(CHAT_ENDPOINT, { method: 'POST', headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ question, passages: passages.map(p => ({ source: p.source, text: p.text })) }) });
+        body: JSON.stringify({ question, guide, passages: passages.map(p => ({ source: p.source, text: p.text })) }) });
       if (!r.ok || !/text\/plain/.test(r.headers.get('Content-Type') || '')) {
         const err = await r.json().catch(() => null);
-        throw new Error(err && err.error ? err.error : 'AI answers are not switched on for this copy of the site.');
+        throw new Error(err && err.error ? err.error : 'AI answers are not switched on.');
       }
       const reader = r.body.getReader(), dec = new TextDecoder();
       let text = '';
-      for (;;) {
-        const { done, value } = await reader.read();
-        if (done) break;
-        text += dec.decode(value, { stream: true });
-        show(text);
-      }
-      box.querySelector('p.muted').textContent = 'Written by an AI from the numbered passages below. Check each point against its source.';
-    } catch (e) {
-      box.querySelector('p.muted').textContent = e.message + ' The passages below are what an answer would be built from.';
-    }
+      for (;;) { const { done, value } = await reader.read(); if (done) break; text += dec.decode(value, { stream: true }); show(text); }
+      out.insertAdjacentHTML('beforeend', '<p class="small muted">Written by an AI from the passages above. Check each point against its source.</p>');
+    } catch (e) { out.innerHTML = '<p class="small muted">' + esc(e.message) + '</p>'; }
   }
 
-  /* ---------- what each tradition believes ---------- */
-  const FAITH_NAME = { christian: 'Christianity', muslim: 'Islam', jewish: 'Judaism' };
-  const beliefCards = () => '<ul class="booklist">' + B.traditions.map(t => '<li><a href="#/beliefs/' + t.slug + '">' + esc(t.short) + '</a></li>').join('') + '</ul>';
-  function beliefs(slug) {
-    if (!slug) {
-      document.title = 'Beliefs · Scripture Q&A';
-      app.innerHTML = '<h1>What each tradition believes</h1><p class="lede">A summary of each tradition in its own terms. Every point links to the scripture or the document it rests on.</p>' +
-        Object.keys(FAITH_NAME).map(f => '<h2>' + FAITH_NAME[f] + '</h2><ul class="cards">' + B.traditions.filter(t => t.faith === f).map(t =>
-          '<li><a href="#/beliefs/' + t.slug + '"><strong>' + esc(t.name) + '</strong><span>' + esc(t.summary) + '</span></a></li>').join('') + '</ul>').join('') +
-        '<h2>Compare</h2>' + compareList() + '<p class="status">Draft summaries. Not yet reviewed by a priest, imam, rabbi or scholar.</p>';
-      return;
-    }
-    const t = B.traditions.find(x => x.slug === slug);
-    if (!t) return notFound();
-    document.title = t.name + ' · Scripture Q&A';
-    app.innerHTML = '<p class="crumbs"><a href="#/beliefs">Beliefs</a> › ' + FAITH_NAME[t.faith] + '</p><h1>' + esc(t.name) + '</h1><p class="lede">' + esc(t.summary) + '</p>' +
-      t.sections.map(s => '<section class="sec v-' + t.faith + '"><h2>' + esc(s.h) + '</h2><ul>' + s.points.map(p => '<li>' + rich(p) + '</li>').join('') + '</ul></section>').join('') +
-      '<h2>Read their texts</h2><ul class="toc">' + t.texts.map(x => '<li><a href="#/' + encodeURI(x[0]) + '">' + esc(x[1]) + '</a></li>').join('') + '</ul>' +
-      '<h2>Compare with the others</h2>' + compareList() +
-      '<p class="status">Draft summary. Not yet reviewed by a priest, imam, rabbi or scholar.</p>';
+  /* ---------- the three faiths ---------- */
+  function faiths() {
+    document.title = 'Faiths · Contradiction';
+    app.innerHTML = '<h1>The three faiths</h1><p class="lede">Each in its own words, then side by side. Every point links to the scripture or document it rests on.</p>' + faithCards() +
+      '<div class="section-head"><h2>Compare them topic by topic</h2></div><div class="topic-grid">' +
+      B.compare.map(c => '<a href="#/compare/' + c.slug + '">' + esc(c.title) + '</a>').join('') + '</div>';
   }
-  const compareList = () => '<ul class="booklist">' + B.compare.map(c => '<li><a href="#/compare/' + c.slug + '">' + esc(c.title) + '</a></li>').join('') + '</ul>';
+  function hub(slug, branch) {
+    const h = HUBS[slug];
+    if (!h) return notFound();
+    if (!h.branches.some(b => b[0] === branch)) branch = h.branches[0][0];
+    const t = B.traditions.find(x => x.slug === branch);
+    document.title = (branch === h.branches[0][0] ? h.name : t.short) + ' · Contradiction';
+    const tops = G.topics.filter(x => x.views[h.key]);
+    app.innerHTML = '<section class="banner ' + h.key + '" data-glyph="' + h.glyph + '"><p class="crumbs"><a href="#/faiths">Faiths</a></p><h1>' + h.name + '</h1><p>' + esc(h.blurb) + '</p>' +
+      '<a class="btn" href="#/ask" data-set-guide="' + h.key + '">' + h.glyph + ' Ask the ' + FAITH_ADJ[h.key] + ' guide</a></section>' +
+      (h.branches.length > 1 ? '<div class="seg even">' + h.branches.map(b => '<a href="#/faith/' + slug + '/' + b[0] + '"' + (b[0] === branch ? ' class="on"' : '') + '>' + b[1] + '</a>').join('') + '</div>' : '<div style="height:10px"></div>') +
+      '<p class="lede">' + esc(t.summary) + '</p>' +
+      '<div class="section-head"><h2>' + (branch === 'christianity' || branch === 'islam' ? 'What they all believe' : 'What they believe') + '</h2></div>' +
+      t.sections.map((s, i) => '<details class="acc ' + h.key + '"' + (i === 0 ? ' open' : '') + '><summary><span class="n">' + (i + 1) + '</span>' + esc(s.h) + '</summary><div class="body"><ul>' +
+        s.points.map(p => '<li>' + rich(p) + '</li>').join('') + '</ul></div></details>').join('') +
+      '<div class="section-head"><h2>Read their texts</h2></div><ul class="toc">' + t.texts.map(x => '<li><a href="#/' + encodeURI(x[0]) + '">' + esc(x[1]) + ' →</a></li>').join('') + '</ul>' +
+      '<div class="section-head"><h2>Topics</h2><a href="#/topics">All topics</a></div><div class="chips">' + tops.slice(0, 18).map(x => '<a class="chip" href="#/t/' + x.id + '">' + esc(x.title) + '</a>').join('') + '</div>' +
+      '<p class="status">Draft summary. Not yet reviewed by a priest, imam, rabbi or scholar.</p>';
+    app.querySelector('[data-set-guide]').addEventListener('click', e => { guide = e.currentTarget.dataset.setGuide; store.set('guide', guide); });
+  }
+  function beliefs(slug) {
+    if (!slug) return location.replace('#/faiths');
+    const h = hubOf(slug);
+    location.replace(h ? '#/faith/' + h + '/' + slug : '#/faiths');
+  }
+  const compareList = () => '<div class="topic-grid">' + B.compare.map(c => '<a href="#/compare/' + c.slug + '">' + esc(c.title) + '</a>').join('') + '</div>';
   function compareView(slug) {
-    if (!slug) {
-      document.title = 'Compare · Scripture Q&A';
-      app.innerHTML = '<p class="crumbs"><a href="#/beliefs">Beliefs</a></p><h1>Compare the traditions</h1><p class="lede">One topic at a time, each tradition side by side.</p>' + compareList();
-      return;
-    }
+    if (!slug) return location.replace('#/faiths');
     const i = B.compare.findIndex(x => x.slug === slug), c = B.compare[i];
     if (!c) return notFound();
-    document.title = c.title + ' compared · Scripture Q&A';
+    document.title = c.title + ' compared · Contradiction';
     const qs = (c.more || []).map(m => C.questions.find(q => 'q/' + q.slug === m)).filter(Boolean);
-    app.innerHTML = '<p class="crumbs"><a href="#/beliefs">Beliefs</a> › <a href="#/compare">Compare</a></p><h1>' + esc(c.title) + '</h1>' +
-      c.rows.map(r => '<section class="sec v-' + r[0] + '"><span class="tag">' + esc(r[1]) + '</span><p>' + rich(r[2]) + '</p></section>').join('') +
-      (qs.length ? '<h2>The arguments in full</h2>' + questionCards(qs) : '') +
+    app.innerHTML = '<p class="crumbs"><a href="#/faiths">Faiths</a> › Compare</p><h1>' + esc(c.title) + '</h1>' +
+      '<div class="views">' + c.rows.map(r => { const f = VIEW_GROUP[r[0]] || r[0];
+        return '<div class="view ' + f + '"><div class="who">' + (GLYPH[f] ? '<span>' + GLYPH[f] + '</span> ' : '') + esc(r[1]) + '</div><p>' + rich(r[2]) + '</p></div>'; }).join('') + '</div>' +
+      (qs.length ? '<div class="section-head"><h2>The arguments in full</h2></div>' + questionCards(qs) : '') +
       '<div class="pager">' + (i > 0 ? '<a class="btn ghost" href="#/compare/' + B.compare[i - 1].slug + '">← ' + esc(B.compare[i - 1].title) + '</a>' : '<span></span>') +
       (i < B.compare.length - 1 ? '<a class="btn ghost" href="#/compare/' + B.compare[i + 1].slug + '">' + esc(B.compare[i + 1].title) + ' →</a>' : '') + '</div>';
+  }
+
+  /* ---------- edition picker ---------- */
+  const sheet = document.getElementById('sheet');
+  const pickerBtn = t => '<button class="picker" data-picker>' + esc(trById[t].name.replace(/^Quran: /, 'Quran · ')) + '</button>';
+  function bindPicker() { const b = app.querySelector('[data-picker]'); if (b) b.addEventListener('click', openSheet); }
+  function openSheet() {
+    const sets = [['Bible in English', t => t.corpus === 'bible' && t.lang === 'en'], ['Bible in the original languages', t => t.corpus === 'bible' && t.lang !== 'en'],
+      ['Quran in English', t => t.corpus === 'quran' && t.lang === 'en'], ['Quran in Arabic', t => t.corpus === 'quran' && t.lang === 'ar']];
+    sheet.innerHTML = '<div class="panel" role="dialog" aria-label="Choose an edition"><div class="grab"></div><strong style="font:700 1.2rem var(--display)">Choose an edition</strong>' +
+      sets.map(([label, f]) => '<h3>' + label + '</h3>' + M.translations.filter(f).map(t => '<button class="opt" data-tr="' + t.id + '"' + (t.id === tr ? ' aria-current="true"' : '') +
+        '><div>' + esc(t.name.replace(/^Quran: /, '')) + '<span>' + esc(t.tradition) + '</span></div></button>').join('')).join('') + '</div>';
+    sheet.hidden = false;
+    sheet.onclick = e => {
+      const o = e.target.closest('[data-tr]');
+      if (o) chooseEdition(o.dataset.tr);
+      if (o || e.target === sheet) sheet.hidden = true;
+    };
+  }
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') sheet.hidden = true; });
+  function chooseEdition(id) {
+    const m = location.hash.match(/^#\/(read|books)\/[A-Z]+(.*)$/);
+    const same = trById[id].corpus === trById[tr].corpus;
+    setTr(id);
+    if (m && (same || m[1] === 'books')) location.hash = '#/' + m[1] + '/' + tr + (m[1] === 'books' ? '' : m[2]);
+    else if (m) location.hash = '#/books/' + tr; else route();
   }
 
   /* #/go/<work>/<key>: find a hadith by number, a Talmud page, a chapter or a named section, then open it. */
@@ -771,37 +1075,35 @@
   const notFound = () => { app.innerHTML = '<h1>Page not found</h1><p><a href="#/">Go to the home page</a></p>'; };
 
   /* ---------- routing ---------- */
-  function setTr(t) { tr = t; pref[trById[t].corpus] = t; trSel.value = t; store.set('tr', t); store.set('tr-' + trById[t].corpus, t); }
+  function setTr(t) { tr = t; pref[trById[t].corpus] = t; store.set('tr', t); store.set('tr-' + trById[t].corpus, t); }
+  const TAB = { '': '', ask: 'ask', faiths: 'faiths', faith: 'faiths', beliefs: 'faiths', compare: 'faiths', books: 'books', read: 'books', lib: 'lib', go: 'lib',
+    topics: 'topics', t: 'topics', topic: 'topics', q: 'topics', questions: 'topics', search: 'search' };
   function route() {
     renderId++;
     const [name, ...a] = decodeURIComponent(location.hash.replace(/^#\/?/, '')).split('/');
-    document.querySelectorAll('.top nav a').forEach(l => l.classList.toggle('on',
-      l.getAttribute('href') === '#/' + ({ q: 'questions', topic: 'questions', read: 'books', compare: 'beliefs', go: 'lib' }[name] || name)));
+    const tab = TAB[name] !== undefined ? TAB[name] : name;
+    document.querySelectorAll('.links a, .tabbar a').forEach(l => l.classList.toggle('on', l.getAttribute('href') === '#/' + tab));
+    sheet.hidden = true;
+    app.className = 'enter' + (name === 'ask' ? ' chatmode' : '');
+    document.body.classList.toggle('chatting', name === 'ask');
     window.scrollTo(0, 0);
-    const views = { '': home, questions, q: question, topic, books, read, search: () => search(a.join('/')), about, lib: () => library(a), beliefs, compare: compareView, go, ask: () => ask(a.join('/')) };
+    const views = { '': home, questions, q: question, topic, topics, t: tguide, books, read, search: () => search(a.join('/')), about, lib: () => library(a),
+      beliefs, faiths, faith: hub, compare: compareView, go, ask: () => ask(a.join('/')) };
     Promise.resolve((views[name] || notFound)(...a)).catch(e => {
       app.innerHTML = '<h1>Something went wrong</h1><p class="muted">' + esc(e.message) + '</p>';
     });
   }
 
-  Promise.all(['data/index.json', 'content/questions.json', 'content/disputes.json', 'content/beliefs.json'].map(getJSON)).then(([m, c, d, b]) => {
-    M = m; C = c; B = b;
+  Promise.all(['data/index.json', 'content/questions.json', 'content/disputes.json', 'content/beliefs.json', 'content/guide.json'].map(getJSON)).then(([m, c, d, b, g]) => {
+    M = m; C = c; B = b; G = g;
     C.questions = C.questions.concat(d.questions);
     M.translations.forEach(t => { trById[t.id] = t; t.chapters = Object.fromEntries(t.books); });
     setupRefs();
-    const og = (label, f) => '<optgroup label="' + label + '">' + M.translations.filter(f).map(t => '<option value="' + t.id + '">' + esc(t.name.replace(/^Quran: /, '')) + '</option>').join('') + '</optgroup>';
-    trSel.innerHTML = og('Bible in English', t => t.corpus === 'bible' && t.lang === 'en') + og('Bible in the original languages', t => t.corpus === 'bible' && t.lang !== 'en') +
-      og('Quran in English', t => t.corpus === 'quran' && t.lang === 'en') + og('Quran in Arabic', t => t.corpus === 'quran' && t.lang === 'ar');
     ['bible', 'quran'].forEach(c => { const v = store.get('tr-' + c); if (trById[v] && trById[v].corpus === c) pref[c] = v; });
     setTr(trById[store.get('tr')] ? store.get('tr') : 'WEB');
-    trSel.addEventListener('change', () => {
-      const m = location.hash.match(/^#\/(read|books)\/[A-Z]+(.*)$/);
-      const same = trById[trSel.value].corpus === trById[tr].corpus;
-      setTr(trSel.value);
-      if (m && (same || m[1] === 'books')) location.hash = '#/' + m[1] + '/' + tr + (m[1] === 'books' ? '' : m[2]);
-      else if (m) location.hash = '#/books/' + tr; else route();
-    });
     window.addEventListener('hashchange', route);
+    const top = document.querySelector('.top');
+    window.addEventListener('scroll', () => top.classList.toggle('scrolled', scrollY > 4), { passive: true });
     route();
-  }).catch(e => { app.innerHTML = '<h1>Could not load the site data</h1><p class="muted">' + esc(e.message) + '</p>'; });
+  }).catch(e => { app.innerHTML = '<h1>Could not load the site</h1><p class="muted">' + esc(e.message) + '</p>'; });
 })();

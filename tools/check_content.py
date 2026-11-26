@@ -10,6 +10,7 @@ import json, os, re, sys
 site = sys.argv[1]
 J = lambda *p: json.load(open(os.path.join(site, *p), encoding="utf-8"))
 M, Q, D, B = J("data", "index.json"), J("content", "questions.json"), J("content", "disputes.json"), J("content", "beliefs.json")
+G = J("content", "guide.json")
 lib = {w["id"]: w for w in J("lib", "index.json")}
 colls = {w["c"] for w in lib.values()}
 questions = Q["questions"] + D["questions"]
@@ -63,6 +64,8 @@ def route(path):
         return any(t["id"] == a[1] for t in M["translations"])
     if a[0] == "beliefs":
         return any(t["slug"] == a[1] for t in B["traditions"])
+    if a[0] == "topic":
+        return any(t["slug"] == a[1] for t in Q["topics"])
     if a[0] == "compare":
         return any(c["slug"] == a[1] for c in B["compare"])
     return False
@@ -78,7 +81,7 @@ def strings(x):
             yield from strings(v)
 
 problems, counts = [], dict(verses=0, links=0, hadith=0, talmud=0)
-for name, doc in (("questions", Q), ("disputes", D), ("beliefs", B)):
+for name, doc in (("questions", Q), ("disputes", D), ("beliefs", B), ("guide", G)):
     for s in strings(doc):
         for path, label in re.findall(r"\[\[([^|\]]+)\|([^\]]+)\]\]", s):
             counts["links"] += 1
@@ -117,6 +120,10 @@ for t in Q["topics"]:
     for s in t["questions"]:
         if s not in qslugs:
             problems.append("topic %s: unknown question %s" % (t["slug"], s))
+for t in G["topics"]:
+    for m in t.get("related", []):
+        if not route(m):
+            problems.append("guide %s: unknown related %s" % (t["id"], m))
 for c in B["compare"]:
     for m in c.get("more", []):
         if not route(m):

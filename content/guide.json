@@ -1,0 +1,4073 @@
+{
+ "about": "Topic guide used by the Ask page. Each topic lists the words that point to it (q), a neutral summary, how each faith sees it, and the key passages grouped by source. A passage is [reference, why it matters]. References are linked and quoted automatically.",
+ "topics": [
+  {
+   "id": "trinity",
+   "title": "The Trinity",
+   "q": [
+    "trinity",
+    "triune",
+    "three in one",
+    "three persons",
+    "father son and holy spirit",
+    "father son holy spirit",
+    "godhead",
+    "three gods",
+    "say not three"
+   ],
+   "summary": "Christians believe in one God who exists as three persons: the Father, the Son and the Holy Spirit. Muslims and Jews believe God is one in a way that rules this out. The word “Trinity” is not in the Bible; Christians use it to sum up what they read there.",
+   "views": {
+    "christian": "There is one God, not three. The one God is Father, Son and Holy Spirit, equal and eternal. Christians find this in Jesus' command to baptise “in the name” (singular) of all three, in the Gospel of John calling Jesus “the Word” who “was God”, and in the Spirit being spoken of as a person. The Old Testament passages are read as early hints, made clear only after Jesus. The doctrine was put into fixed words at the councils of Nicaea (325) and Constantinople (381).",
+    "muslim": "God is absolutely one (tawhid), with no partner, son or parts. The Quran addresses Christians directly: “say not ‘Three’”, and calls it disbelief to say God is “the third of three”. Jesus is honoured as a prophet and the Messiah, and the Holy Spirit is usually understood as the angel Gabriel. Muslims also point out that Jesus himself quoted “the Lord is one” and that the word Trinity is not in the Bible.",
+    "jewish": "“Hear, O Israel: the LORD our God, the LORD is one” is the centre of Jewish faith and allows no division in God. The plural in “Let us make man” is explained by Jewish commentators as God speaking to the angels. Worship of a man as God is seen as a breach of the first commandments."
+   },
+   "texts": [
+    {
+     "group": "Old Testament",
+     "note": "The oneness of God, and the passages Christians read as early hints of the Trinity",
+     "refs": [
+      [
+       "Deuteronomy 6:4",
+       "The Shema: the LORD is one. Quoted by all three faiths."
+      ],
+      [
+       "Genesis 1:26",
+       "God says “Let us make man in our image”. Christians see a hint of plurality; Rashi says God is speaking to the angels."
+      ],
+      [
+       "Isaiah 48:16",
+       "“The Lord GOD and his Spirit have sent me”: read by Christians as Father, Spirit and the one sent."
+      ],
+      [
+       "Isaiah 9:6",
+       "A child called “Mighty God”. Christians apply it to Jesus; Jews read it of a king of Judah."
+      ],
+      [
+       "Isaiah 45:5",
+       "“I am the LORD, and there is no other”: cited against any division in God."
+      ]
+     ]
+    },
+    {
+     "group": "New Testament",
+     "note": "The passages Christians build the doctrine on",
+     "refs": [
+      [
+       "Matthew 28:19",
+       "Baptise “in the name of the Father and of the Son and of the Holy Spirit”."
+      ],
+      [
+       "John 1:1",
+       "“The Word was with God, and the Word was God.”"
+      ],
+      [
+       "John 1:14",
+       "The Word became flesh: Christians identify the Word with Jesus."
+      ],
+      [
+       "2 Corinthians 13:14",
+       "Paul's blessing names all three together."
+      ],
+      [
+       "Matthew 3:16–17",
+       "At Jesus' baptism the Spirit descends and the Father speaks."
+      ],
+      [
+       "John 14:26",
+       "The Father sends the Holy Spirit in Jesus' name."
+      ],
+      [
+       "Mark 12:29",
+       "Jesus quotes “the Lord our God is one Lord”: cited by Muslims and Jews."
+      ],
+      [
+       "1 John 5:7",
+       "The clearest “Trinity verse” in the KING JAMES only. It is missing from the early Greek manuscripts; compare the editions."
+      ]
+     ]
+    },
+    {
+     "group": "Quran",
+     "note": "Where the Quran speaks to the Trinity",
+     "refs": [
+      [
+       "Quran 4:171",
+       "“Say not ‘Three’ … God is only one God.”"
+      ],
+      [
+       "Quran 5:73",
+       "Disbelief to say God is “the third of three”."
+      ],
+      [
+       "Quran 5:116",
+       "God asks Jesus whether he told people to worship him and his mother."
+      ],
+      [
+       "Quran 112:1–4",
+       "God is One, he neither begets nor is begotten."
+      ]
+     ]
+    },
+    {
+     "group": "Creeds and Jewish commentary",
+     "refs": [
+      [
+       "[[lib/creed-athanasian-creed|Athanasian Creed]]",
+       "The classic Christian statement: one God in Trinity, Trinity in unity."
+      ],
+      [
+       "[[lib/creed-nicene-creed|Nicene Creed]]",
+       "The creed shared by Orthodox, Catholic and most Protestant churches."
+      ],
+      [
+       "[[go/sef-rashi-on-genesis/1|Rashi on Genesis 1:26]]",
+       "The Jewish explanation of “Let us make man”."
+      ]
+     ]
+    }
+   ],
+   "related": [
+    "q/one-god-or-trinity",
+    "q/is-jesus-god",
+    "compare/god"
+   ]
+  },
+  {
+   "id": "jesus-divinity",
+   "title": "Is Jesus God?",
+   "q": [
+    "jesus god",
+    "jesus is god",
+    "divinity of jesus",
+    "deity of christ",
+    "divinity of christ",
+    "jesus divine",
+    "did jesus claim",
+    "claim to be god",
+    "incarnation",
+    "god in the flesh",
+    "god became man",
+    "jesus worship",
+    "worship jesus"
+   ],
+   "summary": "Christians believe Jesus is God the Son who became man. Muslims believe he is a great prophet but not God. Jews do not accept him as Messiah or divine. Both sides quote the Gospels.",
+   "views": {
+    "christian": "Jesus is fully God and fully man, one person with two natures. He forgave sins, accepted worship and spoke of himself in ways Jews of his time heard as claiming God's authority. The verses where he prays or says “the Father is greater” describe him as a man.",
+    "muslim": "Jesus is a messenger and servant of God, born of a virgin, a worker of miracles, but not God. In the Quran he denies ever asking to be worshipped. Muslims point to the Gospel verses where Jesus prays to God, calls the Father “the only true God”, and does not know the hour.",
+    "jewish": "God has no body and does not become a man. Jesus is not regarded as divine, a prophet or the Messiah."
+   },
+   "texts": [
+    {
+     "group": "New Testament: verses Christians cite",
+     "refs": [
+      [
+       "John 1:1–14",
+       "The Word was God and became flesh."
+      ],
+      [
+       "John 8:58",
+       "“Before Abraham was, I am.”"
+      ],
+      [
+       "John 10:30–33",
+       "“I and the Father are one”, and the crowd's reaction."
+      ],
+      [
+       "John 20:28",
+       "Thomas: “My Lord and my God!”"
+      ],
+      [
+       "Mark 2:5–7",
+       "He forgives sins; “who can forgive sins but God alone?”"
+      ],
+      [
+       "Philippians 2:5–11",
+       "Being in the form of God, he emptied himself."
+      ],
+      [
+       "Colossians 2:9",
+       "In him dwells all the fullness of the Godhead bodily."
+      ]
+     ]
+    },
+    {
+     "group": "New Testament: verses Muslims cite",
+     "refs": [
+      [
+       "Mark 10:18",
+       "“Why do you call me good? No one is good but God alone.”"
+      ],
+      [
+       "John 14:28",
+       "“The Father is greater than I.”"
+      ],
+      [
+       "John 17:3",
+       "The Father is “the only true God”."
+      ],
+      [
+       "Mark 13:32",
+       "Not even the Son knows the day or the hour."
+      ],
+      [
+       "John 20:17",
+       "“My God and your God.”"
+      ],
+      [
+       "Acts 2:22",
+       "Peter: “Jesus of Nazareth, a man approved by God.”"
+      ]
+     ]
+    },
+    {
+     "group": "Quran",
+     "refs": [
+      [
+       "Quran 5:75",
+       "The Messiah was only a messenger; he and his mother ate food."
+      ],
+      [
+       "Quran 5:116–117",
+       "Jesus denies telling people to worship him."
+      ],
+      [
+       "Quran 19:30",
+       "His first words: “I am the servant of God.”"
+      ],
+      [
+       "Quran 4:171",
+       "Jesus is a messenger and a word from God, not God."
+      ]
+     ]
+    },
+    {
+     "group": "Hebrew Bible",
+     "refs": [
+      [
+       "Numbers 23:19",
+       "“God is not a man.”"
+      ],
+      [
+       "Deuteronomy 4:15–16",
+       "Israel saw no form at Sinai."
+      ]
+     ]
+    }
+   ],
+   "related": [
+    "q/is-jesus-god",
+    "compare/jesus",
+    "q/good-things-jesus-did"
+   ]
+  },
+  {
+   "id": "crucifixion",
+   "title": "The crucifixion of Jesus",
+   "q": [
+    "crucifixion",
+    "crucified",
+    "crucify",
+    "died on the cross",
+    "die on the cross",
+    "jesus die",
+    "death of jesus",
+    "did jesus die",
+    "cross",
+    "substitute",
+    "swoon"
+   ],
+   "summary": "The New Testament says Jesus was crucified, died and rose again. One verse of the Quran says he was not killed or crucified. Historians generally treat the crucifixion as one of the most certain facts about Jesus.",
+   "views": {
+    "christian": "Jesus truly died on the cross for the sins of the world and rose on the third day. Without the cross and resurrection there is no Christianity.",
+    "muslim": "God saved Jesus: he was not killed or crucified but raised to God. Most commentators say someone else was made to look like him and was crucified instead. He will return before the end.",
+    "jewish": "Judaism has no doctrine about Jesus' death. A passage in the Talmud assumes he was executed."
+   },
+   "texts": [
+    {
+     "group": "New Testament",
+     "refs": [
+      [
+       "Mark 15:22–39",
+       "The crucifixion and death in Mark, the earliest Gospel."
+      ],
+      [
+       "John 19:16–37",
+       "John's account, which claims an eyewitness."
+      ],
+      [
+       "1 Corinthians 15:3–8",
+       "Paul's summary, about AD 55: died, buried, raised, appeared."
+      ],
+      [
+       "Mark 8:31",
+       "Jesus foretells that he must suffer and be killed."
+      ]
+     ]
+    },
+    {
+     "group": "Old Testament",
+     "refs": [
+      [
+       "Isaiah 53:4–6",
+       "The suffering servant, read by Christians as foretelling the cross."
+      ],
+      [
+       "Psalm 22:16",
+       "“They pierced my hands and my feet” (Hebrew text differs: “like a lion”)."
+      ]
+     ]
+    },
+    {
+     "group": "Quran",
+     "refs": [
+      [
+       "Quran 4:157–158",
+       "“They slew him not nor crucified him, but it appeared so to them.”"
+      ],
+      [
+       "Quran 3:55",
+       "“I am taking you and raising you to myself.”"
+      ]
+     ]
+    },
+    {
+     "group": "Commentary and history",
+     "refs": [
+      [
+       "[[go/tafsir-jalalayn/4|Tafsir al-Jalalayn on Quran 4:157]]",
+       "The classic Sunni explanation of the substitute."
+      ],
+      [
+       "Sanhedrin 43a",
+       "The Talmud passage about Yeshu's execution on the eve of Passover."
+      ]
+     ]
+    }
+   ],
+   "related": [
+    "q/was-jesus-crucified",
+    "compare/jesus"
+   ]
+  },
+  {
+   "id": "resurrection",
+   "title": "The resurrection",
+   "q": [
+    "resurrection",
+    "rose from the dead",
+    "risen",
+    "empty tomb",
+    "raised from the dead",
+    "easter",
+    "rise again"
+   ],
+   "summary": "Christians believe Jesus rose bodily from the dead on the third day. All three faiths believe in a resurrection of the dead at the end of time.",
+   "views": {
+    "christian": "Jesus rose bodily on the third day and appeared to many witnesses. His resurrection is the promise that believers will also be raised.",
+    "muslim": "Since Jesus was not killed, he did not rise from the dead; he was raised alive to God. All people will be resurrected on the Day of Judgment.",
+    "jewish": "The resurrection of the dead at the end of days is a core belief. Jesus' resurrection is not accepted."
+   },
+   "texts": [
+    {
+     "group": "New Testament",
+     "refs": [
+      [
+       "1 Corinthians 15:3–8",
+       "The earliest list of resurrection appearances."
+      ],
+      [
+       "1 Corinthians 15:14–17",
+       "If Christ is not raised, faith is in vain."
+      ],
+      [
+       "Luke 24:1–12",
+       "The empty tomb."
+      ],
+      [
+       "John 20:24–29",
+       "Thomas touches the wounds."
+      ]
+     ]
+    },
+    {
+     "group": "Hebrew Bible",
+     "refs": [
+      [
+       "Daniel 12:2",
+       "Many who sleep in the dust shall awake."
+      ],
+      [
+       "Ezekiel 37:1–14",
+       "The valley of dry bones."
+      ]
+     ]
+    },
+    {
+     "group": "Quran",
+     "refs": [
+      [
+       "Quran 36:78–79",
+       "He who made them first will give them life again."
+      ],
+      [
+       "Quran 22:7",
+       "God will raise those in the graves."
+      ]
+     ]
+    },
+    {
+     "group": "Jewish tradition",
+     "refs": [
+      [
+       "Mishnah Sanhedrin 10:1",
+       "Those who deny the resurrection have no share in the World to Come."
+      ]
+     ]
+    }
+   ],
+   "related": [
+    "q/was-jesus-crucified",
+    "compare/afterlife"
+   ]
+  },
+  {
+   "id": "virgin-birth",
+   "title": "The virgin birth",
+   "q": [
+    "virgin birth",
+    "born of a virgin",
+    "virgin mary",
+    "immaculate",
+    "conceived",
+    "birth of jesus",
+    "nativity",
+    "almah",
+    "young woman"
+   ],
+   "summary": "Christians and Muslims both believe Mary conceived Jesus without a man. Jews do not. The prophecy in Isaiah 7:14 is disputed: the Hebrew word means “young woman”.",
+   "views": {
+    "christian": "Jesus was conceived by the Holy Spirit and born of the Virgin Mary, fulfilling Isaiah 7:14.",
+    "muslim": "Mary conceived Jesus by God's command, as a sign. This shows God's power, not that Jesus is God's son: Adam had neither father nor mother.",
+    "jewish": "The virgin birth is not accepted. In Isaiah 7:14 the Hebrew “almah” means a young woman, and the child was a sign for King Ahaz in his own time."
+   },
+   "texts": [
+    {
+     "group": "New Testament",
+     "refs": [
+      [
+       "Matthew 1:18–25",
+       "Joseph learns Mary is with child by the Holy Spirit."
+      ],
+      [
+       "Luke 1:26–38",
+       "The angel Gabriel's announcement to Mary."
+      ]
+     ]
+    },
+    {
+     "group": "Old Testament",
+     "refs": [
+      [
+       "Isaiah 7:14",
+       "“The virgin” (Greek) or “the young woman” (Hebrew) shall conceive. Compare the editions."
+      ],
+      [
+       "Isaiah 7:15–16",
+       "The sign concerns the time of King Ahaz."
+      ]
+     ]
+    },
+    {
+     "group": "Quran",
+     "refs": [
+      [
+       "Quran 19:16–34",
+       "The story of Mary in the surah named after her."
+      ],
+      [
+       "Quran 3:45–47",
+       "The angels announce Jesus; Mary asks how, when no man has touched her."
+      ],
+      [
+       "Quran 3:59",
+       "Jesus is like Adam, created from dust."
+      ]
+     ]
+    }
+   ],
+   "related": [
+    "compare/mary",
+    "q/is-jesus-the-messiah-of-the-prophets"
+   ]
+  },
+  {
+   "id": "mary",
+   "title": "Mary, mother of Jesus",
+   "q": [
+    "mary",
+    "maryam",
+    "mother of god",
+    "theotokos",
+    "mother of jesus",
+    "assumption",
+    "immaculate conception",
+    "hail mary",
+    "rosary",
+    "worship mary",
+    "pray to mary",
+    "praying to mary",
+    "veneration of mary"
+   ],
+   "summary": "Mary is honoured by Christians and Muslims. She is the only woman named in the Quran. Catholics and Orthodox give her special honour; Protestants honour her but do not pray to her.",
+   "views": {
+    "christian": "Orthodox and Catholics call her Mother of God and ask for her prayers; Catholics hold she was conceived without sin and taken body and soul into heaven. Protestants honour her as the virgin mother of the Lord but do not pray to her.",
+    "muslim": "Maryam was chosen and purified above the women of the worlds. A whole surah is named after her. She is not divine and is not prayed to.",
+    "jewish": "Mary has no religious role in Judaism."
+   },
+   "texts": [
+    {
+     "group": "New Testament",
+     "refs": [
+      [
+       "Luke 1:28",
+       "“Hail, full of grace, the Lord is with you.”"
+      ],
+      [
+       "Luke 1:42–48",
+       "“Blessed are you among women … all generations shall call me blessed.”"
+      ],
+      [
+       "John 19:25–27",
+       "Mary at the cross."
+      ],
+      [
+       "Mark 6:3",
+       "Jesus' brothers and sisters, read by Protestants as Mary's other children."
+      ]
+     ]
+    },
+    {
+     "group": "Quran",
+     "refs": [
+      [
+       "Quran 3:42",
+       "God chose you above the women of the worlds."
+      ],
+      [
+       "Quran 19:16–34",
+       "Surah Maryam."
+      ],
+      [
+       "Quran 66:12",
+       "Mary, daughter of Imran, who guarded her chastity."
+      ]
+     ]
+    },
+    {
+     "group": "Hadith",
+     "refs": [
+      [
+       "Sahih al-Bukhari 3431",
+       "Satan touches every newborn except Mary and her son."
+      ]
+     ]
+    }
+   ],
+   "related": [
+    "compare/mary",
+    "q/mary-and-jesus-in-the-quran"
+   ]
+  },
+  {
+   "id": "holy-spirit",
+   "title": "The Holy Spirit",
+   "q": [
+    "holy spirit",
+    "holy ghost",
+    "spirit of god",
+    "pentecost",
+    "filioque",
+    "comforter",
+    "paraclete",
+    "ruh al qudus"
+   ],
+   "summary": "In Christianity the Holy Spirit is God, the third person of the Trinity. In Islam the Holy Spirit is usually understood as the angel Gabriel. In Judaism the spirit of God is God's presence and power, not a separate person.",
+   "views": {
+    "christian": "The Spirit is God, given to the Church at Pentecost. The East says the Spirit proceeds from the Father; the West adds “and the Son”.",
+    "muslim": "“The Holy Spirit” (Ruh al-Qudus) supported Jesus and brought revelation; most scholars identify it with Gabriel. Some Muslims read Jesus' promise of a coming “Comforter” as a prophecy of Muhammad.",
+    "jewish": "The spirit of God is his presence acting in the world and inspiring the prophets, not a person within God."
+   },
+   "texts": [
+    {
+     "group": "New Testament",
+     "refs": [
+      [
+       "John 14:16–17",
+       "Another Comforter, the Spirit of truth."
+      ],
+      [
+       "John 15:26",
+       "The Spirit proceeds from the Father."
+      ],
+      [
+       "John 16:7–14",
+       "The Comforter will guide you into all truth."
+      ],
+      [
+       "Acts 2:1–4",
+       "Pentecost."
+      ]
+     ]
+    },
+    {
+     "group": "Hebrew Bible",
+     "refs": [
+      [
+       "Genesis 1:2",
+       "The Spirit of God moved over the waters."
+      ],
+      [
+       "Psalm 51:11",
+       "“Take not your holy spirit from me.”"
+      ]
+     ]
+    },
+    {
+     "group": "Quran",
+     "refs": [
+      [
+       "Quran 2:87",
+       "We supported Jesus with the Holy Spirit."
+      ],
+      [
+       "Quran 16:102",
+       "The Holy Spirit brought down the Quran."
+      ],
+      [
+       "Quran 61:6",
+       "Jesus announces a messenger named Ahmad."
+      ]
+     ]
+    }
+   ],
+   "related": [
+    "q/is-muhammad-foretold-in-the-bible",
+    "compare/god"
+   ]
+  },
+  {
+   "id": "original-sin",
+   "title": "Original sin",
+   "q": [
+    "original sin",
+    "sin of adam",
+    "adams sin",
+    "fall of man",
+    "the fall",
+    "inherited sin",
+    "born sinful",
+    "born in sin",
+    "ancestral sin",
+    "adam and eve"
+   ],
+   "summary": "Western Christianity teaches that everyone inherits the effects of Adam's sin. Eastern Christians speak of “ancestral sin”. Islam and Judaism say each person is born innocent.",
+   "views": {
+    "christian": "Catholics: we inherit the loss of original holiness, removed in baptism. Protestants: the fall corrupted all of human nature. Orthodox: we inherit death and weakness from Adam, not his guilt.",
+    "muslim": "Adam and Eve sinned, repented and were forgiven. Nothing was passed on. Every child is born in a natural state of submission to God (fitra).",
+    "jewish": "No inherited guilt. Each person has a good and an evil inclination and is free to choose."
+   },
+   "texts": [
+    {
+     "group": "Old Testament",
+     "refs": [
+      [
+       "Genesis 3:1–24",
+       "The fall."
+      ],
+      [
+       "Psalm 51:5",
+       "“In sin did my mother conceive me.”"
+      ],
+      [
+       "Ezekiel 18:20",
+       "The son shall not bear the iniquity of the father."
+      ],
+      [
+       "Genesis 4:7",
+       "Sin is crouching at the door, but you may rule over it."
+      ]
+     ]
+    },
+    {
+     "group": "New Testament",
+     "refs": [
+      [
+       "Romans 5:12",
+       "Through one man sin entered the world, and death through sin."
+      ],
+      [
+       "1 Corinthians 15:21–22",
+       "As in Adam all die, so in Christ all shall be made alive."
+      ]
+     ]
+    },
+    {
+     "group": "Quran and hadith",
+     "refs": [
+      [
+       "Quran 2:37",
+       "Adam received words from his Lord and was forgiven."
+      ],
+      [
+       "Quran 6:164",
+       "No soul bears the burden of another."
+      ],
+      [
+       "Sahih al-Bukhari 1359",
+       "Every child is born with the true faith; the parents make it otherwise."
+      ]
+     ]
+    }
+   ],
+   "related": [
+    "q/original-sin",
+    "compare/sin"
+   ]
+  },
+  {
+   "id": "salvation",
+   "title": "How is a person saved?",
+   "q": [
+    "salvation",
+    "saved",
+    "how to be saved",
+    "go to heaven",
+    "get to heaven",
+    "faith alone",
+    "faith or works",
+    "good deeds",
+    "works",
+    "justification",
+    "grace",
+    "enter paradise",
+    "born again"
+   ],
+   "summary": "Christians say salvation is God's gift through Christ, though they disagree about the role of works. Islam says people are saved by God's mercy through faith and good deeds. Judaism stresses keeping God's commandments and repentance.",
+   "views": {
+    "christian": "Protestants: by grace alone, through faith alone; good works are the fruit. Catholics: by grace, received in baptism, lived out in faith working through love. Orthodox: a lifelong union with God (theosis).",
+    "muslim": "Faith in the one God and righteous deeds, weighed on the Day of Judgment, with entry to Paradise only by God's mercy.",
+    "jewish": "Israel is already in covenant with God and is called to keep the commandments and repent when it fails. The righteous of all nations have a share in the World to Come."
+   },
+   "texts": [
+    {
+     "group": "New Testament",
+     "refs": [
+      [
+       "Ephesians 2:8–10",
+       "By grace you are saved through faith, not of works."
+      ],
+      [
+       "Romans 3:28",
+       "Justified by faith apart from the works of the law."
+      ],
+      [
+       "James 2:24",
+       "Justified by works and not by faith only."
+      ],
+      [
+       "John 3:16",
+       "Whoever believes in him shall not perish."
+      ],
+      [
+       "Matthew 25:31–46",
+       "The judgment of the nations by what they did."
+      ]
+     ]
+    },
+    {
+     "group": "Hebrew Bible",
+     "refs": [
+      [
+       "Micah 6:8",
+       "Do justly, love mercy, walk humbly with your God."
+      ],
+      [
+       "Ezekiel 18:21–23",
+       "If the wicked turns from his sins, he shall live."
+      ]
+     ]
+    },
+    {
+     "group": "Quran and hadith",
+     "refs": [
+      [
+       "Quran 103:1–3",
+       "All are in loss except those who believe and do good."
+      ],
+      [
+       "Quran 21:47",
+       "The scales of justice on the Day of Resurrection."
+      ],
+      [
+       "Sahih al-Bukhari 5673",
+       "No one enters Paradise by their deeds alone, only by God's mercy."
+      ]
+     ]
+    },
+    {
+     "group": "Jewish tradition",
+     "refs": [
+      [
+       "Mishnah Sanhedrin 10:1",
+       "All Israel have a share in the World to Come."
+      ]
+     ]
+    }
+   ],
+   "related": [
+    "q/faith-or-works",
+    "compare/salvation"
+   ]
+  },
+  {
+   "id": "afterlife",
+   "title": "Heaven, hell and life after death",
+   "q": [
+    "afterlife",
+    "after death",
+    "after we die",
+    "when we die",
+    "heaven",
+    "hell",
+    "paradise",
+    "jannah",
+    "jahannam",
+    "purgatory",
+    "world to come",
+    "eternal life",
+    "die",
+    "death"
+   ],
+   "summary": "All three faiths teach a resurrection, a judgment and reward or punishment. They differ on the details, such as purgatory, intercession, and whether punishment lasts for ever.",
+   "views": {
+    "christian": "Resurrection and judgment, heaven and hell. Catholics add purgatory, a cleansing for the saved. Protestants reject purgatory. The Orthodox pray for the dead without defining purgatory.",
+    "muslim": "Questioning in the grave, resurrection, the weighing of deeds, the bridge, Paradise and Hell, described in vivid detail in the Quran.",
+    "jewish": "The World to Come and the resurrection of the dead. Judaism focuses more on this life, and punishment after death is usually seen as temporary."
+   },
+   "texts": [
+    {
+     "group": "New Testament",
+     "refs": [
+      [
+       "John 5:28–29",
+       "All in the graves will hear his voice and come out."
+      ],
+      [
+       "Matthew 25:46",
+       "Eternal punishment and eternal life."
+      ],
+      [
+       "John 14:2–3",
+       "In my Father's house are many rooms."
+      ],
+      [
+       "Revelation 21:1–4",
+       "A new heaven and a new earth; no more death."
+      ],
+      [
+       "1 Corinthians 3:13–15",
+       "Saved, yet as through fire: cited for purgatory."
+      ]
+     ]
+    },
+    {
+     "group": "Hebrew Bible",
+     "refs": [
+      [
+       "Daniel 12:2",
+       "Some to everlasting life, some to shame."
+      ],
+      [
+       "Ecclesiastes 12:7",
+       "The spirit returns to God who gave it."
+      ]
+     ]
+    },
+    {
+     "group": "Quran",
+     "refs": [
+      [
+       "Quran 56:1–56",
+       "The Event: the foremost, the companions of the right and of the left."
+      ],
+      [
+       "Quran 99:6–8",
+       "Whoever does an atom's weight of good will see it."
+      ],
+      [
+       "Quran 3:185",
+       "Every soul shall taste death."
+      ]
+     ]
+    },
+    {
+     "group": "Christian and Jewish tradition",
+     "refs": [
+      [
+       "2 Maccabees 12:43–46",
+       "Prayer for the dead, cited by Catholics (not in Protestant Bibles)."
+      ],
+      [
+       "[[go/trent-canons-and-decrees/Session XXV › Purgatory|Council of Trent on purgatory]]",
+       "Catholic teaching."
+      ],
+      [
+       "Mishnah Sanhedrin 10:1",
+       "Who has a share in the World to Come."
+      ]
+     ]
+    }
+   ],
+   "related": [
+    "compare/afterlife"
+   ]
+  },
+  {
+   "id": "judgment-day",
+   "title": "The end times and the Day of Judgment",
+   "q": [
+    "end times",
+    "end of the world",
+    "day of judgment",
+    "judgement day",
+    "last day",
+    "second coming",
+    "return of jesus",
+    "antichrist",
+    "dajjal",
+    "mahdi",
+    "apocalypse",
+    "armageddon",
+    "signs of the hour"
+   ],
+   "summary": "All three faiths expect God to bring history to an end. Christians and Muslims both expect Jesus to return. Jews expect the Messiah's first coming.",
+   "views": {
+    "christian": "Jesus will return in glory to judge the living and the dead and make all things new. An Antichrist will oppose him first.",
+    "muslim": "Signs will come before the Hour: the false messiah (Dajjal), the Mahdi, and Jesus descending to defeat the Dajjal. Then resurrection and judgment.",
+    "jewish": "The Messiah, a human king of David's line, will come, gather Israel, rebuild the Temple and bring peace; then the resurrection."
+   },
+   "texts": [
+    {
+     "group": "New Testament",
+     "refs": [
+      [
+       "Matthew 24:29–31",
+       "The Son of Man coming on the clouds."
+      ],
+      [
+       "Acts 1:11",
+       "This Jesus will come in the same way."
+      ],
+      [
+       "1 Thessalonians 4:16–17",
+       "The dead in Christ will rise first."
+      ],
+      [
+       "2 Thessalonians 2:3–4",
+       "The man of lawlessness."
+      ]
+     ]
+    },
+    {
+     "group": "Hebrew Bible",
+     "refs": [
+      [
+       "Isaiah 2:2–4",
+       "Swords into ploughshares."
+      ],
+      [
+       "Daniel 7:13–14",
+       "One like a son of man with the clouds."
+      ]
+     ]
+    },
+    {
+     "group": "Quran and hadith",
+     "refs": [
+      [
+       "Quran 43:61",
+       "Jesus is a sign of the Hour."
+      ],
+      [
+       "Sahih al-Bukhari 3448",
+       "The son of Mary will descend as a just judge and break the cross."
+      ],
+      [
+       "Sahih Muslim 1821",
+       "Twelve leaders (caliphs) before the end."
+      ]
+     ]
+    }
+   ],
+   "related": [
+    "compare/end-times"
+   ]
+  },
+  {
+   "id": "messiah",
+   "title": "The Messiah",
+   "q": [
+    "messiah",
+    "mashiach",
+    "masih",
+    "christ",
+    "anointed one",
+    "is jesus the messiah",
+    "jewish messiah",
+    "prophecies about jesus",
+    "fulfilled prophecy",
+    "isaiah 53",
+    "suffering servant"
+   ],
+   "summary": "Christians believe Jesus is the Messiah foretold by the prophets. Muslims also call Jesus the Messiah, without the Christian meaning. Jews believe the Messiah has not yet come.",
+   "views": {
+    "christian": "Jesus fulfilled the prophecies: born in Bethlehem, the suffering servant of Isaiah 53, the king on a donkey. He came first to suffer and will come again to reign.",
+    "muslim": "Jesus is al-Masih, the Messiah, a prophet sent to Israel. The title does not mean he is divine or that he died for sins.",
+    "jewish": "The Messiah will bring universal peace, gather the exiles and rebuild the Temple. This has not happened, so the Messiah has not come. Isaiah's servant is Israel."
+   },
+   "texts": [
+    {
+     "group": "Old Testament",
+     "refs": [
+      [
+       "Isaiah 53:3–6",
+       "The suffering servant."
+      ],
+      [
+       "Isaiah 41:8",
+       "“You, Israel, are my servant”: cited by Jews."
+      ],
+      [
+       "Micah 5:2",
+       "A ruler from Bethlehem."
+      ],
+      [
+       "Zechariah 9:9",
+       "Your king comes, riding on a donkey."
+      ],
+      [
+       "Isaiah 11:1–9",
+       "A shoot from Jesse; the wolf with the lamb."
+      ],
+      [
+       "Jeremiah 31:31–34",
+       "A new covenant."
+      ]
+     ]
+    },
+    {
+     "group": "New Testament",
+     "refs": [
+      [
+       "Luke 24:25–27",
+       "Jesus explains the scriptures about himself."
+      ],
+      [
+       "Acts 8:30–35",
+       "Philip applies Isaiah 53 to Jesus."
+      ],
+      [
+       "Matthew 16:15–17",
+       "Peter: “You are the Christ.”"
+      ]
+     ]
+    },
+    {
+     "group": "Quran",
+     "refs": [
+      [
+       "Quran 3:45",
+       "His name is the Messiah, Jesus son of Mary."
+      ],
+      [
+       "Quran 4:171",
+       "The Messiah was only a messenger of God."
+      ]
+     ]
+    }
+   ],
+   "related": [
+    "q/is-jesus-the-messiah-of-the-prophets",
+    "compare/end-times"
+   ]
+  },
+  {
+   "id": "son-of-god",
+   "title": "“Son of God”",
+   "q": [
+    "son of god",
+    "begotten",
+    "only begotten",
+    "god has a son",
+    "children of god",
+    "sons of god"
+   ],
+   "summary": "For Christians, Jesus is the eternal Son of God. The Quran rejects that God has a son. In the Hebrew Bible, “son of God” is used of Israel, kings and angels.",
+   "views": {
+    "christian": "Jesus is the only-begotten Son, eternally one with the Father; believers become God's children by adoption.",
+    "muslim": "God does not beget and is not begotten. Calling anyone God's son is a grave error. Biblical “son of God” language is read as meaning a righteous servant.",
+    "jewish": "“Son of God” describes Israel, the king or the righteous: a relationship, not divinity."
+   },
+   "texts": [
+    {
+     "group": "New Testament",
+     "refs": [
+      [
+       "John 3:16",
+       "His only begotten Son."
+      ],
+      [
+       "Mark 1:11",
+       "“You are my beloved Son.”"
+      ],
+      [
+       "Mark 14:61–64",
+       "“Are you the Christ, the Son of the Blessed?” “I am.”"
+      ],
+      [
+       "Romans 8:14",
+       "All led by the Spirit are sons of God."
+      ]
+     ]
+    },
+    {
+     "group": "Old Testament",
+     "refs": [
+      [
+       "Exodus 4:22",
+       "Israel is my firstborn son."
+      ],
+      [
+       "Psalm 2:7",
+       "“You are my son; today I have begotten you” (of the king)."
+      ],
+      [
+       "2 Samuel 7:14",
+       "“I will be his father, and he shall be my son” (of Solomon)."
+      ]
+     ]
+    },
+    {
+     "group": "Quran",
+     "refs": [
+      [
+       "Quran 112:3",
+       "He neither begets nor is begotten."
+      ],
+      [
+       "Quran 19:88–92",
+       "They say the Merciful has taken a son: a monstrous thing."
+      ],
+      [
+       "Quran 9:30",
+       "The Christians say the Messiah is the son of God."
+      ]
+     ]
+    }
+   ],
+   "related": [
+    "q/is-jesus-god",
+    "compare/jesus"
+   ]
+  },
+  {
+   "id": "muhammad-in-bible",
+   "title": "Is Muhammad foretold in the Bible?",
+   "q": [
+    "muhammad in the bible",
+    "muhammad foretold",
+    "prophet like moses",
+    "ahmad",
+    "periklytos",
+    "comforter muhammad",
+    "prophecy of muhammad",
+    "muhammad prophesied",
+    "bible predicts muhammad"
+   ],
+   "summary": "The Quran says Muhammad is described in the Torah and Gospel. Muslims point to several passages; Christians and Jews read them as being about someone else.",
+   "views": {
+    "christian": "The “prophet like Moses” is fulfilled in Jesus. The Comforter is the Holy Spirit. Muhammad is not accepted as a prophet.",
+    "muslim": "The Bible still contains signs of Muhammad: a prophet from the brothers of Israel (the Ishmaelites), the Comforter who will guide into all truth, the servant whom Kedar praises.",
+    "jewish": "Deuteronomy 18 promises prophets from within Israel. Any prophet who changes the Torah is to be rejected."
+   },
+   "texts": [
+    {
+     "group": "Old Testament",
+     "refs": [
+      [
+       "Deuteronomy 18:15–19",
+       "A prophet like Moses from among their brethren."
+      ],
+      [
+       "Deuteronomy 17:15",
+       "“Brethren” means fellow Israelites here: cited by Jews and Christians."
+      ],
+      [
+       "Isaiah 42:1–13",
+       "The servant; Kedar (son of Ishmael) rejoices."
+      ],
+      [
+       "Deuteronomy 33:2",
+       "He shone forth from Mount Paran."
+      ]
+     ]
+    },
+    {
+     "group": "New Testament",
+     "refs": [
+      [
+       "John 14:16",
+       "Another Comforter."
+      ],
+      [
+       "John 16:7–14",
+       "He will guide you into all truth."
+      ],
+      [
+       "Acts 3:22–26",
+       "Peter applies the prophet like Moses to Jesus."
+      ],
+      [
+       "John 1:19–21",
+       "Are you the Christ? Elijah? “The prophet”?"
+      ]
+     ]
+    },
+    {
+     "group": "Quran",
+     "refs": [
+      [
+       "Quran 7:157",
+       "The unlettered prophet they find written in the Torah and the Gospel."
+      ],
+      [
+       "Quran 61:6",
+       "A messenger after me whose name is Ahmad."
+      ]
+     ]
+    }
+   ],
+   "related": [
+    "q/is-muhammad-foretold-in-the-bible",
+    "compare/prophets"
+   ]
+  },
+  {
+   "id": "muhammad",
+   "title": "Muhammad",
+   "q": [
+    "muhammad",
+    "mohammed",
+    "prophet muhammad",
+    "the prophet",
+    "seal of the prophets",
+    "aisha",
+    "life of muhammad"
+   ],
+   "summary": "For Muslims, Muhammad is the final prophet and the best example for humanity. Christians and Jews do not accept him as a prophet. His life, as a prophet and ruler, attracts both devotion and criticism.",
+   "views": {
+    "christian": "Muhammad is not accepted as a prophet, because the Quran denies the cross and Jesus' divinity, which Christians hold are central.",
+    "muslim": "Muhammad is the seal of the prophets, a mercy to the worlds and the best example of conduct. Muslims explain the criticisms by his historical setting and point to his mercy, justice and reforms.",
+    "jewish": "Not accepted as a prophet, since the Torah given to Moses is not replaced. Medieval Jewish thinkers recognised Islam as strictly monotheistic."
+   },
+   "texts": [
+    {
+     "group": "Quran",
+     "refs": [
+      [
+       "Quran 33:40",
+       "The messenger of God and the seal of the prophets."
+      ],
+      [
+       "Quran 33:21",
+       "In the messenger you have a good example."
+      ],
+      [
+       "Quran 68:4",
+       "You are of a great moral character."
+      ],
+      [
+       "Quran 21:107",
+       "Sent as a mercy to the worlds."
+      ]
+     ]
+    },
+    {
+     "group": "Hadith",
+     "refs": [
+      [
+       "Sahih al-Bukhari 3",
+       "The beginning of revelation in the cave of Hira."
+      ],
+      [
+       "Sahih al-Bukhari 5134",
+       "Aisha's age at marriage, the most common criticism."
+      ],
+      [
+       "Sahih al-Bukhari 4037",
+       "The killing of Ka'b ibn al-Ashraf."
+      ]
+     ]
+    }
+   ],
+   "related": [
+    "q/criticisms-of-muhammad",
+    "compare/prophets"
+   ]
+  },
+  {
+   "id": "bible-changed",
+   "title": "Has the Bible been changed?",
+   "q": [
+    "bible changed",
+    "bible corrupted",
+    "corruption of the bible",
+    "tahrif",
+    "bible altered",
+    "is the bible reliable",
+    "original gospel",
+    "injil",
+    "torah corrupted",
+    "manuscripts",
+    "bible reliable"
+   ],
+   "summary": "Many Muslims hold that the Torah and Gospel were altered. Jews and Christians say the text has been faithfully preserved. The manuscripts can be checked, and the Quran itself is read both ways.",
+   "views": {
+    "christian": "Bibles from centuries before Islam survive, and they match ours. The Quran tells Christians of its time to judge by the Gospel, which assumes it was reliable. Known variant readings change no doctrine.",
+    "muslim": "God revealed the Torah and the Gospel, but the books Jews and Christians have now are not the original revelations; where they disagree with the Quran, the Quran is the judge.",
+    "jewish": "The Torah is copied by hand under strict rules, and the Dead Sea Scrolls show how carefully the text was handed down."
+   },
+   "texts": [
+    {
+     "group": "Quran",
+     "refs": [
+      [
+       "Quran 2:79",
+       "Woe to those who write the book with their own hands."
+      ],
+      [
+       "Quran 5:13",
+       "They distort words from their places."
+      ],
+      [
+       "Quran 5:47",
+       "Let the people of the Gospel judge by what God revealed in it."
+      ],
+      [
+       "Quran 10:94",
+       "Ask those who read the Book before you."
+      ],
+      [
+       "Quran 15:9",
+       "God guards the Quran."
+      ]
+     ]
+    },
+    {
+     "group": "Bible",
+     "refs": [
+      [
+       "2 Timothy 3:16",
+       "All scripture is inspired by God."
+      ],
+      [
+       "Mark 16:9–20",
+       "The longer ending of Mark, missing from the earliest manuscripts."
+      ],
+      [
+       "John 8:1–11",
+       "The woman taken in adultery, missing from the earliest copies of John."
+      ],
+      [
+       "1 John 5:7",
+       "The KJV Trinity verse, not in the early Greek manuscripts."
+      ]
+     ]
+    },
+    {
+     "group": "Hadith",
+     "refs": [
+      [
+       "Sahih al-Bukhari 4987",
+       "Uthman's standard copy of the Quran and the burning of other copies."
+      ]
+     ]
+    }
+   ],
+   "related": [
+    "q/has-the-bible-been-changed",
+    "compare/scripture"
+   ]
+  },
+  {
+   "id": "prayer",
+   "title": "Prayer",
+   "q": [
+    "prayer",
+    "pray",
+    "praying",
+    "salat",
+    "salah",
+    "namaz",
+    "lords prayer",
+    "our father",
+    "how to pray",
+    "how many times",
+    "five times",
+    "shema",
+    "amidah",
+    "worship"
+   ],
+   "summary": "Prayer is central to all three faiths. Muslims pray five set prayers a day, Jews three, and Christians have set prayers such as the Lord's Prayer as well as free prayer.",
+   "views": {
+    "christian": "Jesus taught the Lord's Prayer and told his followers to pray in secret and without ceasing. Churches also have set daily prayers and the Eucharist.",
+    "muslim": "Five daily prayers facing Mecca, preceded by ritual washing, plus Friday congregational prayer. Shia usually combine them into three times.",
+    "jewish": "Prayer three times a day (morning, afternoon, evening), with the Shema and the Amidah, ideally with a quorum of ten."
+   },
+   "texts": [
+    {
+     "group": "New Testament",
+     "refs": [
+      [
+       "Matthew 6:5–13",
+       "Pray in secret; the Lord's Prayer."
+      ],
+      [
+       "1 Thessalonians 5:17",
+       "Pray without ceasing."
+      ]
+     ]
+    },
+    {
+     "group": "Hebrew Bible",
+     "refs": [
+      [
+       "Daniel 6:10",
+       "Daniel prayed three times a day toward Jerusalem."
+      ],
+      [
+       "Psalm 55:17",
+       "Evening, morning and noon I will pray."
+      ]
+     ]
+    },
+    {
+     "group": "Quran and hadith",
+     "refs": [
+      [
+       "Quran 2:238",
+       "Guard the prayers, and the middle prayer."
+      ],
+      [
+       "Quran 11:114",
+       "Pray at the two ends of the day and in the night."
+      ],
+      [
+       "Quran 5:6",
+       "Washing before prayer."
+      ],
+      [
+       "Sahih al-Bukhari 8",
+       "Prayer is one of the five pillars."
+      ]
+     ]
+    },
+    {
+     "group": "Jewish tradition",
+     "refs": [
+      [
+       "[[go/sef-mishnah-berakhot/1:1|Mishnah Berakhot]]",
+       "The rules for saying the Shema."
+      ]
+     ]
+    }
+   ],
+   "related": [
+    "compare/worship"
+   ]
+  },
+  {
+   "id": "fasting",
+   "title": "Fasting",
+   "q": [
+    "fasting",
+    "fast",
+    "ramadan",
+    "lent",
+    "yom kippur",
+    "sawm"
+   ],
+   "summary": "All three faiths fast. Muslims fast from dawn to sunset in Ramadan, Jews fast fully on Yom Kippur, and many Christians fast in Lent and on set days.",
+   "views": {
+    "christian": "Jesus fasted forty days and taught his followers to fast without show. Orthodox Christians fast often; Catholics fast in Lent; many Protestants fast privately.",
+    "muslim": "Fasting in Ramadan is one of the five pillars: no food, drink or relations from dawn to sunset, for those who are able.",
+    "jewish": "Yom Kippur is a full 25-hour fast for atonement; there are several other fast days in the year."
+   },
+   "texts": [
+    {
+     "group": "Bible",
+     "refs": [
+      [
+       "Matthew 4:1–2",
+       "Jesus fasted forty days."
+      ],
+      [
+       "Matthew 6:16–18",
+       "When you fast, do not look gloomy."
+      ],
+      [
+       "Leviticus 16:29–31",
+       "On the Day of Atonement you shall afflict your souls."
+      ],
+      [
+       "Isaiah 58:6–7",
+       "The fast God chooses: loosing the bonds of injustice."
+      ]
+     ]
+    },
+    {
+     "group": "Quran and hadith",
+     "refs": [
+      [
+       "Quran 2:183–185",
+       "Fasting is prescribed for you, as for those before you."
+      ],
+      [
+       "Sahih al-Bukhari 1903",
+       "Whoever does not give up false speech, God has no need of his fasting."
+      ]
+     ]
+    }
+   ],
+   "related": [
+    "compare/worship"
+   ]
+  },
+  {
+   "id": "charity",
+   "title": "Charity and the poor",
+   "q": [
+    "charity",
+    "the poor",
+    "poverty",
+    "zakat",
+    "alms",
+    "giving",
+    "tithe",
+    "tzedakah",
+    "orphans",
+    "helping the poor",
+    "rich",
+    "wealth",
+    "money"
+   ],
+   "summary": "All three faiths command care for the poor. Islam makes alms a pillar of faith, Judaism treats charity as justice, and Jesus warned sharply about wealth.",
+   "views": {
+    "christian": "Jesus identified himself with the poor and warned that it is hard for the rich to enter the Kingdom. Christians are to give generously and in secret.",
+    "muslim": "Zakat, a yearly alms of a set share of wealth, is a pillar of Islam. Voluntary charity (sadaqa) and care for orphans are repeatedly commanded.",
+    "jewish": "Tzedakah means justice: giving to the poor is a duty, and Maimonides ranks its highest form as helping someone become self-supporting."
+   },
+   "texts": [
+    {
+     "group": "Bible",
+     "refs": [
+      [
+       "Deuteronomy 15:7–11",
+       "Open your hand wide to your brother, the poor."
+      ],
+      [
+       "Proverbs 19:17",
+       "Whoever is kind to the poor lends to the LORD."
+      ],
+      [
+       "Matthew 25:35–40",
+       "As you did it to the least of these, you did it to me."
+      ],
+      [
+       "Matthew 19:21–24",
+       "Easier for a camel to go through the eye of a needle."
+      ],
+      [
+       "Matthew 6:1–4",
+       "Do not give to be seen."
+      ]
+     ]
+    },
+    {
+     "group": "Quran",
+     "refs": [
+      [
+       "Quran 2:177",
+       "Righteousness is giving wealth to relatives, orphans and the needy."
+      ],
+      [
+       "Quran 9:60",
+       "Who may receive alms."
+      ],
+      [
+       "Quran 93:9–10",
+       "Do not oppress the orphan or repulse the beggar."
+      ]
+     ]
+    },
+    {
+     "group": "Jewish tradition",
+     "refs": [
+      [
+       "[[go/sef-mishneh-torah-gifts-to-the-poor/10|Maimonides on the eight levels of charity]]",
+       "The famous ladder of giving."
+      ]
+     ]
+    }
+   ],
+   "related": [
+    "q/good-things-jesus-did"
+   ]
+  },
+  {
+   "id": "food-laws",
+   "title": "Food laws: pork, halal and kosher",
+   "q": [
+    "pork",
+    "pig",
+    "swine",
+    "halal",
+    "kosher",
+    "haram",
+    "food laws",
+    "dietary",
+    "clean and unclean",
+    "unclean food",
+    "eat meat",
+    "blood",
+    "shellfish"
+   ],
+   "summary": "Jews keep kosher and Muslims eat halal; both forbid pork. Most Christians hold that the food laws of Moses no longer bind them.",
+   "views": {
+    "christian": "Jesus declared all foods clean and the apostles freed non-Jewish believers from the food laws, so most Christians eat pork. Some groups, such as Seventh-day Adventists, still avoid it.",
+    "muslim": "Pork, blood, carrion, alcohol and meat dedicated to other than God are forbidden. Meat should be slaughtered in God's name (halal). Exceptions apply in necessity.",
+    "jewish": "The Torah's food laws are binding: only certain animals, slaughtered properly, no blood, and no mixing of meat and milk."
+   },
+   "texts": [
+    {
+     "group": "Old Testament",
+     "refs": [
+      [
+       "Leviticus 11:1–8",
+       "Clean and unclean animals; the pig is unclean."
+      ],
+      [
+       "Deuteronomy 14:3–21",
+       "The food laws repeated."
+      ],
+      [
+       "Isaiah 66:17",
+       "Those who eat swine's flesh shall be consumed."
+      ]
+     ]
+    },
+    {
+     "group": "New Testament",
+     "refs": [
+      [
+       "Mark 7:18–19",
+       "Thus he declared all foods clean."
+      ],
+      [
+       "Acts 10:9–16",
+       "Peter's vision: what God has cleansed, do not call common."
+      ],
+      [
+       "Acts 15:28–29",
+       "Non-Jewish believers: abstain only from idol offerings, blood and strangled things."
+      ]
+     ]
+    },
+    {
+     "group": "Quran",
+     "refs": [
+      [
+       "Quran 2:173",
+       "Forbidden: carrion, blood, swine, and what is dedicated to other than God."
+      ],
+      [
+       "Quran 5:3",
+       "The forbidden foods listed again."
+      ],
+      [
+       "Quran 6:145",
+       "Swine is impure."
+      ]
+     ]
+    }
+   ],
+   "related": [
+    "q/is-the-law-of-moses-still-binding",
+    "compare/law"
+   ]
+  },
+  {
+   "id": "alcohol",
+   "title": "Alcohol",
+   "q": [
+    "alcohol",
+    "wine",
+    "drinking",
+    "drunk",
+    "drunkenness",
+    "beer",
+    "intoxicants",
+    "khamr"
+   ],
+   "summary": "Islam forbids alcohol. Judaism and most of Christianity permit wine in moderation and use it in worship, while condemning drunkenness.",
+   "views": {
+    "christian": "Wine is permitted and used in the Eucharist; drunkenness is a sin. Some Protestant churches ask members to abstain.",
+    "muslim": "Intoxicants are forbidden. The Quran prohibited them in stages, ending with a clear command to avoid them.",
+    "jewish": "Wine is blessed and used at Sabbath and festivals; drunkenness is condemned."
+   },
+   "texts": [
+    {
+     "group": "Bible",
+     "refs": [
+      [
+       "Psalm 104:15",
+       "Wine that gladdens the heart."
+      ],
+      [
+       "Proverbs 20:1",
+       "Wine is a mocker."
+      ],
+      [
+       "John 2:1–11",
+       "Jesus turns water into wine."
+      ],
+      [
+       "Ephesians 5:18",
+       "Do not get drunk with wine."
+      ]
+     ]
+    },
+    {
+     "group": "Quran",
+     "refs": [
+      [
+       "Quran 2:219",
+       "In wine is great sin and some benefit, but the sin is greater."
+      ],
+      [
+       "Quran 4:43",
+       "Do not approach prayer while intoxicated."
+      ],
+      [
+       "Quran 5:90–91",
+       "Wine and gambling are the work of Satan; avoid them."
+      ]
+     ]
+    }
+   ],
+   "related": [
+    "compare/law"
+   ]
+  },
+  {
+   "id": "sabbath",
+   "title": "The Sabbath and the holy day",
+   "q": [
+    "sabbath",
+    "shabbat",
+    "saturday",
+    "sunday",
+    "lords day",
+    "friday",
+    "jumuah",
+    "day of rest",
+    "holy day"
+   ],
+   "summary": "Jews keep the Sabbath from Friday evening to Saturday evening. Most Christians worship on Sunday, the day of the resurrection. Muslims gather for prayer on Friday but have no day of rest.",
+   "views": {
+    "christian": "Christians gather on Sunday, the Lord's Day, the day Jesus rose. Most hold that the Sabbath law was fulfilled in Christ; some groups keep Saturday.",
+    "muslim": "Friday is the day of congregational prayer; work may resume after it. God needs no rest.",
+    "jewish": "The Sabbath is the seventh day, a sign of the covenant: no work, from sunset Friday to nightfall Saturday."
+   },
+   "texts": [
+    {
+     "group": "Old Testament",
+     "refs": [
+      [
+       "Genesis 2:2–3",
+       "God rested on the seventh day."
+      ],
+      [
+       "Exodus 20:8–11",
+       "Remember the Sabbath day."
+      ],
+      [
+       "Exodus 31:16–17",
+       "A perpetual covenant."
+      ]
+     ]
+    },
+    {
+     "group": "New Testament",
+     "refs": [
+      [
+       "Mark 2:27–28",
+       "The Sabbath was made for man."
+      ],
+      [
+       "Acts 20:7",
+       "On the first day of the week they gathered to break bread."
+      ],
+      [
+       "Colossians 2:16–17",
+       "Sabbaths are a shadow of what was to come."
+      ]
+     ]
+    },
+    {
+     "group": "Quran",
+     "refs": [
+      [
+       "Quran 62:9–10",
+       "When the call is made on Friday, hasten to remember God."
+      ],
+      [
+       "Quran 50:38",
+       "God created in six days and no weariness touched him."
+      ]
+     ]
+    }
+   ],
+   "related": [
+    "compare/law",
+    "compare/worship"
+   ]
+  },
+  {
+   "id": "law-of-moses",
+   "title": "The Law of Moses",
+   "q": [
+    "law of moses",
+    "torah law",
+    "mosaic law",
+    "613",
+    "commandments",
+    "ten commandments",
+    "old law",
+    "fulfil the law",
+    "abolish the law",
+    "halakha",
+    "sharia"
+   ],
+   "summary": "Judaism says the Torah's commandments bind the Jewish people for ever. Christianity says the law was fulfilled in Christ. Islam says each community was given a law and Muhammad's is final.",
+   "views": {
+    "christian": "Jesus fulfilled the law. The moral law, like the Ten Commandments, stands; the ritual and civil laws of ancient Israel do not bind Christians.",
+    "muslim": "God gave the Torah to Moses and later the sharia through Muhammad, which replaces earlier laws while confirming much of them.",
+    "jewish": "The 613 commandments of the Torah are eternal and are lived out through the rabbis' interpretation."
+   },
+   "texts": [
+    {
+     "group": "Old Testament",
+     "refs": [
+      [
+       "Exodus 20:1–17",
+       "The Ten Commandments."
+      ],
+      [
+       "Deuteronomy 4:2",
+       "Do not add to it or take from it."
+      ],
+      [
+       "Jeremiah 31:31–34",
+       "A new covenant, the law written on the heart."
+      ]
+     ]
+    },
+    {
+     "group": "New Testament",
+     "refs": [
+      [
+       "Matthew 5:17–19",
+       "I came not to abolish but to fulfil."
+      ],
+      [
+       "Acts 15:19–29",
+       "The apostles free non-Jewish believers from the law."
+      ],
+      [
+       "Romans 10:4",
+       "Christ is the end of the law."
+      ],
+      [
+       "Galatians 3:23–25",
+       "The law was our guardian until Christ."
+      ]
+     ]
+    },
+    {
+     "group": "Quran",
+     "refs": [
+      [
+       "Quran 5:44–48",
+       "The Torah, the Gospel and the Quran; to each a law and a way."
+      ],
+      [
+       "Quran 3:50",
+       "Jesus confirmed the Torah and made some things lawful."
+      ]
+     ]
+    },
+    {
+     "group": "Jewish tradition",
+     "refs": [
+      [
+       "Makkot 23b",
+       "613 commandments were given to Moses."
+      ],
+      [
+       "Bava Metzia 59b",
+       "“It is not in heaven”: the sages interpret the law."
+      ]
+     ]
+    }
+   ],
+   "related": [
+    "q/is-the-law-of-moses-still-binding",
+    "q/must-christians-agree-with-old-testament",
+    "compare/law"
+   ]
+  },
+  {
+   "id": "abraham-sacrifice",
+   "title": "Abraham's sacrifice: Isaac or Ishmael?",
+   "q": [
+    "isaac or ishmael",
+    "ishmael",
+    "isaac",
+    "sacrifice of abraham",
+    "abraham sacrifice",
+    "binding of isaac",
+    "akedah",
+    "eid al adha",
+    "abraham",
+    "ibrahim"
+   ],
+   "summary": "Genesis says God told Abraham to sacrifice Isaac. The Quran tells the story without naming the son; most Muslims today say it was Ishmael.",
+   "views": {
+    "christian": "It was Isaac, a picture of God giving his own Son.",
+    "muslim": "Most Muslims say Ishmael, Abraham's firstborn; the good news of Isaac comes after the story in the Quran. Early scholars were divided.",
+    "jewish": "The binding of Isaac is central to Jewish faith and is read at the New Year."
+   },
+   "texts": [
+    {
+     "group": "Old Testament",
+     "refs": [
+      [
+       "Genesis 22:1–19",
+       "The binding of Isaac."
+      ],
+      [
+       "Genesis 21:12–14",
+       "Ishmael is sent away."
+      ],
+      [
+       "Genesis 16:15–16",
+       "Ishmael is born when Abraham is 86."
+      ]
+     ]
+    },
+    {
+     "group": "New Testament",
+     "refs": [
+      [
+       "Hebrews 11:17–19",
+       "By faith Abraham offered up Isaac."
+      ],
+      [
+       "James 2:21",
+       "Abraham offered Isaac his son."
+      ]
+     ]
+    },
+    {
+     "group": "Quran",
+     "refs": [
+      [
+       "Quran 37:99–113",
+       "The sacrifice, then the good news of Isaac."
+      ],
+      [
+       "Quran 2:127",
+       "Abraham and Ishmael raise the foundations of the Kaaba."
+      ]
+     ]
+    }
+   ],
+   "related": [
+    "q/isaac-or-ishmael"
+   ]
+  },
+  {
+   "id": "moses",
+   "title": "Moses",
+   "q": [
+    "moses",
+    "musa",
+    "exodus",
+    "pharaoh",
+    "sinai",
+    "burning bush",
+    "red sea"
+   ],
+   "summary": "Moses is honoured by all three faiths as the great prophet who led Israel out of Egypt and received the Law. He is the prophet most often mentioned in the Quran.",
+   "views": {
+    "christian": "Moses gave the Law; Jesus is the greater prophet and fulfils it.",
+    "muslim": "Musa is one of the greatest messengers, to whom God spoke directly and gave the Torah.",
+    "jewish": "Moses is the greatest of the prophets, through whom the whole Torah was given."
+   },
+   "texts": [
+    {
+     "group": "Old Testament",
+     "refs": [
+      [
+       "Exodus 3:1–15",
+       "The burning bush and the divine name."
+      ],
+      [
+       "Exodus 14:21–31",
+       "Crossing the sea."
+      ],
+      [
+       "Deuteronomy 34:10",
+       "No prophet arose like Moses."
+      ]
+     ]
+    },
+    {
+     "group": "New Testament",
+     "refs": [
+      [
+       "Hebrews 3:1–6",
+       "Jesus counted worthy of more glory than Moses."
+      ],
+      [
+       "John 1:17",
+       "The law came through Moses; grace and truth through Jesus."
+      ]
+     ]
+    },
+    {
+     "group": "Quran",
+     "refs": [
+      [
+       "Quran 20:9–24",
+       "Moses at the fire."
+      ],
+      [
+       "Quran 4:164",
+       "God spoke directly to Moses."
+      ]
+     ]
+    }
+   ],
+   "related": [
+    "compare/prophets"
+   ]
+  },
+  {
+   "id": "jesus-in-islam",
+   "title": "Jesus in Islam",
+   "q": [
+    "jesus in islam",
+    "isa",
+    "jesus in the quran",
+    "what does the quran say about jesus",
+    "muslims believe about jesus",
+    "quran jesus",
+    "islam jesus",
+    "muslims jesus",
+    "muslim jesus",
+    "islam jesus"
+   ],
+   "summary": "The Quran honours Jesus as the Messiah and a great prophet, born of a virgin, who worked miracles and will return. It denies that he is God or was crucified.",
+   "views": {
+    "christian": "Christians welcome the honour Islam gives Jesus but hold that the Quran misses what matters most: that he is God's Son who died and rose for sinners.",
+    "muslim": "Isa is one of the five greatest messengers. He spoke in the cradle, healed the blind and lepers, and raised the dead by God's permission. He was raised to God and will return.",
+    "jewish": "Judaism accepts neither the Christian nor the Islamic claims about Jesus."
+   },
+   "texts": [
+    {
+     "group": "Quran",
+     "refs": [
+      [
+       "Quran 3:45–51",
+       "The announcement and the miracles."
+      ],
+      [
+       "Quran 5:110",
+       "Healing the blind and the leper, raising the dead, by God's permission."
+      ],
+      [
+       "Quran 19:29–34",
+       "Jesus speaks from the cradle."
+      ],
+      [
+       "Quran 4:157–159",
+       "Not crucified; raised to God."
+      ],
+      [
+       "Quran 61:6",
+       "Jesus announces Ahmad."
+      ]
+     ]
+    },
+    {
+     "group": "Hadith",
+     "refs": [
+      [
+       "Sahih al-Bukhari 3442",
+       "The Prophet is nearest of all people to Jesus son of Mary."
+      ],
+      [
+       "Sahih al-Bukhari 3448",
+       "Jesus will descend as a just ruler."
+      ]
+     ]
+    }
+   ],
+   "related": [
+    "q/mary-and-jesus-in-the-quran",
+    "q/good-things-jesus-did",
+    "compare/jesus"
+   ]
+  },
+  {
+   "id": "jesus-in-judaism",
+   "title": "Jesus in Judaism",
+   "q": [
+    "jesus in judaism",
+    "jews believe about jesus",
+    "why dont jews believe",
+    "yeshu",
+    "jews reject jesus",
+    "jewish view of jesus",
+    "jews jesus",
+    "judaism jesus",
+    "jewish jesus",
+    "jews think of jesus"
+   ],
+   "summary": "Judaism does not accept Jesus as the Messiah, a prophet or divine. Many modern Jewish scholars see him as a Jewish teacher of his time.",
+   "views": {
+    "christian": "Jesus fulfilled Israel's scriptures, and the first Christians were Jews who recognised him as Messiah.",
+    "muslim": "Muslims agree with Christians that Jesus was the Messiah and a prophet, but agree with Jews that he was not God.",
+    "jewish": "The Messiah's work, world peace and the ingathering of Israel, has not happened. Worshipping a man is forbidden."
+   },
+   "texts": [
+    {
+     "group": "Hebrew Bible",
+     "refs": [
+      [
+       "Isaiah 2:2–4",
+       "The messianic age of peace."
+      ],
+      [
+       "Ezekiel 37:21–28",
+       "Israel gathered, David's descendant as king, the sanctuary restored."
+      ],
+      [
+       "Deuteronomy 13:1–5",
+       "A prophet who leads astray from the commandments."
+      ]
+     ]
+    },
+    {
+     "group": "Jewish tradition",
+     "refs": [
+      [
+       "Sanhedrin 43a",
+       "The Talmud's account of Yeshu."
+      ]
+     ]
+    },
+    {
+     "group": "New Testament",
+     "refs": [
+      [
+       "Matthew 5:17",
+       "Jesus: I came to fulfil the law."
+      ],
+      [
+       "Romans 11:1–2",
+       "Paul: God has not rejected his people."
+      ]
+     ]
+    }
+   ],
+   "related": [
+    "q/is-jesus-the-messiah-of-the-prophets",
+    "compare/jesus"
+   ]
+  },
+  {
+   "id": "paul",
+   "title": "Paul the apostle",
+   "q": [
+    "paul",
+    "saint paul",
+    "apostle paul",
+    "saul",
+    "pauline",
+    "paul changed christianity",
+    "did paul invent"
+   ],
+   "summary": "Paul wrote much of the New Testament. Christians see him as a faithful apostle; many Muslims and some scholars argue he changed Jesus' message.",
+   "views": {
+    "christian": "Paul preached the same gospel as the other apostles, who accepted him; his letters are scripture.",
+    "muslim": "Many Muslims hold that Paul introduced Jesus' divinity, the atoning death and the setting aside of the law.",
+    "jewish": "Paul is seen as the figure most responsible for Christianity's break with Torah observance."
+   },
+   "texts": [
+    {
+     "group": "New Testament",
+     "refs": [
+      [
+       "Acts 9:1–22",
+       "Paul's conversion."
+      ],
+      [
+       "Galatians 1:11–24",
+       "Paul says his gospel came by revelation."
+      ],
+      [
+       "Galatians 2:9",
+       "The Jerusalem leaders accept Paul."
+      ],
+      [
+       "Galatians 2:11–14",
+       "Paul opposes Peter."
+      ],
+      [
+       "2 Peter 3:15–16",
+       "Peter calls Paul's letters scripture."
+      ],
+      [
+       "Philippians 3:4–6",
+       "Paul's Jewish background."
+      ]
+     ]
+    }
+   ],
+   "related": [
+    "q/paul-prophets-devil",
+    "topic/paul"
+   ]
+  },
+  {
+   "id": "sunni-shia",
+   "title": "Sunni and Shia",
+   "q": [
+    "sunni",
+    "shia",
+    "shiite",
+    "sunni and shia",
+    "difference between sunni and shia",
+    "succession",
+    "caliph",
+    "imamate",
+    "imam ali",
+    "ali",
+    "ghadir",
+    "karbala",
+    "husayn",
+    "twelve imams",
+    "twelver"
+   ],
+   "summary": "The split began over who should lead the Muslims after Muhammad. Sunnis accepted the elected caliphs; Shia believe Muhammad appointed Ali, followed by Imams from his family.",
+   "views": {
+    "christian": "",
+    "muslim": "Sunnis: the community rightly chose Abu Bakr, then Umar, Uthman and Ali; leaders are guardians, not infallible. Shia: the Prophet named Ali at Ghadir Khumm; the twelve Imams are chosen by God and protected from error, and the twelfth will return as the Mahdi.",
+    "jewish": ""
+   },
+   "texts": [
+    {
+     "group": "Hadith both sides cite",
+     "refs": [
+      [
+       "Jami' at-Tirmidhi 3713",
+       "“For whomever I am his mawla, Ali is his mawla.”"
+      ],
+      [
+       "Sahih Muslim 2408",
+       "The two weighty things: the Book of God and my family."
+      ],
+      [
+       "Sahih al-Bukhari 4416",
+       "Ali is to me as Aaron was to Moses."
+      ],
+      [
+       "Sahih al-Bukhari 678",
+       "Tell Abu Bakr to lead the prayer."
+      ],
+      [
+       "Sahih al-Bukhari 114",
+       "The pen and paper in the Prophet's last illness."
+      ]
+     ]
+    },
+    {
+     "group": "Quran",
+     "refs": [
+      [
+       "Quran 5:55",
+       "Your guardian is God, his messenger and the believers who give alms while bowing."
+      ],
+      [
+       "Quran 33:33",
+       "God wishes to purify you, people of the house."
+      ],
+      [
+       "Quran 42:38",
+       "Their affairs are by consultation."
+      ]
+     ]
+    },
+    {
+     "group": "Shia texts",
+     "refs": [
+      [
+       "[[lib/shia-nahj-al-balagha-radi|Nahj al-Balagha]]",
+       "Sermons and letters of Ali."
+      ],
+      [
+       "[[lib/shia-al-kafi-volume-1-kulayni|al-Kafi, volume 1]]",
+       "The Book of Divine Authority on the Imams."
+      ]
+     ]
+    }
+   ],
+   "related": [
+    "q/who-should-have-succeeded-muhammad",
+    "beliefs/sunni",
+    "beliefs/shia"
+   ]
+  },
+  {
+   "id": "papacy",
+   "title": "The pope and Peter",
+   "q": [
+    "pope",
+    "papacy",
+    "peter",
+    "rock",
+    "keys",
+    "infallible",
+    "vatican",
+    "catholic church authority",
+    "bishop of rome"
+   ],
+   "summary": "Catholics believe Jesus made Peter head of the Church and that the popes succeed him. Orthodox and Protestants reject the pope's universal authority.",
+   "views": {
+    "christian": "Catholic: Peter is the rock, and the pope holds his office and can define doctrine infallibly. Orthodox: Rome had first place in honour, not rule. Protestant: the rock is Peter's faith or Christ himself, and no successor is mentioned.",
+    "muslim": "",
+    "jewish": ""
+   },
+   "texts": [
+    {
+     "group": "New Testament",
+     "refs": [
+      [
+       "Matthew 16:18–19",
+       "You are Peter, and on this rock I will build my church."
+      ],
+      [
+       "John 21:15–17",
+       "Feed my sheep."
+      ],
+      [
+       "Galatians 2:11–14",
+       "Paul rebukes Peter."
+      ],
+      [
+       "1 Peter 5:1",
+       "Peter calls himself a fellow elder."
+      ]
+     ]
+    },
+    {
+     "group": "Church documents",
+     "refs": [
+      [
+       "[[go/ccel-creeds2/CONCILII VATICANI|First Vatican Council (1870)]]",
+       "The definition of papal infallibility."
+      ]
+     ]
+    }
+   ],
+   "related": [
+    "q/peter-and-the-papacy",
+    "compare/authority"
+   ]
+  },
+  {
+   "id": "scripture-authority",
+   "title": "Scripture and tradition",
+   "q": [
+    "sola scriptura",
+    "scripture alone",
+    "tradition",
+    "oral law",
+    "oral torah",
+    "talmud",
+    "hadith authority",
+    "canon",
+    "which books",
+    "apocrypha",
+    "deuterocanon",
+    "how many books in the bible",
+    "what is the talmud",
+    "what is the hadith",
+    "what is hadith",
+    "what is the mishnah"
+   ],
+   "summary": "Each faith debates whether the written text is enough or needs an authorised tradition beside it. The churches also differ on which books belong in the Old Testament.",
+   "views": {
+    "christian": "Protestants: Scripture alone is the final authority, 66 books. Catholics: Scripture and Tradition with the Church's teaching office, 73 books. Orthodox: Scripture within Holy Tradition, with the Septuagint books.",
+    "muslim": "The Quran is read together with the Prophet's example (sunna) recorded in hadith; Sunni and Shia trust different collections.",
+    "jewish": "The written Torah comes with an oral Torah, recorded in the Mishnah and Talmud. Karaites accept the written text alone."
+   },
+   "texts": [
+    {
+     "group": "Bible",
+     "refs": [
+      [
+       "2 Timothy 3:16–17",
+       "All scripture is God-breathed."
+      ],
+      [
+       "2 Thessalonians 2:15",
+       "Hold to the traditions, by word or by letter."
+      ],
+      [
+       "Mark 7:8–13",
+       "Jesus condemns traditions that cancel God's word."
+      ]
+     ]
+    },
+    {
+     "group": "Quran",
+     "refs": [
+      [
+       "Quran 59:7",
+       "Take what the messenger gives you."
+      ],
+      [
+       "Quran 16:44",
+       "The messenger explains what was sent down."
+      ]
+     ]
+    },
+    {
+     "group": "Jewish and Christian tradition",
+     "refs": [
+      [
+       "Bava Metzia 59b",
+       "“It is not in heaven”."
+      ],
+      [
+       "[[go/trent-canons-and-decrees/Session IV › Canonical Scriptures|Council of Trent on the canon]]",
+       "The Catholic list of books."
+      ]
+     ]
+    }
+   ],
+   "related": [
+    "q/scripture-alone-or-tradition",
+    "compare/scripture"
+   ]
+  },
+  {
+   "id": "baptism-sacraments",
+   "title": "Baptism and the sacraments",
+   "q": [
+    "baptism",
+    "baptise",
+    "baptize",
+    "sacrament",
+    "sacraments",
+    "eucharist",
+    "communion",
+    "lords supper",
+    "mass",
+    "confession",
+    "transubstantiation",
+    "body and blood"
+   ],
+   "summary": "Christians baptise and celebrate the Lord's Supper, but differ on their meaning. Catholics and Orthodox count seven sacraments; most Protestants count two.",
+   "views": {
+    "christian": "Catholic and Orthodox: seven sacraments; the bread and wine become Christ's body and blood. Lutheran: Christ is truly present. Reformed: a spiritual presence. Baptist: a memorial. Most churches baptise infants; Baptists and Pentecostals baptise believers only.",
+    "muslim": "Islam has no sacraments. Ritual washing before prayer (wudu) and full washing (ghusl) are acts of purity, not of salvation.",
+    "jewish": "Immersion in a ritual bath (mikveh) is used for purity and conversion; there are no sacraments in the Christian sense."
+   },
+   "texts": [
+    {
+     "group": "New Testament",
+     "refs": [
+      [
+       "Matthew 28:19",
+       "Baptise all nations."
+      ],
+      [
+       "Acts 2:38",
+       "Repent and be baptised."
+      ],
+      [
+       "Luke 22:19–20",
+       "This is my body; this cup is the new covenant in my blood."
+      ],
+      [
+       "John 6:53–56",
+       "Unless you eat the flesh of the Son of Man."
+      ],
+      [
+       "1 Corinthians 11:23–29",
+       "Discerning the body."
+      ],
+      [
+       "James 5:14–15",
+       "Anointing of the sick."
+      ]
+     ]
+    },
+    {
+     "group": "Christian documents",
+     "refs": [
+      [
+       "[[go/trent-canons-and-decrees/Session XIII › Sacrament of the Eucharist|Trent on the Eucharist]]",
+       "Catholic teaching on transubstantiation."
+      ],
+      [
+       "[[lib/ccel-luther-smallcat|Luther's Small Catechism]]",
+       "Lutheran teaching on baptism and the Supper."
+      ]
+     ]
+    },
+    {
+     "group": "Quran",
+     "refs": [
+      [
+       "Quran 5:6",
+       "Washing before prayer."
+      ]
+     ]
+    }
+   ],
+   "related": [
+    "beliefs/catholic",
+    "beliefs/protestant",
+    "compare/worship"
+   ]
+  },
+  {
+   "id": "saints-icons",
+   "title": "Saints, icons and images",
+   "q": [
+    "saints",
+    "icons",
+    "images",
+    "statues",
+    "idols",
+    "idolatry",
+    "praying to saints",
+    "intercession",
+    "graven image",
+    "veneration",
+    "relics",
+    "shrines"
+   ],
+   "summary": "Orthodox and Catholics venerate saints and images; Protestants, Muslims and Jews reject prayer to saints and religious images, though Shia Muslims visit the shrines of the Imams.",
+   "views": {
+    "christian": "Orthodox and Catholic: saints are asked to pray for us and icons are venerated, not worshipped. Protestants: pray to God alone, through Christ.",
+    "muslim": "Worship belongs to God alone; images of living beings are discouraged and idolatry is the gravest sin. Many Sunnis reject seeking help at tombs; Shia visit shrines of the Imams.",
+    "jewish": "No images of God and no prayer to intermediaries."
+   },
+   "texts": [
+    {
+     "group": "Bible",
+     "refs": [
+      [
+       "Exodus 20:4–5",
+       "You shall not make a carved image."
+      ],
+      [
+       "Exodus 25:18–22",
+       "Cherubim made for the ark: cited by those who defend images."
+      ],
+      [
+       "1 Timothy 2:5",
+       "One mediator between God and men."
+      ],
+      [
+       "Hebrews 12:1",
+       "A great cloud of witnesses."
+      ],
+      [
+       "Revelation 5:8",
+       "The prayers of the saints."
+      ]
+     ]
+    },
+    {
+     "group": "Quran",
+     "refs": [
+      [
+       "Quran 4:48",
+       "God does not forgive associating partners with him."
+      ],
+      [
+       "Quran 39:3",
+       "We only worship them to bring us nearer to God."
+      ]
+     ]
+    },
+    {
+     "group": "Christian documents",
+     "refs": [
+      [
+       "[[go/trent-canons-and-decrees/Session XXV › Invocation, Veneration, and on Relics of Saints and Sacred Images|Trent on saints and images]]",
+       "Catholic teaching."
+      ]
+     ]
+    }
+   ],
+   "related": [
+    "compare/worship",
+    "beliefs/orthodox"
+   ]
+  },
+  {
+   "id": "forgiveness",
+   "title": "Forgiveness and repentance",
+   "q": [
+    "forgiveness",
+    "forgive",
+    "forgiven",
+    "repentance",
+    "repent",
+    "teshuvah",
+    "tawbah",
+    "can sins be forgiven",
+    "unforgivable",
+    "mercy",
+    "atonement"
+   ],
+   "summary": "All three faiths teach that God forgives the repentant. Christianity grounds forgiveness in the cross; Islam and Judaism in God's mercy and a person's sincere return to God.",
+   "views": {
+    "christian": "Forgiveness is offered through Christ's death. Believers must forgive others as they are forgiven. Catholics and Orthodox confess to a priest.",
+    "muslim": "God is the Most Merciful and forgives all sins to the one who sincerely repents, except dying while associating partners with God.",
+    "jewish": "Repentance (teshuvah), prayer and charity bring forgiveness; Yom Kippur atones for sins against God, but wrongs against people need their forgiveness first."
+   },
+   "texts": [
+    {
+     "group": "Bible",
+     "refs": [
+      [
+       "1 John 1:9",
+       "If we confess our sins, he is faithful to forgive."
+      ],
+      [
+       "Matthew 6:14–15",
+       "Forgive others, and your Father will forgive you."
+      ],
+      [
+       "Luke 15:11–32",
+       "The prodigal son."
+      ],
+      [
+       "Luke 23:34",
+       "Father, forgive them."
+      ],
+      [
+       "Ezekiel 18:21–23",
+       "If the wicked turns, he shall live."
+      ],
+      [
+       "Psalm 103:10–12",
+       "As far as the east is from the west."
+      ]
+     ]
+    },
+    {
+     "group": "Quran",
+     "refs": [
+      [
+       "Quran 39:53",
+       "Do not despair of God's mercy; he forgives all sins."
+      ],
+      [
+       "Quran 4:48",
+       "Except associating partners with him."
+      ],
+      [
+       "Quran 25:70",
+       "God will change their evil deeds into good."
+      ]
+     ]
+    },
+    {
+     "group": "Jewish tradition",
+     "refs": [
+      [
+       "[[go/sef-mishneh-torah-repentance/2|Maimonides, Laws of Repentance]]",
+       "What full repentance is."
+      ]
+     ]
+    }
+   ],
+   "related": [
+    "q/good-things-jesus-did"
+   ]
+  },
+  {
+   "id": "love-enemies",
+   "title": "Love, enemies and the golden rule",
+   "q": [
+    "love your enemies",
+    "enemies",
+    "turn the other cheek",
+    "golden rule",
+    "love your neighbour",
+    "love your neighbor",
+    "hateful to you",
+    "treat others",
+    "neighbor",
+    "neighbour",
+    "kindness",
+    "love",
+    "what is love",
+    "god is love"
+   ],
+   "summary": "All three faiths command love of neighbour and some form of the golden rule. Jesus' “love your enemies” is the most radical form.",
+   "views": {
+    "christian": "Love God and neighbour, love even enemies, turn the other cheek, do to others as you would have them do to you.",
+    "muslim": "None of you truly believes until he loves for his brother what he loves for himself. Repel evil with what is better. Justice even toward those you hate.",
+    "jewish": "Love your neighbour as yourself. Hillel: what is hateful to you, do not do to your fellow; that is the whole Torah."
+   },
+   "texts": [
+    {
+     "group": "Bible",
+     "refs": [
+      [
+       "Leviticus 19:18",
+       "Love your neighbour as yourself."
+      ],
+      [
+       "Matthew 5:38–48",
+       "Turn the other cheek; love your enemies."
+      ],
+      [
+       "Matthew 7:12",
+       "The golden rule."
+      ],
+      [
+       "Matthew 22:37–40",
+       "The two great commandments."
+      ],
+      [
+       "Luke 10:25–37",
+       "The good Samaritan."
+      ]
+     ]
+    },
+    {
+     "group": "Quran and hadith",
+     "refs": [
+      [
+       "Quran 41:34",
+       "Repel evil with what is better."
+      ],
+      [
+       "Quran 5:8",
+       "Do not let hatred of a people make you unjust."
+      ],
+      [
+       "Sahih al-Bukhari 13",
+       "Love for your brother what you love for yourself."
+      ]
+     ]
+    },
+    {
+     "group": "Jewish tradition",
+     "refs": [
+      [
+       "Shabbat 31a",
+       "Hillel: what is hateful to you, do not do to your fellow."
+      ]
+     ]
+    }
+   ],
+   "related": [
+    "q/good-things-jesus-did"
+   ]
+  },
+  {
+   "id": "war-violence",
+   "title": "War and violence in scripture",
+   "q": [
+    "war",
+    "violence",
+    "jihad",
+    "holy war",
+    "killing",
+    "kill",
+    "fight",
+    "fighting",
+    "conquest",
+    "canaanites",
+    "amalek",
+    "midianites",
+    "sword",
+    "violent verses",
+    "terrorism",
+    "slay them"
+   ],
+   "summary": "All three scriptures contain war. Each tradition reads its war passages in context and limits them, and critics on every side point to the others' texts.",
+   "views": {
+    "christian": "The wars of ancient Israel were for one people at one time. Jesus refused the sword and taught love of enemies. Christian tradition later developed the just-war theory.",
+    "muslim": "Fighting is allowed in self-defence and against oppression, within strict limits: no aggression, no harm to non-combatants, peace when the enemy seeks peace. Jihad first means striving against one's own evil.",
+    "jewish": "The commands of conquest applied to nations that no longer exist and cannot be applied today; the rabbis limited the laws of war."
+   },
+   "texts": [
+    {
+     "group": "Old Testament",
+     "refs": [
+      [
+       "Deuteronomy 20:10–18",
+       "Offer peace first; the special case of the Canaanites."
+      ],
+      [
+       "1 Samuel 15:2–3",
+       "The command against Amalek."
+      ],
+      [
+       "Numbers 31:13–18",
+       "The Midianite war."
+      ],
+      [
+       "Isaiah 2:4",
+       "Swords into ploughshares."
+      ]
+     ]
+    },
+    {
+     "group": "New Testament",
+     "refs": [
+      [
+       "Matthew 26:52",
+       "All who take the sword will perish by the sword."
+      ],
+      [
+       "Matthew 5:9",
+       "Blessed are the peacemakers."
+      ],
+      [
+       "Romans 13:4",
+       "The ruler does not bear the sword in vain."
+      ]
+     ]
+    },
+    {
+     "group": "Quran",
+     "refs": [
+      [
+       "Quran 2:190–193",
+       "Fight those who fight you, but do not transgress."
+      ],
+      [
+       "Quran 9:5",
+       "The “sword verse”, about those who broke treaties."
+      ],
+      [
+       "Quran 8:61",
+       "If they incline to peace, incline to it."
+      ],
+      [
+       "Quran 5:32",
+       "Whoever kills a soul, it is as if he killed all mankind."
+      ]
+     ]
+    },
+    {
+     "group": "Jewish tradition",
+     "refs": [
+      [
+       "Mishnah Sanhedrin 4:5",
+       "Whoever saves one life saves a whole world."
+      ]
+     ]
+    }
+   ],
+   "related": [
+    "q/war-stories-about-women",
+    "q/answers-to-hard-stories"
+   ]
+  },
+  {
+   "id": "women",
+   "title": "Women",
+   "q": [
+    "women",
+    "woman",
+    "female",
+    "gender",
+    "veil",
+    "hijab",
+    "head covering",
+    "modesty",
+    "women in church",
+    "women rights",
+    "inheritance",
+    "equality"
+   ],
+   "summary": "All three scriptures were written in societies led by men, and all contain passages praised for honouring women and passages criticised as restricting them. Each tradition reads them in different ways today.",
+   "views": {
+    "christian": "Men and women are equal before God. Churches differ on women's roles: Catholics and Orthodox ordain only men; many Protestant churches ordain women.",
+    "muslim": "Men and women are equal in faith and reward, with different roles and rights in family law. Muslims point out that Islam gave women inheritance and property rights in 7th-century Arabia.",
+    "jewish": "Orthodox Judaism gives men and women different religious duties; Reform and Conservative Judaism ordain women as rabbis."
+   },
+   "texts": [
+    {
+     "group": "Bible",
+     "refs": [
+      [
+       "Genesis 1:27",
+       "Male and female he created them, in his image."
+      ],
+      [
+       "Proverbs 31:10–31",
+       "The woman of valour."
+      ],
+      [
+       "Judges 4:4–5",
+       "Deborah, judge of Israel."
+      ],
+      [
+       "Galatians 3:28",
+       "Neither male nor female; all one in Christ."
+      ],
+      [
+       "1 Corinthians 11:3–10",
+       "Head coverings."
+      ],
+      [
+       "1 Timothy 2:11–12",
+       "A woman should learn in silence: debated today."
+      ],
+      [
+       "Ephesians 5:22–25",
+       "Wives submit; husbands love as Christ loved the church."
+      ]
+     ]
+    },
+    {
+     "group": "Quran",
+     "refs": [
+      [
+       "Quran 33:35",
+       "Believing men and believing women, the same reward."
+      ],
+      [
+       "Quran 4:7",
+       "Women's share of inheritance."
+      ],
+      [
+       "Quran 4:34",
+       "Men as protectors of women: much debated."
+      ],
+      [
+       "Quran 24:31",
+       "Modesty and covering."
+      ]
+     ]
+    }
+   ],
+   "related": [
+    "q/war-stories-about-women"
+   ]
+  },
+  {
+   "id": "marriage-divorce",
+   "title": "Marriage, divorce and polygamy",
+   "q": [
+    "marriage",
+    "marry",
+    "divorce",
+    "polygamy",
+    "multiple wives",
+    "four wives",
+    "adultery",
+    "sex",
+    "celibacy",
+    "remarry",
+    "husband",
+    "4 wives",
+    "how many wives",
+    "more than one wife",
+    "wives"
+   ],
+   "summary": "All three faiths honour marriage. Islam allows up to four wives under conditions; Judaism once allowed several, and Christianity teaches one man and one woman. Their rules on divorce differ.",
+   "views": {
+    "christian": "Marriage is a lifelong covenant of one man and one woman. Jesus forbade divorce except for unfaithfulness; the Catholic Church does not recognise divorce, while Orthodox and Protestants allow it in some cases.",
+    "muslim": "Marriage is strongly encouraged. A man may marry up to four wives if he treats them justly. Divorce is permitted but disliked.",
+    "jewish": "Marriage is a holy duty. Divorce is permitted with a bill of divorce (get). Polygamy was banned among European Jews about a thousand years ago."
+   },
+   "texts": [
+    {
+     "group": "Bible",
+     "refs": [
+      [
+       "Genesis 2:24",
+       "The two shall become one flesh."
+      ],
+      [
+       "Deuteronomy 24:1–4",
+       "The bill of divorce."
+      ],
+      [
+       "Malachi 2:16",
+       "I hate divorce, says the LORD."
+      ],
+      [
+       "Matthew 19:3–9",
+       "What God has joined, let no one separate."
+      ],
+      [
+       "1 Corinthians 7:1–9",
+       "Paul on marriage and celibacy."
+      ]
+     ]
+    },
+    {
+     "group": "Quran",
+     "refs": [
+      [
+       "Quran 4:3",
+       "Marry two, three or four; if you fear injustice, then one."
+      ],
+      [
+       "Quran 4:129",
+       "You will not be able to be fully just between wives."
+      ],
+      [
+       "Quran 2:228–232",
+       "The rules of divorce."
+      ],
+      [
+       "Quran 30:21",
+       "He placed love and mercy between you."
+      ]
+     ]
+    }
+   ],
+   "related": [
+    "q/criticisms-of-muhammad"
+   ]
+  },
+  {
+   "id": "angels-satan",
+   "title": "Angels, Satan and jinn",
+   "q": [
+    "angels",
+    "angel",
+    "gabriel",
+    "jibril",
+    "michael",
+    "satan",
+    "devil",
+    "iblis",
+    "lucifer",
+    "demons",
+    "jinn",
+    "evil spirits"
+   ],
+   "summary": "All three faiths believe in angels. Christians and Muslims believe in Satan as a fallen being; Islam adds the jinn. Judaism often sees Satan as an accuser serving God.",
+   "views": {
+    "christian": "Angels are God's messengers; Satan is a fallen angel defeated by Christ.",
+    "muslim": "Angels are made of light and always obey. Iblis was a jinn who refused to bow to Adam. Jinn are beings made of fire, some believers and some not.",
+    "jewish": "Angels carry out God's will. The satan (“accuser”) in Job tests people with God's permission."
+   },
+   "texts": [
+    {
+     "group": "Bible",
+     "refs": [
+      [
+       "Job 1:6–12",
+       "The satan before God."
+      ],
+      [
+       "Luke 1:26–28",
+       "Gabriel sent to Mary."
+      ],
+      [
+       "Matthew 4:1–11",
+       "Jesus tempted by the devil."
+      ],
+      [
+       "Revelation 12:7–9",
+       "The dragon thrown down."
+      ],
+      [
+       "2 Corinthians 12:7",
+       "Paul's thorn, a messenger of Satan."
+      ]
+     ]
+    },
+    {
+     "group": "Quran",
+     "refs": [
+      [
+       "Quran 2:34",
+       "Iblis refused to bow."
+      ],
+      [
+       "Quran 18:50",
+       "Iblis was of the jinn."
+      ],
+      [
+       "Quran 72:1–2",
+       "A group of jinn listened to the Quran."
+      ],
+      [
+       "Quran 2:97–98",
+       "Gabriel brought the Quran."
+      ]
+     ]
+    }
+   ],
+   "related": [
+    "q/paul-prophets-devil"
+   ]
+  },
+  {
+   "id": "creation",
+   "title": "Creation",
+   "q": [
+    "creation",
+    "created the world",
+    "six days",
+    "genesis",
+    "adam",
+    "first man",
+    "evolution",
+    "beginning",
+    "how was the world created"
+   ],
+   "summary": "All three faiths teach that God created the world from nothing and made humans. The Bible and Quran both speak of six days and of Adam; believers differ on how literally to read them.",
+   "views": {
+    "christian": "God created everything good. Many Christians read Genesis literally; many others accept an old universe and evolution guided by God.",
+    "muslim": "God created the heavens and the earth in six periods. Adam was made from clay and taught the names; humanity is God's trustee (khalifa) on earth.",
+    "jewish": "The creation story teaches that one God made a good world and every person in his image. Jewish thinkers have long read it on several levels."
+   },
+   "texts": [
+    {
+     "group": "Bible",
+     "refs": [
+      [
+       "Genesis 1:1–31",
+       "Creation in six days."
+      ],
+      [
+       "Genesis 2:7",
+       "God formed man from dust."
+      ],
+      [
+       "John 1:1–3",
+       "All things were made through the Word."
+      ]
+     ]
+    },
+    {
+     "group": "Quran",
+     "refs": [
+      [
+       "Quran 7:54",
+       "Created the heavens and earth in six days."
+      ],
+      [
+       "Quran 2:30–33",
+       "Adam, God's trustee, is taught the names."
+      ],
+      [
+       "Quran 21:30",
+       "The heavens and earth were joined, and We split them."
+      ]
+     ]
+    }
+   ],
+   "related": [
+    "compare/god"
+   ]
+  },
+  {
+   "id": "predestination",
+   "title": "Fate and free will",
+   "q": [
+    "predestination",
+    "free will",
+    "fate",
+    "destiny",
+    "qadar",
+    "decree",
+    "predestined",
+    "election",
+    "calvinism",
+    "god's plan",
+    "hadith of gabriel",
+    "hadith jibril"
+   ],
+   "summary": "All three faiths hold that God knows and rules everything and that people are responsible for their choices. They differ on how the two fit.",
+   "views": {
+    "christian": "Calvinists: God chose whom to save. Arminians, Methodists, Catholics and Orthodox: grace is offered to all and can be refused.",
+    "muslim": "Sunnis count belief in God's decree (qadar) as an article of faith; people still choose and are judged. Shia stress God's justice and human free will.",
+    "jewish": "Rabbi Akiva: everything is foreseen, yet freedom of choice is given."
+   },
+   "texts": [
+    {
+     "group": "Bible",
+     "refs": [
+      [
+       "Romans 9:10–24",
+       "Jacob I loved, Esau I hated; the potter and the clay."
+      ],
+      [
+       "Ephesians 1:4–5",
+       "Chosen before the foundation of the world."
+      ],
+      [
+       "1 Timothy 2:3–4",
+       "God desires all people to be saved."
+      ],
+      [
+       "Deuteronomy 30:19",
+       "Choose life."
+      ]
+     ]
+    },
+    {
+     "group": "Quran and hadith",
+     "refs": [
+      [
+       "Quran 54:49",
+       "We created everything according to a measure."
+      ],
+      [
+       "Quran 18:29",
+       "Let whoever wills believe."
+      ],
+      [
+       "Sahih Muslim 8",
+       "The hadith of Gabriel: belief in the decree, good and bad."
+      ]
+     ]
+    },
+    {
+     "group": "Christian documents",
+     "refs": [
+      [
+       "[[lib/creed-canons-of-dort|Canons of Dort]]",
+       "The Calvinist position."
+      ],
+      [
+       "[[lib/creed-westminster-confession-of-faith|Westminster Confession, chapter 3]]",
+       "God's eternal decree."
+      ]
+     ]
+    }
+   ],
+   "related": [
+    "beliefs/protestant"
+   ]
+  },
+  {
+   "id": "slavery",
+   "title": "Slavery",
+   "q": [
+    "slavery",
+    "slave",
+    "slaves",
+    "servants",
+    "bondage",
+    "captives",
+    "concubine",
+    "concubines"
+   ],
+   "summary": "The Bible and Quran both regulate slavery, which existed everywhere when they were written. Both also encourage freeing slaves. All three faiths today reject slavery, and critics ask why the texts did not ban it outright.",
+   "views": {
+    "christian": "Christians point to the Exodus, Paul's appeal for Onesimus and “neither slave nor free” as seeds of abolition; Christian abolitionists led the campaign to end slavery.",
+    "muslim": "Islam restricted slavery and made freeing slaves an act of great merit and an atonement for sins, a path Muslims say was meant to end it.",
+    "jewish": "The Torah limited Hebrew servitude to six years and remembers that Israel were slaves in Egypt."
+   },
+   "texts": [
+    {
+     "group": "Bible",
+     "refs": [
+      [
+       "Exodus 21:2–11",
+       "Hebrew servants go free in the seventh year."
+      ],
+      [
+       "Leviticus 25:44–46",
+       "Slaves from the nations around."
+      ],
+      [
+       "Deuteronomy 23:15–16",
+       "Do not return an escaped slave."
+      ],
+      [
+       "Philemon 1:15–16",
+       "No longer a slave, but a beloved brother."
+      ],
+      [
+       "Galatians 3:28",
+       "Neither slave nor free."
+      ]
+     ]
+    },
+    {
+     "group": "Quran",
+     "refs": [
+      [
+       "Quran 90:12–13",
+       "The steep path: freeing a slave."
+      ],
+      [
+       "Quran 24:33",
+       "Grant a contract of freedom to those who seek it."
+      ],
+      [
+       "Quran 4:92",
+       "Freeing a believing slave as atonement."
+      ]
+     ]
+    }
+   ],
+   "related": [
+    "q/war-stories-about-women",
+    "q/answers-to-hard-stories"
+   ]
+  },
+  {
+   "id": "other-religions",
+   "title": "Salvation for people of other faiths",
+   "q": [
+    "other religions",
+    "other faiths",
+    "people of the book",
+    "non believers",
+    "unbelievers",
+    "will christians go to hell",
+    "will muslims go to heaven",
+    "will jews be saved",
+    "only way",
+    "kafir",
+    "infidel",
+    "gentiles",
+    "noahide"
+   ],
+   "summary": "Each faith has strict and generous voices on whether outsiders can be saved.",
+   "views": {
+    "christian": "Jesus said no one comes to the Father but through him. Some Christians hold that only those who believe in Christ are saved; others, including Catholic teaching since the 1960s, hold that God's grace can reach people outside the Church.",
+    "muslim": "The Quran praises some Jews and Christians who believe in God and do good, and also says that whoever seeks a religion other than Islam will not have it accepted. Scholars differ on how these fit.",
+    "jewish": "Non-Jews need not become Jews; the righteous of all nations, who keep the seven laws of Noah, have a share in the World to Come."
+   },
+   "texts": [
+    {
+     "group": "Bible",
+     "refs": [
+      [
+       "John 14:6",
+       "No one comes to the Father except through me."
+      ],
+      [
+       "Acts 4:12",
+       "No other name under heaven by which we must be saved."
+      ],
+      [
+       "Acts 10:34–35",
+       "In every nation, whoever fears him is acceptable."
+      ],
+      [
+       "Romans 2:14–15",
+       "Gentiles who do by nature what the law requires."
+      ]
+     ]
+    },
+    {
+     "group": "Quran",
+     "refs": [
+      [
+       "Quran 2:62",
+       "Jews, Christians and Sabians who believe and do good will have their reward."
+      ],
+      [
+       "Quran 3:85",
+       "Whoever seeks a religion other than Islam, it will not be accepted."
+      ],
+      [
+       "Quran 2:256",
+       "No compulsion in religion."
+      ],
+      [
+       "Quran 29:46",
+       "Argue with the People of the Book in the best way."
+      ]
+     ]
+    },
+    {
+     "group": "Jewish tradition",
+     "refs": [
+      [
+       "Sanhedrin 56a",
+       "The seven laws given to the descendants of Noah."
+      ]
+     ]
+    }
+   ],
+   "related": [
+    "compare/salvation"
+   ]
+  },
+  {
+   "id": "suffering",
+   "title": "Suffering and evil",
+   "q": [
+    "suffering",
+    "evil",
+    "why does god allow",
+    "problem of evil",
+    "pain",
+    "bad things happen",
+    "trials",
+    "test",
+    "theodicy"
+   ],
+   "summary": "All three faiths wrestle with why a good God allows suffering. Each sees trials as a test and points to justice beyond this life.",
+   "views": {
+    "christian": "God brings good out of evil and shares in human suffering on the cross; one day he will wipe away every tear.",
+    "muslim": "Life is a test; patience in hardship is rewarded, and nothing happens without God's knowledge and wisdom.",
+    "jewish": "The book of Job refuses easy answers. Suffering can call us to repentance and to faithfulness, and God's justice is not always visible in this world."
+   },
+   "texts": [
+    {
+     "group": "Bible",
+     "refs": [
+      [
+       "Job 1:20–22",
+       "The LORD gave and the LORD has taken away."
+      ],
+      [
+       "Job 38:1–7",
+       "Where were you when I laid the foundation of the earth?"
+      ],
+      [
+       "Romans 8:28",
+       "All things work together for good."
+      ],
+      [
+       "2 Corinthians 12:9",
+       "My power is made perfect in weakness."
+      ],
+      [
+       "Revelation 21:4",
+       "He will wipe away every tear."
+      ]
+     ]
+    },
+    {
+     "group": "Quran",
+     "refs": [
+      [
+       "Quran 2:155–157",
+       "We will test you; give good news to the patient."
+      ],
+      [
+       "Quran 2:286",
+       "God burdens no soul beyond its capacity."
+      ],
+      [
+       "Quran 67:2",
+       "He created death and life to test you."
+      ]
+     ]
+    }
+   ],
+   "related": [
+    "q/answers-to-hard-stories"
+   ]
+  },
+  {
+   "id": "circumcision",
+   "title": "Circumcision",
+   "q": [
+    "circumcision",
+    "circumcised",
+    "circumcise",
+    "brit milah",
+    "khitan"
+   ],
+   "summary": "Circumcision is the sign of the covenant in Judaism and a normal practice in Islam. The early Church ruled that non-Jewish Christians need not be circumcised.",
+   "views": {
+    "christian": "Not required: the apostles ruled against it for non-Jewish believers, and Paul speaks of “circumcision of the heart”.",
+    "muslim": "Part of the natural way (fitra) followed since Abraham; most scholars consider it strongly recommended or required for men.",
+    "jewish": "The covenant of Abraham, performed on the eighth day."
+   },
+   "texts": [
+    {
+     "group": "Bible",
+     "refs": [
+      [
+       "Genesis 17:10–14",
+       "The covenant of circumcision."
+      ],
+      [
+       "Acts 15:1–29",
+       "The council of Jerusalem."
+      ],
+      [
+       "Galatians 5:2–6",
+       "Neither circumcision nor uncircumcision counts for anything."
+      ],
+      [
+       "Romans 2:28–29",
+       "Circumcision of the heart."
+      ]
+     ]
+    },
+    {
+     "group": "Hadith",
+     "refs": [
+      [
+       "Sahih al-Bukhari 5889",
+       "Five practices of the fitra, including circumcision."
+      ]
+     ]
+    }
+   ],
+   "related": [
+    "q/paul-prophets-devil",
+    "compare/law"
+   ]
+  },
+  {
+   "id": "pilgrimage",
+   "title": "Pilgrimage and holy places",
+   "q": [
+    "pilgrimage",
+    "hajj",
+    "umrah",
+    "mecca",
+    "makkah",
+    "kaaba",
+    "jerusalem",
+    "temple",
+    "temple mount",
+    "holy land",
+    "medina",
+    "western wall"
+   ],
+   "summary": "Mecca is Islam's holiest city and the goal of the hajj. Jerusalem is holy to all three faiths: the Temple for Jews, the places of Jesus' death and resurrection for Christians, and al-Aqsa for Muslims.",
+   "views": {
+    "christian": "Pilgrimage to the holy places is a devotion, not a duty; worship is “in spirit and truth”, not tied to one place.",
+    "muslim": "The hajj to Mecca is required once in a lifetime for those able. Jerusalem's al-Aqsa is the third holiest site.",
+    "jewish": "Jerusalem and the Temple Mount are the holiest places; Jews pray toward Jerusalem and long for the Temple to be rebuilt."
+   },
+   "texts": [
+    {
+     "group": "Bible",
+     "refs": [
+      [
+       "Deuteronomy 16:16",
+       "Three times a year all your males shall appear before the LORD."
+      ],
+      [
+       "Psalm 122:1–6",
+       "Pray for the peace of Jerusalem."
+      ],
+      [
+       "John 4:20–24",
+       "Not on this mountain nor in Jerusalem, but in spirit and truth."
+      ]
+     ]
+    },
+    {
+     "group": "Quran",
+     "refs": [
+      [
+       "Quran 3:96–97",
+       "The first house at Bakka; pilgrimage is a duty for those able."
+      ],
+      [
+       "Quran 2:144",
+       "Turn your face toward the Sacred Mosque."
+      ],
+      [
+       "Quran 17:1",
+       "The night journey to the farthest mosque."
+      ]
+     ]
+    }
+   ],
+   "related": [
+    "compare/worship"
+   ]
+  },
+  {
+   "id": "prophets",
+   "title": "Prophets",
+   "q": [
+    "prophets",
+    "prophet",
+    "messengers",
+    "messenger",
+    "prophethood",
+    "last prophet",
+    "final prophet",
+    "seal",
+    "who are the prophets"
+   ],
+   "summary": "All three faiths believe God spoke through prophets. They agree on many of the same figures, from Abraham to Moses, but disagree about Jesus and Muhammad.",
+   "views": {
+    "christian": "God spoke through the prophets and finally through his Son; Jesus is more than a prophet.",
+    "muslim": "God sent prophets to every nation, from Adam to Muhammad, the last. All prophets taught the same faith and are protected from grave sin.",
+    "jewish": "Prophecy ended with Malachi; Moses is the greatest prophet. Neither Jesus nor Muhammad is accepted."
+   },
+   "texts": [
+    {
+     "group": "Bible",
+     "refs": [
+      [
+       "Hebrews 1:1–2",
+       "God spoke through the prophets, and now by his Son."
+      ],
+      [
+       "Deuteronomy 18:18–22",
+       "How to recognise a true prophet."
+      ],
+      [
+       "Malachi 4:4–6",
+       "The last words of the prophets."
+      ]
+     ]
+    },
+    {
+     "group": "Quran",
+     "refs": [
+      [
+       "Quran 16:36",
+       "We sent a messenger to every nation."
+      ],
+      [
+       "Quran 4:163–165",
+       "The line of prophets named."
+      ],
+      [
+       "Quran 33:40",
+       "The seal of the prophets."
+      ],
+      [
+       "Quran 2:285",
+       "We make no distinction between any of his messengers."
+      ]
+     ]
+    }
+   ],
+   "related": [
+    "compare/prophets",
+    "q/is-muhammad-foretold-in-the-bible"
+   ]
+  },
+  {
+   "id": "god-names",
+   "title": "Who is God? Names and nature of God",
+   "q": [
+    "who is god",
+    "nature of god",
+    "names of god",
+    "yahweh",
+    "jehovah",
+    "allah",
+    "same god",
+    "is allah the same god",
+    "god of abraham",
+    "attributes of god",
+    "99 names",
+    "one god"
+   ],
+   "summary": "Judaism, Christianity and Islam all worship the one God of Abraham. Whether they worship “the same God” is debated, mainly because of the Trinity. Arab Christians also call God “Allah”.",
+   "views": {
+    "christian": "God is one, revealed as Father, Son and Holy Spirit, and God is love. Many Christians say Muslims and Jews worship the same God but know him incompletely; others disagree.",
+    "muslim": "Allah is the one God, the same God who sent Abraham, Moses and Jesus, known through his ninety-nine names.",
+    "jewish": "The God of Abraham, Isaac and Jacob, whose personal name (YHWH) is not pronounced; one, without body or form."
+   },
+   "texts": [
+    {
+     "group": "Bible",
+     "refs": [
+      [
+       "Exodus 3:13–15",
+       "“I AM WHO I AM”."
+      ],
+      [
+       "Deuteronomy 6:4",
+       "The LORD is one."
+      ],
+      [
+       "1 John 4:8",
+       "God is love."
+      ],
+      [
+       "Exodus 34:6–7",
+       "Merciful and gracious, slow to anger."
+      ]
+     ]
+    },
+    {
+     "group": "Quran",
+     "refs": [
+      [
+       "Quran 112:1–4",
+       "He is God, the One."
+      ],
+      [
+       "Quran 2:255",
+       "The Throne Verse."
+      ],
+      [
+       "Quran 59:22–24",
+       "The most beautiful names."
+      ],
+      [
+       "Quran 29:46",
+       "Our God and your God is one."
+      ]
+     ]
+    }
+   ],
+   "related": [
+    "compare/god",
+    "q/one-god-or-trinity"
+   ]
+  },
+  {
+   "id": "hard-passages",
+   "title": "Hard passages and the Old Testament",
+   "q": [
+    "hard passages",
+    "difficult verses",
+    "old testament violence",
+    "bad things in the bible",
+    "numbers 31",
+    "judges 19",
+    "genocide",
+    "why is god angry",
+    "cruel"
+   ],
+   "summary": "Many readers are troubled by Old Testament passages on war, punishment and the treatment of women. Christians and Jews have several ways of reading them.",
+   "views": {
+    "christian": "Describing is not approving; Jesus is the lens; ancient context; God's judgment on grave evils; and gradual revelation.",
+    "muslim": "Many Muslims hold that the present Torah is not fully preserved, so not every story is an accurate record of what the prophets did.",
+    "jewish": "The rabbis read these texts through centuries of interpretation that limits them, and some commentators wrestle openly with their moral difficulty."
+   },
+   "texts": [
+    {
+     "group": "Old Testament",
+     "refs": [
+      [
+       "Numbers 31:13–18",
+       "The Midianite war."
+      ],
+      [
+       "Deuteronomy 21:10–14",
+       "The captive woman."
+      ],
+      [
+       "Judges 19:22–30",
+       "The Levite's concubine."
+      ],
+      [
+       "Judges 21:25",
+       "Everyone did what was right in his own eyes."
+      ]
+     ]
+    },
+    {
+     "group": "New Testament",
+     "refs": [
+      [
+       "Matthew 19:8",
+       "Because of the hardness of your hearts."
+      ],
+      [
+       "Matthew 5:38–45",
+       "You have heard … but I say to you."
+      ]
+     ]
+    }
+   ],
+   "related": [
+    "q/war-stories-about-women",
+    "q/answers-to-hard-stories",
+    "q/must-christians-agree-with-old-testament"
+   ]
+  },
+  {
+   "id": "jesus-life",
+   "title": "Who was Jesus?",
+   "q": [
+    "who was jesus",
+    "life of jesus",
+    "about jesus",
+    "jesus christ",
+    "historical jesus",
+    "jesus"
+   ],
+   "summary": "Jesus of Nazareth was a Jewish teacher in first-century Galilee and Judea who was crucified under Pontius Pilate. Christians worship him as the Son of God; Muslims honour him as the Messiah and a great prophet; Jews do not accept him as the Messiah.",
+   "views": {
+    "christian": "Jesus is God the Son who became man, born of the Virgin Mary. He taught, healed, forgave sins, died on the cross for the world and rose on the third day. He will return to judge the living and the dead.",
+    "muslim": "Isa son of Maryam is one of the greatest messengers, born of a virgin, given the Gospel, and a worker of miracles by God's permission. He was not God and was not crucified, but was raised to God and will return.",
+    "jewish": "Jesus was a Jew of his time. He is not the Messiah, since the messianic age has not come, and not a prophet or divine."
+   },
+   "texts": [
+    {
+     "group": "New Testament",
+     "refs": [
+      [
+       "Luke 2:1–7",
+       "His birth in Bethlehem."
+      ],
+      [
+       "Mark 1:9–11",
+       "His baptism by John."
+      ],
+      [
+       "Matthew 5:1–12",
+       "The Sermon on the Mount begins."
+      ],
+      [
+       "Mark 8:27–29",
+       "“Who do you say that I am?”"
+      ],
+      [
+       "Mark 15:22–39",
+       "His crucifixion."
+      ],
+      [
+       "1 Corinthians 15:3–8",
+       "His resurrection appearances."
+      ]
+     ]
+    },
+    {
+     "group": "Quran",
+     "refs": [
+      [
+       "Quran 3:45–49",
+       "His birth announced, and his miracles."
+      ],
+      [
+       "Quran 19:30–33",
+       "He speaks from the cradle."
+      ],
+      [
+       "Quran 5:110",
+       "Miracles by God's permission."
+      ],
+      [
+       "Quran 4:157–158",
+       "Not crucified; raised to God."
+      ]
+     ]
+    },
+    {
+     "group": "Jewish tradition",
+     "refs": [
+      [
+       "Sanhedrin 43a",
+       "The Talmud's account of Yeshu."
+      ]
+     ]
+    }
+   ],
+   "related": [
+    "q/good-things-jesus-did",
+    "q/is-jesus-god",
+    "compare/jesus"
+   ]
+  },
+  {
+   "id": "david",
+   "title": "King David",
+   "q": [
+    "david",
+    "king david",
+    "dawud",
+    "daud",
+    "psalms of david",
+    "zabur",
+    "goliath",
+    "bathsheba"
+   ],
+   "summary": "David is the shepherd who killed Goliath and became Israel's greatest king. Jews honour him as the ancestor of the Messiah and the author of many Psalms; Christians as the ancestor of Jesus; Muslims as a prophet-king who received the Psalms (Zabur).",
+   "views": {
+    "christian": "God promised David an everlasting throne; Christians see this fulfilled in Jesus, the “Son of David”. David's sin with Bathsheba and his repentance are a model of confession.",
+    "muslim": "Dawud is a prophet and king to whom God gave the Zabur and wisdom. Muslim scholars generally reject the story of adultery with Bathsheba as unworthy of a prophet.",
+    "jewish": "David is the ideal king and the ancestor of the Messiah, who will come from his line. Tradition credits him with much of the book of Psalms."
+   },
+   "texts": [
+    {
+     "group": "Old Testament",
+     "refs": [
+      [
+       "1 Samuel 16:1–13",
+       "Samuel anoints the shepherd boy."
+      ],
+      [
+       "1 Samuel 17:45–50",
+       "David and Goliath."
+      ],
+      [
+       "2 Samuel 7:12–16",
+       "God's promise of an everlasting throne."
+      ],
+      [
+       "2 Samuel 11:2–5",
+       "David and Bathsheba."
+      ],
+      [
+       "Psalm 51:1–4",
+       "The psalm of repentance."
+      ]
+     ]
+    },
+    {
+     "group": "New Testament",
+     "refs": [
+      [
+       "Matthew 1:1",
+       "Jesus, the son of David."
+      ],
+      [
+       "Acts 2:29–31",
+       "Peter applies David's psalm to Jesus."
+      ]
+     ]
+    },
+    {
+     "group": "Quran",
+     "refs": [
+      [
+       "Quran 2:251",
+       "David killed Goliath (Jalut)."
+      ],
+      [
+       "Quran 4:163",
+       "We gave David the Psalms (Zabur)."
+      ],
+      [
+       "Quran 38:17–26",
+       "David, God's vicegerent, and the two disputants."
+      ]
+     ]
+    }
+   ],
+   "related": [
+    "compare/prophets"
+   ]
+  },
+  {
+   "id": "noah",
+   "title": "Noah and the flood",
+   "q": [
+    "noah",
+    "nuh",
+    "the flood",
+    "great flood",
+    "ark",
+    "noahs ark",
+    "noah s ark"
+   ],
+   "summary": "All three faiths tell of Noah, the righteous man saved from the flood. Judaism draws from his story the seven laws for all humanity; Christians see the flood as judgment and a picture of baptism; the Quran presents Noah as a messenger whose people, and even his son, rejected him.",
+   "views": {
+    "christian": "The flood shows God's judgment on sin and his mercy to the righteous; the New Testament compares it to baptism and to the coming of the Son of Man.",
+    "muslim": "Nuh is one of the great messengers. He called his people to God for 950 years; they mocked him, and his own son refused to board the ark and drowned.",
+    "jewish": "After the flood God made a covenant with all humanity. The rabbis derive from it the seven laws of Noah, by which the righteous of every nation have a share in the World to Come."
+   },
+   "texts": [
+    {
+     "group": "Old Testament",
+     "refs": [
+      [
+       "Genesis 6:5–22",
+       "The flood announced and the ark built."
+      ],
+      [
+       "Genesis 9:8–17",
+       "The covenant and the rainbow."
+      ]
+     ]
+    },
+    {
+     "group": "New Testament",
+     "refs": [
+      [
+       "Matthew 24:37–39",
+       "As in the days of Noah."
+      ],
+      [
+       "1 Peter 3:20–21",
+       "The flood and baptism."
+      ]
+     ]
+    },
+    {
+     "group": "Quran",
+     "refs": [
+      [
+       "Quran 11:36–48",
+       "The ark, and Noah's son."
+      ],
+      [
+       "Quran 29:14",
+       "He remained among them a thousand years less fifty."
+      ],
+      [
+       "Quran 71:1–28",
+       "Surah Nuh."
+      ]
+     ]
+    },
+    {
+     "group": "Jewish tradition",
+     "refs": [
+      [
+       "Sanhedrin 56a",
+       "The seven laws of the descendants of Noah."
+      ]
+     ]
+    }
+   ],
+   "related": [
+    "compare/prophets"
+   ]
+  }
+ ]
+}

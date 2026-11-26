@@ -51,6 +51,12 @@ export default async function handler(req, res) {
     res.status(400).json({ error: "Send a question and between 1 and " + MAX_PASSAGES + " passages." });
     return;
   }
+  const PERSONA = {
+    christian: "Answer as a knowledgeable Christian guide: explain the Christian position clearly and sympathetically, noting where Orthodox, Catholic and Protestant Christians differ, then summarise fairly how Muslims and Jews respond.",
+    muslim: "Answer as a knowledgeable Muslim guide: explain the Muslim position clearly and sympathetically, noting where Sunni and Shia Muslims differ, then summarise fairly how Christians and Jews respond.",
+    jewish: "Answer as a knowledgeable Jewish guide: explain the Jewish position clearly and sympathetically, noting where Orthodox, Conservative and Reform Jews differ, then summarise fairly how Christians and Muslims respond.",
+  };
+  const persona = PERSONA[body?.guide] || "";
   const listed = passages.map((p, i) => {
     const text = String(p?.text || "");
     if (text.length > MAX_PASSAGE_CHARS) return null;
@@ -70,7 +76,7 @@ export default async function handler(req, res) {
       betas: ["server-side-fallback-2026-07-01"],
       fallbacks: "default",
       output_config: { effort: "medium" },
-      system: SYSTEM,
+      system: persona ? SYSTEM + "\n\n" + persona + " You are a guide to what the tradition teaches, not a member of the clergy; do not claim to speak for any religious authority." : SYSTEM,
       messages: [{ role: "user", content: "Question: " + question + "\n\nPassages:\n\n" + listed.join("\n\n") }],
     });
     res.setHeader("Content-Type", "text/plain; charset=utf-8");

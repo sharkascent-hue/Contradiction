@@ -2,30 +2,46 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Scripture Q&amp;A</title>
-<meta name="description" content="The Bible, Quran, hadith, Talmud and Church Fathers, searchable, with hard questions answered from the texts and each faith's view set side by side.">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Contradiction</title>
+<meta name="description" content="Ask anything about Christianity, Islam and Judaism. See what each faith believes, where they disagree, and the actual passages in the Bible, Quran, hadith and Talmud.">
 <meta name="robots" content="noindex">
+<meta name="theme-color" content="#faf8f4">
+<meta name="color-scheme" content="light">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='14' fill='%232563eb'/%3E%3Cpath d='M16 2a14 14 0 0 1 0 28z' fill='%230f9d6e'/%3E%3Ccircle cx='16' cy='16' r='5' fill='%237c3aed'/%3E%3C/svg%3E">
 </head>
 <body>
 <header class="top">
-  <a class="brand" href="#/">Scripture <span>Q&amp;A</span></a>
-  <nav>
+  <a class="brand" href="#/" aria-label="Contradiction, home">
+    <span class="mark" aria-hidden="true"></span><span class="word">Contradiction</span>
+  </a>
+  <nav class="links" aria-label="Main">
     <a href="#/ask">Ask</a>
-    <a href="#/questions">Questions</a>
-    <a href="#/beliefs">Beliefs</a>
+    <a href="#/faiths">Faiths</a>
+    <a href="#/topics">Topics</a>
     <a href="#/books">Read</a>
     <a href="#/lib">Library</a>
-    <a href="#/search">Search</a>
-    <a href="#/about">About</a>
   </nav>
-  <label class="trpick"><span class="sr">Translation</span><select id="tr"></select></label>
+  <a class="icon-btn" href="#/search" aria-label="Search every text">
+    <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+  </a>
 </header>
-<main id="app" tabindex="-1"><p class="loading">Loading…</p></main>
+<main id="app" tabindex="-1"><div class="boot"><span class="mark spin"></span></div></main>
 <footer class="foot">
-  <p>Each text states its source and licence. Answers and summaries are drafts and have not yet been reviewed by a priest, imam, rabbi or scholar. <a href="#/about">Sources and status</a></p>
+  <p><strong>Contradiction</strong> sets out what Christianity, Islam and Judaism teach, in their own words, with the texts. Summaries are drafts, not yet reviewed by a priest, imam, rabbi or scholar. <a href="#/about">About and sources</a></p>
 </footer>
+<nav class="tabbar" aria-label="Sections">
+  <a href="#/"><svg viewBox="0 0 24 24"><path d="M3 11.5 12 4l9 7.5V20a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></svg><span>Home</span></a>
+  <a href="#/ask"><svg viewBox="0 0 24 24"><path d="M4 5h16v11H8l-4 4z"/></svg><span>Ask</span></a>
+  <a href="#/faiths"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><path d="M12 4v16M4 12h16"/></svg><span>Faiths</span></a>
+  <a href="#/books"><svg viewBox="0 0 24 24"><path d="M4 5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2zM4 21V5"/></svg><span>Read</span></a>
+  <a href="#/lib"><svg viewBox="0 0 24 24"><path d="M5 4h3v16H5zM10 4h3v16h-3zM15 5l3-1 3 15-3 1z"/></svg><span>Library</span></a>
+</nav>
+<div id="sheet" class="sheet" hidden></div>
 <script src="app.js"></script>
 </body>
 </html>
