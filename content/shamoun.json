@@ -1,0 +1,869 @@
+{
+ "summary": "Sam Shamoun (b. 1972 in Kuwait per his own testimony and NewsGram; Assyrian-American, raised in Chicago) is a long-time writer for Answering Islam and, since roughly the 2010s, a livestreamer (YouTube channel 'Shamounian'). His documented debates with Muslims run from a 2000 debate with Shabir Ally ('The Bible vs the Quran: which is the Word of God?') through 2000s campus/Paltalk-era debates (Nadir Ahmed, Osama Abdallah, Sami Zaatari, Yusuf Ismail), a 2015 debate with Anjem Choudary, Zoom/livestream debates in 2020-2021 (Ijaz Ahmad & Ibn Anwar, Dr. Shuaib Sayyed, Shaykh Uthman ibn Farooq), and high-view hosted debates in 2024-2026 (Fresh & Fit 2v2 with Jay Dyer vs Daniel Haqiqatjou & Ijaz Ahmad; Khalil Andani on Capturing Christianity; Shaykh Uthman on One Message Foundation; Dr. Nasser on The Way with Brian Davila; a Nashville 2v2 with Jay Dyer vs Jake Brancatella and Itachi). His encounters with Jews are mostly informal livestream discussions with lay or anonymous Orthodox/Karaite Jewish guests on the Trinity and messianic prophecy; no formal debate with a named rabbi (e.g. Tovia Singer) was found, only response videos. Recurring themes: the 'Islamic Dilemma' (the Quran affirms the Torah/Gospel the Jews and Christians possessed, e.g. Q 5:43-47, 5:68, 10:94, 7:157, yet contradicts them), Muhammad's prophethood and character (Q 46:9, Bukhari 1243, 2753, 5133, 6982, 5763), Quranic textual history (Bukhari 4986/4987/5005, the stoning verse, the ten-sucklings report), Allah as khayr al-makirin (Q 3:54, 8:30), Deuteronomy 18 and the 'prophet like Moses', violence/peace (Q 9:5, 9:29, 4:24 and the Awtas captives report), and OT evidence for plurality in God. Outcomes cannot be scored: each side's uploaders title the same debates as victories (e.g. Christian channels 'career ending', Muslim channels 'decimated', 'gets owned'). Documented points include James White's 2005 claim that Ally admitted he need not read the Bible in context, Nadir Ahmed's claim that Shamoun left a 2007 argument unanswered, Ijaz Ahmad's and Shamoun's competing edited/unedited versions of their 2020 Zoom debate, and Shabir Ally's later public refusal to debate Shamoun again. No audience polls were found for any debate. His style is widely described, including by fellow Christians James White (2017) and Trent Horn (2026), as combative and at times abusive; Muslim critics (e.g. Yusuf Ismail, Nadir Ahmed) say the same.",
+ "style": "Shamoun's style is fast, text-heavy and adversarial. He reads long strings of Quran, hadith and tafsir citations, turns objections back on Islam ('if praying disproves Jesus' deity, Allah \"prays\" for Muhammad, 33:56'), and presses yes/no questions. NewsGram (Mar 2026) calls his style 'highly confrontational'. His own video descriptions use insults such as 'SLANDERING MUHAMMADAN', 'his wicked profit' (2021) and 'this demon and his fake god' (2022). Criticism from Christians: James White's 'Open Letter to Sam Shamoun' (13 Feb 2017) says Shamoun 'often violate[s] biblical standards of speech' on PalTalk and in articles and accuses him of a 'scorched earth policy' after White's dialogues with Yasir Qadhi. In 2026 Trent Horn (Catholic Answers) criticised a 'pseudo macho approach to Christian apologetics' and Shamoun's teaching that Christians may curse revilers. Muslim channels say David Wood and Christian Prince 'cut ties' with him (Abdul, 2024; not independently verified). Criticism from Muslims: Yusuf Ismail (2015) called him a 'nutcase', and the uploader described 'foul mouthed insults against Muslims'. Nadir Ahmed (2011) accused him of having a moderator mute him and leaving. Ijaz Ahmad (2020) said he turned an informal Zoom chat into an ambush debate. Shabir Ally publicly declined further debates. Shamoun has also moved between Christian traditions: Catholic Answers described him as Protestant in 2020; his followers' channels now describe him as Catholic; and after the November 2026 Nashville debate he addressed rumours about Eastern Orthodoxy.",
+ "notes": "Not verified or not found: (1) the venue of the 2000 Shabir Ally debate; one search snippet mentioned a 'Seattle debate with Shabir Ally', but the page could not be found. A UMass Dartmouth debate scheduled for 27 Mar 2002 is announced on Answering Islam, but it is not confirmed that it took place. (2) No formal debate was found with Mohammed Hijab, Zakir Naik (the 'Zakir Naik vs Sam Shamoun mini debate' and 'hypothetical' videos are edits or AI), Bassam Zawadi (written only), Abdullah Kunde, Daniel Haqiqatjou 1-on-1 (only the Fresh & Fit 2v2), or Jalal Abualrub (2004 negotiations collapsed). For 'Zakir Hussain', only a 2020 clip 'Sam Shamoun Exposes Zakir Hussein (How Can Jesus Be Seed Of David)' was found; the date and format of any debate are unknown. (3) James White in Nov 2005 referred to an earlier 'Nadir Ahmed vs. Sam Shamoun debate', so a pre-2005 Nadir debate likely exists, but its date and topic are unknown. (4) Transcripts could not be retrieved (YouTube transcript API blocked), so 'key exchanges' rely on uploader descriptions, reviewers and Shamoun's written debate material, not on direct viewing. (5) No audience polls or judged results exist for any debate found. (6) The Nashville Nov 2026 full video and any Muslim-side reaction were not located. (7) The Osama Abdallah, Sami Zaatari, Yusuf Ismail and Anjem Choudary debates have only titles and upload dates; their content was not verified. (8) The claims that Dr. Shuaib Sayyed is 'Zakir Naik's partner' and that David Wood and Christian Prince 'cut ties' come from partisan channels and are unverified. (9) There is no live English Wikipedia article. A draft (declined, flagged as AI-generated) was used only as a lead, and its leads were checked against the AOMin pages. (10) Hadith numbers follow the sunnah.com scheme. For Sahih Muslim, the in-book references are given because the API's sequential numbering differs. (11) Many 'debates' on YouTube are informal livestream call-ins with anonymous Muslims or Jews and were excluded unless notable. YouTube view counts are as of 26 Nov 2026.",
+ "arguments": [
+  {
+   "title": "The Islamic Dilemma",
+   "argument": "The Quran tells Jews and Christians to judge by the Torah and Gospel they have (5:43, 5:47, 5:68), tells Muhammad to ask those who read the Scripture before him (10:94, 16:43), says Muhammad is 'written' in the Torah and Gospel they have (7:157) and says no one can change God's words (6:115, 18:27, 10:64). Yet the Bible those communities possessed teaches the Trinity, Christ's deity, crucifixion and atonement, which the Quran denies (4:157, 4:171, 5:116). So either the Bible is reliable and the Quran is wrong, or it is corrupted and the Quran is wrong to affirm it; either way, Shamoun argues, Islam is false.",
+   "texts": [
+    "Quran 10:94",
+    "Quran 16:43",
+    "Quran 18:27",
+    "Quran 3:3",
+    "Quran 4:157",
+    "Quran 4:171",
+    "Quran 5:116",
+    "Quran 5:43",
+    "Quran 5:46",
+    "Quran 5:47",
+    "Quran 5:48",
+    "Quran 5:68",
+    "Quran 6:115",
+    "Quran 7:157"
+   ],
+   "response": "Khalil Andani (Capturing Christianity, 15 Nov 2024, and his Thinking Islam Substack) rejects premise 1: the Quran never endorses the New Testament or the four-Gospel canon, only 'the Gospel message that God revealed to Jesus', which Jews and Christians mixed 'with falsehood and misinterpretation'. Other common replies: 'confirming what is before it' (3:3, 5:48) means the Quran is a criterion (muhaymin) over earlier books, not a blanket endorsement; 2:79, 3:78 and 5:13 describe alteration of scripture by its people; and 'no one can change His words' refers to God's decrees or the Quran, not to copies of earlier books (Ibn Kathir on 5:46-47 says the Injil abrogated parts of the Torah, i.e. the earlier books are not treated as a fixed binding canon).",
+   "sources": [
+    "https://www.youtube.com/watch?v=2joU6A55pgg",
+    "https://www.thinkingislam.com/p/answering-the-islamic-dilemma-vs",
+    "https://www.youtube.com/watch?v=fWx1y5ZbiR4",
+    "https://www.youtube.com/watch?v=VR_DZQa1Z7o",
+    "https://www.youtube.com/watch?v=dgt9yJpchUc",
+    "https://api.quran.com/api/v4/tafsirs/169/by_ayah/5:47"
+   ]
+  },
+  {
+   "title": "Jesus' divine status in the Quran and hadith",
+   "argument": "Shamoun argues the Quran's own titles and descriptions of Jesus point beyond a mere prophet: 'a word from Him' (3:45) and 'His word... and a spirit from Him' (4:171), creating birds from clay and giving life (3:49), being a sign of the Hour (43:61), and being raised to God (3:55). From hadith he cites Jesus' return as judge (Bukhari 3448) and that only Mary and her son were untouched by Satan at birth (Bukhari 3431). He also argues by analogy: the Quran says Allah 'confers blessing' (yusalli) on the Prophet (33:56), so 'Jesus prayed, so he isn't God' cuts both ways.",
+   "texts": [
+    "Daniel 7:14",
+    "Isaiah 9:6",
+    "John 1:1",
+    "John 20:28",
+    "John 8:58",
+    "Quran 19:21",
+    "Quran 33:56",
+    "Quran 3:45",
+    "Quran 3:49",
+    "Quran 3:55",
+    "Quran 43:61",
+    "Quran 4:171",
+    "Sahih al-Bukhari 3431",
+    "Sahih al-Bukhari 3448"
+   ],
+   "response": "Muslim debaters (e.g. Shaykh Uthman, Dr. Shuaib Sayyed and the Muslim speakers in the 2026 'Why did Jesus pray?' clip) answer that each Quranic miracle is explicitly 'by permission of Allah' (3:49), that 'word' means Jesus was created by God's command 'Be' and 'spirit from Him' is a created spirit, that 4:171 itself says Jesus 'was but a messenger' and forbids 'Three', and that the Bible shows Jesus praying, not knowing the Hour (Mark 13:32) and calling the Father 'the only true God' (John 17:3). They often ask 'Where did Jesus say \"I am God, worship me\"?' (Shamoun answers this in a Jan 2026 video against Shaykh Uthman).",
+   "sources": [
+    "https://www.youtube.com/watch?v=Njgw1raVcMY",
+    "https://www.youtube.com/watch?v=mURwLsFfB_4",
+    "https://www.youtube.com/watch?v=SDbogjSkIGY",
+    "https://api.quran.com/api/v4/verses/by_key/4:171?translations=20"
+   ]
+  },
+  {
+   "title": "Allah as 'the best of deceivers/plotters' (khayr al-makirin)",
+   "argument": "Shamoun says Q 3:54 and 8:30 call Allah khayr al-makirin, which he renders 'the best of deceivers', and links 3:54 to 4:157 (Allah made another look like Jesus so people believed he was crucified): a God who deceives is not the God of Numbers 23:19 who 'is not a man, that he should lie'. Christian re-uploads of his 2020 Shuaib Sayyed debate summarise this as 'Allah is called the best of deceivers'.",
+   "texts": [
+    "Numbers 23:19",
+    "Quran 3:54",
+    "Quran 4:157",
+    "Quran 8:30"
+   ],
+   "response": "Standard translations render makr here as 'plan/plot' (Saheeh International: 'Allah is the best of planners'). Muslims argue makr is morally neutral, means a hidden plan, and when attributed to Allah is a just counter-plan that defeats evil plotters (in 8:30 the Quraysh plotting to kill or expel Muhammad). Ibn Kathir explains 3:54 as Allah foiling those who plotted to kill Jesus and disgracing them. Muslim channels have produced dedicated 'Allah is the best of deceivers explained' responses to Shamoun.",
+   "sources": [
+    "https://api.quran.com/api/v4/verses/by_key/3:54?translations=20",
+    "https://api.quran.com/api/v4/tafsirs/169/by_ayah/3:54",
+    "https://www.youtube.com/watch?v=m_2KzQND2xk",
+    "https://www.youtube.com/watch?v=GIKl-PmUQbA"
+   ]
+  },
+  {
+   "title": "The Quran's textual history and preservation",
+   "argument": "Shamoun argues the Quran's transmission is no cleaner than the Bible's: Zaid's collection after Yamama (Bukhari 4986), Uthman's standardisation and burning of other copies (Bukhari 4987), Umar leaving some of Ubayy's recitation (Bukhari 5005), the stoning verse Umar said was revealed but not in the text (Bukhari 6829; Muslim, Book 17/29 reports), the 'ten clear sucklings' verse (Muslim, ten-sucklings report), differing codices of Ibn Mas'ud and Ubayy, and qira'at variants. In his Shabir Ally debate material he cites Jeffery, Watt and Guillaume. At Fresh & Fit (2024) he cited Q 37:12 and 33:6 variant readings and Ibn Mas'ud's objections, according to Farid's Muslim response video.",
+   "texts": [
+    "Quran 2:106",
+    "Quran 4:82",
+    "Sahih Muslim 1452",
+    "Sahih Muslim 1691",
+    "Sahih al-Bukhari 4986",
+    "Sahih al-Bukhari 4987",
+    "Sahih al-Bukhari 5005",
+    "Sahih al-Bukhari 6829"
+   ],
+   "response": "Muslim responders (e.g. Farid Responds, Aug 2024) argue the ahruf were divinely sanctioned modes, the qira'at are mass-transmitted (mutawatir) and authorised from the Prophet, not invented by Ibn Mujahid, and that variants such as 37:12 and 33:6 are readings or explanatory glosses. They treat the stoning and suckling reports as abrogation of recitation (naskh al-tilawa, cf. 2:106), not loss. They contrast this with the Bible, which they say has no single preserved autograph text.",
+   "sources": [
+    "https://www.youtube.com/watch?v=j8wo1OmaDZU",
+    "https://www.answering-islam.org/Shamoun/shabir-d.htm",
+    "https://cdn.jsdelivr.net/gh/fawazahmed0/hadith-api@1/editions/eng-bukhari/4987.json"
+   ]
+  },
+  {
+   "title": "Muhammad's prophethood and character",
+   "argument": "Shamoun argues Muhammad fails biblical tests of a prophet and that the hadith show him uncertain of his own fate (Q 46:9; Bukhari 1243: 'by Allah, I do not know what Allah will do with me though I am Allah's Messenger'), unable to save his own family (Bukhari 2753), bewitched (Bukhari 5763), and suicidal during the pause in revelation (Bukhari 6982). He also cites his marriage to Aisha (Bukhari 5133), the Satanic verses (cf. 22:52 and the tafsir/sira reports), and sex with captives (Q 4:24 with the Awtas report in Sahih Muslim). He contrasts this with Jesus' assurance (John 14:6).",
+   "texts": [
+    "Quran 22:52",
+    "Quran 33:21",
+    "Quran 46:9",
+    "Quran 4:24",
+    "Sahih Muslim 1456",
+    "Sahih al-Bukhari 1243",
+    "Sahih al-Bukhari 2753",
+    "Sahih al-Bukhari 5133",
+    "Sahih al-Bukhari 5763",
+    "Sahih al-Bukhari 6982"
+   ],
+   "response": "Muslim debaters reply that 46:9 and Bukhari 1243 express humility and reliance on God, not doubt about prophethood, and that the Quran elsewhere promises Muhammad success. On the sorcery report, they say it affected only worldly matters, not revelation. The suicidal-thoughts passage is, they argue, an unconnected addition (balaghat) by al-Zuhri inside the hadith, not a connected narration. On Aisha, they argue from the norms of the time or that critics apply modern standards. They read 4:24 within the laws of war and slavery of that era. Opponents such as Osama Abdallah and Dr. Shuaib Sayyed argued for his prophethood from the Quran's inimitability and from fulfilled prophecy.",
+   "sources": [
+    "https://www.youtube.com/watch?v=Kq4m2-86Shg",
+    "https://www.youtube.com/watch?v=m_2KzQND2xk",
+    "https://www.youtube.com/watch?v=1npYJPXYBSA",
+    "https://cdn.jsdelivr.net/gh/fawazahmed0/hadith-api@1/editions/eng-bukhari/1243.json",
+    "https://cdn.jsdelivr.net/gh/fawazahmed0/hadith-api@1/editions/eng-bukhari/6982.json"
+   ]
+  },
+  {
+   "title": "Deuteronomy 18 and Muhammad in the Bible",
+   "argument": "Against the Muslim claim that the 'prophet like Moses' (Deut 18:15, 18:18) is Muhammad, Shamoun argues 'from among their brothers' means fellow Israelites (the same phrase governs Israel's king in Deut 17:15), that Deut 34:10 says no prophet 'in Israel' arose like Moses (which looks forward to a future Israelite), and that the NT applies the passage to Jesus. This was the topic of his 2021 exchange with Nadir Ahmed on Husein Mashni's channel.",
+   "texts": [
+    "Deuteronomy 17:15",
+    "Deuteronomy 18:15",
+    "Deuteronomy 18:18",
+    "Deuteronomy 34:10",
+    "Quran 61:6",
+    "Quran 7:157"
+   ],
+   "response": "Muslims (e.g. Nadir Ahmed, Dr. Ali Ataie) argue that 'brothers' can mean Ishmaelites as brothers of Israel, that Muhammad resembles Moses as a lawgiver, statesman and war leader with a natural birth and death while Jesus does not, and that Q 7:157 and 61:6 say Muhammad is foretold.",
+   "sources": [
+    "https://www.youtube.com/watch?v=22i3DXvATRo",
+    "https://www.youtube.com/watch?v=qgmOF-oQFCI",
+    "https://www.youtube.com/watch?v=0Hzw8pEZYys"
+   ]
+  },
+  {
+   "title": "Islam, jihad and the 'three stages'",
+   "argument": "Shamoun argues Islam develops in three stages (tolerance while weak: 43:88-89, 109; defensive fighting: 2:190-194, 22:39-41; offensive subjugation: 9:5, 9:29). Classical exegetes read 9:5 as abrogating earlier peace verses and 2:256 as abrogated, so 'Islam is a religion of peace' reflects only stage one. He made this case against Nadir Ahmed in 2007 and repeated it on the Bryce Crawford podcast in 2026, as reported by NewsGram.",
+   "texts": [
+    "Quran 2:256",
+    "Quran 4:24",
+    "Quran 9:29",
+    "Quran 9:5",
+    "Sahih Muslim 1456"
+   ],
+   "response": "Nadir Ahmed's counter-argument, by his own account, was that 'the Bible allows for the killing of innocent for all times while the Quran condemns it' (Numbers 31:18 is often cited). Muslims also argue that 9:5 and 9:29 are context-specific (treaty-breaking pagans, hostile powers), that 2:256 is not abrogated according to many scholars, and that classical rulings of jihad are state-level law, not a mandate for individuals.",
+   "sources": [
+    "https://www.answering-islam.org/Shamoun/na_debate.htm",
+    "https://www.youtube.com/watch?v=Cju--hoe1Qo",
+    "https://www.newsgram.com/religion/2026/03/20/sam-shamoun-explains-three-stages-of-islam"
+   ]
+  },
+  {
+   "title": "Plurality in God in the Hebrew Bible (used with Jews and Muslims)",
+   "argument": "With Jewish and Muslim interlocutors Shamoun argues the Tanakh shows distinctions within the one God: plural speech (Gen 1:26), the Spirit as creator (Job 33:4), the Angel of the LORD who bears God's name and can withhold pardon (Exod 23:21) and whom Hagar calls God (Gen 16:13), the pierced one of Zech 12:10 ('they will look to me whom they have pierced'), and the 'Mighty God' child of Isa 9:6.",
+   "texts": [
+    "Deuteronomy 6:4",
+    "Exodus 23:21",
+    "Genesis 16:13",
+    "Genesis 1:26",
+    "Isaiah 53:5",
+    "Isaiah 9:6",
+    "Job 33:4",
+    "Zechariah 12:10"
+   ],
+   "response": "Jewish guests (and Muslims such as Jake Brancatella, who asked him in Nashville to name pre-Christian Jews who believed in the Trinity) answer that Deut 6:4 affirms absolute oneness, that the plural in Gen 1:26 refers to God and the angelic court or a plural of majesty, that angels act as God's agents bearing His name, and that rabbinic readings of Zech 12:10 and Isa 53 refer to Messiah ben Joseph or to Israel. Muslims add that no Second Temple Jew held a triune view.",
+   "sources": [
+    "https://www.youtube.com/watch?v=LDBUf0_Vu5E",
+    "https://www.youtube.com/watch?v=ZV7-NyDYNg4",
+    "https://www.youtube.com/watch?v=rnp9m5UGOiM"
+   ]
+  }
+ ],
+ "debates": [
+  {
+   "id": "d07",
+   "opponent": "Yusuf Ismail",
+   "faith": "Muslim (South Africa)",
+   "date": "unknown (uploaded June 2019; Ismail said in 2015 he had dealt with Shamoun 'a few years ago')",
+   "where": "Not verified",
+   "title": "Sam Shamoun debate Yusuf Ismail",
+   "video": "wapyfvGzJrc",
+   "url": "https://www.youtube.com/watch?v=wapyfvGzJrc",
+   "topics": [
+    "not verified"
+   ],
+   "shamoun": "Not verified.",
+   "opponent_case": "Not verified.",
+   "exchanges": "Not verified.",
+   "reception": "Muslim: in 'Sam Shamoun's foul mouthed insults against Muslims - Yusuf Ismail's thoughts on him!' (darkness2noor, 2015) Ismail calls Shamoun a 'nutcase', and the uploader argues his vulgarity toward the Prophet and Muslims is 'incomparable'.",
+   "texts": [],
+   "sources": [
+    "https://www.youtube.com/watch?v=wapyfvGzJrc",
+    "https://www.youtube.com/watch?v=adxMGLmGzno"
+   ],
+   "confirmed": false
+  },
+  {
+   "id": "d21",
+   "opponent": "Mohammed Hijab",
+   "faith": "Muslim",
+   "date": "n/a",
+   "where": "n/a",
+   "title": "No formal debate verified",
+   "video": "",
+   "url": "",
+   "topics": [
+    "debate challenges"
+   ],
+   "shamoun": "Shamoun and his clip channels say Hijab avoids debating him on the Islamic Dilemma.",
+   "opponent_case": "Hijab criticised Shamoun on his own streams, including in November 2025 (Shamoun responded to 'allegations' Hijab raised). Muslim uploads show Hijab mocking Shamoun.",
+   "exchanges": "The widely shared 'Mohammed Hijab career ending debate' (2026) was GodLogic vs Hijab, not Shamoun; Shamoun only reviewed it with GodLogic. There is a change.org petition for a Shamoun-Hijab debate.",
+   "reception": "Competing 'who keeps running away' claims from both sides.",
+   "texts": [
+    "Quran 46:9",
+    "Sahih al-Bukhari 2753"
+   ],
+   "sources": [
+    "https://www.youtube.com/watch?v=Kq4m2-86Shg",
+    "https://www.youtube.com/watch?v=Z3afU-szV-I",
+    "https://www.youtube.com/watch?v=vCBXJiSj3hI",
+    "https://www.youtube.com/watch?v=EZnXDLQbMJA",
+    "https://www.youtube.com/watch?v=2e5JH4hoKKk",
+    "https://www.youtube.com/watch?v=bfIw74tueVU",
+    "https://www.change.org/p/encourage-religious-debate-between-sam-shamoun-and-mohammed-hijab"
+   ],
+   "confirmed": false
+  },
+  {
+   "id": "d03",
+   "opponent": "Nadir Ahmed",
+   "faith": "Muslim",
+   "date": "c. 2007-2011 (Ahmed says the 2007 debate was '4 years ago' in a June 2011 upload)",
+   "where": "Online, moderated voice debate (platform not stated)",
+   "title": "Follow-up debate on the Bible and killing of innocents (incomplete)",
+   "video": "Cju--hoe1Qo",
+   "url": "https://www.youtube.com/watch?v=Cju--hoe1Qo",
+   "topics": [
+    "Biblical violence vs Quranic ethics"
+   ],
+   "shamoun": "Not documented from Shamoun's side.",
+   "opponent_case": "Ahmed argued that the Bible permits killing innocents for all time while the Quran condemns it.",
+   "exchanges": "Ahmed alleges that Shamoun 'conspired with the moderator... to turn off Nadir's microphone' and left. Ahmed invited Shamoun to finish the debate.",
+   "reception": "Only Ahmed's account is available. Ahmed notes that some Christians called the video 'fake'. Treat it as one side's allegation.",
+   "texts": [
+    "Numbers 31:18"
+   ],
+   "sources": [
+    "https://www.youtube.com/watch?v=Cju--hoe1Qo",
+    "https://www.youtube.com/watch?v=E1Qixm0IiUU"
+   ],
+   "confirmed": false
+  },
+  {
+   "id": "d05",
+   "opponent": "Osama Abdallah",
+   "faith": "Muslim (answering-christianity.com)",
+   "date": "c. 2007 (per Shamoun's channel)",
+   "where": "Recorded debate distributed by Acts17Apologetics (David Wood); venue not verified",
+   "title": "Was Muhammad a True Prophet?",
+   "video": "BtnSq5P4fqg",
+   "url": "https://www.youtube.com/watch?v=BtnSq5P4fqg",
+   "topics": [
+    "Muhammad's prophethood"
+   ],
+   "shamoun": "Argued against Muhammad's prophethood. The detailed content was not transcribed.",
+   "opponent_case": "Argued for Muhammad's prophethood. The detailed content was not transcribed.",
+   "exchanges": "Not verified.",
+   "reception": "Shamoun's channel re-titled it 'Osama Abdallah's career ending debate vs Sam Shamoun (c.2007)'. No Muslim-side review was found. The Muslim channel darkness2noor (2015) lists a clip 'Sam abuses Osama and Sami Zaatari - Debate - Is Jesus God?' as evidence of Shamoun's conduct.",
+   "texts": [],
+   "sources": [
+    "https://www.youtube.com/watch?v=BtnSq5P4fqg",
+    "https://www.youtube.com/watch?v=pFo96RMlZ1w",
+    "https://www.youtube.com/watch?v=Sc6XEtEbOT8",
+    "https://www.youtube.com/watch?v=adxMGLmGzno"
+   ],
+   "confirmed": true
+  },
+  {
+   "id": "d20",
+   "opponent": "'Josh/Joshua', Orthodox Jew (Speakers' Corner regular)",
+   "faith": "Jewish (Orthodox)",
+   "date": "before Sep 2026 (upload 5 Sep 2026)",
+   "where": "Shamoun livestream",
+   "title": "Messiah in the Tanakh and rabbinic tradition",
+   "video": "ZV7-NyDYNg4",
+   "url": "https://www.youtube.com/watch?v=ZV7-NyDYNg4",
+   "topics": [
+    "Messiah ben Yosef / ben David",
+    "Zechariah 12:10",
+    "conditional prophecy (Jonah, Jeremiah 18)"
+   ],
+   "shamoun": "Rabbinic traditions of a slain Messiah ben Yosef support the Christian reading; the Hebrew grammar of Zech 12:10 ('they will look to me whom they have pierced').",
+   "opponent_case": "Rabbinic interpretation; conditional prophecy. Details not transcribed.",
+   "exchanges": "Not verified.",
+   "reception": "Christian uploader only. Informal exchange.",
+   "texts": [
+    "Zechariah 12:10",
+    "Jeremiah 18"
+   ],
+   "sources": [
+    "https://www.youtube.com/watch?v=ZV7-NyDYNg4"
+   ],
+   "confirmed": true
+  },
+  {
+   "id": "d18",
+   "opponent": "'Yossi' (Jewish guest)",
+   "faith": "Jewish",
+   "date": "before Oct 2020 (upload date)",
+   "where": "Online livestream/voice chat (re-uploaded by Infinity Apologetics)",
+   "title": "Yossi The Jew Debates Sam Shamoun",
+   "video": "odNoExd8a5U",
+   "url": "https://www.youtube.com/watch?v=odNoExd8a5U",
+   "topics": [
+    "Messiah",
+    "Trinity"
+   ],
+   "shamoun": "Not transcribed.",
+   "opponent_case": "Not transcribed.",
+   "exchanges": "Not verified.",
+   "reception": "Christian uploader only. Informal exchange.",
+   "texts": [],
+   "sources": [
+    "https://www.youtube.com/watch?v=odNoExd8a5U"
+   ],
+   "confirmed": true
+  },
+  {
+   "id": "d19",
+   "opponent": "Orthodox Jewish apologist (unnamed)",
+   "faith": "Jewish (Orthodox)",
+   "date": "before May 2026 (upload 4 May 2026)",
+   "where": "Shamoun livestream",
+   "title": "Sam Shamoun Debates Honest ORTHODOX JEW on the Trinity [FULL DISCUSSION]",
+   "video": "LDBUf0_Vu5E",
+   "url": "https://www.youtube.com/watch?v=LDBUf0_Vu5E",
+   "topics": [
+    "Trinity from the Tanakh",
+    "Angel of the LORD",
+    "Spirit of God"
+   ],
+   "shamoun": "God speaks to His Spirit and the Spirit creates (Gen 1, Job 33:4); the Angel of the LORD has God's name in him and authority over pardon (Exod 23:21); Zech 3; Hagar names the speaker God (Gen 16:13); Manoah and Moses.",
+   "opponent_case": "Jewish monotheism (Deut 6:4). The details are not in the description.",
+   "exchanges": "Not verified.",
+   "reception": "Christian uploader calls the guest 'honest'. Informal exchange.",
+   "texts": [
+    "Genesis 1:26",
+    "Job 33:4",
+    "Exodus 23:21",
+    "Genesis 16:13",
+    "Zechariah 3",
+    "Deuteronomy 6:4"
+   ],
+   "sources": [
+    "https://www.youtube.com/watch?v=LDBUf0_Vu5E"
+   ],
+   "confirmed": true
+  },
+  {
+   "id": "d06",
+   "opponent": "Sami Zaatari",
+   "faith": "Muslim",
+   "date": "before Dec 2010 (upload date)",
+   "where": "Not verified (uploaded in 10 parts by IslamAnswered)",
+   "title": "Is Jesus God?",
+   "video": "YzxCsWTBvtk",
+   "url": "https://www.youtube.com/watch?v=YzxCsWTBvtk",
+   "topics": [
+    "deity of Christ"
+   ],
+   "shamoun": "Deity of Christ. Details not transcribed.",
+   "opponent_case": "Jesus was a prophet, not God. Details not transcribed.",
+   "exchanges": "Not verified.",
+   "reception": "Yusuf Ismail's 2015 video (darkness2noor) uses a clip from this or a related debate to show Shamoun being abusive toward Osama Abdallah and Zaatari.",
+   "texts": [],
+   "sources": [
+    "https://www.youtube.com/watch?v=YzxCsWTBvtk",
+    "https://www.youtube.com/watch?v=QcxqKVfAvNo",
+    "https://www.youtube.com/watch?v=adxMGLmGzno"
+   ],
+   "confirmed": true
+  },
+  {
+   "id": "d09",
+   "opponent": "Ijaz Ahmad",
+   "faith": "Muslim (Trinidad; 'IjazTheTrini', Calling Christians)",
+   "date": "before Apr 2018 (upload date)",
+   "where": "Online",
+   "title": "Quran contradiction: Is the Quran completely clear or not?",
+   "video": "5IxOLnmBl5A",
+   "url": "https://www.youtube.com/watch?v=5IxOLnmBl5A",
+   "topics": [
+    "Quran clarity (mubin) vs 3:7 ambiguous verses"
+   ],
+   "shamoun": "The Quran claims to be clear and fully detailed, yet admits ambiguous verses whose meaning only God knows, and contains unexplained letters (muqatta'at).",
+   "opponent_case": "Not documented.",
+   "exchanges": "Not verified.",
+   "reception": "Only Christian uploads were found (Blood Covenant, Psalm_23).",
+   "texts": [
+    "Quran 3:7"
+   ],
+   "sources": [
+    "https://www.youtube.com/watch?v=5IxOLnmBl5A",
+    "https://www.youtube.com/watch?v=KcdTKbBmb2c"
+   ],
+   "confirmed": true
+  },
+  {
+   "id": "d17",
+   "opponent": "Jake Brancatella ('Muslim Metaphysician') and Itachi ('Dawah Dialogues') (Shamoun teamed with Jay Dyer)",
+   "faith": "Muslim",
+   "date": "November 2026 (about 22-23 Nov)",
+   "where": "Live event, Nashville, Tennessee",
+   "title": "2 Christians vs 2 Muslims: four-topic debate (incl. Islamic Dilemma; biblical basis of the Trinity; whether the Bible is true)",
+   "video": "",
+   "url": "",
+   "topics": [
+    "Islamic Dilemma",
+    "Trinity in the Bible",
+    "Old Testament",
+    "divine simplicity"
+   ],
+   "shamoun": "Shamoun led the Islamic Dilemma round (per Jay Dyer) and argued for the Holy Spirit's divinity in the OT in answer to a challenge.",
+   "opponent_case": "Jake asked the Christians to name any pre-Christian Jews who believed in the Trinity and pressed OT challenges. Dyer said Jake's OT challenge 'deserved an answer'.",
+   "exchanges": "Shamoun's remark to Dyer about chrismation (Orthodox reception) prompted rumours that he was converting. He later said the Filioque and the papacy remain open questions for him.",
+   "reception": "Christian: Shamoun said the Christian team made the stronger biblical case, credited Jake's knowledge of the Trinity, metaphysics and Orthodoxy, and claimed the Muslims kept switching topics in front of a largely Christian audience. Dyer gave his own reaction. Muslim-side reaction was not found.",
+   "texts": [],
+   "sources": [
+    "https://www.youtube.com/watch?v=rnp9m5UGOiM",
+    "https://www.youtube.com/watch?v=G24d4XZfdoA",
+    "https://www.youtube.com/watch?v=I-aI8AilLj8",
+    "https://www.youtube.com/watch?v=aquToDbO7Wg",
+    "https://www.youtube.com/watch?v=zJQGBBs5D50",
+    "https://www.youtube.com/watch?v=cypEfOrc6Mw",
+    "https://www.youtube.com/watch?v=cYbY1woQRr0"
+   ],
+   "confirmed": true
+  },
+  {
+   "id": "d22",
+   "opponent": "Jalal Abualrub",
+   "faith": "Muslim",
+   "date": "Nov 29 - Dec 1, 2004 (negotiations)",
+   "where": "Proposed Paltalk debate",
+   "title": "Is Muhammad a true Prophet or was he deceived by Satan? (never held)",
+   "video": "",
+   "url": "",
+   "topics": [
+    "Muhammad's prophethood"
+   ],
+   "shamoun": "Shamoun proposed long-form opening statements, rebuttals and cross-examination.",
+   "opponent_case": "Abualrub wanted short issue-by-issue exchanges and a live hall event first.",
+   "exchanges": "Negotiations collapsed on 1 Dec 2004, and each side accused the other of backing out (Answering Islam's account, endorsed by Jochen Katz).",
+   "reception": "Only Answering Islam's account was read.",
+   "texts": [],
+   "sources": [
+    "https://www.answering-islam.org/Shamoun/abualrub.htm"
+   ],
+   "confirmed": false
+  },
+  {
+   "id": "d12",
+   "opponent": "Shaykh Uthman ibn Farooq",
+   "faith": "Muslim (US imam)",
+   "date": "May 2021 (uploaded 3 and 6 May 2021)",
+   "where": "One Message Foundation (Muslim channel)",
+   "title": "David Wood, Sam Shamoun & Anthony Rogers vs Shaykh Uthman Ibn Farooq (Parts 1-2)",
+   "video": "o6gPvXukuqA",
+   "url": "https://www.youtube.com/watch?v=o6gPvXukuqA",
+   "topics": [
+    "Islam vs Christianity",
+    "age of Aisha",
+    "deity of Christ"
+   ],
+   "shamoun": "Part of a three-Christian panel. Individual arguments were not transcribed.",
+   "opponent_case": "Uthman alone against three.",
+   "exchanges": "The Muslim host's Part 2 description links Muslim follow-ups 'Uthman ibn Farooq REFUTES Anthony Rogers' (Calling Christians) and 'David Wood Gives Up on Age of Aisha Argument!' (Fareed Responds).",
+   "reception": "Muslim: these follow-ups claim the panel was refuted. Christian highlight channels claim the opposite. Part 1 has 1.55M views. No poll.",
+   "texts": [],
+   "sources": [
+    "https://www.youtube.com/watch?v=o6gPvXukuqA",
+    "https://www.youtube.com/watch?v=Q0LKgSUn00g"
+   ],
+   "confirmed": true
+  },
+  {
+   "id": "d10",
+   "opponent": "Ijaz Ahmad and Ibn Anwar (with William Albrecht on Shamoun's side)",
+   "faith": "Muslim",
+   "date": "July 2020",
+   "where": "Zoom (Ijaz's private room), released on YouTube",
+   "title": "The Deity of Christ / Angel of the LORD (2v2)",
+   "video": "aEcN5ItxW9A",
+   "url": "https://www.youtube.com/watch?v=aEcN5ItxW9A",
+   "topics": [
+    "deity of Christ",
+    "Angel of the LORD",
+    "Old Testament Trinity"
+   ],
+   "shamoun": "Argued Christ's deity from the OT Angel of the LORD texts and the NT.",
+   "opponent_case": "Ijaz argued against Christ's deity and says he refuted 'every claim he made'.",
+   "exchanges": "There is a dispute over the format and the edit. Ijaz (21 Jul 2020) says Albrecht asked to bring a friend to an informal chat and arrived with 20+ people, and that Shamoun 'came to debate'. Ijaz posted a 50-minute cut showing only the Shamoun-Ijaz exchanges, titled 'Is Jesus God? - Shamoun DECIMATED by Ijaz Ahmad'. Shamoun (23 Jul 2020) released the full 4h52 version, saying Ijaz's edit 'removed 4 HOURS of the debate'.",
+   "reception": "Muslim: Ijaz claims he 'decimated' Shamoun and 'thrashed' Albrecht. Christian: SOCO Films published an edited 'Live Debate' cut, and Shamoun and Albrecht recorded a 1h45 review. A 'Jews react' video exists (leopard Of Dawah). No poll.",
+   "texts": [
+    "Genesis 16:13",
+    "Exodus 23:21"
+   ],
+   "sources": [
+    "https://www.youtube.com/watch?v=aEcN5ItxW9A",
+    "https://www.youtube.com/watch?v=mkqoeY92hkU",
+    "https://www.youtube.com/watch?v=lG9DKtRIAhM",
+    "https://www.youtube.com/watch?v=824P9SKNcEo",
+    "https://www.youtube.com/watch?v=aL5Vs3eh8Ac"
+   ],
+   "confirmed": true
+  },
+  {
+   "id": "d14",
+   "opponent": "Daniel Haqiqatjou and Ijaz Ahmad (Shamoun teamed with Jay Dyer)",
+   "faith": "Muslim",
+   "date": "August 2024 (Muslim Skeptic upload 18 Aug 2024)",
+   "where": "Fresh & Fit podcast (Miami), livestream",
+   "title": "Islam vs. Christianity DEBATE (2v2)",
+   "video": "pWkClNrc-8g",
+   "url": "https://www.youtube.com/watch?v=pWkClNrc-8g",
+   "topics": [
+    "Trinity vs Tawhid",
+    "reliability of the Bible vs the Quran",
+    "Quran preservation",
+    "Allah's 'two hands'"
+   ],
+   "shamoun": "Attacked Quran preservation (ahruf and qira'at, Ibn Mujahid, variant readings of 37:12 and 33:6, Ibn Mas'ud's objections and differing codices of Ibn Mas'ud and Ubayy) and challenged the Muslims to produce identical early manuscripts; this is the list of points Farid's Muslim response says it answers. A Muslim reaction video says he also argued about Allah's 'two hands' (cf. 38:75) against Muslim objections to God's embodiment.",
+   "opponent_case": "Haqiqatjou and Ijaz pressed Trinity incoherence and Bible unreliability. The EF Dawah review lists 'No arguments for the Trinity in the debate'.",
+   "exchanges": "The preservation segment (Farid's timestamps) and the Trinity segment (SOCO clip 'Trinity vs Tawhid Debate').",
+   "reception": "Muslim: Muslim Skeptic posted the full video; EF Dawah (Open Forum ep. 67, 3 Sep 2024) reviewed it critically; Farid Responds posted a rebuttal (52k views); theology room called Sam's 'two hands' argument 'strange'. Christian: Jay Dyer mirrored it and called it 'so epic'. In 2026 Shamoun's clip channel said Jake Brancatella backed out of this event at the last minute and was replaced (Shamoun's claim). No poll.",
+   "texts": [
+    "Quran 37:12",
+    "Quran 33:6",
+    "Quran 38:75",
+    "Sahih al-Bukhari 4987",
+    "Sahih al-Bukhari 5005"
+   ],
+   "sources": [
+    "https://www.youtube.com/watch?v=pWkClNrc-8g",
+    "https://www.youtube.com/watch?v=50e1xfIgDgY",
+    "https://www.youtube.com/watch?v=4tGNsqnZEhw",
+    "https://www.youtube.com/watch?v=BJX2TNx9J_w",
+    "https://www.youtube.com/watch?v=j8wo1OmaDZU",
+    "https://www.youtube.com/watch?v=0xsRRgZlXLo",
+    "https://buzzsprout.com/1123031/episodes/15689345-the-open-forum-ep-67-special-edition-debate-review",
+    "https://www.youtube.com/watch?v=cypEfOrc6Mw"
+   ],
+   "confirmed": true
+  },
+  {
+   "id": "d16",
+   "opponent": "Dr. Nasser (Instagram dr.nasserka)",
+   "faith": "Muslim",
+   "date": "2026-06-27",
+   "where": "The Way with Brian Davila (YouTube show)",
+   "title": "Christian Vs Muslim: The Islamic Dilemma (HEATED DEBATE)",
+   "video": "VR_DZQa1Z7o",
+   "url": "https://www.youtube.com/watch?v=VR_DZQa1Z7o",
+   "topics": [
+    "Islamic Dilemma",
+    "5:43-48",
+    "7:157",
+    "asking the People of the Book",
+    "Bible corruption"
+   ],
+   "shamoun": "Per a Shamoun-aligned channel's description, he argued that Quranic stories assume prior biblical knowledge, that the Quran tells people to ask the Children of Israel, that 5:43-48 refers to the Torah the Jews possessed, that 7:157 says Muhammad is written in the Torah and Gospel, and that letting only the Quran decide which parts of the Bible are preserved is circular.",
+   "opponent_case": "Bible corruption and Bible-based objections. A Shamoun clip says he 'refuted his bad Bible arguments'; Nasser's own case was not transcribed.",
+   "exchanges": "Not independently verified.",
+   "reception": "2.3M views, the most-viewed single debate found. Christian: 'PhD Muslim OUTCLASSED By Dropout Christian' (Christ Over ALL). Muslim: 'The Orthodox Muslim' streamed a live reaction, but its verdict is not stated in the description. No poll.",
+   "texts": [
+    "Quran 5:43",
+    "Quran 5:47",
+    "Quran 7:157",
+    "Quran 10:94",
+    "Quran 16:43"
+   ],
+   "sources": [
+    "https://www.youtube.com/watch?v=VR_DZQa1Z7o",
+    "https://www.youtube.com/watch?v=dgt9yJpchUc",
+    "https://www.youtube.com/watch?v=a-ZyYP6NYcQ",
+    "https://www.youtube.com/watch?v=7cXqYD9qQS4",
+    "https://www.youtube.com/watch?v=Ev6O4eq7ctQ",
+    "https://www.youtube.com/watch?v=i8z14KEbCvY"
+   ],
+   "confirmed": true
+  },
+  {
+   "id": "d13",
+   "opponent": "Shaykh Uthman ibn Farooq",
+   "faith": "Muslim",
+   "date": "2025-12-30 (livestream)",
+   "where": "One Message Foundation livestream",
+   "title": "Shaykh Uthman vs. Sam Shamoun: The Ultimate Debate on the Oneness of God",
+   "video": "SDbogjSkIGY",
+   "url": "https://www.youtube.com/watch?v=SDbogjSkIGY",
+   "topics": [
+    "Tawhid vs Trinity",
+    "nature of Jesus",
+    "scriptural authority",
+    "salvation"
+   ],
+   "shamoun": "Trinity and Christ's deity. Afterwards Shamoun posted a rebuttal of Uthman's 'Where did Jesus say I am God' objection and of his use of 'one mediator' (1 Tim 2:5).",
+   "opponent_case": "Absolute divine unity; Jesus a prophet; the 'show me where Jesus said I am God, worship me' challenge.",
+   "exchanges": "The 'Where did Jesus say I am God?' exchange (per Shamoun's follow-up videos).",
+   "reception": "The Muslim host asked viewers 'Which side... presented the stronger evidence?' and gave no verdict. Shamoun's clip channels claim he 'DESTROYS' the objection. An August 2025 confrontation clip (Towards Jesus) precedes the debate.",
+   "texts": [
+    "John 20:28",
+    "John 8:58",
+    "Mark 13:32"
+   ],
+   "sources": [
+    "https://www.youtube.com/watch?v=SDbogjSkIGY",
+    "https://www.youtube.com/watch?v=mURwLsFfB_4",
+    "https://www.youtube.com/watch?v=8fXZCczTdck",
+    "https://www.youtube.com/watch?v=VGh3kh5Bf00",
+    "https://www.youtube.com/watch?v=Aw-fqzwc0xk"
+   ],
+   "confirmed": true
+  },
+  {
+   "id": "d15",
+   "opponent": "Dr. Khalil Andani",
+   "faith": "Muslim (Ismaili scholar; Augustana University)",
+   "date": "2024-11-15",
+   "where": "Capturing Christianity livestream (Cameron Bertuzzi)",
+   "title": "DEBATE: The Islamic Dilemma",
+   "video": "2joU6A55pgg",
+   "url": "https://www.youtube.com/watch?v=2joU6A55pgg",
+   "topics": [
+    "Islamic Dilemma",
+    "Quranic view of the Injil",
+    "Torah and Gospel in 5:43-47"
+   ],
+   "shamoun": "The Quran affirms the Torah and Gospel in the hands of Jews and Christians in Muhammad's day (5:43, 5:47, 5:68, 10:94, 7:157) and also contradicts them, so Islam fails either way.",
+   "opponent_case": "Andani rejected premise 1. The Quran confirms only 'the Gospel message that God revealed to Jesus', not the New Testament or the four Gospels, and it lets Muslims, Jews and Christians recover the true Gospel; Jews and Christians mixed revelation with 'falsehood and misinterpretation'.",
+   "exchanges": "Andani's 4-minute clip 'Muslim Professor Debunks Islamic Dilemma...' summarises his core rebuttal.",
+   "reception": "Muslim: Andani's channel says he 'DEBUNKS the entire Islamic Dilemma'; Deenresponds titled its review 'Islamic Dilemma Fails Again'. Christian: Apostate Prophet and David Wood held a 3.5-hour review the same night; Chris at Speakers Corner said 'both debaters presented their case well, but Khalil wasn't able to offer sufficent probable explanations'. Capturing Christianity later streamed 'Every Muslim Response to the Islamic Dilemma Fails'. 653k views. No poll.",
+   "texts": [
+    "Quran 5:43",
+    "Quran 5:47",
+    "Quran 5:68",
+    "Quran 10:94",
+    "Quran 7:157",
+    "Quran 3:3"
+   ],
+   "sources": [
+    "https://www.youtube.com/watch?v=2joU6A55pgg",
+    "https://www.thinkingislam.com/p/answering-the-islamic-dilemma-vs",
+    "https://www.youtube.com/watch?v=fWx1y5ZbiR4",
+    "https://www.youtube.com/watch?v=QDhnXVXM-CY",
+    "https://www.youtube.com/watch?v=Dv-zI3iT8y8",
+    "https://www.youtube.com/watch?v=RcdEnyPBLrw",
+    "https://www.youtube.com/watch?v=o3u4pDCmGmQ"
+   ],
+   "confirmed": true
+  },
+  {
+   "id": "d04",
+   "opponent": "Nadir Ahmed",
+   "faith": "Muslim",
+   "date": "2021 (uploaded 28 Feb 2021)",
+   "where": "Husein Mashni's YouTube/livestream channel (Ahmed was the guest; Shamoun called in)",
+   "title": "Deuteronomy 18: Was Muhammad the Prophet like Moses?",
+   "video": "22i3DXvATRo",
+   "url": "https://www.youtube.com/watch?v=22i3DXvATRo",
+   "topics": [
+    "Deuteronomy 18",
+    "Muhammad in the Bible",
+    "Numbers 31:18"
+   ],
+   "shamoun": "'Brothers' in Deut 18:15-18 means Israelites (cf. Deut 17:15), Deut 34:10 points to a prophet 'in Israel', and the passage is fulfilled in Jesus. He also answered Ahmed's objection from Numbers 31:18.",
+   "opponent_case": "Muhammad, not Jesus, matches Moses; and the Bible endorses violence (Numbers 31:18).",
+   "exchanges": "The acministries uploader highlights 'Sam's answer to objection regarding Numbers 31:18'.",
+   "reception": "Shamoun's description ('WATCH ME UTTERLY HUMILIATE THE SLANDERING MUHAMMADAN NADIR AHMED') shows the tone. Christian re-uploads say 'decimates'. No Muslim-side review was found. A separate 1h24 'INSANE HEAT!' exchange (Debate Archive, 2022, with a language warning) is undated.",
+   "texts": [
+    "Deuteronomy 18:15",
+    "Deuteronomy 18:18",
+    "Deuteronomy 17:15",
+    "Deuteronomy 34:10",
+    "Numbers 31:18"
+   ],
+   "sources": [
+    "https://www.youtube.com/watch?v=22i3DXvATRo",
+    "https://www.youtube.com/watch?v=qgmOF-oQFCI",
+    "https://www.youtube.com/watch?v=R3kymRTLuL0",
+    "https://www.youtube.com/watch?v=Ty3wTadfv2w"
+   ],
+   "confirmed": true
+  },
+  {
+   "id": "d11",
+   "opponent": "Dr. Shuaib Sayyed",
+   "faith": "Muslim (India)",
+   "date": "2020-07-28 (Part 1) and 2020-08-17 (Part 2), livestreams",
+   "where": "Livestream (posted on Shamoun's Shamounian channel)",
+   "title": "Part 1: Was Muhammad a True Prophet? Part 2: Does the Quran Confirm the Bible?",
+   "video": "1npYJPXYBSA",
+   "url": "https://www.youtube.com/watch?v=1npYJPXYBSA",
+   "topics": [
+    "Muhammad's prophethood",
+    "Islamic Dilemma",
+    "3:54/8:30",
+    "4:24",
+    "mut'ah"
+   ],
+   "shamoun": "According to the Towards Jesus highlight description, he argued that Allah is called the best of deceivers (3:54, 8:30), that 4:24 permits sex with captives, and that Islam allowed temporary marriage (mut'ah; cf. the Sahih Muslim Awtas mut'ah report). Part 2 concerned whether the Quran confirms the Bible (Islamic Dilemma).",
+   "opponent_case": "Argued for Muhammad's prophethood. Detailed content was not transcribed.",
+   "exchanges": "Not independently verified.",
+   "reception": "Christian re-uploads describe Sayyed as 'Zakir Naik's partner' (unverified) and call it a 'HEATED DEBATE'. The 1npYJPXYBSA upload has 1.07M views. No Muslim review was found.",
+   "texts": [
+    "Quran 3:54",
+    "Quran 8:30",
+    "Quran 4:24"
+   ],
+   "sources": [
+    "https://www.youtube.com/watch?v=1npYJPXYBSA",
+    "https://www.youtube.com/watch?v=BawIrwfWhLo",
+    "https://www.youtube.com/watch?v=zYzLbTk-9zM",
+    "https://www.youtube.com/watch?v=m_2KzQND2xk",
+    "https://www.youtube.com/watch?v=tvVjdJpMFJE"
+   ],
+   "confirmed": true
+  },
+  {
+   "id": "d08",
+   "opponent": "Anjem Choudary",
+   "faith": "Muslim (British Islamist activist)",
+   "date": "2015 (reviewed by James White 28 May 2015)",
+   "where": "Online debate; host not verified",
+   "title": "Is Jesus a Prophet or is He also God?",
+   "video": "PjVjWpX2YDo",
+   "url": "https://www.youtube.com/watch?v=PjVjWpX2YDo",
+   "topics": [
+    "deity of Christ",
+    "prophethood of Jesus"
+   ],
+   "shamoun": "Jesus is God. Details not transcribed.",
+   "opponent_case": "Jesus was only a prophet. Details not transcribed.",
+   "exchanges": "Not verified.",
+   "reception": "James White began a review on The Dividing Line (28 May 2015) and said he didn't finish it. No other review was found.",
+   "texts": [],
+   "sources": [
+    "https://www.youtube.com/watch?v=PjVjWpX2YDo",
+    "https://www.youtube.com/watch?v=eVzpq36TLPs",
+    "https://www.aomin.org/aoblog/the-dividing-line/more-cultural-insanity-in-the-first-half-hour-anjem-choudary-and-sam-shamoun-debate-review/"
+   ],
+   "confirmed": true
+  },
+  {
+   "id": "d02",
+   "opponent": "Nadir Ahmed",
+   "faith": "Muslim (Salafi, examinethetruth.com)",
+   "date": "2007-11-03",
+   "where": "Hope International University, Fullerton, California",
+   "title": "Is Islam a Religion of Peace?",
+   "video": "qhhhIaTAbzo",
+   "url": "https://www.youtube.com/watch?v=qhhhIaTAbzo",
+   "topics": [
+    "jihad",
+    "abrogation",
+    "9:5 / 9:29",
+    "captives",
+    "taqiyya",
+    "assassinations of critics"
+   ],
+   "shamoun": "Shamoun's posted debate material: as a Salafi, Ahmed must follow the early generations and classical exegesis. Muhammad as the model (33:21) moved through three stages: tolerance (43:88-89, 109), defensive war (2:190-194, 22:39-41), and offensive war and jizya (9:1-6, 9:29). Ibn Kathir, al-Suyuti and Ibn Juzayy treat 9:5 as abrogating earlier peace verses. Q 4:24 with Sahih Muslim and Abu Dawud reports permits sex with captives. Q 3:28 permits outward friendliness. He also cites the killings of Abu Afak and Asma bint Marwan, argues that 2:256 was abrogated, and says 47:35 qualifies 8:61.",
+   "opponent_case": "By Nadir Ahmed's own later description, his key argument was: 'The Bible allows for the killing of innocent for all times while the Quran condemns it.'",
+   "exchanges": "Ahmed says that Shamoun 'made an excuse why he could not answer this argument and promised to debate this next time', and that Ahmed replied 'I will chase after you!!'. Ahmed's 2011 video then claims that in a later online follow-up Shamoun had the moderator mute Ahmed and left. Shamoun's camp disputes this framing, and the debate is not independently verified (see d03).",
+   "reception": "Shamoun's channel titled the 2022 re-upload 'THE DEBATE THAT MADE NADIR AHMED DISAPPEAR FOR A DECADE', and the description calls Ahmed 'this demon'. Muslim: Ahmed's 2011 'Sam Shamoun RUNS away in the middle of a debate' (135k views) claims Shamoun never answered. No poll. It is assumed but not verified that the c.2007 video is the Hope International event.",
+   "texts": [
+    "Quran 9:5",
+    "Quran 9:29",
+    "Quran 2:256",
+    "Quran 4:24",
+    "Quran 33:21",
+    "Sahih Muslim 1456"
+   ],
+   "sources": [
+    "https://www.answering-islam.org/Shamoun/na_debate.htm",
+    "https://www.youtube.com/watch?v=qhhhIaTAbzo",
+    "https://www.youtube.com/watch?v=Cju--hoe1Qo",
+    "https://www.youtube.com/watch?v=E1Qixm0IiUU"
+   ],
+   "confirmed": true
+  },
+  {
+   "id": "d23",
+   "opponent": "Bassam Zawadi",
+   "faith": "Muslim (call-to-monotheism.com)",
+   "date": "2000s-2010s",
+   "where": "Written exchanges",
+   "title": "No live debate verified; extensive written rebuttals",
+   "video": "",
+   "url": "",
+   "topics": [
+    "Muhammad on the throne",
+    "Allah as shakhs",
+    "tawhid categories",
+    "James White-Zawadi debates"
+   ],
+   "shamoun": "Many Answering Islam rebuttals to Zawadi.",
+   "opponent_case": "Zawadi's replies on Call to Monotheism (not read directly).",
+   "exchanges": "n/a",
+   "reception": "n/a",
+   "texts": [],
+   "sources": [
+    "https://answering-islam.org/authors/shamoun/rebuttals/zawadi/muhammad_throne.html",
+    "https://answering-islam.org/authors/shamoun/rebuttals/zawadi/allah_shakhs.html",
+    "https://answering-islam.org/authors/shamoun/rebuttals/zawadi/white_debate2.html"
+   ],
+   "confirmed": false
+  },
+  {
+   "id": "d01",
+   "opponent": "Shabir Ally",
+   "faith": "Muslim (Sunni apologist, Let the Quran Speak)",
+   "date": "2000",
+   "where": "Live audience event; venue not verified",
+   "title": "The Bible vs the Quran: Which is the Word of God?",
+   "video": "wSrVjXQktDw",
+   "url": "https://www.youtube.com/watch?v=wSrVjXQktDw",
+   "topics": [
+    "Bible reliability",
+    "Quran reliability",
+    "women in paradise",
+    "sin and salvation",
+    "Paul",
+    "deity of Christ"
+   ],
+   "shamoun": "According to an automated summary of a 30-minute highlight (H7RdaMHVOYc), Shamoun said Ally misread Revelation 14:4 (the 144,000 'not defiled with women' are a specific group, not a statement that women are excluded from heaven) and urged reading scripture in context. He argued the Quran admits Muhammad's sins and that Muhammad was bewitched, defended Paul, Christ's deity and atonement, and challenged the morality of the Quran's sensual paradise. Answering Islam also hosts Shamoun's written 'Is the Quran the Word of God?' material, listed under 'Debate Material: Shabir Ally'. It applies Ally's own critical method to the Quran: codex variants (Ubayy, Ibn Mas'ud), missing verses (stoning), alleged contradictions (creation days 41:9-12 vs 7:54), and alleged scientific errors (23:14, 67:5). It is not confirmed that this material is the script of the 2000 debate.",
+   "opponent_case": "Per the same summary, Ally said the Arabic Quran is the word of God and challenged Shamoun to claim the same for the Bible. He used Revelation 14:4-5 on women, argued that many Christians misunderstand their own scriptures, set Islam's 'original forgiveness' against original sin, described Jesus' limitations as signs of his humanity, and argued that Paul diverged from Jesus.",
+   "exchanges": "The Revelation 14:4 exchange is the moment most often clipped. James White, reviewing the debate on The Dividing Line in 2005, said he 'heard Shabir make it very clear that he does not feel he has to read the Bible in context', which White called 'an admission that utterly destroys his credibility'.",
+   "reception": "Christian: James White (Alpha & Omega, Oct-Nov 2005) as above. Pro-Shamoun re-uploads use titles such as 'The Debate That Made Shabir Runs Away for Two Decades' (PRAECO VERITATIS, 2023) and 'Shabir Ally's CAREER ENDING DEBATE' (Towards Jesus, 2024, 1.58M views). The Nazam44 uploader (2010) warns that an edited audio version circulated. Muslim: uploads titled 'Sam Shamoun gets owned by Shabir Ally' (SOTECH, 2016) and 'Dr. Shabir Ally SCHOOLS Sam Shamoun on the atonement' (islamio). In a 2020 video posted by AnsweringChristians1, Ally explains why he won't debate Shamoun again; the uploader adds that 'not EVERY Christian apologist is worth the Muslim apologists time'. Shamoun's 2001 Answering Islam challenge says Ally avoided debating him on Muhammad's prophethood. No poll found.",
+   "texts": [
+    "Revelation 14:4",
+    "Quran 41:9-12",
+    "Quran 7:54",
+    "Quran 23:14",
+    "Quran 67:5",
+    "Sahih al-Bukhari 5763"
+   ],
+   "sources": [
+    "https://www.youtube.com/watch?v=wSrVjXQktDw",
+    "https://www.youtube.com/watch?v=GRDeROCvTMA",
+    "https://www.youtube.com/watch?v=H7RdaMHVOYc",
+    "https://www.youtube.com/watch?v=eUjAanqpdv8",
+    "https://www.youtube.com/watch?v=0yHp7DRNrYU",
+    "https://www.aomin.org/aoblog/?p=727",
+    "https://www.aomin.org/aoblog/the-dividing-line/today-on-the-dividing-line-sam-shamoun-vs-shabir-ally-the-bible-and-the-quran/",
+    "https://magica.com/youtube-summarizer/the-controversial-debate-shabir-ally-vs-sam-shamoun-on-religious-texts-and-teachings-H7RdaMHVOYc",
+    "https://www.answering-islam.org/Shamoun/shabir-d.htm",
+    "https://www.answering-islam.org/Responses/Shabir-Ally/challenge.htm",
+    "https://islamio.com/?p=45492"
+   ],
+   "confirmed": true
+  }
+ ]
+}

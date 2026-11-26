@@ -1121,6 +1121,7 @@
     const list = d.arguments.filter(a => debFilter === 'all' || a.direction === debFilter);
     app.innerHTML = '<h1>Debates</h1><p class="lede">The arguments apologists actually make, in every direction. Each one shows the texts it relies on, the best reply from the other side, what the texts firmly establish, and a frank verdict on the argument.</p>' +
       '<a class="vid-banner" href="#/videos"><strong>▶ Recent debates on YouTube</strong><span>The newest videos from Christian, Muslim and Jewish debaters, with the AI’s take</span></a>' +
+      '<a class="vid-banner" href="#/shamoun"><strong>Sam Shamoun’s debates</strong><span>His main arguments, every documented debate with Muslims, and how each one went</span></a>' +
       '<div class="chips">' + [['all', 'All']].concat(dirs.map(k => [k, DIR[k][0]])).map(([k, l]) => '<button class="chip" data-f="' + k + '" aria-pressed="' + (k === debFilter) + '">' + esc(l) + '</button>').join('') + '</div>' +
       (list.length ? '<div class="deb-grid">' + list.map(debTile).join('') + '</div>' : '<p class="muted">The debates are being researched and will appear here.</p>') +
       '<p class="status">Verdicts judge the argument, not the religion: whether its premises are really in the sources it cites, and whether the conclusion follows. They are drafts and have not been reviewed by scholars.</p>';
@@ -1180,6 +1181,36 @@
     app.querySelectorAll('.vid .thumb').forEach(b => b.addEventListener('click', () => {
       const v = vids.videos[b.closest('.vid').dataset.i];
       b.outerHTML = '<div class="thumb"><iframe src="https://www.youtube-nocookie.com/embed/' + encodeURIComponent(v.id) + '?autoplay=1" title="' + esc(v.title) + '" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe></div>';
+    }));
+  }
+
+  /* ---------- Sam Shamoun: his recurring arguments and documented debates (content/shamoun.json) ---------- */
+  async function shamoun() {
+    document.title = 'Sam Shamoun · Contradiction';
+    const rid = renderId, d = await getJSON('content/shamoun.json');
+    if (rid !== renderId) return;
+    const refs = list => { const t = (list || []).map(ref => ({ ref, why: '', kind: refKind(ref) })); return t.length ? groupsHtml([...new Set(t.map(x => x.kind))].map(k => [k, t.filter(x => x.kind === k)])) : ''; };
+    const para = (label, txt) => txt ? '<p><strong>' + label + '</strong> ' + rich(txt) + '</p>' : '';
+    app.innerHTML = '<p class="crumbs"><a href="#/debates">Debates</a></p><h1>Sam Shamoun</h1><p class="lede">' + rich(d.summary) + '</p>' +
+      '<div class="section-head"><h2>His main arguments</h2></div>' +
+      d.arguments.map(a => '<details class="acc"><summary>' + esc(a.title) + '</summary><div class="acc-body">' +
+        '<section class="sec v-christian"><span class="tag">Shamoun’s argument</span><p>' + rich(a.argument) + '</p></section>' + refs(a.texts) +
+        '<section class="sec v-muslim"><span class="tag">The Muslim answer</span><p>' + rich(a.response) + '</p></section>' +
+        '<p><a class="btn brand" href="#/ask/' + encodeURIComponent('Test Sam Shamoun\'s argument: ' + a.title) + '">Ask the AI to test this →</a></p></div></details>').join('') +
+      '<div class="section-head"><h2>His debates (' + d.debates.length + ')</h2></div><p class="small muted">Formal debates have no official winner and none of these held an audience vote. Under each one: what each side argued, and what supporters of both sides said afterwards.</p>' +
+      '<div class="vid-grid">' + d.debates.map((x, i) => '<article class="vid" data-i="' + i + '">' +
+        (x.video ? '<button class="thumb" aria-label="Play"><img loading="lazy" src="https://i.ytimg.com/vi/' + encodeURIComponent(x.video) + '/mqdefault.jpg" alt=""><span class="play"></span></button>' : '') +
+        '<div class="vid-body"><span class="eyebrow">' + esc(x.date || 'Date unknown') + ' · vs ' + esc(x.opponent) + '</span><strong>' + esc(x.title || x.topics.join(', ')) + '</strong>' +
+        '<span class="small muted">' + esc(x.where) + (x.confirmed ? '' : ' · <span class="chk no">not confirmed</span>') + '</span>' +
+        '<details class="plain"><summary>What happened</summary>' + para('Shamoun:', x.shamoun) + para(x.opponent + ':', x.opponent_case) + para('Key moments:', x.exchanges) + para('How it was received:', x.reception) + refs(x.texts) +
+        (x.url ? '<p class="small"><a href="' + esc(x.url) + '" target="_blank" rel="noopener">Open on YouTube ↗</a></p>' : '') + '</details></div></article>').join('') + '</div>' +
+      '<div class="section-head"><h2>Style and controversies</h2></div><p>' + rich(d.style) + '</p>' +
+      '<details class="plain"><summary>What could not be verified</summary><p class="small">' + rich(d.notes) + '</p></details>' +
+      '<p class="status">Draft research from public videos, articles and both sides’ responses. Transcripts were not available, so points come from descriptions, reviews and written material.</p>';
+    fillQuotes(app);
+    app.querySelectorAll('.vid .thumb').forEach(b => b.addEventListener('click', () => {
+      const x = d.debates[b.closest('.vid').dataset.i];
+      b.outerHTML = '<div class="thumb"><iframe src="https://www.youtube-nocookie.com/embed/' + encodeURIComponent(x.video) + '?autoplay=1" title="' + esc(x.title) + '" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe></div>';
     }));
   }
 
@@ -1287,7 +1318,7 @@
   /* ---------- routing ---------- */
   function setTr(t) { tr = t; pref[trById[t].corpus] = t; store.set('tr', t); store.set('tr-' + trById[t].corpus, t); }
   const TAB = { '': '', ask: 'ask', faiths: 'faiths', faith: 'faiths', beliefs: 'faiths', compare: 'faiths', books: 'books', read: 'books', lib: 'lib', go: 'lib',
-    topics: 'topics', t: 'topics', topic: 'topics', q: 'topics', questions: 'topics', search: 'search', debates: 'debates', d: 'debates', videos: 'debates' };
+    topics: 'topics', t: 'topics', topic: 'topics', q: 'topics', questions: 'topics', search: 'search', debates: 'debates', d: 'debates', videos: 'debates', shamoun: 'debates' };
   function route() {
     renderId++;
     const [name, ...a] = decodeURIComponent(location.hash.replace(/^#\/?/, '')).split('/');
@@ -1298,7 +1329,7 @@
     document.body.classList.toggle('chatting', name === 'ask');
     window.scrollTo(0, 0);
     const views = { '': home, questions, q: question, topic, topics, t: tguide, books, read, search: () => search(a.join('/')), about, lib: () => library(a),
-      beliefs, faiths, faith: hub, compare: compareView, go, ask: () => ask(a.join('/')), debates, d: debate, videos };
+      beliefs, faiths, faith: hub, compare: compareView, go, ask: () => ask(a.join('/')), debates, d: debate, videos, shamoun };
     Promise.resolve((views[name] || notFound)(...a)).catch(e => {
       app.innerHTML = '<h1>Something went wrong</h1><p class="muted">' + esc(e.message) + '</p>';
     });
