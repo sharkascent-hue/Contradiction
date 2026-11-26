@@ -19,12 +19,17 @@ VERDICTS = {
     "sign-of-jonah": "weak", "paul-vs-jesus-and-james": "partial", "deuteronomy-18-18-muhammad": "weak", "paraclete-as-muhammad": "fails",
     "atonement-ezekiel-18": "partial", "old-testament-ethics": "partial", "isaiah-7-14-almah": "strong", "isaiah-53-servant": "partial",
     "messiah-criteria": "strong", "deuteronomy-18-not-muhammad": "strong", "uzayr-son-of-god": "strong",
+    "shema-and-incarnation": "partial", "psalm-22-like-a-lion": "partial", "new-covenant-eternal-torah": "strong", "haman-in-egypt": "strong",
+    "samiri-golden-calf": "partial", "quran-5-32-mishnah": "strong", "daniel-9-before-70": "partial", "isaiah-9-mighty-god": "partial",
+    "zechariah-12-10-pierced": "partial", "genesis-22-only-son": "weak", "deuteronomy-33-2-paran": "weak", "torah-tahrif-jeremiah-8-8": "weak",
+    "chosen-people-conditional": "partial",
 }
 # For "partly works" verdicts: which side the texts lean to ("arguer" or "replier"); absent means evenly balanced.
 LEAN = {
     "jesus-sinless-in-islam": "replier", "quran-5-116-trinity-of-mary": "arguer", "mary-sister-of-aaron": "arguer", "satanic-verses": "replier",
     "mark-10-18-why-call-me-good": "arguer", "subordination-texts": "replier", "genealogies-of-jesus": "arguer", "crucifixion-day-and-hour": "arguer",
     "resurrection-morning-and-jairus": "arguer", "ending-of-mark": "arguer", "paul-vs-jesus-and-james": "replier", "old-testament-ethics": "arguer",
+    "shema-and-incarnation": "arguer", "daniel-9-before-70": "arguer", "chosen-people-conditional": "replier",
 }
 SIDE = {"christian": "Christian", "christianity": "Christian", "islam": "Muslim", "jewish": "Jewish", "judaism": "Jewish"}
 JESUS_SIGNS = ("Yes, there are characteristics that point toward it. The Quran gives Jesus things it gives no other prophet: he creates birds from clay and breathes life into them, "

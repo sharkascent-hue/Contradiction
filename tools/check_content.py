@@ -99,7 +99,7 @@ for name, doc in (("questions", Q), ("disputes", D), ("beliefs", B), ("guide", G
                 problems.append("%s: no such Talmud page: %s %s" % (name, t, d))
         for t, r in mishnah_re.findall(plain):
             counts["talmud"] += 1
-            if not go("sef-mishnah-" + slug(t), r):
+            if not go("sef-pirkei-avot" if slug(t) == "avot" else "sef-mishnah-" + slug(t), r):
                 problems.append("%s: no such Mishnah passage: %s %s" % (name, t, r))
         plain = hadith_re.sub(" ", plain)
         for m in ref_re.finditer(plain):

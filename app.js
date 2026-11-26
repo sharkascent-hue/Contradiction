@@ -64,6 +64,7 @@
      Kiddushin 21b              the Talmud page;  Mishnah Sanhedrin 10:1  the Mishnah passage
      Matthew 5:38–39, Quran 4:157   the verses
      Finished links are set aside while later patterns run, so nothing is linked twice. */
+  const mishnahWork = t => slugify(t) === 'avot' ? 'sef-pirkei-avot' : 'sef-mishnah-' + slugify(t);  // Avot is filed as Pirkei Avot
   function rich(s) {
     const held = [];
     const hold = h => '\u0001' + (held.push(h) - 1) + '\u0002';
@@ -71,7 +72,7 @@
       .replace(/\[\[([^|\]]+)\|([^\]]+)\]\]/g, (m, path, label) => hold('<a href="#/' + encodeURI(path) + '">' + label + '</a>'))
       .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
       .replace(hadithRe, (m, book, n) => hold('<a class="ref" href="#/go/' + HADITH[book] + '/' + n + '">' + m + '</a>'))
-      .replace(mishnahRe, (m, t, ref) => hold('<a class="ref" href="#/go/sef-mishnah-' + slugify(t) + '/' + ref + '">' + m + '</a>'))
+      .replace(mishnahRe, (m, t, ref) => hold('<a class="ref" href="#/go/' + mishnahWork(t) + '/' + ref + '">' + m + '</a>'))
       .replace(talmudRe, (m, t, daf) => hold('<a class="ref" href="#/go/sef-' + slugify(t) + '/' + daf + '">' + m + '</a>'))
       .replace(refRe, m => {
         const r = parseRef(m);
@@ -794,7 +795,7 @@
     let m = hadithOne.exec(ref);
     if (m) return '#/go/' + HADITH[m[1]] + '/' + m[2];
     m = /^Mishnah ([A-Z][a-z]+(?: [A-Z][a-z]+)?) (\d+:\d+)/.exec(ref);
-    if (m) return '#/go/sef-mishnah-' + slugify(m[1]) + '/' + m[2];
+    if (m) return '#/go/' + mishnahWork(m[1]) + '/' + m[2];
     m = talmudOne.exec(ref);
     if (m) return '#/go/sef-' + slugify(m[1]) + '/' + m[2];
     const r = parseRef(ref);
