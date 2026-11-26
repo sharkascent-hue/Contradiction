@@ -855,7 +855,7 @@
     const groups = order.map(k => [k, shown.filter(p => p.kind === k)]).filter(g => g[1].length);
     return { groups, hidden: all.length - shown.length, total: all.length };
   }
-  const passageHtml = p => '<a class="passage k-' + p.kind + '" href="' + refLink(p.ref) + '"><span class="ref">' + esc(refLabel(p.ref)) + '</span>' +
+  const passageHtml = p => '<a class="passage k-' + p.kind + '" href="' + refLink(p.ref) + '"><button class="copy-btn mini" data-copy=".passage" type="button" aria-label="Copy this passage">Copy</button><span class="ref">' + esc(refLabel(p.ref)) + '</span>' +
     (p.why ? '<span class="why">' + esc(p.why) + '</span>' : '') +
     (linkParts(p.ref) || /^Mishnah /.test(p.ref) || talmudOne.test(p.ref) ? '' : '<div class="q" data-quote-ref="' + esc(p.ref) + '"><span class="shimmer"></span><span class="shimmer short"></span></div>') + '</a>';
   const groupsHtml = groups => groups.map(([k, ps]) => '<div class="pgroup">' + esc(KIND[k]) + ' <span class="badge">' + ps.length + '</span></div>' + ps.map(passageHtml).join('')).join('');
@@ -1058,7 +1058,7 @@
         while ((i = buf.indexOf('\n')) >= 0) { const line = buf.slice(0, i).trim(); buf = buf.slice(i + 1); if (line) handle(JSON.parse(line)); }
       }
       status.textContent = '';
-      out.insertAdjacentHTML('beforeend', '<p class="ai-foot">AI guide · numbers link to the passages. Check important points against the sources.</p>');
+      out.insertAdjacentHTML('beforeend', '<p class="ai-foot"><button class="copy-btn" data-copy=".ai-text" type="button">Copy answer</button> AI guide · numbers link to the passages. Check important points against the sources.</p>');
       return text;
     } catch (e) {
       status.textContent = '';
@@ -1120,6 +1120,29 @@
   }
 
 
+  /* ---------- copy buttons: copy the text of an answer, passage or section, with its links written out ---------- */
+  const COPY = '<button class="copy-btn mini" data-copy=".sec" type="button" aria-label="Copy this section">Copy</button>';
+  const plainText = el => {
+    const c = el.cloneNode(true);
+    c.querySelectorAll('.copy-btn, .ai-foot, script').forEach(x => x.remove());
+    c.querySelectorAll('a[href]').forEach(a => { const h = a.getAttribute('href'); if (h && !/^javascript/.test(h) && !a.querySelector('.ref')) a.append(' (' + new URL(h, location.href).href + ')'); });
+    c.querySelectorAll('li').forEach(li => li.prepend('• '));
+    c.querySelectorAll('p, li, h2, h3, blockquote, .ref, .why').forEach(x => x.append('\n'));
+    const tmp = document.createElement('div'); tmp.style.cssText = 'position:fixed;left:-9999px;white-space:pre-wrap'; tmp.append(c); document.body.append(tmp);
+    const t = tmp.innerText.replace(/\n{3,}/g, '\n\n').trim(); tmp.remove(); return t;
+  };
+  const toClipboard = t => navigator.clipboard && window.isSecureContext ? navigator.clipboard.writeText(t) : new Promise(res => {
+    const ta = document.createElement('textarea'); ta.value = t; ta.style.cssText = 'position:fixed;opacity:0'; document.body.append(ta); ta.select(); document.execCommand('copy'); ta.remove(); res(); });
+  document.addEventListener('click', e => {
+    const b = e.target.closest('.copy-btn');
+    if (!b) return;
+    e.preventDefault(); e.stopPropagation();
+    const box = b.dataset.copy === '.ai-text' ? b.closest('.ai-text') || b.closest('.msg') : b.closest(b.dataset.copy) || b.parentElement;
+    let t = plainText(box);
+    if (box.matches('.passage')) t += '\n' + new URL(box.getAttribute('href'), location.href).href;
+    toClipboard(t).then(() => { const old = b.textContent; b.textContent = 'Copied ✓'; b.classList.add('done'); setTimeout(() => { b.textContent = old; b.classList.remove('done'); }, 1500); });
+  }, true);
+
   /* ---------- debates: the published arguments, both ways, tested on the texts ---------- */
   const DIR = { 'christian-vs-islam': ['Christian case against Islam', 'christian', 'muslim'], 'islam-vs-christianity': ['Muslim case against Christianity', 'muslim', 'christian'],
     'jewish-vs-christianity': ['Jewish case against Christianity', 'jewish', 'christian'], 'jewish-vs-islam': ['Jewish case against Islam', 'jewish', 'muslim'],
@@ -1158,15 +1181,15 @@
     const other = a.other_texts || [];
     app.innerHTML = '<p class="crumbs"><a href="#/debates">Debates</a> › ' + esc(dir[0]) + '</p><h1>' + esc(a.title) + '</h1>' +
       (a.verdict ? '<p><span class="verdict big v-' + a.verdict + '">Verdict: ' + VERDICT[a.verdict] + '</span></p>' : '') +
-      (a.favours ? '<p class="favours">' + (a.favours.side ? '<strong>Makes more sense: ' + esc(a.favours.side) + ' side.</strong> ' : /^Yes, there are/.test(a.favours.text) ? '' : '<strong>Evenly balanced.</strong> ') + rich(a.favours.text.replace(/^Evenly balanced: /, '')) + '</p>' : '') +
-      '<section class="sec v-' + dir[1] + '"><span class="tag">The argument</span>' + people(a.by, 'by') + '<p>' + rich(a.argument) + '</p></section>' +
+      (a.favours ? '<p class="favours">' + COPY.replace('.sec', '.favours') + (a.favours.side ? '<strong>Makes more sense: ' + esc(a.favours.side) + ' side.</strong> ' : /^Yes, there are/.test(a.favours.text) ? '' : '<strong>Evenly balanced.</strong> ') + rich(a.favours.text.replace(/^Evenly balanced: /, '')) + '</p>' : '') +
+      '<section class="sec v-' + dir[1] + '">' + COPY + '<span class="tag">The argument</span>' + people(a.by, 'by') + '<p>' + rich(a.argument) + '</p></section>' +
       (texts.length ? '<div class="section-head"><h2>The texts</h2></div>' + groupsHtml([...new Set(texts.map(t => t.kind))].map(k => [k, texts.filter(t => t.kind === k)])) +
         '<p class="small muted">Tap a passage to read it in context, with the original Arabic, Hebrew or Greek word by word.</p>' : '') +
       (other.length ? '<div class="section-head"><h2>Other sources it cites</h2></div><ul class="other-src">' + other.map(o => '<li><strong>' + esc(o.ref) + '</strong>' + (o.note ? ' <span class="muted">' + esc(o.note) + '</span>' : '') +
         ' <span class="chk ' + (o.checked ? 'ok' : 'no') + '">' + (o.checked ? 'checked' : 'not checked yet') + '</span></li>').join('') + '</ul>' : '') +
-      '<section class="sec v-' + dir[2] + '"><span class="tag">The best reply</span>' + people(a.response_by, 'resp') + '<p>' + rich(a.response) + '</p></section>' +
-      '<section class="sec v-overview"><span class="tag">What the texts establish</span><p>' + rich(a.facts) + '</p></section>' +
-      '<section class="sec v-critics"><span class="tag">Assessment</span><p>' + rich(a.assessment) + '</p></section>' +
+      '<section class="sec v-' + dir[2] + '">' + COPY + '<span class="tag">The best reply</span>' + people(a.response_by, 'resp') + '<p>' + rich(a.response) + '</p></section>' +
+      '<section class="sec v-overview">' + COPY + '<span class="tag">What the texts establish</span><p>' + rich(a.facts) + '</p></section>' +
+      '<section class="sec v-critics">' + COPY + '<span class="tag">Assessment</span><p>' + rich(a.assessment) + '</p></section>' +
       (a.sources && a.sources.length ? '<details class="plain"><summary>Sources consulted (' + a.sources.length + ')</summary><ul class="small">' + a.sources.map(u => '<li><a href="' + esc(u) + '" rel="noopener" target="_blank">' + esc(u.replace(/^https?:\/\/(www\.)?/, '').slice(0, 90)) + '</a></li>').join('') + '</ul></details>' : '') +
       '<p><a class="btn brand" href="#/ask/' + encodeURIComponent(a.title) + '">Ask the AI to test this →</a></p>' +
       '<p class="status">Draft. The verdict judges this argument only. Not yet reviewed by scholars.</p>';

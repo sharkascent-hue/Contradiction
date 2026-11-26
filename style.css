@@ -395,3 +395,11 @@ sup.cite a:hover { background: var(--chr); color: #fff; }
 .extra-list a span { font-size: .88rem; opacity: .7; }
 .extra-list a:hover { border-color: #c9c2b5; }
 .seg.jump { margin: 14px 0 4px; }
+
+/* copy buttons */
+.copy-btn { font: 600 .78rem var(--ui, inherit); padding: .3rem .7rem; border-radius: 999px; border: 1px solid var(--line, #e2dcd1); background: #fff; color: inherit; cursor: pointer; margin-right: .4rem; }
+.copy-btn:hover { background: #f4f1ea; }
+.copy-btn.done { background: #e6f6ee; color: #0b7a52; border-color: #bfe8d3; }
+.copy-btn.mini { float: right; margin: 0 0 4px 8px; padding: .2rem .6rem; font-size: .72rem; opacity: .75; }
+.copy-btn.mini:hover { opacity: 1; }
+.passage { position: relative; }
