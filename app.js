@@ -259,13 +259,21 @@
     document.title = bookName[code] + (n > 1 ? ' ' + ch : '') + ' · ' + t;
     const link = c => '#/read/' + t + '/' + code + '/' + c;
     app.innerHTML = crumbs + note + '<h1>' + head + '</h1>' +
-      '<p class="muted small">Tap a verse to compare translations.</p><div class="chapter' + (RTL[lang] ? ' rtl' : '') + '" lang="' + lang + '"' + (RTL[lang] ? ' dir="rtl"' : '') + '>' +
+      (WBW_LANG(code) ? '<div class="reader-tools"><button class="chip' + (interlinear ? '" aria-pressed="true' : '') + '" data-wbw>' + LANG_NAME[WBW_LANG(code)] + ' word by word</button><span class="muted small">Tap a verse to compare translations and see the original.</span></div>' : '<p class="muted small">Tap a verse to compare translations.</p>') + '<div class="chapter' + (RTL[lang] ? ' rtl' : '') + '" lang="' + lang + '"' + (RTL[lang] ? ' dir="rtl"' : '') + '>' +
       book[ch - 1].map((txt, i) => txt ? '<p data-v="' + (i + 1) + '"' + (i + 1 >= v1 && i + 1 <= v2 ? ' class="sel"' : '') +
         '><sup>' + (i + 1) + '</sup>' + esc(txt) + '</p>' : '').join('') + '</div>' +
       '<div class="pager">' + (ch > 1 ? '<a class="btn ghost" href="' + link(ch - 1) + '">← Chapter ' + (ch - 1) + '</a>' : '<span></span>') +
       (ch < n ? '<a class="btn ghost" href="' + link(ch + 1) + '">Chapter ' + (ch + 1) + ' →</a>' : '') + '</div>';
     bindPicker();
+    const wb = app.querySelector('[data-wbw]');
+    if (wb) wb.addEventListener('click', () => { interlinear = !interlinear; store.set('interlinear', interlinear ? '1' : '0'); route(); });
     const box = app.querySelector('.chapter');
+    if (interlinear && WBW_LANG(code)) loadWbw(code).then(wbw => {
+      if (!wbw || id !== renderId) return;
+      const lang = WBW_LANG(code), chw = wbw[corpusOf(code) === 'quran' ? 0 : ch - 1] || [];
+      box.querySelectorAll('p[data-v]').forEach(p => { const ws = chw[+p.dataset.v - 1]; if (ws && ws.length) p.insertAdjacentHTML('beforeend', wordsHtml(ws, lang)); });
+      box.insertAdjacentHTML('afterend', '<p class="small muted">' + esc(WBW_CREDIT[lang]) + '</p>');
+    });
     box.addEventListener('click', e => {
       const p = e.target.closest('p[data-v]');
       if (!p) return;
@@ -292,9 +300,32 @@
       const txt = (bk[ch - 1] || [])[v - 1];
       return '<dt>' + esc(o.name) + '</dt><dd lang="' + o.lang + '" dir="auto">' + (txt ? esc(txt) : '<span class="muted">Not at this verse number.</span>') + '</dd>';
     }));
-    dl.innerHTML = '<strong class="small">' + esc(bookName[code]) + ' ' + (trById[t].chapters[code] > 1 ? ch + ':' : 'verse ') + v + ' in other editions</strong>' + rows.join('') +
+    const wbw = await loadWbw(code), lang = WBW_LANG(code);
+    const ow = wbw && (wbw[corpusOf(code) === 'quran' ? 0 : ch - 1] || [])[v - 1];
+    const orig = ow && ow.length && !interlinear ? '<div class="orig-block"><strong class="small">Original ' + LANG_NAME[lang] + ', word by word</strong>' + wordsHtml(ow, lang) + trNote(ow) +
+      '<p class="small muted">' + esc(WBW_CREDIT[lang]) + '. Tap and hold a word for its dictionary form.</p></div>' : '';
+    dl.innerHTML = orig + '<strong class="small">' + esc(bookName[code]) + ' ' + (trById[t].chapters[code] > 1 ? ch + ':' : 'verse ') + v + ' in other editions</strong>' + rows.join('') +
       (corpusOf(code) === 'bible' ? '<p class="muted small">Chapter and verse numbers sometimes differ between traditions, most of all in the Psalms.</p>' : '');
   }
+
+
+  /* ---------- original languages, word by word (wbw/) ---------- */
+  const WBW_LANG = code => bookGroup[code] === 'quran' ? 'ar' : bookGroup[code] === 'nt' ? 'el' : bookGroup[code] === 'ot' ? 'he' : null;
+  const LANG_NAME = { he: 'Hebrew', el: 'Greek', ar: 'Arabic' };
+  const WBW_CREDIT = { he: 'Hebrew: Leningrad Codex, word meanings from STEPBible (Tyndale House, CC BY 4.0)', el: 'Greek: NA28 with Textus Receptus variants, word meanings from STEPBible (Tyndale House, CC BY 4.0)', ar: 'Arabic: Uthmani text, word meanings from Quran.com' };
+  const wbwCache = new Map();
+  const loadWbw = code => {
+    const l = WBW_LANG(code);
+    if (!l) return Promise.resolve(null);
+    const k = l + '/' + code;
+    if (!wbwCache.has(k)) wbwCache.set(k, getJSON('wbw/' + k + '.json').catch(() => null));
+    return wbwCache.get(k);
+  };
+  const wordsHtml = (words, lang) => '<div class="wbw" dir="' + (lang === 'el' ? 'ltr' : 'rtl') + '">' + words.map(w =>
+    '<span class="w' + (w[5] ? ' tr' : '') + '" title="' + esc((w[3] ? w[3] + ' · ' : '') + (w[4] || '') + (w[5] ? ' · only in later manuscripts (Textus Receptus / KJV)' : '')) + '">' +
+    '<b lang="' + lang + '">' + esc(w[0]) + '</b><i>' + esc(w[1]) + '</i><em>' + esc(w[2]) + '</em></span>').join('') + '</div>';
+  const trNote = words => words.some(w => w[5]) ? '<p class="small muted">Words with a dotted border are found only in later manuscripts (the Textus Receptus behind the King James Version), not in the oldest Greek copies.</p>' : '';
+  let interlinear = store.get('interlinear') === '1';
 
   /* ---------- search across everything ---------- */
   let smode = 'all', SM, buckets = new Map();

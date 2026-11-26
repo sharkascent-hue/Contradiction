@@ -22,10 +22,16 @@ const MAX_TURNS = 12, MAX_MSG = 6000, MAX_QUESTION = 1500, MAX_CONTEXT = 24, MAX
 const SYSTEM = `You are the guide on Contradiction, a website that explains Christianity, Islam and Judaism side by side. The site holds the scriptures (the Bible in several editions, the Quran, the Hebrew Bible), the Sunni and Shia hadith collections, Quran commentaries, the Mishnah and Talmud, the creeds and confessions of the churches, the Church Fathers and much more. Readers come from all three faiths and from none, and many arrive with a real question about what their own faith or someone else's teaches.
 
 How to answer:
-- Give a direct answer in the first sentence or two, then explain. Write like a knowledgeable, warm teacher talking to one person: clear, plain words, short paragraphs. Use a short bulleted list only when it truly helps, and **bold** sparingly, for example the name of a tradition at the start of its paragraph. No headings unless the answer is long.
+- Be direct and factual. Answer the actual question in the first sentence or two, then show the evidence. No diplomatic filler, no "it's complicated" without saying exactly what is complicated, no softening of what a text plainly says. Plain words, short paragraphs; a short bulleted list only when it truly helps; **bold** sparingly. No headings unless the answer is long.
 - Ground what you say in the texts. Each request comes with numbered passages the site found; you can look up more with your tools. Cite a passage by its number in square brackets, like [3], right after the sentence it supports. Quote short phrases from scripture when the exact words matter. Never invent a reference, a quotation or a hadith number: if you are not sure a passage says something, look it up first, and if you cannot find it, say so.
 - When the reader asks where something is in the texts ("where does the Bible show..."), use get_passage and search_texts to find and check the passages before you answer, and list them with what each one says.
-- Be fair. Explain each tradition in terms its own followers would accept before giving the objections of others. Where traditions disagree, set the positions side by side and do not declare a winner. Note real differences inside a tradition (Orthodox, Catholic and Protestant; Sunni and Shia; Orthodox, Conservative and Reform Judaism) when they matter to the question. If the reader says which faith they belong to, speak to them as such: explain the other view on its own terms and show where their own tradition answers it, respectfully.
+- When the reader puts forward or asks about an argument (for example "if Jesus returns to judge, isn't he God even in Islam?"), test it like a careful analyst:
+  1. State exactly what the relevant texts say, quoting the key words. When the meaning turns on a word, check the original with get_original and give the Arabic, Hebrew or Greek word and its meaning (for example the hadith calls Jesus a ḥakam, a just ruler or arbiter).
+  2. Check each premise against that religion's own sources: is it actually taught there, or is it an outside reading?
+  3. Give the strongest reply from the other side, and name well-known proponents where relevant (for example Sam Shamoun, David Wood, James White on the Christian side; Shabir Ally, Mohammed Hijab, Ahmed Deedat on the Muslim side).
+  4. End with a plain verdict on the argument itself: strong, partly works, weak, or fails, and the reason in one or two sentences.
+- Apply exactly the same standard to arguments against Christianity, against Islam and against Judaism. You may say plainly that an argument works, that a claim is factually wrong, or that a text contradicts another; do not soften this for any side. What you do not do is declare that a religion as a whole is true or false: that is a matter of faith, and the reader decides.
+- Explain each tradition accurately, as its own scholars teach it, before giving objections. Note real differences inside a tradition (Orthodox, Catholic and Protestant; Sunni and Shia; Orthodox, Conservative and Reform Judaism) when they matter. If the reader says which faith they belong to, keep the same honesty, and show where their own tradition answers the point.
 - Be honest about the hard parts: disputed verses, textual variants, passages that trouble believers, and what historians say. Distinguish what a text says from how a tradition interprets it.
 - You are a guide to what the traditions teach, not a religious authority. Do not issue rulings (fatwas, halakhic decisions) or tell people what to believe. For a personal religious decision, explain the positions and suggest speaking with a priest, imam or rabbi.
 - Keep answers focused: usually 150 to 400 words. Go longer only when the reader asks for depth or a full list of passages.
@@ -47,6 +53,9 @@ const TOOLS = [
       query: { type: "string", description: "Two to five distinctive words, e.g. \"trinity three persons\" or \"Jesus not crucified\"" },
       faith: { type: "string", enum: ["any", "christian", "islam", "judaism", "bible", "quran"], description: "Limit to one tradition's texts, or to the Bible or Quran. Default any." } },
       required: ["query"] } },
+  { name: "get_original", eager_input_streaming: true,
+    description: "Fetch the original-language text of a Bible or Quran passage word by word: Hebrew (Old Testament, Leningrad Codex), Greek (New Testament, NA28 critical text, with words found only in the later Textus Receptus marked [TR only]) or Arabic (Quran, Uthmani text). Each word comes with its transliteration and English meaning. Use it whenever an argument turns on what a word actually means. Up to 12 verses.",
+    input_schema: { type: "object", properties: { ref: { type: "string", description: "e.g. \"Isaiah 7:14\", \"John 1:1\", \"1 John 5:7\", \"Quran 4:157\"" } }, required: ["ref"] } },
   { name: "find_topic", eager_input_streaming: true,
     description: "Look up the site's topic guide, which summarises what Christians, Muslims and Jews believe on a subject and lists the key passages for each. Use it to orient yourself on a subject before searching.",
     input_schema: { type: "object", properties: { topic: { type: "string", description: "The subject, e.g. \"trinity\", \"original sin\", \"food laws\"" } }, required: ["topic"] } },
@@ -85,6 +94,32 @@ async function bookIndex(site) {
     m._has = Object.fromEntries(m.translations.map(t => [t.id, new Set(t.books.map(x => x[0]))]));
   }
   return m;
+}
+
+async function getOriginal(site, ref) {
+  const r = String(ref || "").trim().replace(/[–—]/g, "-");
+  const idx = await bookIndex(site);
+  let m = /^(?:quran|qur'an|koran|surah?)\s*(\d+)(?::(\d+)(?:-(\d+))?)?$/i.exec(r), code, ch, v1, v2, lang;
+  if (m) { code = "Q" + m[1]; ch = 1; v1 = +m[2] || 1; v2 = +(m[3] || m[2]) || v1; lang = "ar"; }
+  else {
+    m = /^(.+?)\s+(\d+)(?::(\d+)(?:-(\d+))?)?$/.exec(r);
+    if (!m) return null;
+    code = idx._alias[m[1].toLowerCase().replace(/\s+/g, " ")];
+    if (!code) return null;
+    ch = +m[2]; v1 = +m[3] || 1; v2 = +(m[4] || m[3]) || v1;
+    const g = idx.books.find(b => b.code === code)?.group;
+    lang = g === "nt" ? "el" : g === "ot" ? "he" : null;
+    if (!lang) return null;
+  }
+  const book = await site.get("wbw/" + lang + "/" + code + ".json").catch(() => null);
+  if (!book) return null;
+  const verses = (book[ch - 1] || []).slice(v1 - 1, Math.min(v2, v1 + 11));
+  if (!verses.length) return null;
+  const name = { ar: "Arabic", he: "Hebrew", el: "Greek" }[lang];
+  const label = (code.startsWith("Q") ? "Quran " + code.slice(1) : idx._name[code] + " " + ch) + ":" + v1 + (verses.length > 1 ? "-" + (v1 + verses.length - 1) : "");
+  const text = verses.map((ws, i) => "(" + (v1 + i) + ") " + ws.map(w => w[0]).join(" ") + "\n" +
+    ws.map(w => w[0] + " (" + w[1] + ") = " + w[2] + (w[3] ? " [" + w[3] + "]" : "") + (w[5] ? " [TR only]" : "")).join("; ")).join("\n");
+  return { source: label + " in the original " + name, href: "#/read/" + (lang === "ar" ? "HAFS" : lang === "he" ? "WLC" : "BYZ") + "/" + code + "/" + ch + "/" + v1, text: clip(text, 4000) };
 }
 
 async function getPassage(site, ref) {
@@ -248,6 +283,13 @@ export async function chatTurn({ body, siteUrl, emit, client = new Anthropic() }
       if (!p) return { error: "Could not find \"" + input.ref + "\". Check the reference format." };
       return "[" + cite(p) + "] " + p.source + "\n" + p.text;
     }
+    if (name === "get_original") {
+      if (typeof input?.ref !== "string" || !input.ref.trim()) return { error: "Give a ref." };
+      emit({ t: "status", d: "Reading the original of " + input.ref.slice(0, 60) });
+      const p = await getOriginal(site, input.ref).catch(() => null);
+      if (!p) return { error: "No original-language text for \"" + input.ref + "\". Bible (Old and New Testament) and Quran references only." };
+      return "[" + cite(p) + "] " + p.source + "\n" + p.text;
+    }
     if (name === "search_texts") {
       if (typeof input?.query !== "string" || !input.query.trim()) return { error: "Give a query." };
       emit({ t: "status", d: "Searching the texts for “" + input.query.slice(0, 60) + "”" });
@@ -311,4 +353,4 @@ export function limited(ip, perMinute = 6) {
   return hits.length > perMinute;
 }
 
-export const _test = { getPassage, searchTexts, findTopic, makeSite };
+export const _test = { getPassage, getOriginal, searchTexts, findTopic, makeSite };

@@ -346,3 +346,15 @@ sup.cite a:hover { background: var(--chr); color: #fff; }
 .ai-foot { font-size: .8rem; color: var(--muted); margin-top: 12px !important; }
 .acc.sources { margin-top: 14px; box-shadow: none; }
 .acc.sources > .body { padding: 0 16px 14px; }
+
+/* original languages, word by word */
+.reader-tools { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin: 8px 0; }
+.wbw { display: flex; flex-wrap: wrap; gap: 6px; margin: 8px 0 10px; }
+.w { display: inline-flex; flex-direction: column; align-items: center; text-align: center; padding: 6px 8px; border-radius: 10px; background: var(--soft); border: 1px solid var(--line); min-width: 54px; cursor: help; }
+.w b { font: 500 1.35rem/1.5 "SBL Hebrew", "Ezra SIL", "Noto Naskh Arabic", "Amiri", "Scheherazade New", "Times New Roman", serif; font-weight: 400; }
+.w b:lang(el) { font-family: "Gentium Plus", "Times New Roman", serif; font-size: 1.2rem; }
+.w i { font: italic .72rem var(--sans); color: var(--muted); direction: ltr; }
+.w em { font: 600 .78rem/1.25 var(--sans); font-style: normal; color: var(--ink-2); direction: ltr; max-width: 9em; }
+.w.tr { border-style: dashed; border-color: #c9a227; background: #fffaf0; }
+.chapter p .wbw { margin-top: 6px; }
+.orig-block { margin-bottom: 10px; padding-bottom: 6px; border-bottom: 1px solid var(--line); }
