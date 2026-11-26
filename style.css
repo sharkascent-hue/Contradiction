@@ -449,3 +449,4 @@ p .share-btn { float: none; vertical-align: middle; margin: 0 0 0 6px; }
 .f-jewish .tl-body { border-left-color: var(--jud, #7c3aed); } .f-christian .tl-body { border-left-color: var(--chr, #2563eb); } .f-muslim .tl-body { border-left-color: var(--isl, #0f9d6e); }
 @media (max-width: 560px) { .tl-row { grid-template-columns: 1fr; gap: 2px; } .tl-year { text-align: left; padding-top: 0; } }
 .trainer-head .seg button[disabled] { opacity: .35; }
+.ai-text li.sub { margin-left: 1.4em; list-style: circle; }

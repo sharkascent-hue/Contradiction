@@ -1027,15 +1027,25 @@
       const c = cites[+n];
       return c ? '<a href="' + esc(c.href || '#') + '" title="' + esc(c.source) + '">' + esc(n) + '</a>' : esc(n);
     }).join(',') + '</sup>');
+    const fmt = x => cite(rich(x)).replace(/(^|[\s(“"])\*([^*\n<]{1,160})\*(?=[\s.,;:!?)”"]|$)/g, '$1<em>$2</em>');
+    const isLi = l => /^\s*([-*•]|\d+\.)\s+/.test(l);
     return text.trim().split(/\n\s*\n/).map(block => {
-      const lines = block.split('\n');
-      if (lines.every(l => /^\s*([-*•]|\d+\.)\s+/.test(l))) {
-        const tag = /^\s*\d+\./.test(lines[0]) ? 'ol' : 'ul';
-        return '<' + tag + '>' + lines.map(l => '<li>' + cite(rich(l.replace(/^\s*([-*•]|\d+\.)\s+/, ''))) + '</li>').join('') + '</' + tag + '>';
-      }
       const h = /^#{1,4}\s+(.*)$/.exec(block);
-      if (h) return '<h4>' + cite(rich(h[1])) + '</h4>';
-      return '<p>' + cite(rich(lines.join(' '))) + '</p>';
+      if (h) return '<h4>' + fmt(h[1]) + '</h4>';
+      // a block can mix a lead-in line with bullets, and bullets can be indented one level
+      let out = '', para = [], list = null;
+      const endP = () => { if (para.length) { out += '<p>' + fmt(para.join(' ')) + '</p>'; para = []; } };
+      const endL = () => { if (list) { out += '<' + list.tag + '>' + list.items.join('') + '</' + list.tag + '>'; list = null; } };
+      for (const l of block.split('\n')) {
+        if (isLi(l)) {
+          endP();
+          if (!list) list = { tag: /^\s*\d+\./.test(l) ? 'ol' : 'ul', items: [] };
+          list.items.push('<li' + (/^\s{2,}/.test(l) ? ' class="sub"' : '') + '>' + fmt(l.replace(/^\s*([-*•]|\d+\.)\s+/, '')) + '</li>');
+        } else if (list && /^\s{2,}\S/.test(l)) list.items[list.items.length - 1] = list.items[list.items.length - 1].replace(/<\/li>$/, ' ' + fmt(l.trim()) + '</li>');
+        else { endL(); para.push(l); }
+      }
+      endP(); endL();
+      return out;
     }).join('');
   }
 
