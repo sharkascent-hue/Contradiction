@@ -126,7 +126,7 @@
       fs.map(f => '<i class="dot ' + f + '" title="' + FAITH_ADJ[f] + ' view"></i>').join('') + '</span></a>';
   };
   const readGrid = () => '<div class="read-grid">' + [
-    ['#/books/WEB', 'The Bible', '9 editions, incl. Hebrew and Greek'], ['#/books/PICK', 'The Quran', '6 translations, 8 Arabic readings'],
+    ['#/books/KJV/protestant', 'The Bible', 'Protestant, Catholic and Orthodox'], ['#/books/PICK/sunni', 'The Quran', 'Sunni and Shia, with hadith'], ['#/books/JPS/jewish', 'The Torah', 'Hebrew Bible, Mishnah, Talmud'],
     ['#/lib/c/' + encodeURIComponent('Sunni hadith'), 'Hadith', 'Sunni and Shia collections'], ['#/lib/c/' + encodeURIComponent('Babylonian Talmud'), 'Talmud', 'Mishnah and Gemara'],
     ['#/lib/c/' + encodeURIComponent('Quran commentary (tafsir)'), 'Quran commentary', 'Classic tafsir'], ['#/lib/c/' + encodeURIComponent('Church Fathers: Ante-Nicene (to AD 325)'), 'Church Fathers', 'The early Church'],
     ['#/lib/c/' + encodeURIComponent('Creeds, confessions and catechisms'), 'Creeds', 'What the churches confess'], ['#/search', 'Search everything', 'Every word, every text']
@@ -229,47 +229,60 @@
   const OT39 = 'GEN EXO LEV NUM DEU JOS JDG RUT 1SA 2SA 1KI 2KI 1CH 2CH EZR NEH EST JOB PSA PRO ECC SOL ISA JER LAM EZE DAN HOS JOE AMO OBA JON MIC NAH HAB ZEP HAG ZEC MAL'.split(' ');
   const TWELVE = 'HOS JOE AMO OBA JON MIC NAH HAB ZEP HAG ZEC MAL'.split(' ');
   const CANONS = {
-    protestant: { name: 'Protestant', eds: ['KJV', 'WEB'], note: 'The 66 books. Protestants keep the Old Testament of the Hebrew Bible; the extra Greek books are called the Apocrypha, printed in some Bibles (like the 1611 King James) but not counted as Scripture.',
+    protestant: { name: 'Protestant', eds: ['KJV', 'WEB', 'WLC', 'TR', 'BYZ'], note: 'The 66 books. Protestants keep the Old Testament of the Hebrew Bible; the extra Greek books are called the Apocrypha, printed in some Bibles (like the 1611 King James) but not counted as Scripture.',
       parts: [['Old Testament · 39 books', OT39]] },
-    catholic: { name: 'Catholic', eds: ['DRC', 'VUL', 'WEB'], note: 'The 73 books defined by the Council of Trent (1546). Seven Old Testament books (the deuterocanon) and the Greek parts of Esther and Daniel are Scripture for Catholics.',
+    catholic: { name: 'Catholic', eds: ['DRC', 'WEB', 'VUL', 'WLC', 'BYZ'], note: 'The 73 books defined by the Council of Trent (1546). Seven Old Testament books (the deuterocanon) and the Greek parts of Esther and Daniel are Scripture for Catholics.',
       parts: [['Old Testament · 46 books', 'GEN EXO LEV NUM DEU JOS JDG RUT 1SA 2SA 1KI 2KI 1CH 2CH EZR NEH TOB JDT EST 1MA 2MA JOB PSA PRO ECC SOL WIS SIR ISA JER LAM BAR EZE DAN'.split(' ').concat(TWELVE)],
         ['Greek parts of Esther and Daniel', 'ESG DNG S3Y SUS BEL'.split(' ')]] },
     orthodox: { name: 'Orthodox', eds: ['WEB', 'LXX', 'BYZ'], note: 'The Orthodox Old Testament follows the Greek Septuagint: the Catholic books plus 1 Esdras, 3 Maccabees, the Prayer of Manasseh and Psalm 151, with 4 Maccabees as an appendix. Its order puts the twelve minor prophets before Isaiah.',
       parts: [['Old Testament (Septuagint) · 49 books', 'GEN EXO LEV NUM DEU JOS JDG RUT 1SA 2SA 1KI 2KI 1CH 2CH PRM 1ES EZR NEH TOB JDT EST 1MA 2MA 3MA PSA PSX JOB PRO ECC SOL WIS SIR'.split(' ').concat(TWELVE, 'ISA JER BAR LAM EPJ EZE DAN'.split(' '))],
         ['Appendix and Greek additions', '4MA ESG DNG S3Y SUS BEL'.split(' ')]] },
+  };
+  const TORAH = {
     jewish: { name: 'Jewish', eds: ['JPS', 'WLC'], jewish: true, note: 'The Tanakh: the same books as the Protestant Old Testament, counted as 24 and arranged in three parts, Torah (Teaching), Nevi’im (Prophets) and Ketuvim (Writings). Jews do not accept the New Testament. The Oral Torah (Mishnah and Talmud) is in the Library.',
       parts: [['Torah · the five books of Moses', 'GEN EXO LEV NUM DEU'.split(' ')], ['Nevi’im · the Prophets', 'JOS JDG 1SA 2SA 1KI 2KI ISA JER EZE'.split(' ').concat(TWELVE)],
         ['Ketuvim · the Writings', 'PSA PRO JOB SOL RUT LAM ECC EST DAN EZR NEH 1CH 2CH'.split(' ')]] },
   };
+  const ORAL = ['Mishnah', 'Babylonian Talmud', 'Jerusalem Talmud', 'Tosefta', 'Midrash', 'Targum (Aramaic Bible translations)', 'Mishneh Torah (Maimonides)', 'Shulchan Arukh', 'Commentaries on the Hebrew Bible'];
+  // which tradition the edition picker offers: the one last chosen on the Read page
+  const readScope = corpus => corpus === 'quran' ? ISLAM[store.get('branch')] || ISLAM.sunni : store.get('torah') === '1' ? TORAH.jewish : CANONS[store.get('canon')] || CANONS.protestant;
   const NT27 = 'MAT MAR LUK JOH ACT ROM 1CO 2CO GAL EPH PHI COL 1TH 2TH 1TI 2TI TIT PHM HEB JAM 1PE 2PE 1JO 2JO 3JO JUD REV'.split(' ');
   const ISLAM = {
-    sunni: { name: 'Sunni', eds: ['PICK', 'YALI', 'HAFS'], note: 'About 85–90% of Muslims. The Quran is the same text for Sunni and Shia Muslims. Sunnis rely on the six hadith books (Bukhari, Muslim, Abu Dawud, Tirmidhi, Nasa’i, Ibn Majah) and the Muwatta of Malik.',
+    sunni: { name: 'Sunni', eds: ['PICK', 'YALI', 'HAFS', 'WARSH', 'QALUN', 'DURI', 'SHUBA', 'BAZZI', 'QUNBUL', 'SUSI', 'RODW', 'PALM', 'SALE'], hadith: 'Sunni hadith', note: 'About 85–90% of Muslims. The Quran is the same text for Sunni and Shia Muslims. Sunnis rely on the six hadith books (Bukhari, Muslim, Abu Dawud, Tirmidhi, Nasa’i, Ibn Majah) and the Muwatta of Malik.',
       links: [['lib/c/Sunni hadith', 'Sunni hadith collections'], ['lib/c/Quran commentary (tafsir)', 'Quran commentaries (tafsir)']] },
-    shia: { name: 'Shia', eds: ['SHAK', 'HAFS'], note: 'About 10–15% of Muslims, mostly Twelver Shia (Iran, Iraq, Lebanon, Bahrain). Same Quran; their hadith come through the Prophet’s family and the twelve Imams, in books such as al-Kafi by al-Kulayni.',
+    shia: { name: 'Shia', eds: ['SHAK', 'HAFS', 'RODW', 'PALM', 'SALE'], hadith: 'Shia hadith and teachings', note: 'About 10–15% of Muslims, mostly Twelver Shia (Iran, Iraq, Lebanon, Bahrain). Same Quran; their hadith come through the Prophet’s family and the twelve Imams, in books such as al-Kafi by al-Kulayni.',
       links: [['lib/c/Shia hadith and teachings', 'Shia hadith and teachings (al-Kafi and more)'], ['lib/c/Quran commentary (tafsir)', 'Quran commentaries (tafsir)']] },
   };
-  function books(t, view) {
+  async function books(t, view) {
     if (!trById[t]) t = tr;
-    const quran = trById[t].corpus === 'quran', set = quran ? ISLAM : CANONS;
-    if (!set[view]) view = store.get(quran ? 'branch' : 'canon') || Object.keys(set).find(k => set[k].eds.includes(t)) || Object.keys(set)[0];
-    if (!set[view]) view = Object.keys(set)[0];
-    store.set(quran ? 'branch' : 'canon', view);
+    await loadLib();
+    const quran = trById[t].corpus === 'quran', torah = !quran && view === 'jewish';
+    const set = quran ? ISLAM : torah ? TORAH : CANONS;
+    if (!set[view]) view = store.get(quran ? 'branch' : 'canon');
+    if (!set[view]) view = Object.keys(set).find(k => set[k].eds.includes(t)) || Object.keys(set)[0];
+    if (!quran) { store.set('torah', torah ? '1' : '0'); if (!torah) store.set('canon', view); } else store.set('branch', view);
     const c = set[view];
+    if (!c.eds.includes(t)) t = c.eds[0];
     setTr(t);
-    document.title = (quran ? 'The Quran' : c.name + ' Bible') + ' · Contradiction';
-    let h = '<p class="crumbs">Read</p><div class="seg even"><a href="#/books/' + pref.bible + '"' + (!quran ? ' class="on"' : '') + '>Bible</a><a href="#/books/' + pref.quran + '"' + (quran ? ' class="on"' : '') + '>Quran</a><a href="#/lib">Library</a></div>' +
-      '<h1>' + (quran ? 'The Quran' : c.jewish ? 'The Hebrew Bible' : 'The Bible') + '</h1>' +
-      '<p class="small muted" style="margin:0 0 6px">' + (quran ? 'Read as:' : 'Whose Bible?') + '</p><div class="seg even canon">' + Object.entries(set).map(([k, v]) => '<a href="#/books/' + (v.eds.includes(t) ? t : v.eds[0]) + '/' + k + '"' + (k === view ? ' class="on"' : '') + '>' + v.name + '</a>').join('') + '</div>' +
-      '<p class="lede" style="font-size:1rem">' + esc(c.note) + '</p>' +
-      '<div class="reader-bar">' + pickerBtn(t) + '</div><p class="muted small">' + esc(trById[t].tradition) + '. ' + esc(trById[t].licence) + '</p>';
+    const bibleT = CANONS[store.get('canon')] && CANONS[store.get('canon')].eds.includes(pref.bible) ? pref.bible : (CANONS[store.get('canon')] || CANONS.protestant).eds[0];
+    document.title = (quran ? 'The Quran' : torah ? 'The Torah' : c.name + ' Bible') + ' · Contradiction';
+    let h = '<p class="crumbs">Read</p><div class="seg even">' +
+      '<a href="#/books/' + bibleT + '/' + (store.get('canon') || 'protestant') + '"' + (!quran && !torah ? ' class="on"' : '') + '>Bible</a>' +
+      '<a href="#/books/' + pref.quran + '/' + (store.get('branch') || 'sunni') + '"' + (quran ? ' class="on"' : '') + '>Quran</a>' +
+      '<a href="#/books/' + (torah ? t : 'JPS') + '/jewish"' + (torah ? ' class="on"' : '') + '>Torah</a></div>' +
+      '<h1>' + (quran ? 'The Quran' : torah ? 'The Torah and Hebrew Bible' : 'The Bible') + '</h1>';
+    if (!torah) h += '<div class="seg even canon">' + Object.entries(set).map(([k, v]) => '<a href="#/books/' + (v.eds.includes(t) ? t : v.eds[0]) + '/' + k + '"' + (k === view ? ' class="on"' : '') + '>' + v.name + '</a>').join('') + '</div>';
+    h += '<p class="lede" style="font-size:1rem">' + esc(c.note) + '</p><div class="reader-bar">' + pickerBtn(t) + '</div><p class="muted small">' + esc(trById[t].tradition) + '. ' + esc(trById[t].licence) + '</p>';
     const li = code => '<li><a href="#/read/' + t + '/' + code + '">' + esc(bookName[code]) + (has(t, code) ? '' : ' <span class="muted small">·&nbsp;' + esc(trById[trFor(code)].id) + '</span>') + '</a></li>';
+    const works = col => L.filter(w => w.c === col).map(w => '<a href="#/lib/' + w.id + '">' + esc(w.t) + '</a>').join('');
     if (quran) {
-      h += '<div class="topic-grid" style="margin:14px 0 4px">' + c.links.map(([href, label]) => '<a href="#/' + encodeURI(href) + '">' + esc(label) + ' →</a>').join('') + '</div>';
       h += '<h2>The 114 surahs</h2><ul class="booklist">' + trById[t].books.map(b => '<li><a href="#/read/' + t + '/' + b[0] + '">' + esc(bookName[b[0]]) + '</a></li>').join('') + '</ul>';
+      h += '<h2>' + (view === 'shia' ? 'Shia hadith' : 'Sunni hadith') + '</h2><div class="topic-grid">' + works(c.hadith) + '</div>' +
+        '<h2>Quran commentary (tafsir)</h2><div class="topic-grid">' + works('Quran commentary (tafsir)') + '</div>';
     } else {
       for (const [title, list] of c.parts) h += '<h2>' + title + '</h2><ul class="booklist">' + list.filter(x => bookName[x]).map(li).join('') + '</ul>';
-      if (!c.jewish) h += '<h2>New Testament · 27 books</h2><ul class="booklist">' + NT27.map(li).join('') + '</ul>';
-      else h += '<div class="topic-grid" style="margin-top:14px"><a href="#/lib/c/Mishnah">Mishnah →</a><a href="#/lib/c/Babylonian Talmud">Babylonian Talmud →</a><a href="#/lib/c/Jerusalem Talmud">Jerusalem Talmud →</a><a href="#/lib/c/Mishneh Torah (Maimonides)">Mishneh Torah →</a></div>';
+      if (torah) h += '<h2>The Oral Torah and rabbinic writings</h2><div class="topic-grid">' + ORAL.map(col => '<a href="#/lib/c/' + encodeURIComponent(col) + '">' + esc(col) + ' →</a>').join('') + '</div>';
+      else h += '<h2>New Testament · 27 books</h2><ul class="booklist">' + NT27.map(li).join('') + '</ul>';
       h += '<p class="small muted">Books marked with an edition name are not in the ' + esc(trById[t].name) + ' and open in that edition instead.</p>';
     }
     app.innerHTML = h;
@@ -1265,10 +1278,11 @@
   const pickerBtn = t => '<button class="picker" data-picker>' + esc(trById[t].name.replace(/^Quran: /, 'Quran · ')) + '</button>';
   function bindPicker() { const b = app.querySelector('[data-picker]'); if (b) b.addEventListener('click', openSheet); }
   function openSheet() {
-    const sets = [['Bible in English', t => t.corpus === 'bible' && t.lang === 'en'], ['Bible in the original languages', t => t.corpus === 'bible' && t.lang !== 'en'],
-      ['Quran in English', t => t.corpus === 'quran' && t.lang === 'en'], ['Quran in Arabic', t => t.corpus === 'quran' && t.lang === 'ar']];
+    const sc = readScope(trById[tr].corpus), ok = t => sc.eds.includes(t.id), q = trById[tr].corpus === 'quran';
+    const sets = q ? [['In English, by Muslim translators', t => ok(t) && t.lang === 'en' && !['RODW', 'PALM', 'SALE'].includes(t.id)], ['In Arabic', t => ok(t) && t.lang === 'ar'], ['By non-Muslim translators', t => ok(t) && ['RODW', 'PALM', 'SALE'].includes(t.id)]]
+      : [[sc.name + (sc.jewish ? ' Bible in English' : ' Bible in English'), t => ok(t) && t.lang === 'en'], ['Original languages', t => ok(t) && t.lang !== 'en']];
     sheet.innerHTML = '<div class="panel" role="dialog" aria-label="Choose an edition"><div class="grab"></div><strong style="font:700 1.2rem var(--display)">Choose an edition</strong>' +
-      sets.map(([label, f]) => '<h3>' + label + '</h3>' + M.translations.filter(f).map(t => '<button class="opt" data-tr="' + t.id + '"' + (t.id === tr ? ' aria-current="true"' : '') +
+      sets.filter(([, f]) => M.translations.some(f)).map(([label, f]) => '<h3>' + label + '</h3>' + M.translations.filter(f).map(t => '<button class="opt" data-tr="' + t.id + '"' + (t.id === tr ? ' aria-current="true"' : '') +
         '><div>' + esc(t.name.replace(/^Quran: /, '')) + '<span>' + esc(t.tradition) + '</span></div></button>').join('')).join('') + '</div>';
     sheet.hidden = false;
     sheet.onclick = e => {
@@ -1282,7 +1296,7 @@
     const m = location.hash.match(/^#\/(read|books)\/[A-Z]+(.*)$/);
     const same = trById[id].corpus === trById[tr].corpus;
     setTr(id);
-    if (m && (same || m[1] === 'books')) location.hash = '#/' + m[1] + '/' + tr + (m[1] === 'books' ? '' : m[2]);
+    if (m && (same || m[1] === 'books')) location.hash = '#/' + m[1] + '/' + tr + m[2];
     else if (m) location.hash = '#/books/' + tr; else route();
   }
 
