@@ -45,7 +45,7 @@ const PERSONA = {
 
 const TOOLS = [
   { name: "get_passage", eager_input_streaming: true,
-    description: "Fetch the exact text of a passage from the site's library. Accepts a Bible reference (\"John 1:1-3\", \"Genesis 22:2\", \"1 Corinthians 15:3-8\"), a Quran reference (\"Quran 4:157\" or \"Quran 112:1-4\"), or a Sunni hadith by collection and number (\"Sahih al-Bukhari 3448\", \"Sahih Muslim 1422\", \"Sunan Abi Dawud 4290\", \"Jami' at-Tirmidhi 3713\", \"Sunan an-Nasa'i 1\", \"Sunan Ibn Majah 1\", \"Muwatta Malik 1\"). Use it to check a passage before quoting or citing it. Returns the text with a citation number to use as [n].",
+    description: "Fetch the exact text of a passage from the site's library. Accepts a Bible reference (\"John 1:1-3\", \"Genesis 22:2\", \"1 Corinthians 15:3-8\"), a Quran reference (\"Quran 4:157\" or \"Quran 112:1-4\"), or a Sunni hadith by collection and number, which comes with its Arabic text (\"Sahih al-Bukhari 3448\", \"Sahih Muslim 1422\", \"Sunan Abi Dawud 4290\", \"Jami' at-Tirmidhi 3713\", \"Sunan an-Nasa'i 1\", \"Sunan Ibn Majah 1\", \"Muwatta Malik 1\"). Use it to check a passage before quoting or citing it. Returns the text with a citation number to use as [n].",
     input_schema: { type: "object", properties: { ref: { type: "string", description: "The reference, e.g. \"Isaiah 53:5\" or \"Quran 19:30-33\" or \"Sahih Muslim 2408\"" } }, required: ["ref"] } },
   { name: "search_texts", eager_input_streaming: true,
     description: "Search the English text of every work on the site (Bible, Quran, hadith, Quran commentaries, Talmud and Mishnah, Midrash, creeds, Church Fathers, Catholic Encyclopedia and more) for passages containing all the given words. Use specific words, not whole sentences. Returns up to 8 passages, each with a citation number.",
@@ -130,7 +130,8 @@ async function getPassage(site, ref) {
     const at = nums[m[2]];
     if (!at) return null;
     const it = (await site.get("lib/" + id + "/" + at[0] + ".json")).items[at[1]];
-    return it ? { source: m[1].trim() + " " + m[2], href: "#/go/" + id + "/" + m[2], text: clip(it.e || "", 1500) } : null;
+    return it ? { source: m[1].trim() + " " + m[2], href: "#/go/" + id + "/" + m[2],
+      text: clip(it.e || "", 1500) + (it.o ? "\nArabic: " + clip(it.o, 1200) : "") } : null;
   }
   const idx = await bookIndex(site);
   m = /^(?:quran|qur'an|koran|surah?)\s*(\d+)(?::(\d+)(?:-(\d+))?)?$/i.exec(r);
