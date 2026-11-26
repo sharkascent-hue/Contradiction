@@ -1,0 +1,186 @@
+{
+ "bible": [
+  [
+   "Jesus's birth and childhood",
+   [
+    [
+     "go/ccel-anf08/The Protevangelium of James",
+     "Protevangelium of James",
+     "Mary's birth and childhood and Jesus's birth (2nd century). The source of Mary's parents Joachim and Anne."
+    ],
+    [
+     "go/ccel-anf08/The Gospel of Pseudo-Matthew",
+     "Gospel of Pseudo-Matthew",
+     "Includes the palm tree bending to Mary, a story close to Quran 19:23-25."
+    ],
+    [
+     "go/ccel-anf08/The Gospel of Thomas",
+     "Infancy Gospel of Thomas",
+     "The boy Jesus makes clay sparrows that fly, as in Quran 3:49 and 5:110."
+    ],
+    [
+     "go/ccel-anf08/The Arabic Gospel of the Infancy",
+     "Arabic Gospel of the Infancy",
+     "Jesus speaks in the cradle, as in Quran 19:29-30."
+    ],
+    [
+     "go/ccel-anf08/The Gospel of the Nativity of Mary",
+     "Gospel of the Nativity of Mary",
+     "Mary's birth and upbringing in the Temple."
+    ],
+    [
+     "go/ccel-anf08/The History of Joseph the Carpenter",
+     "History of Joseph the Carpenter",
+     "Joseph's life and death, told as by Jesus."
+    ]
+   ]
+  ],
+  [
+   "Jesus's death",
+   [
+    [
+     "go/ccel-anf09/The Gospel According to Peter",
+     "Gospel of Peter",
+     "A 2nd-century account of the crucifixion and resurrection."
+    ],
+    [
+     "go/ccel-anf08/The Acts of Pilate",
+     "Gospel of Nicodemus (Acts of Pilate)",
+     "Jesus's trial before Pilate and his descent to the dead."
+    ],
+    [
+     "go/ccel-anf08/The Report of Pilate the Procurator",
+     "Report of Pilate",
+     "A legendary letter from Pilate to the emperor."
+    ]
+   ]
+  ],
+  [
+   "Lives of the apostles",
+   [
+    [
+     "go/ccel-anf08/Acts of the Holy Apostles Peter and Paul",
+     "Acts of Peter and Paul",
+     "Peter and Paul in Rome, their contest with Simon Magus and their deaths."
+    ],
+    [
+     "go/ccel-anf08/Acts of Paul and Thecla",
+     "Acts of Paul and Thecla",
+     "Paul's preaching and his follower Thecla; includes a description of Paul's appearance."
+    ],
+    [
+     "go/ccel-anf08/Acts of the Holy Apostle Thomas",
+     "Acts of Thomas",
+     "Thomas's mission to India."
+    ],
+    [
+     "go/ccel-anf08/Acts of Andrew and Matthias",
+     "Acts of Andrew and Matthias",
+     "Andrew rescues Matthias."
+    ],
+    [
+     "go/ccel-anf08/The Acts of Barnabus",
+     "Acts of Barnabas",
+     "Barnabas's journeys and death in Cyprus."
+    ],
+    [
+     "go/ccel-anf08/The Acts of Philip",
+     "Acts of Philip",
+     "Philip's mission."
+    ],
+    [
+     "go/ccel-anf08/Acts and Martyrdom of St. Matthew the Apostle",
+     "Acts and Martyrdom of Matthew",
+     "Matthew's mission and death."
+    ],
+    [
+     "go/ccel-anf08/Acts of the Holy Apostle Thaddæus",
+     "Acts of Thaddaeus",
+     "Thaddaeus and King Abgar of Edessa."
+    ],
+    [
+     "go/ccel-anf01/The Martyrdom of Polycarp",
+     "Martyrdom of Polycarp",
+     "The death of John's disciple Polycarp (about AD 155)."
+    ]
+   ]
+  ],
+  [
+   "Visions",
+   [
+    [
+     "go/ccel-anf09/The Apocalypse of Peter. › The Apocalypse of Peter",
+     "Apocalypse of Peter",
+     "Heaven and hell, once read in some churches."
+    ],
+    [
+     "go/ccel-anf09/The Vision of Paul. › The Vision of Paul",
+     "Vision of Paul",
+     "Paul's tour of heaven and hell."
+    ],
+    [
+     "go/ccel-anf09/The Apocalypse of the Holy Mother of God",
+     "Apocalypse of the Virgin",
+     "Mary's vision of the punishments."
+    ]
+   ]
+  ],
+  [
+   "The earliest church writings (Apostolic Fathers)",
+   [
+    [
+     "go/ccel-anf07/The Teaching of the Twelve Apostles › The Teaching",
+     "Didache",
+     "A church manual from about AD 100."
+    ],
+    [
+     "go/ccel-anf01/First Epistle to the Corinthians",
+     "1 Clement",
+     "Letter from the church of Rome, about AD 96."
+    ],
+    [
+     "go/ccel-anf01/The Epistle of Barnabas",
+     "Epistle of Barnabas",
+     "Early 2nd-century letter, once read in some churches."
+    ],
+    [
+     "go/ccel-anf02/Book First.—Visions",
+     "Shepherd of Hermas",
+     "Visions and commandments, 2nd century; in the Codex Sinaiticus."
+    ]
+   ]
+  ]
+ ],
+ "torah": [
+  [
+   "Outside the Hebrew Bible",
+   [
+    [
+     "lib/sef-book-of-jubilees",
+     "Book of Jubilees",
+     "Genesis and Exodus retold (2nd century BC)."
+    ],
+    [
+     "lib/sef-the-testaments-of-the-twelve-patriarchs",
+     "Testaments of the Twelve Patriarchs",
+     "Last words of Jacob's sons."
+    ],
+    [
+     "lib/sef-the-antiquities-of-the-jews",
+     "Josephus, Antiquities of the Jews",
+     "Jewish history to AD 66, by a 1st-century Jew."
+    ],
+    [
+     "lib/sef-the-war-of-the-jews",
+     "Josephus, The Jewish War",
+     "The revolt and the fall of Jerusalem in AD 70."
+    ],
+    [
+     "lib/sef-letter-of-aristeas",
+     "Letter of Aristeas",
+     "How the Torah was translated into Greek."
+    ]
+   ]
+  ]
+ ]
+}

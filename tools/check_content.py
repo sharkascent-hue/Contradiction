@@ -13,6 +13,7 @@ M, Q, D, B = J("data", "index.json"), J("content", "questions.json"), J("content
 G = J("content", "guide.json")
 DB = J("content", "debates.json")
 SH = J("content", "shamoun.json")
+EX = J("content", "extra.json")
 lib = {w["id"]: w for w in J("lib", "index.json")}
 colls = {w["c"] for w in lib.values()}
 questions = Q["questions"] + D["questions"]
@@ -130,6 +131,12 @@ for c in B["compare"]:
     for m in c.get("more", []):
         if not route(m):
             problems.append("compare %s: unknown %s" % (c["slug"], m))
+for side in EX.values():
+    for _, items in side:
+        for path, label, _n in items:
+            counts["links"] += 1
+            if not route(path):
+                problems.append("extra: broken link %s" % path)
 for t in B["traditions"]:
     for path, label in t["texts"]:
         counts["links"] += 1

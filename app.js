@@ -256,6 +256,7 @@
   async function books(t, view) {
     if (!trById[t]) t = tr;
     await loadLib();
+    const EX = await getJSON('content/extra.json').catch(() => ({}));
     const quran = trById[t].corpus === 'quran', torah = !quran && view === 'jewish';
     const set = quran ? ISLAM : torah ? TORAH : CANONS;
     if (!set[view]) view = store.get(quran ? 'branch' : 'canon');
@@ -276,16 +277,21 @@
     const li = code => '<li><a href="#/read/' + t + '/' + code + '">' + esc(bookName[code]) + (has(t, code) ? '' : ' <span class="muted small">·&nbsp;' + esc(trById[trFor(code)].id) + '</span>') + '</a></li>';
     const works = col => L.filter(w => w.c === col).map(w => '<a href="#/lib/' + w.id + '">' + esc(w.t) + '</a>').join('');
     if (quran) {
-      h += '<h2>The 114 surahs</h2><ul class="booklist">' + trById[t].books.map(b => '<li><a href="#/read/' + t + '/' + b[0] + '">' + esc(bookName[b[0]]) + '</a></li>').join('') + '</ul>';
-      h += '<h2>' + (view === 'shia' ? 'Shia hadith' : 'Sunni hadith') + '</h2><div class="topic-grid">' + works(c.hadith) + '</div>' +
-        '<h2>Quran commentary (tafsir)</h2><div class="topic-grid">' + works('Quran commentary (tafsir)') + '</div>';
+      h += '<div class="seg even jump"><a href="javascript:void 0" data-jump="surahs">Quran</a><a href="javascript:void 0" data-jump="hadith">Hadith</a><a href="javascript:void 0" data-jump="tafsir">Tafsir</a></div>' +
+        '<h2 id="hadith">' + (view === 'shia' ? 'Shia hadith' : 'Sunni hadith') + '</h2><div class="topic-grid">' + works(c.hadith) + '</div>' +
+        '<h2 id="surahs">The 114 surahs</h2><ul class="booklist">' + trById[t].books.map(b => '<li><a href="#/read/' + t + '/' + b[0] + '">' + esc(bookName[b[0]]) + '</a></li>').join('') + '</ul>' +
+        '<h2 id="tafsir">Quran commentary (tafsir)</h2><div class="topic-grid">' + works('Quran commentary (tafsir)') + '</div>';
     } else {
       for (const [title, list] of c.parts) h += '<h2>' + title + '</h2><ul class="booklist">' + list.filter(x => bookName[x]).map(li).join('') + '</ul>';
       if (torah) h += '<h2>The Oral Torah and rabbinic writings</h2><div class="topic-grid">' + ORAL.map(col => '<a href="#/lib/c/' + encodeURIComponent(col) + '">' + esc(col) + ' →</a>').join('') + '</div>';
       else h += '<h2>New Testament · 27 books</h2><ul class="booklist">' + NT27.map(li).join('') + '</ul>';
+      const extra = (EX[torah ? 'torah' : 'bible'] || []);
+      if (extra.length) h += '<h2>' + (torah ? 'Books outside the Hebrew Bible' : 'Books outside the Bible') + '</h2><p class="small muted">' + (torah ? 'Ancient Jewish writings that are not in the Tanakh.' : 'Early Christian writings that did not make it into the New Testament: gospels of Jesus’s childhood, lives of Peter, Paul and the other apostles, and the first church letters. No church counts these as Scripture.') + '</p>' +
+        extra.map(([title, items]) => '<h3>' + esc(title) + '</h3><div class="extra-list">' + items.map(([path, label, note]) => '<a href="#/' + encodeURI(path) + '"><strong>' + esc(label) + '</strong><span>' + esc(note) + '</span></a>').join('') + '</div>').join('');
       h += '<p class="small muted">Books marked with an edition name are not in the ' + esc(trById[t].name) + ' and open in that edition instead.</p>';
     }
     app.innerHTML = h;
+    app.querySelectorAll('[data-jump]').forEach(a => a.addEventListener('click', () => document.getElementById(a.dataset.jump).scrollIntoView({ behavior: 'smooth', block: 'start' })));
     bindPicker();
   }
 
