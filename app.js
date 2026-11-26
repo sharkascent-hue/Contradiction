@@ -1144,9 +1144,9 @@
     });
   }
 
-  Promise.all(['data/index.json', 'content/questions.json', 'content/disputes.json', 'content/beliefs.json', 'content/guide.json'].map(getJSON)).then(([m, c, d, b, g]) => {
-    M = m; C = c; B = b; G = g;
-    getJSON('content/config.json').then(x => { SITE_CFG = x || {}; }).catch(() => {});
+  Promise.all(['data/index.json', 'content/questions.json', 'content/disputes.json', 'content/beliefs.json', 'content/guide.json'].map(getJSON)
+    .concat(getJSON('content/config.json').catch(() => ({})))).then(([m, c, d, b, g, cfg]) => {
+    M = m; C = c; B = b; G = g; SITE_CFG = cfg || {};
     C.questions = C.questions.concat(d.questions);
     M.translations.forEach(t => { trById[t.id] = t; t.chapters = Object.fromEntries(t.books); });
     setupRefs();
