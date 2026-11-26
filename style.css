@@ -358,3 +358,13 @@ sup.cite a:hover { background: var(--chr); color: #fff; }
 .w.tr { border-style: dashed; border-color: #c9a227; background: #fffaf0; }
 .chapter p .wbw { margin-top: 6px; }
 .orig-block { margin-bottom: 10px; padding-bottom: 6px; border-bottom: 1px solid var(--line); }
+
+/* debates */
+.deb-grid { display: grid; gap: 12px; }
+@media (min-width: 720px) { .deb-grid { grid-template-columns: 1fr 1fr; } }
+.deb-grid .dispute-tile { max-width: none; }
+.dispute-tile .eyebrow { font-size: .68rem; }
+.verdict { margin-left: auto; font: 700 .72rem var(--sans); padding: 3px 9px; border-radius: 999px; background: var(--soft); color: var(--ink-2); }
+.verdict.big { font-size: .9rem; padding: 6px 14px; margin: 0; }
+.verdict.v-strong { background: #e6f7ee; color: #0b7a4b; } .verdict.v-partial { background: #fff4db; color: #8a5a00; }
+.verdict.v-weak { background: #ffece6; color: #b3401a; } .verdict.v-fails { background: #fde8ea; color: #b4232f; }

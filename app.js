@@ -139,10 +139,12 @@
       '<div class="section-head"><h2>The three faiths</h2><a href="#/faiths">Compare them →</a></div>' + faithCards() +
       '<div class="section-head"><h2>Where they disagree</h2><a href="#/questions">See all</a></div>' +
       '<div class="tile-row">' + disputes.map(disputeTile).join('') + '</div>' +
+      '<div class="section-head"><h2>Debates</h2><a href="#/debates">All debates</a></div><div class="tile-row" id="home-deb"></div>' +
       '<div class="section-head"><h2>Explore by topic</h2><a href="#/topics">All ' + G.topics.length + ' topics</a></div>' +
       '<div class="topic-grid">' + POPULAR.map(id => G.topics.find(t => t.id === id)).filter(Boolean).map(t => '<a href="#/t/' + t.id + '">' + esc(t.title) + '</a>').join('') + '</div>' +
       '<div class="section-head"><h2>Read the texts</h2></div>' + readGrid();
     bindAsk();
+    loadDebates().then(d => { const el = document.getElementById('home-deb'); if (el) el.innerHTML = d.arguments.length ? d.arguments.slice(0, 8).map(debTile).join('') : '<p class="muted small">Coming soon.</p>'; });
   }
   const questionCards = qs => '<ul class="cards">' + qs.map(q =>
     '<li><a href="#/q/' + q.slug + '"><strong>' + esc(q.title) + '</strong><span>' + esc(q.short) + '</span></a></li>').join('') + '</ul>';
@@ -223,7 +225,7 @@
     if (!trById[t]) t = tr;
     setTr(t);
     document.title = trById[t].name + ' · Contradiction';
-    let h = '<p class="crumbs">Read</p><h1>' + esc(trById[t].corpus === 'quran' ? 'The Quran' : 'The Bible') + '</h1><div class="reader-bar">' + pickerBtn(t) + '</div><p class="muted small">' + esc(trById[t].tradition) + '. ' + esc(trById[t].licence) + '</p>';
+    let h = '<p class="crumbs">Read</p><div class="seg even"><a href="#/books/' + pref.bible + '"' + (trById[t].corpus === 'bible' ? ' class="on"' : '') + '>Bible</a><a href="#/books/' + pref.quran + '"' + (trById[t].corpus === 'quran' ? ' class="on"' : '') + '>Quran</a><a href="#/lib">Library</a></div><h1>' + esc(trById[t].corpus === 'quran' ? 'The Quran' : 'The Bible') + '</h1><div class="reader-bar">' + pickerBtn(t) + '</div><p class="muted small">' + esc(trById[t].tradition) + '. ' + esc(trById[t].licence) + '</p>';
     for (const g in GROUPS) {
       const list = trById[t].books.filter(b => bookGroup[b[0]] === g);
       if (list.length) h += '<h2>' + GROUPS[g] + '</h2><ul class="booklist">' + list.map(b =>
@@ -1054,6 +1056,52 @@
     return body;
   }
 
+
+  /* ---------- debates: the published arguments, both ways, tested on the texts ---------- */
+  const DIR = { 'christian-vs-islam': ['Christian case against Islam', 'christian', 'muslim'], 'islam-vs-christianity': ['Muslim case against Christianity', 'muslim', 'christian'],
+    'jewish-vs-christianity': ['Jewish case against Christianity', 'jewish', 'christian'], 'jewish-vs-islam': ['Jewish case against Islam', 'jewish', 'muslim'],
+    'christian-vs-judaism': ['Christian case against Judaism', 'christian', 'jewish'], 'islam-vs-judaism': ['Muslim case against Judaism', 'muslim', 'jewish'] };
+  const VERDICT = { strong: 'Strong', partial: 'Partly works', weak: 'Weak', fails: 'Fails' };
+  let deb = null, debFilter = 'all';
+  const loadDebates = () => deb ? Promise.resolve(deb) : getJSON('content/debates.json').then(d => (deb = d)).catch(() => (deb = { arguments: [] }));
+  const debTile = a => { const d = DIR[a.direction] || ['', '', ''];
+    return '<a class="dispute-tile" href="#/d/' + a.id + '"><span class="eyebrow">' + esc(d[0]) + '</span><strong>' + esc(a.title) + '</strong><span>' + esc(a.argument) + '</span>' +
+      '<span class="vs"><i class="dot ' + d[1] + '"></i><span class="small muted">vs</span><i class="dot ' + d[2] + '"></i>' + (a.verdict ? '<span class="verdict v-' + a.verdict + '">' + VERDICT[a.verdict] + '</span>' : '') + '</span></a>'; };
+  async function debates() {
+    document.title = 'Debates · Contradiction';
+    const id = renderId, d = await loadDebates();
+    if (id !== renderId) return;
+    const dirs = Object.keys(DIR).filter(k => d.arguments.some(a => a.direction === k));
+    const list = d.arguments.filter(a => debFilter === 'all' || a.direction === debFilter);
+    app.innerHTML = '<h1>Debates</h1><p class="lede">The arguments apologists actually make, in every direction. Each one shows the texts it relies on, the best reply from the other side, what the texts firmly establish, and a frank verdict on the argument.</p>' +
+      '<div class="chips">' + [['all', 'All']].concat(dirs.map(k => [k, DIR[k][0]])).map(([k, l]) => '<button class="chip" data-f="' + k + '" aria-pressed="' + (k === debFilter) + '">' + esc(l) + '</button>').join('') + '</div>' +
+      (list.length ? '<div class="deb-grid">' + list.map(debTile).join('') + '</div>' : '<p class="muted">The debates are being researched and will appear here.</p>') +
+      '<p class="status">Verdicts judge the argument, not the religion: whether its premises are really in the sources it cites, and whether the conclusion follows. They are drafts and have not been reviewed by scholars.</p>';
+    app.querySelectorAll('[data-f]').forEach(b => b.addEventListener('click', () => { debFilter = b.dataset.f; debates(); }));
+  }
+  async function debate(slug) {
+    const rid = renderId, d = await loadDebates();
+    if (rid !== renderId) return;
+    const a = d.arguments.find(x => x.id === slug);
+    if (!a) return notFound();
+    document.title = a.title + ' · Contradiction';
+    const dir = DIR[a.direction] || ['', '', ''];
+    const people = (list, cls) => list && list.length ? '<p class="small muted">' + (cls === 'by' ? 'Made by ' : 'Answered by ') + esc(list.join(', ')) + '</p>' : '';
+    const texts = (a.texts || []).map(ref => ({ ref, why: '', kind: refKind(ref) }));
+    app.innerHTML = '<p class="crumbs"><a href="#/debates">Debates</a> › ' + esc(dir[0]) + '</p><h1>' + esc(a.title) + '</h1>' +
+      (a.verdict ? '<p><span class="verdict big v-' + a.verdict + '">Verdict: ' + VERDICT[a.verdict] + '</span></p>' : '') +
+      '<section class="sec v-' + dir[1] + '"><span class="tag">The argument</span>' + people(a.by, 'by') + '<p>' + rich(a.argument) + '</p></section>' +
+      (texts.length ? '<div class="section-head"><h2>The texts</h2></div>' + groupsHtml([...new Set(texts.map(t => t.kind))].map(k => [k, texts.filter(t => t.kind === k)])) +
+        '<p class="small muted">Tap a passage to read it in context, with the original Arabic, Hebrew or Greek word by word.</p>' : '') +
+      '<section class="sec v-' + dir[2] + '"><span class="tag">The best reply</span>' + people(a.response_by, 'resp') + '<p>' + rich(a.response) + '</p></section>' +
+      '<section class="sec v-overview"><span class="tag">What the texts establish</span><p>' + rich(a.facts) + '</p></section>' +
+      '<section class="sec v-critics"><span class="tag">Assessment</span><p>' + rich(a.assessment) + '</p></section>' +
+      (a.sources && a.sources.length ? '<details class="plain"><summary>Sources consulted (' + a.sources.length + ')</summary><ul class="small">' + a.sources.map(u => '<li><a href="' + esc(u) + '" rel="noopener" target="_blank">' + esc(u.replace(/^https?:\/\/(www\.)?/, '').slice(0, 90)) + '</a></li>').join('') + '</ul></details>' : '') +
+      '<p><a class="btn brand" href="#/ask/' + encodeURIComponent(a.title) + '">Ask the AI to test this →</a></p>' +
+      '<p class="status">Draft. The verdict judges this argument only. Not yet reviewed by scholars.</p>';
+    fillQuotes(app);
+  }
+
   /* ---------- the three faiths ---------- */
   function faiths() {
     document.title = 'Faiths · Contradiction';
@@ -1158,7 +1206,7 @@
   /* ---------- routing ---------- */
   function setTr(t) { tr = t; pref[trById[t].corpus] = t; store.set('tr', t); store.set('tr-' + trById[t].corpus, t); }
   const TAB = { '': '', ask: 'ask', faiths: 'faiths', faith: 'faiths', beliefs: 'faiths', compare: 'faiths', books: 'books', read: 'books', lib: 'lib', go: 'lib',
-    topics: 'topics', t: 'topics', topic: 'topics', q: 'topics', questions: 'topics', search: 'search' };
+    topics: 'topics', t: 'topics', topic: 'topics', q: 'topics', questions: 'topics', search: 'search', debates: 'debates', d: 'debates' };
   function route() {
     renderId++;
     const [name, ...a] = decodeURIComponent(location.hash.replace(/^#\/?/, '')).split('/');
@@ -1169,7 +1217,7 @@
     document.body.classList.toggle('chatting', name === 'ask');
     window.scrollTo(0, 0);
     const views = { '': home, questions, q: question, topic, topics, t: tguide, books, read, search: () => search(a.join('/')), about, lib: () => library(a),
-      beliefs, faiths, faith: hub, compare: compareView, go, ask: () => ask(a.join('/')) };
+      beliefs, faiths, faith: hub, compare: compareView, go, ask: () => ask(a.join('/')), debates, d: debate };
     Promise.resolve((views[name] || notFound)(...a)).catch(e => {
       app.innerHTML = '<h1>Something went wrong</h1><p class="muted">' + esc(e.message) + '</p>';
     });
