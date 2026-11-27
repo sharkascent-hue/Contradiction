@@ -497,6 +497,33 @@
     });
   }
 
+  /* ---------- contact ---------- */
+  const TOPICS = [['general', 'General question'], ['mistake', 'Report a mistake'], ['debater', 'Suggest a debater or topic'], ['press', 'Press or partnership']];
+  function contact(q) {
+    document.title = 'Contact us · Contradiction AI';
+    const pr = new URLSearchParams(q || ''), topic = pr.get('topic') || 'general', page = pr.get('page') || '';
+    const mail = (SITE_CFG.contactEmail || '').trim();
+    app.innerHTML = hero('contact', 'Contact us', 'Questions, corrections, ideas for debaters or topics: we read everything. If an answer on the site got something wrong, tell us which page and what the text actually says.') +
+      '<form class="contact-form">' +
+      '<label>What is it about?<select name="topic">' + TOPICS.map(t => '<option value="' + t[0] + '"' + (t[0] === topic ? ' selected' : '') + '>' + t[1] + '</option>').join('') + '</select></label>' +
+      '<label>Your name <span class="muted small">(optional)</span><input name="name" autocomplete="name"></label>' +
+      '<label>Your email <span class="muted small">(so we can reply)</span><input name="email" type="email" autocomplete="email"></label>' +
+      (page ? '<label>Page<input name="page" value="' + esc(page) + '"></label>' : '') +
+      '<label>Message<textarea name="msg" rows="6" required placeholder="' + (topic === 'mistake' ? 'What is wrong, and what does the text actually say?' : 'Write your message…') + '"></textarea></label>' +
+      '<button class="btn brand" type="submit">Send</button><p class="contact-note muted small" hidden></p></form>' +
+      '<div class="contact-side"><h2>Other ways</h2><ul><li><a href="#/ask">Ask the AI</a> for anything about the three faiths.</li><li>See <a href="#/about">why we built Contradiction AI</a>.</li><li><a href="#/privacy">Privacy policy</a> · <a href="#/terms">Terms of use</a></li></ul></div>';
+    app.querySelector('.contact-form').addEventListener('submit', e => {
+      e.preventDefault();
+      const f = e.target, note = app.querySelector('.contact-note');
+      const subject = '[Contradiction AI] ' + (TOPICS.find(t => t[0] === f.topic.value) || TOPICS[0])[1];
+      const body = f.msg.value + '\n\n' + (f.page && f.page.value ? 'Page: ' + f.page.value + '\n' : '') + (f.name.value ? 'Name: ' + f.name.value + '\n' : '') + (f.email.value ? 'Reply to: ' + f.email.value : '');
+      if (!mail) { note.hidden = false; note.textContent = 'Our contact email is being set up. Please check back soon; your message has not been sent.'; return; }
+      location.href = 'mailto:' + encodeURIComponent(mail) + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+      note.hidden = false; note.textContent = 'Your email app should open with the message ready to send.';
+    });
+  }
+  const reportLink = () => '<a class="report-link" href="#/contact?topic=mistake&page=' + encodeURIComponent(location.hash) + '">⚑ Report a mistake</a>';
+
   /* ---------- the hard questions ---------- */
   let HQ = null;
   const loadHard = () => HQ ? Promise.resolve(HQ) : getJSON('content/hard.json').then(d => (HQ = d)).catch(() => (HQ = { topics: [] }));
@@ -558,6 +585,7 @@
     setFaithTheme(p.faith);
     app.innerHTML = hero('shamoun', p.person, p.note, '<div class="hp-actions"><a class="btn" href="https://www.youtube.com/channel/' + encodeURIComponent(p.id) + '" target="_blank" rel="noopener">YouTube channel ↗</a>' +
         '<a class="btn ghost-w" href="#/ask/' + encodeURIComponent('What are ' + p.person + "'s main arguments, and do they hold up against the texts?") + '">Ask the AI about his arguments</a></div>', FN[p.faith] + ' debater · ' + (p.branch || '')) +
+      (p.vids.length ? '<section class="deb-video"><div class="section-head"><h2>▶ Latest video</h2><a href="https://www.youtube.com/channel/' + encodeURIComponent(p.id) + '?sub_confirmation=1" target="_blank" rel="noopener">Subscribe on YouTube ↗</a></div><div class="yt"><iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/' + encodeURIComponent(p.vids[0].id) + '" title="' + esc(p.vids[0].title) + '" allow="accelerometer; encrypted-media; picture-in-picture" allowfullscreen></iframe></div><p class="small muted">' + esc(p.vids[0].title) + ' · ' + esc(p.vids[0].date || '') + '</p></section>' : '') +
       (p.args.length ? '<div class="section-head"><h2>His arguments, tested</h2></div><div class="tile-row">' + p.args.map(debTile).join('') + '</div>' : '<p class="muted">None of his arguments has its own page here yet. Ask the AI above to test them.</p>') +
       (p.vids.length ? '<div class="section-head"><h2>Latest videos</h2><a href="#/videos">All recent debates →</a></div><div class="vid-list">' + p.vids.slice(0, 8).map(v =>
         '<a class="vid-mini" href="https://www.youtube.com/watch?v=' + encodeURIComponent(v.id) + '" target="_blank" rel="noopener"><img loading="lazy" src="https://i.ytimg.com/vi/' + encodeURIComponent(v.id) + '/mqdefault.jpg" alt=""><span><strong>' + esc(v.title) + '</strong><span class="muted small">' + esc(v.date || '') + '</span></span></a>').join('') + '</div>' : '');
@@ -1561,7 +1589,7 @@
       }
       status.textContent = '';
       if (document.hidden) { if (!window.__away) window.__away = document.title; document.title = '✓ Your answer is ready · Contradiction AI'; }
-      out.insertAdjacentHTML('beforeend', '<p class="ai-foot">Contradiction AI · numbers link to the passages. Check important points against the sources.</p>');
+      out.insertAdjacentHTML('beforeend', '<p class="ai-foot">Contradiction AI · numbers link to the passages. Check important points against the sources. ' + reportLink() + '</p>');
       out.insertAdjacentHTML('afterbegin', '<span class="tools">' + (opts ? '' : '<button class="save-btn" type="button" data-q="' + esc(q) + '" aria-label="Save this answer" title="Save">' + ICO_SAVE + '</button>') + copyBtn('.ai-text', 'Copy answer') + (opts ? '' : shareBtn(q, location.origin + location.pathname + '#/ask/' + encodeURIComponent(q), 'ai')) + '</span>');
       return text;
     } catch (e) {
@@ -1625,7 +1653,7 @@
 
 
   /* ---------- page headers: each section has its own colour and mark ---------- */
-  const HERO = { quiz: ['?', 'Quiz'], compare: ['⇄', 'Compare'], hard: ['⚖', 'No softening'], debates: ['⚔', 'Debates'], trainer: ['🎙', 'Train'], videos: ['▶', 'Watch'], stories: ['📜', 'Stories'], prophecies: ['🔮', 'Prophecy'],
+  const HERO = { contact: ['✉', 'Contact'], quiz: ['?', 'Quiz'], compare: ['⇄', 'Compare'], hard: ['⚖', 'No softening'], debates: ['⚔', 'Debates'], trainer: ['🎙', 'Train'], videos: ['▶', 'Watch'], stories: ['📜', 'Stories'], prophecies: ['🔮', 'Prophecy'],
     translations: ['✎', 'Words'], timeline: ['⏳', 'History'], shamoun: ['🗣', 'Debater'], explore: ['✦', 'Explore'] };
   const hero = (kind, title, lede, extra, eyebrow) => '<section class="hero-page hp-' + kind + '" data-mark="' + (HERO[kind] || ['', ''])[0] + '"><span class="hp-eyebrow">' + (eyebrow || (HERO[kind] || ['', ''])[1]) + '</span><h1>' + esc(title) + '</h1>' +
     (lede ? '<p>' + esc(lede) + '</p>' : '') + (extra || '') + '</section>';
@@ -2070,7 +2098,7 @@
   document.addEventListener('focusout', e => { if (e.target.matches('textarea, input')) setTimeout(() => { if (!document.activeElement || !document.activeElement.matches('textarea, input')) document.body.classList.remove('kb'); }, 80); });
   const MORE = [['#/faiths', '⊕', 'Faiths', 'Each faith in its own words'], ['#/hard', '⚖', 'Hard questions', 'Women, captives, apostasy, war'], ['#/debaters', '🎙', 'Debaters', 'Their channels and arguments'],
     ['#/videos', '▶', 'Watch recent debates', 'Newest videos, with the AI\'s take'], ['#/trainer', '⚔', 'Debate trainer', 'Argue against the AI'], ['#/quiz', '?', 'Quiz', 'Easy to hard, never repeats'], ['#/parallel', '⇄', 'Compare editions', 'A verse in every translation'], ['#/topics', '✦', 'Topics and tools', 'Stories, prophecies, timeline'],
-    ['#/lib', '📚', 'Library', 'Hadith, Talmud, Church Fathers'], ['#/search', '⌕', 'Search', 'Every word in every text'], ['#/saved', '🔖', 'Saved', 'Answers you kept'], ['javascript:void 0" class="mode-btn', '◐', 'Dark mode', 'Switch light or dark'], ['#/about', '◆', 'Why Contradiction AI', 'Why we built it']];
+    ['#/lib', '📚', 'Library', 'Hadith, Talmud, Church Fathers'], ['#/search', '⌕', 'Search', 'Every word in every text'], ['#/saved', '🔖', 'Saved', 'Answers you kept'], ['javascript:void 0" class="mode-btn', '◐', 'Dark mode', 'Switch light or dark'], ['#/about', '◆', 'Why Contradiction AI', 'Why we built it'], ['#/contact', '✉', 'Contact us', 'Questions and corrections']];
   document.addEventListener('click', e => {
     if (!e.target.closest('[data-more]')) return;
     e.preventDefault();
@@ -2129,7 +2157,7 @@
   }
   function route() {
     renderId++;
-    const [name, ...a] = decodeURIComponent(location.hash.replace(/^#\/?/, '')).split('/');
+    const [name, ...a] = decodeURIComponent(location.hash.replace(/^#\/?/, '').split('?')[0]).split('/');
     const tab = TAB[name] !== undefined ? TAB[name] : name;
     document.querySelectorAll('.links a, .tabbar a').forEach(l => l.classList.toggle('on', l.getAttribute('href') === '#/' + tab));
     // Slide the tab bar's highlight to the current tab.
@@ -2145,8 +2173,9 @@
     window.scrollTo(0, 0);
     app.innerHTML = '<div class="skel" aria-label="Loading"><span class="shimmer sk-h"></span><span class="shimmer"></span><span class="shimmer"></span><span class="shimmer short"></span><div class="sk-cards"><span></span><span></span><span></span></div></div>';
     const views = { '': home, questions, q: question, topic, topics, t: tguide, books, read, search: () => search(a.join('/')), about, lib: () => library(a),
-      beliefs, faiths, faith: hub, compare: compareView, go, ask: () => ask(a.join('/')), debates, d: debate, videos, shamoun, trainer, privacy, terms, stories, prophecies, translations: translationsPage, timeline, hard, debaters, saved, quiz, parallel: () => parallel(a.join('/')) };
-    Promise.resolve((views[name] || notFound)(...a)).catch(e => {
+      beliefs, faiths, faith: hub, compare: compareView, go, ask: () => ask(a.join('/')), debates, d: debate, videos, shamoun, trainer, privacy, terms, stories, prophecies, translations: translationsPage, timeline, hard, debaters, saved, quiz, parallel: () => parallel(a.join('/')), contact: () => contact(location.hash.split('?')[1]) };
+    const rid0 = renderId;
+    Promise.resolve((views[name] || notFound)(...a)).then(() => { if (rid0 === renderId && ['q', 'd', 't', 'hard', 'faith', 'compare'].includes(name) && a.length) app.insertAdjacentHTML('beforeend', '<p class="report-row">' + reportLink() + '</p>'); }).catch(e => {
       app.innerHTML = '<h1>Something went wrong</h1><p class="muted">' + esc(e.message) + '</p>';
     });
   }

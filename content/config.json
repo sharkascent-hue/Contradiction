@@ -1,3 +1,4 @@
 {
-  "aiEndpoint": "https://contradiction-ai.contradiction.workers.dev"
+  "aiEndpoint": "https://contradiction-ai.contradiction.workers.dev",
+  "contactEmail": ""
 }

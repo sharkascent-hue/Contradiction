@@ -972,3 +972,19 @@ body { background-color: var(--bg); }
   background: linear-gradient(90deg, #8C2F2B 0 33.33%, #4E6B3A 33.33% 66.66%, #3B5576 66.66%); }
 .top { padding-top: max(10px, calc(env(safe-area-inset-top) + 4px)); }
 :root[data-faith=christian] .faith-stripe { background: #8C2F2B; } :root[data-faith=muslim] .faith-stripe { background: #4E6B3A; } :root[data-faith=jewish] .faith-stripe { background: #3B5576; }
+
+/* ---------- contact, report, footer ---------- */
+.hp-contact { background: linear-gradient(135deg, #2A1A10, #6F4520 60%, #B88A52); }
+.contact-form { display: grid; gap: 14px; max-width: 560px; }
+.contact-form label { display: grid; gap: 6px; font-weight: 600; font-size: .95rem; }
+.contact-form input, .contact-form select, .contact-form textarea { font: 400 1rem var(--sans); padding: 12px 14px; border-radius: 12px; border: 1.5px solid var(--line); background: var(--surface); color: var(--ink); }
+.contact-form input:focus, .contact-form select:focus, .contact-form textarea:focus { outline: none; border-color: #B88A52; }
+.contact-form .btn { justify-self: start; padding: 12px 26px; }
+.contact-side { margin-top: 26px; }
+.report-link { display: inline-block; margin-left: 6px; font-size: .85em; font-weight: 600; color: #8C2F2B !important; }
+.foot { border-top: 1px solid var(--line); }
+.foot-cols { display: grid; gap: 20px; } @media (min-width: 760px) { .foot-cols { grid-template-columns: 2fr 1fr 1fr; } }
+.foot-cols > div { display: flex; flex-direction: column; gap: 6px; } .foot-cols strong { color: var(--ink); margin-bottom: 2px; }
+.foot-cols a { color: var(--ink-2); } .foot-logo { height: 46px; width: auto; margin-bottom: 4px; } .foot-cols p { margin: 0; }
+.foot-c { margin: 18px 0 0; font-size: .8rem; }
+.report-row { margin: 22px 0 0; text-align: right; }
