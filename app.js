@@ -1082,7 +1082,7 @@
   function emptyChat() {
     const intro = guide === 'all' ? 'Ask about any belief, story or practice. I\'ll show what Christians, Muslims and Jews each say, and where it is in their texts.'
       : 'I answer from the ' + FAITH_ADJ[guide] + ' point of view, with the passages ' + FAITH_PEOPLE[guide] + ' rely on, and I show how the others respond.';
-    return '<div class="empty-chat">' + avatar(guide) + (aiReady ? '<p class="eyebrow">AI guide</p>' : '') + '<h1>' + (guide === 'all' ? 'What would you like to know?' : 'Ask the ' + FAITH_ADJ[guide] + ' guide') + '</h1><p class="muted">' + intro + '</p>' +
+    return '<div class="empty-chat">' + avatar(guide) + (aiReady ? '<p class="eyebrow">Contradiction AI</p>' : '') + '<h1>' + (guide === 'all' ? 'What would you like to know?' : 'Ask the ' + FAITH_ADJ[guide] + ' guide') + '</h1><p class="muted">' + intro + '</p>' +
       '<div class="starter">' + SUGGEST.slice(0, 6).map(s => '<button data-ask="' + esc(s) + '">' + esc(s) + '</button>').join('') + '</div></div>';
   }
   function renderChat() {
@@ -1198,7 +1198,7 @@
         while ((i = buf.indexOf('\n')) >= 0) { const line = buf.slice(0, i).trim(); buf = buf.slice(i + 1); if (line) handle(JSON.parse(line)); }
       }
       status.textContent = '';
-      out.insertAdjacentHTML('beforeend', '<p class="ai-foot">AI guide · numbers link to the passages. Check important points against the sources.</p>');
+      out.insertAdjacentHTML('beforeend', '<p class="ai-foot">Contradiction AI · numbers link to the passages. Check important points against the sources.</p>');
       out.insertAdjacentHTML('afterbegin', '<span class="tools">' + copyBtn('.ai-text', 'Copy answer') + (opts ? '' : shareBtn(q, location.origin + location.pathname + '#/ask/' + encodeURIComponent(q), 'ai')) + '</span>');
       return text;
     } catch (e) {
@@ -1264,7 +1264,7 @@
   /* ---------- page headers: each section has its own colour and mark ---------- */
   const HERO = { debates: ['⚔', 'Debates'], trainer: ['🎙', 'Train'], videos: ['▶', 'Watch'], stories: ['📜', 'Stories'], prophecies: ['🔮', 'Prophecy'],
     translations: ['✎', 'Words'], timeline: ['⏳', 'History'], shamoun: ['🗣', 'Debater'], explore: ['✦', 'Explore'] };
-  const hero = (kind, title, lede, extra) => '<section class="hero-page hp-' + kind + '" data-mark="' + (HERO[kind] || ['', ''])[0] + '"><span class="hp-eyebrow">' + (HERO[kind] || ['', ''])[1] + '</span><h1>' + esc(title) + '</h1>' +
+  const hero = (kind, title, lede, extra, eyebrow) => '<section class="hero-page hp-' + kind + '" data-mark="' + (HERO[kind] || ['', ''])[0] + '"><span class="hp-eyebrow">' + (eyebrow || (HERO[kind] || ['', ''])[1]) + '</span><h1>' + esc(title) + '</h1>' +
     (lede ? '<p>' + esc(lede) + '</p>' : '') + (extra || '') + '</section>';
 
   /* ---------- explore: the tools built on the texts ---------- */
@@ -1409,17 +1409,21 @@
     if (CHAR[train.character][1] === train.you) train.character = CHARS.find(c => c[1] !== train.you)[0];
     const c = CHAR[train.character], opponent = c[1];
     const sides = [['christian', 'Christian'], ['muslim', 'Muslim'], ['jewish', 'Jewish']];
-    app.innerHTML = hero('trainer', 'Debate trainer', 'Argue your side against a strong opponent. After each reply the coach scores your argument out of 10 against the actual texts.') +
-      '<div class="chat trainer"><div class="chat-head trainer-head"><p class="small muted" style="margin:0 0 6px">You argue as</p><div class="seg even">' +
+    const youName = sides.find(x => x[0] === train.you)[1];
+    const duel = '<div class="duel"><span class="duel-you">You · ' + youName + '</span><span class="duel-vs">vs</span>' + charSvg(train.character, 34) + '<span class="duel-opp"><strong>' + esc(c[2]) + '</strong><small>' + esc(c[3]) + '</small></span>' +
+      '<button class="btn ghost small" data-new type="button">New debate</button></div>';
+    const picker = '<p class="small muted" style="margin:0 0 6px">You argue as</p><div class="seg even">' +
       sides.map(([k, l]) => '<button data-you="' + k + '" aria-pressed="' + (k === train.you) + '">' + l + '</button>').join('') + '</div>' +
-      '<p class="small muted" style="margin:14px 0 6px">Choose your opponent</p><div class="chars">' + CHARS.filter(x => x[1] !== train.you).map(x => charCard(x, x[0] === train.character)).join('') + '</div></div>' +
+      '<p class="small muted" style="margin:14px 0 6px">Choose your opponent</p><div class="chars">' + CHARS.filter(x => x[1] !== train.you).map(x => charCard(x, x[0] === train.character)).join('') + '</div>';
+    app.innerHTML = (train.log.length ? '' : hero('trainer', 'Debate Trainer', 'Argue your side against a strong opponent. After each reply the coach scores your argument out of 10 against the actual texts.', '', 'Contradiction AI')) +
+      '<div class="chat trainer"><div class="trainer-pick"' + (train.log.length ? ' hidden' : '') + '>' + picker + '</div><div class="chat-head duel-bar"' + (train.log.length ? '' : ' hidden') + '>' + duel + '</div>' +
       '<div class="msgs" id="msgs">' + (train.log.length ? train.log.map(m => m.html).join('') :
         '<div class="welcome"><div class="vs-line">' + charSvg(train.character, 72) + '<p class="lede"><strong>' + esc(c[2]) + '</strong>, ' + esc(c[3]) + '. ' + (on ? esc(c[4]) : 'The debate trainer needs the AI guide, which is not available right now.') + '</p></div>' +
         (on ? '<p><button class="btn brand" data-start>Let ' + esc(c[2]) + ' open →</button></p><p class="small muted">Or type your own opening argument below. All characters are fictional. They argue in common debating styles and do not represent any real person.</p>' : '') + '</div>') + '</div>' +
       (on ? '<div class="composer">' + askBox('Make your argument to ' + c[2] + '…') + '</div>' : '') + '</div>';
     const turn = async q => {
       const msgs = document.getElementById('msgs');
-      if (!train.log.length) msgs.innerHTML = '';
+      if (!train.log.length) { msgs.innerHTML = ''; const hp = app.querySelector('.hero-page'); if (hp) hp.remove(); app.querySelector('.trainer-pick').hidden = true; app.querySelector('.duel-bar').hidden = false; window.scrollTo(0, 0); }
       msgs.insertAdjacentHTML('beforeend', (q === 'START' ? '' : '<div class="msg user"><div class="bubble">' + esc(q) + '</div></div>') + '<div class="msg bot"><span class="avatar char-av">' + charSvg(train.character, 36) + '</span>' +
         '<div class="card"><p class="char-name">' + esc(c[2]) + ' <span class="muted small">· ' + esc(c[3]) + '</span></p><div class="ai-text"><span class="typing"><i></i><i></i><i></i></span></div><p class="ai-status"></p></div></div>');
       const bot = msgs.lastElementChild;
@@ -1429,6 +1433,7 @@
     };
     if (on) bindAsk(turn);
     const st = app.querySelector('[data-start]'); if (st) st.addEventListener('click', () => turn('START'));
+    const nw = app.querySelector('[data-new]'); if (nw) nw.addEventListener('click', () => { train.log = []; trainer(); });
     app.querySelectorAll('[data-you]').forEach(b => b.addEventListener('click', () => { train.you = b.dataset.you; store.set('train-you', train.you); train.log = []; trainer(); }));
     app.querySelectorAll('[data-char]').forEach(b => b.addEventListener('click', () => { train.character = b.dataset.char; store.set('train-char', train.character); train.log = []; trainer(); }));
   }

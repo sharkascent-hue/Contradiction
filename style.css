@@ -509,3 +509,14 @@ p .share-btn { float: none; vertical-align: middle; margin: 0 0 0 6px; }
 .composer .sug { position: absolute; bottom: 100%; left: 0; right: 0; padding: 8px; background: rgba(250,248,244,.96); backdrop-filter: blur(6px); border-radius: 16px; margin: 0 0 6px; }
 .composer { position: relative; }
 .arena .sug button { color: #17171c; }
+.trainer-pick { margin-bottom: 10px; }
+.duel-bar { padding: 8px 0; }
+.duel { display: flex; align-items: center; gap: 10px; padding: 8px 12px; background: #fff; border: 1px solid var(--line, #e7e2d9); border-radius: 18px; box-shadow: 0 4px 14px rgba(0,0,0,.05); }
+.duel svg { border-radius: 50%; flex: none; }
+.duel-you { font-weight: 700; font-size: .92rem; }
+.duel-vs { font-size: .75rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; color: #dc2626; }
+.duel-opp { display: flex; flex-direction: column; line-height: 1.2; min-width: 0; }
+.duel-opp small { opacity: .65; font-size: .8rem; }
+.duel .btn { margin-left: auto; white-space: nowrap; }
+.btn.small { padding: .4rem .8rem; font-size: .85rem; }
+@media (max-width: 480px) { .duel-you { display: none; } }
