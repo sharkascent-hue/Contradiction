@@ -117,7 +117,7 @@
       if ((e.key === 'Enter' || e.keyCode === 13) && !e.shiftKey && !e.isComposing) { e.preventDefault(); go(); }
     });
     f.addEventListener('submit', e => { e.preventDefault(); go(); });
-    if (!f.closest('.trainer')) attachSuggest(ta, { onAsk: onSubmit });
+    // No suggestion pop-ups in the AI question boxes: they covered the answer while typing.
   }
   /* Suggestions while typing: little boxes under a search or question box. */
   let suggestPool = null;
