@@ -33,6 +33,7 @@ How to answer:
   - Islam, women: 4:34 (qawwāmūn, and «وَاضْرِبُوهُنَّ» "strike them"); Sahih Muslim 1218 (Farewell Sermon: you may beat them "but not severely"); Bukhari 5825 (a woman with a bruise "greener than this green cloth", Aisha's remark); Abu Dawud 2147 ("a man will not be asked why he beat his wife", graded weak); 2:223 ("your women are a tilth for you"); Bukhari 3237 and Muslim 1436 (angels curse a wife who refuses her husband's bed); Bukhari 304 (women "deficient in intelligence and religion", and the majority of the people of Hell); 2:282 (two women's testimony for one man); 4:11 (half the inheritance); 4:3 (up to four wives, plus "what your right hands possess"); 2:229-230 (husband's divorce; the wife must marry another man before remarrying the first); 65:4 (waiting period for those "who have not menstruated"), with Bukhari 5133 (Aisha married at six, consummated at nine); 24:31 and 33:59 (covering).
   - Islam, captives and slaves: 4:24 and Muslim 1456 (married captive women made lawful), Abu Dawud 2155, Bukhari 4138 and 2229 (coitus interruptus with captives at Banu al-Mustaliq), 23:5-6 and 70:29-30 (relations with those the right hand possesses); classical law allowed a master sexual access to his female slave without marriage or her consent. Say plainly that critics call this rape and sexual slavery, and that modern Muslim scholars say slavery is abolished, while groups such as ISIS revived it citing these texts.
   - Judaism: Deuteronomy 21:10-14 (taking a captive woman as a wife after a month); Numbers 31:17-18 (kill the women who have known a man, "keep alive for yourselves" the virgin girls); Deuteronomy 22:28-29 (a man who seizes an unbetrothed virgin pays her father fifty shekels and must marry her); Deuteronomy 22:13-21 (a bride found not to be a virgin is stoned); Deuteronomy 22:23-24 (a betrothed girl who did not cry out in the city is stoned); Numbers 5:11-31 (the sotah ordeal for a suspected wife); Deuteronomy 24:1 (only the husband can divorce, hence the agunah, the "chained" wife whose husband refuses a get, still a live problem today); Leviticus 12 (a mother is unclean twice as long after a girl); Exodus 21:7 (a man may sell his daughter as a slave); Kiddushin 2a (a wife is "acquired"); Shevuot 30a (women barred as witnesses); Ketubot 11b and Niddah 44b (rulings on intercourse with a girl under three); women not counted in a minyan in Orthodox practice. Rabbinic law also softened much of this (the ketubah, the ban of Rabbenu Gershom on polygamy and divorce without consent); say so after the texts.
+  - Judaism, the Talmud on gentile women and captives (quote these when asked about rape, captives or gentile women in Judaism; search the Talmud with words like "beautiful woman", "captive", "gentile woman", "Aramean woman"): Kiddushin 21b (on the "beautiful woman" captured in war, Deuteronomy 21:10-14: "with regard to the first act of sexual intercourse... everyone agrees that it is permitted, as the Torah spoke only in response to the evil inclination"; Rav and Shmuel dispute only whether a priest may do the same) and Kiddushin 22a (he should not pressure her "during the war" but first take her into his home); Sanhedrin 81b-82a (the opposite case: a Jew who has intercourse with an "Aramean" (gentile) woman may be struck down by zealots); Avodah Zarah 36b (a rabbinic decree that gentile girls are treated as menstruant, ritually impure, from the cradle, to prevent intermarriage); Avodah Zarah 37a (a gentile girl of three years and a day imparts ritual impurity through intercourse); Ketubot 11b and Niddah 44b on minors. State plainly what each says. Critics call the Kiddushin ruling permission to rape a captive; Jewish commentators answer that it is a concession limited to war, that Maimonides (Kings and Wars 8) restricts it and requires her later conversion or release, and that the practice is long obsolete. Do not tell the reader you found nothing until you have searched for these.
   - Judaism, unbelievers and apostates: Deuteronomy 7:1-2 and 20:16-17 (destroy the Canaanite nations, "save alive nothing that breathes"); 1 Samuel 15:3 (Amalek, "man and woman, infant and nursing child"); Deuteronomy 13:6-10 (stone a relative who entices to other gods); Exodus 22:18 and 22:20; Avodah Zarah 26a-b and Maimonides on heretics; Sanhedrin 57a and other rulings that treat a gentile's life or property differently. Say what is law today (no Sanhedrin, so no death penalties) and what the texts say.
   - Christianity: 1 Corinthians 14:34-35 (women to keep silent in church), 1 Timothy 2:11-15 (no woman to teach or have authority over a man), Ephesians 5:22-24, 1 Corinthians 11:3-9, Colossians 3:22 and Ephesians 6:5 (slaves obey your masters), Luke 19:27 (as used by critics), and the Old Testament texts above, which Christians also hold as scripture; and the church's history of executing heretics.
 - Questions about leaving, joining or changing faith (apostasy, conversion, "can a Muslim become Christian", "what if I want to leave", "what does it say about unbelievers", fighting non-believers): answer the question asked, plainly, before any reassurance. Never answer only with the gentle verses. State what each tradition's own texts and classical law actually say, including the hard parts, with sources checked first with get_passage and search_texts.
@@ -105,7 +106,7 @@ Rules for both parts: use only real passages. Look them up with your tools befor
 
 const TOOLS = [
   { name: "get_passage", eager_input_streaming: true,
-    description: "Fetch the exact text of a passage from the site's library. Accepts a Bible reference (\"John 1:1-3\", \"Genesis 22:2\", \"1 Corinthians 15:3-8\"), a Quran reference (\"Quran 4:157\" or \"Quran 112:1-4\"), or a Sunni hadith by collection and number, which comes with its Arabic text (\"Sahih al-Bukhari 3448\", \"Sahih Muslim 1422\", \"Sunan Abi Dawud 4290\", \"Jami' at-Tirmidhi 3713\", \"Sunan an-Nasa'i 1\", \"Sunan Ibn Majah 1\", \"Muwatta Malik 1\"). Use it to check a passage before quoting or citing it. Returns the text with a citation number to use as [n].",
+    description: "Fetch the exact text of a passage from the site's library. Accepts a Bible reference (\"John 1:1-3\", \"Genesis 22:2\", \"1 Corinthians 15:3-8\"), a Quran reference (\"Quran 4:157\" or \"Quran 112:1-4\"), a page of the Babylonian Talmud (\"Kiddushin 21b\", \"Avodah Zarah 36b\", \"Sanhedrin 81b\"), or a Sunni hadith by collection and number, which comes with its Arabic text (\"Sahih al-Bukhari 3448\", \"Sahih Muslim 1422\", \"Sunan Abi Dawud 4290\", \"Jami' at-Tirmidhi 3713\", \"Sunan an-Nasa'i 1\", \"Sunan Ibn Majah 1\", \"Muwatta Malik 1\"). Use it to check a passage before quoting or citing it. Returns the text with a citation number to use as [n].",
     input_schema: { type: "object", properties: { ref: { type: "string", description: "The reference, e.g. \"Isaiah 53:5\" or \"Quran 19:30-33\" or \"Sahih Muslim 2408\"" } }, required: ["ref"] } },
   { name: "search_texts", eager_input_streaming: true,
     description: "Search the English text of every work on the site (Bible, Quran, hadith, Quran commentaries, Talmud and Mishnah, Midrash, creeds, Church Fathers, Catholic Encyclopedia and more) for passages containing all the given words. Use specific words, not whole sentences. Returns up to 8 passages, each with a citation number.",
@@ -122,20 +123,26 @@ const TOOLS = [
 ];
 
 /* ---------- reading the site's published files ---------- */
+// Files read from the site are kept between questions while this server instance lives,
+// and each question may make at most LOOKUP_BUDGET fetches: Cloudflare's free plan allows 50 outside requests per request in all.
+const SHARED = new Map();
+const LOOKUP_BUDGET = 36;
 function makeSite(base) {
-  const cache = new Map();
-  const get = (path, type = "json") => {
-    const key = type + ":" + path;
-    if (!cache.has(key)) {
-      cache.set(key, fetch(new URL(path, base)).then(r => {
+  const site = { count: 0 };
+  site.get = (path, type = "json") => {
+    const key = base + "|" + type + ":" + path;
+    if (!SHARED.has(key)) {
+      if (site.count >= LOOKUP_BUDGET) return Promise.reject(new Error("lookup budget used up"));
+      site.count++;
+      SHARED.set(key, fetch(new URL(path, base)).then(r => {
         if (!r.ok) throw new Error("not found: " + path);
         return type === "json" ? r.json() : r.arrayBuffer();
-      }).catch(e => { cache.delete(key); throw e; }));
-      if (cache.size > 400) cache.delete(cache.keys().next().value);
+      }).catch(e => { SHARED.delete(key); throw e; }));
+      if (SHARED.size > 600) SHARED.delete(SHARED.keys().next().value);
     }
-    return cache.get(key);
+    return SHARED.get(key);
   };
-  return { get };
+  return site;
 }
 
 const HADITH = { "sahih al-bukhari": "hadith-bukhari", "bukhari": "hadith-bukhari", "sahih muslim": "hadith-muslim", "muslim": "hadith-muslim",
@@ -184,6 +191,18 @@ async function getOriginal(site, ref) {
 
 async function getPassage(site, ref) {
   const r = String(ref || "").trim().replace(/[–—]/g, "-");
+  // A page of the Babylonian Talmud, e.g. "Kiddushin 21b" or "Avodah Zarah 36b".
+  const tm = /^(?:Talmud\s+|Bavli\s+)?([A-Z][A-Za-z' ]+?)\s+(\d{1,3}[ab])$/.exec(r);
+  if (tm) {
+    const id = "sef-" + tm[1].toLowerCase().replace(/'/g, "").trim().replace(/\s+/g, "-");
+    const toc = await site.get("lib/" + id + "/toc.json").catch(() => null);
+    const k = toc ? toc.findIndex(x => x[0] === "Daf " + tm[2]) : -1;
+    if (k >= 0) {
+      const part = await site.get("lib/" + id + "/" + k + ".json");
+      const text = part.items.map(it => String(it.e || "").replace(/<[^>]+>/g, "").replace(/\*\*/g, "")).join(" ");
+      return { source: tm[1] + " " + tm[2] + " (Babylonian Talmud, Steinsaltz translation)", href: "#/lib/" + id + "/" + k, text: clip(text, 12000) };
+    }
+  }
   let m = /^(.+?)\s+(\d+)$/.exec(r);
   if (m && HADITH[norm(m[1]).trim()]) {
     const id = HADITH[norm(m[1]).trim()], nums = await site.get("lib/" + id + "/nums.json");
@@ -220,7 +239,7 @@ async function getPassage(site, ref) {
 async function searchTexts(site, query, faith = "any") {
   const meta = await site.get("search/meta.json");
   const stop = new Set(meta.stop);
-  const words = [...new Set((norm(query).match(/[a-z]{2,24}|\d{3,4}/g) || []).filter(w => !stop.has(w)))].slice(0, 6);
+  const words = [...new Set((norm(query).match(/[a-z]{2,24}|\d{3,4}/g) || []).filter(w => !stop.has(w)))].slice(0, 5);
   if (!words.length) return [];
   const bucketOf = w => { let h = 2166136261; for (let i = 0; i < w.length; i++) h = Math.imul(h ^ w.charCodeAt(i), 16777619) >>> 0; return h % meta.nb; };
   const postings = async w => {
@@ -264,7 +283,7 @@ async function searchTexts(site, query, faith = "any") {
     const k = x.tr ? x.tr : x.w.c;
     if ((perWork[k] = (perWork[k] || 0) + 1) > 3) continue;
     chosen.push(x);
-    if (chosen.length >= 8) break;
+    if (chosen.length >= 6) break;
   }
   const idx = await bookIndex(site);
   const score = t => { const low = norm(t); return words.filter(w => low.includes(w)).length; };
@@ -340,6 +359,8 @@ export async function chatTurn({ body, siteUrl, emit, client = new Anthropic() }
   if (body.trainer) messages[messages.length - 1].content[1].text = "The reader's argument (or 'START' to make your opening challenge): " + last.content;
 
   const run = async (name, input) => {
+    const need = name === "search_texts" ? 13 : name === "find_topic" ? 2 : 4;
+    if (site.count + need > LOOKUP_BUDGET) return { error: "The lookup limit for this answer is reached. Do not search again: write the answer now from the passages you already have." };
     if (name === "get_passage") {
       if (typeof input?.ref !== "string" || !input.ref.trim()) return { error: "Give a ref." };
       emit({ t: "status", d: "Looking up " + input.ref.slice(0, 80) });
@@ -369,34 +390,58 @@ export async function chatTurn({ body, siteUrl, emit, client = new Anthropic() }
     return { error: "Unknown tool." };
   };
 
-  for (let round = 0; round <= MAX_TOOL_ROUNDS; round++) {
-    const stream = client.beta.messages.stream({
-      model: MODEL,
-      max_tokens: 16000,
-      betas: ["server-side-fallback-2026-07-01"],
-      fallbacks: "default",                     // if the model declines, Anthropic's recommended fallback model answers
-      output_config: { effort: "medium" },
-      system,
-      tools: round < MAX_TOOL_ROUNDS ? TOOLS : [],
-      messages,
-    });
-    stream.on("text", d => emit({ t: "text", d }));
-    const msg = await stream.finalMessage();
+  let anyText = false, nudged = false;
+  for (let round = 0; round <= MAX_TOOL_ROUNDS + 1; round++) {
+    // One model call. If the connection or the service fails before any text of this step reached the reader, try again (up to twice).
+    let msg;
+    for (let attempt = 0; ; attempt++) {
+      let wrote = false;
+      try {
+        const stream = client.beta.messages.stream({
+          model: MODEL,
+          max_tokens: 16000,
+          betas: ["server-side-fallback-2026-07-01"],
+          fallbacks: "default",                     // if the model declines, Anthropic's recommended fallback model answers
+          output_config: { effort: "medium" },
+          system,
+          tools: TOOLS,
+          ...(round >= MAX_TOOL_ROUNDS || site.count > LOOKUP_BUDGET - 4 ? { tool_choice: { type: "none" } } : {}),
+          messages,
+        });
+        stream.on("text", d => { wrote = true; anyText = true; emit({ t: "text", d }); });
+        msg = await stream.finalMessage();
+        break;
+      } catch (e) {
+        console.error("model call failed", round, attempt, e && e.status, e && e.message, e && e.error ? JSON.stringify(e.error).slice(0, 500) : "");
+        const retryable = !wrote && attempt < 2 && !(e instanceof Anthropic.AuthenticationError) && !(e instanceof Anthropic.BadRequestError);
+        if (!retryable) throw e;
+        emit({ t: "status", d: "Reconnecting" });
+        await new Promise(r => setTimeout(r, 800 * (attempt + 1)));
+      }
+    }
+    console.log("round", round, "stop", msg.stop_reason, "lookups", site.count, "blocks", msg.content.map(b => b.type).join(","));
     if (msg.stop_reason === "refusal") { emit({ t: "text", d: "\n\nI can't help with that one. The passages below are still the site's sources on it." }); break; }
     if (msg.stop_reason === "pause_turn") { messages.push({ role: "assistant", content: msg.content }); continue; }
     const uses = msg.content.filter(b => b.type === "tool_use");
     if (msg.stop_reason !== "tool_use" || !uses.length) {
       if (msg.stop_reason === "max_tokens") emit({ t: "text", d: "\n\n(The answer was cut short.)" });
+      if (!anyText && !nudged && round < MAX_TOOL_ROUNDS + 1) {   // finished without writing anything: ask once for the answer
+        nudged = true; messages.push({ role: "assistant", content: msg.content.length ? msg.content : [{ type: "text", text: "(thinking)" }] });
+        messages.push({ role: "user", content: "Now write your answer for the reader, from the passages you have. Do not look anything else up." });
+        continue;
+      }
       break;
     }
     messages.push({ role: "assistant", content: msg.content });
-    const results = await Promise.all(uses.map(async u => {
+    const results = [];
+    for (const u of uses) results.push(await (async () => {
       const out = await run(u.name, u.input).catch(() => ({ error: "The lookup failed." }));
       return typeof out === "string" ? { type: "tool_result", tool_use_id: u.id, content: out }
         : { type: "tool_result", tool_use_id: u.id, is_error: true, content: out.error };
-    }));
+    })());
     messages.push({ role: "user", content: results });
   }
+  if (!anyText) emit({ t: "text", d: "Sorry, I could not finish this answer. Please ask again, or ask a narrower question." });
   emit({ t: "done" });
 }
 

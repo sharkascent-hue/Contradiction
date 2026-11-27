@@ -9,37 +9,100 @@
       "faiths": {
         "muslim": {
           "texts": [
-            ["Quran 4:34", "Men are qawwamun (in charge) over women. For wives whose nushuz (disobedience, rebellion) is feared: admonish them, leave them in bed, and strike them (wa-dribuhunna)."],
-            ["Sahih al-Bukhari 5825", "A woman shows Aisha a bruise from her husband's beating; Aisha says she has never seen women suffer as believing women do."],
-            ["Quran 2:282", "In a debt contract, two women witnesses stand in for one man, 'so that if one errs, the other can remind her'."],
-            ["Sahih al-Bukhari 304", "Women are called 'deficient in intelligence and religion', and are said to be the majority of the people of Hell."],
-            ["Sahih al-Bukhari 3237", "If a husband calls his wife to bed and she refuses, the angels curse her until morning."],
-            ["Quran 4:11", "A son inherits twice the share of a daughter."],
-            ["Quran 4:3", "A man may marry up to four wives, and also have 'those your right hands possess'."],
-            ["Quran 2:223", "'Your women are a tilth for you, so go to your tilth as you will.'"],
-            ["Quran 2:230", "A wife divorced three times may not return to her husband until she has married and been divorced by another man."]
+            [
+              "Quran 4:34",
+              "Men are qawwamun (in charge) over women. For wives whose nushuz (disobedience, rebellion) is feared: admonish them, leave them in bed, and strike them (wa-dribuhunna)."
+            ],
+            [
+              "Sahih al-Bukhari 5825",
+              "A woman shows Aisha a bruise from her husband's beating; Aisha says she has never seen women suffer as believing women do."
+            ],
+            [
+              "Quran 2:282",
+              "In a debt contract, two women witnesses stand in for one man, 'so that if one errs, the other can remind her'."
+            ],
+            [
+              "Sahih al-Bukhari 304",
+              "Women are called 'deficient in intelligence and religion', and are said to be the majority of the people of Hell."
+            ],
+            [
+              "Sahih al-Bukhari 3237",
+              "If a husband calls his wife to bed and she refuses, the angels curse her until morning."
+            ],
+            [
+              "Quran 4:11",
+              "A son inherits twice the share of a daughter."
+            ],
+            [
+              "Quran 4:3",
+              "A man may marry up to four wives, and also have 'those your right hands possess'."
+            ],
+            [
+              "Quran 2:223",
+              "'Your women are a tilth for you, so go to your tilth as you will.'"
+            ],
+            [
+              "Quran 2:230",
+              "A wife divorced three times may not return to her husband until she has married and been divorced by another man."
+            ]
           ],
           "answer": "Muslim scholars say the strike in 4:34 is a last resort and must be light (many say with a toothstick), that men carry the duty to provide, which is why their inheritance is larger, that 2:282 is about financial contracts only, and that the Quran gave women property, inheritance and consent to marriage in seventh-century Arabia. Critics reply that the texts still give the husband authority and a right to strike that the wife does not have."
         },
         "jewish": {
           "texts": [
-            ["Genesis 3:16", "To the woman: 'your desire will be for your husband, and he will rule over you.'"],
-            ["Deuteronomy 24:1", "Only the husband can write a bill of divorce. A wife whose husband refuses a get stays 'chained' (an agunah), a problem still argued over in rabbinic courts today."],
-            ["Numbers 5:11-31", "A wife suspected of adultery is made to drink the 'bitter water' before the priest (the sotah ordeal)."],
-            ["Numbers 30:3-8", "A father or husband can cancel a woman's vows."],
-            ["Leviticus 12:1-5", "A mother is unclean for twice as long after bearing a daughter as after a son."],
-            ["Kiddushin 2a", "The Talmud opens marriage law with how a woman is 'acquired' (niknet)."],
-            ["Shevuot 30a", "Women are not accepted as witnesses in most cases."]
+            [
+              "Genesis 3:16",
+              "To the woman: 'your desire will be for your husband, and he will rule over you.'"
+            ],
+            [
+              "Deuteronomy 24:1",
+              "Only the husband can write a bill of divorce. A wife whose husband refuses a get stays 'chained' (an agunah), a problem still argued over in rabbinic courts today."
+            ],
+            [
+              "Numbers 5:11-31",
+              "A wife suspected of adultery is made to drink the 'bitter water' before the priest (the sotah ordeal)."
+            ],
+            [
+              "Numbers 30:3-8",
+              "A father or husband can cancel a woman's vows."
+            ],
+            [
+              "Leviticus 12:1-5",
+              "A mother is unclean for twice as long after bearing a daughter as after a son."
+            ],
+            [
+              "Kiddushin 2a",
+              "The Talmud opens marriage law with how a woman is 'acquired' (niknet)."
+            ],
+            [
+              "Shevuot 30a",
+              "Women are not accepted as witnesses in most cases."
+            ]
           ],
           "answer": "Jewish scholars point to the ketubah (marriage contract) that protects the wife's money, the ban of Rabbenu Gershom (about 1000 AD) on polygamy and on divorcing a wife without her consent, and to the honour the Talmud gives wives. Orthodox Judaism keeps separate roles; Conservative and Reform Judaism count women as equals in prayer and as rabbis."
         },
         "christian": {
           "texts": [
-            ["1 Corinthians 14:34-35", "Women should keep silent in the churches; if they want to learn, let them ask their husbands at home."],
-            ["1 Timothy 2:11-15", "A woman must learn in silence; she may not teach or have authority over a man, 'for Adam was formed first'."],
-            ["Ephesians 5:22-24", "Wives, submit to your husbands as to the Lord."],
-            ["1 Corinthians 11:3-9", "The head of the woman is the man; woman was created for man."],
-            ["Genesis 3:16", "Christians hold the same verse as scripture: 'he will rule over you.'"]
+            [
+              "1 Corinthians 14:34-35",
+              "Women should keep silent in the churches; if they want to learn, let them ask their husbands at home."
+            ],
+            [
+              "1 Timothy 2:11-15",
+              "A woman must learn in silence; she may not teach or have authority over a man, 'for Adam was formed first'."
+            ],
+            [
+              "Ephesians 5:22-24",
+              "Wives, submit to your husbands as to the Lord."
+            ],
+            [
+              "1 Corinthians 11:3-9",
+              "The head of the woman is the man; woman was created for man."
+            ],
+            [
+              "Genesis 3:16",
+              "Christians hold the same verse as scripture: 'he will rule over you.'"
+            ]
           ],
           "answer": "Christians point to Galatians 3:28 ('neither male nor female, for you are all one in Christ'), to Ephesians 5:25, where husbands must love their wives 'as Christ loved the church and gave himself up for her', and to Jesus' treatment of women. Catholic and Orthodox churches and many Protestants still keep the priesthood or the pastorate for men; other Protestants ordain women."
         }
@@ -53,33 +116,96 @@
       "faiths": {
         "muslim": {
           "texts": [
-            ["Quran 4:24", "Married women are forbidden to you 'except those your right hands possess'."],
-            ["Sahih Muslim 1456", "After the battle of Hunayn (Awtas), Muslims held back from captive women whose husbands were alive; 4:24 was revealed making them lawful after their waiting period."],
-            ["Sahih al-Bukhari 4138", "At the raid on Banu al-Mustaliq the men took women captives and asked the Prophet about practising coitus interruptus with them."],
-            ["Quran 23:5-6", "Believers guard their private parts 'except from their wives or those their right hands possess'."],
-            ["Quran 70:29-30", "The same exception, repeated."],
-            ["Quran 33:50", "The Prophet is allowed the women 'your right hand possesses from what God has given you as spoils'."],
-            ["Quran 47:4", "When you meet the unbelievers in battle, strike their necks; then bind the captives, and free them by grace or ransom."]
+            [
+              "Quran 4:24",
+              "Married women are forbidden to you 'except those your right hands possess'."
+            ],
+            [
+              "Sahih Muslim 1456",
+              "After the battle of Hunayn (Awtas), Muslims held back from captive women whose husbands were alive; 4:24 was revealed making them lawful after their waiting period."
+            ],
+            [
+              "Sahih al-Bukhari 4138",
+              "At the raid on Banu al-Mustaliq the men took women captives and asked the Prophet about practising coitus interruptus with them."
+            ],
+            [
+              "Quran 23:5-6",
+              "Believers guard their private parts 'except from their wives or those their right hands possess'."
+            ],
+            [
+              "Quran 70:29-30",
+              "The same exception, repeated."
+            ],
+            [
+              "Quran 33:50",
+              "The Prophet is allowed the women 'your right hand possesses from what God has given you as spoils'."
+            ],
+            [
+              "Quran 47:4",
+              "When you meet the unbelievers in battle, strike their necks; then bind the captives, and free them by grace or ransom."
+            ]
           ],
           "answer": "Classical law, Sunni and Shia, allowed a master sexual relations with his female slave without marriage. Muslim scholars today say slavery has been abolished and that the Quran pushed towards freeing slaves (90:13, 24:33); critics call the classical practice rape and sexual slavery, and note that ISIS revived it in 2014 citing these texts."
         },
         "jewish": {
           "texts": [
-            ["Deuteronomy 21:10-14", "A soldier may take a beautiful captive woman as a wife after she mourns her parents for a month; if he no longer wants her he must let her go free, not sell her."],
-            ["Numbers 31:17-18", "Kill every woman who has known a man, 'but all the girls who have not known a man, keep alive for yourselves'."],
-            ["Exodus 21:7-11", "A man may sell his daughter as a slave-wife."],
-            ["Leviticus 25:44-46", "Slaves may be bought from the surrounding nations and kept as property for ever."],
-            ["Exodus 21:20-21", "A master who beats his slave to death is punished, but not if the slave survives a day or two, 'for he is his money'."]
+            [
+              "Deuteronomy 21:10-14",
+              "A soldier may take a beautiful captive woman as a wife after she mourns her parents for a month; if he no longer wants her he must let her go free, not sell her."
+            ],
+            [
+              "Kiddushin 21b",
+              "On the captive \"beautiful woman\" of Deuteronomy 21: \"with regard to the first act of sexual intercourse... everyone agrees that it is permitted, as the Torah spoke only in response to the evil inclination.\" Kiddushin 22a adds that he should not pressure her during the war but take her into his home first."
+            ],
+            [
+              "Avodah Zarah 36b",
+              "A rabbinic decree that gentile girls are treated as ritually impure (like menstruant women) from the cradle, to prevent relations and intermarriage."
+            ],
+            [
+              "Sanhedrin 81b",
+              "The other side: a Jew who has intercourse with an \"Aramean\" (gentile) woman may be struck down by zealots."
+            ],
+            [
+              "Numbers 31:17-18",
+              "Kill every woman who has known a man, 'but all the girls who have not known a man, keep alive for yourselves'."
+            ],
+            [
+              "Exodus 21:7-11",
+              "A man may sell his daughter as a slave-wife."
+            ],
+            [
+              "Leviticus 25:44-46",
+              "Slaves may be bought from the surrounding nations and kept as property for ever."
+            ],
+            [
+              "Exodus 21:20-21",
+              "A master who beats his slave to death is punished, but not if the slave survives a day or two, 'for he is his money'."
+            ]
           ],
           "answer": "Jewish commentators say Deuteronomy 21 restrained the soldier (a month's wait, no sale, freedom if rejected), that Numbers 31 was a single judgment on Midian, and that the rabbis regulated slavery out of practice long ago. Critics say the texts still treat captive women as spoils."
         },
         "christian": {
           "texts": [
-            ["Ephesians 6:5", "Slaves, obey your earthly masters with fear and trembling."],
-            ["Colossians 3:22", "Slaves, obey your earthly masters in everything."],
-            ["1 Peter 2:18", "Slaves, submit to your masters, even to those who are harsh."],
-            ["Titus 2:9", "Slaves are to be submissive to their masters in everything."],
-            ["Numbers 31:17-18", "Christians hold the Old Testament texts above as scripture too."]
+            [
+              "Ephesians 6:5",
+              "Slaves, obey your earthly masters with fear and trembling."
+            ],
+            [
+              "Colossians 3:22",
+              "Slaves, obey your earthly masters in everything."
+            ],
+            [
+              "1 Peter 2:18",
+              "Slaves, submit to your masters, even to those who are harsh."
+            ],
+            [
+              "Titus 2:9",
+              "Slaves are to be submissive to their masters in everything."
+            ],
+            [
+              "Numbers 31:17-18",
+              "Christians hold the Old Testament texts above as scripture too."
+            ]
           ],
           "answer": "Christians answer that the New Testament never commands taking slaves, that Paul told Philemon to receive the slave Onesimus 'as a beloved brother', and that Christian abolitionists such as Wilberforce ended the Atlantic slave trade. Critics answer that slave-holding Christians quoted these same verses for centuries."
         }
@@ -93,27 +219,60 @@
       "faiths": {
         "muslim": {
           "texts": [
-            ["Sahih al-Bukhari 6922", "'Whoever changes his religion, kill him.'"],
-            ["Sahih Muslim 1676", "A Muslim's blood is lawful in three cases, one being 'the one who leaves his religion and abandons the community'."],
-            ["Quran 4:89", "If they turn away, seize them and kill them wherever you find them (said of hypocrites who defected)."],
-            ["Quran 2:217", "Whoever turns back from his religion and dies an unbeliever, his deeds are lost in this world and the next."],
-            ["Quran 2:256", "'There is no compulsion in religion.'"]
+            [
+              "Sahih al-Bukhari 6922",
+              "'Whoever changes his religion, kill him.'"
+            ],
+            [
+              "Sahih Muslim 1676",
+              "A Muslim's blood is lawful in three cases, one being 'the one who leaves his religion and abandons the community'."
+            ],
+            [
+              "Quran 4:89",
+              "If they turn away, seize them and kill them wherever you find them (said of hypocrites who defected)."
+            ],
+            [
+              "Quran 2:217",
+              "Whoever turns back from his religion and dies an unbeliever, his deeds are lost in this world and the next."
+            ],
+            [
+              "Quran 2:256",
+              "'There is no compulsion in religion.'"
+            ]
           ],
           "answer": "All four Sunni schools and the Shia Ja'fari school held that an adult male apostate is asked to repent and, if he refuses, is executed (the Hanafis spared women). A minority of modern scholars limit the penalty to treason or desertion in wartime and point to 2:256. Several states still punish apostasy in law, and family and community pressure is heavy in many places."
         },
         "jewish": {
           "texts": [
-            ["Deuteronomy 13:6-10", "If your own brother, son, daughter or wife entices you to serve other gods, 'you shall surely kill him; your hand shall be first'."],
-            ["Deuteronomy 17:2-5", "A man or woman found serving other gods is stoned."],
-            ["Sanhedrin 44a", "'Israel, even though it has sinned, is still Israel': a Jew who leaves is still counted a Jew."]
+            [
+              "Deuteronomy 13:6-10",
+              "If your own brother, son, daughter or wife entices you to serve other gods, 'you shall surely kill him; your hand shall be first'."
+            ],
+            [
+              "Deuteronomy 17:2-5",
+              "A man or woman found serving other gods is stoned."
+            ],
+            [
+              "Sanhedrin 44a",
+              "'Israel, even though it has sinned, is still Israel': a Jew who leaves is still counted a Jew."
+            ]
           ],
           "answer": "The rabbis surrounded capital cases with so many conditions that executions almost never happened, and there has been no Sanhedrin to impose them for nearly two thousand years. Today a Jew who converts is treated by Orthodox Judaism as a sinner or heretic, not executed."
         },
         "christian": {
           "texts": [
-            ["Hebrews 6:4-6", "Those who have tasted the heavenly gift and then fall away cannot be brought back to repentance."],
-            ["Hebrews 10:26-29", "For those who sin deliberately after knowing the truth, 'there remains a fearful expectation of judgment'."],
-            ["Matthew 10:33", "Whoever denies me before men, I will deny before my Father."]
+            [
+              "Hebrews 6:4-6",
+              "Those who have tasted the heavenly gift and then fall away cannot be brought back to repentance."
+            ],
+            [
+              "Hebrews 10:26-29",
+              "For those who sin deliberately after knowing the truth, 'there remains a fearful expectation of judgment'."
+            ],
+            [
+              "Matthew 10:33",
+              "Whoever denies me before men, I will deny before my Father."
+            ]
           ],
           "answer": "The New Testament warns of judgment by God but gives no earthly penalty for leaving the faith. Medieval Christian states did execute heretics; churches today reject that and teach that faith cannot be forced."
         }
@@ -127,33 +286,84 @@
       "faiths": {
         "muslim": {
           "texts": [
-            ["Quran 9:5", "When the sacred months are over, 'kill the idolaters wherever you find them', unless they repent, pray and give zakat."],
-            ["Quran 9:29", "Fight the People of the Book who do not believe 'until they pay the jizya willingly, while they are humbled'."],
-            ["Quran 8:12", "'I will cast terror into the hearts of those who disbelieve, so strike above the necks.'"],
-            ["Quran 47:4", "When you meet the unbelievers in battle, strike their necks."],
-            ["Sahih al-Bukhari 25", "'I have been ordered to fight the people until they testify that there is no god but God and Muhammad is his messenger.'"],
-            ["Sahih Muslim 1731", "Invite the enemy to Islam; if they refuse, ask for jizya; if they refuse, fight them."],
-            ["Quran 2:190", "Fight those who fight you, but do not transgress."],
-            ["Quran 60:8", "God does not forbid you to be kind and just to those who have not fought you over religion."]
+            [
+              "Quran 9:5",
+              "When the sacred months are over, 'kill the idolaters wherever you find them', unless they repent, pray and give zakat."
+            ],
+            [
+              "Quran 9:29",
+              "Fight the People of the Book who do not believe 'until they pay the jizya willingly, while they are humbled'."
+            ],
+            [
+              "Quran 8:12",
+              "'I will cast terror into the hearts of those who disbelieve, so strike above the necks.'"
+            ],
+            [
+              "Quran 47:4",
+              "When you meet the unbelievers in battle, strike their necks."
+            ],
+            [
+              "Sahih al-Bukhari 25",
+              "'I have been ordered to fight the people until they testify that there is no god but God and Muhammad is his messenger.'"
+            ],
+            [
+              "Sahih Muslim 1731",
+              "Invite the enemy to Islam; if they refuse, ask for jizya; if they refuse, fight them."
+            ],
+            [
+              "Quran 2:190",
+              "Fight those who fight you, but do not transgress."
+            ],
+            [
+              "Quran 60:8",
+              "God does not forbid you to be kind and just to those who have not fought you over religion."
+            ]
           ],
           "answer": "Most scholars tie 9:5 to the pagan Arabs who broke their treaties, and say peaceful non-Muslims were protected as dhimmis. Classical law also allowed offensive jihad to expand Muslim rule, with jizya for Jews and Christians. Critics and militant groups read 9:5 and 9:29 as open-ended commands; most Muslims today reject that reading."
         },
         "jewish": {
           "texts": [
-            ["Deuteronomy 20:16-17", "In the cities of the Canaanite nations 'you shall save alive nothing that breathes'."],
-            ["Deuteronomy 7:1-2", "Destroy the seven nations utterly; make no covenant with them and show them no mercy."],
-            ["1 Samuel 15:3", "Attack Amalek and kill 'man and woman, child and infant, ox and sheep'."],
-            ["Joshua 6:21", "At Jericho they destroyed 'man and woman, young and old' with the sword."]
+            [
+              "Deuteronomy 20:16-17",
+              "In the cities of the Canaanite nations 'you shall save alive nothing that breathes'."
+            ],
+            [
+              "Deuteronomy 7:1-2",
+              "Destroy the seven nations utterly; make no covenant with them and show them no mercy."
+            ],
+            [
+              "1 Samuel 15:3",
+              "Attack Amalek and kill 'man and woman, child and infant, ox and sheep'."
+            ],
+            [
+              "Joshua 6:21",
+              "At Jericho they destroyed 'man and woman, young and old' with the sword."
+            ]
           ],
           "answer": "Jewish tradition holds that these commands applied only to specific nations of that time, which no longer exist as identifiable peoples, so they cannot be applied today. Maimonides adds that even these nations had to be offered peace first."
         },
         "christian": {
           "texts": [
-            ["Matthew 10:34", "'I did not come to bring peace, but a sword.'"],
-            ["Luke 19:27", "In a parable, the king says: 'bring here those enemies of mine who did not want me to reign over them, and slay them before me.'"],
-            ["Luke 14:23", "'Compel them to come in', a verse Augustine used to justify forcing heretics back to the church."],
-            ["Matthew 26:52", "'All who take the sword will perish by the sword.'"],
-            ["John 18:36", "'My kingdom is not of this world; if it were, my servants would fight.'"]
+            [
+              "Matthew 10:34",
+              "'I did not come to bring peace, but a sword.'"
+            ],
+            [
+              "Luke 19:27",
+              "In a parable, the king says: 'bring here those enemies of mine who did not want me to reign over them, and slay them before me.'"
+            ],
+            [
+              "Luke 14:23",
+              "'Compel them to come in', a verse Augustine used to justify forcing heretics back to the church."
+            ],
+            [
+              "Matthew 26:52",
+              "'All who take the sword will perish by the sword.'"
+            ],
+            [
+              "John 18:36",
+              "'My kingdom is not of this world; if it were, my servants would fight.'"
+            ]
           ],
           "answer": "Christians read Matthew 10:34 as division within families and Luke 19:27 as a parable about final judgment, not a command. They also hold the Old Testament conquest texts as scripture. Critics point to the Crusades and the Inquisition as Christians acting on such texts."
         }
@@ -167,23 +377,44 @@
       "faiths": {
         "muslim": {
           "texts": [
-            ["Sahih al-Bukhari 5133", "Aisha was married to the Prophet at six and the marriage was consummated when she was nine."],
-            ["Sahih Muslim 1422", "The same ages, in Muslim's collection; she took her toys with her."],
-            ["Quran 65:4", "The waiting period after divorce is set for women past menstruation 'and those who have not yet menstruated'."]
+            [
+              "Sahih al-Bukhari 5133",
+              "Aisha was married to the Prophet at six and the marriage was consummated when she was nine."
+            ],
+            [
+              "Sahih Muslim 1422",
+              "The same ages, in Muslim's collection; she took her toys with her."
+            ],
+            [
+              "Quran 65:4",
+              "The waiting period after divorce is set for women past menstruation 'and those who have not yet menstruated'."
+            ]
           ],
           "answer": "Classical jurists, citing 65:4 and the Aisha hadith, allowed a father to marry off a young daughter, with consummation delayed until she was physically ready. Some modern Muslim writers argue Aisha was older; mainstream hadith scholarship keeps six and nine. Most Muslim-majority countries now set a legal minimum age."
         },
         "jewish": {
           "texts": [
-            ["Kiddushin 41a", "Rav: a man may not betroth his daughter while she is a minor; he must wait until she is grown and says 'I want this one'."],
-            ["Niddah 44b", "A girl of three years and a day can be betrothed by intercourse (her father's consent being required)."],
-            ["Ketubot 11b", "Intercourse with a girl under three is treated as of no legal effect, 'like putting a finger in the eye'."]
+            [
+              "Kiddushin 41a",
+              "Rav: a man may not betroth his daughter while she is a minor; he must wait until she is grown and says 'I want this one'."
+            ],
+            [
+              "Niddah 44b",
+              "A girl of three years and a day can be betrothed by intercourse (her father's consent being required)."
+            ],
+            [
+              "Ketubot 11b",
+              "Intercourse with a girl under three is treated as of no legal effect, 'like putting a finger in the eye'."
+            ]
           ],
           "answer": "Critics quote Niddah 44b and Ketubot 11b; Jewish scholars answer that these passages set out legal status in extreme cases, that the Talmud itself (Kiddushin 41a) forbids marrying off a minor, and that Jewish communities did not practise it. Israeli law sets the minimum age at 18."
         },
         "christian": {
           "texts": [
-            ["Numbers 31:17-18", "The Old Testament text critics cite about girls taken in war."]
+            [
+              "Numbers 31:17-18",
+              "The Old Testament text critics cite about girls taken in war."
+            ]
           ],
           "answer": "The New Testament sets no age of marriage. Medieval canon law allowed marriage from twelve for girls and fourteen for boys, following Roman law. Today churches follow the law of each country."
         }
@@ -197,29 +428,68 @@
       "faiths": {
         "muslim": {
           "texts": [
-            ["Quran 5:38", "Cut off the hands of the male and female thief."],
-            ["Quran 5:33", "Those who wage war on God and his messenger are killed, crucified, or have hand and foot cut off from opposite sides."],
-            ["Quran 24:2", "A hundred lashes for the unmarried man and woman who commit zina."],
-            ["Sahih al-Bukhari 6829", "Umar says stoning for married adulterers was revealed in God's book, and fears people will one day deny it."],
-            ["Sahih Muslim 1695", "A woman of Ghamid confesses to adultery and is stoned after she has weaned her child."]
+            [
+              "Quran 5:38",
+              "Cut off the hands of the male and female thief."
+            ],
+            [
+              "Quran 5:33",
+              "Those who wage war on God and his messenger are killed, crucified, or have hand and foot cut off from opposite sides."
+            ],
+            [
+              "Quran 24:2",
+              "A hundred lashes for the unmarried man and woman who commit zina."
+            ],
+            [
+              "Sahih al-Bukhari 6829",
+              "Umar says stoning for married adulterers was revealed in God's book, and fears people will one day deny it."
+            ],
+            [
+              "Sahih Muslim 1695",
+              "A woman of Ghamid confesses to adultery and is stoned after she has weaned her child."
+            ]
           ],
           "answer": "Muslim jurists say these hudud punishments need very strict proof (four eyewitnesses for zina, or a free confession) and are to be averted by any doubt. They are law today in a few states, such as Saudi Arabia and Iran; most Muslim countries do not apply them."
         },
         "jewish": {
           "texts": [
-            ["Leviticus 20:10", "The adulterer and the adulteress are put to death."],
-            ["Exodus 31:14", "Whoever works on the Sabbath is put to death."],
-            ["Deuteronomy 21:18-21", "A stubborn, rebellious son is stoned by the men of his city."],
-            ["Deuteronomy 22:20-21", "A bride found not to be a virgin is stoned at her father's door."],
-            ["Mishnah Makkot 1:10", "A court that executes once in seven years is called destructive; Rabbi Akiva and Rabbi Tarfon say that with them on the court no one would ever be executed."]
+            [
+              "Leviticus 20:10",
+              "The adulterer and the adulteress are put to death."
+            ],
+            [
+              "Exodus 31:14",
+              "Whoever works on the Sabbath is put to death."
+            ],
+            [
+              "Deuteronomy 21:18-21",
+              "A stubborn, rebellious son is stoned by the men of his city."
+            ],
+            [
+              "Deuteronomy 22:20-21",
+              "A bride found not to be a virgin is stoned at her father's door."
+            ],
+            [
+              "Mishnah Makkot 1:10",
+              "A court that executes once in seven years is called destructive; Rabbi Akiva and Rabbi Tarfon say that with them on the court no one would ever be executed."
+            ]
           ],
           "answer": "Rabbinic law made capital punishment almost impossible (warning before the act, two witnesses, a full Sanhedrin), and the Talmud says the rebellious son 'never was and never will be' (Sanhedrin 71a). There is no Sanhedrin today, so none of these is applied."
         },
         "christian": {
           "texts": [
-            ["John 8:7", "'Let him who is without sin among you throw the first stone.'"],
-            ["Matthew 5:38-39", "'You have heard, an eye for an eye; but I say to you, do not resist an evil person.'"],
-            ["Leviticus 20:10", "Christians hold the Old Testament laws as scripture, but teach that Christ fulfilled them."]
+            [
+              "John 8:7",
+              "'Let him who is without sin among you throw the first stone.'"
+            ],
+            [
+              "Matthew 5:38-39",
+              "'You have heard, an eye for an eye; but I say to you, do not resist an evil person.'"
+            ],
+            [
+              "Leviticus 20:10",
+              "Christians hold the Old Testament laws as scripture, but teach that Christ fulfilled them."
+            ]
           ],
           "answer": "Christians teach that the civil laws of Israel are not binding on the church. Christian states nonetheless used capital punishment for heresy, witchcraft and blasphemy for centuries; churches today generally oppose it or restrict it."
         }
