@@ -1,1 +1,713 @@
-{"events": []}
+{
+ "events": [
+  {
+   "year": -1250,
+   "year_label": "c. 13th century BC (traditional)",
+   "faith": "jewish",
+   "kind": "written",
+   "title": "Torah: the traditional date (Moses)",
+   "text": "Rabbinic tradition holds that the whole Torah (Genesis to Deuteronomy) was given by God through Moses and written down by him; the Exodus and Sinai are traditionally placed around the 15th-13th century BC. No manuscript survives from anywhere near this time, and critical scholars date the finished text many centuries later (see the entry at c. 5th century BC).",
+   "source": "https://en.wikipedia.org/wiki/Torah"
+  },
+  {
+   "year": -600,
+   "year_label": "c. 600 BC",
+   "faith": "jewish",
+   "kind": "manuscript",
+   "title": "Ketef Hinnom silver scrolls",
+   "text": "Two tiny rolled silver amulets found in a Jerusalem burial cave in 1979, inscribed in Paleo-Hebrew with a form of the Priestly Blessing of Numbers 6:24-26. Usually dated to the late 7th or early 6th century BC, they are the oldest surviving texts paralleling the Hebrew Bible. A minority of scholars have argued the script is too worn to rule out a much later date.",
+   "gap": "about 350 years older than the oldest Dead Sea Scrolls",
+   "source": "https://en.wikipedia.org/wiki/Ketef_Hinnom_scrolls"
+  },
+  {
+   "year": -587,
+   "year_label": "587/586 BC",
+   "faith": "jewish",
+   "kind": "event",
+   "title": "Destruction of the First Temple",
+   "text": "The Babylonians under Nebuchadnezzar II took Jerusalem after a long siege, razed Solomon's Temple and exiled much of the population to Babylonia. Much of the Hebrew Bible was written, edited or collected in response to this catastrophe and the exile that followed.",
+   "source": "https://en.wikipedia.org/wiki/Siege_of_Jerusalem_(587_BC)"
+  },
+  {
+   "year": -550,
+   "year_label": "c. 8th-5th century BC",
+   "faith": "jewish",
+   "kind": "written",
+   "title": "The Prophets (Nevi'im) composed",
+   "text": "The prophetic books grew over several centuries. Isaiah, for example, is set in the 8th century BC, but critical scholars find that much of the book was composed during and after the Babylonian exile, by more than one author. Traditional readers hold that each prophet wrote his own book in his own lifetime.",
+   "source": "https://en.wikipedia.org/wiki/Book_of_Isaiah"
+  },
+  {
+   "year": -450,
+   "year_label": "c. 6th-5th century BC (critical view)",
+   "faith": "jewish",
+   "kind": "written",
+   "title": "Torah: final form in the critical view",
+   "text": "The general trend in critical scholarship is that the Torah reached its final form in the Persian period (roughly 6th-5th century BC), built from older written and oral sources, with possibly a few later additions. This is the main alternative to the traditional view that Moses wrote it some 800 years earlier.",
+   "gap": "about 800 years after the traditional date of Moses",
+   "source": "https://en.wikipedia.org/wiki/Torah"
+  },
+  {
+   "year": -300,
+   "year_label": "c. 5th-2nd century BC",
+   "faith": "jewish",
+   "kind": "written",
+   "title": "The Writings (Ketuvim) composed",
+   "text": "The third part of the Hebrew Bible (Psalms, Proverbs, Job, the Five Scrolls, Daniel, Ezra-Nehemiah, Chronicles) contains its latest books and was the last section accepted as scripture. There is no scholarly agreement on when the Jewish canon was closed: some say under the Hasmoneans (2nd-1st century BC), others not until the 2nd century AD or later.",
+   "source": "https://en.wikipedia.org/wiki/Ketuvim"
+  },
+  {
+   "year": -250,
+   "year_label": "3rd century BC",
+   "faith": "jewish",
+   "kind": "written",
+   "title": "Septuagint: the Torah translated into Greek",
+   "text": "Jews in Ptolemaic Egypt, probably in Alexandria, translated the Torah into Greek in the mid or late 3rd century BC; the other books followed, mostly in the 2nd century BC. The Septuagint is the Old Testament most New Testament writers quote, and it sometimes differs from the later Hebrew Masoretic Text.",
+   "source": "https://en.wikipedia.org/wiki/Septuagint"
+  },
+  {
+   "year": -250,
+   "year_label": "3rd century BC onward",
+   "faith": "jewish",
+   "kind": "manuscript",
+   "title": "Oldest Dead Sea Scrolls",
+   "text": "The Dead Sea Scrolls, found in caves near Qumran between 1946 and 1956, date from the 3rd century BC to the 1st century AD. They include the oldest surviving manuscripts of books of the Hebrew Bible, about a thousand years older than the medieval Masoretic codices that were the oldest Hebrew copies known before.",
+   "source": "https://en.wikipedia.org/wiki/Dead_Sea_Scrolls"
+  },
+  {
+   "year": -165,
+   "year_label": "c. 167-164 BC (critical view)",
+   "faith": "jewish",
+   "kind": "written",
+   "title": "Book of Daniel",
+   "text": "Daniel is set in the 6th century BC in Babylon, and tradition holds it was written then by Daniel himself. Mainstream critical scholars date the finished book to the 2nd century BC, because its visions reflect the persecution under Antiochus IV in 167-164 BC. The date matters for whether its 'prophecies' were written before or after the events.",
+   "gap": "about 400 years after the time in which it is set",
+   "source": "https://en.wikipedia.org/wiki/Book_of_Daniel"
+  },
+  {
+   "year": -125,
+   "year_label": "c. 150-100 BC",
+   "faith": "jewish",
+   "kind": "manuscript",
+   "title": "Nash Papyrus",
+   "text": "Four papyrus fragments acquired in Egypt in 1902 (Cambridge University Library MS Or.233) with the Ten Commandments and the start of the Shema. Before the Dead Sea Scrolls it was the oldest known Hebrew manuscript fragment. Its wording differs from the Masoretic Text and in places sits closer to the Septuagint.",
+   "source": "https://en.wikipedia.org/wiki/Nash_Papyrus"
+  },
+  {
+   "year": -125,
+   "year_label": "c. 125 BC",
+   "faith": "jewish",
+   "kind": "manuscript",
+   "title": "Great Isaiah Scroll (1QIsaᵃ)",
+   "text": "Found in Qumran Cave 1 in 1947, it holds almost the entire Book of Isaiah, all 66 chapters, on 17 sheets of parchment about 7.3 metres long. It is the oldest complete copy of any biblical book and roughly a thousand years older than the Hebrew manuscripts known before. It shows the text of Isaiah was already in essentially its present shape before the time of Jesus.",
+   "gap": "about 1,100 years older than the Leningrad Codex; about 600 years after the prophet Isaiah",
+   "source": "https://en.wikipedia.org/wiki/Isaiah_Scroll"
+  },
+  {
+   "year": -5,
+   "year_label": "c. 6-4 BC",
+   "faith": "christian",
+   "kind": "event",
+   "title": "Birth of Jesus",
+   "text": "The Gospels give no date. Most scholars place the birth between 6 and 4 BC, because Matthew and Luke set it in the reign of Herod the Great. The AD calendar, worked out centuries later, is therefore a few years off.",
+   "source": "https://en.wikipedia.org/wiki/Chronology_of_Jesus"
+  },
+  {
+   "year": 30,
+   "year_label": "AD 30 or 33",
+   "faith": "christian",
+   "kind": "event",
+   "title": "Crucifixion of Jesus",
+   "text": "Jesus was crucified in Jerusalem under the Roman governor Pontius Pilate. Most scholars put his preaching around AD 27-29 and his death between AD 30 and 36; the two dates that best fit a Friday at Passover are 7 April AD 30 and 3 April AD 33. Every New Testament book was written after this point.",
+   "source": "https://en.wikipedia.org/wiki/Chronology_of_Jesus"
+  },
+  {
+   "year": 52,
+   "year_label": "c. AD 50-60",
+   "faith": "christian",
+   "kind": "written",
+   "title": "Paul's letters",
+   "text": "Paul's letters are the earliest surviving Christian writings, older than the Gospels: 1 Thessalonians is usually dated about AD 49-51, 1 Corinthians about 53-54 and Romans about 55-57. Most scholars accept seven of the thirteen letters under his name as certainly his; the authorship of the others is disputed.",
+   "gap": "about 20-30 years after the crucifixion",
+   "source": "https://en.wikipedia.org/wiki/Pauline_epistles"
+  },
+  {
+   "year": 70,
+   "year_label": "c. AD 65-75",
+   "faith": "christian",
+   "kind": "written",
+   "title": "Gospel of Mark",
+   "text": "Usually judged the earliest Gospel and dated to around AD 70, just before or just after the fall of Jerusalem. Tradition attributes it to Mark, a companion of Peter; the text itself names no author.",
+   "gap": "about 40 years after the crucifixion",
+   "source": "https://en.wikipedia.org/wiki/Gospel_of_Mark"
+  },
+  {
+   "year": 70,
+   "year_label": "AD 70",
+   "faith": "shared",
+   "kind": "event",
+   "title": "Destruction of the Second Temple",
+   "text": "Roman forces under Titus took Jerusalem and destroyed the Temple during the First Jewish Revolt. Judaism was reshaped around the rabbis and the study of the law instead of sacrifice, and scholars use the event to date the Gospels, which appear to know of it.",
+   "source": "https://en.wikipedia.org/wiki/Siege_of_Jerusalem_(70_CE)"
+  },
+  {
+   "year": 85,
+   "year_label": "c. AD 80-90",
+   "faith": "christian",
+   "kind": "written",
+   "title": "Gospel of Matthew",
+   "text": "Written in the last quarter of the first century, most often placed around AD 80-90, and using Mark as a source. Early tradition (Papias) attributes it to the apostle Matthew; most scholars regard it as an anonymous work by a Jewish Christian author.",
+   "gap": "about 50-60 years after the crucifixion",
+   "source": "https://en.wikipedia.org/wiki/Gospel_of_Matthew"
+  },
+  {
+   "year": 85,
+   "year_label": "c. AD 80-90",
+   "faith": "christian",
+   "kind": "written",
+   "title": "Gospel of Luke",
+   "text": "The most common scholarly date is around AD 80-90. It is the first half of a two-volume work with Acts. Tradition names the author as Luke, a doctor who travelled with Paul, but the text does not name him.",
+   "gap": "about 50-60 years after the crucifixion",
+   "source": "https://en.wikipedia.org/wiki/Gospel_of_Luke"
+  },
+  {
+   "year": 95,
+   "year_label": "c. AD 90-100",
+   "faith": "christian",
+   "kind": "written",
+   "title": "Gospel of John",
+   "text": "Most scholars agree John was completed between AD 90 and 100, making it the last of the four Gospels. Tradition attributes it to the apostle John. It contains the most explicit statements about Jesus's divinity, which is why its late date is central to the debates.",
+   "gap": "about 60-70 years after the crucifixion",
+   "source": "https://en.wikipedia.org/wiki/Gospel_of_John"
+  },
+  {
+   "year": 95,
+   "year_label": "c. AD 95",
+   "faith": "christian",
+   "kind": "written",
+   "title": "Book of Revelation",
+   "text": "The last book of the New Testament, commonly dated to about AD 95 in the reign of the emperor Domitian. Its author calls himself John; whether he is the apostle is disputed.",
+   "gap": "about 65 years after the crucifixion",
+   "source": "https://en.wikipedia.org/wiki/Book_of_Revelation"
+  },
+  {
+   "year": 150,
+   "year_label": "c. AD 125-175",
+   "faith": "christian",
+   "kind": "manuscript",
+   "title": "Papyrus 52 (Rylands fragment of John)",
+   "text": "A credit-card-sized scrap of a papyrus codex (P.Ryl. Greek 457, John Rylands Library, Manchester) with a few lines of John 18. It is widely regarded as the oldest surviving piece of the New Testament. It was first dated to the first half of the 2nd century; a more recent estimate is 125-175, and handwriting alone cannot fix it precisely.",
+   "gap": "about 100-150 years after the crucifixion; a few decades after John was written",
+   "source": "https://en.wikipedia.org/wiki/Rylands_Library_Papyrus_P52"
+  },
+  {
+   "year": 185,
+   "year_label": "c. AD 170-200 (disputed)",
+   "faith": "christian",
+   "kind": "canon",
+   "title": "Muratorian fragment",
+   "text": "An 85-line Latin text, preserved in a roughly 8th-century codex, that may be the oldest known list of New Testament books. It is usually thought to translate a Greek original of about AD 170-200, though some scholars place it as late as the 4th century. It shows most of the New Testament was already treated as scripture long before any council.",
+   "source": "https://en.wikipedia.org/wiki/Muratorian_fragment"
+  },
+  {
+   "year": 200,
+   "year_label": "c. AD 175-225",
+   "faith": "christian",
+   "kind": "manuscript",
+   "title": "Papyrus 46 (Paul's letters)",
+   "text": "P. Chester Beatty II, one of the oldest New Testament manuscripts, containing a collection of Paul's letters. It is dated by handwriting to between about 175 and 225.",
+   "gap": "about 130-170 years after Paul wrote",
+   "source": "https://en.wikipedia.org/wiki/Papyrus_46"
+  },
+  {
+   "year": 200,
+   "year_label": "c. AD 200 (disputed)",
+   "faith": "christian",
+   "kind": "manuscript",
+   "title": "Papyrus 66 (Gospel of John)",
+   "text": "A nearly complete codex of John from the Bodmer Papyri. Its first editor dated it to about AD 200; others have argued for the mid-2nd century, and one recent study argues for the early or middle 4th century. Like the other earliest copies of John, it lacks the story of the woman caught in adultery (John 7:53-8:11).",
+   "gap": "about 100 years after John was written (on the usual dating)",
+   "source": "https://en.wikipedia.org/wiki/Papyrus_66"
+  },
+  {
+   "year": 200,
+   "year_label": "c. AD 200",
+   "faith": "jewish",
+   "kind": "written",
+   "title": "Mishnah",
+   "text": "The first written collection of the Jewish oral law, finalised by Rabbi Judah the Prince around AD 200. Rabbinic tradition holds that this Oral Torah was revealed to Moses at Sinai alongside the written Torah and passed down by word of mouth until then.",
+   "gap": "about 130 years after the destruction of the Second Temple",
+   "source": "https://en.wikipedia.org/wiki/Mishnah"
+  },
+  {
+   "year": 225,
+   "year_label": "late 2nd-3rd century AD",
+   "faith": "jewish",
+   "kind": "written",
+   "title": "Tosefta",
+   "text": "A 'supplement' to the Mishnah: a second compilation of oral law from the same circle of sages (the Tannaim), arranged in the same order and preserving material the Mishnah left out.",
+   "source": "https://en.wikipedia.org/wiki/Tosefta"
+  },
+  {
+   "year": 250,
+   "year_label": "3rd century AD (possibly early 4th)",
+   "faith": "christian",
+   "kind": "manuscript",
+   "title": "Papyrus 75 (Luke and John)",
+   "text": "Papyrus Bodmer XIV-XV contains most of Luke 3-24 and John 1-15. It has traditionally been dated to the 3rd century, though some recent studies allow the early 4th. Its text is very close to Codex Vaticanus, which is taken as evidence of careful copying.",
+   "source": "https://en.wikipedia.org/wiki/Papyrus_75"
+  },
+  {
+   "year": 325,
+   "year_label": "AD 325",
+   "faith": "christian",
+   "kind": "event",
+   "title": "First Council of Nicaea",
+   "text": "Bishops summoned by the emperor Constantine condemned Arius's teaching that the Son was created and issued the first form of the Nicene Creed, declaring the Son 'of one substance' with the Father. Contrary to a popular claim, the council did not decide which books belong in the Bible.",
+   "gap": "about 295 years after the crucifixion",
+   "source": "https://en.wikipedia.org/wiki/First_Council_of_Nicaea"
+  },
+  {
+   "year": 340,
+   "year_label": "mid-4th century AD",
+   "faith": "christian",
+   "kind": "manuscript",
+   "title": "Codex Vaticanus",
+   "text": "A Greek Bible held in the Vatican Library since at least the 15th century, with most of the Old and New Testaments. It is generally assigned to the middle of the 4th century and is one of the two oldest near-complete Bibles.",
+   "gap": "about 300 years after the crucifixion",
+   "source": "https://en.wikipedia.org/wiki/Codex_Vaticanus"
+  },
+  {
+   "year": 350,
+   "year_label": "mid-4th century AD",
+   "faith": "christian",
+   "kind": "manuscript",
+   "title": "Codex Sinaiticus",
+   "text": "A Greek Bible (British Library Add MS 43725) that contains the oldest complete copy of the New Testament. It also includes the Epistle of Barnabas and the Shepherd of Hermas, which are not in today's Bible. It lacks the longer ending of Mark and the Comma Johanneum.",
+   "gap": "about 300 years after the crucifixion",
+   "source": "https://en.wikipedia.org/wiki/Codex_Sinaiticus"
+  },
+  {
+   "year": 367,
+   "year_label": "AD 367",
+   "faith": "christian",
+   "kind": "canon",
+   "title": "Athanasius's 39th Festal Letter",
+   "text": "In his Easter letter of 367, bishop Athanasius of Alexandria listed the books of scripture. It is widely regarded as the first surviving list that names exactly the 27 books of today's New Testament.",
+   "gap": "about 270 years after the last New Testament books were written",
+   "source": "https://en.wikipedia.org/wiki/Athanasius_of_Alexandria"
+  },
+  {
+   "year": 381,
+   "year_label": "AD 381",
+   "faith": "christian",
+   "kind": "event",
+   "title": "First Council of Constantinople",
+   "text": "Called by the emperor Theodosius I, this council confirmed and expanded the Nicene Creed, including its teaching on the Holy Spirit. The creed recited in churches today as the 'Nicene Creed' is essentially this expanded form.",
+   "source": "https://en.wikipedia.org/wiki/First_Council_of_Constantinople"
+  },
+  {
+   "year": 382,
+   "year_label": "begun AD 382",
+   "faith": "christian",
+   "kind": "written",
+   "title": "Vulgate (Jerome's Latin Bible)",
+   "text": "Pope Damasus I commissioned Jerome in 382 to revise the Old Latin Gospels; Jerome went on to translate most of the Bible, much of the Old Testament directly from Hebrew. The Vulgate became the standard Bible of the Western Church for over a thousand years.",
+   "source": "https://en.wikipedia.org/wiki/Vulgate"
+  },
+  {
+   "year": 400,
+   "year_label": "late 4th - early 5th century AD",
+   "faith": "jewish",
+   "kind": "written",
+   "title": "Jerusalem Talmud",
+   "text": "Rabbinic commentary on the Mishnah compiled in Galilee, not in Jerusalem itself. It is dated between the second half of the 4th century and the first half of the 5th, about a century before the Babylonian Talmud.",
+   "source": "https://en.wikipedia.org/wiki/Jerusalem_Talmud"
+  },
+  {
+   "year": 425,
+   "year_label": "5th century AD",
+   "faith": "christian",
+   "kind": "manuscript",
+   "title": "Codex Bezae",
+   "text": "A Greek and Latin manuscript of the Gospels and Acts, now at Cambridge, dated by handwriting to the 5th century. It is known for its many unusual readings, especially in Acts, and is a chief witness to the so-called Western text.",
+   "source": "https://en.wikipedia.org/wiki/Codex_Bezae"
+  },
+  {
+   "year": 450,
+   "year_label": "5th century AD",
+   "faith": "christian",
+   "kind": "manuscript",
+   "title": "Codex Alexandrinus",
+   "text": "A 5th-century Greek Bible in the British Library (Royal MS 1 D V-VIII), one of the earliest and most complete. It includes 1 Clement, a book not in today's New Testament, a sign that the edges of the canon were not yet fully settled in practice.",
+   "source": "https://en.wikipedia.org/wiki/Codex_Alexandrinus"
+  },
+  {
+   "year": 451,
+   "year_label": "AD 451",
+   "faith": "christian",
+   "kind": "event",
+   "title": "Council of Chalcedon",
+   "text": "The fourth ecumenical council, attended by over 520 bishops, defined that Christ is one person in two natures, fully divine and fully human. Churches that rejected the definition (the Oriental Orthodox) remain separate to this day.",
+   "gap": "about 420 years after the crucifixion",
+   "source": "https://en.wikipedia.org/wiki/Council_of_Chalcedon"
+  },
+  {
+   "year": 550,
+   "year_label": "c. AD 500-600",
+   "faith": "jewish",
+   "kind": "written",
+   "title": "Babylonian Talmud",
+   "text": "The main Talmud of Rabbinic Judaism: the Mishnah with centuries of rabbinic discussion (Gemara). Tradition says it was compiled by Rav Ashi and Ravina around AD 500; scholars think the final editing was more likely in the 6th century.",
+   "source": "https://en.wikipedia.org/wiki/Talmud"
+  },
+  {
+   "year": 570,
+   "year_label": "c. AD 570",
+   "faith": "muslim",
+   "kind": "event",
+   "title": "Birth of Muhammad",
+   "text": "According to the traditional account Muhammad was born in Mecca around 570. The date comes from later Islamic tradition; there is no contemporary record.",
+   "source": "https://en.wikipedia.org/wiki/Muhammad"
+  },
+  {
+   "year": 610,
+   "year_label": "c. AD 610",
+   "faith": "muslim",
+   "kind": "event",
+   "title": "First revelation to Muhammad",
+   "text": "According to Islamic tradition, Muhammad, aged about 40, was visited by the angel Gabriel in the cave of Hira near Mecca and received the first verses of the Quran. Muslims believe the revelations continued until his death in 632.",
+   "source": "https://en.wikipedia.org/wiki/Muhammad"
+  },
+  {
+   "year": 622,
+   "year_label": "AD 622",
+   "faith": "muslim",
+   "kind": "event",
+   "title": "Hijra (migration to Medina)",
+   "text": "Muhammad and his followers left Mecca for Medina. The Islamic calendar counts its years from this event.",
+   "source": "https://en.wikipedia.org/wiki/Hijrah"
+  },
+  {
+   "year": 632,
+   "year_label": "8 June AD 632",
+   "faith": "muslim",
+   "kind": "event",
+   "title": "Death of Muhammad",
+   "text": "Muhammad died in Medina. According to the traditional account the Quran existed at that point in the memories of his companions and on scattered written pieces, not as one bound book.",
+   "source": "https://en.wikipedia.org/wiki/Muhammad"
+  },
+  {
+   "year": 632,
+   "year_label": "AD 632",
+   "faith": "muslim",
+   "kind": "event",
+   "title": "Succession dispute: the root of the Sunni-Shia split",
+   "text": "At the Saqifa meeting, held shortly after Muhammad's death, Abu Bakr was chosen as first caliph while Ali and Muhammad's family were occupied with the burial. Sunnis hold that this was a legitimate choice; Shia hold that Muhammad had designated Ali as his successor.",
+   "source": "https://en.wikipedia.org/wiki/Saqifa"
+  },
+  {
+   "year": 633,
+   "year_label": "c. AD 633-634 (traditional)",
+   "faith": "muslim",
+   "kind": "written",
+   "title": "Abu Bakr's collection of the Quran",
+   "text": "According to Sunni tradition, after many who had memorised the Quran were killed at the Battle of Yamama (633), Abu Bakr had Zayd ibn Thabit gather it from written fragments and from memory. The sheets passed to Umar and then to his daughter Hafsa. Some Shia traditions say Ali was the first to compile it. The account comes from later hadith reports.",
+   "gap": "about 1-2 years after Muhammad's death",
+   "source": "https://en.wikipedia.org/wiki/History_of_the_Quran"
+  },
+  {
+   "year": 640,
+   "year_label": "AD 568-645 (radiocarbon)",
+   "faith": "muslim",
+   "kind": "manuscript",
+   "title": "Birmingham Quran manuscript",
+   "text": "Two parchment leaves in the University of Birmingham's Mingana Collection, in Hijazi script, with parts of suras 19-20. In 2015 the parchment was radiocarbon dated to between 568 and 645. The test dates the animal skin, not the ink, so the writing may be somewhat later; the text matches the standard Quran closely.",
+   "gap": "the range runs from before Muhammad's first revelation to about 13 years after his death",
+   "source": "https://en.wikipedia.org/wiki/Birmingham_Quran_manuscript"
+  },
+  {
+   "year": 650,
+   "year_label": "c. AD 650",
+   "faith": "muslim",
+   "kind": "canon",
+   "title": "Uthman's standard Quran",
+   "text": "According to Islamic tradition the third caliph, Uthman (ruled 644-656), had a standard written text produced and copies sent to the main cities, and ordered other written versions destroyed. The exact year was not recorded by early chroniclers. Today's Quran follows this Uthmanic consonantal text.",
+   "gap": "about 20 years after Muhammad's death",
+   "source": "https://en.wikipedia.org/wiki/History_of_the_Quran"
+  },
+  {
+   "year": 650,
+   "year_label": "before c. AD 669 (parchment 578-669)",
+   "faith": "muslim",
+   "kind": "manuscript",
+   "title": "Sana'a palimpsest (lower text)",
+   "text": "A parchment Quran (Sana'a 1, DAM 01-27.1) found in the Great Mosque of Sana'a in 1972. The original writing was erased and written over; radiocarbon dates the parchment of one leaf to 578-669. The erased lower text differs from the Uthmanic standard in wording and in the order of suras, the only known manuscript of a non-Uthmanic text type; the upper text is close to the standard Quran.",
+   "gap": "within about 40 years of Muhammad's death",
+   "source": "https://en.wikipedia.org/wiki/Sanaa_manuscript"
+  },
+  {
+   "year": 680,
+   "year_label": "10 October AD 680",
+   "faith": "muslim",
+   "kind": "event",
+   "title": "Battle of Karbala",
+   "text": "Husayn, son of Ali and grandson of Muhammad, was killed with his small band by the army of the Umayyad caliph Yazid I at Karbala in Iraq. The event hardened the Sunni-Shia division and is mourned each year by Shia Muslims on Ashura.",
+   "gap": "48 years after Muhammad's death",
+   "source": "https://en.wikipedia.org/wiki/Battle_of_Karbala"
+  },
+  {
+   "year": 692,
+   "year_label": "AD 691-692",
+   "faith": "muslim",
+   "kind": "manuscript",
+   "title": "Dome of the Rock inscriptions",
+   "text": "The shrine built in Jerusalem by the caliph Abd al-Malik is the oldest surviving work of Islamic architecture and carries the earliest inscriptions proclaiming Islam and Muhammad. They are among the earliest firmly dated witnesses to Quranic wording outside manuscripts.",
+   "gap": "about 60 years after Muhammad's death",
+   "source": "https://en.wikipedia.org/wiki/Dome_of_the_Rock"
+  },
+  {
+   "year": 700,
+   "year_label": "late 7th - early 8th century AD",
+   "faith": "muslim",
+   "kind": "manuscript",
+   "title": "Codex Parisino-petropolitanus",
+   "text": "One of the oldest substantial Quran manuscripts, split mainly between Paris (BnF Arabe 328) and St Petersburg, with single leaves in the Vatican and London. François Déroche dates it as early as the late 7th century; others prefer the early 8th century or later.",
+   "gap": "about 40-80 years after Muhammad's death",
+   "source": "https://en.wikipedia.org/wiki/Codex_Parisino-petropolitanus"
+  },
+  {
+   "year": 750,
+   "year_label": "c. AD 500-1000",
+   "faith": "jewish",
+   "kind": "written",
+   "title": "The Masoretes fix the Hebrew text",
+   "text": "Jewish scribe-scholars in Tiberias, Jerusalem and Babylonia, working from about the end of the 5th century to the 10th, added vowel points, accents and marginal notes to the consonantal Hebrew text and counted its letters and words to guard against copying errors. Their Masoretic Text is the basis of Jewish Bibles and most Old Testament translations.",
+   "source": "https://en.wikipedia.org/wiki/Masoretes"
+  },
+  {
+   "year": 750,
+   "year_label": "mid-8th century AD",
+   "faith": "muslim",
+   "kind": "manuscript",
+   "title": "Topkapi Quran manuscript",
+   "text": "A nearly complete early Quran in the Topkapi Palace Museum, Istanbul (H.S. 32). It is traditionally said to be one of Uthman's own copies, but scholarly study dates it to about the mid-8th century, roughly a century after Uthman.",
+   "gap": "about 120 years after Muhammad's death",
+   "source": "https://en.wikipedia.org/wiki/Topkapı_manuscript"
+  },
+  {
+   "year": 767,
+   "year_label": "before AD 767",
+   "faith": "muslim",
+   "kind": "written",
+   "title": "Ibn Ishaq's Life of the Prophet (Sira)",
+   "text": "Ibn Ishaq (c. 699-767) collected oral traditions into the earliest major biography of Muhammad. His original work is lost; it survives through later recensions, chiefly Ibn Hisham's edition and quotations in al-Tabari.",
+   "gap": "about 120-135 years after Muhammad's death",
+   "source": "https://en.wikipedia.org/wiki/Ibn_Ishaq"
+  },
+  {
+   "year": 795,
+   "year_label": "before AD 795",
+   "faith": "muslim",
+   "kind": "written",
+   "title": "Muwatta of Malik",
+   "text": "Compiled by Malik ibn Anas of Medina (c. 711-795), it is one of the earliest surviving collections of hadith and legal rulings and the first work to combine the two. It circulated in several versions; the standard one is that of Yahya al-Laythi.",
+   "gap": "about 130-160 years after Muhammad's death",
+   "source": "https://en.wikipedia.org/wiki/Al-Muwatta"
+  },
+  {
+   "year": 800,
+   "year_label": "8th-9th century AD",
+   "faith": "muslim",
+   "kind": "manuscript",
+   "title": "Samarkand (Tashkent) Kufic Quran",
+   "text": "A large Quran kept in Tashkent and traditionally said to be the copy Uthman was reading when he was killed. Script and spelling point to the 8th or 9th century; radiocarbon tests gave 775-995 for one sample and 595-855 for a folio held separately.",
+   "source": "https://en.wikipedia.org/wiki/Samarkand_Kufic_Quran"
+  },
+  {
+   "year": 833,
+   "year_label": "before AD 833",
+   "faith": "muslim",
+   "kind": "written",
+   "title": "Ibn Hisham's edition of the Sira",
+   "text": "Ibn Hisham (died 833) produced an edited version of Ibn Ishaq's biography of Muhammad. This recension, not Ibn Ishaq's lost original, is the standard early biography read today.",
+   "gap": "about 200 years after Muhammad's death",
+   "source": "https://en.wikipedia.org/wiki/Ibn_Hisham"
+  },
+  {
+   "year": 846,
+   "year_label": "c. AD 846",
+   "faith": "muslim",
+   "kind": "written",
+   "title": "Sahih al-Bukhari",
+   "text": "The most authoritative Sunni hadith collection, compiled by al-Bukhari (810-870) and completed around 846. Sunnis regard it, with Sahih Muslim, as the most reliable book after the Quran, resting on chains of named transmitters. Many Western academic scholars are more cautious about how far such reports can be traced back to Muhammad himself.",
+   "gap": "about 215 years after Muhammad's death",
+   "source": "https://en.wikipedia.org/wiki/Sahih_al-Bukhari"
+  },
+  {
+   "year": 874,
+   "year_label": "c. AD 864-884",
+   "faith": "muslim",
+   "kind": "written",
+   "title": "Jami' (Sunan) al-Tirmidhi",
+   "text": "The fourth of the Six Books, compiled by al-Tirmidhi (824-892) in about 864-884. It is known for grading each hadith's reliability.",
+   "gap": "about 240 years after Muhammad's death",
+   "source": "https://en.wikipedia.org/wiki/Sunan_al-Tirmidhi"
+  },
+  {
+   "year": 875,
+   "year_label": "before AD 875",
+   "faith": "muslim",
+   "kind": "written",
+   "title": "Sahih Muslim",
+   "text": "The second of the six canonical Sunni hadith collections, compiled by Muslim ibn al-Hajjaj of Nishapur (died 875). It is paired with Bukhari's work as the two 'Sahihs'.",
+   "gap": "about 240 years after Muhammad's death",
+   "source": "https://en.wikipedia.org/wiki/Sahih_Muslim"
+  },
+  {
+   "year": 887,
+   "year_label": "before AD 887",
+   "faith": "muslim",
+   "kind": "written",
+   "title": "Sunan Ibn Majah",
+   "text": "The sixth of the Sunni 'Six Books' of hadith, compiled by Ibn Majah of Qazvin (824-887).",
+   "gap": "about 250 years after Muhammad's death",
+   "source": "https://en.wikipedia.org/wiki/Sunan_ibn_Majah"
+  },
+  {
+   "year": 889,
+   "year_label": "before AD 889",
+   "faith": "muslim",
+   "kind": "written",
+   "title": "Sunan Abi Dawud",
+   "text": "The third of the Six Books, compiled by Abu Dawud al-Sijistani (817-889), who is said to have chosen about 4,800 reports out of 500,000. It concentrates on hadith used in law.",
+   "gap": "about 250 years after Muhammad's death",
+   "source": "https://en.wikipedia.org/wiki/Sunan_Abi_Dawud"
+  },
+  {
+   "year": 915,
+   "year_label": "before AD 915",
+   "faith": "muslim",
+   "kind": "written",
+   "title": "Sunan al-Nasa'i",
+   "text": "One of the Six Books of Sunni hadith, collected by al-Nasa'i (c. 829-915).",
+   "gap": "about 280 years after Muhammad's death",
+   "source": "https://en.wikipedia.org/wiki/Al-Sunan_al-Sughra"
+  },
+  {
+   "year": 915,
+   "year_label": "c. AD 915 (died 923)",
+   "faith": "muslim",
+   "kind": "written",
+   "title": "Al-Tabari's Tafsir and History",
+   "text": "Al-Tabari (839-923) wrote the earliest major verse-by-verse commentary on the Quran to survive in its original form, and a universal history completed in 915. Both collect large numbers of earlier reports and are basic sources for early Islam.",
+   "gap": "about 280 years after Muhammad's death",
+   "source": "https://en.wikipedia.org/wiki/Al-Tabari"
+  },
+  {
+   "year": 920,
+   "year_label": "c. AD 920",
+   "faith": "jewish",
+   "kind": "manuscript",
+   "title": "Aleppo Codex",
+   "text": "A Hebrew Bible written in Tiberias around 920 in the Ben Asher Masoretic tradition and endorsed for its accuracy by Maimonides. It was the most authoritative Masoretic manuscript, but about 40% of it, including most of the Torah, has been missing since the Aleppo riots of 1947.",
+   "gap": "over 1,000 years after the Great Isaiah Scroll",
+   "source": "https://en.wikipedia.org/wiki/Aleppo_Codex"
+  },
+  {
+   "year": 930,
+   "year_label": "before AD 936",
+   "faith": "muslim",
+   "kind": "canon",
+   "title": "Ibn Mujahid's seven readings",
+   "text": "The Baghdad scholar Ibn Mujahid (859/860-936) established seven canonical ways of reciting the Quran (qira'at) in his Book of the Seven. They share the Uthmanic consonantal skeleton but differ in some vowels and consonant dots, and occasionally in meaning.",
+   "gap": "about 300 years after Muhammad's death",
+   "source": "https://en.wikipedia.org/wiki/Abu_Bakr_ibn_Mujahid"
+  },
+  {
+   "year": 941,
+   "year_label": "before AD 941",
+   "faith": "muslim",
+   "kind": "written",
+   "title": "Al-Kafi of al-Kulayni",
+   "text": "The most authoritative Shia hadith collection, compiled over a reported twenty years by al-Kulayni (c. 868-941), with 16,199 narrations from Muhammad and the Twelve Imams. Shia Muslims do not treat every report in it as authentic.",
+   "gap": "about 310 years after Muhammad's death",
+   "source": "https://en.wikipedia.org/wiki/Kitab_al-Kafi"
+  },
+  {
+   "year": 1008,
+   "year_label": "AD 1008",
+   "faith": "jewish",
+   "kind": "manuscript",
+   "title": "Leningrad Codex",
+   "text": "The oldest complete manuscript of the Hebrew Bible in Hebrew, written in Cairo in 1008 (or 1009) according to its own colophon. It is the base text of the standard scholarly editions and therefore of most modern Old Testament translations.",
+   "gap": "about 1,100 years after the Great Isaiah Scroll",
+   "source": "https://en.wikipedia.org/wiki/Leningrad_Codex"
+  },
+  {
+   "year": 1180,
+   "year_label": "AD 1170-1180",
+   "faith": "jewish",
+   "kind": "written",
+   "title": "Maimonides' Mishneh Torah",
+   "text": "A complete code of Jewish law written in Egypt by Maimonides (Rambam), organising the rulings of the Talmud by subject.",
+   "source": "https://en.wikipedia.org/wiki/Mishneh_Torah"
+  },
+  {
+   "year": 1522,
+   "year_label": "AD 1522",
+   "faith": "christian",
+   "kind": "event",
+   "title": "Comma Johanneum enters the printed Greek text",
+   "text": "The explicit Trinity wording in 1 John 5:7-8 ('the Father, the Word, and the Holy Ghost: and these three are one') is absent from the early Greek manuscripts and is judged a later addition. Erasmus left it out of his first two Greek New Testaments (1516, 1519) and added it in his third edition of 1522 after a Greek manuscript containing it was shown to him. From there it passed into the Textus Receptus and the King James Version.",
+   "gap": "over 1,400 years after 1 John was written",
+   "source": "https://en.wikipedia.org/wiki/Johannine_Comma"
+  },
+  {
+   "year": 1534,
+   "year_label": "AD 1522 (NT), 1534 (whole Bible)",
+   "faith": "christian",
+   "kind": "written",
+   "title": "Luther's Bible",
+   "text": "Martin Luther's German New Testament appeared in September 1522 and the complete Bible in 1534. It was translated from the Hebrew and Greek, not only from the Latin Vulgate, and shaped Protestant Bibles.",
+   "source": "https://en.wikipedia.org/wiki/Luther_Bible"
+  },
+  {
+   "year": 1546,
+   "year_label": "8 April AD 1546",
+   "faith": "christian",
+   "kind": "canon",
+   "title": "Council of Trent defines the Catholic canon",
+   "text": "In its fourth session the Council of Trent issued a binding decree listing the books of the Bible, including the deuterocanonical books (such as Tobit, Judith, Wisdom, Sirach and 1-2 Maccabees) that Protestants set apart as Apocrypha. The list matched one already approved at the Council of Florence in 1442 and in 4th-century synods.",
+   "source": "https://en.wikipedia.org/wiki/Canon_of_Trent"
+  },
+  {
+   "year": 1565,
+   "year_label": "AD 1563 (written), 1565 (printed)",
+   "faith": "jewish",
+   "kind": "written",
+   "title": "Shulchan Arukh",
+   "text": "The most widely consulted code of Jewish law, written by Joseph Karo in Safed in 1563 and printed in Venice two years later. Karo's rulings generally follow Sephardic practice.",
+   "source": "https://en.wikipedia.org/wiki/Shulchan_Aruch"
+  },
+  {
+   "year": 1611,
+   "year_label": "AD 1611",
+   "faith": "christian",
+   "kind": "written",
+   "title": "King James Version",
+   "text": "The English translation commissioned by King James I in 1604 and published in 1611. Its New Testament rests on the late Greek text known as the Textus Receptus, so it contains passages, such as the Comma Johanneum, that are missing from the oldest manuscripts found or studied later.",
+   "source": "https://en.wikipedia.org/wiki/King_James_Version"
+  },
+  {
+   "year": 1924,
+   "year_label": "10 July AD 1924",
+   "faith": "muslim",
+   "kind": "canon",
+   "title": "Cairo edition of the Quran",
+   "text": "Printed in Cairo under King Fuad after 17 years of work supervised by al-Azhar scholars, it was the first printed Quran accepted by a Muslim authority. It became the model for most Qurans printed since.",
+   "gap": "about 1,290 years after Muhammad's death",
+   "source": "https://en.wikipedia.org/wiki/Cairo_edition"
+  }
+ ]
+}
