@@ -1,0 +1,2029 @@
+{
+ "questions": [
+  {
+   "id": "chr-feeding-5000",
+   "faith": "christian",
+   "level": "easy",
+   "q": "What did Jesus use to feed the five thousand?",
+   "options": [
+    "Five loaves and two fish",
+    "Seven loaves and a jar of oil",
+    "Twelve loaves and a basket of figs",
+    "Two loaves and five fish"
+   ],
+   "a": 0,
+   "ref": "Mark 6:41",
+   "why": "The Gospels say he blessed five loaves and two fish, and twelve baskets of leftovers were gathered."
+  },
+  {
+   "id": "chr-baptism-sacrament",
+   "faith": "christian",
+   "level": "easy",
+   "q": "Which rite, using water, marks a person's entry into the Church?",
+   "options": [
+    "Confirmation",
+    "Communion",
+    "Anointing",
+    "Baptism"
+   ],
+   "a": 3,
+   "ref": "Acts 2:38",
+   "why": "Baptism is the rite of initiation in nearly all churches; Peter calls the crowd at Pentecost to repent and be baptised."
+  },
+  {
+   "id": "chr-judas-silver",
+   "faith": "christian",
+   "level": "easy",
+   "q": "Which disciple agreed to hand Jesus over for thirty pieces of silver?",
+   "options": [
+    "Simon Peter",
+    "Thomas",
+    "Judas Iscariot",
+    "Bartholomew"
+   ],
+   "a": 2,
+   "ref": "Matthew 26:14-15",
+   "why": "Judas Iscariot, one of the Twelve, went to the chief priests, who weighed out thirty pieces of silver."
+  },
+  {
+   "id": "chr-easter",
+   "faith": "christian",
+   "level": "easy",
+   "q": "Which festival celebrates the resurrection of Jesus?",
+   "options": [
+    "Christmas",
+    "Easter",
+    "Pentecost",
+    "Epiphany"
+   ],
+   "a": 1,
+   "ref": "",
+   "why": "Easter, the oldest and chief Christian feast, celebrates Jesus rising from the dead on the third day."
+  },
+  {
+   "id": "chr-lent",
+   "faith": "christian",
+   "level": "easy",
+   "q": "What is the season of fasting and penitence before Easter called?",
+   "options": [
+    "Lent",
+    "Advent",
+    "Ordinary Time",
+    "Pentecost"
+   ],
+   "a": 0,
+   "ref": "",
+   "why": "Lent lasts about forty days, echoing Jesus' forty days in the wilderness; Advent is the season before Christmas."
+  },
+  {
+   "id": "chr-paul-letters",
+   "faith": "christian",
+   "level": "easy",
+   "q": "Which apostle wrote the letters to the Romans and the Corinthians?",
+   "options": [
+    "Peter",
+    "John",
+    "James",
+    "Paul"
+   ],
+   "a": 3,
+   "ref": "Romans 1:1",
+   "why": "Paul is named as the author of Romans and of 1 and 2 Corinthians, which open with his greeting."
+  },
+  {
+   "id": "chr-lords-prayer",
+   "faith": "christian",
+   "level": "easy",
+   "q": "Which prayer begins \"Our Father in heaven\"?",
+   "options": [
+    "The Hail Mary",
+    "The Apostles' Creed",
+    "The Lord's Prayer",
+    "The Magnificat"
+   ],
+   "a": 2,
+   "ref": "Matthew 6:9",
+   "why": "Jesus taught it to his disciples in the Sermon on the Mount; Luke gives a shorter form."
+  },
+  {
+   "id": "chr-trinity",
+   "faith": "christian",
+   "level": "easy",
+   "q": "What is the Christian doctrine that God is one God in three persons called?",
+   "options": [
+    "The Incarnation",
+    "The Trinity",
+    "The Atonement",
+    "The Ascension"
+   ],
+   "a": 1,
+   "ref": "2 Corinthians 13:14",
+   "why": "The Trinity holds that Father, Son and Holy Spirit are one God; the Incarnation is the doctrine that the Son became human."
+  },
+  {
+   "id": "chr-gospel-meaning",
+   "faith": "christian",
+   "level": "easy",
+   "q": "What does the word \"gospel\" mean?",
+   "options": [
+    "Good news",
+    "Holy writing",
+    "Law of God",
+    "Word of life"
+   ],
+   "a": 0,
+   "ref": "",
+   "why": "\"Gospel\" comes from Old English godspel, translating the Greek euangelion, \"good news\"."
+  },
+  {
+   "id": "chr-walk-water",
+   "faith": "christian",
+   "level": "easy",
+   "q": "On which body of water did Jesus walk, according to the Gospels?",
+   "options": [
+    "The Dead Sea",
+    "The Jordan River",
+    "The Mediterranean Sea",
+    "The Sea of Galilee"
+   ],
+   "a": 3,
+   "ref": "John 6:19",
+   "why": "The disciples were rowing across the Sea of Galilee (Tiberias) when they saw Jesus walking on the water."
+  },
+  {
+   "id": "chr-last-supper",
+   "faith": "christian",
+   "level": "easy",
+   "q": "What is the meal Jesus shared with his disciples on the night before he died usually called?",
+   "options": [
+    "The Wedding at Cana",
+    "The Feeding of the Multitude",
+    "The Last Supper",
+    "The Love Feast"
+   ],
+   "a": 2,
+   "ref": "Luke 22:19-20",
+   "why": "At the Last Supper Jesus broke bread and shared the cup, words churches repeat at Communion."
+  },
+  {
+   "id": "chr-forty-days",
+   "faith": "christian",
+   "level": "easy",
+   "q": "For how many days did Jesus fast in the wilderness before he was tempted?",
+   "options": [
+    "Seven",
+    "Forty",
+    "Twelve",
+    "Three"
+   ],
+   "a": 1,
+   "ref": "Matthew 4:2",
+   "why": "Matthew says he fasted forty days and forty nights, echoing Moses and Elijah."
+  },
+  {
+   "id": "chr-good-samaritan",
+   "faith": "christian",
+   "level": "easy",
+   "q": "In which parable does a traveller from a despised people help a man beaten by robbers?",
+   "options": [
+    "The Good Samaritan",
+    "The Prodigal Son",
+    "The Lost Sheep",
+    "The Sower"
+   ],
+   "a": 0,
+   "ref": "Luke 10:33",
+   "why": "Jesus told it to answer \"Who is my neighbour?\"; a priest and a Levite pass by, but a Samaritan stops to help."
+  },
+  {
+   "id": "chr-pope",
+   "faith": "christian",
+   "level": "easy",
+   "q": "What is the title of the head of the Roman Catholic Church?",
+   "options": [
+    "The Patriarch",
+    "The Archbishop of Canterbury",
+    "The Metropolitan",
+    "The Pope"
+   ],
+   "a": 3,
+   "ref": "",
+   "why": "The Pope is the Bishop of Rome; Catholics regard him as the successor of Peter."
+  },
+  {
+   "id": "chr-christmas-date",
+   "faith": "christian",
+   "level": "easy",
+   "q": "On what date do most Western churches celebrate Christmas?",
+   "options": [
+    "6 January",
+    "25 March",
+    "25 December",
+    "1 January"
+   ],
+   "a": 2,
+   "ref": "",
+   "why": "Western churches keep Christmas on 25 December; many Orthodox churches on the older Julian calendar keep it on what is now 7 January."
+  },
+  {
+   "id": "chr-apostles-creed",
+   "faith": "christian",
+   "level": "intermediate",
+   "q": "Which creed begins \"I believe in God, the Father almighty, creator of heaven and earth\" and is used at baptisms in the Western church?",
+   "options": [
+    "The Nicene Creed",
+    "The Athanasian Creed",
+    "The Chalcedonian Definition",
+    "The Apostles' Creed"
+   ],
+   "a": 3,
+   "ref": "",
+   "why": "The Apostles' Creed grew from the old Roman baptismal creed; the Nicene Creed begins \"We believe in one God\"."
+  },
+  {
+   "id": "chr-95-theses",
+   "faith": "christian",
+   "level": "intermediate",
+   "q": "In which year did Martin Luther publish his Ninety-five Theses, traditionally counted as the start of the Reformation?",
+   "options": [
+    "1492",
+    "1534",
+    "1517",
+    "1555"
+   ],
+   "a": 2,
+   "ref": "",
+   "why": "Luther's theses against the sale of indulgences are dated 31 October 1517."
+  },
+  {
+   "id": "chr-seven-sacraments",
+   "faith": "christian",
+   "level": "intermediate",
+   "q": "How many sacraments does the Catholic Church recognise?",
+   "options": [
+    "Two",
+    "Seven",
+    "Five",
+    "Twelve"
+   ],
+   "a": 1,
+   "ref": "",
+   "why": "Baptism, Confirmation, Eucharist, Penance, Anointing of the Sick, Holy Orders and Matrimony; most Protestants keep two."
+  },
+  {
+   "id": "chr-great-schism",
+   "faith": "christian",
+   "level": "intermediate",
+   "q": "In which year is the Great Schism between the Eastern and Western churches traditionally dated?",
+   "options": [
+    "1054",
+    "451",
+    "1204",
+    "1517"
+   ],
+   "a": 0,
+   "ref": "",
+   "why": "In 1054 papal legates and the Patriarch of Constantinople excommunicated each other; the split hardened over the following centuries."
+  },
+  {
+   "id": "chr-stephen",
+   "faith": "christian",
+   "level": "intermediate",
+   "q": "Who was the first Christian martyr, according to Acts?",
+   "options": [
+    "James the son of Zebedee",
+    "Peter",
+    "Paul",
+    "Stephen"
+   ],
+   "a": 3,
+   "ref": "Acts 7:59-60",
+   "why": "Stephen, one of the seven chosen to serve, was stoned after his speech to the council."
+  },
+  {
+   "id": "chr-transubstantiation",
+   "faith": "christian",
+   "level": "intermediate",
+   "q": "What is the Catholic doctrine that the bread and wine of the Eucharist become the body and blood of Christ called?",
+   "options": [
+    "Consubstantiation",
+    "Justification",
+    "Transubstantiation",
+    "Predestination"
+   ],
+   "a": 2,
+   "ref": "",
+   "why": "The Fourth Lateran Council (1215) used the term, and Trent reaffirmed it; consubstantiation is a label often applied to the Lutheran view."
+  },
+  {
+   "id": "chr-pentecost",
+   "faith": "christian",
+   "level": "intermediate",
+   "q": "What happened to the apostles at Pentecost, according to Acts?",
+   "options": [
+    "Jesus ascended into heaven before them",
+    "The Holy Spirit came upon them",
+    "They chose Matthias by lot",
+    "They were freed from prison by an angel"
+   ],
+   "a": 1,
+   "ref": "Acts 2:1-4",
+   "why": "Tongues like fire rested on them and they spoke in other languages; the Ascension happened earlier, in Acts 1."
+  },
+  {
+   "id": "chr-augustine",
+   "faith": "christian",
+   "level": "intermediate",
+   "q": "Which bishop of Hippo wrote the Confessions and The City of God?",
+   "options": [
+    "Augustine",
+    "Ambrose",
+    "Jerome",
+    "Athanasius"
+   ],
+   "a": 0,
+   "ref": "",
+   "why": "Augustine (354-430), bishop of Hippo in North Africa, is the most influential Latin church father."
+  },
+  {
+   "id": "chr-thomas-doubt",
+   "faith": "christian",
+   "level": "intermediate",
+   "q": "Which apostle said he would not believe in the resurrection unless he touched the wounds?",
+   "options": [
+    "Philip",
+    "Andrew",
+    "Matthew",
+    "Thomas"
+   ],
+   "a": 3,
+   "ref": "John 20:25-27",
+   "why": "Thomas doubted until Jesus appeared eight days later and invited him to touch the wounds."
+  },
+  {
+   "id": "chr-patmos",
+   "faith": "christian",
+   "level": "intermediate",
+   "q": "On which island was John when he received the visions of Revelation?",
+   "options": [
+    "Crete",
+    "Cyprus",
+    "Patmos",
+    "Malta"
+   ],
+   "a": 2,
+   "ref": "Revelation 1:9",
+   "why": "John says he was on the isle called Patmos \"because of God's Word and the testimony of Jesus\"."
+  },
+  {
+   "id": "chr-henry-viii",
+   "faith": "christian",
+   "level": "intermediate",
+   "q": "Which English king broke with Rome and was declared Supreme Head of the Church of England in 1534?",
+   "options": [
+    "Edward VI",
+    "Henry VIII",
+    "Henry VII",
+    "James I"
+   ],
+   "a": 1,
+   "ref": "",
+   "why": "The Act of Supremacy of 1534 made Henry VIII head of the English church after the Pope refused to annul his marriage."
+  },
+  {
+   "id": "chr-sola-fide",
+   "faith": "christian",
+   "level": "intermediate",
+   "q": "Which Reformation slogan means that a sinner is justified by faith alone?",
+   "options": [
+    "Sola fide",
+    "Sola scriptura",
+    "Soli Deo gloria",
+    "Ecclesia semper reformanda"
+   ],
+   "a": 0,
+   "ref": "",
+   "why": "Sola fide (faith alone) stood beside sola scriptura (Scripture alone) as a central Protestant principle."
+  },
+  {
+   "id": "chr-constantine",
+   "faith": "christian",
+   "level": "intermediate",
+   "q": "Which Roman emperor, with Licinius, issued the Edict of Milan granting toleration to Christians in 313?",
+   "options": [
+    "Theodosius I",
+    "Diocletian",
+    "Nero",
+    "Constantine"
+   ],
+   "a": 3,
+   "ref": "",
+   "why": "Constantine and Licinius agreed the Edict of Milan; Theodosius later made Nicene Christianity the state religion in 380."
+  },
+  {
+   "id": "chr-passover-supper",
+   "faith": "christian",
+   "level": "intermediate",
+   "q": "Which Jewish festival was being kept when Jesus held the Last Supper, according to the Synoptic Gospels?",
+   "options": [
+    "Tabernacles",
+    "Hanukkah",
+    "Passover",
+    "Purim"
+   ],
+   "a": 2,
+   "ref": "Luke 22:15",
+   "why": "Matthew, Mark and Luke present the Last Supper as a Passover meal."
+  },
+  {
+   "id": "chr-aquinas",
+   "faith": "christian",
+   "level": "intermediate",
+   "q": "Which thirteenth-century Dominican wrote the Summa Theologiae?",
+   "options": [
+    "Bonaventure",
+    "Thomas Aquinas",
+    "Anselm of Canterbury",
+    "Peter Abelard"
+   ],
+   "a": 1,
+   "ref": "",
+   "why": "Thomas Aquinas (c. 1225-1274) left the Summa Theologiae unfinished at his death; it became the classic of Catholic theology."
+  },
+  {
+   "id": "chr-markan-priority",
+   "faith": "christian",
+   "level": "hard",
+   "q": "Which Gospel do most New Testament scholars regard as the earliest written?",
+   "options": [
+    "Matthew",
+    "Luke",
+    "Mark",
+    "John"
+   ],
+   "a": 2,
+   "ref": "",
+   "why": "Most scholars hold Markan priority: Matthew and Luke used Mark as a source. Church tradition long placed Matthew first."
+  },
+  {
+   "id": "chr-chalcedon",
+   "faith": "christian",
+   "level": "hard",
+   "q": "Which council in 451 defined Christ as one person \"in two natures\", divine and human?",
+   "options": [
+    "Nicaea",
+    "Chalcedon",
+    "Constantinople I",
+    "Ephesus"
+   ],
+   "a": 1,
+   "ref": "",
+   "why": "The Chalcedonian Definition of 451 was rejected by the Oriental Orthodox churches, who are often called non-Chalcedonian."
+  },
+  {
+   "id": "chr-johannine-comma",
+   "faith": "christian",
+   "level": "hard",
+   "q": "The phrase \"the Father, the Word, and the Holy Ghost: and these three are one\", printed in the King James Version but missing from the early Greek manuscripts, is in which book?",
+   "options": [
+    "1 John",
+    "John",
+    "2 Corinthians",
+    "Revelation"
+   ],
+   "a": 0,
+   "ref": "1 John 5:7",
+   "why": "The \"Johannine Comma\" in 1 John 5:7-8 is found in late Latin manuscripts but not in the early Greek ones, so modern translations such as the WEB leave it out."
+  },
+  {
+   "id": "chr-mark-ending",
+   "faith": "christian",
+   "level": "hard",
+   "q": "At which verse do Codex Sinaiticus and Codex Vaticanus end the Gospel of Mark?",
+   "options": [
+    "Mark 15:47",
+    "Mark 16:14",
+    "Mark 16:20",
+    "Mark 16:8"
+   ],
+   "a": 3,
+   "ref": "Mark 16:8",
+   "why": "These two fourth-century codices end with the women fleeing the tomb in fear; verses 9-20 are missing from them."
+  },
+  {
+   "id": "chr-pericope-adulterae",
+   "faith": "christian",
+   "level": "hard",
+   "q": "In which Gospel is the story of the woman caught in adultery now printed, although it is absent from the earliest manuscripts?",
+   "options": [
+    "Mark",
+    "Matthew",
+    "John",
+    "Acts"
+   ],
+   "a": 2,
+   "ref": "John 8:7",
+   "why": "The passage (John 7:53-8:11) is missing from the earliest Greek manuscripts, and some later ones place it elsewhere."
+  },
+  {
+   "id": "chr-athanasius-canon",
+   "faith": "christian",
+   "level": "hard",
+   "q": "Whose Easter letter of 367 is the earliest surviving list of exactly the 27 books of the New Testament?",
+   "options": [
+    "Eusebius of Caesarea",
+    "Athanasius of Alexandria",
+    "Irenaeus of Lyons",
+    "Origen"
+   ],
+   "a": 1,
+   "ref": "",
+   "why": "Athanasius' 39th Festal Letter lists the same 27 books found in New Testaments today."
+  },
+  {
+   "id": "chr-marcion",
+   "faith": "christian",
+   "level": "hard",
+   "q": "Which second-century teacher rejected the Old Testament and used a canon of an edited Luke and ten letters of Paul?",
+   "options": [
+    "Marcion",
+    "Valentinus",
+    "Justin Martyr",
+    "Tatian"
+   ],
+   "a": 0,
+   "ref": "",
+   "why": "Marcion of Sinope set the God of the Old Testament against the Father of Jesus; his canon pushed the church to define its own."
+  },
+  {
+   "id": "chr-filioque",
+   "faith": "christian",
+   "level": "hard",
+   "q": "Which word, added to the Nicene Creed in the West, says the Spirit proceeds \"and from the Son\"?",
+   "options": [
+    "Homoousios",
+    "Theotokos",
+    "Kenosis",
+    "Filioque"
+   ],
+   "a": 3,
+   "ref": "",
+   "why": "The filioque spread from Spain (Toledo, 589) and was a lasting point of dispute with the Eastern churches."
+  },
+  {
+   "id": "chr-arius",
+   "faith": "christian",
+   "level": "hard",
+   "q": "The Council of Nicaea was called mainly to deal with the teaching of which Alexandrian presbyter?",
+   "options": [
+    "Nestorius",
+    "Pelagius",
+    "Arius",
+    "Apollinaris"
+   ],
+   "a": 2,
+   "ref": "",
+   "why": "Arius taught that the Son was created; Nicaea answered that he is \"of one substance\" (homoousios) with the Father."
+  },
+  {
+   "id": "chr-worms",
+   "faith": "christian",
+   "level": "hard",
+   "q": "Before which emperor did Luther refuse to recant at the Diet of Worms in 1521?",
+   "options": [
+    "Maximilian I",
+    "Charles V",
+    "Frederick the Wise",
+    "Philip II"
+   ],
+   "a": 1,
+   "ref": "",
+   "why": "Charles V presided at Worms; afterwards the Edict of Worms declared Luther an outlaw. Frederick the Wise was the elector who protected him."
+  },
+  {
+   "id": "chr-luke-genealogy",
+   "faith": "christian",
+   "level": "hard",
+   "q": "Matthew names Jacob as Joseph's father. Whom does Luke's genealogy name?",
+   "options": [
+    "Heli",
+    "Eli",
+    "Matthan",
+    "Zerubbabel"
+   ],
+   "a": 0,
+   "ref": "Luke 3:23",
+   "why": "Luke calls Jesus \"the son (as was supposed) of Joseph, the son of Heli\", while Matthew 1:16 has Jacob; interpreters have long offered ways to reconcile the two."
+  },
+  {
+   "id": "chr-pelagius",
+   "faith": "christian",
+   "level": "hard",
+   "q": "Which British monk did Augustine oppose for teaching that people can avoid sin without the help of grace?",
+   "options": [
+    "Patrick",
+    "Bede",
+    "Columba",
+    "Pelagius"
+   ],
+   "a": 3,
+   "ref": "",
+   "why": "Pelagius' teaching was condemned at the Council of Carthage (418) and later at Ephesus (431)."
+  },
+  {
+   "id": "chr-ephesus-theotokos",
+   "faith": "christian",
+   "level": "hard",
+   "q": "Which council in 431 affirmed that Mary may be called Theotokos, \"God-bearer\", against Nestorius?",
+   "options": [
+    "Chalcedon",
+    "Nicaea",
+    "Ephesus",
+    "Constantinople II"
+   ],
+   "a": 2,
+   "ref": "",
+   "why": "Nestorius preferred \"Christ-bearer\"; the Council of Ephesus deposed him and upheld Theotokos."
+  },
+  {
+   "id": "chr-nag-hammadi",
+   "faith": "christian",
+   "level": "hard",
+   "q": "Near which Egyptian town was the Coptic library containing the Gospel of Thomas found in 1945?",
+   "options": [
+    "Qumran",
+    "Nag Hammadi",
+    "Oxyrhynchus",
+    "Alexandria"
+   ],
+   "a": 1,
+   "ref": "",
+   "why": "The Nag Hammadi codices were found in 1945; Greek fragments of Thomas had been found earlier at Oxyrhynchus, and Qumran is the site of the Dead Sea Scrolls."
+  },
+  {
+   "id": "chr-matthew-jeremiah",
+   "faith": "christian",
+   "level": "hard",
+   "q": "Matthew 27:9 says a prophecy about thirty pieces of silver was spoken by Jeremiah. Which prophet's book contains the closest wording?",
+   "options": [
+    "Zechariah",
+    "Isaiah",
+    "Malachi",
+    "Ezekiel"
+   ],
+   "a": 0,
+   "ref": "Matthew 27:9",
+   "why": "The thirty pieces of silver thrown to the potter come from Zechariah 11:12-13; interpreters link Matthew's citation of Jeremiah to Jeremiah's potter and field passages."
+  },
+  {
+   "id": "mus-surah-count",
+   "faith": "muslim",
+   "level": "easy",
+   "q": "How many surahs does the Quran have?",
+   "options": [
+    "99",
+    "114",
+    "120",
+    "66"
+   ],
+   "a": 1,
+   "ref": "",
+   "why": "The Quran has 114 surahs (chapters) of very different lengths."
+  },
+  {
+   "id": "mus-kaaba-city",
+   "faith": "muslim",
+   "level": "easy",
+   "q": "In which city is the Kaaba?",
+   "options": [
+    "Mecca",
+    "Medina",
+    "Jerusalem",
+    "Taif"
+   ],
+   "a": 0,
+   "ref": "",
+   "why": "The Kaaba stands in the Sacred Mosque in Mecca; Medina is the city of the Prophet's mosque."
+  },
+  {
+   "id": "mus-ramadan",
+   "faith": "muslim",
+   "level": "easy",
+   "q": "In which month do Muslims fast from dawn to sunset?",
+   "options": [
+    "Muharram",
+    "Shawwal",
+    "Dhu al-Hijjah",
+    "Ramadan"
+   ],
+   "a": 3,
+   "ref": "Quran 2:185",
+   "why": "The Quran commands fasting in Ramadan, the month in which it was revealed."
+  },
+  {
+   "id": "mus-mosque",
+   "faith": "muslim",
+   "level": "easy",
+   "q": "What is a Muslim place of communal prayer called?",
+   "options": [
+    "A madrasa",
+    "A minaret",
+    "A mosque (masjid)",
+    "A mihrab"
+   ],
+   "a": 2,
+   "ref": "",
+   "why": "Masjid means \"place of prostration\"; the minaret is its tower and the mihrab the niche showing the direction of prayer."
+  },
+  {
+   "id": "mus-hajj",
+   "faith": "muslim",
+   "level": "easy",
+   "q": "What is the pilgrimage to Mecca, required once in a lifetime of those able, called?",
+   "options": [
+    "Umrah",
+    "Hajj",
+    "Hijra",
+    "Jihad"
+   ],
+   "a": 1,
+   "ref": "Quran 3:97",
+   "why": "Hajj is a duty for those who can make the journey; Umrah is a lesser pilgrimage that can be made at any time."
+  },
+  {
+   "id": "mus-abraham-kaaba",
+   "faith": "muslim",
+   "level": "easy",
+   "q": "According to the Quran, which prophet raised the foundations of the Kaaba with his son Ishmael?",
+   "options": [
+    "Abraham (Ibrahim)",
+    "Adam",
+    "Noah (Nuh)",
+    "Moses (Musa)"
+   ],
+   "a": 0,
+   "ref": "Quran 2:127",
+   "why": "The Quran describes Abraham and Ishmael raising the foundations of the House and praying for it to be accepted."
+  },
+  {
+   "id": "mus-medina",
+   "faith": "muslim",
+   "level": "easy",
+   "q": "To which city did Muhammad and his followers migrate in the Hijra?",
+   "options": [
+    "Jerusalem",
+    "Taif",
+    "Damascus",
+    "Medina"
+   ],
+   "a": 3,
+   "ref": "",
+   "why": "The city then called Yathrib became Madinat al-Nabi, \"the city of the Prophet\"."
+  },
+  {
+   "id": "mus-zakat",
+   "faith": "muslim",
+   "level": "easy",
+   "q": "What is the obligatory giving of alms, one of the Five Pillars, called?",
+   "options": [
+    "Sadaqa",
+    "Waqf",
+    "Zakat",
+    "Jizya"
+   ],
+   "a": 2,
+   "ref": "Quran 2:43",
+   "why": "Zakat is a fixed share of wealth given each year; sadaqa is voluntary charity."
+  },
+  {
+   "id": "mus-isa-messiah",
+   "faith": "muslim",
+   "level": "easy",
+   "q": "Which prophet does the Quran call \"the Messiah\"?",
+   "options": [
+    "Moses (Musa)",
+    "Jesus (Isa)",
+    "Muhammad",
+    "John (Yahya)"
+   ],
+   "a": 1,
+   "ref": "Quran 3:45",
+   "why": "The angels give Mary glad tidings of a word from God whose name is \"the Messiah, Jesus son of Mary\"."
+  },
+  {
+   "id": "mus-eid-fitr",
+   "faith": "muslim",
+   "level": "easy",
+   "q": "Which festival marks the end of Ramadan?",
+   "options": [
+    "Eid al-Fitr",
+    "Eid al-Adha",
+    "Mawlid",
+    "Ashura"
+   ],
+   "a": 0,
+   "ref": "",
+   "why": "Eid al-Fitr, the feast of breaking the fast, falls on the first day of Shawwal; Eid al-Adha comes at the Hajj."
+  },
+  {
+   "id": "mus-shahada",
+   "faith": "muslim",
+   "level": "easy",
+   "q": "What is the declaration \"There is no god but God, and Muhammad is the messenger of God\" called?",
+   "options": [
+    "The Takbir",
+    "The Basmala",
+    "The Talbiyah",
+    "The Shahada"
+   ],
+   "a": 3,
+   "ref": "Sahih al-Bukhari 8",
+   "why": "The Shahada is the first of the five things on which, in the hadith, Islam is built."
+  },
+  {
+   "id": "mus-pork",
+   "faith": "muslim",
+   "level": "easy",
+   "q": "Which meat does the Quran forbid Muslims to eat?",
+   "options": [
+    "Camel",
+    "Lamb",
+    "Pork",
+    "Chicken"
+   ],
+   "a": 2,
+   "ref": "Quran 2:173",
+   "why": "It forbids carrion, blood, swine flesh and what is offered to other than God, with an exception for necessity."
+  },
+  {
+   "id": "mus-qibla",
+   "faith": "muslim",
+   "level": "easy",
+   "q": "What is the direction Muslims face in prayer called?",
+   "options": [
+    "The minbar",
+    "The qibla",
+    "The hijab",
+    "The ummah"
+   ],
+   "a": 1,
+   "ref": "Quran 2:144",
+   "why": "The qibla is the direction of the Kaaba; the Quran records the change from Jerusalem to the Sacred Mosque."
+  },
+  {
+   "id": "mus-maryam-surah",
+   "faith": "muslim",
+   "level": "easy",
+   "q": "Which woman has a surah of the Quran named after her?",
+   "options": [
+    "Mary (Maryam)",
+    "Eve (Hawwa)",
+    "Khadijah",
+    "Aisha"
+   ],
+   "a": 0,
+   "ref": "Quran 19:16",
+   "why": "Surah 19, Maryam, tells of the birth of Jesus."
+  },
+  {
+   "id": "mus-adhan",
+   "faith": "muslim",
+   "level": "easy",
+   "q": "What is the call to prayer, given from the mosque, called?",
+   "options": [
+    "The iqama",
+    "The khutba",
+    "The dua",
+    "The adhan"
+   ],
+   "a": 3,
+   "ref": "",
+   "why": "The adhan is the public call; the iqama is the second call given just before prayer begins, and the khutba is the sermon."
+  },
+  {
+   "id": "mus-abu-bakr",
+   "faith": "muslim",
+   "level": "intermediate",
+   "q": "Who became the first caliph after Muhammad's death, according to Sunni Muslims?",
+   "options": [
+    "Abu Bakr",
+    "Umar",
+    "Uthman",
+    "Ali"
+   ],
+   "a": 0,
+   "ref": "",
+   "why": "Abu Bakr was chosen at the Saqifa in 632; Shia Muslims hold that Ali should have succeeded."
+  },
+  {
+   "id": "mus-hudaybiyyah",
+   "faith": "muslim",
+   "level": "intermediate",
+   "q": "Which treaty of 628 set a truce between the Muslims and the Quraysh of Mecca?",
+   "options": [
+    "The Constitution of Medina",
+    "The Pact of Umar",
+    "The Treaty of Aqaba",
+    "The Treaty of Hudaybiyyah"
+   ],
+   "a": 3,
+   "ref": "",
+   "why": "At Hudaybiyyah the Muslims agreed to put off their pilgrimage for a year; tradition links Surah al-Fath (48) to it."
+  },
+  {
+   "id": "mus-badr",
+   "faith": "muslim",
+   "level": "intermediate",
+   "q": "Which battle of 624 was the first major victory of the Muslims over the Quraysh?",
+   "options": [
+    "Uhud",
+    "the Trench",
+    "Badr",
+    "Hunayn"
+   ],
+   "a": 2,
+   "ref": "",
+   "why": "At Badr a small Muslim force defeated a larger Meccan army; Uhud (625) went against the Muslims."
+  },
+  {
+   "id": "mus-hira",
+   "faith": "muslim",
+   "level": "intermediate",
+   "q": "In which cave, near Mecca, did Muhammad receive the first revelation?",
+   "options": [
+    "Thawr",
+    "Hira",
+    "Uhud",
+    "Arafat"
+   ],
+   "a": 1,
+   "ref": "Quran 96:1",
+   "why": "Tradition says the first words revealed in the cave of Hira were \"Read: In the name of thy Lord\"; Thawr is where he hid during the Hijra."
+  },
+  {
+   "id": "mus-night-journey",
+   "faith": "muslim",
+   "level": "intermediate",
+   "q": "Which surah opens with the Night Journey from the Sacred Mosque to the \"Farthest Mosque\"?",
+   "options": [
+    "Al-Isra (17)",
+    "Al-Kahf (18)",
+    "An-Najm (53)",
+    "Al-Qadr (97)"
+   ],
+   "a": 0,
+   "ref": "Quran 17:1",
+   "why": "Surah 17 is named al-Isra, \"the Night Journey\", after its first verse."
+  },
+  {
+   "id": "mus-bukhari",
+   "faith": "muslim",
+   "level": "intermediate",
+   "q": "Who compiled the hadith collection that Sunni Muslims regard as the most authentic after the Quran?",
+   "options": [
+    "Muslim ibn al-Hajjaj",
+    "Malik ibn Anas",
+    "Ahmad ibn Hanbal",
+    "Muhammad al-Bukhari"
+   ],
+   "a": 3,
+   "ref": "",
+   "why": "Sahih al-Bukhari is ranked first among the Sunni collections, with Sahih Muslim close behind."
+  },
+  {
+   "id": "mus-ali-first-imam",
+   "faith": "muslim",
+   "level": "intermediate",
+   "q": "Whom do Shia Muslims regard as the first Imam?",
+   "options": [
+    "Husayn ibn Ali",
+    "Abu Bakr",
+    "Ali ibn Abi Talib",
+    "Jafar al-Sadiq"
+   ],
+   "a": 2,
+   "ref": "",
+   "why": "For the Shia, Ali, cousin and son-in-law of Muhammad, was his rightful successor; Husayn was the third Imam."
+  },
+  {
+   "id": "mus-sai",
+   "faith": "muslim",
+   "level": "intermediate",
+   "q": "During Hajj, pilgrims walk seven times between which two hills?",
+   "options": [
+    "Arafat and Muzdalifa",
+    "Safa and Marwa",
+    "Uhud and Thawr",
+    "Mina and Arafat"
+   ],
+   "a": 1,
+   "ref": "Quran 2:158",
+   "why": "This walk, the sa'i, recalls Hagar's search for water for Ishmael."
+  },
+  {
+   "id": "mus-laylat-qadr",
+   "faith": "muslim",
+   "level": "intermediate",
+   "q": "In which part of Ramadan is the Night of Power (Laylat al-Qadr) traditionally sought?",
+   "options": [
+    "Among the odd nights of the last ten",
+    "On the first night of the month",
+    "On the night of the full moon, the 15th",
+    "In the first ten nights"
+   ],
+   "a": 0,
+   "ref": "Quran 97:1",
+   "why": "Surah 97 says the Quran was sent down on this night; hadith tell Muslims to seek it in the odd nights of the last ten of Ramadan."
+  },
+  {
+   "id": "mus-khadijah",
+   "faith": "muslim",
+   "level": "intermediate",
+   "q": "Who was Muhammad's first wife?",
+   "options": [
+    "Aisha",
+    "Hafsa",
+    "Sawda",
+    "Khadijah"
+   ],
+   "a": 3,
+   "ref": "",
+   "why": "Khadijah, a merchant of Mecca, married him about fifteen years before the first revelation and was the first to believe."
+  },
+  {
+   "id": "mus-throne-verse",
+   "faith": "muslim",
+   "level": "intermediate",
+   "q": "Which verse is known as the Throne Verse (Ayat al-Kursi)?",
+   "options": [
+    "Quran 1:1",
+    "Quran 112:1",
+    "Quran 2:255",
+    "Quran 24:35"
+   ],
+   "a": 2,
+   "ref": "Quran 2:255",
+   "why": "It begins \"Allah! There is no deity save Him, the Alive, the Eternal\" and speaks of his Throne extending over the heavens and the earth. 24:35 is the Light Verse."
+  },
+  {
+   "id": "mus-eid-adha",
+   "faith": "muslim",
+   "level": "intermediate",
+   "q": "Eid al-Adha recalls which prophet's readiness to sacrifice his son?",
+   "options": [
+    "Noah (Nuh)",
+    "Abraham (Ibrahim)",
+    "Jacob (Yaqub)",
+    "Moses (Musa)"
+   ],
+   "a": 1,
+   "ref": "Quran 37:107",
+   "why": "The Quran says God ransomed the son \"with a tremendous victim\"; Muslims sacrifice an animal at the feast."
+  },
+  {
+   "id": "mus-wudu",
+   "faith": "muslim",
+   "level": "intermediate",
+   "q": "What is the ritual washing of face, hands, head and feet before prayer called?",
+   "options": [
+    "Wudu",
+    "Ghusl",
+    "Tayammum",
+    "Istinja"
+   ],
+   "a": 0,
+   "ref": "Quran 5:6",
+   "why": "Wudu is the minor ablution; ghusl is the full bath, and tayammum uses clean earth when there is no water."
+  },
+  {
+   "id": "mus-jumuah",
+   "faith": "muslim",
+   "level": "intermediate",
+   "q": "On which day do Muslims hold their weekly congregational prayer?",
+   "options": [
+    "Thursday",
+    "Saturday",
+    "Sunday",
+    "Friday"
+   ],
+   "a": 3,
+   "ref": "Quran 62:9",
+   "why": "The Quran calls believers to hasten to the prayer \"of the day of congregation\" (al-Jumu'ah) and leave trading."
+  },
+  {
+   "id": "mus-yunus",
+   "faith": "muslim",
+   "level": "intermediate",
+   "q": "Which prophet was swallowed by a fish, according to the Quran?",
+   "options": [
+    "Job (Ayyub)",
+    "Elijah (Ilyas)",
+    "Jonah (Yunus)",
+    "Joseph (Yusuf)"
+   ],
+   "a": 2,
+   "ref": "Quran 37:142",
+   "why": "Surah 37 tells how the fish swallowed Yunus; Surah 10 is named after him."
+  },
+  {
+   "id": "mus-karbala",
+   "faith": "muslim",
+   "level": "hard",
+   "q": "In which year CE was Husayn ibn Ali killed at Karbala?",
+   "options": [
+    "632",
+    "656",
+    "750",
+    "680"
+   ],
+   "a": 3,
+   "ref": "",
+   "why": "Husayn died on 10 Muharram 61 AH (680 CE); Shia Muslims mourn him each year on Ashura."
+  },
+  {
+   "id": "mus-warsh",
+   "faith": "muslim",
+   "level": "hard",
+   "q": "After Hafs 'an 'Asim, which transmitted reading of the Quran is most widely printed, especially in North and West Africa?",
+   "options": [
+    "Qalun 'an Nafi'",
+    "Al-Duri 'an Abi 'Amr",
+    "Warsh 'an Nafi'",
+    "Shu'ba 'an 'Asim"
+   ],
+   "a": 2,
+   "ref": "",
+   "why": "Warsh's transmission from Nafi' of Medina is standard in much of the Maghreb and West Africa; Hafs dominates elsewhere."
+  },
+  {
+   "id": "mus-zayd-compiler",
+   "faith": "muslim",
+   "level": "hard",
+   "q": "According to Sahih al-Bukhari, whom did Abu Bakr ask to collect the Quran after the Battle of Yamama?",
+   "options": [
+    "Ubayy ibn Ka'b",
+    "Zayd ibn Thabit",
+    "Abdullah ibn Mas'ud",
+    "Ali ibn Abi Talib"
+   ],
+   "a": 1,
+   "ref": "Sahih al-Bukhari 4986",
+   "why": "Umar feared that the deaths of reciters at Yamama would lose parts of the Quran, and Zayd, who had written revelation for the Prophet, was given the task."
+  },
+  {
+   "id": "mus-uthman-codex",
+   "faith": "muslim",
+   "level": "hard",
+   "q": "According to Sunni tradition, which caliph had standard copies of the Quran sent to the provinces and other copies burned?",
+   "options": [
+    "Uthman",
+    "Umar",
+    "Abu Bakr",
+    "Ali"
+   ],
+   "a": 0,
+   "ref": "Sahih al-Bukhari 4987",
+   "why": "Prompted by Hudhayfa's alarm at differences in recitation, Uthman had copies made from Hafsa's sheets and ordered other manuscripts burned."
+  },
+  {
+   "id": "mus-sanaa",
+   "faith": "muslim",
+   "level": "hard",
+   "q": "Where was the palimpsest whose lower text differs in places from the standard Uthmanic Quran found in 1972?",
+   "options": [
+    "The Great Mosque of Kairouan",
+    "The Umayyad Mosque of Damascus",
+    "The Topkapi Palace",
+    "The Great Mosque of Sanaa"
+   ],
+   "a": 3,
+   "ref": "",
+   "why": "The Sanaa palimpsest was found in a store of old manuscripts in the Great Mosque of Sanaa, Yemen."
+  },
+  {
+   "id": "mus-ghazali-tahafut",
+   "faith": "muslim",
+   "level": "hard",
+   "q": "Who wrote The Incoherence of the Philosophers?",
+   "options": [
+    "Ibn Rushd",
+    "Ibn Sina",
+    "Al-Ghazali",
+    "Al-Farabi"
+   ],
+   "a": 2,
+   "ref": "",
+   "why": "Al-Ghazali (d. 1111) attacked the philosophers; Ibn Rushd replied with The Incoherence of the Incoherence."
+  },
+  {
+   "id": "mus-jafari",
+   "faith": "muslim",
+   "level": "hard",
+   "q": "Which of these schools of law is followed by Twelver Shia Muslims?",
+   "options": [
+    "Hanafi",
+    "Ja'fari",
+    "Maliki",
+    "Shafi'i"
+   ],
+   "a": 1,
+   "ref": "",
+   "why": "The Ja'fari school is named after the sixth Imam, Ja'far al-Sadiq; the other three are Sunni schools, with the Hanbali."
+  },
+  {
+   "id": "mus-mihna",
+   "faith": "muslim",
+   "level": "hard",
+   "q": "Which Abbasid caliph began the Mihna, the inquisition requiring scholars to affirm that the Quran was created?",
+   "options": [
+    "Al-Ma'mun",
+    "Harun al-Rashid",
+    "Al-Mutawakkil",
+    "Al-Mansur"
+   ],
+   "a": 0,
+   "ref": "",
+   "why": "Al-Ma'mun began it in 833; Ahmad ibn Hanbal refused to comply, and al-Mutawakkil ended it."
+  },
+  {
+   "id": "mus-naskh-verse",
+   "faith": "muslim",
+   "level": "hard",
+   "q": "Which verse is most often cited as the basis for abrogation (naskh) in the Quran?",
+   "options": [
+    "Quran 3:7",
+    "Quran 15:9",
+    "Quran 4:82",
+    "Quran 2:106"
+   ],
+   "a": 3,
+   "ref": "Quran 2:106",
+   "why": "It says that whatever verse God abrogates or causes to be forgotten, he brings one better or like it."
+  },
+  {
+   "id": "mus-satanic-verses",
+   "faith": "muslim",
+   "level": "hard",
+   "q": "The reports known as the \"Satanic verses\" incident are connected with verses about al-Lat, al-'Uzza and Manat. In which surah are those verses?",
+   "options": [
+    "Al-Hajj (22)",
+    "Al-Kafirun (109)",
+    "An-Najm (53)",
+    "Al-Isra (17)"
+   ],
+   "a": 2,
+   "ref": "Quran 53:19-20",
+   "why": "Some early historians, including al-Tabari, record the story; many Muslim scholars reject it. Surah 22:52 is sometimes linked to it but does not name the goddesses."
+  },
+  {
+   "id": "mus-mahdi",
+   "faith": "muslim",
+   "level": "hard",
+   "q": "By what title do Twelver Shia call the twelfth Imam, whom they believe to be in occultation?",
+   "options": [
+    "Al-Sadiq",
+    "Al-Mahdi",
+    "Al-Rida",
+    "Al-Baqir"
+   ],
+   "a": 1,
+   "ref": "",
+   "why": "They hold that Muhammad ibn al-Hasan, al-Mahdi, went into occultation and will return; al-Sadiq, al-Rida and al-Baqir are titles of earlier Imams."
+  },
+  {
+   "id": "mus-kharijites",
+   "faith": "muslim",
+   "level": "hard",
+   "q": "Which group broke away from Ali after he agreed to arbitration following the Battle of Siffin?",
+   "options": [
+    "The Kharijites",
+    "The Mu'tazila",
+    "The Ismailis",
+    "The Murji'a"
+   ],
+   "a": 0,
+   "ref": "",
+   "why": "The Kharijites (\"those who went out\") rejected arbitration in 657; one of them later killed Ali in 661."
+  },
+  {
+   "id": "mus-ibn-masud",
+   "faith": "muslim",
+   "level": "hard",
+   "q": "According to reports in Sahih al-Bukhari, which surahs did Ibn Mas'ud hold were not part of the Quran?",
+   "options": [
+    "Al-Fatiha and Al-Ikhlas",
+    "At-Tawbah and Al-Anfal",
+    "Al-Kahf and Maryam",
+    "The two \"refuges\", Al-Falaq and An-Nas"
+   ],
+   "a": 3,
+   "ref": "Sahih al-Bukhari 4977",
+   "why": "Ubayy ibn Ka'b answered that the Prophet had recited them as Quran. The surahs are in the Quran as Muslims have it."
+  },
+  {
+   "id": "mus-bukhari-home",
+   "faith": "muslim",
+   "level": "hard",
+   "q": "Al-Bukhari, compiler of the Sahih, took his name from which city?",
+   "options": [
+    "Baghdad",
+    "Nishapur",
+    "Bukhara",
+    "Samarkand"
+   ],
+   "a": 2,
+   "ref": "",
+   "why": "Muhammad ibn Isma'il al-Bukhari (810-870) was born in Bukhara, in today's Uzbekistan; Muslim ibn al-Hajjaj came from Nishapur."
+  },
+  {
+   "id": "mus-ghadir",
+   "faith": "muslim",
+   "level": "hard",
+   "q": "At which place do Shia Muslims hold that Muhammad declared, \"Whoever I am his mawla, Ali is his mawla\"?",
+   "options": [
+    "Arafat",
+    "Ghadir Khumm",
+    "Hudaybiyyah",
+    "Tabuk"
+   ],
+   "a": 1,
+   "ref": "",
+   "why": "The words are reported on the way back from the Farewell Pilgrimage in 632. Shia read them as appointing Ali; Sunnis generally read mawla as friend or ally."
+  },
+  {
+   "id": "jew-torah-five",
+   "faith": "jewish",
+   "level": "easy",
+   "q": "What are the first five books of the Hebrew Bible together called?",
+   "options": [
+    "The Talmud",
+    "The Mishnah",
+    "The Torah",
+    "The Psalms"
+   ],
+   "a": 2,
+   "ref": "",
+   "why": "The Torah (Genesis to Deuteronomy) is read in the synagogue each year from a handwritten scroll."
+  },
+  {
+   "id": "jew-tanakh",
+   "faith": "jewish",
+   "level": "easy",
+   "q": "What is the Jewish name for the Hebrew Bible, formed from the initials of its three parts?",
+   "options": [
+    "Talmud",
+    "Tanakh",
+    "Midrash",
+    "Siddur"
+   ],
+   "a": 1,
+   "ref": "",
+   "why": "Torah, Nevi'im (Prophets) and Ketuvim (Writings) give T-N-K, Tanakh."
+  },
+  {
+   "id": "jew-hanukkah",
+   "faith": "jewish",
+   "level": "easy",
+   "q": "Which eight-day festival, with candles lit on a menorah, is known as the Festival of Lights?",
+   "options": [
+    "Hanukkah",
+    "Purim",
+    "Sukkot",
+    "Shavuot"
+   ],
+   "a": 0,
+   "ref": "",
+   "why": "Hanukkah recalls the rededication of the Temple in the time of the Maccabees."
+  },
+  {
+   "id": "jew-seder",
+   "faith": "jewish",
+   "level": "easy",
+   "q": "What is the ritual meal held on the first night(s) of Passover called?",
+   "options": [
+    "The Kiddush",
+    "The Havdalah",
+    "The Oneg",
+    "The Seder"
+   ],
+   "a": 3,
+   "ref": "Exodus 12:8",
+   "why": "At the Seder families retell the Exodus and eat matzah and bitter herbs, as Exodus commands."
+  },
+  {
+   "id": "jew-shofar",
+   "faith": "jewish",
+   "level": "easy",
+   "q": "Which instrument, made from a ram's horn, is sounded on Rosh Hashanah?",
+   "options": [
+    "The trumpet",
+    "The tambourine",
+    "The shofar",
+    "The harp"
+   ],
+   "a": 2,
+   "ref": "Leviticus 23:24",
+   "why": "The Torah calls the day a memorial \"of blowing of trumpets\"; the rabbis require the ram's-horn shofar."
+  },
+  {
+   "id": "jew-bar-mitzvah",
+   "faith": "jewish",
+   "level": "easy",
+   "q": "At what age does a Jewish boy traditionally become bar mitzvah?",
+   "options": [
+    "10",
+    "13",
+    "16",
+    "18"
+   ],
+   "a": 1,
+   "ref": "",
+   "why": "At 13 a boy becomes responsible for the commandments; for girls the bat mitzvah age is 12."
+  },
+  {
+   "id": "jew-kosher",
+   "faith": "jewish",
+   "level": "easy",
+   "q": "What is food that meets Jewish dietary law called?",
+   "options": [
+    "Kosher",
+    "Halal",
+    "Treif",
+    "Pareve"
+   ],
+   "a": 0,
+   "ref": "",
+   "why": "Kosher means \"fit\"; treif is forbidden food, and pareve is food that is neither meat nor dairy."
+  },
+  {
+   "id": "jew-shema-source",
+   "faith": "jewish",
+   "level": "easy",
+   "q": "In which book of the Torah does the Shema, \"Hear, O Israel\", appear?",
+   "options": [
+    "Genesis",
+    "Exodus",
+    "Leviticus",
+    "Deuteronomy"
+   ],
+   "a": 3,
+   "ref": "Deuteronomy 6:4",
+   "why": "Deuteronomy 6:4 is the first line of the Shema, recited morning and evening."
+  },
+  {
+   "id": "jew-purim",
+   "faith": "jewish",
+   "level": "easy",
+   "q": "Which festival celebrates the story of Esther saving the Jews of Persia?",
+   "options": [
+    "Hanukkah",
+    "Passover",
+    "Purim",
+    "Tu Bishvat"
+   ],
+   "a": 2,
+   "ref": "Esther 9:26",
+   "why": "The name comes from pur, the lot Haman cast to choose the day for his plot."
+  },
+  {
+   "id": "jew-moses-tablets",
+   "faith": "jewish",
+   "level": "easy",
+   "q": "To whom did God give the two stone tablets on Mount Sinai?",
+   "options": [
+    "Aaron",
+    "Moses",
+    "Joshua",
+    "Abraham"
+   ],
+   "a": 1,
+   "ref": "Exodus 31:18",
+   "why": "Exodus says God gave Moses \"the two tablets of the covenant\", written with God's finger."
+  },
+  {
+   "id": "jew-abraham-isaac",
+   "faith": "jewish",
+   "level": "easy",
+   "q": "Who was the father of Isaac?",
+   "options": [
+    "Abraham",
+    "Jacob",
+    "Noah",
+    "Lot"
+   ],
+   "a": 0,
+   "ref": "Genesis 21:3",
+   "why": "Abraham named his son by Sarah Isaac; Jacob was Isaac's son."
+  },
+  {
+   "id": "jew-western-wall",
+   "faith": "jewish",
+   "level": "easy",
+   "q": "The Western Wall in Jerusalem is part of the retaining walls of which ancient site?",
+   "options": [
+    "King David's palace",
+    "The Tower of Babel",
+    "The Tabernacle",
+    "The Temple Mount of the Second Temple"
+   ],
+   "a": 3,
+   "ref": "",
+   "why": "It survives from Herod's enlargement of the Temple Mount; the Temple itself was destroyed in 70 CE."
+  },
+  {
+   "id": "jew-sukkot",
+   "faith": "jewish",
+   "level": "easy",
+   "q": "During which festival do Jews dwell in temporary booths?",
+   "options": [
+    "Shavuot",
+    "Passover",
+    "Sukkot",
+    "Yom Kippur"
+   ],
+   "a": 2,
+   "ref": "Leviticus 23:42",
+   "why": "Leviticus commands dwelling in booths for seven days, recalling the wilderness journey."
+  },
+  {
+   "id": "jew-challah",
+   "faith": "jewish",
+   "level": "easy",
+   "q": "What is the braided bread traditionally eaten at Sabbath meals?",
+   "options": [
+    "Matzah",
+    "Challah",
+    "Pita",
+    "Bagel"
+   ],
+   "a": 1,
+   "ref": "",
+   "why": "Two challah loaves recall the double portion of manna given before the Sabbath; matzah is the unleavened bread of Passover."
+  },
+  {
+   "id": "jew-red-sea",
+   "faith": "jewish",
+   "level": "easy",
+   "q": "Which sea parted for the Israelites as they fled Egypt?",
+   "options": [
+    "The Red Sea (Sea of Reeds)",
+    "The Dead Sea",
+    "The Sea of Galilee",
+    "The Mediterranean Sea"
+   ],
+   "a": 0,
+   "ref": "Exodus 15:4",
+   "why": "The Hebrew yam suf is usually translated Red Sea; many render it \"Sea of Reeds\"."
+  },
+  {
+   "id": "jew-judah-hanasi",
+   "faith": "jewish",
+   "level": "intermediate",
+   "q": "Who is credited with compiling the Mishnah around 200 CE?",
+   "options": [
+    "Hillel the Elder",
+    "Judah ha-Nasi",
+    "Rabbi Akiva",
+    "Rav Ashi"
+   ],
+   "a": 1,
+   "ref": "",
+   "why": "Rabbi Judah the Prince edited the Mishnah; Rav Ashi is linked with the editing of the Babylonian Talmud."
+  },
+  {
+   "id": "jew-nathan",
+   "faith": "jewish",
+   "level": "intermediate",
+   "q": "Which prophet told King David \"You are the man!\" after David's sin with Bathsheba?",
+   "options": [
+    "Nathan",
+    "Samuel",
+    "Elijah",
+    "Gad"
+   ],
+   "a": 0,
+   "ref": "2 Samuel 12:7",
+   "why": "Nathan's parable of the poor man's lamb led David to condemn himself."
+  },
+  {
+   "id": "jew-nebuchadnezzar",
+   "faith": "jewish",
+   "level": "intermediate",
+   "q": "Which king's army destroyed Solomon's Temple?",
+   "options": [
+    "Sennacherib of Assyria",
+    "Cyrus of Persia",
+    "Antiochus IV",
+    "Nebuchadnezzar of Babylon"
+   ],
+   "a": 3,
+   "ref": "2 Kings 25:8-9",
+   "why": "In Nebuchadnezzar's nineteenth year his captain Nebuzaradan burned the Temple, in 587 or 586 BCE."
+  },
+  {
+   "id": "jew-70ce",
+   "faith": "jewish",
+   "level": "intermediate",
+   "q": "In which year did the Romans destroy the Second Temple?",
+   "options": [
+    "135 CE",
+    "586 BCE",
+    "70 CE",
+    "33 CE"
+   ],
+   "a": 2,
+   "ref": "",
+   "why": "Titus' army took Jerusalem in 70 CE; 586 BCE is the Babylonian destruction, and 135 CE the end of the Bar Kokhba revolt."
+  },
+  {
+   "id": "jew-tisha-bav",
+   "faith": "jewish",
+   "level": "intermediate",
+   "q": "Which fast day mourns the destruction of both Temples?",
+   "options": [
+    "Yom Kippur",
+    "Tisha B'Av",
+    "The Fast of Esther",
+    "Tzom Gedaliah"
+   ],
+   "a": 1,
+   "ref": "",
+   "why": "Tisha B'Av, the ninth of Av, is the traditional date of both destructions."
+  },
+  {
+   "id": "jew-rashi",
+   "faith": "jewish",
+   "level": "intermediate",
+   "q": "Rashi, the great commentator on the Torah and Talmud, lived in which country?",
+   "options": [
+    "France",
+    "Spain",
+    "Egypt",
+    "Babylonia"
+   ],
+   "a": 0,
+   "ref": "",
+   "why": "Rashi (1040-1105) lived in Troyes in Champagne; his commentary is printed in almost every Talmud and many Bibles."
+  },
+  {
+   "id": "jew-hillel-one-foot",
+   "faith": "jewish",
+   "level": "intermediate",
+   "q": "What did Hillel tell the man who asked to be taught the whole Torah on one foot?",
+   "options": [
+    "Love the Lord your God with all your heart",
+    "Study is greater than deeds",
+    "Do not separate yourself from the community",
+    "What is hateful to you, do not do to another"
+   ],
+   "a": 3,
+   "ref": "Shabbat 31a",
+   "why": "Hillel added: \"That is the entire Torah, and the rest is its interpretation. Go study.\" Shammai had pushed the man away."
+  },
+  {
+   "id": "jew-mezuzah",
+   "faith": "jewish",
+   "level": "intermediate",
+   "q": "What is the small parchment scroll fixed to a Jewish doorpost called?",
+   "options": [
+    "Tefillin",
+    "Tallit",
+    "Mezuzah",
+    "Kippah"
+   ],
+   "a": 2,
+   "ref": "Deuteronomy 6:9",
+   "why": "It holds the Shema passages, following the command to write the words on the doorposts of the house."
+  },
+  {
+   "id": "jew-cyrus",
+   "faith": "jewish",
+   "level": "intermediate",
+   "q": "Which Persian king allowed the Jewish exiles to return and rebuild the Temple?",
+   "options": [
+    "Darius III",
+    "Cyrus",
+    "Xerxes",
+    "Nebuchadnezzar"
+   ],
+   "a": 1,
+   "ref": "Ezra 1:1-3",
+   "why": "Ezra opens with the proclamation of Cyrus in his first year, around 538 BCE."
+  },
+  {
+   "id": "jew-midrash",
+   "faith": "jewish",
+   "level": "intermediate",
+   "q": "What is the rabbinic genre of biblical interpretation found in works like Genesis Rabbah called?",
+   "options": [
+    "Midrash",
+    "Responsa",
+    "Kabbalah",
+    "Piyyut"
+   ],
+   "a": 0,
+   "ref": "",
+   "why": "Midrash interprets the Bible verse by verse, with both legal (halakhic) and narrative (aggadic) material."
+  },
+  {
+   "id": "jew-meat-milk",
+   "faith": "jewish",
+   "level": "intermediate",
+   "q": "The rule against mixing meat and milk is derived from a verse forbidding what?",
+   "options": [
+    "Eating fat with blood",
+    "Eating the sinew of the thigh",
+    "Eating animals that do not chew the cud",
+    "Boiling a young goat in its mother's milk"
+   ],
+   "a": 3,
+   "ref": "Exodus 23:19",
+   "why": "The verse appears three times in the Torah; the rabbis read it as forbidding cooking, eating and benefiting from meat with milk."
+  },
+  {
+   "id": "jew-antiochus",
+   "faith": "jewish",
+   "level": "intermediate",
+   "q": "Against which Seleucid ruler did the Maccabees revolt?",
+   "options": [
+    "Alexander the Great",
+    "Ptolemy II",
+    "Antiochus IV Epiphanes",
+    "Herod the Great"
+   ],
+   "a": 2,
+   "ref": "1 Maccabees 1:10",
+   "why": "Antiochus IV banned Jewish practice and defiled the Temple; the Maccabees rededicated it in 164 BCE."
+  },
+  {
+   "id": "jew-reform",
+   "faith": "jewish",
+   "level": "intermediate",
+   "q": "Which Jewish movement began in nineteenth-century Germany and treats traditional law as non-binding?",
+   "options": [
+    "Hasidic Judaism",
+    "Reform Judaism",
+    "Modern Orthodox Judaism",
+    "Karaite Judaism"
+   ],
+   "a": 1,
+   "ref": "",
+   "why": "Reform began in German congregations in the early 1800s; Karaism is a much older movement that rejects the rabbinic Oral Torah."
+  },
+  {
+   "id": "jew-minyan",
+   "faith": "jewish",
+   "level": "intermediate",
+   "q": "How many adults are needed for a minyan, the quorum for public prayer?",
+   "options": [
+    "Ten",
+    "Seven",
+    "Twelve",
+    "Three"
+   ],
+   "a": 0,
+   "ref": "",
+   "why": "Orthodox practice counts ten men; most non-Orthodox movements count women too."
+  },
+  {
+   "id": "jew-shavuot",
+   "faith": "jewish",
+   "level": "intermediate",
+   "q": "How many days after Passover is the festival of Shavuot?",
+   "options": [
+    "Forty",
+    "Seven",
+    "Thirty",
+    "Fifty"
+   ],
+   "a": 3,
+   "ref": "Leviticus 23:16",
+   "why": "The Torah commands counting seven weeks, fifty days; the rabbis link Shavuot with the giving of the Torah at Sinai."
+  },
+  {
+   "id": "jew-avot-chain",
+   "faith": "jewish",
+   "level": "hard",
+   "q": "According to the opening of Pirkei Avot, Moses received the Torah at Sinai and handed it on to whom?",
+   "options": [
+    "Joshua",
+    "Aaron",
+    "The seventy elders",
+    "Ezra"
+   ],
+   "a": 0,
+   "ref": "Mishnah Avot 1:1",
+   "why": "The chain runs from Moses to Joshua, the elders, the prophets and the Men of the Great Assembly."
+  },
+  {
+   "id": "jew-helek",
+   "faith": "jewish",
+   "level": "hard",
+   "q": "Maimonides' Thirteen Principles of Faith appear in his commentary on which chapter of the Mishnah?",
+   "options": [
+    "Berakhot chapter 1",
+    "Avot chapter 1",
+    "Yoma chapter 8",
+    "Sanhedrin chapter 10 (Helek)"
+   ],
+   "a": 3,
+   "ref": "Mishnah Sanhedrin 10:1",
+   "why": "The chapter opens \"All Israel have a share in the World to Come\", and Maimonides set out the beliefs he held were required for it."
+  },
+  {
+   "id": "jew-yavneh",
+   "faith": "jewish",
+   "level": "hard",
+   "q": "According to the Talmud, which sage asked Vespasian to spare Yavneh and its sages?",
+   "options": [
+    "Gamaliel II",
+    "Akiva",
+    "Yohanan ben Zakkai",
+    "Hillel"
+   ],
+   "a": 2,
+   "ref": "Gittin 56b",
+   "why": "Smuggled out of besieged Jerusalem, he asked for \"Yavneh and its Sages\", which became the centre of rabbinic learning after 70 CE."
+  },
+  {
+   "id": "jew-akiva-bar-kokhba",
+   "faith": "jewish",
+   "level": "hard",
+   "q": "Which sage is said to have hailed Simon bar Kosiba (Bar Kokhba) as the messiah?",
+   "options": [
+    "Rabbi Meir",
+    "Rabbi Akiva",
+    "Yohanan ben Zakkai",
+    "Judah ha-Nasi"
+   ],
+   "a": 1,
+   "ref": "",
+   "why": "The Jerusalem Talmud (Taanit 4) reports Akiva's words and another sage's rebuke; the revolt was crushed in 135 CE."
+  },
+  {
+   "id": "jew-eruvin-13b",
+   "faith": "jewish",
+   "level": "hard",
+   "q": "After three years of dispute between the schools of Hillel and Shammai, what did the heavenly voice declare, according to Eruvin 13b?",
+   "options": [
+    "Both are the words of the living God, but the law follows Hillel",
+    "The law follows Shammai",
+    "Neither school may rule until Elijah comes",
+    "Each city should follow its own school"
+   ],
+   "a": 0,
+   "ref": "Eruvin 13b",
+   "why": "The Talmud goes on to say Hillel's school was favoured because they were humble and taught Shammai's views first."
+  },
+  {
+   "id": "jew-isserles",
+   "faith": "jewish",
+   "level": "hard",
+   "q": "Who wrote the glosses (the Mappah) that adapt Joseph Karo's Shulchan Arukh to Ashkenazi custom?",
+   "options": [
+    "Isaac Luria",
+    "Jacob ben Asher",
+    "Elijah of Vilna",
+    "Moses Isserles"
+   ],
+   "a": 3,
+   "ref": "",
+   "why": "Isserles of Kraków (the Rema) added Ashkenazi practice to Karo's Sephardi code in the sixteenth century."
+  },
+  {
+   "id": "jew-zohar",
+   "faith": "jewish",
+   "level": "hard",
+   "q": "To which second-century sage is the Zohar traditionally attributed?",
+   "options": [
+    "Akiva",
+    "Judah ha-Nasi",
+    "Shimon bar Yochai",
+    "Ishmael ben Elisha"
+   ],
+   "a": 2,
+   "ref": "",
+   "why": "Tradition credits Shimon bar Yochai; most academic scholars date it to thirteenth-century Spain, linked with Moses de León."
+  },
+  {
+   "id": "jew-leningrad",
+   "faith": "jewish",
+   "level": "hard",
+   "q": "What is the oldest complete manuscript of the Hebrew Bible in the Masoretic tradition, dated 1008 or 1009 CE?",
+   "options": [
+    "The Aleppo Codex",
+    "The Leningrad Codex",
+    "The Great Isaiah Scroll",
+    "Codex Sinaiticus"
+   ],
+   "a": 1,
+   "ref": "",
+   "why": "The Aleppo Codex is older (tenth century) but has lost much of its Torah; Sinaiticus is a Greek Christian Bible."
+  },
+  {
+   "id": "jew-isaiah-scroll",
+   "faith": "jewish",
+   "level": "hard",
+   "q": "Which biblical book survives complete among the Dead Sea Scrolls?",
+   "options": [
+    "Isaiah",
+    "Genesis",
+    "Psalms",
+    "Daniel"
+   ],
+   "a": 0,
+   "ref": "",
+   "why": "The Great Isaiah Scroll (1QIsa-a) from Qumran Cave 1 holds all 66 chapters; other books survive only in parts."
+  },
+  {
+   "id": "jew-jts",
+   "faith": "jewish",
+   "level": "hard",
+   "q": "Which institution in New York is the main seminary of Conservative Judaism?",
+   "options": [
+    "Hebrew Union College",
+    "Yeshiva University",
+    "The Reconstructionist Rabbinical College",
+    "The Jewish Theological Seminary"
+   ],
+   "a": 3,
+   "ref": "",
+   "why": "JTS was reshaped under Solomon Schechter from 1902; Hebrew Union College trains Reform rabbis and Yeshiva University is Modern Orthodox."
+  },
+  {
+   "id": "jew-baal-shem-tov",
+   "faith": "jewish",
+   "level": "hard",
+   "q": "Who is regarded as the founder of Hasidism?",
+   "options": [
+    "Elijah, the Vilna Gaon",
+    "Moses Mendelssohn",
+    "Israel ben Eliezer, the Baal Shem Tov",
+    "Shabbetai Zevi"
+   ],
+   "a": 2,
+   "ref": "",
+   "why": "The Baal Shem Tov taught in eighteenth-century Podolia; the Vilna Gaon led the opposition to Hasidism."
+  },
+  {
+   "id": "jew-shabbetai-zevi",
+   "faith": "jewish",
+   "level": "hard",
+   "q": "Which seventeenth-century messianic claimant shocked his followers by converting to Islam in 1666?",
+   "options": [
+    "Jacob Frank",
+    "Shabbetai Zevi",
+    "David Reuveni",
+    "Solomon Molcho"
+   ],
+   "a": 1,
+   "ref": "",
+   "why": "Brought before the Ottoman sultan, Shabbetai Zevi converted; Jacob Frank, a century later, led his followers into Catholicism."
+  },
+  {
+   "id": "jew-almah",
+   "faith": "jewish",
+   "level": "hard",
+   "q": "Which Hebrew word in Isaiah 7:14, rendered \"virgin\" in many Christian Bibles, means a young woman?",
+   "options": [
+    "'almah",
+    "betulah",
+    "na'arah",
+    "ishah"
+   ],
+   "a": 0,
+   "ref": "Isaiah 7:14",
+   "why": "The Hebrew has 'almah, a young woman; the Septuagint translated it parthenos. Betulah is the more specific Hebrew word for a virgin."
+  },
+  {
+   "id": "jew-job-author",
+   "faith": "jewish",
+   "level": "hard",
+   "q": "According to the baraita in Bava Batra 14b, who wrote the Book of Job?",
+   "options": [
+    "Solomon",
+    "Job himself",
+    "Jeremiah",
+    "Moses"
+   ],
+   "a": 3,
+   "ref": "Bava Batra 14b",
+   "why": "It says Moses wrote his own book, the portion of Balaam and Job; the Talmud then records other views of when Job lived."
+  },
+  {
+   "id": "jew-aristeas",
+   "faith": "jewish",
+   "level": "hard",
+   "q": "According to the Letter of Aristeas, how many elders translated the Torah into Greek in Alexandria?",
+   "options": [
+    "70",
+    "12",
+    "72",
+    "120"
+   ],
+   "a": 2,
+   "ref": "",
+   "why": "Aristeas tells of six elders from each of the twelve tribes; the name Septuagint (\"seventy\") rounds the number."
+  }
+ ]
+}

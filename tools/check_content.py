@@ -20,6 +20,7 @@ TR = J("content", "translations.json")
 TL = J("content", "timeline.json")
 HQ = J("content", "hard.json")
 QZ = J("content", "quiz.json")
+QB = J("content", "quizbank.json")
 Q2 = J("content", "questions2.json")
 lib = {w["id"]: w for w in J("lib", "index.json")}
 colls = {w["c"] for w in lib.values()}
@@ -91,7 +92,7 @@ def strings(x):
             yield from strings(v)
 
 problems, counts = [], dict(verses=0, links=0, hadith=0, talmud=0)
-for name, doc in (("questions", Q), ("questions2", Q2), ("disputes", D), ("beliefs", B), ("guide", G), ("debates", [[t["ref"] for t in a["texts"]] + [a["argument"], a["response"], a["facts"], a["assessment"]] for a in DB["arguments"]]), ("shamoun", [a["texts"] for a in SH["arguments"]] + [x["texts"] for x in SH["debates"]]), ("stories", ST), ("prophecies", PR), ("translations", TR), ("timeline", TL), ("hard", HQ), ("quiz", [[x["ref"] for x in z["questions"] if x["ref"]] for z in QZ["quizzes"]] + [f["ref"] for f in QZ["facts"]])):
+for name, doc in (("questions", Q), ("questions2", Q2), ("disputes", D), ("beliefs", B), ("guide", G), ("debates", [[t["ref"] for t in a["texts"]] + [a["argument"], a["response"], a["facts"], a["assessment"]] for a in DB["arguments"]]), ("shamoun", [a["texts"] for a in SH["arguments"]] + [x["texts"] for x in SH["debates"]]), ("stories", ST), ("prophecies", PR), ("translations", TR), ("timeline", TL), ("hard", HQ), ("quizbank", [x["ref"] for x in QB["questions"] if x["ref"]]), ("quiz", [[x["ref"] for x in z["questions"] if x["ref"]] for z in QZ["quizzes"]] + [f["ref"] for f in QZ["facts"]])):
     for s in strings(doc):
         for path, label in re.findall(r"\[\[([^|\]]+)\|([^\]]+)\]\]", s):
             counts["links"] += 1
