@@ -1998,10 +1998,10 @@
   }
 
   Promise.all(['data/index.json', 'content/questions.json', 'content/disputes.json', 'content/beliefs.json', 'content/guide.json'].map(getJSON)
-    .concat(getJSON('content/config.json').catch(() => ({}))).concat(getJSON('content/hard.json').catch(() => ({ topics: [] }))).concat(getJSON('content/quiz.json').catch(() => ({ quizzes: [], facts: [] })))).then(([m, c, d, b, g, cfg, hq, qz]) => {
+    .concat(getJSON('content/config.json').catch(() => ({}))).concat(getJSON('content/hard.json').catch(() => ({ topics: [] }))).concat(getJSON('content/quiz.json').catch(() => ({ quizzes: [], facts: [] }))).concat(getJSON('content/questions2.json').catch(() => ({ questions: [] })))).then(([m, c, d, b, g, cfg, hq, qz, q2]) => {
     HQ = hq; QZ = qz;
     M = m; C = c; B = b; G = g; SITE_CFG = cfg || {};
-    C.questions = C.questions.concat(d.questions);
+    C.questions = C.questions.concat(d.questions, q2.questions || []);
     M.translations.forEach(t => { trById[t.id] = t; t.chapters = Object.fromEntries(t.books); });
     setupRefs();
     ['bible', 'quran'].forEach(c => { const v = store.get('tr-' + c); if (trById[v] && trById[v].corpus === c) pref[c] = v; });
