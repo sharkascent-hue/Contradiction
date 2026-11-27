@@ -1,9 +1,9 @@
 /* Contradiction: light, calm, one colour per faith. */
 :root {
-  --bg: #faf8f4; --surface: #ffffff; --soft: #f3f0e9; --ink: #17161c; --ink-2: #3d3c45; --muted: #6f6d78; --line: #e9e4da;
-  --brand: #ff5a36; --brand-2: #ff2e63; --brand-ink: #ffffff;
-  --chr: #2563eb; --chr-soft: #eaf1ff; --isl: #0f9d6e; --isl-soft: #e6f7f0; --jud: #7c3aed; --jud-soft: #f2ecff; --crit: #5f6672; --crit-soft: #eff1f4;
-  --mark: #ffe9a6; --sel: #fff6d6;
+  --bg: #F6EFE2; --surface: #FFFCF5; --soft: #EFE4D0; --ink: #1A120B; --ink-2: #38281B; --muted: #6E5B45; --line: #E3D5BC;
+  --brand: #9C6B34; --brand-2: #6F4520; --brand-ink: #FFFCF5;
+  --chr: #8C2F2B; --chr-soft: #F6E7E2; --isl: #4E6B3A; --isl-soft: #ECF0E3; --jud: #3B5576; --jud-soft: #E6ECF3; --crit: #5f6672; --crit-soft: #eff1f4;
+  --mark: #F3DFA6; --sel: #FBF1D8;
   --r: 18px; --r-sm: 12px;
   --shadow: 0 1px 2px rgba(23, 22, 28, .05), 0 8px 24px rgba(23, 22, 28, .06);
   --shadow-lg: 0 2px 6px rgba(23, 22, 28, .06), 0 18px 50px rgba(23, 22, 28, .12);
@@ -24,7 +24,7 @@ button { cursor: pointer; }
 
 /* ---------- top bar ---------- */
 .top { position: sticky; top: 0; z-index: 20; display: flex; align-items: center; gap: 18px; padding: 10px 18px;
-  padding-top: max(10px, env(safe-area-inset-top)); background: var(--bar, rgba(250, 248, 244, .86)); backdrop-filter: saturate(1.4) blur(14px);
+  padding-top: max(10px, env(safe-area-inset-top)); background: var(--bar, rgba(246, 239, 226, .86)); backdrop-filter: saturate(1.4) blur(14px);
   -webkit-backdrop-filter: saturate(1.4) blur(14px); border-bottom: 1px solid transparent; transition: border-color .2s; }
 .top.scrolled { border-bottom-color: var(--line); }
 .brand { display: flex; align-items: center; gap: 10px; color: var(--ink); text-decoration: none !important; margin-right: auto; }
@@ -105,8 +105,8 @@ p { margin: .6em 0; }
 
 /* ---------- home ---------- */
 .hero { position: relative; margin: 6px -18px 0; padding: 34px 22px 26px; border-radius: 0 0 28px 28px; overflow: hidden;
-  background: radial-gradient(120% 80% at 0% 0%, #e9f0ff 0, transparent 55%), radial-gradient(110% 80% at 100% 10%, #e3f8ef 0, transparent 55%),
-              radial-gradient(90% 70% at 60% 110%, #f1e9ff 0, transparent 60%), var(--bg); }
+  background: radial-gradient(120% 80% at 0% 0%, #F3E3C4 0, transparent 55%), radial-gradient(110% 80% at 100% 10%, #EADBC0 0, transparent 55%),
+              radial-gradient(90% 70% at 60% 110%, #F1E6D2 0, transparent 60%), var(--bg); }
 @media (min-width: 860px) { .hero { margin: 10px 0 0; border-radius: 28px; padding: 56px 48px 40px; } }
 .hero h1 { font-size: clamp(2.1rem, 8.5vw, 3.4rem); margin: .1em 0 .3em; }
 .hero h1 em { font-style: normal; background: linear-gradient(90deg, var(--chr), var(--isl) 50%, var(--jud)); -webkit-background-clip: text; background-clip: text; color: transparent; }
@@ -116,7 +116,7 @@ p { margin: .6em 0; }
 .askbox:focus-within { border-color: #d9d2c4; box-shadow: 0 0 0 4px rgba(37, 99, 235, .08), var(--shadow-lg); }
 .askbox textarea { flex: 1; min-width: 0; border: 0; outline: 0; resize: none; background: transparent; padding: 10px 0; font-size: 1.02rem; line-height: 1.45; max-height: 140px; }
 .send { width: 46px; height: 46px; flex: none; border: 0; border-radius: 50%; display: grid; place-items: center; color: #fff;
-  background: linear-gradient(135deg, var(--brand), var(--brand-2)); box-shadow: 0 6px 16px rgba(255, 60, 80, .3); transition: transform .15s; }
+  background: linear-gradient(135deg, var(--brand), var(--brand-2)); box-shadow: 0 6px 16px rgba(111, 69, 32, .3); transition: transform .15s; }
 .send:hover { transform: scale(1.05); } .send:active { transform: scale(.95); }
 .send svg { width: 20px; height: 20px; }
 .suggest { display: flex; gap: 8px; overflow-x: auto; scrollbar-width: none; margin: 0 -22px; padding: 2px 22px 4px; }
@@ -180,8 +180,8 @@ p { margin: .6em 0; }
 /* ---------- faith hub & beliefs ---------- */
 .banner { margin: 4px -18px 0; padding: 28px 22px 22px; border-radius: 0 0 26px 26px; color: #fff; position: relative; overflow: hidden; }
 @media (min-width: 860px) { .banner { margin: 10px 0 0; border-radius: 26px; padding: 40px; } }
-.banner.christian { background: linear-gradient(135deg, #1e40af, #3b82f6); } .banner.muslim { background: linear-gradient(135deg, #065f46, #10b981); }
-.banner.jewish { background: linear-gradient(135deg, #4c1d95, #8b5cf6); }
+.banner.christian { background: linear-gradient(135deg, #6E211D, #A8483F); } .banner.muslim { background: linear-gradient(135deg, #344A27, #6A8A4F); }
+.banner.jewish { background: linear-gradient(135deg, #2C4260, #5574A0); }
 .banner::after { content: attr(data-glyph); position: absolute; right: -10px; bottom: -40px; font-size: 11rem; opacity: .13; line-height: 1; }
 .banner h1 { color: #fff; margin: .1em 0 .2em; }
 .banner p { color: rgba(255, 255, 255, .9); max-width: 36em; }
@@ -209,9 +209,9 @@ p { margin: .6em 0; }
 .view { padding: 16px 16px 14px; border-radius: var(--r); background: var(--surface); border: 1px solid var(--line); position: relative; }
 .view .who { display: flex; align-items: center; gap: 8px; font-weight: 700; font-size: .92rem; margin-bottom: 4px; }
 .view p { margin: .3em 0 0; color: var(--ink-2); font-size: .96rem; }
-.view.christian { background: var(--chr-soft); border-color: #d6e3ff; } .view.christian .who { color: var(--chr); }
-.view.muslim { background: var(--isl-soft); border-color: #c9eedf; } .view.muslim .who { color: var(--isl); }
-.view.jewish { background: var(--jud-soft); border-color: #e2d6ff; } .view.jewish .who { color: var(--jud); }
+.view.christian { background: var(--chr-soft); border-color: #EBCFC8; } .view.christian .who { color: var(--chr); }
+.view.muslim { background: var(--isl-soft); border-color: #D7E0C8; } .view.muslim .who { color: var(--isl); }
+.view.jewish { background: var(--jud-soft); border-color: #CBD6E5; } .view.jewish .who { color: var(--jud); }
 .summary-card { padding: 18px; border-radius: var(--r); background: var(--surface); border: 1px solid var(--line); box-shadow: var(--shadow); font-size: 1.04rem; }
 .pgroup { margin: 18px 0 8px; display: flex; align-items: center; gap: 8px; font-weight: 700; }
 .pgroup .badge { font-size: .72rem; font-weight: 700; padding: 3px 9px; border-radius: 999px; background: var(--soft); color: var(--ink-2); letter-spacing: .02em; }
@@ -221,8 +221,8 @@ p { margin: .6em 0; }
 .passage .ref { font-weight: 700; color: var(--ink); }
 .passage .why { color: var(--muted); font-size: .9rem; margin-left: 6px; }
 .passage .q { font: 1.02rem/1.6 var(--reading); color: var(--ink-2); margin-top: 6px; border-left: 3px solid var(--line); padding-left: 12px; }
-.passage.k-ot .q, .passage.k-nt .q, .passage.k-christian-docs .q { border-left-color: #c9d8ff; }
-.passage.k-quran .q, .passage.k-hadith .q, .passage.k-islam-docs .q { border-left-color: #bfe8d6; }
+.passage.k-ot .q, .passage.k-nt .q, .passage.k-christian-docs .q { border-left-color: #E5C4BC; }
+.passage.k-quran .q, .passage.k-hadith .q, .passage.k-islam-docs .q { border-left-color: #D7E0C8; }
 .passage.k-jewish .q { border-left-color: #dccdff; }
 .shimmer { display: block; height: 12px; margin: 8px 0 2px; border-radius: 6px; background: linear-gradient(90deg, #f1ede5, #f8f5ef, #f1ede5); background-size: 200% 100%; animation: sh 1.2s infinite; }
 .shimmer.short { width: 60%; }
@@ -366,21 +366,21 @@ sup.cite a:hover { background: var(--chr); color: #fff; }
 .dispute-tile .eyebrow { font-size: .68rem; }
 .verdict { margin-left: auto; font: 700 .72rem var(--sans); padding: 3px 9px; border-radius: 999px; background: var(--soft); color: var(--ink-2); }
 .verdict.big { font-size: .9rem; padding: 6px 14px; margin: 0; }
-.verdict.v-strong { background: #e6f7ee; color: #0b7a4b; } .verdict.v-partial { background: #fff4db; color: #8a5a00; }
+.verdict.v-strong { background: #ECF0E3; color: #3F5830; } .verdict.v-partial { background: #fff4db; color: #8a5a00; }
 .verdict.v-weak { background: #ffece6; color: #b3401a; } .verdict.v-fails { background: #fde8ea; color: #b4232f; }
 
 /* debates: other sources */
 .other-src { list-style: none; padding: 0; margin: 0 0 1.2rem; display: grid; gap: .5rem; }
-.other-src li { background: var(--card, #fff); border: 1px solid var(--line, #e7e2d9); border-radius: 12px; padding: .7rem .9rem; font-size: .95rem; }
+.other-src li { background: var(--card, #fff); border: 1px solid var(--line, #E3D5BC); border-radius: 12px; padding: .7rem .9rem; font-size: .95rem; }
 .chk { display: inline-block; font-size: .75rem; font-weight: 600; padding: .1rem .5rem; border-radius: 999px; margin-left: .3rem; }
-.chk.ok { background: #e6f6ee; color: #0b7a52; }
+.chk.ok { background: #ECF0E3; color: #3F5830; }
 .chk.no { background: #fdf1e3; color: #9a5b0b; }
-.favours { background: #fff; border: 1px solid var(--line, #e7e2d9); border-radius: 14px; padding: .8rem 1rem; margin: .2rem 0 1rem; }
+.favours { background: #fff; border: 1px solid var(--line, #E3D5BC); border-radius: 14px; padding: .8rem 1rem; margin: .2rem 0 1rem; }
 .seg.canon { margin-bottom: 10px; }
 
 /* recent debate videos */
 .vid-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 16px; margin: 16px 0; }
-.vid { background: #fff; border: 1px solid var(--line, #e7e2d9); border-radius: 16px; overflow: hidden; display: flex; flex-direction: column; }
+.vid { background: #fff; border: 1px solid var(--line, #E3D5BC); border-radius: 16px; overflow: hidden; display: flex; flex-direction: column; }
 .vid .thumb { position: relative; display: block; width: 100%; aspect-ratio: 16/9; padding: 0; border: 0; background: #111; cursor: pointer; }
 .vid .thumb img, .vid .thumb iframe { width: 100%; height: 100%; object-fit: cover; border: 0; display: block; }
 .vid .play { position: absolute; inset: 0; margin: auto; width: 56px; height: 56px; border-radius: 50%; background: rgba(0,0,0,.6); }
@@ -388,18 +388,18 @@ sup.cite a:hover { background: var(--chr); color: #fff; }
 .vid-body { padding: 12px 14px 14px; display: flex; flex-direction: column; gap: 6px; flex: 1; }
 .vid-body strong { line-height: 1.3; }
 .vid-body .btn { margin-top: auto; align-self: flex-start; }
-.vid-banner { display: flex; flex-direction: column; gap: 2px; padding: 14px 16px; margin: 6px 0 14px; border-radius: 16px; background: linear-gradient(135deg, #eef3ff, #f3ecff); color: inherit; text-decoration: none; border: 1px solid #dfe5f7; }
+.vid-banner { display: flex; flex-direction: column; gap: 2px; padding: 14px 16px; margin: 6px 0 14px; border-radius: 16px; background: linear-gradient(135deg, #F6E7E2, #EFE4D0); color: inherit; text-decoration: none; border: 1px solid #E3D5BC; }
 .vid-banner span { font-size: .9rem; opacity: .75; }
 .extra-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 10px; margin: 8px 0 18px; }
-.extra-list a { display: flex; flex-direction: column; gap: 3px; padding: 12px 14px; background: #fff; border: 1px solid var(--line, #e7e2d9); border-radius: 14px; color: inherit; text-decoration: none; }
+.extra-list a { display: flex; flex-direction: column; gap: 3px; padding: 12px 14px; background: #fff; border: 1px solid var(--line, #E3D5BC); border-radius: 14px; color: inherit; text-decoration: none; }
 .extra-list a span { font-size: .88rem; opacity: .7; }
 .extra-list a:hover { border-color: #c9c2b5; }
 .seg.jump { margin: 14px 0 4px; }
 
 /* copy and share buttons: small round icons at the top right, like a chat app */
 .copy-btn { display: inline-grid; place-items: center; width: 32px; height: 32px; padding: 0; border-radius: 50%; border: 1px solid var(--line, #e2dcd1); background: #fff; color: #5b5b66; cursor: pointer; float: right; margin: -2px 0 6px 8px; transition: background .15s, color .15s; }
-.copy-btn:hover { background: #f1eee7; color: #17171c; }
-.copy-btn.done { background: #e6f6ee; color: #0b7a52; border-color: #bfe8d3; }
+.copy-btn:hover { background: #f1eee7; color: #1A120B; }
+.copy-btn.done { background: #ECF0E3; color: #3F5830; border-color: #D7E0C8; }
 .tools { float: right; display: flex; gap: 6px; margin: -4px -4px 6px 10px; }
 .tools .copy-btn { float: none; margin: 0; }
 .passage .copy-btn { width: 28px; height: 28px; opacity: .7; }
@@ -410,8 +410,8 @@ p .share-btn { float: none; vertical-align: middle; margin: 0 0 0 6px; }
 /* hadith grades */
 .grade { margin: .5rem 0 0; }
 .gr { display: inline-block; font-size: .75rem; font-weight: 700; padding: .12rem .6rem; border-radius: 999px; }
-.gr.sahih { background: #e6f6ee; color: #0b7a52; }
-.gr.hasan { background: #eef3ff; color: #1d4ed8; }
+.gr.sahih { background: #ECF0E3; color: #3F5830; }
+.gr.hasan { background: #F6E7E2; color: #7A2723; }
 .gr.daif { background: #fdf1e3; color: #9a5b0b; }
 .gr.mawdu { background: #fde8e8; color: #b42318; }
 .gr.other { background: #f1eee7; color: #55555f; }
@@ -420,21 +420,21 @@ p .share-btn { float: none; vertical-align: middle; margin: 0 0 0 6px; }
 .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; align-items: start; }
 @media (max-width: 760px) { .two-col { grid-template-columns: 1fr; } }
 .diff { display: grid; gap: 12px; margin-bottom: 1.2rem; }
-.diff-row { display: grid; grid-template-columns: 1fr 1fr; gap: 0 14px; background: #fff; border: 1px solid var(--line, #e7e2d9); border-radius: 16px; padding: 14px 16px; }
+.diff-row { display: grid; grid-template-columns: 1fr 1fr; gap: 0 14px; background: #fff; border: 1px solid var(--line, #E3D5BC); border-radius: 16px; padding: 14px 16px; }
 .diff-point { grid-column: 1 / -1; font-weight: 700; margin-bottom: 8px; font-size: 1.05rem; }
 .diff-b, .diff-q { font-size: .97rem; }
-.diff-b .tag { color: var(--chr, #2563eb); } .diff-q .tag { color: var(--isl, #0f9d6e); }
+.diff-b .tag { color: var(--chr, #8C2F2B); } .diff-q .tag { color: var(--isl, #4E6B3A); }
 .diff-row .tag { display: block; font-size: .72rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; margin-bottom: 2px; }
-.diff-note { grid-column: 1 / -1; margin-top: 10px; padding-top: 10px; border-top: 1px dashed var(--line, #e7e2d9); font-size: .92rem; opacity: .8; }
+.diff-note { grid-column: 1 / -1; margin-top: 10px; padding-top: 10px; border-top: 1px dashed var(--line, #E3D5BC); font-size: .92rem; opacity: .8; }
 @media (max-width: 560px) { .diff-row { grid-template-columns: 1fr; gap: 8px; } }
 
 /* translations */
 .bigword { font-size: 2.4rem; line-height: 1.5; text-align: center; margin: .4rem 0 0; }
 .readings { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px; margin: 12px 0 16px; }
-.readings div { background: #fff; border: 1px solid var(--line, #e7e2d9); border-radius: 14px; padding: 10px 14px; display: flex; flex-direction: column; gap: 2px; }
+.readings div { background: #fff; border: 1px solid var(--line, #E3D5BC); border-radius: 14px; padding: 10px 14px; display: flex; flex-direction: column; gap: 2px; }
 .readings span { font-size: .86rem; opacity: .7; }
 .editions { display: grid; gap: 8px; margin-bottom: 14px; }
-.ed { background: #fff; border: 1px solid var(--line, #e7e2d9); border-radius: 14px; padding: 10px 14px; }
+.ed { background: #fff; border: 1px solid var(--line, #E3D5BC); border-radius: 14px; padding: 10px 14px; }
 .ed .tag { font-size: .72rem; font-weight: 700; letter-spacing: .05em; text-transform: uppercase; opacity: .6; }
 .ed p { margin: 4px 0 0; }
 
@@ -442,11 +442,11 @@ p .share-btn { float: none; vertical-align: middle; margin: 0 0 0 6px; }
 .tl { position: relative; margin: 18px 0; padding-left: 6px; }
 .tl-row { display: grid; grid-template-columns: 110px 1fr; gap: 14px; padding: 0 0 18px; position: relative; }
 .tl-year { font-weight: 700; text-align: right; padding-top: 12px; font-size: .95rem; }
-.tl-body { background: #fff; border: 1px solid var(--line, #e7e2d9); border-left: 4px solid #999; border-radius: 14px; padding: 12px 16px; }
+.tl-body { background: #fff; border: 1px solid var(--line, #E3D5BC); border-left: 4px solid #999; border-radius: 14px; padding: 12px 16px; }
 .tl-body strong { display: block; margin: 2px 0; }
 .tl-body p { margin: 4px 0; font-size: .96rem; }
 .tl-body .tag { font-size: .7rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; opacity: .6; }
-.f-jewish .tl-body { border-left-color: var(--jud, #7c3aed); } .f-christian .tl-body { border-left-color: var(--chr, #2563eb); } .f-muslim .tl-body { border-left-color: var(--isl, #0f9d6e); }
+.f-jewish .tl-body { border-left-color: var(--jud, #3B5576); } .f-christian .tl-body { border-left-color: var(--chr, #8C2F2B); } .f-muslim .tl-body { border-left-color: var(--isl, #4E6B3A); }
 @media (max-width: 560px) { .tl-row { grid-template-columns: 1fr; gap: 2px; } .tl-year { text-align: left; padding-top: 0; } }
 .trainer-head .seg button[disabled] { opacity: .35; }
 .ai-text li.sub { margin-left: 1.4em; list-style: circle; }
@@ -458,21 +458,21 @@ p .share-btn { float: none; vertical-align: middle; margin: 0 0 0 6px; }
 .hero-page p { margin: 0; max-width: 46rem; opacity: .92; font-size: 1.05rem; }
 .hero-page::after { content: attr(data-mark); position: absolute; right: 14px; bottom: -28px; font-size: 9rem; opacity: .16; line-height: 1; pointer-events: none; }
 .hp-eyebrow { display: inline-block; font-size: .74rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; padding: .25rem .7rem; border-radius: 999px; background: rgba(255,255,255,.18); }
-.hp-debates { background: linear-gradient(135deg, #7f1d1d, #dc2626 55%, #f97316); }
-.hp-trainer { background: linear-gradient(135deg, #312e81, #7c3aed 60%, #db2777); }
-.hp-videos { background: linear-gradient(135deg, #18181b, #b91c1c); }
-.hp-stories { background: linear-gradient(135deg, #78350f, #d97706 60%, #f59e0b); }
-.hp-prophecies { background: linear-gradient(135deg, #1e1b4b, #4338ca 60%, #0ea5e9); }
-.hp-translations { background: linear-gradient(135deg, #134e4a, #0d9488 60%, #22c55e); }
+.hp-debates { background: linear-gradient(135deg, #2A1A10, #6F3A22 55%, #A86A3A); }
+.hp-trainer { background: linear-gradient(135deg, #1A120B, #4A3020 60%, #8B5A2B); }
+.hp-videos { background: linear-gradient(135deg, #1A120B, #5A2E1E); }
+.hp-stories { background: linear-gradient(135deg, #3B2614, #8B5A2B 60%, #C49A5C); }
+.hp-prophecies { background: linear-gradient(135deg, #1E1A14, #4A3D2A 60%, #8C7550); }
+.hp-translations { background: linear-gradient(135deg, #2A2416, #5E5530 60%, #8C8450); }
 .hp-timeline { background: linear-gradient(135deg, #3f2a1d, #8b5e3c 60%, #c49a6c); }
-.hp-shamoun { background: linear-gradient(135deg, #0c1d4a, #1d4ed8); }
-.hp-explore { background: linear-gradient(135deg, #2563eb, #0f9d6e 50%, #7c3aed); }
+.hp-shamoun { background: linear-gradient(135deg, #1A120B, #4A2A1A); }
+.hp-explore { background: linear-gradient(135deg, #38281B, #8B5A2B 55%, #B88A52); }
 .hp-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 16px; }
 .hp-actions .btn { background: #fff; color: #7f1d1d; border: 0; }
 .hp-actions .ghost-w { background: transparent; color: #fff; border: 1.5px solid rgba(255,255,255,.7); }
 
 /* the arena on the home page */
-.arena { margin: 26px 0 8px; padding: 22px; border-radius: 26px; background: linear-gradient(160deg, #1c1917, #3b0d0d 70%, #7f1d1d); color: #fff; }
+.arena { margin: 26px 0 8px; padding: 22px; border-radius: 26px; background: linear-gradient(160deg, #1A120B, #38281B 65%, #6E4A2A); color: #fff; }
 .arena-head h2 { color: #fff; margin: .3em 0 .2em; font-size: 1.8rem; }
 .arena-head p { margin: 0 0 16px; opacity: .85; }
 .feature { display: flex; flex-direction: column; gap: 8px; padding: 18px; border-radius: 18px; background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.15); color: #fff; text-decoration: none; margin-bottom: 14px; }
@@ -480,7 +480,7 @@ p .share-btn { float: none; vertical-align: middle; margin: 0 0 0 6px; }
 .feature-arg { opacity: .8; font-size: .95rem; }
 .feature .vs { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
 .arena-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; }
-.arena-card { display: flex; flex-direction: column; gap: 4px; padding: 16px; border-radius: 18px; background: #fff; color: #17171c; text-decoration: none; transition: transform .15s; }
+.arena-card { display: flex; flex-direction: column; gap: 4px; padding: 16px; border-radius: 18px; background: #fff; color: #1A120B; text-decoration: none; transition: transform .15s; }
 .arena-card:hover { transform: translateY(-2px); }
 .arena-card span:last-child { font-size: .9rem; opacity: .7; }
 .arena-chars { display: flex; margin-bottom: 4px; } .arena-chars svg { margin-right: -10px; border: 3px solid #fff; border-radius: 50%; }
@@ -488,12 +488,12 @@ p .share-btn { float: none; vertical-align: middle; margin: 0 0 0 6px; }
 
 /* debater characters */
 .chars { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 10px; }
-.char { display: flex; gap: 12px; align-items: flex-start; text-align: left; padding: 12px; border-radius: 16px; border: 1.5px solid var(--line, #e7e2d9); background: #fff; cursor: pointer; font: inherit; color: inherit; }
+.char { display: flex; gap: 12px; align-items: flex-start; text-align: left; padding: 12px; border-radius: 16px; border: 1.5px solid var(--line, #E3D5BC); background: #fff; cursor: pointer; font: inherit; color: inherit; }
 .char:hover { border-color: #c9c2b5; }
-.char.on { border-color: #7c3aed; box-shadow: 0 0 0 3px rgba(124,58,237,.15); }
+.char.on { border-color: #3B5576; box-shadow: 0 0 0 3px rgba(124,58,237,.15); }
 .char svg { flex: none; border-radius: 50%; }
 .char span { display: flex; flex-direction: column; gap: 1px; }
-.char em { font-style: normal; font-size: .82rem; color: #7c3aed; font-weight: 600; }
+.char em { font-style: normal; font-size: .82rem; color: #3B5576; font-weight: 600; }
 .char small { font-size: .8rem; opacity: .7; line-height: 1.35; }
 .vs-line { display: flex; gap: 14px; align-items: center; }
 .vs-line svg { flex: none; border-radius: 50%; }
@@ -503,15 +503,15 @@ p .share-btn { float: none; vertical-align: middle; margin: 0 0 0 6px; }
 
 /* suggestions while typing */
 .sug { display: flex; flex-wrap: wrap; gap: 8px; margin: 10px 0 4px; }
-.sug button { display: inline-flex; align-items: center; gap: 8px; padding: .45rem .8rem; border-radius: 999px; border: 1px solid var(--line, #e2dcd1); background: #fff; color: #17171c; font: 500 .92rem var(--ui, inherit); cursor: pointer; text-align: left; max-width: 100%; }
-.sug button:hover, .sug button.on { border-color: #2563eb; background: #eef3ff; }
+.sug button { display: inline-flex; align-items: center; gap: 8px; padding: .45rem .8rem; border-radius: 999px; border: 1px solid var(--line, #e2dcd1); background: #fff; color: #1A120B; font: 500 .92rem var(--ui, inherit); cursor: pointer; text-align: left; max-width: 100%; }
+.sug button:hover, .sug button.on { border-color: #8C2F2B; background: #F6E7E2; }
 .sug-kind { font-size: .68rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: #6b6b76; }
-.composer .sug { position: absolute; bottom: 100%; left: 0; right: 0; padding: 8px; background: rgba(250,248,244,.96); backdrop-filter: blur(6px); border-radius: 16px; margin: 0 0 6px; }
+.composer .sug { position: absolute; bottom: 100%; left: 0; right: 0; padding: 8px; background: rgba(246,239,226,.96); backdrop-filter: blur(6px); border-radius: 16px; margin: 0 0 6px; }
 .composer { position: sticky; }
-.arena .sug button { color: #17171c; }
+.arena .sug button { color: #1A120B; }
 .trainer-pick { margin-bottom: 10px; }
 .duel-bar { padding: 8px 0; }
-.duel { display: flex; align-items: center; gap: 10px; padding: 8px 12px; background: #fff; border: 1px solid var(--line, #e7e2d9); border-radius: 18px; box-shadow: 0 4px 14px rgba(0,0,0,.05); }
+.duel { display: flex; align-items: center; gap: 10px; padding: 8px 12px; background: #fff; border: 1px solid var(--line, #E3D5BC); border-radius: 18px; box-shadow: 0 4px 14px rgba(0,0,0,.05); }
 .duel svg { border-radius: 50%; flex: none; }
 .duel-you { font-weight: 700; font-size: .92rem; }
 .duel-vs { font-size: .75rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; color: #dc2626; }
@@ -521,22 +521,26 @@ p .share-btn { float: none; vertical-align: middle; margin: 0 0 0 6px; }
 .btn.small { padding: .4rem .8rem; font-size: .85rem; }
 @media (max-width: 480px) { .duel-you { display: none; } }
 
-/* ---------- faith themes: the whole page takes on the colours of the faith being read ---------- */
-:root[data-faith] .top, :root[data-faith] .banner, :root[data-faith] .seg, :root[data-faith] .chip, :root[data-faith] .btn { transition: background-color .4s ease, border-color .4s ease; }
-:root[data-faith=christian] {
-  --bg: #f3f6ff; --soft: #e3ebff; --line: #d3dffa; --ink: #131a33; --ink-2: #333c5c; --muted: #646d8c;
-  --brand: #2563eb; --brand-2: #1e40af; --link: #1d4ed8; --mark: #dbe7ff; --sel: #eaf1ff; --bar: rgba(243, 246, 255, .88);
-}
-:root[data-faith=muslim] {
-  --bg: #f1faf5; --soft: #dff3e9; --line: #cbe9da; --ink: #0f241c; --ink-2: #2f4a3f; --muted: #5d7a6d;
-  --brand: #0f9d6e; --brand-2: #065f46; --link: #0b7f58; --mark: #d3f0e2; --sel: #e6f7f0; --bar: rgba(241, 250, 245, .88);
-}
-:root[data-faith=jewish] {
-  --bg: #f7f3ff; --soft: #ebe2ff; --line: #ddd0fa; --ink: #20143d; --ink-2: #44365f; --muted: #7a6d96;
-  --brand: #7c3aed; --brand-2: #4c1d95; --link: #6d28d9; --mark: #e6dafd; --sel: #f1eaff; --bar: rgba(247, 243, 255, .88);
-}
-:root[data-faith] .links a.on { background: var(--brand); }
-:root[data-faith] .composer .sug { background: var(--bg); }
 
-.logo-mark { width: 40px; height: 40px; flex: none; display: block; object-fit: contain; }
-.hero-logo { display: block; width: min(100%, 520px); height: auto; margin: 0 0 18px -6px; }
+/* ---------- brand: colours taken from the Contradiction AI logo ---------- */
+:root { --gold: #D4AF37; --bronze: #B88A52; --link: #8B5A2B; }
+a { color: var(--link); }
+a:hover { color: #6F4520; }
+.hero h1 em { background: linear-gradient(90deg, #8B5A2B, #B88A52 45%, #C9A24B); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.mark, .avatar.all { background: url(brand/emblem.png) center / contain no-repeat; box-shadow: none; }
+.mark::after { display: none; }
+.links a.on { background: #38281B; color: #F1E8D8; }
+.btn.brand, .send { background: linear-gradient(135deg, #B88A52, #8B5A2B); color: #FFFCF5; }
+.btn.brand:hover, .send:hover { background: linear-gradient(135deg, #D4AF37, #9C6B34); }
+.chip[aria-pressed=true] { background: #38281B; border-color: #38281B; color: #F1E8D8; }
+.top .brand { gap: 0; }
+.brand-logo { display: block; height: 60px; width: auto; }
+@media (min-width: 860px) { .brand-logo { height: 70px; } }
+.top { padding-top: max(6px, env(safe-area-inset-top)); padding-bottom: 6px; }
+::selection { background: #F3DFA6; }
+
+/* faith pages: a light wash of that faith's antique colour */
+:root[data-faith=christian] { --bg: #F8ECE6; --soft: #F0DDD4; --line: #E6CFC4; --link: #8C2F2B; --bar: rgba(248, 236, 230, .9); }
+:root[data-faith=muslim]    { --bg: #F0F1E6; --soft: #E2E6D2; --line: #D5DCC2; --link: #4E6B3A; --bar: rgba(240, 241, 230, .9); }
+:root[data-faith=jewish]    { --bg: #ECEFF3; --soft: #DCE3EC; --line: #CBD6E2; --link: #3B5576; --bar: rgba(236, 239, 243, .9); }
+.top { background: var(--bar, rgba(246, 239, 226, .88)); }

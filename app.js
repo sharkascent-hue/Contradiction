@@ -199,7 +199,7 @@
     document.title = 'Contradiction · Christianity, Islam and Judaism, side by side';
     const disputes = C.questions.filter(isDispute);
     app.innerHTML =
-      '<section class="hero"><img class="hero-logo" src="brand/logo-full.png" alt="Contradiction AI: explore, compare, question" width="700" height="232"><p class="eyebrow">Christianity · Islam · Judaism</p><h1>Three faiths. One question. <em>Who do the texts back?</em></h1>' +
+      '<section class="hero"><p class="eyebrow">Christianity · Islam · Judaism</p><h1>Three faiths. One question. <em>Who do the texts back?</em></h1>' +
       '<p class="lede">The arguments Christians, Muslims and Jews throw at each other, tested on the actual Bible, Quran, hadith and Talmud. Ask anything, or step into the arena.</p>' +
       askBox('Ask anything…') +
       '<div class="suggest">' + SUGGEST.map(s => '<a class="chip" href="#/ask/' + encodeURIComponent(s) + '">' + esc(s) + '</a>').join('') + '</div></section>' +
@@ -1376,7 +1376,7 @@
     ['elias', 'christian', 'Elias', 'Catholic street apologist', 'Combative and fast. Argues from the Quran and hadith themselves, in Arabic.', { bg: '#dbe6ff', skin: '#e0ac7e', hair: '#2b2118', beard: 'full', hat: '', robe: '#1e3a8a', mark: 'cross' }],
     ['nathan', 'christian', 'Pastor Nathan', 'Reformed Protestant scholar', 'Calm and exacting. The Greek text, textual criticism, Scripture alone.', { bg: '#e0ecff', skin: '#f1c9a5', hair: '#7a5a3a', beard: 'none', hat: '', robe: '#334155', mark: 'collar', glasses: 1 }],
     ['seraphim', 'christian', 'Father Seraphim', 'Eastern Orthodox priest', 'The Church Fathers, the councils, the Septuagint and philosophy.', { bg: '#e7e2ff', skin: '#e8b98f', hair: '#3b2f2f', beard: 'long', hat: 'kamilavka', robe: '#111827', mark: 'cross' }],
-    ['thomas', 'christian', 'Thomas', 'Catholic apologist', 'Friendly and methodical. Philosophy, resurrection evidence, Church history.', { bg: '#dcecff', skin: '#f3cfae', hair: '#4a3020', beard: 'short', hat: '', robe: '#1d4ed8', mark: 'cross' }],
+    ['thomas', 'christian', 'Thomas', 'Catholic apologist', 'Friendly and methodical. Philosophy, resurrection evidence, Church history.', { bg: '#dcecff', skin: '#f3cfae', hair: '#4a3020', beard: 'short', hat: '', robe: '#7A2723', mark: 'cross' }],
     ['yusuf', 'muslim', 'Yusuf', 'Sunni street debater', 'Sharp and philosophical. The logic of the Trinity, Bible contradictions.', { bg: '#d9f5e8', skin: '#c68b5e', hair: '#1b1410', beard: 'full', hat: '', robe: '#065f46', mark: '' }],
     ['idris', 'muslim', 'Dr. Idris', 'Sunni scholar', 'Calm and courteous. Modern New Testament scholarship.', { bg: '#dcf7ec', skin: '#b97f55', hair: '#2a211b', beard: 'grey', hat: 'kufi', robe: '#0f766e', mark: '', glasses: 1 }],
     ['hasan', 'muslim', 'Sayyid Hasan', 'Twelver Shia scholar', 'The Quran, the Ahl al-Bayt, Nahj al-Balagha, al-Kafi and reason.', { bg: '#e2f5ec', skin: '#cf9a6b', hair: '#1b1410', beard: 'full', hat: 'amama', robe: '#3f3f46', mark: '' }],
@@ -1463,7 +1463,7 @@
     const W = 1080, H = 1350, c = document.createElement('canvas'); c.width = W; c.height = H;
     const g = c.getContext('2d');
     g.fillStyle = '#faf8f4'; g.fillRect(0, 0, W, H);
-    const grad = g.createLinearGradient(0, 0, W, 0); grad.addColorStop(0, '#2563eb'); grad.addColorStop(.5, '#0f9d6e'); grad.addColorStop(1, '#7c3aed');
+    const grad = g.createLinearGradient(0, 0, W, 0); grad.addColorStop(0, '#8C2F2B'); grad.addColorStop(.5, '#4E6B3A'); grad.addColorStop(1, '#3B5576');
     g.fillStyle = grad; g.fillRect(0, 0, W, 18);
     const wrap = (text, font, x, y, maxW, lh, maxLines) => { g.font = font; let line = '', n = 0;
       for (const w of text.split(/\s+/)) { const t = line ? line + ' ' + w : w;
@@ -1472,7 +1472,7 @@
     g.fillStyle = '#17171c'; g.textBaseline = 'top';
     let y = wrap(title, '700 64px Georgia, serif', 80, 110, W - 160, 78, 6) + 40;
     for (const [label, text] of lines) { if (!text) continue;
-      g.fillStyle = '#2563eb'; g.font = '700 30px system-ui, sans-serif'; g.fillText(label.toUpperCase(), 80, y); y += 48;
+      g.fillStyle = '#8C2F2B'; g.font = '700 30px system-ui, sans-serif'; g.fillText(label.toUpperCase(), 80, y); y += 48;
       g.fillStyle = '#33333b'; y = wrap(text, '400 38px system-ui, sans-serif', 80, y, W - 160, 54, Math.max(2, Math.floor((H - 190 - y) / 54))) + 34;
       if (y > H - 220) break; }
     g.fillStyle = '#17171c'; g.font = '700 44px Georgia, serif'; g.fillText('Contradiction', 80, H - 130);
@@ -1722,7 +1722,7 @@
   function setTr(t) { tr = t; pref[trById[t].corpus] = t; store.set('tr', t); store.set('tr-' + trById[t].corpus, t); }
   const TAB = { '': '', ask: 'ask', faiths: 'faiths', faith: 'faiths', beliefs: 'faiths', compare: 'faiths', books: 'books', read: 'books', lib: 'lib', go: 'lib',
     topics: 'topics', t: 'topics', topic: 'topics', q: 'topics', questions: 'topics', search: 'search', debates: 'debates', d: 'debates', videos: 'debates', shamoun: 'debates', trainer: 'debates', stories: 'topics', prophecies: 'topics', translations: 'topics', timeline: 'topics' };
-  const THEME_BG = { christian: '#f3f6ff', muslim: '#f1faf5', jewish: '#f7f3ff', '': '#faf8f4' };
+  const THEME_BG = { christian: '#F8ECE6', muslim: '#F0F1E6', jewish: '#ECEFF3', '': '#F6EFE2' };
   function setFaithTheme(key) {
     if (key) document.documentElement.dataset.faith = key; else delete document.documentElement.dataset.faith;
     const m = document.querySelector('meta[name=theme-color]'); if (m) m.content = THEME_BG[key];
