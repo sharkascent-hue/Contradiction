@@ -235,7 +235,7 @@
     const disputes = C.questions.filter(isDispute), day = Math.floor(Date.now() / 864e5), qd = disputes[day % disputes.length];
     const door = (k, slug, sub) => { const h = HUBS[slug]; return '<a class="door ' + h.key + '" href="#/faith/' + slug + '"><span class="door-art" aria-hidden="true"></span><span class="door-glyph">' + h.glyph + '</span><strong>' + h.name + '</strong><span>' + sub + '</span><em>Enter →</em></a>'; };
     app.innerHTML =
-      '<section class="hx"><p class="hx-eyebrow"><span>Christianity</span><b>◆</b><span>Islam</span><b>◆</b><span>Judaism</span></p>' +
+      '<section class="hx"><div class="hx-ms" aria-hidden="true"><img src="brand/ms-christian.jpg" alt=""><img src="brand/ms-muslim.jpg" alt=""><img src="brand/ms-jewish.jpg" alt=""></div><p class="hx-eyebrow"><span>Christianity</span><b>◆</b><span>Islam</span><b>◆</b><span>Judaism</span></p>' +
         '<h1>Three faiths.<br>One question.<br><em>Who do the texts back?</em></h1>' +
         '<p class="hx-lede">Put any claim to the Bible, the Quran, the hadith and the Talmud, and get a straight answer, with the passages.</p>' +
         askBox('Ask anything: "Was Jesus crucified?"') +
@@ -800,6 +800,7 @@
       '<li><strong>Every passage linked.</strong> Bible, Quran, hadith, Talmud and much more, all readable on the site.</li></ul>' +
       '<p>Verdicts judge arguments, never whole religions: what you believe is your decision. The AI can make mistakes, so every answer links to its sources for you to check.</p>' +
       '<p><a class="btn brand" href="#/ask">Ask a question</a></p>' +
+      '<h2>The manuscripts on this site</h2><p class="small">The page images are public domain, from Wikimedia Commons: Codex Sinaiticus (4th century, Matthew 6), a folio of the Blue Quran (about 900 AD, Chester Beatty Library), and the Aleppo Codex (10th century, Deuteronomy).</p>' +
       '<h2>The debate trainer</h2><p>The trainer\'s characters are fictional. They argue in common debating styles and do not represent any real person.</p>' +
       '<p><a href="#/privacy">Privacy policy</a> · <a href="#/terms">Terms of use</a></p>' +
       '<h2>What is stored</h2><ul>' +
@@ -1777,7 +1778,7 @@
     const t = B.traditions.find(x => x.slug === branch);
     document.title = (branch === h.branches[0][0] ? h.name : t.short) + ' · Contradiction AI';
     const tops = G.topics.filter(x => x.views[h.key]);
-    app.innerHTML = '<section class="banner ' + h.key + '" data-glyph="' + h.glyph + '"><p class="crumbs"><a href="#/faiths">Faiths</a></p><h1>' + h.name + '</h1><p>' + esc(h.blurb) + '</p>' +
+    app.innerHTML = '<section class="banner ' + h.key + '" data-glyph="' + h.glyph + '" style="--ms:url(brand/ms-' + h.key + '.jpg)"><p class="crumbs"><a href="#/faiths">Faiths</a></p><h1>' + h.name + '</h1><p>' + esc(h.blurb) + '</p>' +
       '<a class="btn" href="#/ask" data-set-guide="' + h.key + '">' + h.glyph + ' Ask the ' + FAITH_ADJ[h.key] + ' guide</a></section>' +
       (h.branches.length > 1 ? '<div class="seg even">' + h.branches.map(b => '<a href="#/faith/' + slug + '/' + b[0] + '"' + (b[0] === branch ? ' class="on"' : '') + '>' + b[1] + '</a>').join('') + '</div>' : '<div style="height:10px"></div>') +
       '<p class="lede">' + esc(t.summary) + '</p>' +

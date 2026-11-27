@@ -795,3 +795,27 @@ html { scroll-behavior: smooth; }
 :root[data-mode=dark] #intro { background: radial-gradient(80% 60% at 50% 45%, #2A1E13, #15100A); }
 :root[data-mode=dark] .script-band { color: #8C7350; }
 .pager > a:last-child:not(:first-child) { margin-left: auto; }
+
+/* ---------- manuscripts ---------- */
+.hx-ms { position: absolute; z-index: -1; right: -40px; top: 50%; width: 420px; height: 420px; transform: translateY(-50%); pointer-events: none;
+  -webkit-mask-image: radial-gradient(closest-side, #000 55%, transparent); mask-image: radial-gradient(closest-side, #000 55%, transparent); opacity: .42; }
+.hx-ms img { position: absolute; width: 230px; height: 290px; object-fit: cover; border-radius: 10px; box-shadow: 0 18px 40px rgba(60, 35, 15, .35); }
+.hx-ms img:nth-child(1) { left: 20px; top: 70px; transform: rotate(-11deg); }
+.hx-ms img:nth-child(2) { left: 110px; top: 40px; transform: rotate(2deg); z-index: 1; }
+.hx-ms img:nth-child(3) { left: 190px; top: 80px; transform: rotate(12deg); }
+@media (max-width: 859px) { .hx-ms { right: -150px; top: 140px; transform: none; opacity: .22; } }
+@media (min-width: 860px) { .hx h1, .hx-lede { max-width: 62%; } .hx-ms { opacity: .55; right: -10px; } }
+.door { background-blend-mode: multiply; }
+.door.christian { background: linear-gradient(150deg, rgba(74, 23, 20, .92), rgba(140, 47, 43, .82) 60%, rgba(180, 87, 76, .7)), url(brand/ms-christian.jpg) center / cover; }
+.door.muslim { background: linear-gradient(150deg, rgba(31, 44, 23, .9), rgba(78, 107, 58, .78) 60%, rgba(127, 154, 94, .62)), url(brand/ms-muslim.jpg) center / cover; }
+.door.jewish { background: linear-gradient(150deg, rgba(23, 36, 58, .92), rgba(59, 85, 118, .8) 60%, rgba(108, 136, 174, .66)), url(brand/ms-jewish.jpg) center / cover; }
+.door .door-art { opacity: .35; }
+.banner { background-image: linear-gradient(135deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), var(--ms, none); }
+.banner.christian { background: linear-gradient(135deg, rgba(110, 33, 29, .93), rgba(168, 72, 63, .82)), var(--ms) center / cover; }
+.banner.muslim { background: linear-gradient(135deg, rgba(52, 74, 39, .93), rgba(106, 138, 79, .8)), var(--ms) center / cover; }
+.banner.jewish { background: linear-gradient(135deg, rgba(44, 66, 96, .93), rgba(85, 116, 160, .8)), var(--ms) center / cover; }
+/* paper grain across the whole site */
+body { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .4 0 0 0 0 .28 0 0 0 0 .14 0 0 0 .06 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); }
+.tabbar { background-image: linear-gradient(var(--bar, rgba(246, 239, 226, .92)), var(--bar, rgba(246, 239, 226, .92))), url(brand/ms-jewish.jpg); background-size: auto, 420px; background-position: center; }
+:root[data-mode=dark] .hx-ms { opacity: .25; }
+@media (min-width: 860px) { .hx h1 { max-width: 74%; font-size: clamp(2.6rem, 5.4vw, 4rem); } .hx-lede { max-width: 58%; } .arena-row { grid-template-columns: repeat(4, 1fr); } }
