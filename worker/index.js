@@ -9,7 +9,7 @@ export default {
     // The site's own addresses (http or https, with or without www) and any origin listed in ALLOWED_ORIGIN (comma separated).
     const listed = (env.ALLOWED_ORIGIN || "").split(",").map(s => s.trim()).filter(Boolean);
     const origin = request.headers.get("Origin") || "";
-    const ok = /^https?:\/\/(www\.)?contradictionai\.com$/.test(origin) || origin === "https://sharkascent-hue.github.io" || listed.includes(origin);
+    const ok = /^https?:\/\/(www\.)?contradictionai\.com$/.test(origin) || origin === "https://sharkascent-hue.github.io" || origin === "https://contradiction-site.contradiction.workers.dev" || listed.includes(origin);
     const cors = { "Access-Control-Allow-Origin": env.ALLOWED_ORIGIN === "*" ? "*" : (ok ? origin : "https://www.contradictionai.com"), "Vary": "Origin", "Access-Control-Allow-Methods": "GET, POST, OPTIONS", "Access-Control-Allow-Headers": "Content-Type" };
     const json = (status, obj) => new Response(JSON.stringify(obj), { status, headers: { ...cors, "Content-Type": "application/json" } });
     if (request.method === "OPTIONS") return new Response(null, { status: 204, headers: cors });
