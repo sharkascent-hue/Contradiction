@@ -819,3 +819,87 @@ body { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org
 .tabbar { background-image: linear-gradient(var(--bar, rgba(246, 239, 226, .92)), var(--bar, rgba(246, 239, 226, .92))), url(brand/ms-jewish.jpg); background-size: auto, 420px; background-position: center; }
 :root[data-mode=dark] .hx-ms { opacity: .25; }
 @media (min-width: 860px) { .hx h1 { max-width: 74%; font-size: clamp(2.6rem, 5.4vw, 4rem); } .hx-lede { max-width: 58%; } .arena-row { grid-template-columns: repeat(4, 1fr); } }
+
+/* ---------- background with life: manuscripts in the margins, drifting letters ---------- */
+.bg-art { position: fixed; inset: 0; z-index: -1; overflow: hidden; pointer-events: none; }
+.bg-ms { position: absolute; top: 0; bottom: 0; width: 26vw; max-width: 420px; background-size: cover; filter: sepia(.55) contrast(.9); opacity: .16; mix-blend-mode: multiply; }
+.bg-ms.l { left: 0; background-image: url(brand/ms-christian.jpg); -webkit-mask-image: linear-gradient(90deg, #000, transparent); mask-image: linear-gradient(90deg, #000, transparent); }
+.bg-ms.r { right: 0; background-image: url(brand/ms-jewish.jpg); -webkit-mask-image: linear-gradient(270deg, #000, transparent); mask-image: linear-gradient(270deg, #000, transparent); }
+@media (max-width: 1100px) { .bg-ms { opacity: .07; width: 40vw; } }
+.gl { position: absolute; font: 400 clamp(8rem, 18vw, 16rem)/1 "Amiri Quran", "Times New Roman", serif; font-style: normal; color: #B88A52; opacity: .07; animation: drift 38s ease-in-out infinite alternate; }
+.g1 { left: 4%; top: 12%; } .g2 { right: 6%; top: 30%; animation-duration: 46s; } .g3 { left: 12%; top: 62%; animation-duration: 52s; }
+.g4 { right: 14%; top: 78%; animation-duration: 41s; } .g5 { left: 46%; top: 44%; opacity: .04; animation-duration: 60s; } .g6 { right: 32%; top: 4%; animation-duration: 49s; }
+@keyframes drift { from { transform: translate(0, 0) rotate(-4deg); } to { transform: translate(30px, -40px) rotate(5deg); } }
+body { background-color: var(--bg); }
+#app, .foot { position: relative; }
+:root[data-mode=dark] .bg-ms { mix-blend-mode: screen; opacity: .06; filter: sepia(.6) brightness(.8); }
+:root[data-mode=dark] .gl { color: #D4AF37; opacity: .05; }
+
+/* hero: the three manuscripts as a faint texture across the whole hero, not pasted cards */
+.hx-ms { position: absolute; inset: 0; z-index: -1; width: auto; height: auto; top: 0; right: 0; transform: none; opacity: .2; display: grid; grid-template-columns: 1fr 1fr 1fr;
+  -webkit-mask-image: linear-gradient(100deg, transparent 20%, #000 75%); mask-image: linear-gradient(100deg, transparent 20%, #000 75%); filter: sepia(.6) contrast(.95); mix-blend-mode: multiply; }
+.hx-ms img { position: static; width: 100%; height: 100%; object-fit: cover; border-radius: 0; box-shadow: none; transform: none !important; }
+@media (min-width: 860px) { .hx-ms { opacity: .28; right: 0; } .hx h1 { max-width: 80%; } .hx-lede { max-width: 62%; } }
+@media (max-width: 859px) { .hx-ms { opacity: .14; top: 0; right: 0; } }
+:root[data-mode=dark] .hx-ms { mix-blend-mode: screen; opacity: .1; }
+
+/* top bar and tab bar: gold ornamental rule */
+.top { border-bottom: 0 !important; box-shadow: 0 1px 0 rgba(184, 138, 82, .25); }
+.top::after { content: ""; position: absolute; left: 0; right: 0; bottom: -7px; height: 7px; pointer-events: none;
+  background: linear-gradient(90deg, transparent, #B88A52 18%, #D4AF37 50%, #B88A52 82%, transparent) center top / 100% 1px no-repeat,
+    linear-gradient(90deg, transparent, rgba(184, 138, 82, .45) 25%, rgba(184, 138, 82, .45) 75%, transparent) center 5px / 100% 1px no-repeat; }
+.top::before { content: "◆"; position: absolute; left: 50%; bottom: -10px; transform: translateX(-50%); font-size: 9px; color: #D4AF37; pointer-events: none; }
+.top { background: linear-gradient(180deg, rgba(250, 243, 230, .95), rgba(243, 232, 212, .92)); }
+:root[data-faith] .top { background: var(--bar); }
+:root[data-mode=dark] .top { background: linear-gradient(180deg, rgba(28, 21, 13, .95), rgba(21, 16, 10, .92)); }
+.tabbar { border-top: 0; box-shadow: 0 -1px 0 rgba(184, 138, 82, .35); }
+.tabbar::before { content: ""; position: absolute; left: 10%; right: 10%; top: 0; height: 1px; background: linear-gradient(90deg, transparent, #D4AF37, transparent); }
+@media (prefers-reduced-motion: reduce) { .gl { animation: none; } }
+.hx-ms img { -webkit-mask-image: linear-gradient(90deg, transparent, #000 30%, #000 70%, transparent); mask-image: linear-gradient(90deg, transparent, #000 30%, #000 70%, transparent); }
+.hx-ms { grid-template-columns: 1fr 1fr 1fr; gap: 0; margin: 0 -8%; }
+@media (min-width: 860px) { .hx-ms { opacity: .17; } }
+@media (max-width: 859px) { .hx-ms { opacity: .1; } }
+.bg-ms { opacity: .12; }
+
+/* ---------- quiz ---------- */
+.hp-quiz { background: linear-gradient(135deg, #2A1A10, #6F4520 55%, #B88A52); } .hp-compare { background: linear-gradient(135deg, #1E1A14, #4A3D2A 60%, #8C7550); }
+.quiz-list { display: grid; gap: 12px; } @media (min-width: 700px) { .quiz-list { grid-template-columns: 1fr 1fr; } }
+.quiz-card { position: relative; display: flex; flex-direction: column; gap: 6px; padding: 22px; border-radius: 22px; color: #FFF8EE; text-decoration: none !important; overflow: hidden; transition: transform .25s, box-shadow .25s; box-shadow: var(--shadow); }
+.quiz-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-lg); }
+.quiz-card.christian { background: linear-gradient(150deg, #4A1714, #8C2F2B); } .quiz-card.muslim { background: linear-gradient(150deg, #1F2C17, #4E6B3A); }
+.quiz-card.jewish { background: linear-gradient(150deg, #17243A, #3B5576); } .quiz-card.mixed { background: linear-gradient(150deg, #2A1A10, #8B5A2B); }
+.quiz-card strong { font: 700 1.4rem var(--display); color: #fff; } .quiz-card span:not(.qz-glyph) { opacity: .85; } .quiz-card em { font-style: normal; color: #F3DFA6; font-weight: 600; font-size: .88rem; margin-top: 6px; }
+.qz-glyph { position: absolute; right: 12px; bottom: -24px; font-size: 6.5rem; opacity: .18; line-height: 1; }
+.qz-bar { height: 6px; border-radius: 3px; background: var(--soft); overflow: hidden; margin: 8px 0 14px; } .qz-bar i { display: block; height: 100%; background: linear-gradient(90deg, #B88A52, #D4AF37); transition: width .4s; }
+.qz-n { color: var(--muted); font-size: .85rem; font-weight: 600; margin: 0; }
+.qz-q { font-size: clamp(1.5rem, 5vw, 2.1rem); margin: .3em 0 .8em; }
+.qz-opts { display: grid; gap: 10px; } @media (min-width: 700px) { .qz-opts { grid-template-columns: 1fr 1fr; } }
+.qz-opts button { text-align: left; padding: 16px 18px; border-radius: 16px; border: 1.5px solid var(--line); background: var(--surface); color: var(--ink); font: 600 1.02rem var(--sans); cursor: pointer; transition: transform .15s, border-color .2s, background .2s; }
+.qz-opts button:hover { border-color: #B88A52; transform: translateY(-2px); }
+.qz-opts.answered button { cursor: default; transform: none; opacity: .6; }
+.qz-opts button.right { opacity: 1; border-color: #4E6B3A; background: rgba(78, 107, 58, .14); } .qz-opts button.wrong { opacity: 1; border-color: #8C2F2B; background: rgba(140, 47, 43, .12); }
+.qz-why { margin-top: 16px; padding: 16px 18px; border-radius: 16px; background: var(--soft); animation: rise .35s ease both; }
+.qz-done { text-align: center; padding: 30px 0; } .qz-score { display: block; font: 700 5rem/1 var(--display); color: #8B5A2B; } .qz-score small { font-size: 2rem; color: var(--muted); }
+.qz-done .hp-actions { justify-content: center; } .qz-done .btn { color: var(--ink); background: var(--surface); border: 1px solid var(--line); } .qz-done .btn.brand { color: #FFFCF5; border: 0; }
+.quizband { margin: 26px 0 8px; padding: 24px 22px; border-radius: 26px; background: linear-gradient(160deg, #2A1E13, #4A3020); color: #F1E8D8; display: grid; gap: 16px; }
+.quizband h2 { color: #fff; margin: .2em 0 .2em; } .quizband p { margin: 0; opacity: .85; } .quizband .tag { font: 700 .7rem var(--sans); letter-spacing: .14em; text-transform: uppercase; color: #D4AF37; }
+.qb-row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; } @media (min-width: 760px) { .quizband { grid-template-columns: 1fr 1.4fr; align-items: center; padding: 30px; } .qb-row { grid-template-columns: repeat(4, 1fr); } }
+.qb { display: flex; flex-direction: column; align-items: center; gap: 6px; padding: 16px 8px; border-radius: 16px; color: #fff; font-weight: 700; text-decoration: none !important; transition: transform .2s; }
+.qb span { font-size: 1.6rem; } .qb:hover { transform: translateY(-3px); }
+.qb.christian { background: #8C2F2B; } .qb.muslim { background: #4E6B3A; } .qb.jewish { background: #3B5576; } .qb.mixed { background: #8B5A2B; }
+/* did you know */
+.fact { position: relative; margin: 24px 0 6px; padding: 20px 22px 18px 64px; border-radius: 20px; background: var(--surface); border: 1px dashed #C9A24B; }
+.fact::before { content: "✦"; position: absolute; left: 22px; top: 18px; font-size: 1.6rem; color: #D4AF37; }
+.fact .tag { font: 700 .7rem var(--sans); letter-spacing: .14em; text-transform: uppercase; color: #8B5A2B; } .fact p { margin: 4px 0 6px; font: 500 1.08rem/1.5 var(--display); } .fact .ref { font-size: .88rem; font-weight: 600; }
+/* compare editions */
+.cmp-form { display: flex; gap: 8px; margin-top: 14px; flex-wrap: wrap; } .cmp-form input { flex: 1 1 220px; padding: 12px 16px; border-radius: 999px; border: 0; font-size: 1rem; background: rgba(255, 252, 245, .95); color: #1A120B; }
+.cmp-form .btn { background: #F3DFA6; color: #1A120B; }
+.par-list { display: grid; gap: 10px; } @media (min-width: 900px) { .par-list { grid-template-columns: 1fr 1fr; } }
+.par { padding: 14px 16px; border-radius: 16px; background: var(--surface); border: 1px solid var(--line); }
+.par.orig { background: var(--soft); } .par-h { display: flex; justify-content: space-between; gap: 8px; align-items: baseline; margin-bottom: 6px; }
+.par p { margin: 0; font: 400 1.02rem/1.65 var(--reading); } .par p[lang=ar] { font-family: "Amiri Quran", "Amiri", serif; font-size: 1.35rem; } .par p[lang=he] { font-size: 1.25rem; }
+.par sup { font: 700 .66rem var(--sans); color: #8B5A2B; margin: 0 3px; }
+/* debate video */
+.deb-video { margin-top: 24px; } .yt { position: relative; aspect-ratio: 16 / 9; border-radius: 18px; overflow: hidden; background: #000; box-shadow: var(--shadow-lg); }
+.yt iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+.qz-done .btn.brand { background: linear-gradient(135deg, #B88A52, #8B5A2B); color: #FFFCF5; }

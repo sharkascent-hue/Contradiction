@@ -1,0 +1,76 @@
+{
+  "quizzes": [
+    {
+      "id": "christianity", "faith": "christian", "title": "Christianity quiz", "blurb": "Ten questions on the Gospels, the apostles and the early church.",
+      "questions": [
+        { "q": "In which town was Jesus born, according to Matthew and Luke?", "options": ["Nazareth", "Bethlehem", "Jerusalem", "Capernaum"], "a": 1, "ref": "Matthew 2:1", "why": "Matthew and Luke place his birth in Bethlehem of Judea; he grew up in Nazareth." },
+        { "q": "Who baptised Jesus in the Jordan?", "options": ["Peter", "John the Baptist", "Paul", "James"], "a": 1, "ref": "Matthew 3:13-17", "why": "John the Baptist baptised him, and the Gospels say the Spirit descended like a dove." },
+        { "q": "Which disciple denied knowing Jesus three times?", "options": ["Judas", "Thomas", "Peter", "John"], "a": 2, "ref": "Matthew 26:69-75", "why": "Peter denied him three times before the rooster crowed, as Jesus had said he would." },
+        { "q": "Which Gospel opens with \"In the beginning was the Word\"?", "options": ["Matthew", "Mark", "Luke", "John"], "a": 3, "ref": "John 1:1", "why": "John's Gospel opens by echoing Genesis 1:1." },
+        { "q": "On the road to which city was Paul converted?", "options": ["Rome", "Antioch", "Damascus", "Corinth"], "a": 2, "ref": "Acts 9:3-6", "why": "A light from heaven struck him down on the road to Damascus." },
+        { "q": "Which Roman governor sentenced Jesus to be crucified?", "options": ["Herod", "Pontius Pilate", "Caiaphas", "Augustus"], "a": 1, "ref": "Matthew 27:24-26", "why": "Caiaphas was the high priest; Pilate gave the order." },
+        { "q": "What did Jesus turn water into at the wedding in Cana?", "options": ["Oil", "Milk", "Wine", "Blood"], "a": 2, "ref": "John 2:1-11", "why": "John calls it the first of his signs." },
+        { "q": "How many apostles did Jesus choose as \"the Twelve\"?", "options": ["7", "10", "12", "70"], "a": 2, "ref": "Mark 3:14-19", "why": "Twelve, matching the twelve tribes of Israel. Luke also mentions a wider group of seventy." },
+        { "q": "Which commandment did Jesus call the greatest?", "options": ["Do not kill", "Love God with all your heart", "Keep the Sabbath", "Honour your parents"], "a": 1, "ref": "Matthew 22:36-40", "why": "He quoted Deuteronomy 6:5, and gave \"love your neighbour as yourself\" (Leviticus 19:18) as the second." },
+        { "q": "Where was the creed that calls Jesus \"true God from true God\" first written, in AD 325?", "options": ["Rome", "Nicaea", "Jerusalem", "Constantinople"], "a": 1, "ref": "", "why": "The Council of Nicaea in 325; the creed was expanded at Constantinople in 381." }
+      ]
+    },
+    {
+      "id": "islam", "faith": "muslim", "title": "Islam quiz", "blurb": "Ten questions on the Quran, the Prophet and Islamic practice.",
+      "questions": [
+        { "q": "What is the first surah of the Quran?", "options": ["Al-Baqarah", "Al-Fatihah", "Al-Ikhlas", "Yasin"], "a": 1, "ref": "Quran 1:1-7", "why": "Al-Fatihah, \"the Opening\", is recited in every unit of the daily prayer." },
+        { "q": "Which angel brought the revelation to Muhammad?", "options": ["Mikail", "Israfil", "Jibril (Gabriel)", "Malik"], "a": 2, "ref": "Quran 2:97", "why": "The Quran names Gabriel as the one who brought it down to the Prophet's heart." },
+        { "q": "Which woman is the only one named in the Quran?", "options": ["Khadijah", "Fatimah", "Maryam (Mary)", "Hawwa (Eve)"], "a": 2, "ref": "Quran 19:16", "why": "Mary is named 34 times, and surah 19 carries her name. Eve is never named in the Quran." },
+        { "q": "In which month was the Quran first sent down?", "options": ["Muharram", "Ramadan", "Rajab", "Shawwal"], "a": 1, "ref": "Quran 2:185", "why": "\"The month of Ramadan in which was revealed the Quran.\"" },
+        { "q": "What is the longest surah?", "options": ["Al-Baqarah", "Al-Imran", "An-Nisa", "Al-Kahf"], "a": 0, "ref": "Quran 2:255", "why": "Al-Baqarah, with 286 verses; it contains the Throne Verse (2:255)." },
+        { "q": "Which surah does not begin with \"In the name of God, the Merciful\"?", "options": ["Al-Fatihah", "Yusuf", "At-Tawbah", "Maryam"], "a": 2, "ref": "Quran 9:1", "why": "At-Tawbah (surah 9) is the only one without the basmala." },
+        { "q": "How many daily prayers were finally made obligatory on the Night Journey?", "options": ["Three", "Five", "Seven", "Fifty"], "a": 1, "ref": "Sahih al-Bukhari 349", "why": "The hadith says fifty were first commanded and reduced to five after Moses urged Muhammad to ask for less." },
+        { "q": "What is Muhammad's migration from Mecca to Medina in 622 called?", "options": ["The Hajj", "The Hijra", "The Isra", "The Fath"], "a": 1, "ref": "Quran 9:40", "why": "The Hijra; the Islamic calendar counts its years from it." },
+        { "q": "What does the Quran call Jesus, in Arabic?", "options": ["Ibn Allah (Son of God)", "Al-Masih (the Messiah)", "Rabb (Lord)", "Khalil (Friend)"], "a": 1, "ref": "Quran 3:45", "why": "\"His name is the Messiah, Jesus son of Mary.\" The Quran denies that he is the Son of God (9:30)." },
+        { "q": "Which surah is a one-line statement that God is One, neither begetting nor begotten?", "options": ["Al-Ikhlas", "An-Nas", "Al-Kawthar", "Al-Asr"], "a": 0, "ref": "Quran 112:1-4", "why": "Al-Ikhlas, \"Sincerity\": a short creed that many read as an answer to the Trinity." }
+      ]
+    },
+    {
+      "id": "judaism", "faith": "jewish", "title": "Judaism quiz", "blurb": "Ten questions on the Torah, the festivals and the rabbis.",
+      "questions": [
+        { "q": "How many books are in the Torah?", "options": ["Three", "Five", "Seven", "Twelve"], "a": 1, "ref": "Genesis 1:1", "why": "Genesis, Exodus, Leviticus, Numbers and Deuteronomy: the five books of Moses." },
+        { "q": "How does the Shema begin?", "options": ["In the beginning", "Hear, O Israel", "Blessed are you", "I am the Lord"], "a": 1, "ref": "Deuteronomy 6:4", "why": "\"Hear, O Israel: the LORD is our God, the LORD is one.\" It is said morning and night." },
+        { "q": "What is the Day of Atonement called?", "options": ["Rosh Hashanah", "Sukkot", "Yom Kippur", "Purim"], "a": 2, "ref": "Leviticus 16:29-30", "why": "Yom Kippur, a day of fasting and repentance." },
+        { "q": "Which festival remembers the Exodus from Egypt?", "options": ["Hanukkah", "Passover (Pesach)", "Shavuot", "Purim"], "a": 1, "ref": "Exodus 12:14", "why": "Passover, with the seder meal and unleavened bread." },
+        { "q": "When does the Sabbath begin?", "options": ["Saturday at dawn", "Friday at sunset", "Sunday at sunset", "Saturday at noon"], "a": 1, "ref": "Exodus 20:8-10", "why": "Jewish days begin at evening (\"there was evening and there was morning\", Genesis 1:5), so the Sabbath runs from Friday sunset to Saturday night." },
+        { "q": "How many commandments do the rabbis count in the Torah?", "options": ["10", "248", "365", "613"], "a": 3, "ref": "Makkot 23b", "why": "613: 248 positive commands and 365 prohibitions." },
+        { "q": "The Talmud is made up of the Mishnah and the...", "options": ["Midrash", "Gemara", "Zohar", "Siddur"], "a": 1, "ref": "Mishnah Sanhedrin 10:1", "why": "The Gemara is the rabbis' long discussion of the Mishnah." },
+        { "q": "Which king built the first Temple in Jerusalem?", "options": ["David", "Saul", "Solomon", "Hezekiah"], "a": 2, "ref": "1 Kings 6:1", "why": "David planned it; Solomon built it." },
+        { "q": "Which book of the Hebrew Bible never mentions God by name?", "options": ["Ruth", "Esther", "Jonah", "Job"], "a": 1, "ref": "Esther 4:14", "why": "Esther; it is read at Purim." },
+        { "q": "Who is called God's \"friend\" in the Hebrew Bible?", "options": ["Moses", "Abraham", "David", "Elijah"], "a": 1, "ref": "Isaiah 41:8", "why": "\"Abraham my friend\". The New Testament (James 2:23) and the Quran (4:125) say the same." }
+      ]
+    },
+    {
+      "id": "which-book", "faith": "", "title": "Which book says this?", "blurb": "Bible, Quran or Torah? Guess where each line comes from. Some will surprise you.",
+      "questions": [
+        { "q": "\"Love your neighbour as yourself.\"", "options": ["The Gospels only", "The Torah", "The Quran", "The Talmud only"], "a": 1, "ref": "Leviticus 19:18", "why": "Jesus was quoting the Torah: it is Leviticus 19:18." },
+        { "q": "\"There is no compulsion in religion.\"", "options": ["The Quran", "The New Testament", "The Torah", "The Psalms"], "a": 0, "ref": "Quran 2:256", "why": "Quran 2:256." },
+        { "q": "\"An eye for an eye, a tooth for a tooth.\"", "options": ["The Quran", "The Torah", "The Gospels", "The Talmud"], "a": 1, "ref": "Exodus 21:24", "why": "Exodus 21:24. Jesus quotes it to set it aside (Matthew 5:38-39), and the Quran says it was written for the Jews (5:45)." },
+        { "q": "\"Whoever kills a soul, it is as if he had killed all mankind.\"", "options": ["The Quran", "The Gospels", "The Psalms", "Proverbs"], "a": 0, "ref": "Quran 5:32", "why": "Quran 5:32, which says it was decreed for the Children of Israel. The Mishnah has almost the same words (Mishnah Sanhedrin 4:5)." },
+        { "q": "\"God is love.\"", "options": ["The Quran", "The Torah", "The New Testament", "The Talmud"], "a": 2, "ref": "1 John 4:8", "why": "1 John 4:8." },
+        { "q": "\"Their blood is on their own heads\" for a man and woman caught in adultery, who are put to death.", "options": ["The Quran", "The Torah", "The Gospels", "Hadith"], "a": 1, "ref": "Leviticus 20:10-12", "why": "Leviticus 20:10 sets death for adultery. The Quran's punishment is a hundred lashes (24:2); stoning comes from hadith." },
+        { "q": "\"I did not come to bring peace, but a sword.\"", "options": ["The Quran", "The Torah", "The Gospels", "Hadith"], "a": 2, "ref": "Matthew 10:34", "why": "Jesus, in Matthew 10:34." },
+        { "q": "\"Say: He is God, the One. God, the Eternal.\"", "options": ["The Torah", "The Quran", "The Psalms", "The Gospels"], "a": 1, "ref": "Quran 112:1-2", "why": "Quran 112, Al-Ikhlas." }
+      ]
+    }
+  ],
+  "facts": [
+    { "t": "Mary is named 34 times in the Quran, more than in the whole New Testament, and has a surah named after her.", "ref": "Quran 19:16" },
+    { "t": "\"Love your neighbour as yourself\" is from the Torah. Jesus was quoting Leviticus.", "ref": "Leviticus 19:18" },
+    { "t": "Quran 5:32, \"whoever kills a soul... as if he had killed all mankind\", is almost word for word in the Mishnah.", "ref": "Mishnah Sanhedrin 4:5" },
+    { "t": "The Quran calls Jesus al-Masih, \"the Messiah\", while denying that he is the Son of God.", "ref": "Quran 3:45" },
+    { "t": "The word \"Trinity\" never appears in the Bible. The doctrine was defined at the councils of 325 and 381.", "ref": "Matthew 28:19" },
+    { "t": "Moses is named in the Quran more than any other prophet, more than 130 times.", "ref": "Quran 20:9-14" },
+    { "t": "The Book of Esther never mentions God, yet it is in the Hebrew Bible and the Christian Old Testament.", "ref": "Esther 4:14" },
+    { "t": "All three faiths call Abraham God's friend: Isaiah, the letter of James, and the Quran.", "ref": "Quran 4:125" },
+    { "t": "Both the Torah and the Quran forbid pork. Most Christians eat it, citing Peter's vision and Mark 7.", "ref": "Leviticus 11:7" },
+    { "t": "The Quran says Jesus spoke as a baby in the cradle, a miracle the Gospels do not record.", "ref": "Quran 19:29-30" },
+    { "t": "The Quran's story of Jesus making clay birds come alive is also found in the second-century Infancy Gospel of Thomas.", "ref": "Quran 3:49" },
+    { "t": "The rabbis count 613 commandments in the Torah: 248 to do and 365 not to do.", "ref": "Makkot 23b" }
+  ]
+}

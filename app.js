@@ -252,8 +252,10 @@
         '<a href="#/trainer" class="arena-card"><span class="arena-chars">' + charSvg('elias', 40) + charSvg('yusuf', 40) + charSvg('avraham', 40) + '</span><strong>Debate trainer</strong><span>Argue against an AI opponent. Scored out of 10.</span></a></div></section>' +
       '<section class="hardband"><div><span class="tag">No softening</span><h2>The hard questions</h2><p>Women, slaves and captives, apostasy, holy war, child marriage, harsh punishments: the texts critics quote, in full, for all three faiths.</p>' +
         '<a class="btn" href="#/hard">Read the hard questions →</a></div><ul>' + (HQ ? HQ.topics : []).map(t => '<li><a href="#/hard/' + t.id + '">' + esc(t.title) + '</a></li>').join('') + '</ul></section>' +
-      scriptBand() +
-      '<div class="section-head"><h2>Go deeper</h2></div><div class="tools-strip">' + EXPLORE.filter(e => !/debate|Shamoun/i.test(e[1])).map(([h, t, d]) => '<a href="' + h + '"><strong>' + t + '</strong><span>' + d + '</span></a>').join('') + '</div>' +
+      '<section class="quizband"><div><span class="tag">Test yourself</span><h2>How well do you know them?</h2><p>A quiz for each faith, and one to guess which book a line comes from.</p></div><div class="qb-row">' +
+        [['christianity', 'christian', 'Christianity'], ['islam', 'muslim', 'Islam'], ['judaism', 'jewish', 'Judaism'], ['which-book', 'mixed', 'Which book?']].map(([id, k, n]) => '<a class="qb ' + k + '" href="#/quiz/' + id + '"><span>' + (GLYPH[k] || '?') + '</span>' + n + '</a>').join('') + '</div></section>' +
+      factCard() + scriptBand() +
+      '<div class="section-head"><h2>Go deeper</h2></div><div class="tools-strip">' + [['#/parallel', 'Compare editions', 'One verse in every translation and the original'], ...EXPLORE.filter(e => !/debate|Shamoun/i.test(e[1]))].map(([h, t, d]) => '<a href="' + h + '"><strong>' + t + '</strong><span>' + d + '</span></a>').join('') + '</div>' +
       '<div class="section-head"><h2>Read the texts</h2><a href="#/search">Search everything →</a></div>' + readGrid();
     bindAsk();
     loadDebates().then(d => {
@@ -271,6 +273,76 @@
   function bindSearch() {
     const f = app.querySelector('form.searchbox');
     if (f) { f.addEventListener('submit', e => { e.preventDefault(); location.hash = '#/search/' + encodeURIComponent(f.q.value.trim()); }); attachSuggest(f.q); }
+  }
+
+  /* ---------- quizzes ---------- */
+  let QZ = null;
+  const loadQuiz = () => QZ ? Promise.resolve(QZ) : getJSON('content/quiz.json').then(d => (QZ = d)).catch(() => (QZ = { quizzes: [], facts: [] }));
+  async function quiz(id) {
+    const rid = renderId, d = await loadQuiz();
+    if (rid !== renderId) return;
+    if (!id) {
+      document.title = 'Quiz · Contradiction AI';
+      app.innerHTML = hero('quiz', 'How well do you know them?', 'A quiz for each faith, and one to guess which book a line comes from. Every answer links to the passage.') +
+        '<div class="quiz-list">' + d.quizzes.map(z => { const best = +(store.get('quiz-' + z.id) || 0);
+          return '<a class="quiz-card ' + (z.faith || 'mixed') + '" href="#/quiz/' + z.id + '"><span class="qz-glyph">' + (GLYPH[z.faith] || '?') + '</span><strong>' + esc(z.title) + '</strong><span>' + esc(z.blurb) + '</span>' +
+            '<em>' + z.questions.length + ' questions' + (best ? ' · your best: ' + best + '/' + z.questions.length : '') + '</em></a>'; }).join('') + '</div>';
+      return;
+    }
+    const z = d.quizzes.find(x => x.id === id);
+    if (!z) return notFound();
+    document.title = z.title + ' · Contradiction AI';
+    if (z.faith) setFaithTheme(z.faith);
+    let i = 0, score = 0;
+    const draw = () => {
+      if (i >= z.questions.length) {
+        const best = Math.max(score, +(store.get('quiz-' + z.id) || 0)); store.set('quiz-' + z.id, best);
+        const msg = score === z.questions.length ? 'Perfect score.' : score >= z.questions.length * .7 ? 'Very good.' : score >= z.questions.length * .4 ? 'Not bad. Read on and try again.' : 'Plenty to discover.';
+        app.innerHTML = '<p class="crumbs"><a href="#/quiz">Quiz</a></p><section class="qz-done"><span class="qz-score">' + score + '<small>/' + z.questions.length + '</small></span><h1>' + msg + '</h1><p class="muted">' + esc(z.title) + ' · best ' + best + '/' + z.questions.length + '</p>' +
+          '<div class="hp-actions"><a class="btn brand" href="javascript:void 0" data-again>Try again</a><a class="btn" href="#/quiz">Other quizzes</a>' +
+          shareBtn('I scored ' + score + '/' + z.questions.length + ' on the ' + z.title, location.origin + location.pathname + '#/quiz/' + z.id) + '</div></section>';
+        app.querySelector('[data-again]').addEventListener('click', () => { i = 0; score = 0; draw(); });
+        return;
+      }
+      const q = z.questions[i];
+      app.innerHTML = '<p class="crumbs"><a href="#/quiz">Quiz</a> › ' + esc(z.title) + '</p><div class="qz-bar"><i style="width:' + (i / z.questions.length * 100) + '%"></i></div>' +
+        '<p class="qz-n">Question ' + (i + 1) + ' of ' + z.questions.length + ' · score ' + score + '</p><h1 class="qz-q">' + esc(q.q) + '</h1>' +
+        '<div class="qz-opts">' + q.options.map((o, k) => '<button type="button" data-k="' + k + '">' + esc(o) + '</button>').join('') + '</div><div class="qz-why" hidden></div>';
+      app.querySelectorAll('.qz-opts button').forEach(b => b.addEventListener('click', () => {
+        if (app.querySelector('.qz-opts.answered')) return;
+        const k = +b.dataset.k, ok = k === q.a; if (ok) score++;
+        app.querySelector('.qz-opts').classList.add('answered');
+        app.querySelectorAll('.qz-opts button').forEach(x => { if (+x.dataset.k === q.a) x.classList.add('right'); else if (x === b) x.classList.add('wrong'); });
+        const w = app.querySelector('.qz-why'); w.hidden = false;
+        w.innerHTML = '<strong>' + (ok ? '✓ Correct.' : '✗ Not quite.') + '</strong> ' + esc(q.why) + (q.ref ? ' <span class="ref">' + rich(q.ref) + '</span>' : '') +
+          '<p><button class="btn brand" type="button" data-next>' + (i + 1 < z.questions.length ? 'Next question →' : 'See your score') + '</button></p>';
+        w.querySelector('[data-next]').addEventListener('click', () => { i++; draw(); window.scrollTo(0, 0); });
+      }));
+    };
+    draw();
+  }
+  const factCard = () => { if (!QZ || !QZ.facts.length) return ''; const f = QZ.facts[Math.floor(Math.random() * QZ.facts.length)];
+    return '<aside class="fact"><span class="tag">Did you know?</span><p>' + esc(f.t) + '</p><span class="ref">' + rich(f.ref) + '</span></aside>'; };
+
+  /* ---------- compare: one passage in every edition ---------- */
+  function parallel(ref) {
+    ref = (ref || '').trim();
+    document.title = (ref ? ref + ' in every edition' : 'Compare editions') + ' · Contradiction AI';
+    const r = ref && parseRef(ref);
+    app.innerHTML = hero('compare', 'Compare every edition', 'One passage in every translation on the site, with the original Hebrew, Greek or Arabic.', '<form class="cmp-form"><input name="r" value="' + esc(ref) + '" placeholder="e.g. Isaiah 7:14, John 1:1, Quran 4:157" aria-label="Passage"><button class="btn">Compare</button></form>') +
+      (r ? '<div class="par-list"></div>' : '<div class="chips">' + ['Isaiah 7:14', 'Psalm 22:16', 'John 1:1', 'Genesis 1:26', 'Quran 4:157', 'Quran 4:34', 'Deuteronomy 18:18', 'Isaiah 53:5'].map(x => '<a class="chip" href="#/parallel/' + encodeURIComponent(x) + '">' + x + '</a>').join('') + '</div>');
+    app.querySelector('.cmp-form').addEventListener('submit', e => { e.preventDefault(); const v = e.target.r.value.trim(); if (v) location.hash = '#/parallel/' + encodeURIComponent(v); });
+    if (!r) return;
+    const rid = renderId, eds = M.translations.filter(t => has(t.id, r.code));
+    if (r.v1 && r.v2 - r.v1 > 9) r.v2 = r.v1 + 9;
+    Promise.all(eds.map(t => loadBook(t.id, r.code).then(b => [t, b]).catch(() => [t, null]))).then(rows => {
+      if (rid !== renderId) return;
+      const html = rows.map(([t, b]) => { const ch = b && b[r.ch - 1]; if (!ch) return '';
+        const txt = (r.v1 ? ch.slice(r.v1 - 1, r.v2) : ch.slice(0, 3)).map((v, k) => v ? '<sup>' + ((r.v1 || 1) + k) + '</sup>' + esc(v) : '').join(' ');
+        const orig = t.lang !== 'en';
+        return '<div class="par' + (orig ? ' orig' : '') + '"><div class="par-h"><strong>' + esc(t.name) + '</strong><span class="muted small">' + esc(t.tradition || '') + '</span></div><p lang="' + t.lang + '"' + (RTL[t.lang] ? ' dir="rtl"' : '') + '>' + txt + '</p></div>'; }).join('');
+      app.querySelector('.par-list').innerHTML = html || '<p class="muted">No edition on the site has that passage.</p>';
+    });
   }
 
   /* ---------- the hard questions ---------- */
@@ -1401,7 +1473,7 @@
 
 
   /* ---------- page headers: each section has its own colour and mark ---------- */
-  const HERO = { hard: ['⚖', 'No softening'], debates: ['⚔', 'Debates'], trainer: ['🎙', 'Train'], videos: ['▶', 'Watch'], stories: ['📜', 'Stories'], prophecies: ['🔮', 'Prophecy'],
+  const HERO = { quiz: ['?', 'Quiz'], compare: ['⇄', 'Compare'], hard: ['⚖', 'No softening'], debates: ['⚔', 'Debates'], trainer: ['🎙', 'Train'], videos: ['▶', 'Watch'], stories: ['📜', 'Stories'], prophecies: ['🔮', 'Prophecy'],
     translations: ['✎', 'Words'], timeline: ['⏳', 'History'], shamoun: ['🗣', 'Debater'], explore: ['✦', 'Explore'] };
   const hero = (kind, title, lede, extra, eyebrow) => '<section class="hero-page hp-' + kind + '" data-mark="' + (HERO[kind] || ['', ''])[0] + '"><span class="hp-eyebrow">' + (eyebrow || (HERO[kind] || ['', ''])[1]) + '</span><h1>' + esc(title) + '</h1>' +
     (lede ? '<p>' + esc(lede) + '</p>' : '') + (extra || '') + '</section>';
@@ -1702,6 +1774,16 @@
       '<p><a class="btn brand" href="#/ask/' + encodeURIComponent(a.title) + '">Ask the AI to test this →</a></p>' +
       '<p class="status">Draft. The verdict judges this argument only. Not yet reviewed by scholars.</p>';
     fillQuotes(app);
+    // A video from one of the debaters behind this argument, if the site tracks their channel.
+    Promise.all([getJSON('content/channels.json').catch(() => ({ channels: [] })), getJSON('content/videos.json').catch(() => ({ videos: [] }))]).then(([ch, vids]) => {
+      if (rid !== renderId) return;
+      const names = (a.by || []).concat(a.response_by || []).join(' | ');
+      const c = ch.channels.find(c => { const p = personOf(c); return p.length > 4 && names.includes(p); });
+      const v = c && vids.videos.find(x => x.channel === c.name);
+      if (!v) return;
+      app.insertAdjacentHTML('beforeend', '<section class="deb-video"><div class="section-head"><h2>▶ Latest from ' + esc(personOf(c)) + '</h2><a href="#/debaters/' + slugOf(personOf(c)) + '">More from him →</a></div>' +
+        '<div class="yt"><iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/' + encodeURIComponent(v.id) + '" title="' + esc(v.title) + '" allow="accelerometer; encrypted-media; picture-in-picture" allowfullscreen></iframe></div><p class="small muted">' + esc(v.title) + ' · ' + esc(v.date || '') + '. His newest upload, not necessarily on this argument.</p></section>');
+    });
   }
 
   /* ---------- recent debate videos: live from the AI server (?videos), else the saved snapshot content/videos.json ---------- */
@@ -1833,7 +1915,7 @@
   applyMode(store.get('mode') || 'light');
   document.addEventListener('click', e => { if (!e.target.closest('.mode-btn')) return; const m = document.documentElement.dataset.mode === 'dark' ? 'light' : 'dark'; store.set('mode', m); applyMode(m); });
   const MORE = [['#/faiths', '⊕', 'Faiths', 'Each faith in its own words'], ['#/hard', '⚖', 'Hard questions', 'Women, captives, apostasy, war'], ['#/debaters', '🎙', 'Debaters', 'Their channels and arguments'],
-    ['#/videos', '▶', 'Watch recent debates', 'Newest videos, with the AI\'s take'], ['#/trainer', '⚔', 'Debate trainer', 'Argue against the AI'], ['#/topics', '✦', 'Topics and tools', 'Stories, prophecies, timeline'],
+    ['#/videos', '▶', 'Watch recent debates', 'Newest videos, with the AI\'s take'], ['#/trainer', '⚔', 'Debate trainer', 'Argue against the AI'], ['#/quiz', '?', 'Quiz', 'One for each faith'], ['#/parallel', '⇄', 'Compare editions', 'A verse in every translation'], ['#/topics', '✦', 'Topics and tools', 'Stories, prophecies, timeline'],
     ['#/lib', '📚', 'Library', 'Hadith, Talmud, Church Fathers'], ['#/search', '⌕', 'Search', 'Every word in every text'], ['#/saved', '🔖', 'Saved', 'Answers you kept'], ['javascript:void 0" class="mode-btn', '◐', 'Dark mode', 'Switch light or dark'], ['#/about', '◆', 'Why Contradiction AI', 'Why we built it']];
   document.addEventListener('click', e => {
     if (!e.target.closest('[data-more]')) return;
@@ -1883,7 +1965,7 @@
   /* ---------- routing ---------- */
   function setTr(t) { tr = t; pref[trById[t].corpus] = t; store.set('tr', t); store.set('tr-' + trById[t].corpus, t); }
   const TAB = { '': '', ask: 'ask', faiths: 'faiths', faith: 'faiths', beliefs: 'faiths', compare: 'faiths', books: 'books', read: 'books', lib: 'lib', go: 'lib',
-    topics: 'topics', t: 'topics', topic: 'topics', q: 'topics', questions: 'topics', search: 'search', debates: 'debates', d: 'debates', videos: 'debates', shamoun: 'debates', trainer: 'debates', debaters: 'debates', hard: 'hard', saved: 'saved', stories: 'topics', prophecies: 'topics', translations: 'topics', timeline: 'topics' };
+    topics: 'topics', t: 'topics', topic: 'topics', q: 'topics', questions: 'topics', search: 'search', debates: 'debates', d: 'debates', videos: 'debates', shamoun: 'debates', trainer: 'debates', debaters: 'debates', hard: 'hard', saved: 'saved', quiz: 'quiz', parallel: 'books', stories: 'topics', prophecies: 'topics', translations: 'topics', timeline: 'topics' };
   const THEME_BG = { christian: '#F4DED6', muslim: '#E4EAD3', jewish: '#DCE4EE', '': '#F6EFE2' };
   function setFaithTheme(key) {
     const ic = document.querySelector('link[rel=icon]'), F = { christian: ['#8C2F2B', '✝'], muslim: ['#4E6B3A', '☪'], jewish: ['#3B5576', '✡'] }[key];
@@ -1909,15 +1991,15 @@
     window.scrollTo(0, 0);
     app.innerHTML = '<div class="skel" aria-label="Loading"><span class="shimmer sk-h"></span><span class="shimmer"></span><span class="shimmer"></span><span class="shimmer short"></span><div class="sk-cards"><span></span><span></span><span></span></div></div>';
     const views = { '': home, questions, q: question, topic, topics, t: tguide, books, read, search: () => search(a.join('/')), about, lib: () => library(a),
-      beliefs, faiths, faith: hub, compare: compareView, go, ask: () => ask(a.join('/')), debates, d: debate, videos, shamoun, trainer, privacy, terms, stories, prophecies, translations: translationsPage, timeline, hard, debaters, saved };
+      beliefs, faiths, faith: hub, compare: compareView, go, ask: () => ask(a.join('/')), debates, d: debate, videos, shamoun, trainer, privacy, terms, stories, prophecies, translations: translationsPage, timeline, hard, debaters, saved, quiz, parallel: () => parallel(a.join('/')) };
     Promise.resolve((views[name] || notFound)(...a)).catch(e => {
       app.innerHTML = '<h1>Something went wrong</h1><p class="muted">' + esc(e.message) + '</p>';
     });
   }
 
   Promise.all(['data/index.json', 'content/questions.json', 'content/disputes.json', 'content/beliefs.json', 'content/guide.json'].map(getJSON)
-    .concat(getJSON('content/config.json').catch(() => ({}))).concat(getJSON('content/hard.json').catch(() => ({ topics: [] })))).then(([m, c, d, b, g, cfg, hq]) => {
-    HQ = hq;
+    .concat(getJSON('content/config.json').catch(() => ({}))).concat(getJSON('content/hard.json').catch(() => ({ topics: [] }))).concat(getJSON('content/quiz.json').catch(() => ({ quizzes: [], facts: [] })))).then(([m, c, d, b, g, cfg, hq, qz]) => {
+    HQ = hq; QZ = qz;
     M = m; C = c; B = b; G = g; SITE_CFG = cfg || {};
     C.questions = C.questions.concat(d.questions);
     M.translations.forEach(t => { trById[t.id] = t; t.chapters = Object.fromEntries(t.books); });
