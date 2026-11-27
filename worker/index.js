@@ -22,6 +22,22 @@ export default {
       }
       return new Response(hit.body, { headers: { ...cors, "Content-Type": "application/json", "Cache-Control": "max-age=600" } });
     }
+    // Spoken answers: natural voices from Cloudflare Workers AI (Deepgram Aura). Only for this site, rate limited, short texts.
+    if (request.method === "POST" && new URL(request.url).searchParams.has("tts")) {
+      if (!ok) return json(403, { error: "Not allowed." });
+      const ip = request.headers.get("cf-connecting-ip") || "unknown";
+      try { if (env.RL_IP && !(await env.RL_IP.limit({ key: "tts:" + ip })).success) return json(429, { error: "Too many." }); } catch (e) {}
+      const b = await request.json().catch(() => null);
+      const VOICES = ["zeus", "orpheus", "arcas", "orion", "perseus", "helios", "angus", "athena", "asteria", "luna", "stella", "hera"];
+      const text = b && typeof b.text === "string" ? b.text.slice(0, 900).trim() : "";
+      const speaker = b && VOICES.includes(b.voice) ? b.voice : "athena";
+      if (!text || !env.AI) return json(400, { error: "No text." });
+      try {
+        const out = await env.AI.run("@cf/deepgram/aura-1", { text, speaker });
+        const body = out instanceof ReadableStream ? out : out && out.audio ? Uint8Array.from(atob(out.audio), c => c.charCodeAt(0)) : out;
+        return new Response(body, { headers: { ...cors, "Content-Type": "audio/mpeg", "Cache-Control": "no-store" } });
+      } catch (e) { console.error("tts failed", e && e.message); return json(502, { error: "Voice unavailable." }); }
+    }
     if (request.method === "GET") return json(env.ANTHROPIC_API_KEY ? 200 : 503, { ok: !!env.ANTHROPIC_API_KEY });
     if (request.method !== "POST") return json(405, { error: "Use POST." });
     if (!env.ANTHROPIC_API_KEY) return json(503, { error: "The AI guide is not switched on: the server has no API key." });

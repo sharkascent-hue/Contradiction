@@ -4,6 +4,9 @@ main = "index.js"
 compatibility_date = "2025-06-01"
 compatibility_flags = ["nodejs_compat"]
 
+[ai]
+binding = "AI"
+
 [vars]
 SITE_URL = "https://raw.githubusercontent.com/sharkascent-hue/Contradiction/main/"
 ALLOWED_ORIGIN = "https://sharkascent-hue.github.io,https://contradictionai.com,https://www.contradictionai.com,http://contradictionai.com,http://www.contradictionai.com"

@@ -139,15 +139,49 @@
     const female = CLERGY[clergy][3] === 'f', pool = vs.filter(v => female ? !MALE.test(v.name) : MALE.test(v.name));
     const same = keys.filter(k => (CLERGY[k][3] === 'f') === female), n = same.indexOf(clergy);
     return pool.length ? pool[n % pool.length] : vs[0] || null; }
-  function say(text, onEnd, onPart) {
+  // Natural studio voices (Deepgram Aura on Cloudflare), one per character; the device's own voice only if that fails.
+  const AURA = { '': 'athena', 'orthodox-priest': 'zeus', 'catholic-priest': 'orpheus', 'protestant-pastor': 'arcas', 'sunni-imam': 'orion',
+    'shia-sheikh': 'perseus', 'orthodox-rabbi': 'helios', 'reform-rabbi': 'angus' };
+  const player = new Audio(); player.preload = 'auto';
+  let sayId = 0;
+  // A tiny silent sound played from the user's tap, so phones allow the voice to play afterwards.
+  function unlockAudio() { try { const n = 800, b = new ArrayBuffer(44 + n * 2), d = new DataView(b), w = (o, s) => [...s].forEach((c, k) => d.setUint8(o + k, c.charCodeAt(0)));
+    w(0, 'RIFF'); d.setUint32(4, 36 + n * 2, true); w(8, 'WAVEfmt '); d.setUint32(16, 16, true); d.setUint16(20, 1, true); d.setUint16(22, 1, true); d.setUint32(24, 8000, true); d.setUint32(28, 16000, true); d.setUint16(32, 2, true); d.setUint16(34, 16, true); w(36, 'data'); d.setUint32(40, n * 2, true);
+    player.src = URL.createObjectURL(new Blob([b], { type: 'audio/wav' })); player.play().catch(() => {}); } catch (e) {} }
+  const ttsUrl = () => (SITE_CFG.aiEndpoint || '').trim().replace(/\/?$/, '/') + '?tts';
+  const fetchVoice = (text, voice) => fetch(ttsUrl(), { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ text, voice }) })
+    .then(r => { if (!r.ok) throw new Error('tts'); return r.blob(); }).then(bl => URL.createObjectURL(bl));
+  function sayDevice(parts, onEnd, onPart, id) {
     if (!TTS) return onEnd && onEnd();
-    speechSynthesis.cancel();
-    const parts = spoken(text).match(/[^.!?]+[.!?]*/g) || [];   // short pieces: some phones stop long utterances
     let i = 0; const v = pickVoice();
-    const next = () => { if (!voiceMode) return; if (i >= parts.length) return onEnd && onEnd();
-      if (onPart) onPart(i); const u = new SpeechSynthesisUtterance(parts[i++].trim()); if (v) u.voice = v; u.rate = clergy ? .92 : 1; u.pitch = clergy && CLERGY[clergy][3] === 'm' ? .88 : 1; u.onend = next; u.onerror = next; speechSynthesis.speak(u); };
+    const next = () => { if (!voiceMode || id !== sayId) return; if (i >= parts.length) return onEnd && onEnd();
+      if (onPart) onPart(i); const u = new SpeechSynthesisUtterance(parts[i++].trim()); if (v) u.voice = v; u.rate = clergy ? .92 : 1; u.pitch = clergy ? .88 : 1; u.onend = next; u.onerror = next; speechSynthesis.speak(u); };
     next();
   }
+  function say(text, onEnd, onPart) {
+    const id = ++sayId; if (TTS) speechSynthesis.cancel(); player.pause();
+    const parts = spoken(text).match(/[^.!?]+[.!?]*/g) || [];
+    // Group sentences into chunks of about 300 characters: the first starts quickly, the next loads while one plays.
+    const chunks = []; parts.forEach((s, k) => { const c = chunks[chunks.length - 1]; if (c && c.text.length + s.length < 300) { c.text += ' ' + s.trim(); c.parts.push(k); } else chunks.push({ text: s.trim(), parts: [k] }); });
+    const voice = AURA[clergy || ''] || 'athena', urls = chunks.map(() => null);
+    const load = k => k < chunks.length && !urls[k] ? (urls[k] = fetchVoice(chunks[k].text, voice)) : urls[k];
+    let k = 0;
+    const play = async () => {
+      if (!voiceMode || id !== sayId) return;
+      if (k >= chunks.length) return onEnd && onEnd();
+      let src; try { src = await load(k); } catch (e) { return sayDevice(parts.slice(chunks[k].parts[0]), onEnd, onPart ? n => onPart(n + chunks[k].parts[0]) : null, id); }
+      if (!voiceMode || id !== sayId) return;
+      load(k + 1);
+      if (onPart) onPart(chunks[k].parts[0]);
+      const c = chunks[k], n = c.parts.length;
+      player.ontimeupdate = () => { if (onPart && player.duration) onPart(c.parts[Math.min(n - 1, Math.floor(player.currentTime / player.duration * n))]); };
+      player.onended = () => { k++; play(); };
+      player.onerror = () => { k++; play(); };
+      player.src = src; player.play().catch(() => sayDevice(parts.slice(c.parts[0]), onEnd, onPart ? m => onPart(m + c.parts[0]) : null, id));
+    };
+    play();
+  }
+
   const GREET = { '': 'Hello. Ask me anything about Christianity, Islam or Judaism.',
     'orthodox-priest': 'Peace be with you. I am Father Peter, an Orthodox priest. How can I help you with your faith today?',
     'catholic-priest': 'Peace be with you. I am Father Thomas, a Catholic priest. What is on your heart today?',
@@ -170,7 +204,7 @@
     const whoName = () => clergy ? CLERGY[clergy][1] : 'Contradiction AI';
     const addLine = (name, text, me) => { const d = document.createElement('div'); d.className = 'tl-line' + (me ? ' me' : ''); d.innerHTML = '<b>' + esc(name) + '</b><p></p>'; d.querySelector('p').textContent = text; log.append(d); log.scrollTop = log.scrollHeight; return d; };
     const set = (s, cls) => { st.textContent = s; ov.dataset.s = cls; };
-    const stop = () => { try { rec && rec.abort(); } catch (e) {} if (TTS) speechSynthesis.cancel(); };
+    const stop = () => { try { rec && rec.abort(); } catch (e) {} if (TTS) speechSynthesis.cancel(); sayId++; player.pause(); };
     const end = () => { voiceMode = false; stop(); ov.remove(); };
     const hear = () => { if (!voiceMode) return; set('Listening… speak now', 'listen'); tx.textContent = '';
       listen(t => { tx.textContent = t; }, async q => {
@@ -196,9 +230,9 @@
       orb.style.background = lookBg(k); orb.querySelector('.orb-sym').innerHTML = symSvg(k, 74); orb.style.boxShadow = '0 0 70px ' + (LOOK[k] || LOOK[''])[1] + '88'; log.innerHTML = '';
       // iPhones only allow speech that starts from a tap: this greeting comes from the tap on the person.
       tx.textContent = ''; addLine(k ? CLERGY[k][1] : 'Contradiction AI', GREET[k] || GREET['']);
-      if (TTS) { speechSynthesis.cancel(); const u = new SpeechSynthesisUtterance(GREET[k] || GREET['']); const v = pickVoice(); if (v) u.voice = v;
-        u.rate = k ? .92 : 1; u.pitch = k && CLERGY[k][3] === 'm' ? .88 : 1; u.onend = hear; u.onerror = hear; speechSynthesis.speak(u); set('Speaking…', 'speak'); }
-      else hear();
+      unlockAudio(); set('Speaking…', 'speak');
+      const gl = log.lastElementChild;
+      say(GREET[k] || GREET[''], () => hear(), () => {});
     };
     ov.querySelectorAll('[data-who]').forEach(b => b.addEventListener('click', () => choose(b.dataset.who)));
     ov.querySelector('.talk-change').addEventListener('click', () => { stop(); call.hidden = true; pick.hidden = false; ov.dataset.s = ''; });
