@@ -15,8 +15,8 @@
 }
 * { box-sizing: border-box; }
 html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
-body { margin: 0; background: var(--bg); color: var(--ink); font: 16px/1.6 var(--sans); -webkit-font-smoothing: antialiased; }
-a { color: var(--chr); text-decoration: none; }
+body { margin: 0; transition: background-color .4s ease; background: var(--bg); color: var(--ink); font: 16px/1.6 var(--sans); -webkit-font-smoothing: antialiased; }
+a { color: var(--link, var(--chr)); text-decoration: none; }
 a:hover { text-decoration: underline; text-underline-offset: 3px; }
 button, input, select, textarea { font: inherit; color: inherit; }
 button { cursor: pointer; }
@@ -24,7 +24,7 @@ button { cursor: pointer; }
 
 /* ---------- top bar ---------- */
 .top { position: sticky; top: 0; z-index: 20; display: flex; align-items: center; gap: 18px; padding: 10px 18px;
-  padding-top: max(10px, env(safe-area-inset-top)); background: rgba(250, 248, 244, .86); backdrop-filter: saturate(1.4) blur(14px);
+  padding-top: max(10px, env(safe-area-inset-top)); background: var(--bar, rgba(250, 248, 244, .86)); backdrop-filter: saturate(1.4) blur(14px);
   -webkit-backdrop-filter: saturate(1.4) blur(14px); border-bottom: 1px solid transparent; transition: border-color .2s; }
 .top.scrolled { border-bottom-color: var(--line); }
 .brand { display: flex; align-items: center; gap: 10px; color: var(--ink); text-decoration: none !important; margin-right: auto; }
@@ -520,3 +520,20 @@ p .share-btn { float: none; vertical-align: middle; margin: 0 0 0 6px; }
 .duel .btn { margin-left: auto; white-space: nowrap; }
 .btn.small { padding: .4rem .8rem; font-size: .85rem; }
 @media (max-width: 480px) { .duel-you { display: none; } }
+
+/* ---------- faith themes: the whole page takes on the colours of the faith being read ---------- */
+:root[data-faith] .top, :root[data-faith] .banner, :root[data-faith] .seg, :root[data-faith] .chip, :root[data-faith] .btn { transition: background-color .4s ease, border-color .4s ease; }
+:root[data-faith=christian] {
+  --bg: #f3f6ff; --soft: #e3ebff; --line: #d3dffa; --ink: #131a33; --ink-2: #333c5c; --muted: #646d8c;
+  --brand: #2563eb; --brand-2: #1e40af; --link: #1d4ed8; --mark: #dbe7ff; --sel: #eaf1ff; --bar: rgba(243, 246, 255, .88);
+}
+:root[data-faith=muslim] {
+  --bg: #f1faf5; --soft: #dff3e9; --line: #cbe9da; --ink: #0f241c; --ink-2: #2f4a3f; --muted: #5d7a6d;
+  --brand: #0f9d6e; --brand-2: #065f46; --link: #0b7f58; --mark: #d3f0e2; --sel: #e6f7f0; --bar: rgba(241, 250, 245, .88);
+}
+:root[data-faith=jewish] {
+  --bg: #f7f3ff; --soft: #ebe2ff; --line: #ddd0fa; --ink: #20143d; --ink-2: #44365f; --muted: #7a6d96;
+  --brand: #7c3aed; --brand-2: #4c1d95; --link: #6d28d9; --mark: #e6dafd; --sel: #f1eaff; --bar: rgba(247, 243, 255, .88);
+}
+:root[data-faith] .links a.on { background: var(--brand); }
+:root[data-faith] .composer .sug { background: var(--bg); }

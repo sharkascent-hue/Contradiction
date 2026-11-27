@@ -1722,12 +1722,18 @@
   function setTr(t) { tr = t; pref[trById[t].corpus] = t; store.set('tr', t); store.set('tr-' + trById[t].corpus, t); }
   const TAB = { '': '', ask: 'ask', faiths: 'faiths', faith: 'faiths', beliefs: 'faiths', compare: 'faiths', books: 'books', read: 'books', lib: 'lib', go: 'lib',
     topics: 'topics', t: 'topics', topic: 'topics', q: 'topics', questions: 'topics', search: 'search', debates: 'debates', d: 'debates', videos: 'debates', shamoun: 'debates', trainer: 'debates', stories: 'topics', prophecies: 'topics', translations: 'topics', timeline: 'topics' };
+  const THEME_BG = { christian: '#f3f6ff', muslim: '#f1faf5', jewish: '#f7f3ff', '': '#faf8f4' };
+  function setFaithTheme(key) {
+    if (key) document.documentElement.dataset.faith = key; else delete document.documentElement.dataset.faith;
+    const m = document.querySelector('meta[name=theme-color]'); if (m) m.content = THEME_BG[key];
+  }
   function route() {
     renderId++;
     const [name, ...a] = decodeURIComponent(location.hash.replace(/^#\/?/, '')).split('/');
     const tab = TAB[name] !== undefined ? TAB[name] : name;
     document.querySelectorAll('.links a, .tabbar a').forEach(l => l.classList.toggle('on', l.getAttribute('href') === '#/' + tab));
     sheet.hidden = true;
+    setFaithTheme(name === 'faith' && HUBS[a[0]] ? HUBS[a[0]].key : '');
     app.className = 'enter' + (name === 'ask' || name === 'trainer' ? ' chatmode' : '');
     document.body.classList.toggle('chatting', name === 'ask' || name === 'trainer');
     window.scrollTo(0, 0);
