@@ -1,1 +1,1024 @@
-{"stories": []}
+{
+ "stories": [
+  {
+   "id": "creation-adam-and-eve",
+   "title": "Creation, Adam and Eve",
+   "summary": "God makes the world and the first man and woman, puts them in a garden and forbids one tree. They eat from it and have to leave.",
+   "bible": {
+    "refs": [
+     "Genesis 1:1-31",
+     "Genesis 2:1-25",
+     "Genesis 3:1-24",
+     "Romans 5:12"
+    ],
+    "telling": "God creates the heavens and the earth in six days and rests on the seventh (Genesis 2:2-3). He forms the man from dust and breathes life into him, then makes the woman from the man's rib (Genesis 2:7; Genesis 2:21-22). A serpent talks the woman into eating from the tree of the knowledge of good and evil; she gives some to her husband and he eats (Genesis 3:1-6). God curses the serpent and the ground, tells the woman she will have pain in childbirth and the man that he will work hard and return to dust, and sends them out of Eden (Genesis 3:14-24). In the New Testament Paul says sin and death came into the world through this one man (Romans 5:12)."
+   },
+   "quran": {
+    "refs": [
+     "Quran 2:30-39",
+     "Quran 7:11-27",
+     "Quran 15:26-44",
+     "Quran 20:115-123",
+     "Quran 38:71-85"
+    ],
+    "telling": "God tells the angels he will place a human on earth and teaches Adam the names of all things (Quran 2:30-33). He makes Adam from clay and orders the angels to bow down to him. All do except Iblis, who says he is better because he was made from fire; he is thrown out and promises to mislead humans (Quran 7:11-18). Adam and his wife live in the Garden until Satan whispers to them and they eat from the forbidden tree (Quran 7:19-22). They ask forgiveness, God forgives Adam, and they are sent down to live on earth with a promise of guidance (Quran 2:36-38; Quran 20:122-123)."
+   },
+   "jewish": {
+    "refs": [],
+    "telling": "The Talmud (Sanhedrin 38b) says God consulted the angels before making man and they asked what this creature's deeds would be, which is close to the angels' question in Quran 2:30. Judaism reads Genesis 3 as the first disobedience but generally does not teach that Adam's guilt is passed on to every person."
+   },
+   "shared": [
+    "One God creates the world in six days and makes the first man from the earth (dust or clay).",
+    "God breathes life into Adam and gives him a wife.",
+    "They live in a garden where one tree is forbidden.",
+    "They are tempted, eat from the tree, notice they are naked and cover themselves with leaves.",
+    "They have to leave the garden, and human life on earth begins."
+   ],
+   "differences": [
+    {
+     "point": "Who tempts them",
+     "bible": "A talking serpent, described as the most cunning animal (Genesis 3:1). Genesis does not call it Satan; the New Testament later does (Revelation 12:9).",
+     "quran": "Satan (Iblis) whispers to them (Quran 7:20; Quran 20:120). No serpent is mentioned."
+    },
+    {
+     "point": "Who eats first and who is blamed",
+     "bible": "The woman is deceived and eats first, then gives the fruit to the man (Genesis 3:6). Adam points to her (Genesis 3:12), and 1 Timothy 2:14 says the woman was the one deceived.",
+     "quran": "Satan misleads both of them together (Quran 7:20-22). Quran 20:120-121 has Satan speak to Adam, and says 'Adam disobeyed his Lord'. Eve is not singled out."
+    },
+    {
+     "point": "What happens to the sin",
+     "bible": "Genesis records curses and exile but no word of forgiveness (Genesis 3:16-24). Paul says sin and death spread to all people through Adam (Romans 5:12).",
+     "quran": "Adam and his wife ask forgiveness (Quran 7:23) and God accepts Adam's repentance (Quran 2:37; Quran 20:122).",
+     "note": "This is the root of a major difference: most Christian churches teach original sin, which Islam and Judaism do not."
+    },
+    {
+     "point": "The angels bowing and the fall of Iblis",
+     "bible": "Not in Genesis. Genesis says nothing about angels being told to bow to Adam or about a being who refuses.",
+     "quran": "Told seven times, for example Quran 2:34, Quran 7:11-18, Quran 15:28-40 and Quran 38:71-78. It explains where Satan's hatred of humans comes from."
+    },
+    {
+     "point": "Naming things",
+     "bible": "God brings the animals to Adam and Adam chooses their names (Genesis 2:19-20).",
+     "quran": "God teaches Adam all the names, and Adam then tells them to the angels, who did not know them (Quran 2:31-33)."
+    },
+    {
+     "point": "The seventh day",
+     "bible": "God 'rested on the seventh day from all his work' (Genesis 2:2-3). This is the basis of the Sabbath.",
+     "quran": "God made everything in six days 'and there touched Us no weariness' (Quran 50:38).",
+     "note": "Jews and Christians say 'rested' means God stopped creating, not that he was tired. Muslims read the Quran verse as a correction."
+    },
+    {
+     "point": "The tree and the woman's name",
+     "bible": "It is 'the tree of the knowledge of good and evil' (Genesis 2:17), and there is also a tree of life (Genesis 3:22). The woman is named Eve (Genesis 3:20).",
+     "quran": "The tree is just 'this tree' (Quran 2:35); Satan calls it 'the tree of eternity' (Quran 20:120). Adam's wife is never named in the Quran; Muslim tradition calls her Hawwa."
+    }
+   ]
+  },
+  {
+   "id": "cain-and-abel",
+   "title": "Cain and Abel",
+   "summary": "Two sons of Adam each make an offering to God. Only one is accepted, and the other brother kills him. It is the first murder.",
+   "bible": {
+    "refs": [
+     "Genesis 4:1-16"
+    ],
+    "telling": "Cain farms the land and Abel keeps sheep. Cain brings produce and Abel brings the best of his flock; God accepts Abel's offering but not Cain's (Genesis 4:3-5). God warns Cain that sin is crouching at the door, but Cain takes Abel into the field and kills him (Genesis 4:7-8). When God asks where Abel is, Cain answers, 'Am I my brother's keeper?' (Genesis 4:9). God says Abel's blood cries from the ground, makes Cain a wanderer, and puts a sign on him so that nobody will kill him (Genesis 4:10-15)."
+   },
+   "quran": {
+    "refs": [
+     "Quran 5:27-32"
+    ],
+    "telling": "The Quran tells the story of 'Adam's two sons' without giving their names. One offering is accepted and the other is not, and the rejected brother says, 'I will surely kill you' (Quran 5:27). The other answers that God only accepts from the righteous and that he will not raise his hand to fight back (Quran 5:27-29). After the murder God sends a crow that scratches the ground to show the killer how to bury the body, and he is filled with regret (Quran 5:30-31). The passage ends with a rule: whoever kills one person unjustly, it is as if he killed all mankind, and whoever saves one, it is as if he saved all mankind (Quran 5:32)."
+   },
+   "jewish": {
+    "refs": [],
+    "telling": "The Mishnah (Sanhedrin 4:5) draws the same lesson from Cain's story: whoever destroys a single soul is counted as if he destroyed a whole world, and whoever saves one as if he saved a whole world (some versions of the text add 'of Israel'). The Midrash Pirkei DeRabbi Eliezer (chapter 21) says a raven buried a dead bird in front of Adam and so taught him how to bury Abel. Genesis Rabbah 22:7 offers guesses about what the brothers quarrelled over, such as dividing the world between them."
+   },
+   "shared": [
+    "Two sons of Adam each bring an offering to God.",
+    "God accepts one offering and not the other.",
+    "The rejected brother kills the accepted one.",
+    "The murder is treated as a terrible crime, and the killer ends up worse off."
+   ],
+   "differences": [
+    {
+     "point": "Names",
+     "bible": "Cain and Abel (Genesis 4:1-2).",
+     "quran": "Not named: 'Adam's two sons' (Quran 5:27). Muslim tradition calls them Qabil and Habil."
+    },
+    {
+     "point": "What the offerings were",
+     "bible": "Cain brought fruit of the ground; Abel brought the firstborn of his flock (Genesis 4:3-4).",
+     "quran": "Not described. One was accepted and one was not (Quran 5:27)."
+    },
+    {
+     "point": "What the brothers say",
+     "bible": "Abel never speaks. Before the murder God warns Cain directly (Genesis 4:6-7).",
+     "quran": "The victim gives a short speech and refuses to fight back (Quran 5:28-29). God does not speak to the killer beforehand."
+    },
+    {
+     "point": "The burial",
+     "bible": "No burial is mentioned. Abel's blood 'cries from the ground' (Genesis 4:10).",
+     "quran": "God sends a crow to show the killer how to hide his brother's body (Quran 5:31).",
+     "note": "A similar bird story is found in the Jewish Midrash, where the raven teaches Adam rather than Cain."
+    },
+    {
+     "point": "What happens to the killer",
+     "bible": "God questions Cain, curses him to wander, and marks him for protection (Genesis 4:9-15). Cain then settles in Nod and has a family (Genesis 4:16-17).",
+     "quran": "He 'became among the losers' and 'of the regretful' (Quran 5:30-31). No conversation with God, mark or later life is described."
+    },
+    {
+     "point": "The lesson attached",
+     "bible": "No rule is stated in Genesis 4 itself.",
+     "quran": "A rule is 'decreed upon the Children of Israel': killing one soul is like killing all mankind (Quran 5:32).",
+     "note": "The wording is very close to Mishnah Sanhedrin 4:5. Critics say the Quran is quoting rabbinic teaching; Muslims say God is confirming something he had already given to Israel."
+    }
+   ]
+  },
+  {
+   "id": "noah-and-the-flood",
+   "title": "Noah and the flood",
+   "summary": "People have become wicked, so God sends a flood. Noah builds a ship and is saved with those on board and pairs of animals.",
+   "bible": {
+    "refs": [
+     "Genesis 6:5-22",
+     "Genesis 7:1-24",
+     "Genesis 8:1-22",
+     "Genesis 9:1-29"
+    ],
+    "telling": "God sees that human wickedness is great and is sorry he made man, but Noah finds favour (Genesis 6:5-8). God gives exact measurements for the ship and tells Noah to bring his wife, his three sons, their wives and pairs of every animal (Genesis 6:14-19). It rains forty days, the water covers the mountains, and everything outside dies (Genesis 7:12; Genesis 7:19-23). The ship comes to rest on the mountains of Ararat, and Noah sends out a raven and a dove to see if the land is dry (Genesis 8:4-12). God promises never to flood the earth again and sets the rainbow as a sign (Genesis 9:11-13). Afterwards Noah plants a vineyard, gets drunk, and curses his grandson Canaan (Genesis 9:20-25)."
+   },
+   "quran": {
+    "refs": [
+     "Quran 11:25-48",
+     "Quran 71:1-28",
+     "Quran 23:23-30",
+     "Quran 54:9-15",
+     "Quran 29:14-15"
+    ],
+    "telling": "Noah is a messenger who spends a very long time calling his people to worship God alone; the leaders mock him and only a few believe (Quran 11:25-27; Quran 71:5-7). God tells him no one else will believe and orders him to build the ship, and people laugh at him as he builds (Quran 11:36-38). Water pours from the sky and bursts from the earth, and Noah loads pairs of animals, his family and the believers (Quran 54:11-12; Quran 11:40). One of his sons refuses to board, says he will climb a mountain, and drowns (Quran 11:42-43). The ship settles on Mount Judi; when Noah pleads for his son, God answers that the son 'is not of your family' because of his deeds (Quran 11:44-46)."
+   },
+   "jewish": {
+    "refs": [],
+    "telling": "Genesis records no words from Noah to his neighbours, but the Talmud (Sanhedrin 108b) says he rebuked his generation and they mocked him, asking, 'Old man, why are you building this ark?' That is close to the Quran's picture of Noah being ridiculed while building (Quran 11:38)."
+   },
+   "shared": [
+    "Noah is righteous in a wicked generation.",
+    "God tells him to build a ship and take pairs of animals on board.",
+    "A flood drowns the wrongdoers, with water from above and from below (Genesis 7:11; Quran 54:11-12).",
+    "The ship comes to rest on a mountain and Noah and those with him are saved.",
+    "Both give Noah the figure of 950 years: Genesis as his whole lifespan (Genesis 9:29), the Quran as the time he stayed among his people (Quran 29:14)."
+   ],
+   "differences": [
+    {
+     "point": "A son who drowns",
+     "bible": "All three sons, Shem, Ham and Japheth, enter the ship and survive (Genesis 7:13).",
+     "quran": "One son stays out, trusts a mountain to save him, and drowns (Quran 11:42-43). He is not named.",
+     "note": "The Quran uses it to teach that family ties do not save anyone; only faith and deeds do (Quran 11:46)."
+    },
+    {
+     "point": "Noah's wife",
+     "bible": "She enters the ship and is saved (Genesis 7:7; Genesis 7:13).",
+     "quran": "She is given as an example of an unbeliever who betrayed a righteous husband and is told to enter the Fire (Quran 66:10). The Quran does not describe her death."
+    },
+    {
+     "point": "Noah as a preacher",
+     "bible": "Genesis gives no speeches by Noah to his people. The New Testament calls him 'a preacher of righteousness' (2 Peter 2:5).",
+     "quran": "His preaching is the centre of the story, with long arguments with the leaders (Quran 11:25-34; Quran 71:1-20). He finally prays that no unbeliever be left on earth (Quran 71:26)."
+    },
+    {
+     "point": "Who is on the ship",
+     "bible": "Eight people: Noah, his wife, three sons and their wives (Genesis 7:13; 1 Peter 3:20).",
+     "quran": "His family, except those condemned, plus the believers, who were 'a few' (Quran 11:40). No number is given."
+    },
+    {
+     "point": "Where the ship lands",
+     "bible": "'On Ararat's mountains' (Genesis 8:4).",
+     "quran": "On 'Judiyy' (Mount Judi) (Quran 11:44)."
+    },
+    {
+     "point": "God's feelings and the promise afterwards",
+     "bible": "God 'was sorry that he had made man' (Genesis 6:6), and afterwards promises never to send such a flood again, with the rainbow as the sign (Genesis 9:11-17).",
+     "quran": "Neither God's regret nor the rainbow covenant is mentioned. The flood is a punishment for those who rejected their messenger (Quran 11:44; Quran 71:25)."
+    },
+    {
+     "point": "Noah's drunkenness",
+     "bible": "After the flood Noah gets drunk, lies uncovered in his tent, and curses Canaan (Genesis 9:20-27).",
+     "quran": "Not in the Quran.",
+     "note": "Muslims hold that prophets are protected from shameful acts like this, so they do not accept this part of the Genesis account."
+    }
+   ]
+  },
+  {
+   "id": "abraham-and-the-idols",
+   "title": "Abraham and the idols",
+   "summary": "Young Abraham argues with his father and people about idols, smashes them, and is thrown into a fire that does not harm him. The Quran tells this story; the Bible does not, but Jewish Midrash does.",
+   "bible": {
+    "refs": [
+     "Genesis 11:27-32",
+     "Genesis 12:1-5",
+     "Joshua 24:2"
+    ],
+    "telling": "Genesis does not contain this story. It says only that Abram's father Terah took the family from Ur of the Chaldees to Haran, and that Abram's brother Haran died in Ur (Genesis 11:28; Genesis 11:31). God then tells Abram to leave his country and his father's house, and he goes with his nephew Lot (Genesis 12:1-4). The only hint of idols comes much later, when Joshua says Terah and his family 'served other gods' beyond the River (Joshua 24:2). The Bible says nothing about smashed idols or a furnace."
+   },
+   "quran": {
+    "refs": [
+     "Quran 21:51-70",
+     "Quran 37:83-98",
+     "Quran 6:74-83",
+     "Quran 19:41-50",
+     "Quran 26:69-89",
+     "Quran 29:16-26"
+    ],
+    "telling": "Abraham asks his father and his people why they worship statues, and they answer that their fathers did (Quran 21:52-53). When they are away he breaks the idols into pieces but leaves the biggest one (Quran 21:57-58). Asked who did it, he says, 'This, the largest of them, did it, so ask them, if they can speak,' and they admit that idols cannot talk (Quran 21:62-65). They decide to burn him, but God says, 'O fire, be coolness and safety upon Abraham' (Quran 21:68-69). His father threatens to stone him, and Abraham leaves, promising to pray for him (Quran 19:46-48)."
+   },
+   "jewish": {
+    "refs": [],
+    "telling": "Genesis Rabbah 38:13 tells a very similar story. Terah sells idols and leaves Abraham in charge of the shop; Abraham smashes them with a club, puts the club in the hand of the largest, and tells his father the big idol did it. Terah hands him to King Nimrod, who throws him into a fiery furnace, and he comes out unharmed. The Midrash uses the story to explain why Haran died 'in the presence of his father' (Genesis 11:28): Haran was thrown into the fire after Abraham and did not survive."
+   },
+   "shared": [
+    "Abraham's family worshipped other gods before God called him (Joshua 24:2; Quran 21:52-53).",
+    "Abraham leaves his homeland and his father's house.",
+    "Lot goes with him (Genesis 12:4; Quran 21:71; Quran 29:26).",
+    "Abraham is remembered as the man who turned to the one God."
+   ],
+   "differences": [
+    {
+     "point": "Is the story in scripture?",
+     "bible": "No. It is not in Genesis or anywhere else in the Bible. It appears in Jewish Midrash (Genesis Rabbah 38:13).",
+     "quran": "Yes, told at length in Quran 21:51-70 and Quran 37:83-98, and referred to in Quran 29:24.",
+     "note": "Critics say the Quran is retelling a rabbinic legend. Muslims say the Quran is restoring a true event that the Bible left out, and that the Midrash kept a memory of it."
+    },
+    {
+     "point": "His father's name",
+     "bible": "Terah (Genesis 11:26-27).",
+     "quran": "Azar (Quran 6:74).",
+     "note": "Muslim scholars have explained the difference in several ways, for example that Azar is a second name or a title, or refers to another relative."
+    },
+    {
+     "point": "The fire",
+     "bible": "Not mentioned. In the Midrash it is Nimrod's furnace.",
+     "quran": "His people build a furnace and throw him in; God orders the fire to be cool and safe (Quran 21:68-69; Quran 37:97-98). The king is not named."
+    },
+    {
+     "point": "How the idols are broken",
+     "bible": "Not mentioned. In the Midrash it happens in his father's idol shop and he blames the largest idol when speaking to his father.",
+     "quran": "It happens when the people have gone away; he leaves the largest idol standing and blames it before the whole crowd (Quran 21:57-63)."
+    },
+    {
+     "point": "Why Abraham leaves home",
+     "bible": "God calls him and promises to make him a great nation (Genesis 12:1-3). No conflict with his family is described.",
+     "quran": "He leaves after his people try to kill him and his father threatens to stone him (Quran 19:46-48; Quran 29:24-26)."
+    },
+    {
+     "point": "How he comes to believe",
+     "bible": "Genesis does not explain it; God simply speaks to him (Genesis 12:1).",
+     "quran": "He looks at a star, the moon and the sun, sees each one set, and turns to the One who made them (Quran 6:76-79)."
+    }
+   ]
+  },
+  {
+   "id": "abrahams-sacrifice",
+   "title": "Abraham's sacrifice of his son",
+   "summary": "God tests Abraham by asking him to sacrifice his son. Abraham obeys, and at the last moment the son is spared and an animal is offered instead.",
+   "bible": {
+    "refs": [
+     "Genesis 22:1-19",
+     "Hebrews 11:17-19"
+    ],
+    "telling": "God tells Abraham, 'Take your son, your only son, whom you love, even Isaac', and offer him as a burnt offering in the land of Moriah (Genesis 22:2). They travel three days. Isaac carries the wood and asks where the lamb is, and Abraham answers that God will provide it (Genesis 22:6-8). Abraham binds Isaac on the altar and takes the knife, but an angel calls out to stop him (Genesis 22:9-12). He sacrifices a ram caught in a thicket instead, and God swears to bless him and his descendants (Genesis 22:13-18). The New Testament says Abraham believed God could raise Isaac from the dead (Hebrews 11:19)."
+   },
+   "quran": {
+    "refs": [
+     "Quran 37:99-113"
+    ],
+    "telling": "Abraham prays for a righteous child and is given 'a forbearing boy' (Quran 37:100-101). When the boy is old enough to work with him, Abraham tells him he has seen in a dream that he is sacrificing him and asks what he thinks; the son answers, 'O my father, do as you are commanded' (Quran 37:102). When both have submitted and Abraham has laid him face down, God calls out that he has fulfilled the vision (Quran 37:103-105). God ransoms the son with 'a great sacrifice' (Quran 37:107). The passage then says, 'And We gave him good tidings of Isaac' (Quran 37:112)."
+   },
+   "jewish": {
+    "refs": [],
+    "telling": "Jews call this story the Akedah, the 'binding' of Isaac. Genesis Rabbah 56:8 makes Isaac a grown man of thirty-seven who asks his father to tie him tightly so that he will not flinch, so in the Midrash, as in the Quran, the son agrees to the sacrifice. The Talmud (Sanhedrin 89b) adds that Satan met Abraham on the road and tried to talk him out of it."
+   },
+   "shared": [
+    "It is a test of Abraham from God (Genesis 22:1; Quran 37:106).",
+    "Abraham is ready to obey and gets as far as laying his son down.",
+    "God stops the sacrifice and the son lives.",
+    "An animal is sacrificed in his place.",
+    "Abraham is praised and blessed for his obedience."
+   ],
+   "differences": [
+    {
+     "point": "Which son",
+     "bible": "Isaac, named in the command itself (Genesis 22:2) and again in Hebrews 11:17 and James 2:21.",
+     "quran": "Not named in the passage. Most Muslim scholars say Ishmael, partly because the news of Isaac's birth comes after the story (Quran 37:112). Some early Muslim commentators said Isaac.",
+     "note": "This is the best-known difference between the two accounts."
+    },
+    {
+     "point": "'Your only son'",
+     "bible": "God says 'your only son' (Genesis 22:2). Jews and Christians note that Ishmael had already been sent away (Genesis 21:14) and that the promise was to run through Isaac (Genesis 21:12).",
+     "quran": "The phrase is not in the Quran. Muslims argue that 'only son' can only fit Ishmael, the firstborn, since Isaac was never Abraham's only son."
+    },
+    {
+     "point": "How the command comes",
+     "bible": "God speaks to Abraham directly (Genesis 22:1-2).",
+     "quran": "Abraham sees it in a dream (Quran 37:102)."
+    },
+    {
+     "point": "Does the son know?",
+     "bible": "Isaac asks where the lamb is and is told only that God will provide (Genesis 22:7-8). He is bound on the altar (Genesis 22:9).",
+     "quran": "Abraham tells his son the dream and asks his opinion; the son agrees and both submit (Quran 37:102-103)."
+    },
+    {
+     "point": "The substitute",
+     "bible": "A ram caught by its horns in a thicket (Genesis 22:13).",
+     "quran": "'A great sacrifice' (Quran 37:107). The animal is not described; Muslim tradition says a ram."
+    },
+    {
+     "point": "The place",
+     "bible": "The land of Moriah (Genesis 22:2). The Bible later names Mount Moriah as the site of the Temple in Jerusalem (2 Chronicles 3:1).",
+     "quran": "No place is named. Muslim tradition places it near Mecca."
+    },
+    {
+     "point": "How it is remembered",
+     "bible": "Jews read it as the Akedah, the model of faithfulness. Christians also see in it a picture of God giving his own Son (Hebrews 11:17-19).",
+     "quran": "Muslims remember it each year at Eid al-Adha, the festival of sacrifice."
+    }
+   ]
+  },
+  {
+   "id": "lot-and-sodom",
+   "title": "Lot and Sodom",
+   "summary": "Angels visit Abraham and then Lot. The men of Lot's city try to seize the visitors, and God destroys the city while Lot escapes. His wife does not.",
+   "bible": {
+    "refs": [
+     "Genesis 18:1-33",
+     "Genesis 19:1-38"
+    ],
+    "telling": "Three visitors eat with Abraham and promise that Sarah will have a son; Sarah laughs (Genesis 18:8-12). Abraham then bargains with God, who agrees to spare Sodom if ten righteous people are found there (Genesis 18:23-32). Two angels come to Lot's house, and the men of the city surround it and demand the guests. Lot offers his two daughters instead, and the angels strike the crowd blind (Genesis 19:4-11). The angels lead Lot, his wife and two daughters out. God rains sulfur and fire, and Lot's wife looks back and becomes a pillar of salt (Genesis 19:24-26). Later, in a cave, Lot's daughters make him drunk and become pregnant by him (Genesis 19:30-36)."
+   },
+   "quran": {
+    "refs": [
+     "Quran 11:69-83",
+     "Quran 15:51-77",
+     "Quran 7:80-84",
+     "Quran 26:160-175",
+     "Quran 29:28-35",
+     "Quran 54:33-39"
+    ],
+    "telling": "Lot is a messenger sent to his people, and he warns them against approaching men with desire instead of women (Quran 26:160-166; Quran 7:80-81). They threaten to drive him out (Quran 7:82). Angels first visit Abraham, who offers a roasted calf they do not touch, and they give news of Isaac (Quran 11:69-71). When they reach Lot, the townsmen rush to his house; he says, 'These are my daughters; they are purer for you' (Quran 11:77-78). The angels tell him to leave by night with his family, except his wife (Quran 11:81). The city is turned upside down and stones of baked clay rain on it (Quran 11:82)."
+   },
+   "jewish": {
+    "refs": [],
+    "telling": ""
+   },
+   "shared": [
+    "Heavenly visitors come to Abraham and tell him he will have a son in old age, then go on to Lot.",
+    "The men of Lot's city come to his house wanting his guests.",
+    "Lot tries to protect the guests and mentions his daughters (Genesis 19:8; Quran 11:78).",
+    "The attackers are struck blind (Genesis 19:11; Quran 54:37).",
+    "Lot and his family leave before morning with an order not to look back, and the city is destroyed from the sky.",
+    "Lot's wife is not saved."
+   ],
+   "differences": [
+    {
+     "point": "Who Lot is",
+     "bible": "Abraham's nephew (Genesis 11:27), living in Sodom (Genesis 19:1). He is not called a prophet, though 2 Peter 2:7 calls him 'righteous Lot'.",
+     "quran": "A messenger of God sent to warn his people (Quran 26:160-163)."
+    },
+    {
+     "point": "What happens afterwards",
+     "bible": "Lot's daughters get him drunk and each has a son by him, the ancestors of Moab and Ammon (Genesis 19:30-38).",
+     "quran": "Not in the Quran.",
+     "note": "Muslims reject this part as unfitting for a prophet. Jewish and Christian readers note that the Bible records its heroes' failures openly."
+    },
+    {
+     "point": "Lot's wife",
+     "bible": "She leaves with him but looks back and becomes a pillar of salt (Genesis 19:26).",
+     "quran": "She is left behind and destroyed with the city (Quran 11:81; Quran 7:83). She is called an example of unbelief (Quran 66:10). No pillar of salt."
+    },
+    {
+     "point": "Abraham's plea for the city",
+     "bible": "Abraham bargains God down from fifty righteous people to ten (Genesis 18:23-32).",
+     "quran": "Abraham begins to argue for Lot's people and is told to stop because the decree is fixed (Quran 11:74-76). He is also assured that Lot will be saved (Quran 29:32)."
+    },
+    {
+     "point": "Do the visitors eat?",
+     "bible": "Yes. Abraham serves them a calf 'and they ate' (Genesis 18:8); they also eat at Lot's house (Genesis 19:3).",
+     "quran": "No. Their hands do not reach for the food, which frightens Abraham (Quran 11:70)."
+    },
+    {
+     "point": "The offer of the daughters",
+     "bible": "Lot offers his two virgin daughters to the crowd to do with as they like (Genesis 19:8).",
+     "quran": "Lot says, 'These are my daughters; they are purer for you' (Quran 11:78; Quran 15:71). Many Muslim commentators read this as an offer of lawful marriage, or as meaning the women of the town."
+    },
+    {
+     "point": "How the city is destroyed",
+     "bible": "Sulfur and fire rain from the sky on Sodom and Gomorrah (Genesis 19:24).",
+     "quran": "The city is turned upside down and stones of baked clay rain down (Quran 11:82; Quran 15:74). The Quran does not name the city."
+    }
+   ]
+  },
+  {
+   "id": "joseph",
+   "title": "Joseph",
+   "summary": "Joseph's jealous brothers get rid of him and he ends up a slave in Egypt. He resists his master's wife, goes to prison, explains the king's dreams, rises to power, and is reunited with his family.",
+   "bible": {
+    "refs": [
+     "Genesis 37:1-36",
+     "Genesis 39:1-23",
+     "Genesis 40:1-23",
+     "Genesis 41:1-57",
+     "Genesis 42:1-38",
+     "Genesis 44:1-34",
+     "Genesis 45:1-28",
+     "Genesis 50:15-21"
+    ],
+    "telling": "Jacob loves Joseph most and gives him a special coat; Joseph tells his brothers two dreams in which they bow to him, and they hate him (Genesis 37:3-11). They throw him into a pit and he is sold for twenty pieces of silver and taken to Egypt, while Jacob is shown the bloodied coat and believes an animal killed him (Genesis 37:28-33). Potiphar's wife tries to seduce him; he runs, leaving his garment in her hand, and she accuses him, so he is jailed (Genesis 39:12-20). He interprets dreams in prison and then Pharaoh's dream of seven fat and seven thin cows, and is put over all Egypt (Genesis 41:1-4; Genesis 41:39-41). His brothers come to buy grain; after testing them with a cup hidden in Benjamin's sack he reveals himself and forgives them (Genesis 44:2; Genesis 45:3-5). He tells them, 'You meant evil against me, but God meant it for good' (Genesis 50:20)."
+   },
+   "quran": {
+    "refs": [
+     "Quran 12:1-111"
+    ],
+    "telling": "A whole chapter, Surah Yusuf, tells this as one continuous story and calls it 'the best of stories' (Quran 12:3). Joseph dreams of eleven stars, the sun and the moon bowing to him, and his father warns him not to tell his brothers (Quran 12:4-5). The brothers drop him in a well and bring back a shirt with false blood, but Jacob does not believe them (Quran 12:15-18). In Egypt his master's wife tries to seduce him; his shirt is torn from the back, which proves he was running away (Quran 12:23-28). He is jailed anyway, interprets the king's dream, and insists on being cleared before he leaves prison (Quran 12:35; Quran 12:50-51). At the end he sends his shirt to heal his father's blindness, and his parents and brothers bow before him (Quran 12:93-100)."
+   },
+   "jewish": {
+    "refs": [],
+    "telling": "Two details that are in the Quran but not in Genesis also appear in rabbinic sources. Midrash Tanchuma (Vayeshev 5) says Potiphar's wife gave Egyptian women citrons and knives, and they cut their hands when they saw Joseph, like the banquet in Quran 12:31. The Talmud (Sotah 36b) says that at the moment of temptation Joseph saw his father's image in the window, which stopped him; Quran 12:24 says he would have inclined to her 'had he not seen the proof of his Lord'."
+   },
+   "shared": [
+    "Joseph is his father's favourite, and his dream shows his family bowing to him.",
+    "His brothers plot against him, put him in a pit or well, and bring their father a blood-stained garment.",
+    "He is sold as a slave in Egypt, and his master's wife tries to seduce him and fails.",
+    "In prison he explains the dreams of two fellow prisoners, and later the ruler's dream of seven fat and seven lean cows.",
+    "He is put in charge of Egypt's grain; his brothers come and do not recognise him.",
+    "A cup is hidden in his younger brother's bag, he finally reveals himself, forgives them, and the family moves to Egypt."
+   ],
+   "differences": [
+    {
+     "point": "The dreams",
+     "bible": "Two dreams, sheaves and then stars, and Joseph tells them to his brothers (Genesis 37:5-9). His father rebukes him (Genesis 37:10).",
+     "quran": "One dream, of stars, sun and moon (Quran 12:4). His father understands it and tells him to keep it from his brothers (Quran 12:5-6)."
+    },
+    {
+     "point": "Does Jacob believe the brothers?",
+     "bible": "Yes. He recognises the coat and says, 'Joseph is without doubt torn in pieces' (Genesis 37:33).",
+     "quran": "No. He says, 'Your souls have enticed you to something', and chooses patience (Quran 12:18)."
+    },
+    {
+     "point": "How Joseph is sold",
+     "bible": "He is sold for twenty pieces of silver and taken to Egypt by Ishmaelite and Midianite traders (Genesis 37:27-28).",
+     "quran": "Travellers find him when they let a bucket down the well, hide him as merchandise and sell him for 'a few dirhams' (Quran 12:19-20). The brothers do not sell him."
+    },
+    {
+     "point": "The evidence in the seduction scene",
+     "bible": "Joseph's garment is left in her hand and she uses it as evidence against him. Her husband believes her and jails him (Genesis 39:12-20).",
+     "quran": "His shirt is torn from the back, a witness from her household points this out, and her husband accepts that she is lying (Quran 12:25-29). Joseph is jailed later anyway (Quran 12:35)."
+    },
+    {
+     "point": "The women of the city",
+     "bible": "Not in Genesis.",
+     "quran": "The wife invites the women who gossiped about her, hands them knives, and they cut their hands when Joseph walks in (Quran 12:30-32). Later the women and the wife admit he was innocent (Quran 12:51)."
+    },
+    {
+     "point": "Jacob's blindness and the shirt",
+     "bible": "Not in Genesis. Jacob is revived by the news and by the wagons Joseph sent (Genesis 45:27).",
+     "quran": "Jacob's eyes turn white with grief (Quran 12:84). Joseph's shirt is laid on his face and he sees again (Quran 12:93-96)."
+    },
+    {
+     "point": "Names and titles",
+     "bible": "The master is Potiphar and the ruler is called Pharaoh (Genesis 39:1; Genesis 41:14). Joseph's mother Rachel has died before the story begins (Genesis 35:19).",
+     "quran": "The master is 'al-Aziz' and the ruler is 'the king', never Pharaoh (Quran 12:30; Quran 12:43). Joseph raises 'his parents' on the throne (Quran 12:100)."
+    }
+   ]
+  },
+  {
+   "id": "moses-birth-and-burning-bush",
+   "title": "Moses: his birth and the burning bush",
+   "summary": "Pharaoh is killing Israelite baby boys, so Moses' mother sets him afloat on the river and he grows up in Pharaoh's house. After killing a man he flees to Midian, where God speaks to him from a fire and sends him back.",
+   "bible": {
+    "refs": [
+     "Exodus 1:8-22",
+     "Exodus 2:1-22",
+     "Exodus 3:1-22",
+     "Exodus 4:1-17"
+    ],
+    "telling": "Pharaoh orders every Hebrew boy thrown into the river (Exodus 1:22). Moses' mother hides him for three months, then puts him in a basket among the reeds; Pharaoh's daughter finds him, and his sister arranges for his own mother to nurse him (Exodus 2:2-9). As a man he kills an Egyptian who was beating a Hebrew, hides the body in the sand, and flees to Midian, where he marries Zipporah, one of the priest's seven daughters (Exodus 2:11-21). At Mount Horeb he sees a bush that burns without being consumed, and God tells him to take off his sandals and sends him to Pharaoh (Exodus 3:1-10). God gives his name as 'I AM WHO I AM' (Exodus 3:14). Moses is given signs with his staff and his hand, and when he asks God to send someone else, God is angry and appoints Aaron to speak for him (Exodus 4:2-16)."
+   },
+   "quran": {
+    "refs": [
+     "Quran 28:3-35",
+     "Quran 20:9-48",
+     "Quran 27:7-12",
+     "Quran 26:10-17",
+     "Quran 79:15-19"
+    ],
+    "telling": "Pharaoh is slaughtering the sons of one group of his people (Quran 28:4). God inspires Moses' mother to put him in the river and promises to return him to her; Pharaoh's household picks him up and Pharaoh's wife asks to keep him (Quran 28:7-9). The baby refuses every wet nurse until his sister leads them to his mother (Quran 28:12-13). As a man he strikes an Egyptian and kills him, asks God's forgiveness and is forgiven, then flees to Madyan and works eight or ten years for an old man whose daughter he marries (Quran 28:15-16; Quran 28:22-28). Travelling with his family he sees a fire, and God calls to him in the sacred valley of Tuwa, 'Indeed, I am Allah', tells him to remove his sandals, and gives him the signs of the staff and the white hand (Quran 20:10-22). Moses asks for his brother Aaron as a helper and God agrees (Quran 20:29-36)."
+   },
+   "jewish": {
+    "refs": [],
+    "telling": "The Talmud (Sotah 12b) says the baby Moses was taken round all the Egyptian wet nurses and would not nurse from any of them, which is why his sister offered a Hebrew nurse. Exodus does not say this, but Quran 28:12 has the same detail."
+   },
+   "shared": [
+    "Pharaoh kills the baby boys of the Israelites and Moses is saved by being put in the river.",
+    "He is taken into Pharaoh's own household, and his sister gets him back to his mother to be nursed.",
+    "He kills an Egyptian, is found out, and flees to Midian, where he helps women water their flock at a well and marries one of them.",
+    "God speaks to him from a fire and tells him to take off his sandals.",
+    "He is given two signs, a staff that becomes a snake and a hand that turns white, and his brother Aaron is sent with him."
+   ],
+   "differences": [
+    {
+     "point": "Who takes the baby in",
+     "bible": "Pharaoh's daughter finds him and adopts him as her son (Exodus 2:5-10).",
+     "quran": "Pharaoh's wife asks Pharaoh to spare him and keep him (Quran 28:9). She is later praised as a believer (Quran 66:11)."
+    },
+    {
+     "point": "His mother",
+     "bible": "She hides him and then makes the basket herself; no message from God is mentioned (Exodus 2:2-3).",
+     "quran": "God inspires her to put him in the river and promises to bring him back and make him a messenger (Quran 28:7; Quran 20:38-39)."
+    },
+    {
+     "point": "The killing of the Egyptian",
+     "bible": "Moses looks around, sees no one, kills the man and hides him in the sand (Exodus 2:12).",
+     "quran": "Moses strikes him and he dies. Moses at once calls it Satan's work and asks forgiveness, and God forgives him (Quran 28:15-16).",
+     "note": "The Quran presents it as unintended; Exodus does not comment on Moses' intention."
+    },
+    {
+     "point": "The family in Midian",
+     "bible": "The priest of Midian, called Reuel and Jethro, has seven daughters. Moses marries Zipporah (Exodus 2:16-21; Exodus 3:1).",
+     "quran": "An old man, not named, has two daughters at the well. He offers Moses one in marriage in return for eight or ten years of work (Quran 28:23-27)."
+    },
+    {
+     "point": "What God says at the fire",
+     "bible": "'I am the God of your father, the God of Abraham, Isaac and Jacob' and 'I AM WHO I AM' (Exodus 3:6; Exodus 3:14). The message is about rescuing Israel from Egypt.",
+     "quran": "'Indeed, I am Allah. There is no deity except Me, so worship Me and establish prayer', followed by a warning about the Hour (Quran 20:14-15)."
+    },
+    {
+     "point": "The white hand",
+     "bible": "His hand becomes 'leprous, as white as snow' and is then restored (Exodus 4:6-7).",
+     "quran": "His hand comes out 'white without disease' (Quran 20:22; Quran 28:32)."
+    },
+    {
+     "point": "Moses and Aaron",
+     "bible": "Moses says he is slow of speech and asks God to send someone else. God's anger burns, and he gives Aaron as spokesman (Exodus 4:10-16).",
+     "quran": "Moses himself asks for Aaron, who is 'more fluent', as his helper, and God grants it without anger (Quran 20:25-36; Quran 28:34-35)."
+    }
+   ]
+  },
+  {
+   "id": "pharaoh-plagues-and-sea",
+   "title": "Pharaoh, the plagues and the sea",
+   "summary": "Moses and Aaron tell Pharaoh to let the Israelites go. He refuses through a series of plagues, chases them to the sea, and is drowned when the water closes.",
+   "bible": {
+    "refs": [
+     "Exodus 5:1-2",
+     "Exodus 7:8-25",
+     "Exodus 8:1-32",
+     "Exodus 9:1-35",
+     "Exodus 10:1-29",
+     "Exodus 12:29-42",
+     "Exodus 14:1-31"
+    ],
+    "telling": "Moses and Aaron say, 'Let my people go', and Pharaoh answers, 'Who is Yahweh, that I should listen to his voice?' (Exodus 5:1-2). Aaron's rod becomes a serpent and swallows the rods of Egypt's magicians (Exodus 7:10-12). Ten plagues follow: blood, frogs, lice, flies, the death of livestock, boils, hail, locusts, darkness, and last the death of every Egyptian firstborn (Exodus 7:20; Exodus 12:29). God says he will harden Pharaoh's heart (Exodus 7:3). Pharaoh lets Israel go, then chases them; God divides the sea with a strong east wind, Israel crosses on dry ground, and the water returns over the Egyptian army so that 'not so much as one of them' remains (Exodus 14:21-28)."
+   },
+   "quran": {
+    "refs": [
+     "Quran 7:103-137",
+     "Quran 10:75-92",
+     "Quran 20:49-79",
+     "Quran 26:16-68",
+     "Quran 28:36-42",
+     "Quran 40:23-46",
+     "Quran 17:101-103"
+    ],
+    "telling": "Moses shows Pharaoh the staff and the white hand, and Pharaoh calls in magicians. When Moses' staff swallows what they made, the magicians bow down and believe, and Pharaoh threatens to cut off their hands and feet and crucify them (Quran 7:106-124). Pharaoh claims to be a god and tells his minister Haman to build a tower so he can look for the God of Moses (Quran 28:38). God sends famine, flood, locusts, lice, frogs and blood, and each time Pharaoh's people promise to believe and then break their word (Quran 7:130-135). Moses strikes the sea with his staff and it parts (Quran 26:63). As Pharaoh drowns he says he believes; God answers, 'Now?', and says his body will be saved as a sign for those after him (Quran 10:90-92)."
+   },
+   "jewish": {
+    "refs": [],
+    "telling": "Exodus does not say what became of Pharaoh himself, and one Midrash fills the gap in a way close to the Quran. Pirkei DeRabbi Eliezer (chapter 43) says Pharaoh repented at the sea, that God delivered him from among the dead, and that he later ruled in Nineveh, where he led the city's repentance in the time of Jonah."
+   },
+   "shared": [
+    "Moses and Aaron ask Pharaoh to let the Children of Israel go, and he refuses.",
+    "Moses' side defeats Pharaoh's magicians when a staff swallows theirs.",
+    "God sends plagues, including blood, frogs, lice and locusts.",
+    "Pharaoh promises to give in when a plague strikes and goes back on it when it lifts.",
+    "The Israelites leave by night, the sea parts for them, and Pharaoh's army is drowned."
+   ],
+   "differences": [
+    {
+     "point": "Pharaoh's last moments",
+     "bible": "Exodus describes the army drowning and Israel seeing 'the Egyptians dead on the seashore' (Exodus 14:28-30). It does not report any words from Pharaoh. Psalms 136:15 says God overthrew 'Pharaoh and his army' in the sea.",
+     "quran": "As he drowns Pharaoh declares that he believes in the God of the Children of Israel. It is rejected as too late, and God says, 'Today We will save you in body' as a sign (Quran 10:90-92).",
+     "note": "Many Muslims connect this verse with the preserved mummies of Egypt's kings. The verse itself does not say how the body was saved."
+    },
+    {
+     "point": "Haman",
+     "bible": "Haman is not in Exodus. In the Bible he is a minister of the Persian king Ahasuerus, many centuries later (Esther 3:1).",
+     "quran": "Haman is Pharaoh's minister, named six times, and is told to bake bricks and build a tower (Quran 28:6; Quran 28:38; Quran 40:36).",
+     "note": "Critics call this a mix-up with the book of Esther, and compare the tower with Babel (Genesis 11:3-4). Muslims reply that this is a different man with the same name, or an Egyptian title."
+    },
+    {
+     "point": "How many signs",
+     "bible": "Ten plagues (Exodus 7:14 to Exodus 12:30).",
+     "quran": "'Nine evident signs' (Quran 17:101). Quran 7:130-133 lists famine, flood, locusts, lice, frogs and blood; the staff and the hand are usually counted with them."
+    },
+    {
+     "point": "The death of the firstborn",
+     "bible": "The tenth plague kills every firstborn in Egypt, and Israel is protected by the Passover (Exodus 12:29-30).",
+     "quran": "Not mentioned. The Quran has no Passover story."
+    },
+    {
+     "point": "The magicians",
+     "bible": "They copy the first signs, then fail and say, 'This is God's finger' (Exodus 7:11; Exodus 8:19). They are not said to convert.",
+     "quran": "They believe in 'the Lord of Moses and Aaron' at once and accept Pharaoh's threat of crucifixion (Quran 7:120-126; Quran 20:70-73)."
+    },
+    {
+     "point": "Who throws the staff",
+     "bible": "Aaron throws down his rod before Pharaoh (Exodus 7:10).",
+     "quran": "Moses throws his staff (Quran 7:107; Quran 26:32)."
+    },
+    {
+     "point": "Pharaoh's claim and his believing relatives",
+     "bible": "Pharaoh says he does not know Yahweh (Exodus 5:2). No Egyptian at court sides with Moses.",
+     "quran": "Pharaoh says, 'I have not known you to have a god other than me' (Quran 28:38) and 'I am your most exalted lord' (Quran 79:24). A believing man of his family and his own wife take God's side (Quran 40:28; Quran 66:11)."
+    }
+   ]
+  },
+  {
+   "id": "golden-calf",
+   "title": "The golden calf",
+   "summary": "While Moses is away on the mountain for forty days, the Israelites make a calf out of their gold jewellery and worship it. Moses comes back angry and destroys it.",
+   "bible": {
+    "refs": [
+     "Exodus 32:1-35",
+     "Deuteronomy 9:16-21"
+    ],
+    "telling": "The people tell Aaron, 'Come, make us gods'. Aaron collects their gold earrings, shapes a calf, builds an altar in front of it and announces a feast (Exodus 32:1-5). God tells Moses he will destroy the people, and Moses pleads for them (Exodus 32:9-14). Moses comes down, sees the calf and the dancing, and smashes the stone tablets (Exodus 32:19). He burns the calf, grinds it to powder, scatters it on water and makes the people drink it (Exodus 32:20). Aaron says he threw the gold in the fire 'and out came this calf' (Exodus 32:24). The Levites kill about three thousand men, and God sends a plague (Exodus 32:26-28; Exodus 32:35)."
+   },
+   "quran": {
+    "refs": [
+     "Quran 20:83-98",
+     "Quran 7:148-154",
+     "Quran 2:51-54"
+    ],
+    "telling": "God tells Moses on the mountain that 'the Samiri has led them astray' (Quran 20:85). The people threw their ornaments into the fire and the Samiri brought out a calf that made a lowing sound (Quran 20:87-88; Quran 7:148). Aaron had told them it was only a test and ordered them to follow him, but they refused to stop until Moses came back (Quran 20:90-91). Moses returns angry, throws down the tablets, and seizes his brother by the head; Aaron says the people overpowered him and nearly killed him (Quran 7:150). The Samiri says he took a handful from 'the track of the messenger' and threw it in; Moses banishes him and says the calf will be burned and scattered in the sea (Quran 20:95-97). The people repent and God forgives them (Quran 2:52-54)."
+   },
+   "jewish": {
+    "refs": [],
+    "telling": "Rabbinic tradition also softens Aaron's part. The Talmud (Sanhedrin 7a) says the people had already killed Hur for opposing them, and Aaron gave in because he feared they would kill him too and be left with a sin beyond repair. Pirkei DeRabbi Eliezer (chapter 45) says the calf came out of the fire lowing, a detail also found in Quran 7:148 and Quran 20:88, and that the angel Sammael entered it to mislead Israel."
+   },
+   "shared": [
+    "Moses is away with God for forty days and nights (Exodus 24:18; Quran 7:142).",
+    "The people make a calf from their gold ornaments and worship it.",
+    "Moses has left Aaron in charge (Exodus 24:14; Quran 7:142), and the calf is made while he is gone.",
+    "Moses returns furious, with the tablets in his hands, and confronts Aaron.",
+    "The calf is burned and destroyed, the worshippers are punished, and Moses prays for forgiveness."
+   ],
+   "differences": [
+    {
+     "point": "Who makes the calf",
+     "bible": "Aaron. He asks for the gold and shapes it (Exodus 32:2-4); the text speaks of 'the calf, which Aaron made' (Exodus 32:35).",
+     "quran": "A man called the Samiri (Quran 20:85-88; Quran 20:95-96). Aaron does not make it.",
+     "note": "This is the main difference. In Islam Aaron is a prophet and cannot have made an idol."
+    },
+    {
+     "point": "What Aaron does",
+     "bible": "He builds an altar before the calf and proclaims a feast (Exodus 32:5). God is 'angry enough with Aaron to destroy him' (Deuteronomy 9:20).",
+     "quran": "He warns the people and tells them to obey him (Quran 20:90). He holds back only because he fears splitting the people and being killed (Quran 20:94; Quran 7:150)."
+    },
+    {
+     "point": "The Samiri",
+     "bible": "Not in the Bible.",
+     "quran": "He explains that he threw in a handful from the messenger's track; his punishment is to say 'No contact' for the rest of his life (Quran 20:96-97).",
+     "note": "Critics connect the name with Samaria or the Samaritans, who appear centuries later. Muslims reply that the name refers to a different people or place, or to an individual."
+    },
+    {
+     "point": "A calf that makes a sound",
+     "bible": "The calf is a metal statue and makes no sound.",
+     "quran": "It has 'a lowing sound', but cannot speak or guide (Quran 7:148; Quran 20:88-89)."
+    },
+    {
+     "point": "The tablets",
+     "bible": "Moses throws them down and they break; new ones are cut later (Exodus 32:19; Exodus 34:1).",
+     "quran": "Moses throws them down and later picks them up again (Quran 7:150; Quran 7:154). The Quran does not say they broke."
+    },
+    {
+     "point": "The punishment",
+     "bible": "The people drink the powdered calf, the Levites kill about three thousand, and God sends a plague (Exodus 32:20; Exodus 32:27-28; Exodus 32:35).",
+     "quran": "Moses tells the people to repent and 'kill yourselves', and God accepts their repentance (Quran 2:54). No number is given. The calf's ashes go into the sea (Quran 20:97)."
+    },
+    {
+     "point": "Moses and Aaron face to face",
+     "bible": "Moses questions Aaron, and Aaron blames the people (Exodus 32:21-24).",
+     "quran": "Moses grabs Aaron by the head and beard. Aaron pleads, 'O son of my mother', and Moses then prays for both of them (Quran 7:150-151; Quran 20:94)."
+    }
+   ]
+  },
+  {
+   "id": "david-and-solomon",
+   "title": "David and Solomon",
+   "summary": "David and his son Solomon rule Israel with God-given wisdom. The Bible also records serious sins by both kings; the Quran presents both as faithful prophets.",
+   "bible": {
+    "refs": [
+     "2 Samuel 11:1-27",
+     "2 Samuel 12:1-25",
+     "1 Kings 3:5-14",
+     "1 Kings 10:1-13",
+     "1 Kings 11:1-13"
+    ],
+    "telling": "David sees Bathsheba bathing, sleeps with her while her husband Uriah is at war, and she becomes pregnant (2 Samuel 11:2-5). David has Uriah placed in the fiercest fighting so that he is killed, then marries her (2 Samuel 11:14-17; 2 Samuel 11:27). The prophet Nathan tells him a story about a rich man who took a poor man's only lamb, and says, 'You are the man' (2 Samuel 12:1-7). David confesses and is forgiven, but the child dies and Nathan says the sword will never leave his house (2 Samuel 12:10-18). Solomon asks God for wisdom and receives it, and the queen of Sheba comes to test him with hard questions (1 Kings 3:9-12; 1 Kings 10:1-9). In old age his many foreign wives turn his heart to other gods, and God says the kingdom will be torn from his son (1 Kings 11:4-12)."
+   },
+   "quran": {
+    "refs": [
+     "Quran 38:17-26",
+     "Quran 38:30-40",
+     "Quran 27:15-44",
+     "Quran 2:102",
+     "Quran 21:78-82",
+     "Quran 34:10-14"
+    ],
+    "telling": "David is a strong and devout servant; the mountains and birds praise God with him (Quran 38:17-19). Two men climb into his prayer room with a dispute: one has ninety-nine ewes and has demanded the other's single ewe. David gives judgement, then realises he has been tested, asks forgiveness and bows down, and God forgives him (Quran 38:21-25). Solomon inherits from David, understands the speech of birds, and commands an army of jinn, men and birds; an ant warns its colony as they pass (Quran 27:16-19). A hoopoe brings news of a queen in Sheba who worships the sun; Solomon writes to her, has her throne brought in an instant, and she submits to God (Quran 27:22-44). The Quran states that 'it was not Solomon who disbelieved' (Quran 2:102)."
+   },
+   "jewish": {
+    "refs": [],
+    "telling": "The Talmud contains a defence of both kings that is close to the Quran's view. In Shabbat 56a one rabbi says, 'Anyone who says that David sinned with Bathsheba is nothing other than mistaken', and Shabbat 56b says the same of Solomon and explains that he was blamed only for not stopping his wives. Other rabbis in the same discussion read the texts more plainly. The Talmud (Gittin 68b) also tells how the demon Ashmedai threw Solomon far away and sat on his throne for a time. Targum Sheni to Esther has Solomon send a letter, tied to the wing of a bird, to the Queen of Sheba in her city."
+   },
+   "shared": [
+    "David is a king chosen by God, and he killed Goliath (1 Samuel 17:50; Quran 2:251).",
+    "David hears a story of a man with many sheep taking a poor man's only one, sees it is about himself, repents, and is forgiven (2 Samuel 12:1-13; Quran 38:21-25).",
+    "Solomon is David's son and heir and is famous for wisdom given by God.",
+    "The queen of Sheba visits Solomon and is deeply impressed.",
+    "Solomon is very rich and carries out great building works."
+   ],
+   "differences": [
+    {
+     "point": "Bathsheba and Uriah",
+     "bible": "Told in full: adultery, a pregnancy, and the arranged death of her husband (2 Samuel 11:2-17). 'The thing that David had done displeased Yahweh' (2 Samuel 11:27).",
+     "quran": "Not mentioned. The Quran gives only the two litigants and David asking forgiveness, without naming a sin (Quran 38:21-24).",
+     "note": "Many Muslim scholars reject the Bathsheba story as unworthy of a prophet and take David's fault to be something smaller, such as judging too quickly."
+    },
+    {
+     "point": "Who tells the sheep story",
+     "bible": "The prophet Nathan, sent by God to accuse David (2 Samuel 12:1). It is one rich man and one poor man with a single lamb.",
+     "quran": "Two disputants who climb over the wall of his prayer chamber; one has ninety-nine ewes and the other one (Quran 38:21-23)."
+    },
+    {
+     "point": "What follows David's repentance",
+     "bible": "He is forgiven, but the child dies and trouble is promised for his family (2 Samuel 12:10-14).",
+     "quran": "He is forgiven and promised 'nearness to Us and a good place of return' (Quran 38:25). No punishment is mentioned."
+    },
+    {
+     "point": "Solomon and idols",
+     "bible": "His wives turn his heart 'after other gods', he builds shrines for them, and God is angry with him (1 Kings 11:4-9).",
+     "quran": "'It was not Solomon who disbelieved, but the devils disbelieved' (Quran 2:102). He is 'an excellent servant' (Quran 38:30).",
+     "note": "Quran 38:34 says Solomon was tested and 'a body' was placed on his throne, then he returned. The Quran does not explain it further."
+    },
+    {
+     "point": "The queen of Sheba",
+     "bible": "She hears of his fame, comes with gifts to test him, praises his God, and goes home (1 Kings 10:1-13).",
+     "quran": "A hoopoe finds her; Solomon sends a letter calling her to submit; her throne is brought to him; she mistakes a glass floor for water; she submits to God with Solomon (Quran 27:22-44)."
+    },
+    {
+     "point": "Solomon's powers",
+     "bible": "He has wisdom, wealth, and knowledge of plants and animals (1 Kings 4:29-33).",
+     "quran": "He understands birds and ants, and commands the wind and the jinn, who build for him and dive for him (Quran 27:16-19; Quran 34:12-13; Quran 38:36-38)."
+    },
+    {
+     "point": "What they are",
+     "bible": "Kings of Israel. David is the author of many psalms, and Psalms 51:1-4 is traditionally read as his prayer of repentance after Bathsheba.",
+     "quran": "Prophets as well as kings. David is given the Psalms and Solomon is listed among those who received revelation (Quran 4:163)."
+    }
+   ]
+  },
+  {
+   "id": "jonah",
+   "title": "Jonah",
+   "summary": "A prophet runs away, boards a ship, is thrown into the sea and swallowed by a great fish. He prays, is brought back to land, and the people he was sent to repent and are spared.",
+   "bible": {
+    "refs": [
+     "Jonah 1:1-17",
+     "Jonah 2:1-10",
+     "Jonah 3:1-10",
+     "Jonah 4:1-11",
+     "Matthew 12:39-41"
+    ],
+    "telling": "God sends Jonah to preach against Nineveh, but he boards a ship going the other way (Jonah 1:1-3). A storm rises, the sailors cast lots, the lot falls on Jonah, and at his own word they throw him overboard (Jonah 1:7-15). A great fish swallows him for three days and three nights; he prays, and it vomits him onto dry land (Jonah 1:17; Jonah 2:10). He preaches in Nineveh, the whole city repents from the king down, and God spares it (Jonah 3:4-10). Jonah is angry at this mercy. God grows a plant to shade him, lets it wither, and asks why he pities a plant but not a city of more than 120,000 people (Jonah 4:1-11). Jesus calls Jonah's three days in the fish a sign of his own burial (Matthew 12:40)."
+   },
+   "quran": {
+    "refs": [
+     "Quran 37:139-148",
+     "Quran 21:87-88",
+     "Quran 68:48-50",
+     "Quran 10:98"
+    ],
+    "telling": "Jonah is one of the messengers. He 'ran away to the laden ship', drew lots and lost, and the fish swallowed him while he was to blame (Quran 37:139-142). In the darkness he called out, 'There is no deity except You; exalted are You. Indeed, I have been of the wrongdoers', and God saved him (Quran 21:87-88). If he had not been one who praised God he would have stayed in its belly until the Day of Resurrection (Quran 37:143-144). He was thrown onto the open shore, sick, and God made a gourd plant grow over him (Quran 37:145-146). He was sent to a hundred thousand people or more; they believed and were left to enjoy life for a time (Quran 37:147-148)."
+   },
+   "jewish": {
+    "refs": [],
+    "telling": "The book of Jonah is read in synagogues on the afternoon of Yom Kippur, the Day of Atonement, because it tells of Nineveh's repentance (Talmud, Megillah 31a). Pirkei DeRabbi Eliezer (chapter 10) adds that the fish had been prepared for Jonah since the six days of creation and that its eyes were like windows giving him light."
+   },
+   "shared": [
+    "Jonah is a prophet who goes off when he should not have and boards a ship.",
+    "Lots are cast and he ends up in the sea, swallowed by a great fish.",
+    "He prays inside the fish and God rescues him.",
+    "He is put back on land, and a plant grows to cover him.",
+    "His people, more than a hundred thousand of them, believe, and God holds back their punishment."
+   ],
+   "differences": [
+    {
+     "point": "How much is told",
+     "bible": "A complete book of four chapters with dialogue, a psalm and an ending.",
+     "quran": "A few short passages. There is a chapter named after Jonah (chapter 10), but it gives him one verse (Quran 10:98)."
+    },
+    {
+     "point": "The city",
+     "bible": "Nineveh, named throughout (Jonah 1:2; Jonah 3:3).",
+     "quran": "Not named: 'the people of Jonah' (Quran 10:98)."
+    },
+    {
+     "point": "Why he runs",
+     "bible": "God orders him to Nineveh and he flees 'from the presence of Yahweh'. He later says he fled because he knew God would forgive the city (Jonah 1:3; Jonah 4:2).",
+     "quran": "He 'went off in anger and thought that We would not decree anything upon him' (Quran 21:87). The reason for his anger is not explained."
+    },
+    {
+     "point": "The plant",
+     "bible": "It grows after Nineveh is spared, to shade Jonah, and then withers. God uses it to teach him about pity (Jonah 4:6-11).",
+     "quran": "It grows over him when he is thrown ashore, sick (Quran 37:145-146). No withering and no lesson is attached."
+    },
+    {
+     "point": "Jonah's anger at God's mercy",
+     "bible": "Jonah is 'exceedingly' displeased that Nineveh is spared and asks to die (Jonah 4:1-3). The book ends with God's question to him.",
+     "quran": "Not told. The story ends: 'his Lord chose him and made him of the righteous' (Quran 68:50).",
+     "note": "The Quran does tell Muhammad not to be like 'the companion of the fish' in his impatience (Quran 68:48)."
+    },
+    {
+     "point": "Three days",
+     "bible": "Jonah is in the fish 'three days and three nights' (Jonah 1:17). Jesus makes this a sign of his own death and resurrection (Matthew 12:40).",
+     "quran": "No length of time is given, and the story is not connected to Jesus."
+    }
+   ]
+  },
+  {
+   "id": "mary-and-birth-of-jesus",
+   "title": "Mary and the birth of Jesus",
+   "summary": "An angel tells Mary, a virgin, that she will have a son by God's power. She gives birth to Jesus.",
+   "bible": {
+    "refs": [
+     "Luke 1:5-38",
+     "Luke 2:1-20",
+     "Matthew 1:18-25",
+     "Matthew 2:1-16"
+    ],
+    "telling": "The angel Gabriel comes to Mary, a virgin in Nazareth engaged to a man named Joseph, and tells her she will bear a son called Jesus, who 'will be called the Son of the Most High' (Luke 1:26-32). She asks how, since she is a virgin, and is told the Holy Spirit will come upon her (Luke 1:34-35). An angel tells Joseph in a dream not to be afraid to take Mary as his wife (Matthew 1:20-21). They travel to Bethlehem for a census, and Jesus is born there and laid in a feeding trough; shepherds are told by angels and come to see him (Luke 2:4-16). Wise men from the east follow a star and bring gifts, and the family flees to Egypt because King Herod wants to kill the child (Matthew 2:1-2; Matthew 2:11-14)."
+   },
+   "quran": {
+    "refs": [
+     "Quran 3:35-47",
+     "Quran 19:16-34",
+     "Quran 66:12",
+     "Quran 21:91"
+    ],
+    "telling": "Mary's mother, the wife of Imran, dedicates her unborn child to God. Mary grows up in the sanctuary in the care of Zechariah, who finds food with her that she says is from God (Quran 3:35-37). Angels tell her God has chosen her above the women of the worlds and will give her a son, the Messiah, Jesus (Quran 3:42-45). She asks how, when no man has touched her, and is told God only says 'Be' and it is (Quran 3:47). She withdraws to a remote place, and the pains of birth drive her to a palm tree, where a voice tells her to shake it for fresh dates and shows her a stream (Quran 19:22-26). When she brings the baby home and her people accuse her, the infant speaks from the cradle: 'Indeed, I am the servant of Allah. He has given me the Scripture and made me a prophet' (Quran 19:27-30)."
+   },
+   "jewish": {
+    "refs": [
+     "Isaiah 7:14"
+    ],
+    "telling": "Judaism does not accept the virgin birth or that Jesus was the Messiah, and Mary has no place in Jewish scripture. Matthew 1:23 quotes Isaiah 7:14 as 'the virgin shall be with child'. Jewish translations render the Hebrew word there, almah, as 'young woman' and read the verse as a sign for King Ahaz in Isaiah's own time."
+   },
+   "shared": [
+    "Mary is a virgin, chosen and favoured by God (Luke 1:28; Quran 3:42).",
+    "An angel announces that she will have a son, and she asks how this can be when she is a virgin.",
+    "The child is conceived by God's power without a human father.",
+    "The child is Jesus, and he is called the Messiah (Christ).",
+    "Just before this, the aged Zechariah is promised a son, John, and is left unable to speak for a time (Luke 1:18-20; Quran 3:38-41)."
+   ],
+   "differences": [
+    {
+     "point": "Who the child is said to be",
+     "bible": "'Son of the Most High' and 'the Son of God' (Luke 1:32; Luke 1:35); 'Immanuel', meaning 'God with us' (Matthew 1:23).",
+     "quran": "'A word from Him', the Messiah, a servant of God and a prophet (Quran 3:45; Quran 19:30). The passage adds, 'It is not befitting for Allah to take a son' (Quran 19:35).",
+     "note": "Both affirm the virgin birth. They disagree about what it means."
+    },
+    {
+     "point": "Joseph",
+     "bible": "Mary is engaged to Joseph, who is told in a dream to marry her and who protects the family (Matthew 1:18-24).",
+     "quran": "Joseph is never mentioned. Mary appears to be alone at the birth (Quran 19:22-26)."
+    },
+    {
+     "point": "Where and how he is born",
+     "bible": "In Bethlehem, laid in a feeding trough because there was no room at the inn (Luke 2:4-7).",
+     "quran": "In 'a remote place', at the trunk of a palm tree, with dates and a stream provided (Quran 19:22-25). No town is named.",
+     "note": "A similar palm tree miracle appears in the later apocryphal Gospel of Pseudo-Matthew (chapter 20), set during the journey to Egypt rather than at the birth."
+    },
+    {
+     "point": "The baby speaks",
+     "bible": "Not in the New Testament. The first recorded words of Jesus come at age twelve in the temple (Luke 2:42-49).",
+     "quran": "The newborn defends his mother by speaking from the cradle (Quran 19:29-33; Quran 3:46).",
+     "note": "The apocryphal Arabic Infancy Gospel also has Jesus speak in the cradle. Christians do not count that book as scripture."
+    },
+    {
+     "point": "Mary's own childhood",
+     "bible": "Not in the New Testament.",
+     "quran": "Her mother's vow, her upbringing in the sanctuary under Zechariah, the food she received, and the casting of lots over who would care for her (Quran 3:35-37; Quran 3:44).",
+     "note": "Similar stories are in the apocryphal Protoevangelium of James, where Mary lives in the temple and is fed by an angel."
+    },
+    {
+     "point": "Visitors and dangers",
+     "bible": "Shepherds, wise men with gifts, Herod's killing of the boys of Bethlehem, and the escape to Egypt (Luke 2:8-16; Matthew 2:11-16).",
+     "quran": "None of these are mentioned. The danger is the accusation from Mary's own people (Quran 19:27-28)."
+    },
+    {
+     "point": "'Sister of Aaron'",
+     "bible": "Mary's parents are not named in the New Testament. In the Old Testament, Miriam is the sister of Aaron and Moses (Exodus 15:20).",
+     "quran": "Mary is addressed as 'sister of Aaron' and called 'daughter of Imran' (Quran 19:28; Quran 66:12).",
+     "note": "Critics say this confuses Mary with Miriam, who lived many centuries earlier. Muslims answer that it is a way of naming her family line, as Luke 1:5 calls Elizabeth one 'of the daughters of Aaron'."
+    }
+   ]
+  },
+  {
+   "id": "jesus-miracles-crucifixion-ascension",
+   "title": "Jesus: miracles, crucifixion and ascension",
+   "summary": "Jesus heals the sick and raises the dead, and is opposed by leaders of his people. The Gospels say he was crucified, died and rose again; the Quran says he was not killed or crucified, and that God raised him up.",
+   "bible": {
+    "refs": [
+     "John 2:1-11",
+     "Matthew 8:2-3",
+     "John 9:1-7",
+     "John 11:38-44",
+     "Matthew 14:15-21",
+     "Matthew 27:27-56",
+     "Mark 15:21-41",
+     "Luke 23:26-49",
+     "John 19:16-37",
+     "Luke 24:1-12",
+     "Luke 24:50-51",
+     "Acts 1:9-11",
+     "1 Corinthians 15:3-8"
+    ],
+    "telling": "Jesus turns water into wine, cleanses a leper, gives sight to a man born blind, raises Lazarus from the tomb and feeds five thousand people with five loaves and two fish (John 2:11; Matthew 8:3; John 9:6-7; John 11:43-44; Matthew 14:19-21). All four Gospels say the Roman governor Pilate handed him over to be crucified and that he died on the cross (Matthew 27:26; Matthew 27:50; Mark 15:37; Luke 23:46; John 19:30). John adds that a soldier pierced his side with a spear to make sure (John 19:33-34). On the third day the tomb is found empty; he appears to his followers, shows them his hands and feet, and eats with them (Luke 24:1-7; Luke 24:39-43). After forty days he is taken up to heaven as they watch (Acts 1:3; Acts 1:9). Paul says the centre of the faith is that 'Christ died for our sins', was buried and was raised (1 Corinthians 15:3-4)."
+   },
+   "quran": {
+    "refs": [
+     "Quran 5:110",
+     "Quran 3:49",
+     "Quran 5:112-115",
+     "Quran 4:157-158",
+     "Quran 3:55",
+     "Quran 19:33",
+     "Quran 5:116-117"
+    ],
+    "telling": "Jesus is a messenger to the Children of Israel, and every miracle is done 'by permission of Allah'. He speaks in the cradle, shapes a bird from clay and breathes life into it, heals the blind and the leper, and raises the dead (Quran 5:110; Quran 3:49). At his disciples' request he prays for a table of food to come down from heaven (Quran 5:112-115). His enemies claimed, 'We have killed the Messiah', but 'they did not kill him, nor did they crucify him; but another was made to resemble him to them' (Quran 4:157). 'Rather, Allah raised him to Himself' (Quran 4:158). On the Day of Judgement Jesus will deny ever telling people to worship him and his mother (Quran 5:116-117)."
+   },
+   "jewish": {
+    "refs": [],
+    "telling": "Judaism does not regard Jesus as the Messiah, a prophet or divine, and the Hebrew Bible does not mention him. One passage in the Talmud (Sanhedrin 43a, in uncensored texts) says that 'Jesus the Nazarene' was put to death on the eve of Passover for sorcery and for leading Israel astray. Scholars disagree about how this passage relates to the Jesus of the Gospels."
+   },
+   "shared": [
+    "Jesus is the Messiah, born of the virgin Mary, and was sent to the people of Israel.",
+    "He heals the blind and lepers and raises the dead.",
+    "He has a group of disciples who believe in him.",
+    "Some of his own people reject him and want him dead.",
+    "He is taken up to God; Christians and Muslims both expect him to return (Acts 1:11)."
+   ],
+   "differences": [
+    {
+     "point": "Was he crucified?",
+     "bible": "Yes. All four Gospels describe it (Matthew 27:35; Mark 15:24; Luke 23:33; John 19:18).",
+     "quran": "No. 'They did not kill him, nor did they crucify him; but another was made to resemble him to them' (Quran 4:157).",
+     "note": "The most common Muslim explanation is that someone else was made to look like Jesus and was crucified in his place. Christians point to the eyewitness claim in John 19:35."
+    },
+    {
+     "point": "Did he die?",
+     "bible": "Yes. He 'gave up his spirit' (John 19:30), a soldier pierced his side (John 19:34), and Pilate checked with the centurion that he was dead (Mark 15:44-45).",
+     "quran": "He was not killed (Quran 4:157). God says, 'I will take you and raise you to Myself' (Quran 3:55), and the infant Jesus speaks of 'the day I will die' (Quran 19:33).",
+     "note": "Most Muslims believe he was raised alive and will die after he returns. Some read Quran 3:55 as meaning God caused him to die a natural death."
+    },
+    {
+     "point": "Resurrection",
+     "bible": "He rises on the third day and appears to many people (Luke 24:6-7; 1 Corinthians 15:4-8). Paul says that without it the faith is empty (1 Corinthians 15:14).",
+     "quran": "There is no death on a cross, so no resurrection from one."
+    },
+    {
+     "point": "How he goes up to heaven",
+     "bible": "Forty days after rising from the dead he is carried up in front of his disciples (Luke 24:50-51; Acts 1:9).",
+     "quran": "God raised him to himself to save him from being killed (Quran 4:158). No witnesses or timing are given."
+    },
+    {
+     "point": "What his death means",
+     "bible": "He 'died for our sins' (1 Corinthians 15:3). The cross is how God forgives.",
+     "quran": "There is no saving death. Each person answers to God, and Jesus' message was 'worship Allah, my Lord and your Lord' (Quran 5:117)."
+    },
+    {
+     "point": "The clay birds and the table",
+     "bible": "Neither is in the New Testament. The Gospels do tell of the feeding of the five thousand (Matthew 14:19-21).",
+     "quran": "Jesus makes a bird from clay that comes alive (Quran 5:110; Quran 3:49) and prays for a table from heaven (Quran 5:112-115).",
+     "note": "The clay bird story is found in the apocryphal Infancy Gospel of Thomas (chapter 2), where the child Jesus makes twelve sparrows. Christians do not count that book as scripture."
+    },
+    {
+     "point": "Whose power and who he is",
+     "bible": "His miracles are 'signs' so that people may believe he is 'the Christ, the Son of God' (John 20:30-31). Thomas calls him 'My Lord and my God' (John 20:28).",
+     "quran": "Every miracle is 'with My permission' (Quran 5:110). He is 'not but a messenger' (Quran 5:75), and those who say God is the Messiah have disbelieved (Quran 5:72)."
+    }
+   ]
+  }
+ ]
+}

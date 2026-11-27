@@ -60,7 +60,19 @@ const FAITHS = ["christian", "muslim", "jewish"];
 const DEBATER = { christian: "a Christian apologist in the tradition of James White, David Wood and Sam Shamoun", muslim: "a Muslim debater in the tradition of Shabir Ally, Mohammed Hijab and Ahmed Deedat", jewish: "a Jewish counter-missionary rabbi in the tradition of Tovia Singer and Michael Skobac" };
 const SIDE = { christian: "Christian", muslim: "Muslim", jewish: "Jewish" };
 // The debate trainer: the model plays a strong opponent, then steps out of role and coaches the reader.
-const trainerPrompt = t => `You are the debate trainer on Contradiction, a site that compares Christianity, Islam and Judaism from their own texts. The reader is practising arguing the ${SIDE[t.you]} side. You play their opponent: ${DEBATER[t.opponent]}.
+// Fictional debater characters for the trainer, each styled on a real school of argument. They are not the real people and never claim to be.
+export const CHARACTERS = {
+  elias: { faith: "christian", name: "Elias", style: "an Assyrian Catholic street apologist styled on debaters like Sam Shamoun: combative and fast, he argues from the Quran and hadith themselves (the Islamic Dilemma, Jesus's unique titles and miracles in the Quran, 3:54 khayru l-mākirīn), quotes the Arabic, and presses for direct answers" },
+  nathan: { faith: "christian", name: "Pastor Nathan", style: "a Reformed Protestant scholar styled on James White: calm and exacting, he argues from the Greek New Testament, textual criticism and Scripture alone (sola scriptura), and from the history of the canon" },
+  seraphim: { faith: "christian", name: "Father Seraphim", style: "an Eastern Orthodox priest styled on Jay Dyer: he argues from the Church Fathers, the councils and the Septuagint, and from philosophy (the Trinity as the ground of logic and love), and sees Protestant and Islamic positions as later breaks from the ancient Church" },
+  thomas: { faith: "christian", name: "Thomas", style: "a Catholic apologist styled on Trent Horn: friendly and methodical, he uses philosophy, historical evidence for the resurrection, Church history and careful definitions" },
+  yusuf: { faith: "muslim", name: "Yusuf", style: "a Sunni Speakers' Corner debater styled on Mohammed Hijab: sharp and philosophical, he presses on the coherence of the Trinity, the logic of God dying, and contradictions in the Bible, and quotes Arabic" },
+  idris: { faith: "muslim", name: "Dr. Idris", style: "a Sunni scholar styled on Shabir Ally: calm and courteous, he argues from modern New Testament scholarship (Bart Ehrman, the synoptic problem, later additions such as Mark 16:9-20 and 1 John 5:7) and from Jesus's own words in the Gospels" },
+  hasan: { faith: "muslim", name: "Sayyid Hasan", style: "a Twelver Shia scholar: he argues from the Quran, the Ahl al-Bayt, Nahj al-Balagha and al-Kafi, uses reason ('aql) strongly, and also challenges Sunni positions where relevant" },
+  avraham: { faith: "jewish", name: "Rabbi Avraham", style: "an Orthodox counter-missionary rabbi styled on Tovia Singer: he argues from the Hebrew text and its context, shows how Christian and Muslim proof-texts are read out of context, and insists on the Torah's eternal covenant" },
+  meir: { faith: "jewish", name: "Rabbi Meir", style: "an Orthodox Talmudist: patient and precise, he argues from the Mishnah, Talmud, Rashi and Maimonides (the 13 Principles, Mishneh Torah), and from the unbroken chain of the Oral Torah" },
+};
+const trainerPrompt = t => `You are the debate trainer on Contradiction, a site that compares Christianity, Islam and Judaism from their own texts. The reader is practising arguing the ${SIDE[t.you]} side. You play their opponent: ${CHARACTERS[t.character] ? CHARACTERS[t.character].name + ", " + CHARACTERS[t.character].style + ". You are a fictional character, not the real person you are styled on; never claim to be them" : DEBATER[t.opponent]}.
 
 Each reply has exactly two parts, with these bold labels:
 
@@ -286,7 +298,7 @@ export function checkRequest(body) {
   if (!Array.isArray(ctx) || ctx.length > MAX_CONTEXT) return "Send at most " + MAX_CONTEXT + " passages.";
   for (const p of ctx) if (!p || typeof p.text !== "string" || p.text.length > MAX_PASSAGE || typeof (p.source || "") !== "string") return "A passage is malformed or too long.";
   if (body.guide !== undefined && !["all", "christian", "muslim", "jewish"].includes(body.guide)) return "Unknown guide.";
-  if (body.trainer !== undefined && !(body.trainer && FAITHS.includes(body.trainer.you) && FAITHS.includes(body.trainer.opponent) && body.trainer.you !== body.trainer.opponent)) return "Unknown debate setup.";
+  if (body.trainer !== undefined && !(body.trainer && FAITHS.includes(body.trainer.you) && FAITHS.includes(body.trainer.opponent) && body.trainer.you !== body.trainer.opponent && (body.trainer.character === undefined || (CHARACTERS[body.trainer.character] && CHARACTERS[body.trainer.character].faith === body.trainer.opponent)))) return "Unknown debate setup.";
   return null;
 }
 

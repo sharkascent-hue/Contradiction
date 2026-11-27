@@ -117,7 +117,70 @@
       if ((e.key === 'Enter' || e.keyCode === 13) && !e.shiftKey && !e.isComposing) { e.preventDefault(); go(); }
     });
     f.addEventListener('submit', e => { e.preventDefault(); go(); });
+    if (!f.closest('.trainer')) attachSuggest(ta, { onAsk: onSubmit });
   }
+  /* Suggestions while typing: little boxes under a search or question box. */
+  let suggestPool = null;
+  async function suggestions() {
+    if (suggestPool) return suggestPool;
+    const pool = [];
+    G.topics.forEach(t => { pool.push({ label: t.title, kind: 'Topic', href: '#/t/' + t.id, words: (t.title + ' ' + (t.q || []).join(' ')).toLowerCase() }); });
+    SUGGEST.forEach(q => pool.push({ label: q, kind: 'Question', ask: q, words: q.toLowerCase() }));
+    C.questions.forEach(q => pool.push({ label: q.title, kind: 'Big question', href: '#/q/' + q.slug, words: q.title.toLowerCase() }));
+    Object.entries(bookName).forEach(([code, name]) => pool.push({ label: name, kind: bookGroup[code] === 'quran' ? 'Surah' : 'Book', href: '#/read/' + (bookGroup[code] === 'quran' ? pref.quran : trFor(code)) + '/' + code, words: name.toLowerCase() }));
+    EXPLORE.forEach(([h, t, d]) => pool.push({ label: t, kind: 'Tool', href: h, words: (t + ' ' + d).toLowerCase() }));
+    const [deb, sto, pro] = await Promise.all([loadDebates(), getJSON('content/stories.json').catch(() => ({ stories: [] })), getJSON('content/prophecies.json').catch(() => ({ prophecies: [] }))]);
+    deb.arguments.forEach(a => pool.push({ label: a.title, kind: 'Debate', href: '#/d/' + a.id, words: a.title.toLowerCase() }));
+    sto.stories.forEach(x => pool.push({ label: x.title, kind: 'Story', href: '#/stories/' + x.id, words: (x.title + ' ' + x.summary).toLowerCase() }));
+    pro.prophecies.forEach(x => pool.push({ label: x.title, kind: 'Prophecy', href: '#/prophecies', words: x.title.toLowerCase() }));
+    await loadLib(); L.forEach(w => pool.push({ label: w.t, kind: 'Book', href: '#/lib/' + w.id, words: (w.t + ' ' + (w.a || '')).toLowerCase() }));
+    return (suggestPool = pool);
+  }
+  const STOP = new Set('a an the of in on is are was were do does did to and or what why how who where when i im me my about say says said with for from it its that this be'.split(' '));
+  function rankSuggest(pool, q, n) {
+    const words = q.toLowerCase().replace(/[^a-z0-9' ]+/g, ' ').split(/\s+/).filter(w => w && !STOP.has(w));
+    if (!words.length) return [];
+    const last = words[words.length - 1];
+    return pool.map(x => {
+      let sc = 0;
+      for (const w of words) { const at = x.words.indexOf(w); if (at < 0) { if (w !== last) return null; continue; } sc += at === 0 || x.words[at - 1] === ' ' ? 3 : 1; }
+      if (!sc) return null;
+      if (x.label.toLowerCase().startsWith(words.join(' '))) sc += 4;
+      return [sc - x.label.length / 200, x];
+    }).filter(Boolean).sort((a, b) => b[0] - a[0]).slice(0, n).map(r => r[1]);
+  }
+  /* field: the input or textarea. local(q) can add extra suggestions first (e.g. sections of the book being searched). */
+  function attachSuggest(field, { local, onAsk } = {}) {
+    if (!field || field.dataset.sug) return;
+    field.dataset.sug = '1';
+    const box = document.createElement('div');
+    box.className = 'sug'; box.hidden = true;
+    field.closest('form').after(box);
+    let t = 0, sel = -1, items = [];
+    const show = async () => {
+      const q = field.value.trim();
+      if (q.length < 2) { box.hidden = true; return; }
+      const pool = await suggestions();
+      items = (local ? local(q) : []).concat(rankSuggest(pool, q, 8)).slice(0, 8);
+      sel = -1;
+      box.innerHTML = items.map((x, i) => '<button type="button" data-i="' + i + '"><span class="sug-kind">' + esc(x.kind) + '</span>' + esc(x.label) + '</button>').join('');
+      box.hidden = !items.length;
+    };
+    const pick = x => { box.hidden = true; if (x.href) location.hash = x.href; else if (onAsk) { field.value = ''; onAsk(x.ask || x.label); } else location.hash = '#/ask/' + encodeURIComponent(x.ask || x.label); };
+    field.addEventListener('input', () => { clearTimeout(t); t = setTimeout(show, 120); });
+    field.addEventListener('keydown', e => {
+      if (box.hidden || !items.length) return;
+      if (e.key === 'ArrowDown' || e.key === 'ArrowUp') { e.preventDefault(); sel = (sel + (e.key === 'ArrowDown' ? 1 : items.length - 1)) % items.length;
+        box.querySelectorAll('button').forEach((b, i) => b.classList.toggle('on', i === sel)); }
+      else if (e.key === 'Enter' && sel >= 0) { e.preventDefault(); e.stopImmediatePropagation(); pick(items[sel]); }
+      else if (e.key === 'Escape') box.hidden = true;
+    }, true);
+    box.addEventListener('mousedown', e => e.preventDefault());
+    box.addEventListener('click', e => { const b = e.target.closest('[data-i]'); if (b) pick(items[+b.dataset.i]); });
+    field.addEventListener('blur', () => setTimeout(() => { box.hidden = true; }, 150));
+    field.closest('form').addEventListener('submit', () => { box.hidden = true; });
+  }
+
   const faithCards = () => '<div class="faith-cards">' + Object.keys(HUBS).map(k => { const h = HUBS[k];
     return '<a class="faith-card ' + h.key + '" href="#/faith/' + k + '"><span class="glyph">' + h.glyph + '</span><strong>' + h.name + '</strong><span>' + h.sub + '</span><span class="arrow">→</span></a>'; }).join('') + '</div>';
   const disputeTile = q => {
@@ -136,10 +199,14 @@
     document.title = 'Contradiction · Christianity, Islam and Judaism, side by side';
     const disputes = C.questions.filter(isDispute);
     app.innerHTML =
-      '<section class="hero"><p class="eyebrow">Christianity · Islam · Judaism</p><h1>Ask anything. See what <em>each faith</em> really says.</h1>' +
-      '<p class="lede">Beliefs, disagreements and the actual passages from the Bible, Quran, hadith and Talmud, side by side.</p>' +
+      '<section class="hero"><p class="eyebrow">Christianity · Islam · Judaism</p><h1>Three faiths. One question. <em>Who do the texts back?</em></h1>' +
+      '<p class="lede">The arguments Christians, Muslims and Jews throw at each other, tested on the actual Bible, Quran, hadith and Talmud. Ask anything, or step into the arena.</p>' +
       askBox('Ask anything…') +
       '<div class="suggest">' + SUGGEST.map(s => '<a class="chip" href="#/ask/' + encodeURIComponent(s) + '">' + esc(s) + '</a>').join('') + '</div></section>' +
+      '<section class="arena"><div class="arena-head"><span class="hp-eyebrow">The arena</span><h2>Where the faiths collide</h2><p>Real arguments from real debaters, tested against the texts. Every side gets the same standard.</p></div>' +
+        '<div id="arena-feature"></div><div class="arena-row"><a href="#/trainer" class="arena-card"><span class="arena-chars">' + charSvg('elias', 44) + charSvg('yusuf', 44) + charSvg('avraham', 44) + '</span><strong>Debate trainer</strong><span>Pick an opponent and argue. Get scored out of 10.</span></a>' +
+        '<a href="#/videos" class="arena-card"><span class="arena-ico">▶</span><strong>Recent debates</strong><span>The newest videos from Christian, Muslim and Jewish debaters.</span></a>' +
+        '<a href="#/debates" class="arena-card"><span class="arena-ico">⚔</span><strong>All ' + '<span id="deb-count">49</span> debates</strong><span>Every argument, both ways, with a verdict.</span></a></div></section>' +
       '<div class="section-head"><h2>Explore</h2></div>' + exploreGrid() +
       '<div class="section-head"><h2>The three faiths</h2><a href="#/faiths">Compare them →</a></div>' + faithCards() +
       '<div class="section-head"><h2>Where they disagree</h2><a href="#/questions">See all</a></div>' +
@@ -149,7 +216,13 @@
       '<div class="topic-grid">' + POPULAR.map(id => G.topics.find(t => t.id === id)).filter(Boolean).map(t => '<a href="#/t/' + t.id + '">' + esc(t.title) + '</a>').join('') + '</div>' +
       '<div class="section-head"><h2>Read the texts</h2></div>' + readGrid();
     bindAsk();
-    loadDebates().then(d => { const el = document.getElementById('home-deb'); if (el) el.innerHTML = d.arguments.length ? mixDirs(d.arguments).slice(0, 8).map(debTile).join('') : '<p class="muted small">Coming soon.</p>'; });
+    loadDebates().then(d => {
+      const f = document.getElementById('arena-feature'), n = document.getElementById('deb-count');
+      if (n) n.textContent = d.arguments.length;
+      if (f && d.arguments.length) { const day = Math.floor(Date.now() / 864e5), a = d.arguments[day % d.arguments.length], dir = DIR[a.direction] || ['', '', ''];
+        f.innerHTML = '<a class="feature" href="#/d/' + a.id + '"><span class="hp-eyebrow">Debate of the day · ' + esc(dir[0]) + '</span><strong>' + esc(a.title) + '</strong><span class="feature-arg">' + esc(a.argument.slice(0, 220)) + '…</span>' +
+          '<span class="vs"><i class="dot ' + dir[1] + '"></i><span class="small">vs</span><i class="dot ' + dir[2] + '"></i>' + (a.verdict ? '<span class="verdict v-' + a.verdict + '">' + VERDICT[a.verdict] + '</span>' : '') + '<span class="small">Read the verdict →</span></span></a>'; }
+      const el = document.getElementById('home-deb'); if (el) el.innerHTML = d.arguments.length ? mixDirs(d.arguments).slice(0, 8).map(debTile).join('') : '<p class="muted small">Coming soon.</p>'; });
   }
   const questionCards = qs => '<ul class="cards">' + qs.map(q =>
     '<li><a href="#/q/' + q.slug + '"><strong>' + esc(q.title) + '</strong><span>' + esc(q.short) + '</span></a></li>').join('') + '</ul>';
@@ -157,7 +230,7 @@
     '" placeholder="Search every text, e.g. forgiveness, or John 3:16" aria-label="Search"><button>Search</button></form>';
   function bindSearch() {
     const f = app.querySelector('form.searchbox');
-    if (f) f.addEventListener('submit', e => { e.preventDefault(); location.hash = '#/search/' + encodeURIComponent(f.q.value.trim()); });
+    if (f) { f.addEventListener('submit', e => { e.preventDefault(); location.hash = '#/search/' + encodeURIComponent(f.q.value.trim()); }); attachSuggest(f.q); }
   }
 
   function questions() {
@@ -170,7 +243,7 @@
   function topics() {
     document.title = 'Topics · Contradiction';
     const sorted = [...G.topics].sort((a, b) => a.title.localeCompare(b.title));
-    app.innerHTML = '<h1>Explore</h1>' + exploreGrid() + '<h2>Topics</h2><p class="lede">Each topic shows what Christians, Muslims and Jews believe, and where it is in their texts.</p>' +
+    app.innerHTML = hero('explore', 'Explore', 'Every tool on the site, built on the texts themselves.') + exploreGrid() + '<h2>Topics</h2><p class="lede">Each topic shows what Christians, Muslims and Jews believe, and where it is in their texts.</p>' +
       '<div class="topic-grid">' + sorted.map(t => '<a href="#/t/' + t.id + '">' + esc(t.title) + '</a>').join('') + '</div>' +
       '<div class="section-head"><h2>Reading guides</h2></div><ul class="cards two">' + C.topics.map(t =>
         '<li><a href="#/topic/' + t.slug + '"><strong>' + esc(t.title) + '</strong><span>' + esc(t.blurb) + '</span></a></li>').join('') + '</ul>';
@@ -617,8 +690,15 @@
   const libCrumbs = (w, last) => '<p class="crumbs"><a href="#/lib">Library</a> › <a href="#/lib/c/' + encodeURIComponent(w.c) + '">' + esc(w.c) + '</a>' +
     (last ? ' › <a href="#/lib/' + w.id + '">' + esc(w.t) + '</a>' : '') + '</p>';
   const libSearchForm = (w, q) => '<form class="searchbox" role="search"><input type="search" name="q" value="' + esc(q) + '" placeholder="Search within this work" aria-label="Search within this work"><button>Search</button></form>';
-  const bindLibSearch = w => app.querySelector('form.searchbox').addEventListener('submit', e => {
-    e.preventDefault(); location.hash = '#/lib/' + w.id + '/search/' + encodeURIComponent(e.target.q.value.trim()); });
+  const bindLibSearch = async w => {
+    const f = app.querySelector('form.searchbox');
+    f.addEventListener('submit', e => { e.preventDefault(); location.hash = '#/lib/' + w.id + '/search/' + encodeURIComponent(e.target.q.value.trim()); });
+    const toc = await loadToc(w.id).catch(() => []);
+    // sections of this book first, then the rest of the site
+    const secs = toc.flatMap((p, i) => [[p[0], i]].concat(p[2] ? p[2].split(' | ').map(n => [n, i]) : []));
+    attachSuggest(f.q, { local: q => { const lq = q.toLowerCase(), ws = lq.split(/\s+/);
+      return secs.filter(([n]) => ws.every(x => n.toLowerCase().includes(x))).slice(0, 5).map(([n, i]) => ({ label: n, kind: 'In this book', href: '#/lib/' + w.id + '/' + i })); } });
+  };
 
   async function libWork(w) {
     const id = renderId, toc = await loadToc(w.id);
@@ -1142,6 +1222,12 @@
   }
 
 
+  /* ---------- page headers: each section has its own colour and mark ---------- */
+  const HERO = { debates: ['⚔', 'Debates'], trainer: ['🎙', 'Train'], videos: ['▶', 'Watch'], stories: ['📜', 'Stories'], prophecies: ['🔮', 'Prophecy'],
+    translations: ['✎', 'Words'], timeline: ['⏳', 'History'], shamoun: ['🗣', 'Debater'], explore: ['✦', 'Explore'] };
+  const hero = (kind, title, lede, extra) => '<section class="hero-page hp-' + kind + '" data-mark="' + (HERO[kind] || ['', ''])[0] + '"><span class="hp-eyebrow">' + (HERO[kind] || ['', ''])[1] + '</span><h1>' + esc(title) + '</h1>' +
+    (lede ? '<p>' + esc(lede) + '</p>' : '') + (extra || '') + '</section>';
+
   /* ---------- explore: the tools built on the texts ---------- */
   const EXPLORE = [['#/stories', 'Same story, side by side', 'Adam, Noah, Abraham, Moses, Mary and Jesus in the Bible and the Quran, with the differences'],
     ['#/prophecies', 'Prophecy checker', 'Every claimed prophecy of Jesus and of Muhammad, tested on the text'],
@@ -1162,7 +1248,7 @@
     const x = id && d.stories.find(s => s.id === id);
     if (!x) {
       document.title = 'Same story, side by side · Contradiction';
-      app.innerHTML = '<h1>Same story, side by side</h1><p class="lede">The stories the Bible and the Quran both tell. Read each telling next to the other and see exactly where they part.</p>' +
+      app.innerHTML = hero('stories', 'Same story, side by side', 'The stories the Bible and the Quran both tell. Read each telling next to the other and see exactly where they part.') +
         (d.stories.length ? '<div class="deb-grid">' + d.stories.map(s => '<a class="dispute-tile" href="#/stories/' + s.id + '"><strong>' + esc(s.title) + '</strong><span>' + esc(s.summary) + '</span><span class="vs"><i class="dot christian"></i><i class="dot jewish"></i><span class="small muted">and</span><i class="dot muslim"></i><span class="small muted">' + s.differences.length + ' differences</span></span></a>').join('') + '</div>' : '<p class="muted">Being written. Check back shortly.</p>');
       return;
     }
@@ -1189,7 +1275,7 @@
     if (rid !== renderId) return;
     const WHO = { christian: 'Christians say it foretells Jesus', muslim: 'Muslims say it foretells Muhammad', jewish: 'Jews say it is still to come' };
     const list = d.prophecies.filter(x => prophFilter === 'all' || x.claimed_by === prophFilter);
-    app.innerHTML = '<h1>Prophecy checker</h1><p class="lede">The passages each faith says were foretold. For each one: the claim, what the passage says in its own setting, how the others read it, and whether the text supports the claim.</p>' +
+    app.innerHTML = hero('prophecies', 'Prophecy checker', 'The passages each faith says were foretold: the claim, what the passage says in its own setting, how the others read it, and whether the text supports it.') +
       '<div class="chips">' + [['all', 'All'], ['christian', 'About Jesus'], ['muslim', 'About Muhammad'], ['jewish', 'Jewish expectations']].map(([k, l]) => '<button class="chip" data-f="' + k + '" aria-pressed="' + (k === prophFilter) + '">' + l + '</button>').join('') + '</div>' +
       (list.length ? list.map(x => '<details class="acc"><summary>' + esc(x.title) + ' <span class="verdict v-' + x.status + '">' + (STATUS[x.status] || '') + '</span></summary><div class="acc-body">' +
         '<p class="small muted">' + (WHO[x.claimed_by] || '') + '</p><section class="sec v-' + x.claimed_by + '">' + COPY + '<span class="tag">The claim</span><p>' + rich(x.claim) + '</p></section>' + refsHtml((x.text || []).concat(x.fulfilment || [])) +
@@ -1207,7 +1293,7 @@
     document.title = 'Where translations differ · Contradiction';
     const rid = renderId, d = await getJSON('content/translations.json').catch(() => ({ verses: [] }));
     if (rid !== renderId) return;
-    app.innerHTML = '<h1>Where translations differ</h1><p class="lede">Verses where the argument turns on one word. See the original word, how each translation renders it, and every edition on the site side by side.</p>' +
+    app.innerHTML = hero('translations', 'Where translations differ', 'Verses where the argument turns on one word: the original, how each translation renders it, and every edition side by side.') +
       (d.verses.length ? d.verses.map((x, i) => '<details class="acc" data-i="' + i + '"><summary>' + esc(x.ref) + ' <span class="small muted">· ' + esc(x.issue) + '</span></summary><div class="acc-body">' +
         '<p class="bigword" dir="auto">' + esc(x.word) + '</p><p class="small muted" style="text-align:center;margin-top:0">' + esc(x.translit || '') + '</p>' +
         '<div class="readings">' + (x.readings || []).map(r => '<div><strong>“' + esc(r.rendering) + '”</strong><span>' + esc(r.who) + '</span></div>').join('') + '</div>' +
@@ -1238,43 +1324,74 @@
     if (rid !== renderId) return;
     const KIND = { written: 'Written', manuscript: 'Oldest copies', event: 'Event', canon: 'Canon and councils' };
     const list = d.events.filter(e => tlFilter === 'all' || e.faith === tlFilter || e.kind === tlFilter).sort((a, b) => a.year - b.year);
-    app.innerHTML = '<h1>Timeline of the books</h1><p class="lede">When each scripture was written, when the events it describes took place, and the oldest copies that survive. Dates are mainstream scholarly estimates; where tradition and historians differ, both are given.</p>' +
+    app.innerHTML = hero('timeline', 'Timeline of the books', 'When each scripture was written and the oldest copies that survive. Where tradition and historians differ, both are given.') +
       '<div class="chips">' + [['all', 'All'], ['jewish', 'Jewish'], ['christian', 'Christian'], ['muslim', 'Muslim'], ['manuscript', 'Oldest copies only']].map(([k, l]) => '<button class="chip" data-f="' + k + '" aria-pressed="' + (k === tlFilter) + '">' + l + '</button>').join('') + '</div>' +
       (list.length ? '<div class="tl">' + list.map(e => '<div class="tl-row f-' + e.faith + '"><div class="tl-year">' + esc(e.year_label) + '</div><div class="tl-body"><span class="tag">' + (KIND[e.kind] || '') + '</span><strong>' + esc(e.title) + '</strong><p>' + rich(e.text) + '</p>' +
         (e.gap ? '<p class="small muted">' + esc(e.gap) + '</p>' : '') + (e.source ? '<a class="small" href="' + esc(e.source) + '" target="_blank" rel="noopener">Source ↗</a>' : '') + '</div></div>').join('') + '</div>' : '<p class="muted">Being written. Check back shortly.</p>');
     app.querySelectorAll('[data-f]').forEach(b => b.addEventListener('click', () => { tlFilter = b.dataset.f; timeline(); }));
   }
 
+  /* ---------- debater characters: drawn avatars, each styled on a real school of argument ---------- */
+  const CHARS = [
+    ['elias', 'christian', 'Elias', 'Catholic street apologist', 'Combative and fast. Argues from the Quran and hadith themselves, in Arabic.', { bg: '#dbe6ff', skin: '#e0ac7e', hair: '#2b2118', beard: 'full', hat: '', robe: '#1e3a8a', mark: 'cross' }],
+    ['nathan', 'christian', 'Pastor Nathan', 'Reformed Protestant scholar', 'Calm and exacting. The Greek text, textual criticism, Scripture alone.', { bg: '#e0ecff', skin: '#f1c9a5', hair: '#7a5a3a', beard: 'none', hat: '', robe: '#334155', mark: 'collar', glasses: 1 }],
+    ['seraphim', 'christian', 'Father Seraphim', 'Eastern Orthodox priest', 'The Church Fathers, the councils, the Septuagint and philosophy.', { bg: '#e7e2ff', skin: '#e8b98f', hair: '#3b2f2f', beard: 'long', hat: 'kamilavka', robe: '#111827', mark: 'cross' }],
+    ['thomas', 'christian', 'Thomas', 'Catholic apologist', 'Friendly and methodical. Philosophy, resurrection evidence, Church history.', { bg: '#dcecff', skin: '#f3cfae', hair: '#4a3020', beard: 'short', hat: '', robe: '#1d4ed8', mark: 'cross' }],
+    ['yusuf', 'muslim', 'Yusuf', 'Sunni street debater', 'Sharp and philosophical. The logic of the Trinity, Bible contradictions.', { bg: '#d9f5e8', skin: '#c68b5e', hair: '#1b1410', beard: 'full', hat: '', robe: '#065f46', mark: '' }],
+    ['idris', 'muslim', 'Dr. Idris', 'Sunni scholar', 'Calm and courteous. Modern New Testament scholarship.', { bg: '#dcf7ec', skin: '#b97f55', hair: '#2a211b', beard: 'grey', hat: 'kufi', robe: '#0f766e', mark: '', glasses: 1 }],
+    ['hasan', 'muslim', 'Sayyid Hasan', 'Twelver Shia scholar', 'The Quran, the Ahl al-Bayt, Nahj al-Balagha, al-Kafi and reason.', { bg: '#e2f5ec', skin: '#cf9a6b', hair: '#1b1410', beard: 'full', hat: 'amama', robe: '#3f3f46', mark: '' }],
+    ['avraham', 'jewish', 'Rabbi Avraham', 'Counter-missionary rabbi', 'The Hebrew text in context; the eternal covenant.', { bg: '#ece4ff', skin: '#efc29b', hair: '#3a2c22', beard: 'full', hat: 'kippah', robe: '#1f2937', mark: '' }],
+    ['meir', 'jewish', 'Rabbi Meir', 'Orthodox Talmudist', 'Mishnah, Talmud, Rashi and Maimonides; the chain of the Oral Torah.', { bg: '#efe8ff', skin: '#e9bb92', hair: '#d9d4cc', beard: 'longwhite', hat: 'fedora', robe: '#0b0b0f', mark: '' }]];
+  const CHAR = Object.fromEntries(CHARS.map(c => [c[0], c]));
+  function charSvg(id, size) {
+    const o = CHAR[id][5], beard = { full: 'M30 62q20 24 40 0v-6q-20 12-40 0z', short: 'M33 64q17 14 34 0v-4q-17 8-34 0z', long: 'M28 60q22 40 44 0v-4q-22 12-44 0z', grey: 'M31 62q19 20 38 0v-5q-19 10-38 0z', longwhite: 'M27 60q23 44 46 0v-4q-23 12-46 0z' }[o.beard];
+    const bc = o.beard === 'grey' ? '#8f8a84' : o.beard === 'longwhite' ? '#e7e3dc' : o.hair;
+    const hat = { kamilavka: '<rect x="30" y="10" width="40" height="20" rx="2" fill="#111"/><rect x="27" y="27" width="46" height="5" rx="2" fill="#111"/>',
+      kufi: '<path d="M32 30q18-16 36 0v3H32z" fill="#f5f5f4" stroke="#d6d3d1"/>', amama: '<path d="M28 33q22-26 44 0q-22-6-44 0z" fill="#111"/><path d="M28 33q22-8 44 0v4q-22-6-44 0z" fill="#27272a"/>',
+      kippah: '<path d="M38 24q12-8 24 0q-12 3-24 0z" fill="#1e3a8a"/>', fedora: '<ellipse cx="50" cy="29" rx="28" ry="5" fill="#0b0b0f"/><path d="M34 29q2-20 16-20t16 20z" fill="#0b0b0f"/>' }[o.hat] || '';
+    return '<svg class="charsvg" viewBox="0 0 100 100" width="' + size + '" height="' + size + '" aria-hidden="true"><circle cx="50" cy="50" r="50" fill="' + o.bg + '"/>' +
+      '<path d="M16 100q4-26 34-28q30 2 34 28z" fill="' + o.robe + '"/>' + (o.mark === 'collar' ? '<rect x="45" y="72" width="10" height="6" rx="1" fill="#fff"/>' : '') +
+      (o.mark === 'cross' ? '<path d="M50 80v14M45 85h10" stroke="#facc15" stroke-width="2.5" stroke-linecap="round"/>' : '') +
+      '<rect x="44" y="60" width="12" height="12" fill="' + o.skin + '"/><ellipse cx="50" cy="46" rx="18" ry="21" fill="' + o.skin + '"/>' +
+      (o.hat === 'amama' || o.hat === 'kamilavka' || o.hat === 'fedora' ? '' : '<path d="M32 42q-2-20 18-20t18 20q-4-10-18-10t-18 10z" fill="' + o.hair + '"/>') +
+      (beard ? '<path d="' + beard + '" fill="' + bc + '"/>' : '') +
+      '<circle cx="43" cy="46" r="2" fill="#1f1a17"/><circle cx="57" cy="46" r="2" fill="#1f1a17"/><path d="M45 56q5 3 10 0" stroke="#7a4a35" stroke-width="1.8" fill="none" stroke-linecap="round"/>' +
+      (o.glasses ? '<circle cx="43" cy="46" r="5" fill="none" stroke="#1f1a17" stroke-width="1.5"/><circle cx="57" cy="46" r="5" fill="none" stroke="#1f1a17" stroke-width="1.5"/><path d="M48 46h4" stroke="#1f1a17" stroke-width="1.5"/>' : '') +
+      hat + '</svg>';
+  }
+  const charCard = (c, on) => '<button class="char' + (on ? ' on' : '') + '" data-char="' + c[0] + '" type="button">' + charSvg(c[0], 64) + '<span><strong>' + esc(c[2]) + '</strong><em>' + esc(c[3]) + '</em><small>' + esc(c[4]) + '</small></span></button>';
+
   /* ---------- debate trainer: argue one side; the AI plays a strong opponent, then coaches ---------- */
-  let train = { you: store.get('train-you') || 'christian', opponent: store.get('train-opp') || 'muslim', log: [] };
+  let train = { you: store.get('train-you') || 'christian', character: CHAR[store.get('train-char')] ? store.get('train-char') : 'yusuf', log: [] };
   async function trainer() {
     document.title = 'Debate trainer · Contradiction';
     const rid = renderId, on = await probeAI();
     if (rid !== renderId) return;
+    if (CHAR[train.character][1] === train.you) train.character = CHARS.find(c => c[1] !== train.you)[0];
+    const c = CHAR[train.character], opponent = c[1];
     const sides = [['christian', 'Christian'], ['muslim', 'Muslim'], ['jewish', 'Jewish']];
-    const seg = (key, val) => '<div class="seg even">' + sides.map(([k, l]) => '<button data-' + key + '="' + k + '" aria-pressed="' + (k === val) + '"' + (key === 'opp' && k === train.you ? ' disabled' : '') + '>' + l + '</button>').join('') + '</div>';
-    app.innerHTML = '<div class="chat"><div class="chat-head trainer-head"><p class="crumbs"><a href="#/debates">Debates</a></p><h1 style="margin:.2em 0">Debate trainer</h1>' +
-      '<p class="small muted" style="margin:0 0 6px">You argue as</p>' + seg('you', train.you) + '<p class="small muted" style="margin:10px 0 6px">Against a strong opponent who is</p>' + seg('opp', train.opponent) + '</div>' +
+    app.innerHTML = hero('trainer', 'Debate trainer', 'Argue your side against a strong opponent. After each reply the coach scores your argument out of 10 against the actual texts.') +
+      '<div class="chat trainer"><div class="chat-head trainer-head"><p class="small muted" style="margin:0 0 6px">You argue as</p><div class="seg even">' +
+      sides.map(([k, l]) => '<button data-you="' + k + '" aria-pressed="' + (k === train.you) + '">' + l + '</button>').join('') + '</div>' +
+      '<p class="small muted" style="margin:14px 0 6px">Choose your opponent</p><div class="chars">' + CHARS.filter(x => x[1] !== train.you).map(x => charCard(x, x[0] === train.character)).join('') + '</div></div>' +
       '<div class="msgs" id="msgs">' + (train.log.length ? train.log.map(m => m.html).join('') :
-        '<div class="welcome"><p class="lede">' + (on ? 'Practise your arguments. The AI answers like a well-prepared ' + FAITH_NAME[train.opponent] + ' debater, then steps out of role and scores what you said out of 10, against the actual texts.' : 'The debate trainer needs the AI guide, which is not available right now.') + '</p>' +
-        (on ? '<p><button class="btn brand" data-start>Let the opponent open →</button></p><p class="small muted">Or type your own opening argument below.</p>' : '') + '</div>') + '</div>' +
-      (on ? '<div class="composer">' + askBox('Make your argument…') + '</div>' : '') + '</div>';
+        '<div class="welcome"><div class="vs-line">' + charSvg(train.character, 72) + '<p class="lede"><strong>' + esc(c[2]) + '</strong>, ' + esc(c[3].toLowerCase()) + '. ' + (on ? esc(c[4]) : 'The debate trainer needs the AI guide, which is not available right now.') + '</p></div>' +
+        (on ? '<p><button class="btn brand" data-start>Let ' + esc(c[2]) + ' open →</button></p><p class="small muted">Or type your own opening argument below. All characters are fictional. They argue in common debating styles and do not represent any real person.</p>' : '') + '</div>') + '</div>' +
+      (on ? '<div class="composer">' + askBox('Make your argument to ' + c[2] + '…') + '</div>' : '') + '</div>';
     const turn = async q => {
       const msgs = document.getElementById('msgs');
       if (!train.log.length) msgs.innerHTML = '';
-      msgs.insertAdjacentHTML('beforeend', (q === 'START' ? '' : '<div class="msg user"><div class="bubble">' + esc(q) + '</div></div>') + '<div class="msg bot">' + avatar(train.opponent) +
-        '<div class="card"><div class="ai-text"><span class="typing"><i></i><i></i><i></i></span></div><p class="ai-status"></p></div></div>');
+      msgs.insertAdjacentHTML('beforeend', (q === 'START' ? '' : '<div class="msg user"><div class="bubble">' + esc(q) + '</div></div>') + '<div class="msg bot"><span class="avatar char-av">' + charSvg(train.character, 36) + '</span>' +
+        '<div class="card"><p class="char-name">' + esc(c[2]) + ' <span class="muted small">· ' + esc(c[3]) + '</span></p><div class="ai-text"><span class="typing"><i></i><i></i><i></i></span></div><p class="ai-status"></p></div></div>');
       const bot = msgs.lastElementChild;
       (bot.previousElementSibling || bot).scrollIntoView({ behavior: 'smooth', block: 'start' });
-      const a = await aiTurn(q, bot.querySelector('.card'), { log: train.log, extra: { trainer: { you: train.you, opponent: train.opponent }, guide: 'all' } }).catch(() => '');
+      const a = await aiTurn(q, bot.querySelector('.card'), { log: train.log, extra: { trainer: { you: train.you, opponent, character: train.character }, guide: 'all' } }).catch(() => '');
       train.log.push({ q, a, html: (q === 'START' ? '' : '<div class="msg user"><div class="bubble">' + esc(q) + '</div></div>') + bot.outerHTML });
     };
     if (on) bindAsk(turn);
     const st = app.querySelector('[data-start]'); if (st) st.addEventListener('click', () => turn('START'));
-    app.querySelectorAll('[data-you], [data-opp]').forEach(b => b.addEventListener('click', () => {
-      if (b.dataset.you) { train.you = b.dataset.you; if (train.opponent === train.you) train.opponent = sides.find(([k]) => k !== train.you)[0]; } else train.opponent = b.dataset.opp;
-      store.set('train-you', train.you); store.set('train-opp', train.opponent); train.log = []; trainer();
-    }));
+    app.querySelectorAll('[data-you]').forEach(b => b.addEventListener('click', () => { train.you = b.dataset.you; store.set('train-you', train.you); train.log = []; trainer(); }));
+    app.querySelectorAll('[data-char]').forEach(b => b.addEventListener('click', () => { train.character = b.dataset.char; store.set('train-char', train.character); train.log = []; trainer(); }));
   }
 
   /* ---------- copy buttons: copy the text of an answer, passage or section, with its links written out ---------- */
@@ -1359,7 +1476,7 @@
     if (id !== renderId) return;
     const dirs = Object.keys(DIR).filter(k => d.arguments.some(a => a.direction === k));
     const list = d.arguments.filter(a => debFilter === 'all' || a.direction === debFilter);
-    app.innerHTML = '<h1>Debates</h1><p class="lede">The arguments apologists actually make, in every direction. Each one shows the texts it relies on, the best reply from the other side, what the texts firmly establish, and a frank verdict on the argument.</p>' +
+    app.innerHTML = hero('debates', 'Debates', 'The arguments apologists actually make, in every direction, each with the texts, the best reply and a frank verdict.', '<div class="hp-actions"><a class="btn" href="#/trainer">Train against a debater</a><a class="btn ghost-w" href="#/videos">Watch recent debates</a></div>') +
       '<a class="vid-banner" href="#/videos"><strong>▶ Recent debates on YouTube</strong><span>The newest videos from Christian, Muslim and Jewish debaters, with the AI’s take</span></a>' +
       '<a class="vid-banner" href="#/shamoun"><strong>Sam Shamoun’s debates</strong><span>His main arguments, every documented debate with Muslims, and how each one went</span></a>' +
       '<div class="chips">' + [['all', 'All']].concat(dirs.map(k => [k, DIR[k][0]])).map(([k, l]) => '<button class="chip" data-f="' + k + '" aria-pressed="' + (k === debFilter) + '">' + esc(l) + '</button>').join('') + '</div>' +
@@ -1410,7 +1527,7 @@
     if (!vids) { app.innerHTML = '<h1>Recent debates</h1><p class="muted">Loading the newest videos…</p>'; vids = await loadVids(); }
     if (rid !== renderId) return;
     const list = vids.videos.filter(v => vidFilter === 'all' || v.faith === vidFilter);
-    app.innerHTML = '<p class="crumbs"><a href="#/debates">Debates</a></p><h1>Recent debates</h1><p class="lede">The newest uploads from Christian, Muslim and Jewish debaters and apologists on YouTube. Tap one to watch it here, then ask the AI what it makes of the claims.</p>' +
+    app.innerHTML = hero('videos', 'Recent debates', 'The newest uploads from Christian, Muslim and Jewish debaters on YouTube. Watch here, then ask the AI what it makes of the claims.') +
       '<div class="chips">' + [['all', 'All']].concat(Object.entries(FAITH_NAME)).map(([k, l]) => '<button class="chip" data-f="' + k + '" aria-pressed="' + (k === vidFilter) + '">' + l + '</button>').join('') + '</div>' +
       '<div class="vid-grid">' + list.map(v => '<article class="vid" data-i="' + vids.videos.indexOf(v) + '"><button class="thumb" aria-label="Play ' + esc(v.title) + '"><img loading="lazy" src="https://i.ytimg.com/vi/' + encodeURIComponent(v.id) + '/mqdefault.jpg" alt=""><span class="play"></span></button>' +
         '<div class="vid-body"><span class="eyebrow">' + (v.faith === 'neutral' ? '' : '<i class="dot ' + v.faith + '"></i> ') + esc(v.channel) + '</span><strong>' + esc(v.title) + '</strong><span class="small muted">' + esc(v.date) + (v.views ? ' · ' + v.views.toLocaleString() + ' views' : '') + '</span>' +
@@ -1431,7 +1548,7 @@
     if (rid !== renderId) return;
     const refs = list => { const t = (list || []).map(ref => ({ ref, why: '', kind: refKind(ref) })); return t.length ? groupsHtml([...new Set(t.map(x => x.kind))].map(k => [k, t.filter(x => x.kind === k)])) : ''; };
     const para = (label, txt) => txt ? '<p><strong>' + label + '</strong> ' + rich(txt) + '</p>' : '';
-    app.innerHTML = '<p class="crumbs"><a href="#/debates">Debates</a></p><h1>Sam Shamoun</h1><p class="lede">' + rich(d.summary) + '</p>' +
+    app.innerHTML = hero('shamoun', 'Sam Shamoun', '') + '<p class="lede">' + rich(d.summary) + '</p>' +
       '<div class="section-head"><h2>His main arguments</h2></div>' +
       d.arguments.map(a => '<details class="acc"><summary>' + esc(a.title) + '</summary><div class="acc-body">' +
         '<section class="sec v-christian"><span class="tag">Shamoun’s argument</span><p>' + rich(a.argument) + '</p></section>' + refs(a.texts) +
