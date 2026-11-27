@@ -285,7 +285,7 @@ blockquote.vq cite { display: block; font: .85rem var(--sans); font-style: norma
 .chapter p.sel { background: var(--sel); }
 .chapter sup { font: 700 .66rem var(--sans); color: var(--brand); margin-right: 6px; }
 .chapter.rtl, .orig[dir=rtl] { text-align: right; }
-.chapter:lang(ar), .chapter:lang(he), .orig, .cmp dd:lang(ar), .cmp dd:lang(he) { font-family: "Amiri", "Scheherazade New", "SBL Hebrew", "Noto Naskh Arabic", "Times New Roman", serif; font-size: 1.3rem; line-height: 2; }
+.chapter:lang(ar), .chapter:lang(he), .orig, .cmp dd:lang(ar), .cmp dd:lang(he) { font-family: "Amiri Quran", "Amiri", "Scheherazade New", "SBL Hebrew", "Noto Naskh Arabic", "Times New Roman", serif; font-size: 1.3rem; line-height: 2; }
 .chapter.rtl sup { margin: 0 0 0 6px; }
 .cmp { font: .95rem/1.55 var(--sans); background: var(--soft); border-radius: var(--r-sm); padding: 12px 14px; margin: 8px 0 12px; cursor: default; }
 .cmp dt { font-weight: 600; font-size: .78rem; color: var(--muted); margin-top: 10px; text-transform: uppercase; letter-spacing: .04em; }
@@ -714,3 +714,84 @@ html { scroll-behavior: smooth; }
 .saved-btn { position: relative; margin-right: 8px; }
 .top .brand { margin-right: auto; }
 .saved-n { position: absolute; top: -3px; right: -3px; min-width: 18px; height: 18px; padding: 0 5px; border-radius: 9px; background: #8B5A2B; color: #fff; font: 700 .68rem/18px var(--sans); text-align: center; }
+
+/* ---------- faith doors: drawn artwork ---------- */
+.door-art { position: absolute; inset: 0; z-index: -1; opacity: .55; transition: transform 1.2s cubic-bezier(.2, .7, .2, 1), opacity .4s; }
+.door.muslim .door-art { background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'%3E%3Cg fill='none' stroke='%23F3DFA6' stroke-width='1.2' opacity='.5'%3E%3Cpath d='M40 8l9 23 23 9-23 9-9 23-9-23-23-9 23-9z'/%3E%3Cpath d='M17 17h46v46H17z' transform='rotate%2845 40 40%29'/%3E%3Cpath d='M17 17h46v46H17z'/%3E%3Ccircle cx='40' cy='40' r='6'/%3E%3Cpath d='M0 0l17 17M80 0L63 17M0 80l17-17M80 80L63 63'/%3E%3C/g%3E%3C/svg%3E") 0 0 / 64px 64px; }
+.door.christian .door-art { background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220' viewBox='0 0 220 220'%3E%3Cg fill='none' stroke='%23F3DFA6' stroke-width='1.3' opacity='.5'%3E%3Ccircle cx='110' cy='110' r='100'/%3E%3Ccircle cx='110' cy='110' r='70'/%3E%3Ccircle cx='110' cy='110' r='22'/%3E%3Cpath d='M110 110L210.0 110.0'/%3E%3Ccircle cx='154.4' cy='121.9' r='18'/%3E%3Cpath d='M110 110L196.6 160.0'/%3E%3Ccircle cx='142.5' cy='142.5' r='18'/%3E%3Cpath d='M110 110L160.0 196.6'/%3E%3Ccircle cx='121.9' cy='154.4' r='18'/%3E%3Cpath d='M110 110L110.0 210.0'/%3E%3Ccircle cx='98.1' cy='154.4' r='18'/%3E%3Cpath d='M110 110L60.0 196.6'/%3E%3Ccircle cx='77.5' cy='142.5' r='18'/%3E%3Cpath d='M110 110L23.4 160.0'/%3E%3Ccircle cx='65.6' cy='121.9' r='18'/%3E%3Cpath d='M110 110L10.0 110.0'/%3E%3Ccircle cx='65.6' cy='98.1' r='18'/%3E%3Cpath d='M110 110L23.4 60.0'/%3E%3Ccircle cx='77.5' cy='77.5' r='18'/%3E%3Cpath d='M110 110L60.0 23.4'/%3E%3Ccircle cx='98.1' cy='65.6' r='18'/%3E%3Cpath d='M110 110L110.0 10.0'/%3E%3Ccircle cx='121.9' cy='65.6' r='18'/%3E%3Cpath d='M110 110L160.0 23.4'/%3E%3Ccircle cx='142.5' cy='77.5' r='18'/%3E%3Cpath d='M110 110L196.6 60.0'/%3E%3Ccircle cx='154.4' cy='98.1' r='18'/%3E%3C/g%3E%3C/svg%3E") right -50px top -40px / 240px no-repeat; }
+.door.jewish .door-art { background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='70' height='121' viewBox='0 0 70 121'%3E%3Cg fill='none' stroke='%23F3DFA6' stroke-width='1.2' opacity='.45'%3E%3Cpath d='M35 10l26 45H9z'/%3E%3Cpath d='M35 70l-26-45h52z' transform='translate%280 0%29'/%3E%3Cpath d='M35 70l26 45H9z'/%3E%3Cpath d='M35 130l-26-45h52z'/%3E%3C/g%3E%3C/svg%3E") 0 0 / 46px 80px; }
+.door:hover .door-art { transform: scale(1.08); opacity: .8; }
+.door::after { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(180deg, transparent 30%, rgba(0, 0, 0, .25)); }
+
+/* ---------- verse of the day ---------- */
+.vod { margin: 26px 0 6px; }
+.vod-head .tag { font: 700 .7rem var(--sans); letter-spacing: .14em; text-transform: uppercase; color: #8B5A2B; }
+.vod-head h2 { margin: .15em 0 .1em; font-size: 1.7rem; }
+.vod-head p { margin: 0 0 12px; color: var(--muted); }
+.vod-cols { display: grid; gap: 12px; }
+@media (min-width: 760px) { .vod-cols { grid-template-columns: repeat(3, 1fr); } }
+.vod-col { position: relative; display: flex; flex-direction: column; gap: 8px; padding: 18px 18px 16px; border-radius: 20px; background: var(--surface); border: 1px solid var(--line); color: var(--ink); text-decoration: none !important; overflow: hidden; transition: transform .25s, box-shadow .25s; }
+.vod-col:hover { transform: translateY(-3px); box-shadow: var(--shadow-lg); }
+.vod-col::before { content: ""; position: absolute; left: 0; right: 0; top: 0; height: 4px; }
+.vod-col.jewish::before { background: #3B5576; } .vod-col.christian::before { background: #8C2F2B; } .vod-col.muslim::before { background: #4E6B3A; }
+.vod-n { font: 700 .74rem var(--sans); letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
+.vod-orig { margin: 0; font: 500 1.35rem/1.6 "SBL Hebrew", "Times New Roman", serif; color: var(--ink); }
+.vod-orig[lang=ar] { font-family: "Amiri Quran", "Amiri", "Scheherazade New", "Geeza Pro", "Times New Roman", serif; font-size: 1.45rem; }
+.vod-orig[lang=el] { font-size: 1.15rem; font-style: italic; }
+.vod-en { margin: 0; font: 400 1.02rem/1.6 var(--reading); color: var(--ink-2); }
+.vod-ref { margin-top: auto; font-weight: 700; font-size: .86rem; color: #8B5A2B; }
+
+/* ---------- script band: the opening words of each scripture ---------- */
+.script-band { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 10px 16px; margin: 30px 0 22px; padding: 14px 0;
+  border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); color: #A8865A; font: 400 1.15rem/1.4 "Times New Roman", serif; opacity: .85; text-align: center; }
+.script-band b { font-size: .5rem; color: #B88A52; }
+.script-band [lang=ar] { font-family: "Amiri Quran", "Amiri", "Geeza Pro", "Times New Roman", serif; font-size: 1.3rem; }
+
+/* ---------- verdict meters ---------- */
+.meter { display: inline-block; vertical-align: middle; width: 64px; height: 7px; border-radius: 4px; background: var(--soft); overflow: hidden; margin-left: 6px; }
+.meter i { display: block; height: 100%; width: 0; border-radius: 4px; animation: fill 1s cubic-bezier(.2, .7, .2, 1) .2s forwards; }
+.meter.v-strong i { background: linear-gradient(90deg, #6A8A4F, #4E6B3A); } .meter.v-partial i { background: linear-gradient(90deg, #E8C766, #B88A52); }
+.meter.v-weak i { background: linear-gradient(90deg, #D9A066, #B4652F); } .meter.v-fails i { background: linear-gradient(90deg, #C9645A, #8C2F2B); }
+@keyframes fill { to { width: var(--w); } }
+.meter-big { margin: 12px 0 4px; max-width: 420px; }
+.meter-big .meter { width: 100%; height: 12px; margin: 0; border-radius: 6px; }
+.meter-scale { display: flex; justify-content: space-between; font-size: .72rem; color: var(--muted); margin-top: 4px; }
+
+/* ---------- loading shimmer ---------- */
+.skel { display: grid; gap: 12px; padding-top: 18px; animation: skelIn .3s ease .15s both; }
+@keyframes skelIn { from { opacity: 0; } }
+.skel .shimmer { height: 14px; margin: 0; } .skel .shimmer.short { width: 60%; }
+.skel .sk-h { height: 34px; width: 70%; border-radius: 10px; }
+.sk-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 10px; }
+.sk-cards span { height: 110px; border-radius: 18px; background: linear-gradient(90deg, var(--soft), var(--surface), var(--soft)); background-size: 200% 100%; animation: sh 1.2s infinite; }
+.shimmer { background: linear-gradient(90deg, var(--soft), var(--surface), var(--soft)); background-size: 200% 100%; }
+
+/* ---------- top bar buttons ---------- */
+.mode-btn { border: 0; cursor: pointer; margin-right: 8px; }
+.mode-btn[aria-pressed=true] { color: #D4AF37; }
+
+/* ---------- dark mode ---------- */
+:root[data-mode=dark] { color-scheme: dark; --bg: #15100A; --surface: #241A11; --soft: #1D150D; --ink: #F1E8D8; --ink-2: #D6C1A0; --muted: #A8957A; --line: #3B2C1D;
+  --link: #D4AF37; --bar: rgba(21, 16, 10, .9); --mark: rgba(212, 175, 55, .3); --sel: rgba(212, 175, 55, .12);
+  --chr-soft: rgba(196, 92, 80, .14); --isl-soft: rgba(127, 154, 94, .14); --jud-soft: rgba(108, 136, 174, .16); --crit-soft: rgba(168, 149, 122, .12);
+  --shadow: 0 1px 2px rgba(0, 0, 0, .35), 0 8px 24px rgba(0, 0, 0, .3); --shadow-lg: 0 2px 6px rgba(0, 0, 0, .4), 0 18px 50px rgba(0, 0, 0, .5); }
+:root[data-mode=dark][data-faith=christian] { --bg: #1C0F0D; --surface: #2C1814; --soft: #241310; --line: #4A2A24; --link: #E0897D; --bar: rgba(28, 15, 13, .9); }
+:root[data-mode=dark][data-faith=muslim] { --bg: #10150C; --surface: #1C2415; --soft: #161D10; --line: #33402A; --link: #A9C489; --bar: rgba(16, 21, 12, .9); }
+:root[data-mode=dark][data-faith=jewish] { --bg: #0E131C; --surface: #18202D; --soft: #131A25; --line: #2E3B50; --link: #9DB4D6; --bar: rgba(14, 19, 28, .9); }
+:root[data-mode=dark] body { background: var(--bg); color: var(--ink); }
+:root[data-mode=dark] a { color: var(--link); }
+:root[data-mode=dark] .hx { background: radial-gradient(90% 70% at 85% 10%, rgba(212, 175, 55, .16), transparent 60%), linear-gradient(170deg, #241A11, #15100A); }
+:root[data-mode=dark] .hx-lede, :root[data-mode=dark] .hardband p { color: var(--ink-2); }
+:root[data-mode=dark] .marquee .chip { background: rgba(36, 26, 17, .85); }
+:root[data-mode=dark] .hardband { background: linear-gradient(160deg, #2A1E13, #1D150D); border-color: var(--line); }
+:root[data-mode=dark] .hardband li a { background: rgba(255, 255, 255, .05); color: var(--ink); }
+:root[data-mode=dark] .hardband li a:hover { background: rgba(255, 255, 255, .1); }
+:root[data-mode=dark] .links a.on { background: #D4AF37; color: #15100A; }
+:root[data-mode=dark] .chip[aria-pressed=true] { background: #D4AF37; color: #15100A; border-color: #D4AF37; }
+:root[data-mode=dark] .brand-logo, :root[data-mode=dark] .intro-word { filter: drop-shadow(0 0 1px rgba(255, 240, 210, .5)); }
+:root[data-mode=dark] .view, :root[data-mode=dark] .favours, :root[data-mode=dark] .ed, :root[data-mode=dark] .tl-body { border-color: var(--line); }
+:root[data-mode=dark] .seg a.on, :root[data-mode=dark][data-faith] .seg a.on { background: var(--link); color: #15100A; }
+:root[data-mode=dark] .tabbar a.on { color: #D4AF37; }
+:root[data-mode=dark] #intro { background: radial-gradient(80% 60% at 50% 45%, #2A1E13, #15100A); }
+:root[data-mode=dark] .script-band { color: #8C7350; }
+.pager > a:last-child:not(:first-child) { margin-left: auto; }
