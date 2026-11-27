@@ -1078,3 +1078,6 @@ body { background-color: var(--bg); }
 :root[data-mode=dark] .foot { background: #1D150D; }
 .foot-logo { height: 40px !important; width: auto !important; max-width: 220px; }
 .foot-cols p { font-size: .9rem; }
+/* less empty space between the page and the footer */
+main { padding-bottom: 24px; } .foot { margin-top: 12px; }
+@media (max-width: 859px) { main { padding-bottom: 18px; } }
