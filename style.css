@@ -962,26 +962,7 @@ body { background-color: var(--bg); }
 .bw.r6 span { animation-duration: 200s; font-size: clamp(1.4rem, 3.4vw, 2.4rem); opacity: .13; }
 :root[data-mode=dark] .bw span { opacity: .09; }
 
-/* ---------- top bar: a leather-bound book cover with gold tooling ---------- */
-.top, :root[data-faith] .top, :root[data-mode=dark] .top {
-  background:
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.75' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .1 0 0 0 0 .06 0 0 0 0 .03 0 0 0 .55 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"),
-    radial-gradient(120% 180% at 50% 0%, #5A3A20 0%, #3A2414 55%, #24160C 100%);
-  box-shadow: inset 0 3px 0 -1px rgba(212, 175, 55, .55), inset 0 6px 0 -4px rgba(212, 175, 55, .3), 0 6px 18px rgba(36, 22, 12, .35);
-  backdrop-filter: none; -webkit-backdrop-filter: none; }
-.top::after { bottom: 3px; background:
-    linear-gradient(90deg, transparent, #B88A52 10%, #D4AF37 50%, #B88A52 90%, transparent) center top / 100% 1px no-repeat,
-    linear-gradient(90deg, transparent, rgba(212, 175, 55, .5) 15%, rgba(212, 175, 55, .5) 85%, transparent) center 4px / 100% 1px no-repeat; }
-.top::before { bottom: 0; color: #E8C766; text-shadow: 0 0 6px rgba(232, 199, 102, .6); }
-.top .brand-logo { filter: drop-shadow(0 0 1px rgba(255, 236, 200, .85)) drop-shadow(0 2px 6px rgba(0, 0, 0, .45)); }
-.top .links a { color: #EBDDC2; }
-.top .links a:hover { background: rgba(255, 236, 200, .1); color: #fff; }
-.top .links a.on, :root[data-mode=dark] .top .links a.on { background: linear-gradient(180deg, #E8C766, #B88A52); color: #24160C; }
-.top .icon-btn { background: rgba(255, 236, 200, .08); color: #E8C766; box-shadow: inset 0 0 0 1px rgba(212, 175, 55, .45); }
-.top .icon-btn:hover { background: rgba(255, 236, 200, .16); }
-.top .saved-n { background: #E8C766; color: #24160C; }
-/* gold corner ornaments, like tooling on a book cover */
-.top .corner { position: absolute; width: 16px; height: 16px; pointer-events: none; border-color: rgba(212, 175, 55, .7); border-style: solid; border-width: 0; }
-.top .corner.tl { left: 6px; top: 6px; border-left-width: 1px; border-top-width: 1px; } .top .corner.tr { right: 6px; top: 6px; border-right-width: 1px; border-top-width: 1px; }
-.top .corner.bl { left: 6px; bottom: 9px; border-left-width: 1px; border-bottom-width: 1px; } .top .corner.br { right: 6px; bottom: 9px; border-right-width: 1px; border-bottom-width: 1px; }
-.top .dd-menu a strong { color: var(--ink); }
+/* ---------- top bar: clean parchment, no lines or ornaments ---------- */
+.top::before, .top::after, .top .corner { display: none !important; content: none; }
+.top, :root[data-faith] .top { background: rgba(248, 241, 229, .97); box-shadow: 0 1px 0 rgba(110, 91, 69, .14), 0 6px 18px rgba(60, 40, 20, .06); backdrop-filter: none; -webkit-backdrop-filter: none; }
+:root[data-mode=dark] .top { background: rgba(26, 19, 12, .97); box-shadow: 0 1px 0 rgba(212, 175, 55, .12); }
