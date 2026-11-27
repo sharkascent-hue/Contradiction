@@ -1090,37 +1090,59 @@ main { padding-bottom: 24px; } .foot { margin-top: 12px; }
 .tl-line span.now { color: #fff; background: rgba(232, 199, 102, .22); }
 .talk-text:empty { display: none; }
 
-/* ---------- opening: a leather book opens, its pages turn, and the page fills the screen ---------- */
-#intro { position: fixed; inset: 0; z-index: 200; display: grid; place-items: center; cursor: pointer; overflow: hidden; perspective: 1400px;
-  background: radial-gradient(80% 60% at 50% 45%, #3A2817, #1E140B 60%, #0F0A05); transition: opacity .8s ease; }
+/* ---------- opening: a thick leather book, tilted in 3D, opens; printed pages turn; it glows and dissolves into the site ---------- */
+#intro { position: fixed; inset: 0; z-index: 200; display: grid; place-items: center; cursor: pointer; overflow: hidden;
+  background: radial-gradient(80% 60% at 50% 48%, #3A2817, #1E140B 60%, #0F0A05); transition: opacity .9s ease; }
 #intro.out { opacity: 0; pointer-events: none; }
 html.intro-on { overflow: hidden; }
-.bk-glow { position: absolute; width: 520px; height: 520px; border-radius: 50%; background: radial-gradient(circle, rgba(255, 220, 140, .55), transparent 65%); opacity: 0; animation: bkGlow 1.2s ease 1s forwards; }
-.bk { --w: min(40vw, 190px); --h: calc(var(--w) * 1.4); position: relative; width: var(--w); height: var(--h); transform-style: preserve-3d;
-  transform: rotateX(18deg) translateX(0); animation: bkMove 1s cubic-bezier(.6, 0, .3, 1) .35s forwards, bkZoom .8s cubic-bezier(.6, 0, .4, 1) 2.15s forwards; }
-.bk-right, .bk-leaf, .bk-cover { position: absolute; inset: 0; transform-origin: left center; transform-style: preserve-3d; border-radius: 0 8px 8px 0; }
-.bk-right { background: #F7EEDC; box-shadow: inset 6px 0 14px rgba(120, 80, 40, .25), 4px 6px 0 #E6D3B0, 8px 12px 24px rgba(0, 0, 0, .5); }
-.bk-page { position: absolute; inset: 0; display: grid; place-content: center; justify-items: center; gap: 10px; opacity: 0; animation: bkIn .6s ease 1.45s forwards; }
-.bk-emb { width: 42%; height: auto; } .bk-word { width: 86%; height: auto; }
-.bk-leaf div, .bk-cover > div { position: absolute; inset: 0; backface-visibility: hidden; border-radius: 0 8px 8px 0; }
-.bk-face { background: linear-gradient(90deg, #EADBC0, #F7EEDC 18%); }
-.bk-back { background: linear-gradient(270deg, #EADBC0, #F7EEDC 18%); transform: rotateY(180deg); border-radius: 8px 0 0 8px !important; }
-.bk { transform-style: flat !important; }
-.bk-right { z-index: 0; } .l2 { z-index: 2; } .l1 { z-index: 3; } .bk-cover { z-index: 4; }
-.l1, .l2, .bk-cover { transform: perspective(1400px) rotateY(0deg); }
-.l1 { animation: bkTurn1 .7s cubic-bezier(.5, 0, .3, 1) 1.05s forwards; } .l2 { animation: bkTurn2 .7s cubic-bezier(.5, 0, .3, 1) 1.25s forwards; }
-.bk-cover { animation: bkTurnC .95s cubic-bezier(.6, 0, .3, 1) .35s forwards; }
-@keyframes bkTurnC { 0% { transform: perspective(1400px) rotateY(0); z-index: 4; } 50% { z-index: 1; } 100% { transform: perspective(1400px) rotateY(-178deg); z-index: 1; } }
-@keyframes bkTurn1 { 0% { transform: perspective(1400px) rotateY(0); z-index: 3; } 50% { z-index: 2; } 100% { transform: perspective(1400px) rotateY(-178deg); z-index: 2; } }
-@keyframes bkTurn2 { 0% { transform: perspective(1400px) rotateY(0); z-index: 2; } 50% { z-index: 3; } 100% { transform: perspective(1400px) rotateY(-178deg); z-index: 3; } }
-.bk-front { display: grid; place-content: center; justify-items: center; gap: 10px; background: linear-gradient(135deg, #6B3D1E, #4A2812 55%, #2E180A);
-  box-shadow: inset 0 0 0 5px #3A1F0D, inset 0 0 0 7px #C9A24B, inset 0 0 0 12px #3A1F0D, inset 0 0 0 13px rgba(201, 162, 75, .6), 8px 12px 30px rgba(0, 0, 0, .6); }
-.bk-front img { width: 58%; height: auto; filter: drop-shadow(0 2px 4px rgba(0, 0, 0, .6)); }
-.bk-front span { white-space: nowrap; font: 700 .62rem var(--display); letter-spacing: .12em; text-transform: uppercase; color: #E8C766; }
-.bk-inside { background: linear-gradient(270deg, #3A1F0D, #5A3218); transform: rotateY(180deg); border-radius: 8px 0 0 8px !important; }
-@keyframes bkTurn { to { transform: rotateY(-178deg); } }
-@keyframes bkMove { to { transform: rotateX(8deg) translateX(50%); } }
-@keyframes bkZoom { from { transform: rotateX(8deg) translateX(50%); } to { transform: rotateX(0) translateX(50%) scale(5); opacity: 0; } }
+.bk-glow { position: absolute; width: 560px; height: 560px; border-radius: 50%; background: radial-gradient(circle, rgba(255, 220, 140, .5), transparent 65%); opacity: 0; animation: bkGlow 1.4s ease 1.2s forwards; }
+.bk-scene { perspective: 1600px; }
+.bk { --w: min(38vw, 180px); --h: calc(var(--w) * 1.42); position: relative; width: var(--w); height: var(--h);
+  transform: rotateX(28deg) rotateZ(-8deg) translateX(0) scale(.92); will-change: transform;
+  animation: bkMove 1.3s cubic-bezier(.45, 0, .2, 1) .25s forwards, bkZoom 1s cubic-bezier(.55, 0, .35, 1) 2.75s forwards; }
+/* the back cover and the block of pages, with visible page edges */
+.bk-base { position: absolute; inset: -4px -6px -6px -2px; border-radius: 3px 9px 9px 3px; background: #2E180A; box-shadow: 0 20px 40px rgba(0, 0, 0, .55), 0 6px 12px rgba(0, 0, 0, .4); }
+.bk-base::after { content: ""; position: absolute; right: 2px; top: 5px; bottom: 7px; width: 6px; border-radius: 0 3px 3px 0;
+  background: repeating-linear-gradient(90deg, #F2E6CF 0 1px, #D9C6A2 1px 2px); }
+.bk-base::before { content: ""; position: absolute; left: 4px; right: 8px; bottom: 2px; height: 5px;
+  background: repeating-linear-gradient(180deg, #F2E6CF 0 1px, #D9C6A2 1px 2px); }
+.bk-right, .bk-leaf, .bk-cover { position: absolute; inset: 0; transform-origin: left center; border-radius: 0 6px 6px 0; }
+.bk-right { background: linear-gradient(90deg, #E6D6B8, #F8F0E0 14%, #F8F0E0 92%, #EFE2C8); box-shadow: inset 8px 0 16px rgba(110, 70, 30, .22); }
+.bk-page { position: absolute; inset: 0; display: grid; place-content: center; justify-items: center; gap: 10px; opacity: 0; animation: bkIn .8s ease 1.9s forwards; }
+.bk-emb { width: 44%; height: auto; } .bk-word { width: 86%; height: auto; }
+.bk-leaf, .bk-cover { transform-style: preserve-3d; transform: perspective(1600px) rotateY(0deg); will-change: transform; }
+.bk-leaf > div, .bk-cover > div { position: absolute; inset: 0; backface-visibility: hidden; -webkit-backface-visibility: hidden; border-radius: 0 6px 6px 0; overflow: hidden; }
+.bk-face { background: linear-gradient(90deg, #E6D6B8, #F8F0E0 14%, #F8F0E0 92%, #EFE2C8); }
+.bk-back { background: linear-gradient(270deg, #E6D6B8, #F8F0E0 14%, #F8F0E0 92%, #EFE2C8); transform: rotateY(180deg); border-radius: 6px 0 0 6px !important; }
+/* a shadow sweeps across each page as it turns */
+.sh { position: absolute; inset: 0; pointer-events: none; background: linear-gradient(90deg, rgba(60, 35, 10, .45), rgba(60, 35, 10, 0) 70%); opacity: 0; }
+.l1 .sh { animation: bkShade .95s ease 1.05s; } .l2 .sh { animation: bkShade .95s ease 1.35s; } .l3 .sh { animation: bkShade .95s ease 1.65s; }
+.pg { position: absolute; inset: 0; padding: 12% 11%; display: flex; flex-direction: column; gap: 6px; text-align: center; align-items: center; justify-content: center; color: #4A321A; }
+.pg-r { font: 700 clamp(.5rem, 1.9vw, .66rem) var(--sans); letter-spacing: .14em; text-transform: uppercase; color: #9C6B34; }
+.pg-o { margin: 0; font: 400 clamp(.7rem, 2.8vw, 1rem)/1.4 "Amiri Quran", "Times New Roman", serif; color: #6F4520; }
+.pg-o[lang=el] { font-style: italic; }
+.pg-t { margin: 0; font: italic 400 clamp(.6rem, 2.3vw, .82rem)/1.45 var(--reading); }
+.pg-l { display: block; width: 70%; height: 26px; margin-top: 4px; background: repeating-linear-gradient(180deg, transparent 0 5px, rgba(110, 80, 40, .18) 5px 6px); }
+.bk-front { display: grid; place-content: center; justify-items: center; gap: 10px;
+  background: radial-gradient(120% 90% at 30% 20%, #8A5230, #5A3218 45%, #33190A);
+  box-shadow: inset 0 0 0 5px #3A1F0D, inset 0 0 0 6px #C9A24B, inset 0 0 0 11px #3A1F0D, inset 0 0 0 12px rgba(201, 162, 75, .55), inset 10px 0 18px rgba(0, 0, 0, .35); }
+.bk-front img { width: 56%; height: auto; filter: drop-shadow(0 2px 4px rgba(0, 0, 0, .6)); }
+.bk-front span { white-space: nowrap; font: 700 .6rem var(--display); letter-spacing: .12em; text-transform: uppercase; color: #E8C766; }
+.bk-inside { background: radial-gradient(120% 90% at 70% 30%, #6B3D1E, #3A1F0D); transform: rotateY(180deg); border-radius: 6px 0 0 6px !important;
+  box-shadow: inset 0 0 0 8px #3A1F0D, inset 0 0 0 9px rgba(201, 162, 75, .45); }
+/* stacking: the cover on top; each page goes onto the left pile when it passes the middle */
+.bk-right { z-index: 0; } .l3 { z-index: 2; } .l2 { z-index: 3; } .l1 { z-index: 4; } .bk-cover { z-index: 5; }
+.bk-cover { animation: turnC 1.15s cubic-bezier(.45, .05, .25, 1) .3s forwards; }
+.l1 { animation: turn1 .95s cubic-bezier(.45, .05, .25, 1) 1.05s forwards; }
+.l2 { animation: turn2 .95s cubic-bezier(.45, .05, .25, 1) 1.35s forwards; }
+.l3 { animation: turn3 .95s cubic-bezier(.45, .05, .25, 1) 1.65s forwards; }
+@keyframes turnC { 0% { transform: perspective(1600px) rotateY(0); z-index: 5; } 50% { z-index: 1; } 100% { transform: perspective(1600px) rotateY(-176deg); z-index: 1; } }
+@keyframes turn1 { 0% { transform: perspective(1600px) rotateY(0); z-index: 4; } 50% { z-index: 2; } 100% { transform: perspective(1600px) rotateY(-177deg); z-index: 2; } }
+@keyframes turn2 { 0% { transform: perspective(1600px) rotateY(0); z-index: 3; } 50% { z-index: 3; } 100% { transform: perspective(1600px) rotateY(-178deg); z-index: 3; } }
+@keyframes turn3 { 0% { transform: perspective(1600px) rotateY(0); z-index: 2; } 50% { z-index: 4; } 100% { transform: perspective(1600px) rotateY(-179deg); z-index: 4; } }
+@keyframes bkShade { 0% { opacity: 0; } 45% { opacity: 1; } 100% { opacity: 0; } }
+@keyframes bkMove { to { transform: rotateX(14deg) rotateZ(0) translateX(50%) scale(1); } }
+@keyframes bkZoom { from { transform: rotateX(14deg) rotateZ(0) translateX(50%) scale(1); opacity: 1; } to { transform: rotateX(0) translateX(28%) scale(2.6); opacity: 0; } }
 @keyframes bkIn { to { opacity: 1; } }
 @keyframes bkGlow { to { opacity: 1; } }
 .bk-lines { position: absolute; inset: 0; display: grid; place-content: center; justify-items: center; gap: 8px; padding: 10px; text-align: center; color: #7A5A30; font: 400 clamp(.7rem, 2.6vw, .95rem)/1.4 "Amiri Quran", "Times New Roman", serif; }
