@@ -354,7 +354,8 @@
       h += '<div class="seg even jump"><a href="javascript:void 0" data-jump="surahs">Quran</a><a href="javascript:void 0" data-jump="hadith">Hadith</a><a href="javascript:void 0" data-jump="tafsir">Tafsir</a></div>' +
         '<h2 id="hadith">' + (view === 'shia' ? 'Shia hadith' : 'Sunni hadith') + '</h2><div class="topic-grid">' + works(c.hadith) + '</div>' +
         '<h2 id="surahs">The 114 surahs</h2><ul class="booklist">' + trById[t].books.map(b => '<li><a href="#/read/' + t + '/' + b[0] + '">' + esc(bookName[b[0]]) + '</a></li>').join('') + '</ul>' +
-        '<h2 id="tafsir">Quran commentary (tafsir)</h2><div class="topic-grid">' + works('Quran commentary (tafsir)') + '</div>';
+        '<h2 id="tafsir">Quran commentary (tafsir)</h2><div class="topic-grid">' + works('Quran commentary (tafsir)') + '</div>'
+      if ((EX.quran || []).length) h += EX.quran.map(([title, items]) => '<h2>' + esc(title) + '</h2><div class="extra-list">' + items.map(([path, label, note]) => '<a href="#/' + encodeURI(path) + '"><strong>' + esc(label) + '</strong><span>' + esc(note) + '</span></a>').join('') + '</div>').join('');
     } else {
       for (const [title, list] of c.parts) h += '<h2>' + title + '</h2><ul class="booklist">' + list.filter(x => bookName[x]).map(li).join('') + '</ul>';
       if (torah) h += '<h2>The Oral Torah and rabbinic writings</h2><div class="topic-grid">' + ORAL.map(col => '<a href="#/lib/c/' + encodeURIComponent(col) + '">' + esc(col) + ' →</a>').join('') + '</div>';
