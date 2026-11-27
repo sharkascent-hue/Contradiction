@@ -12,7 +12,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=1795753200">
+<link rel="stylesheet" href="style.css?v=1795754400">
 <link rel="icon" type="image/png" href="brand/favicon.png">
 <link rel="apple-touch-icon" href="brand/apple-touch-icon.png">
 <meta property="og:title" content="Contradiction AI">
@@ -23,39 +23,20 @@
 </head>
 <body>
 <div id="intro" aria-hidden="true">
-  <div class="intro-door l"></div><div class="intro-door r"></div>
-  <canvas class="intro-dust"></canvas>
   <div class="intro-stage">
-    <svg class="intro-sym" viewBox="0 0 300 120" fill="none" stroke="#E8C766" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-      <g class="s1"><path d="M50 18v84M28 44h44"/></g>
-      <g class="s2"><path d="M150 20l26 45H124zM150 100l-26-45h52z"/></g>
-      <g class="s3"><path d="M262 28a34 34 0 1 0 0 64a27 27 0 1 1 0-64z"/><path d="M268 50l3 8h8l-6 5 2 8-7-5-7 5 2-8-6-5h8z"/></g>
-    </svg>
-    <img class="intro-emblem" src="brand/emblem.png" alt="" width="150" height="150">
-    <div class="intro-wordwrap"><img class="intro-word" src="brand/wordmark.png" alt="" width="320" height="142"><span class="intro-shine"></span></div>
+    <img class="intro-emblem" src="brand/emblem.png" alt="" width="120" height="120">
+    <div class="intro-wordwrap"><img class="intro-word" src="brand/wordmark.png" alt="" width="300" height="133"><span class="intro-shine"></span></div>
   </div>
-  <button class="intro-skip" type="button">Skip</button>
 </div>
 <script>
-// Opening sequence: once per visit, skipped for reduced motion. Tap anywhere or "Skip" to go straight in.
+// A short opening: once per visit, skipped for reduced motion, tap to skip.
 (function () {
   var el = document.getElementById('intro'), seen = false;
-  try { seen = sessionStorage.getItem('intro2') === '1'; sessionStorage.setItem('intro2', '1'); } catch (e) {}
+  try { seen = sessionStorage.getItem('intro3') === '1'; sessionStorage.setItem('intro3', '1'); } catch (e) {}
   if (seen || (window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches)) return el.remove();
-  document.documentElement.classList.add('intro-on');
-  // drifting gold dust
-  var c = el.querySelector('canvas'), x = c.getContext('2d'), W, H, ps = [], run = true;
-  function size() { W = c.width = innerWidth * devicePixelRatio; H = c.height = innerHeight * devicePixelRatio; }
-  size(); addEventListener('resize', size);
-  for (var i = 0; i < 90; i++) ps.push({ x: Math.random(), y: Math.random(), r: Math.random() * 1.8 + .4, v: Math.random() * .0006 + .0002, a: Math.random() * .6 + .2, p: Math.random() * 6 });
-  (function tick(t) { if (!run) return; x.clearRect(0, 0, W, H);
-    ps.forEach(function (q) { q.y -= q.v; if (q.y < -.02) q.y = 1.02; var tw = .5 + .5 * Math.sin(t / 600 + q.p);
-      x.beginPath(); x.arc(q.x * W + Math.sin(t / 2000 + q.p) * 8, q.y * H, q.r * devicePixelRatio, 0, 7); x.fillStyle = 'rgba(232,199,102,' + q.a * tw + ')'; x.fill(); });
-    requestAnimationFrame(tick); })(0);
-  var done = function () { if (el.classList.contains('out')) return; el.classList.add('out'); document.documentElement.classList.remove('intro-on');
-    setTimeout(function () { run = false; el.remove(); }, 1100); };
+  var done = function () { if (el.classList.contains('out')) return; el.classList.add('out'); setTimeout(function () { el.remove(); }, 450); };
   el.addEventListener('click', done);
-  setTimeout(done, 4200);
+  setTimeout(done, 1300);
 })();
 </script>
 <header class="top">
@@ -96,6 +77,6 @@
   <a href="javascript:void 0" data-more aria-label="More sections"><svg viewBox="0 0 24 24"><circle cx="5" cy="12" r="1.6"/><circle cx="12" cy="12" r="1.6"/><circle cx="19" cy="12" r="1.6"/></svg><span>More</span></a>
 </nav>
 <div id="sheet" class="sheet" hidden></div>
-<script src="app.js?v=1795753200"></script>
+<script src="app.js?v=1795754400"></script>
 </body>
 </html>

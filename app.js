@@ -200,7 +200,7 @@
     const disputes = C.questions.filter(isDispute), day = Math.floor(Date.now() / 864e5), qd = disputes[day % disputes.length];
     const door = (k, slug, sub) => { const h = HUBS[slug]; return '<a class="door ' + h.key + '" href="#/faith/' + slug + '"><span class="door-glyph">' + h.glyph + '</span><strong>' + h.name + '</strong><span>' + sub + '</span><em>Enter →</em></a>'; };
     app.innerHTML =
-      '<section class="hx"><div class="hx-mark" aria-hidden="true"></div><p class="hx-eyebrow"><span>Christianity</span><b>◆</b><span>Islam</span><b>◆</b><span>Judaism</span></p>' +
+      '<section class="hx"><p class="hx-eyebrow"><span>Christianity</span><b>◆</b><span>Islam</span><b>◆</b><span>Judaism</span></p>' +
         '<h1>Three faiths.<br>One question.<br><em>Who do the texts back?</em></h1>' +
         '<p class="hx-lede">Put any claim to the Bible, the Quran, the hadith and the Talmud, and get a straight answer, with the passages.</p>' +
         askBox('Ask anything: "Was Jesus crucified?"') +
@@ -1878,6 +1878,11 @@
     ['bible', 'quran'].forEach(c => { const v = store.get('tr-' + c); if (trById[v] && trById[v].corpus === c) pref[c] = v; });
     setTr(trById[store.get('tr')] ? store.get('tr') : 'WEB');
     window.addEventListener('hashchange', route);
+    let awayTitle = null;
+    document.addEventListener('visibilitychange', () => {
+      if (document.hidden) { awayTitle = document.title; document.title = 'Come back: the texts are waiting · Contradiction AI'; }
+      else if (awayTitle) { document.title = awayTitle; awayTitle = null; }
+    });
     if ('IntersectionObserver' in window && !(window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches)) {
       const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { rootMargin: '0px 0px -6% 0px' });
       const watch = () => { if (app.classList.contains('chatmode')) return;
