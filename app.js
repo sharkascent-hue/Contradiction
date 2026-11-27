@@ -2416,7 +2416,8 @@
       const mine = (document.querySelector('script[src*="app.js?v="]') || {}).src || '';
       fetch('index.html?check=' + Date.now(), { cache: 'no-store' }).then(r => r.text()).then(t => {
         const live = (t.match(/app\.js\?v=(\d+)/) || [])[1];
-        if (live && !mine.includes('v=' + live) && sessionStorage.getItem('reloaded') !== live) { sessionStorage.setItem('reloaded', live); location.reload(); }
+        // Go to a fresh address so the browser cannot hand back its saved copy of the old page.
+        if (live && !mine.includes('v=' + live) && sessionStorage.getItem('reloaded') !== live) { sessionStorage.setItem('reloaded', live); location.replace(location.pathname + '?v=' + live + location.hash); }
       }).catch(() => {});
     } catch (e) {}
     let awayTitle = null;
