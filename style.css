@@ -544,3 +544,27 @@ a:hover { color: #6F4520; }
 :root[data-faith=muslim]    { --bg: #F0F1E6; --soft: #E2E6D2; --line: #D5DCC2; --link: #4E6B3A; --bar: rgba(240, 241, 230, .9); }
 :root[data-faith=jewish]    { --bg: #ECEFF3; --soft: #DCE3EC; --line: #CBD6E2; --link: #3B5576; --bar: rgba(236, 239, 243, .9); }
 .top { background: var(--bar, rgba(246, 239, 226, .88)); }
+
+/* Debates drop-down in the top menu */
+.dd { position: relative; }
+.dd > a .caret { font-size: .7em; margin-left: 2px; }
+.dd-menu { position: absolute; top: 100%; left: 0; min-width: 290px; padding: 8px; margin-top: 6px; background: var(--surface); border: 1px solid var(--line);
+  border-radius: 16px; box-shadow: var(--shadow-lg); display: none; flex-direction: column; gap: 2px; z-index: 30; }
+.dd-menu::before { content: ""; position: absolute; left: 0; right: 0; top: -10px; height: 10px; }
+.dd:hover .dd-menu, .dd:focus-within .dd-menu { display: flex; }
+.links .dd-menu a { display: flex; flex-direction: column; gap: 1px; border-radius: 10px; padding: 9px 12px; }
+.links .dd-menu a strong { color: var(--ink); font-weight: 600; font-size: .95rem; }
+.links .dd-menu a span { color: var(--muted); font-size: .82rem; }
+.links .dd-menu a.on { background: var(--soft); color: inherit; }
+.links { align-items: center; }
+@media (min-width: 860px) and (max-width: 1120px) { .links a { padding: 8px 9px; font-size: .9rem; } }
+
+/* stronger faith colours across the whole page (faith pages, Read and Library) */
+:root[data-faith=christian] { --bg: #F4DED6; --soft: #ECCFC4; --line: #DDB9AC; --surface: #FFF8F4; --bar: rgba(244, 222, 214, .92); }
+:root[data-faith=muslim]    { --bg: #E4EAD3; --soft: #D5DEBE; --line: #C2CDA6; --surface: #FBFCF4; --bar: rgba(228, 234, 211, .92); }
+:root[data-faith=jewish]    { --bg: #DCE4EE; --soft: #CBD6E4; --line: #B4C3D6; --surface: #F7F9FC; --bar: rgba(220, 228, 238, .92); }
+:root[data-faith] .links a.on, :root[data-faith] .seg a.on { background: var(--link); color: #fff; }
+
+.pager.pager-top { margin: 0 0 14px; }
+.pager .btn { max-width: 48%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.pager .btn.brand { margin-left: auto; }

@@ -339,6 +339,7 @@
     const c = set[view];
     if (!c.eds.includes(t)) t = c.eds[0];
     setTr(t);
+    setFaithTheme(quran ? 'muslim' : torah ? 'jewish' : 'christian');
     const bibleT = CANONS[store.get('canon')] && CANONS[store.get('canon')].eds.includes(pref.bible) ? pref.bible : (CANONS[store.get('canon')] || CANONS.protestant).eds[0];
     document.title = (quran ? 'The Quran' : torah ? 'The Torah' : c.name + ' Bible') + ' · Contradiction';
     let h = '<p class="crumbs">Read</p><div class="seg even">' +
@@ -372,6 +373,7 @@
 
   async function read(t, code, ch, vs) {
     if (!trById[t] || !bookName[code]) return notFound();
+    setFaithTheme(trById[t].corpus === 'quran' ? 'muslim' : (store.get('torah') === '1' && Object.values(TORAH).some(c => c.eds.includes(t))) ? 'jewish' : 'christian');
     let note = '';
     if (!has(t, code)) {  // e.g. the Septuagint has no New Testament
       note = '<p class="status">The ' + esc(trById[t].name) + ' does not include ' + esc(bookName[code]) + '. Showing the ' + esc(trById[trFor(code)].name) + ' instead.</p>';
@@ -395,12 +397,18 @@
     const head = esc(bookName[code]) + (n > 1 ? ' ' + ch : '');
     document.title = bookName[code] + (n > 1 ? ' ' + ch : '') + ' · ' + t;
     const link = c => '#/read/' + t + '/' + code + '/' + c;
-    app.innerHTML = crumbs + note + '<h1>' + head + '</h1>' +
+    // Previous and next: the next chapter, or on to the next book (or surah) at the end of one.
+    const order = trById[t].books.map(b => b[0]), bi = order.indexOf(code);
+    const nameOf = (c, k) => bookName[c] + (trById[t].chapters[c] > 1 ? ' ' + k : '');
+    const prevL = ch > 1 ? [link(ch - 1), nameOf(code, ch - 1)] : bi > 0 ? ['#/read/' + t + '/' + order[bi - 1] + '/' + trById[t].chapters[order[bi - 1]], nameOf(order[bi - 1], trById[t].chapters[order[bi - 1]])] : null;
+    const nextL = ch < n ? [link(ch + 1), nameOf(code, ch + 1)] : bi >= 0 && bi < order.length - 1 ? ['#/read/' + t + '/' + order[bi + 1] + '/1', nameOf(order[bi + 1], 1)] : null;
+    const pager = '<div class="pager">' + (prevL ? '<a class="btn ghost" href="' + prevL[0] + '">← ' + esc(prevL[1]) + '</a>' : '<span></span>') +
+      (nextL ? '<a class="btn brand" href="' + nextL[0] + '">' + esc(nextL[1]) + ' →</a>' : '') + '</div>';
+    app.innerHTML = crumbs + note + '<h1>' + head + '</h1>' + pager.replace('class="pager"', 'class="pager pager-top"') +
       (WBW_LANG(code) ? '<div class="reader-tools"><button class="chip' + (interlinear ? '" aria-pressed="true' : '') + '" data-wbw>' + LANG_NAME[WBW_LANG(code)] + ' word by word</button><span class="muted small">Tap a verse to compare translations and see the original.</span></div>' : '<p class="muted small">Tap a verse to compare translations.</p>') + '<div class="chapter' + (RTL[lang] ? ' rtl' : '') + '" lang="' + lang + '"' + (RTL[lang] ? ' dir="rtl"' : '') + '>' +
       book[ch - 1].map((txt, i) => txt ? '<p data-v="' + (i + 1) + '"' + (i + 1 >= v1 && i + 1 <= v2 ? ' class="sel"' : '') +
         '><sup>' + (i + 1) + '</sup>' + esc(txt) + '</p>' : '').join('') + '</div>' +
-      '<div class="pager">' + (ch > 1 ? '<a class="btn ghost" href="' + link(ch - 1) + '">← Chapter ' + (ch - 1) + '</a>' : '<span></span>') +
-      (ch < n ? '<a class="btn ghost" href="' + link(ch + 1) + '">Chapter ' + (ch + 1) + ' →</a>' : '') + '</div>';
+      pager + '</div>';
     bindPicker();
     const wb = app.querySelector('[data-wbw]');
     if (wb) wb.addEventListener('click', () => { interlinear = !interlinear; store.set('interlinear', interlinear ? '1' : '0'); route(); });
@@ -647,24 +655,27 @@
   }
 
   async function about() {
-    document.title = 'About · Contradiction';
     const id = renderId;
     const [lib, skipped] = await Promise.all([loadLib(), getJSON('lib/skipped.json').catch(() => [])]);
     if (id !== renderId) return;
     const count = f => lib.filter(w => w.f === f);
     const passages = lib.reduce((n, w) => n + w.items, 0);
-    app.innerHTML = hero('explore', 'About Contradiction', 'A place to learn what Christianity, Islam and Judaism actually teach, from their own texts.') +
-      '<h2>Why the name “Contradiction”?</h2>' +
-      '<p>Christianity, Islam and Judaism share Abraham, Moses and the prophets, and much of the same story. Yet at the points that matter most they say opposite things. Is Jesus God, a prophet, or neither? Was he crucified? Is the Torah eternal, fulfilled, or changed? Was the son on the altar Isaac or Ishmael? Those contradictions are where most arguments between believers start, and where most of the confusion lives.</p>' +
-      '<p>The name is not a verdict that any religion contradicts itself, and it is not a claim that one faith wins. It names the questions this site exists to explain. When two traditions contradict each other, the honest thing is to set out what each says, show the texts each relies on, and let you read them yourself.</p>' +
-      '<h2>What this site is for</h2>' +
-      '<p>Contradiction is for learning. It is not here to convert anyone or to tell you which faith to choose. That is a matter of conscience, and the right people to talk to about it are a priest, an imam or a rabbi you trust.</p>' +
-      '<ul><li><strong>The texts first.</strong> Every page links to the passages it relies on, in English and in the original Hebrew, Greek or Arabic.</li>' +
-      '<li><strong>Each faith in its own words.</strong> Every tradition is explained the way its own scholars explain it, including the differences inside it: Orthodox, Catholic and Protestant; Sunni and Shia; Orthodox, Conservative and Reform.</li>' +
-      '<li><strong>The same standard for everyone.</strong> In the Debates, an argument is judged against what the other side actually teaches. When an argument against Islam overstates the texts, the site says so, and the same goes for arguments against Christianity and Judaism.</li>' +
-      '<li><strong>Verdicts judge arguments, never religions.</strong> A verdict says whether a particular argument is supported by the texts it cites. It never says a faith is true or false.</li>' +
-      '<li><strong>Honest about limits.</strong> Summaries are drafts that have not yet been reviewed by scholars. The AI guide can make mistakes, so its answers link to the passages for you to check.</li></ul>' +
-      '<h2>The AI guide and the debate trainer</h2><p>The AI guide answers from the texts stored here and cites them. The debate trainer’s characters are fictional. They argue in common debating styles and do not represent any real person. Quotations from real debaters elsewhere on the site come from their published videos and writing, with links.</p>' +
+    document.title = 'Why Contradiction AI · Contradiction';
+    app.innerHTML = hero('explore', 'Why Contradiction AI', 'We built this so anyone can put the hard questions about Christianity, Islam and Judaism to the actual texts, and get a straight answer.') +
+      '<h2>Why we built it</h2>' +
+      '<p>Most people meet religion through arguments: a clip of a debate, a claim on social media, a friend who says "your book says…". It is almost impossible to check. The texts are long, spread across scriptures, hadith collections, the Talmud and the Church Fathers, and the answers you find online are usually written by one side to win.</p>' +
+      '<p>Contradiction AI puts all of those texts in one place and gives you a guide that reads them for you. Ask anything, including the uncomfortable questions, and it answers with the passages themselves, in English and the original Arabic, Hebrew or Greek, so you can see exactly what is written instead of what someone says is written.</p>' +
+      '<h2>Why "Contradiction"?</h2>' +
+      '<p>The three faiths share Abraham, Moses and the prophets, yet at the points that matter most they say opposite things. Is Jesus God, a prophet, or neither? Was he crucified? Is the Torah eternal, fulfilled or replaced? Was the son on the altar Isaac or Ishmael? Those contradictions are where the real arguments happen, and they are what this site exists to lay bare.</p>' +
+      '<h2>What you get</h2>' +
+      '<ul><li><strong>Straight answers.</strong> The guide says what the texts say, including the hard parts: violence, women, slavery, apostasy, the treatment of unbelievers. Nothing is softened and nothing is invented.</li>' +
+      '<li><strong>The same standard for every faith.</strong> An argument against Islam, Christianity or Judaism is tested the same way, against what that faith actually teaches.</li>' +
+      '<li><strong>Each faith in its own voice.</strong> Choose the Christian, Muslim or Jewish guide to hear that faith\'s answer as its own scholars would give it.</li>' +
+      '<li><strong>Debates, tested.</strong> The arguments real debaters make, with the texts, the best reply and a verdict, plus recent debate videos and a trainer to practise against.</li>' +
+      '<li><strong>Every passage linked.</strong> Bible, Quran, hadith, Talmud and much more, all readable on the site.</li></ul>' +
+      '<p>Verdicts judge arguments, never whole religions: what you believe is your decision. The AI can make mistakes, so every answer links to its sources for you to check.</p>' +
+      '<p><a class="btn brand" href="#/ask">Ask a question</a></p>' +
+      '<h2>The debate trainer</h2><p>The trainer\'s characters are fictional. They argue in common debating styles and do not represent any real person.</p>' +
       '<p><a href="#/privacy">Privacy policy</a> · <a href="#/terms">Terms of use</a></p>' +
       '<h2>What is stored</h2><ul>' +
       '<li>' + M.translations.filter(t => t.corpus === 'bible').length + ' editions of the Bible and ' + M.translations.filter(t => t.corpus === 'quran').length + ' of the Quran</li>' +
@@ -680,7 +691,6 @@
       skipped.map(x => '<li>' + esc(x[0]) + ': ' + esc(x[1]) + '</li>').join('') + '</ul></details>' +
       '<p class="small muted">Also not included, because they are under copyright: modern Bible and Quran translations, the Catechism of the Catholic Church, the documents of Vatican II, and most modern books of all three faiths.</p>' +
       '<h2>Status of the answers</h2><p>The answers and belief summaries are first drafts. None has yet been reviewed by a priest, imam, rabbi or trained scholar, and each page says so until it has been.</p>' +
-      '<h2>Ask</h2><p>The <a href="#/ask">Ask</a> page finds passages by matching the words of a question. It does not understand the question, so check what it returns. An AI-written answer built only from those passages can be switched on by whoever hosts the site; it needs a paid API key, and its answers must be checked against the linked sources like any other.</p>' +
       '<h2>Search</h2><p>The main search covers the English text of every work. The originals in Arabic, Hebrew, Greek and Latin can be searched one edition at a time, by choosing the edition at the top of the page.</p>';
   }
 
@@ -700,6 +710,7 @@
     if (FAITHS[a[0]] || a[0] === 'c') return libHome(a[0] === 'c' ? a.slice(1).join('/') : null, FAITHS[a[0]] ? a[0] : null);
     const w = L.find(x => x.id === a[0]);
     if (!w) return notFound();
+    setFaithTheme({ christian: 'christian', islam: 'muslim', judaism: 'jewish' }[w.f] || '');
     if (a[1] === 'search') return libSearch(w, a.slice(2).join('/'));
     if (a[1] !== undefined) return libPart(w, +a[1], a[2]);
     return libWork(w);
@@ -1722,7 +1733,7 @@
   function setTr(t) { tr = t; pref[trById[t].corpus] = t; store.set('tr', t); store.set('tr-' + trById[t].corpus, t); }
   const TAB = { '': '', ask: 'ask', faiths: 'faiths', faith: 'faiths', beliefs: 'faiths', compare: 'faiths', books: 'books', read: 'books', lib: 'lib', go: 'lib',
     topics: 'topics', t: 'topics', topic: 'topics', q: 'topics', questions: 'topics', search: 'search', debates: 'debates', d: 'debates', videos: 'debates', shamoun: 'debates', trainer: 'debates', stories: 'topics', prophecies: 'topics', translations: 'topics', timeline: 'topics' };
-  const THEME_BG = { christian: '#F8ECE6', muslim: '#F0F1E6', jewish: '#ECEFF3', '': '#F6EFE2' };
+  const THEME_BG = { christian: '#F4DED6', muslim: '#E4EAD3', jewish: '#DCE4EE', '': '#F6EFE2' };
   function setFaithTheme(key) {
     if (key) document.documentElement.dataset.faith = key; else delete document.documentElement.dataset.faith;
     const m = document.querySelector('meta[name=theme-color]'); if (m) m.content = THEME_BG[key];

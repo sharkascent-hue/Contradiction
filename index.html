@@ -12,7 +12,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=1795746000">
+<link rel="stylesheet" href="style.css?v=1795748400">
 <link rel="icon" type="image/png" href="brand/favicon.png">
 </head>
 <body>
@@ -22,11 +22,20 @@
   </a>
   <nav class="links" aria-label="Main">
     <a href="#/ask">Ask</a>
+    <div class="dd">
+      <a href="#/debates" aria-haspopup="true">Debates <span class="caret" aria-hidden="true">▾</span></a>
+      <div class="dd-menu" role="menu">
+        <a href="#/debates" role="menuitem"><strong>All debates</strong><span>Every argument, with the texts and a verdict</span></a>
+        <a href="#/videos" role="menuitem"><strong>Watch recent debates</strong><span>The newest videos, with the AI's take</span></a>
+        <a href="#/shamoun" role="menuitem"><strong>Debaters: Sam Shamoun</strong><span>His arguments and how each debate went</span></a>
+        <a href="#/trainer" role="menuitem"><strong>Debate trainer</strong><span>Argue your side against an AI opponent</span></a>
+      </div>
+    </div>
     <a href="#/faiths">Faiths</a>
-    <a href="#/debates">Debates</a>
-    <a href="#/topics">Topics</a>
     <a href="#/books">Read</a>
+    <a href="#/topics">Topics</a>
     <a href="#/lib">Library</a>
+    <a href="#/about">Why Contradiction AI</a>
   </nav>
   <a class="icon-btn" href="#/search" aria-label="Search every text">
     <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
@@ -34,7 +43,7 @@
 </header>
 <main id="app" tabindex="-1"><div class="boot"><span class="mark spin"></span></div></main>
 <footer class="foot">
-  <p><strong>Contradiction</strong> sets out what Christianity, Islam and Judaism teach, in their own words, with the texts. Summaries are drafts, not yet reviewed by a priest, imam, rabbi or scholar. <a href="#/about">About</a> · <a href="#/privacy">Privacy</a> · <a href="#/terms">Terms</a></p>
+  <p><strong>Contradiction</strong> sets out what Christianity, Islam and Judaism teach, in their own words, with the texts. Summaries are drafts, not yet reviewed by a priest, imam, rabbi or scholar. <a href="#/about">Why Contradiction AI</a> · <a href="#/privacy">Privacy</a> · <a href="#/terms">Terms</a></p>
 </footer>
 <nav class="tabbar" aria-label="Sections">
   <a href="#/"><svg viewBox="0 0 24 24"><path d="M3 11.5 12 4l9 7.5V20a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></svg><span>Home</span></a>
@@ -44,6 +53,6 @@
   <a href="#/debates"><svg viewBox="0 0 24 24"><path d="M3 6h10v7H7l-4 3zM21 10h-6v6h4l2 2z"/></svg><span>Debates</span></a>
 </nav>
 <div id="sheet" class="sheet" hidden></div>
-<script src="app.js?v=1795746000"></script>
+<script src="app.js?v=1795748400"></script>
 </body>
 </html>
