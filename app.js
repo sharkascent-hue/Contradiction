@@ -129,22 +129,30 @@
   // Text to read aloud: no markdown, citation numbers, links or non-Latin scripts.
   const spoken = s => s.replace(/\s*\[(\d+)\]/g, '').replace(/[*_#>`]/g, '').replace(/\([^)]*[֐-׿؀-ۿͰ-Ͽ][^)]*\)/g, '')
     .replace(/[֐-׿؀-ۿݐ-ݿͰ-Ͽἀ-῿«»]+/g, '').replace(/^\s*[-•]\s*/gm, '').replace(/\s+/g, ' ').trim();
-  function pickVoice() { const vs = speechSynthesis.getVoices().filter(v => /^en/i.test(v.lang));
-    return vs.find(v => /natural|premium|enhanced/i.test(v.name)) || vs.find(v => /Samantha|Daniel|Google UK English|Google US English|Serena|Karen|Moira/i.test(v.name)) || vs[0] || null; }
+  const MALE = /Daniel|Arthur|Oliver|Aaron|Alex|Fred|Rishi|Tom|Evan|Nathan|Gordon|Lee|Reed|Eddy|Rocko|Grandpa|Google UK English Male|David|Guy|Ryan|Mark|George|Thomas|James|Christopher|Eric|Andrew|Brian|Davis|Tony/i;
+  const voiceKey = () => 'voice-' + (clergy || guide || 'all');
+  const enVoices = () => speechSynthesis.getVoices().filter(v => /^en/i.test(v.lang));
+  const quality = v => (/premium/i.test(v.name) ? 3 : /enhanced|natural|neural/i.test(v.name) ? 2 : /Google/i.test(v.name) ? 1 : 0);
+  function pickVoice() {
+    const vs = enVoices(), saved = store.get(voiceKey()); if (saved) { const s = vs.find(v => v.name === saved); if (s) return s; }
+    const want = clergy && CLERGY[clergy][3] === 'f' ? v => !MALE.test(v.name) : clergy ? v => MALE.test(v.name) : () => true;
+    return vs.filter(want).sort((x, y) => quality(y) - quality(x))[0] || vs.sort((x, y) => quality(y) - quality(x))[0] || null; }
   function say(text, onEnd) {
     if (!TTS) return onEnd && onEnd();
     speechSynthesis.cancel();
     const parts = spoken(text).match(/[^.!?]+[.!?]*/g) || [];   // short pieces: some phones stop long utterances
     let i = 0; const v = pickVoice();
     const next = () => { if (!voiceMode) return; if (i >= parts.length) return onEnd && onEnd();
-      const u = new SpeechSynthesisUtterance(parts[i++].trim()); if (v) u.voice = v; u.rate = 1.02; u.onend = next; u.onerror = next; speechSynthesis.speak(u); };
+      const u = new SpeechSynthesisUtterance(parts[i++].trim()); if (v) u.voice = v; u.rate = clergy ? .96 : 1.02; u.onend = next; u.onerror = next; speechSynthesis.speak(u); };
     next();
   }
   function talk() {
     if (!SR) { alert('Talking needs a browser with speech recognition: Safari on iPhone, or Chrome. You can still type your question.'); return; }
     voiceMode = true;
-    const ov = document.createElement('div'); ov.className = 'talk'; ov.innerHTML = '<div class="talk-in"><p class="talk-guide">' + (guide === 'all' ? 'All three faiths' : 'The ' + FAITH_ADJ[guide] + ' guide') + '</p>' +
-      '<button class="talk-orb" type="button" aria-label="Tap to speak"><span></span></button><p class="talk-state">Starting…</p><p class="talk-text"></p><button class="btn talk-end" type="button">End</button></div>';
+    const ov = document.createElement('div'); ov.className = 'talk'; ov.innerHTML = '<div class="talk-in"><p class="talk-guide">' + (clergy ? esc(CLERGY[clergy][1]) + ' · ' + esc(CLERGY[clergy][2]) : guide === 'all' ? 'All three faiths' : 'The ' + FAITH_ADJ[guide] + ' guide') + '</p>' +
+      '<button class="talk-orb" type="button" aria-label="Tap to speak"><span></span></button><p class="talk-state">Starting…</p><p class="talk-text"></p>' +
+      (TTS ? '<div class="talk-voice"><label>Voice <select></select></label><button type="button" class="talk-try">▶ Try</button></div><p class="talk-hint">On iPhone, nicer voices: Settings › Accessibility › Spoken Content › Voices › English, then download an <b>Enhanced</b> or <b>Premium</b> voice.</p>' : '') +
+      '<button class="btn talk-end" type="button">End</button></div>';
     document.body.append(ov);
     const st = ov.querySelector('.talk-state'), tx = ov.querySelector('.talk-text'), orb = ov.querySelector('.talk-orb');
     const set = (s, cls) => { st.textContent = s; ov.dataset.s = cls; };
@@ -163,8 +171,14 @@
       }); };
     orb.addEventListener('click', () => { if (TTS) speechSynthesis.cancel(); try { rec && rec.abort(); } catch (e) {} setTimeout(hear, 150); });
     ov.querySelector('.talk-end').addEventListener('click', end);
+    const sel = ov.querySelector('.talk-voice select');
+    if (sel) { const fill = () => { const vs = enVoices().sort((x, y) => quality(y) - quality(x) || x.name.localeCompare(y.name)), cur = pickVoice();
+        sel.innerHTML = vs.map(v => '<option' + (cur && v.name === cur.name ? ' selected' : '') + '>' + esc(v.name) + '</option>').join(''); };
+      fill(); if (!sel.options.length) speechSynthesis.onvoiceschanged = fill;
+      sel.addEventListener('change', () => store.set(voiceKey(), sel.value));
+      ov.querySelector('.talk-try').addEventListener('click', () => { speechSynthesis.cancel(); const u = new SpeechSynthesisUtterance(clergy ? 'Peace be with you. I am ' + CLERGY[clergy][1] + '. What is on your heart?' : 'Hello. Ask me anything about the three faiths.'); const v = pickVoice(); if (v) u.voice = v; u.rate = clergy ? .96 : 1.02; speechSynthesis.speak(u); }); }
     // iPhones only allow speech that starts from a tap: say hello now, then listen.
-    if (TTS) { const u = new SpeechSynthesisUtterance('Ask me anything.'); const v = pickVoice(); if (v) u.voice = v; u.onend = hear; u.onerror = hear; speechSynthesis.speak(u); set('Hello', 'speak'); }
+    if (TTS) { const u = new SpeechSynthesisUtterance(clergy ? 'Hello, I am ' + CLERGY[clergy][1] + '. What would you like to talk about?' : 'Ask me anything.'); const v = pickVoice(); if (v) u.voice = v; u.onend = hear; u.onerror = hear; speechSynthesis.speak(u); set('Hello', 'speak'); }
     else hear();
   }
   document.addEventListener('click', e => { if (e.target.closest('[data-talk]')) { e.preventDefault(); talk(); } });
@@ -1555,6 +1569,11 @@
   const CHAT_ENDPOINT = 'api/chat';      // served by api/chat.js where the site runs on a host with server functions and an API key
   const GUIDES = [['all', 'All'], ['christian', 'Christian'], ['muslim', 'Muslim'], ['jewish', 'Jewish']];
   let guide = store.get('guide') || 'all', chatLog = [], lastTopic = null, aiReady = null, aiUrl = null;
+  // Faith leaders (fictional AI characters). The server has the matching instructions.
+  const CLERGY = { 'orthodox-priest': ['christian', 'Father Nikolai', 'Orthodox priest', 'm'], 'catholic-priest': ['christian', 'Father Thomas', 'Catholic priest', 'm'],
+    'protestant-pastor': ['christian', 'Pastor James', 'Protestant pastor', 'm'], 'sunni-imam': ['muslim', 'Imam Yusuf', 'Sunni imam', 'm'], 'shia-sheikh': ['muslim', 'Sheikh Hasan', 'Shia scholar', 'm'],
+    'orthodox-rabbi': ['jewish', 'Rabbi David', 'Orthodox rabbi', 'm'], 'reform-rabbi': ['jewish', 'Rabbi Sarah', 'Reform rabbi', 'f'] };
+  let clergy = CLERGY[store.get('clergy')] && CLERGY[store.get('clergy')][0] === guide ? store.get('clergy') : '';
   // The AI guide runs where content/config.json's aiEndpoint points, or at api/chat on hosts that run server functions.
   let aiProbe = null;
   const probeAI = () => aiProbe || (aiProbe = probeOnce());
@@ -1568,6 +1587,10 @@
   const guideName = g => g === 'all' ? 'all three faiths' : 'the ' + FAITH_ADJ[g] + ' guide';
 
   function emptyChat() {
+    if (clergy) { const c = CLERGY[clergy];
+      return '<div class="empty-chat">' + avatar(c[0]) + '<p class="eyebrow">' + esc(c[2]) + '</p><h1>' + esc(c[1]) + '</h1><p class="muted">Talk about your faith, your doubts or your questions, and hear how ' + (/^[AEIOU]/.test(c[2]) ? 'an ' : 'a ') + esc(c[2]) + ' would answer, from the teaching of their tradition. ' + esc(c[1]) + ' is an AI character, not a real ' + esc(c[2].split(' ').pop()) + '.</p>' +
+        (SR ? '<p><button class="talk-btn" type="button" data-talk>' + MIC_SVG + ' Talk out loud</button></p>' : '') +
+        '<div class="starter">' + ['I\'m struggling with my faith', 'How do I pray?', 'Why does God allow suffering?', 'What happens when we die?'].map(s => '<button data-ask="' + esc(s) + '">' + esc(s) + '</button>').join('') + '</div></div>'; }
     const intro = guide === 'all' ? 'Ask about any belief, story or practice. I\'ll show what Christians, Muslims and Jews each say, and where it is in their texts.'
       : 'I answer from the ' + FAITH_ADJ[guide] + ' point of view, with the passages ' + FAITH_PEOPLE[guide] + ' rely on, and I show how the others respond.';
     return '<div class="empty-chat">' + avatar(guide) + (aiReady ? '<p class="eyebrow">Contradiction AI</p>' : '') + '<h1>' + (guide === 'all' ? 'What would you like to know?' : 'Ask the ' + FAITH_ADJ[guide] + ' guide') + '</h1><p class="muted">' + intro + '</p>' +
@@ -1578,16 +1601,22 @@
     if (aiReady === null) probeAI().then(ok => { const m = document.getElementById('msgs'); if (ok && m && !m.querySelector('.msg')) m.innerHTML = emptyChat(); });
     app.innerHTML = '<div class="chat"><div class="chat-head"><div class="seg even" role="group" aria-label="Who answers">' +
       GUIDES.map(([g, l]) => '<button data-guide="' + g + '" aria-pressed="' + (g === guide) + '">' + l + '</button>').join('') + '</div>' + (SR ? '<button class="talk-btn" type="button" data-talk>' + MIC_SVG + ' Talk</button>' : '') + '</div>' +
+      '<div class="clergy-row" role="group" aria-label="Talk to a faith leader"><span class="clergy-lab">Talk to</span>' + Object.entries(CLERGY).map(([k, c]) => '<button type="button" class="clergy ' + c[0] + '" data-clergy="' + k + '" aria-pressed="' + (k === clergy) + '"><b>' + GLYPH[c[0]] + '</b>' + esc(c[1]) + '<small>' + esc(c[2]) + '</small></button>').join('') + '</div>' +
       '<div class="msgs" id="msgs">' + (chatLog.length ? chatLog.map(m => m.html).join('') : emptyChat()) + '</div>' +
-      '<div class="composer">' + askBox(guide === 'all' ? 'Ask a question…' : 'Ask the ' + FAITH_ADJ[guide] + ' guide…') + '</div></div>';
+      '<div class="composer">' + askBox(clergy ? 'Talk to ' + CLERGY[clergy][1] + '…' : guide === 'all' ? 'Ask a question…' : 'Ask the ' + FAITH_ADJ[guide] + ' guide…') + '</div></div>';
     bindAsk(q => send(q));
     const msgs = document.getElementById('msgs');
     msgs.addEventListener('click', e => {
       const b = e.target.closest('[data-ask]');
       if (b) { e.preventDefault(); send(b.dataset.ask); }
     });
+    app.querySelectorAll('[data-clergy]').forEach(b => b.addEventListener('click', () => {
+      const k = b.dataset.clergy; clergy = clergy === k ? '' : k; store.set('clergy', clergy);
+      if (clergy) { guide = CLERGY[clergy][0]; store.set('guide', guide); }
+      chatLog = []; renderChat();
+    }));
     app.querySelectorAll('[data-guide]').forEach(b => b.addEventListener('click', () => {
-      guide = b.dataset.guide; store.set('guide', guide);
+      guide = b.dataset.guide; store.set('guide', guide); clergy = ''; store.set('clergy', '');
       const last = chatLog.length && chatLog.pop().q;      // the new guide answers it instead
       renderChat();
       if (last) send(last);       // answer the last question again in the new voice
@@ -1669,7 +1698,7 @@
     let text = '';
     try {
       const r = await fetch(aiUrl, { method: 'POST', headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(Object.assign({ messages: history.concat({ role: 'user', content: q.slice(0, 1500) }), guide, context }, voiceMode && !opts ? { voice: true } : {}, opts && opts.extra)) });
+        body: JSON.stringify(Object.assign({ messages: history.concat({ role: 'user', content: q.slice(0, 1500) }), guide, context }, voiceMode && !opts ? { voice: true } : {}, clergy && !opts ? { clergy } : {}, opts && opts.extra)) });
       if (!r.ok) { const e = await r.json().catch(() => null); throw new Error(e && e.error ? e.error : 'The AI guide is not available right now.'); }
       const reader = r.body.getReader(), dec = new TextDecoder();
       let buf = '';
