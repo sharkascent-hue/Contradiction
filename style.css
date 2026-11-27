@@ -1033,8 +1033,20 @@ body { background-color: var(--bg); }
 .clergy:hover { border-color: #B88A52; transform: translateY(-1px); }
 .clergy[aria-pressed=true] { border-color: #8B5A2B; background: #F3E3C4; }
 :root[data-mode=dark] .clergy[aria-pressed=true] { background: #38281B; }
-.talk-voice { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; justify-content: center; font-size: .9rem; }
+/* removed voice chooser */ .talk-voice-old { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; justify-content: center; font-size: .9rem; }
 .talk-voice select { max-width: 220px; padding: 7px 10px; border-radius: 10px; background: rgba(255,255,255,.1); color: #F1E8D8; border: 1px solid rgba(232,199,102,.4); font: inherit; }
 .talk-voice select option { color: #1A120B; }
 .talk-try { padding: 7px 12px; border-radius: 10px; border: 1px solid rgba(232,199,102,.4); background: transparent; color: #E8C766; cursor: pointer; font: 600 .85rem var(--sans); }
 .talk-hint { margin: -6px 0 0; font-size: .76rem; color: #A8957A; max-width: 380px; }
+
+.talk-in { max-width: 640px; width: 100%; }
+.talk-people { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin-top: 6px; }
+@media (min-width: 640px) { .talk-people { grid-template-columns: repeat(4, 1fr); } }
+.tp { display: flex; flex-direction: column; align-items: center; gap: 2px; padding: 16px 10px; border-radius: 18px; border: 1px solid rgba(232, 199, 102, .3); background: rgba(255, 255, 255, .05); color: #F1E8D8; cursor: pointer; font: inherit; transition: background .2s, transform .15s, border-color .2s; }
+.tp:hover { background: rgba(255, 255, 255, .1); border-color: #E8C766; transform: translateY(-2px); }
+.tp-g { width: 46px; height: 46px; border-radius: 50%; display: grid; place-items: center; font-size: 1.3rem; margin-bottom: 6px; background: #8B5A2B; color: #fff; }
+.tp.christian .tp-g { background: #8C2F2B; } .tp.muslim .tp-g { background: #4E6B3A; } .tp.jewish .tp-g { background: #3B5576; } .tp.all .tp-g { background: linear-gradient(135deg, #D4AF37, #8B5A2B); }
+.tp strong { font: 700 .98rem var(--display); } .tp small { font-size: .76rem; color: #C9B48E; }
+.talk-call { display: grid; justify-items: center; gap: 18px; }
+.talk-change { background: none; border: 0; color: #E8C766; font: 600 .9rem var(--sans); cursor: pointer; text-decoration: underline; }
+.talk-call[hidden], .talk-pick[hidden] { display: none !important; }

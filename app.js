@@ -130,38 +130,51 @@
   const spoken = s => s.replace(/\s*\[(\d+)\]/g, '').replace(/[*_#>`]/g, '').replace(/\([^)]*[֐-׿؀-ۿͰ-Ͽ][^)]*\)/g, '')
     .replace(/[֐-׿؀-ۿݐ-ݿͰ-Ͽἀ-῿«»]+/g, '').replace(/^\s*[-•]\s*/gm, '').replace(/\s+/g, ' ').trim();
   const MALE = /Daniel|Arthur|Oliver|Aaron|Alex|Fred|Rishi|Tom|Evan|Nathan|Gordon|Lee|Reed|Eddy|Rocko|Grandpa|Google UK English Male|David|Guy|Ryan|Mark|George|Thomas|James|Christopher|Eric|Andrew|Brian|Davis|Tony/i;
-  const voiceKey = () => 'voice-' + (clergy || guide || 'all');
   const enVoices = () => speechSynthesis.getVoices().filter(v => /^en/i.test(v.lang));
   const quality = v => (/premium/i.test(v.name) ? 3 : /enhanced|natural|neural/i.test(v.name) ? 2 : /Google/i.test(v.name) ? 1 : 0);
+  // Each character gets its own voice: men a male voice, women a female one, the best available first.
   function pickVoice() {
-    const vs = enVoices(), saved = store.get(voiceKey()); if (saved) { const s = vs.find(v => v.name === saved); if (s) return s; }
-    const want = clergy && CLERGY[clergy][3] === 'f' ? v => !MALE.test(v.name) : clergy ? v => MALE.test(v.name) : () => true;
-    return vs.filter(want).sort((x, y) => quality(y) - quality(x))[0] || vs.sort((x, y) => quality(y) - quality(x))[0] || null; }
+    const vs = enVoices().sort((x, y) => quality(y) - quality(x)), keys = Object.keys(CLERGY);
+    if (!clergy) return vs[0] || null;
+    const female = CLERGY[clergy][3] === 'f', pool = vs.filter(v => female ? !MALE.test(v.name) : MALE.test(v.name));
+    const same = keys.filter(k => (CLERGY[k][3] === 'f') === female), n = same.indexOf(clergy);
+    return pool.length ? pool[n % pool.length] : vs[0] || null; }
   function say(text, onEnd) {
     if (!TTS) return onEnd && onEnd();
     speechSynthesis.cancel();
     const parts = spoken(text).match(/[^.!?]+[.!?]*/g) || [];   // short pieces: some phones stop long utterances
     let i = 0; const v = pickVoice();
     const next = () => { if (!voiceMode) return; if (i >= parts.length) return onEnd && onEnd();
-      const u = new SpeechSynthesisUtterance(parts[i++].trim()); if (v) u.voice = v; u.rate = clergy ? .96 : 1.02; u.onend = next; u.onerror = next; speechSynthesis.speak(u); };
+      const u = new SpeechSynthesisUtterance(parts[i++].trim()); if (v) u.voice = v; u.rate = clergy ? .92 : 1; u.pitch = clergy && CLERGY[clergy][3] === 'm' ? .88 : 1; u.onend = next; u.onerror = next; speechSynthesis.speak(u); };
     next();
   }
+  const GREET = { '': 'Hello. Ask me anything about Christianity, Islam or Judaism.',
+    'orthodox-priest': 'Peace be with you. I am Father Peter, an Orthodox priest. How can I help you with your faith today?',
+    'catholic-priest': 'Peace be with you. I am Father Thomas, a Catholic priest. What is on your heart today?',
+    'protestant-pastor': 'Hello, friend. I am Pastor James. How can I help you with your faith today?',
+    'sunni-imam': 'As-salamu alaykum. I am Imam Yusuf. How can I help you today?',
+    'shia-sheikh': 'Salam alaykum. I am Sheikh Hasan. What would you like to ask me?',
+    'orthodox-rabbi': 'Shalom. I am Rabbi David. What would you like to talk about?',
+    'reform-rabbi': 'Shalom. I am Rabbi Sarah. How can I help you today?' };
   function talk() {
     if (!SR) { alert('Talking needs a browser with speech recognition: Safari on iPhone, or Chrome. You can still type your question.'); return; }
     voiceMode = true;
-    const ov = document.createElement('div'); ov.className = 'talk'; ov.innerHTML = '<div class="talk-in"><p class="talk-guide">' + (clergy ? esc(CLERGY[clergy][1]) + ' · ' + esc(CLERGY[clergy][2]) : guide === 'all' ? 'All three faiths' : 'The ' + FAITH_ADJ[guide] + ' guide') + '</p>' +
-      '<button class="talk-orb" type="button" aria-label="Tap to speak"><span></span></button><p class="talk-state">Starting…</p><p class="talk-text"></p>' +
-      (TTS ? '<div class="talk-voice"><label>Voice <select></select></label><button type="button" class="talk-try">▶ Try</button></div><p class="talk-hint">On iPhone, nicer voices: Settings › Accessibility › Spoken Content › Voices › English, then download an <b>Enhanced</b> or <b>Premium</b> voice.</p>' : '') +
-      '<button class="btn talk-end" type="button">End</button></div>';
+    const people = [['', '✦', 'Contradiction AI', 'All three faiths', 'all']].concat(Object.entries(CLERGY).map(([k, c]) => [k, GLYPH[c[0]], c[1], c[2], c[0]]));
+    const ov = document.createElement('div'); ov.className = 'talk';
+    ov.innerHTML = '<div class="talk-in"><div class="talk-pick"><p class="talk-guide">Who would you like to talk to?</p><div class="talk-people">' +
+      people.map(p => '<button type="button" class="tp ' + p[4] + '" data-who="' + p[0] + '"><span class="tp-g">' + p[1] + '</span><strong>' + esc(p[2]) + '</strong><small>' + esc(p[3]) + '</small></button>').join('') + '</div></div>' +
+      '<div class="talk-call" hidden><p class="talk-guide"></p><button class="talk-orb" type="button" aria-label="Tap to speak"><span></span></button><p class="talk-state"></p><p class="talk-text"></p>' +
+      '<button type="button" class="talk-change">Talk to someone else</button></div><button class="btn talk-end" type="button">End</button></div>';
     document.body.append(ov);
-    const st = ov.querySelector('.talk-state'), tx = ov.querySelector('.talk-text'), orb = ov.querySelector('.talk-orb');
+    const st = ov.querySelector('.talk-state'), tx = ov.querySelector('.talk-text'), orb = ov.querySelector('.talk-orb'), pick = ov.querySelector('.talk-pick'), call = ov.querySelector('.talk-call');
     const set = (s, cls) => { st.textContent = s; ov.dataset.s = cls; };
-    const end = () => { voiceMode = false; try { rec && rec.abort(); } catch (e) {} if (TTS) speechSynthesis.cancel(); ov.remove(); };
-    const hear = () => { if (!voiceMode) return; set('Listening… ask your question', 'listen'); tx.textContent = '';
+    const stop = () => { try { rec && rec.abort(); } catch (e) {} if (TTS) speechSynthesis.cancel(); };
+    const end = () => { voiceMode = false; stop(); ov.remove(); };
+    const hear = () => { if (!voiceMode) return; set('Listening… speak now', 'listen'); tx.textContent = '';
       listen(t => { tx.textContent = t; }, async q => {
         if (!voiceMode) return;
-        if (!q) { set('Tap the circle and ask your question', 'idle'); return; }
-        set('Looking it up in the texts…', 'think');
+        if (!q) { set('Tap the circle and speak', 'idle'); return; }
+        set('Thinking…', 'think');
         if (!/^#\/ask/.test(location.hash)) { location.hash = '#/ask'; await new Promise(r => setTimeout(r, 400)); }
         const a = await answer(q).catch(() => '');
         if (!voiceMode) return;
@@ -169,17 +182,21 @@
         set('Speaking… tap to interrupt', 'speak'); tx.textContent = '';
         say(a, () => { if (voiceMode) hear(); });
       }); };
-    orb.addEventListener('click', () => { if (TTS) speechSynthesis.cancel(); try { rec && rec.abort(); } catch (e) {} setTimeout(hear, 150); });
+    const choose = k => {
+      clergy = k; store.set('clergy', k); guide = k ? CLERGY[k][0] : 'all'; store.set('guide', guide); chatLog = [];
+      if (/^#\/ask/.test(location.hash)) renderChat();
+      pick.hidden = true; call.hidden = false;
+      call.querySelector('.talk-guide').textContent = k ? CLERGY[k][1] + ' · ' + CLERGY[k][2] : 'Contradiction AI · all three faiths';
+      // iPhones only allow speech that starts from a tap: this greeting comes from the tap on the person.
+      tx.textContent = GREET[k] || GREET[''];
+      if (TTS) { speechSynthesis.cancel(); const u = new SpeechSynthesisUtterance(GREET[k] || GREET['']); const v = pickVoice(); if (v) u.voice = v;
+        u.rate = k ? .92 : 1; u.pitch = k && CLERGY[k][3] === 'm' ? .88 : 1; u.onend = hear; u.onerror = hear; speechSynthesis.speak(u); set('Speaking…', 'speak'); }
+      else hear();
+    };
+    ov.querySelectorAll('[data-who]').forEach(b => b.addEventListener('click', () => choose(b.dataset.who)));
+    ov.querySelector('.talk-change').addEventListener('click', () => { stop(); call.hidden = true; pick.hidden = false; ov.dataset.s = ''; });
+    orb.addEventListener('click', () => { stop(); setTimeout(hear, 150); });
     ov.querySelector('.talk-end').addEventListener('click', end);
-    const sel = ov.querySelector('.talk-voice select');
-    if (sel) { const fill = () => { const vs = enVoices().sort((x, y) => quality(y) - quality(x) || x.name.localeCompare(y.name)), cur = pickVoice();
-        sel.innerHTML = vs.map(v => '<option' + (cur && v.name === cur.name ? ' selected' : '') + '>' + esc(v.name) + '</option>').join(''); };
-      fill(); if (!sel.options.length) speechSynthesis.onvoiceschanged = fill;
-      sel.addEventListener('change', () => store.set(voiceKey(), sel.value));
-      ov.querySelector('.talk-try').addEventListener('click', () => { speechSynthesis.cancel(); const u = new SpeechSynthesisUtterance(clergy ? 'Peace be with you. I am ' + CLERGY[clergy][1] + '. What is on your heart?' : 'Hello. Ask me anything about the three faiths.'); const v = pickVoice(); if (v) u.voice = v; u.rate = clergy ? .96 : 1.02; speechSynthesis.speak(u); }); }
-    // iPhones only allow speech that starts from a tap: say hello now, then listen.
-    if (TTS) { const u = new SpeechSynthesisUtterance(clergy ? 'Hello, I am ' + CLERGY[clergy][1] + '. What would you like to talk about?' : 'Ask me anything.'); const v = pickVoice(); if (v) u.voice = v; u.onend = hear; u.onerror = hear; speechSynthesis.speak(u); set('Hello', 'speak'); }
-    else hear();
   }
   document.addEventListener('click', e => { if (e.target.closest('[data-talk]')) { e.preventDefault(); talk(); } });
   if (TTS) speechSynthesis.getVoices();
@@ -1570,7 +1587,7 @@
   const GUIDES = [['all', 'All'], ['christian', 'Christian'], ['muslim', 'Muslim'], ['jewish', 'Jewish']];
   let guide = store.get('guide') || 'all', chatLog = [], lastTopic = null, aiReady = null, aiUrl = null;
   // Faith leaders (fictional AI characters). The server has the matching instructions.
-  const CLERGY = { 'orthodox-priest': ['christian', 'Father Nikolai', 'Orthodox priest', 'm'], 'catholic-priest': ['christian', 'Father Thomas', 'Catholic priest', 'm'],
+  const CLERGY = { 'orthodox-priest': ['christian', 'Father Peter', 'Orthodox priest', 'm'], 'catholic-priest': ['christian', 'Father Thomas', 'Catholic priest', 'm'],
     'protestant-pastor': ['christian', 'Pastor James', 'Protestant pastor', 'm'], 'sunni-imam': ['muslim', 'Imam Yusuf', 'Sunni imam', 'm'], 'shia-sheikh': ['muslim', 'Sheikh Hasan', 'Shia scholar', 'm'],
     'orthodox-rabbi': ['jewish', 'Rabbi David', 'Orthodox rabbi', 'm'], 'reform-rabbi': ['jewish', 'Rabbi Sarah', 'Reform rabbi', 'f'] };
   let clergy = CLERGY[store.get('clergy')] && CLERGY[store.get('clergy')][0] === guide ? store.get('clergy') : '';
