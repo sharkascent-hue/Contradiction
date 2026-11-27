@@ -2417,7 +2417,7 @@
       fetch('index.html?check=' + Date.now(), { cache: 'no-store' }).then(r => r.text()).then(t => {
         const live = (t.match(/app\.js\?v=(\d+)/) || [])[1];
         // Go to a fresh address so the browser cannot hand back its saved copy of the old page.
-        if (live && !mine.includes('v=' + live) && sessionStorage.getItem('reloaded') !== live) { sessionStorage.setItem('reloaded', live); sessionStorage.removeItem('intro7'); location.replace(location.pathname + '?v=' + live + location.hash); }
+        if (live && !mine.includes('v=' + live) && sessionStorage.getItem('reloaded') !== live) { sessionStorage.setItem('reloaded', live); sessionStorage.removeItem('intro8'); location.replace(location.pathname + '?v=' + live + location.hash); }
       }).catch(() => {});
     } catch (e) {}
     let awayTitle = null;

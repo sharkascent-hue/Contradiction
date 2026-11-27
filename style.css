@@ -1152,3 +1152,21 @@ html.intro-on { overflow: hidden; }
 /* footer logo: its real proportions, with room under it */
 .foot .foot-logo { height: 46px !important; width: 139px !important; max-width: none !important; object-fit: contain; display: block; margin: 0 0 12px; }
 @media (max-width: 759px) { .foot-cols > div:first-child { align-items: flex-start; } }
+
+/* opening book, simple two-half page turns: the front swings to its edge on the right, then the back swings down on the left. No hidden back faces, no changing layers. */
+.ff, .fb { position: absolute; top: 0; bottom: 0; width: 100%; overflow: hidden; }
+.ff { left: 0; transform-origin: left center; border-radius: 0 6px 6px 0; transform: perspective(1600px) rotateY(0deg); }
+.fb { left: -100%; transform-origin: right center; border-radius: 6px 0 0 6px; transform: perspective(1600px) rotateY(90deg); opacity: 0; }
+.pgbg-r { background: linear-gradient(90deg, #E6D6B8, #F8F0E0 14%, #F8F0E0 92%, #EFE2C8); }
+.pgbg-l { background: linear-gradient(270deg, #E6D6B8, #F8F0E0 14%, #F8F0E0 92%, #EFE2C8); }
+.bk-inside2 { background: radial-gradient(120% 90% at 70% 30%, #6B3D1E, #3A1F0D); box-shadow: inset 0 0 0 8px #3A1F0D, inset 0 0 0 9px rgba(201, 162, 75, .45); }
+.ff.bk-front { position: absolute; }
+.f0 { animation: ffOut .55s cubic-bezier(.5, 0, 1, 1) 1.2s forwards; } .b0 { animation: fbIn .55s cubic-bezier(0, 0, .4, 1) 1.75s forwards; }
+.f1 { animation: ffOut .42s cubic-bezier(.5, 0, 1, 1) 2s forwards; }   .b1 { animation: fbIn .42s cubic-bezier(0, 0, .4, 1) 2.42s forwards; }
+.f2 { animation: ffOut .42s cubic-bezier(.5, 0, 1, 1) 2.3s forwards; } .b2 { animation: fbIn .42s cubic-bezier(0, 0, .4, 1) 2.72s forwards; }
+.f3 { animation: ffOut .42s cubic-bezier(.5, 0, 1, 1) 2.6s forwards; } .b3 { animation: fbIn .42s cubic-bezier(0, 0, .4, 1) 3.02s forwards; }
+@keyframes ffOut { 0% { transform: perspective(1600px) rotateY(0deg); opacity: 1; } 99% { transform: perspective(1600px) rotateY(-90deg); opacity: 1; } 100% { transform: perspective(1600px) rotateY(-90deg); opacity: 0; } }
+@keyframes fbIn { 0% { transform: perspective(1600px) rotateY(90deg); opacity: 1; } 100% { transform: perspective(1600px) rotateY(0deg); opacity: 1; } }
+.ff .sh { animation: shOut .42s ease-in forwards; animation-delay: inherit; opacity: 0; } .fb .sh { opacity: .8; animation: shIn .42s ease-out forwards; animation-delay: inherit; }
+.f1 .sh { animation-delay: 2s; } .f2 .sh { animation-delay: 2.3s; } .f3 .sh { animation-delay: 2.6s; } .b1 .sh { animation-delay: 2.42s; } .b2 .sh { animation-delay: 2.72s; } .b3 .sh { animation-delay: 3.02s; }
+@keyframes shOut { to { opacity: .8; } } @keyframes shIn { to { opacity: 0; } }
