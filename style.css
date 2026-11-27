@@ -537,3 +537,5 @@ p .share-btn { float: none; vertical-align: middle; margin: 0 0 0 6px; }
 }
 :root[data-faith] .links a.on { background: var(--brand); }
 :root[data-faith] .composer .sug { background: var(--bg); }
+
+.logo-mark { width: 32px; height: 32px; flex: none; display: block; }
