@@ -405,7 +405,8 @@ export async function chatTurn({ body, siteUrl, emit, client = new Anthropic() }
           betas: ["server-side-fallback-2026-07-01"],
           fallbacks: "default",                     // if the model declines, Anthropic's recommended fallback model answers
           output_config: { effort: "medium" },
-          system: sys,
+          system: [{ type: "text", text: sys, cache_control: { type: "ephemeral" } }],   // instructions and tools are cached: repeat rounds and other readers pay about 5%
+          cache_control: { type: "ephemeral" },   // and the conversation so far, between lookup rounds
           tools: TOOLS,
           ...(round >= MAX_TOOL_ROUNDS || site.count > LOOKUP_BUDGET - 4 ? { tool_choice: { type: "none" } } : {}),
           messages,
@@ -421,7 +422,7 @@ export async function chatTurn({ body, siteUrl, emit, client = new Anthropic() }
         await new Promise(r => setTimeout(r, 800 * (attempt + 1)));
       }
     }
-    console.log("round", round, "stop", msg.stop_reason, "lookups", site.count, "blocks", msg.content.map(b => b.type).join(","));
+    console.log("round", round, "stop", msg.stop_reason, "lookups", site.count, "usage", JSON.stringify(msg.usage));
     if (msg.stop_reason === "refusal") { emit({ t: "text", d: "\n\nI can't help with that one. The passages below are still the site's sources on it." }); break; }
     if (msg.stop_reason === "pause_turn") { messages.push({ role: "assistant", content: msg.content }); continue; }
     const uses = msg.content.filter(b => b.type === "tool_use");
