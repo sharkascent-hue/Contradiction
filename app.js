@@ -10,6 +10,8 @@
   const GROUPS = { ot: 'Old Testament', dc: 'Deuterocanon & Apocrypha', nt: 'New Testament', quran: 'Quran' };
   const corpusOf = code => bookGroup[code] === 'quran' ? 'quran' : 'bible';
   const RTL = { he: 1, ar: 1 };
+  // Hebrew for display: letters and vowels, without the cantillation marks, paseq and meteg, which many phones draw badly.
+  const heb = s => s.replace(/[\u0591-\u05AF\u05BD]/g, '').replace(/\s*\u05C0\s*/g, ' ');
   const pref = { bible: 'WEB', quran: 'PICK' };
   const VIEW_GROUP = { orthodox: 'christian', catholic: 'christian', protestant: 'christian', sunni: 'muslim', shia: 'muslim' };
   let M, C, B, G, SITE_CFG = {}, tr, refRe, refOne, viewFilter = 'all', lastQ, renderId = 0;
@@ -216,7 +218,8 @@
     if (!trById[ed] || !has(ed, r.code)) return null;
     const ch = (await loadBook(ed, r.code))[r.ch - 1] || [];
     const t = (r.v1 ? ch.slice(r.v1 - 1, r.v2) : ch.slice(0, 1)).join(' ').trim();
-    return t ? [t.length > 220 ? t.slice(0, 220).replace(/\s+\S*$/, '') + '…' : t, trById[ed].lang] : null;
+    const u = ed === 'WLC' ? heb(t) : t;
+    return u ? [u.length > 220 ? u.slice(0, 220).replace(/\s+\S*$/, '') + '…' : u, trById[ed].lang] : null;
   }
   function verseOfDay(day) {
     const v = VOD[day % VOD.length], cols = [['jewish', 'Torah', v[1]], ['christian', 'Gospel', v[2]], ['muslim', 'Quran', v[3]]];
@@ -461,7 +464,7 @@
     Promise.all(eds.map(t => loadBook(t.id, r.code).then(b => [t, b]).catch(() => [t, null]))).then(rows => {
       if (rid !== renderId) return;
       const html = rows.map(([t, b]) => { const ch = b && b[r.ch - 1]; if (!ch) return '';
-        const txt = (r.v1 ? ch.slice(r.v1 - 1, r.v2) : ch.slice(0, 3)).map((v, k) => v ? '<sup>' + ((r.v1 || 1) + k) + '</sup>' + esc(v) : '').join(' ');
+        const txt = (r.v1 ? ch.slice(r.v1 - 1, r.v2) : ch.slice(0, 3)).map((v, k) => v ? '<sup>' + ((r.v1 || 1) + k) + '</sup>' + esc(t.lang === 'he' ? heb(v) : v) : '').join(' ');
         const orig = t.lang !== 'en';
         return '<div class="par' + (orig ? ' orig' : '') + '"><div class="par-h"><strong>' + esc(t.name) + '</strong><span class="muted small">' + esc(t.tradition || '') + '</span></div><p lang="' + t.lang + '"' + (RTL[t.lang] ? ' dir="rtl"' : '') + '>' + txt + '</p></div>'; }).join('');
       app.querySelector('.par-list').innerHTML = html || '<p class="muted">No edition on the site has that passage.</p>';
@@ -722,7 +725,7 @@
     app.innerHTML = crumbs + note + '<h1>' + head + '</h1>' + recite + pager.replace('class="pager"', 'class="pager pager-top"') +
       (WBW_LANG(code) ? '<div class="reader-tools"><button class="chip' + (interlinear ? '" aria-pressed="true' : '') + '" data-wbw>' + LANG_NAME[WBW_LANG(code)] + ' word by word</button><span class="muted small">Tap a verse to compare translations and see the original.</span></div>' : '<p class="muted small">Tap a verse to compare translations.</p>') + '<div class="chapter' + (RTL[lang] ? ' rtl' : '') + '" lang="' + lang + '"' + (RTL[lang] ? ' dir="rtl"' : '') + '>' +
       book[ch - 1].map((txt, i) => txt ? '<p data-v="' + (i + 1) + '"' + (i + 1 >= v1 && i + 1 <= v2 ? ' class="sel"' : '') +
-        '><sup>' + (i + 1) + '</sup>' + esc(txt) + '</p>' : '').join('') + '</div>' +
+        '><sup>' + (i + 1) + '</sup>' + esc(lang === 'he' ? heb(txt) : txt) + '</p>' : '').join('') + '</div>' +
       pager + '</div>';
     bindPicker();
     const rb = app.querySelector('[data-recite]');
