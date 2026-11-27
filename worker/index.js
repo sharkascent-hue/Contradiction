@@ -29,11 +29,13 @@ export default {
       try { if (env.RL_IP && !(await env.RL_IP.limit({ key: "tts:" + ip })).success) return json(429, { error: "Too many." }); } catch (e) {}
       const b = await request.json().catch(() => null);
       const VOICES = ["zeus", "orpheus", "arcas", "orion", "perseus", "helios", "angus", "athena", "asteria", "luna", "stella", "hera"];
+      const AURA2 = ["apollo", "aries", "atlas", "draco", "hyperion", "jupiter", "mars", "neptune", "odysseus", "orion", "orpheus", "pluto", "saturn", "zeus", "arcas"];
       const text = b && typeof b.text === "string" ? b.text.slice(0, 900).trim() : "";
-      const speaker = b && VOICES.includes(b.voice) ? b.voice : "athena";
+      const v2 = b && typeof b.voice === "string" && b.voice.startsWith("2:") && AURA2.includes(b.voice.slice(2)) ? b.voice.slice(2) : null;
+      const speaker = v2 || (b && VOICES.includes(b.voice) ? b.voice : "orion");
       if (!text || !env.AI) return json(400, { error: "No text." });
       try {
-        const out = await env.AI.run("@cf/deepgram/aura-1", { text, speaker });
+        const out = await env.AI.run(v2 ? "@cf/deepgram/aura-2-en" : "@cf/deepgram/aura-1", { text, speaker });
         const body = out instanceof ReadableStream ? out : out && out.audio ? Uint8Array.from(atob(out.audio), c => c.charCodeAt(0)) : out;
         return new Response(body, { headers: { ...cors, "Content-Type": "audio/mpeg", "Cache-Control": "no-store" } });
       } catch (e) { console.error("tts failed", e && e.message); return json(502, { error: "Voice unavailable." }); }

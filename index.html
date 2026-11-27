@@ -12,7 +12,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=Amiri+Quran&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=1795786800">
+<link rel="stylesheet" href="style.css?v=1795789200">
 <link rel="icon" type="image/png" href="brand/favicon.png">
 <link rel="apple-touch-icon" href="brand/apple-touch-icon.png">
 <meta property="og:title" content="Contradiction AI">
@@ -23,26 +23,22 @@
 </head>
 <body>
 <div id="intro" aria-hidden="true">
-  <div class="in-stage">
-    <svg class="in-draw" viewBox="0 0 200 200" fill="none" stroke="#B8862F" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-      <circle class="in-ring" cx="100" cy="100" r="86"/>
-      <path class="in-s1" d="M100 40v74M84 58h32"/>
-      <path class="in-s2" d="M62 92l16 27H46zM62 128l-16-27h32z"/>
-      <path class="in-s3" d="M146 84a20 20 0 1 0 0 40a16 16 0 1 1 0-40z"/>
-      <path class="in-book" d="M58 150c14-7 28-7 42 2 14-9 28-9 42-2"/>
-    </svg>
-    <img class="in-emblem" src="brand/emblem.png" alt="" width="170" height="170">
-    <div class="in-word"><img src="brand/wordmark.png" alt="" width="320" height="142"><span class="in-shine"></span></div>
+  <div class="bk-glow"></div>
+  <div class="bk">
+    <div class="bk-right"><div class="bk-page"><img class="bk-emb" src="brand/emblem.png" alt="" width="84" height="84"><img class="bk-word" src="brand/wordmark.png" alt="" width="200" height="89"></div></div>
+    <div class="bk-leaf l2"><div class="bk-face"></div><div class="bk-back"><div class="bk-lines"><span lang="he">בְּרֵאשִׁית בָּרָא אֱלֹהִים</span><i>✦</i><span lang="el">Ἐν ἀρχῇ ἦν ὁ λόγος</span><i>✦</i><span lang="ar">بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ</span></div></div></div>
+    <div class="bk-leaf l1"><div class="bk-face"></div><div class="bk-back"></div></div>
+    <div class="bk-cover"><div class="bk-front"><img src="brand/emblem.png" alt="" width="110" height="110"><span>Contradiction AI</span></div><div class="bk-inside"></div></div>
   </div>
 </div>
 <script>
 (function () {
   var el = document.getElementById('intro'), seen = false;
-  try { seen = sessionStorage.getItem('intro4') === '1'; sessionStorage.setItem('intro4', '1'); } catch (e) {}
+  try { seen = sessionStorage.getItem('intro5') === '1'; sessionStorage.setItem('intro5', '1'); } catch (e) {}
   if (seen || (window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches)) return el.remove();
   document.documentElement.classList.add('intro-on');
-  var done = function () { if (el.classList.contains('out')) return; el.classList.add('out'); document.documentElement.classList.remove('intro-on'); setTimeout(function () { el.remove(); }, 900); };
-  el.addEventListener('click', done); setTimeout(done, 2300);
+  var done = function () { if (el.classList.contains('out')) return; el.classList.add('out'); document.documentElement.classList.remove('intro-on'); setTimeout(function () { el.remove(); }, 800); };
+  el.addEventListener('click', done); setTimeout(done, 2900);
 })();
 </script>
 <script>try{document.documentElement.dataset.mode=localStorage.getItem('mode')||'light'}catch(e){}</script>
@@ -104,6 +100,6 @@
   <a href="javascript:void 0" data-more aria-label="More sections"><svg viewBox="0 0 24 24"><circle cx="5" cy="12" r="1.6"/><circle cx="12" cy="12" r="1.6"/><circle cx="19" cy="12" r="1.6"/></svg><span>More</span></a>
 </nav>
 <div id="sheet" class="sheet" hidden></div>
-<script src="app.js?v=1795786800"></script>
+<script src="app.js?v=1795789200"></script>
 </body>
 </html>

@@ -135,12 +135,12 @@
   // Each character gets its own voice: men a male voice, women a female one, the best available first.
   function pickVoice() {
     const vs = enVoices().sort((x, y) => quality(y) - quality(x)), keys = Object.keys(CLERGY);
-    if (!clergy) return vs[0] || null;
+    if (!clergy) return vs.filter(v => MALE.test(v.name))[0] || vs[0] || null;
     const female = CLERGY[clergy][3] === 'f', pool = vs.filter(v => female ? !MALE.test(v.name) : MALE.test(v.name));
     const same = keys.filter(k => (CLERGY[k][3] === 'f') === female), n = same.indexOf(clergy);
     return pool.length ? pool[n % pool.length] : vs[0] || null; }
   // Natural studio voices (Deepgram Aura on Cloudflare), one per character; the device's own voice only if that fails.
-  const AURA = { '': 'athena', 'orthodox-priest': 'zeus', 'catholic-priest': 'orpheus', 'protestant-pastor': 'arcas', 'sunni-imam': 'orion',
+  const AURA = { '': '2:atlas', 'orthodox-priest': 'zeus', 'catholic-priest': 'orpheus', 'protestant-pastor': 'arcas', 'sunni-imam': 'orion',
     'shia-sheikh': 'perseus', 'orthodox-rabbi': 'helios', 'reform-rabbi': 'angus' };
   const player = new Audio(); player.preload = 'auto';
   let sayId = 0;
@@ -163,7 +163,7 @@
     const parts = spoken(text).match(/[^.!?]+[.!?]*/g) || [];
     // Group sentences into chunks of about 300 characters: the first starts quickly, the next loads while one plays.
     const chunks = []; parts.forEach((s, k) => { const c = chunks[chunks.length - 1]; if (c && c.text.length + s.length < 300) { c.text += ' ' + s.trim(); c.parts.push(k); } else chunks.push({ text: s.trim(), parts: [k] }); });
-    const voice = AURA[clergy || ''] || 'athena', urls = chunks.map(() => null);
+    const voice = AURA[clergy || ''] || '2:atlas', urls = chunks.map(() => null);
     const load = k => k < chunks.length && !urls[k] ? (urls[k] = fetchVoice(chunks[k].text, voice)) : urls[k];
     let k = 0;
     const play = async () => {
