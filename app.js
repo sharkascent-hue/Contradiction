@@ -199,7 +199,7 @@
     document.title = 'Contradiction · Christianity, Islam and Judaism, side by side';
     const disputes = C.questions.filter(isDispute);
     app.innerHTML =
-      '<section class="hero"><p class="eyebrow">Christianity · Islam · Judaism</p><h1>Three faiths. One question. <em>Who do the texts back?</em></h1>' +
+      '<section class="hero"><img class="hero-logo" src="brand/logo-full.png" alt="Contradiction AI: explore, compare, question" width="700" height="232"><p class="eyebrow">Christianity · Islam · Judaism</p><h1>Three faiths. One question. <em>Who do the texts back?</em></h1>' +
       '<p class="lede">The arguments Christians, Muslims and Jews throw at each other, tested on the actual Bible, Quran, hadith and Talmud. Ask anything, or step into the arena.</p>' +
       askBox('Ask anything…') +
       '<div class="suggest">' + SUGGEST.map(s => '<a class="chip" href="#/ask/' + encodeURIComponent(s) + '">' + esc(s) + '</a>').join('') + '</div></section>' +
@@ -1722,7 +1722,7 @@
   function setTr(t) { tr = t; pref[trById[t].corpus] = t; store.set('tr', t); store.set('tr-' + trById[t].corpus, t); }
   const TAB = { '': '', ask: 'ask', faiths: 'faiths', faith: 'faiths', beliefs: 'faiths', compare: 'faiths', books: 'books', read: 'books', lib: 'lib', go: 'lib',
     topics: 'topics', t: 'topics', topic: 'topics', q: 'topics', questions: 'topics', search: 'search', debates: 'debates', d: 'debates', videos: 'debates', shamoun: 'debates', trainer: 'debates', stories: 'topics', prophecies: 'topics', translations: 'topics', timeline: 'topics' };
-  const THEME_BG = { christian: '#0F1526', muslim: '#0C1A14', jewish: '#150F26', '': '#1A120B' };
+  const THEME_BG = { christian: '#f3f6ff', muslim: '#f1faf5', jewish: '#f7f3ff', '': '#faf8f4' };
   function setFaithTheme(key) {
     if (key) document.documentElement.dataset.faith = key; else delete document.documentElement.dataset.faith;
     const m = document.querySelector('meta[name=theme-color]'); if (m) m.content = THEME_BG[key];

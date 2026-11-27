@@ -6,10 +6,11 @@ import { latestVideos } from "../server/videos.js";
 
 export default {
   async fetch(request, env, ctx) {
-    // ALLOWED_ORIGIN may list several origins, comma separated. The custom domain is always allowed.
-    const allowed = [...(env.ALLOWED_ORIGIN || "").split(","), "https://www.contradictionai.com", "https://contradictionai.com", "https://sharkascent-hue.github.io"].map(s => s.trim()).filter(Boolean);
+    // The site's own addresses (http or https, with or without www) and any origin listed in ALLOWED_ORIGIN (comma separated).
+    const listed = (env.ALLOWED_ORIGIN || "").split(",").map(s => s.trim()).filter(Boolean);
     const origin = request.headers.get("Origin") || "";
-    const cors = { "Access-Control-Allow-Origin": env.ALLOWED_ORIGIN === "*" ? "*" : (allowed.includes(origin) ? origin : allowed[0]), "Vary": "Origin", "Access-Control-Allow-Methods": "GET, POST, OPTIONS", "Access-Control-Allow-Headers": "Content-Type" };
+    const ok = /^https?:\/\/(www\.)?contradictionai\.com$/.test(origin) || origin === "https://sharkascent-hue.github.io" || listed.includes(origin);
+    const cors = { "Access-Control-Allow-Origin": env.ALLOWED_ORIGIN === "*" ? "*" : (ok ? origin : "https://www.contradictionai.com"), "Vary": "Origin", "Access-Control-Allow-Methods": "GET, POST, OPTIONS", "Access-Control-Allow-Headers": "Content-Type" };
     const json = (status, obj) => new Response(JSON.stringify(obj), { status, headers: { ...cors, "Content-Type": "application/json" } });
     if (request.method === "OPTIONS") return new Response(null, { status: 204, headers: cors });
     if (request.method === "GET" && new URL(request.url).searchParams.has("videos")) {
