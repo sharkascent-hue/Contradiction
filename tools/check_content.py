@@ -18,6 +18,7 @@ ST = J("content", "stories.json")
 PR = J("content", "prophecies.json")
 TR = J("content", "translations.json")
 TL = J("content", "timeline.json")
+HQ = J("content", "hard.json")
 lib = {w["id"]: w for w in J("lib", "index.json")}
 colls = {w["c"] for w in lib.values()}
 questions = Q["questions"] + D["questions"]
@@ -88,7 +89,7 @@ def strings(x):
             yield from strings(v)
 
 problems, counts = [], dict(verses=0, links=0, hadith=0, talmud=0)
-for name, doc in (("questions", Q), ("disputes", D), ("beliefs", B), ("guide", G), ("debates", [[t["ref"] for t in a["texts"]] + [a["argument"], a["response"], a["facts"], a["assessment"]] for a in DB["arguments"]]), ("shamoun", [a["texts"] for a in SH["arguments"]] + [x["texts"] for x in SH["debates"]]), ("stories", ST), ("prophecies", PR), ("translations", TR), ("timeline", TL)):
+for name, doc in (("questions", Q), ("disputes", D), ("beliefs", B), ("guide", G), ("debates", [[t["ref"] for t in a["texts"]] + [a["argument"], a["response"], a["facts"], a["assessment"]] for a in DB["arguments"]]), ("shamoun", [a["texts"] for a in SH["arguments"]] + [x["texts"] for x in SH["debates"]]), ("stories", ST), ("prophecies", PR), ("translations", TR), ("timeline", TL), ("hard", HQ)):
     for s in strings(doc):
         for path, label in re.findall(r"\[\[([^|\]]+)\|([^\]]+)\]\]", s):
             counts["links"] += 1

@@ -196,33 +196,36 @@
   ].map(x => '<a href="' + x[0] + '"><strong>' + x[1] + '</strong><span>' + x[2] + '</span></a>').join('') + '</div>';
 
   function home() {
-    document.title = 'Contradiction · Christianity, Islam and Judaism, side by side';
-    const disputes = C.questions.filter(isDispute);
+    document.title = 'Contradiction AI · Christianity, Islam and Judaism, tested on the texts';
+    const disputes = C.questions.filter(isDispute), day = Math.floor(Date.now() / 864e5), qd = disputes[day % disputes.length];
+    const door = (k, slug, sub) => { const h = HUBS[slug]; return '<a class="door ' + h.key + '" href="#/faith/' + slug + '"><span class="door-glyph">' + h.glyph + '</span><strong>' + h.name + '</strong><span>' + sub + '</span><em>Enter →</em></a>'; };
     app.innerHTML =
-      '<section class="hero"><p class="eyebrow">Christianity · Islam · Judaism</p><h1>Three faiths. One question. <em>Who do the texts back?</em></h1>' +
-      '<p class="lede">The arguments Christians, Muslims and Jews throw at each other, tested on the actual Bible, Quran, hadith and Talmud. Ask anything, or step into the arena.</p>' +
-      askBox('Ask anything…') +
-      '<div class="suggest">' + SUGGEST.map(s => '<a class="chip" href="#/ask/' + encodeURIComponent(s) + '">' + esc(s) + '</a>').join('') + '</div></section>' +
+      '<section class="hx"><div class="hx-mark" aria-hidden="true"></div><p class="hx-eyebrow"><span>Christianity</span><b>◆</b><span>Islam</span><b>◆</b><span>Judaism</span></p>' +
+        '<h1>Three faiths.<br>One question.<br><em>Who do the texts back?</em></h1>' +
+        '<p class="hx-lede">Put any claim to the Bible, the Quran, the hadith and the Talmud, and get a straight answer, with the passages.</p>' +
+        askBox('Ask anything: "Was Jesus crucified?"') +
+        '<div class="marquee" aria-label="Try a question"><div class="marquee-track">' + [...SUGGEST, ...SUGGEST].map(s => '<a class="chip" href="#/ask/' + encodeURIComponent(s) + '">' + esc(s) + '</a>').join('') + '</div></div></section>' +
+      '<section class="today"><a class="today-card qd" href="#/q/' + qd.slug + '"><span class="tag">Question of the day</span><strong>' + esc(qd.title) + '</strong><span>' + esc(qd.short) + '</span><em>See what each faith says →</em></a>' +
+        '<div class="today-card dd-card" id="arena-feature"><span class="tag">Debate of the day</span><strong>Loading…</strong></div></section>' +
+      '<div class="section-head"><h2>Choose a faith</h2><a href="#/faiths">Compare all three →</a></div>' +
+      '<div class="doors">' + door('christian', 'christianity', 'Orthodox · Catholic · Protestant') + door('muslim', 'islam', 'Sunni · Shia') + door('jewish', 'judaism', 'Orthodox · Conservative · Reform') + '</div>' +
       '<section class="arena"><div class="arena-head"><span class="hp-eyebrow">The arena</span><h2>Where the faiths collide</h2><p>Real arguments from real debaters, tested against the texts. Every side gets the same standard.</p></div>' +
-        '<div id="arena-feature"></div><div class="arena-row"><a href="#/trainer" class="arena-card"><span class="arena-chars">' + charSvg('elias', 44) + charSvg('yusuf', 44) + charSvg('avraham', 44) + '</span><strong>Debate trainer</strong><span>Pick an opponent and argue. Get scored out of 10.</span></a>' +
-        '<a href="#/videos" class="arena-card"><span class="arena-ico">▶</span><strong>Recent debates</strong><span>The newest videos from Christian, Muslim and Jewish debaters.</span></a>' +
-        '<a href="#/debates" class="arena-card"><span class="arena-ico">⚔</span><strong>All ' + '<span id="deb-count">49</span> debates</strong><span>Every argument, both ways, with a verdict.</span></a></div></section>' +
-      '<div class="section-head"><h2>Explore</h2></div>' + exploreGrid() +
-      '<div class="section-head"><h2>The three faiths</h2><a href="#/faiths">Compare them →</a></div>' + faithCards() +
-      '<div class="section-head"><h2>Where they disagree</h2><a href="#/questions">See all</a></div>' +
-      '<div class="tile-row">' + disputes.map(disputeTile).join('') + '</div>' +
-      '<div class="section-head"><h2>Debates</h2><a href="#/debates">All debates</a></div><div class="tile-row" id="home-deb"></div>' +
-      '<div class="section-head"><h2>Explore by topic</h2><a href="#/topics">All ' + G.topics.length + ' topics</a></div>' +
-      '<div class="topic-grid">' + POPULAR.map(id => G.topics.find(t => t.id === id)).filter(Boolean).map(t => '<a href="#/t/' + t.id + '">' + esc(t.title) + '</a>').join('') + '</div>' +
-      '<div class="section-head"><h2>Read the texts</h2></div>' + readGrid();
+        '<div class="arena-row"><a href="#/debates" class="arena-card"><span class="arena-ico">⚔</span><strong><span id="deb-count">49</span> debates, judged</strong><span>Every argument, both ways, with a verdict.</span></a>' +
+        '<a href="#/debaters" class="arena-card"><span class="arena-ico">🎙</span><strong>The debaters</strong><span>Wood, Shamoun, Hijab, Ally, Singer and more: their channels and arguments.</span></a>' +
+        '<a href="#/videos" class="arena-card"><span class="arena-ico">▶</span><strong>Watch recent debates</strong><span>The newest videos, with the AI\'s take.</span></a>' +
+        '<a href="#/trainer" class="arena-card"><span class="arena-chars">' + charSvg('elias', 40) + charSvg('yusuf', 40) + charSvg('avraham', 40) + '</span><strong>Debate trainer</strong><span>Argue against an AI opponent. Scored out of 10.</span></a></div></section>' +
+      '<section class="hardband"><div><span class="tag">No softening</span><h2>The hard questions</h2><p>Women, slaves and captives, apostasy, holy war, child marriage, harsh punishments: the texts critics quote, in full, for all three faiths.</p>' +
+        '<a class="btn" href="#/hard">Read the hard questions →</a></div><ul>' + (HQ ? HQ.topics : []).map(t => '<li><a href="#/hard/' + t.id + '">' + esc(t.title) + '</a></li>').join('') + '</ul></section>' +
+      '<div class="section-head"><h2>Go deeper</h2></div><div class="tools-strip">' + EXPLORE.filter(e => !/debate|Shamoun/i.test(e[1])).map(([h, t, d]) => '<a href="' + h + '"><strong>' + t + '</strong><span>' + d + '</span></a>').join('') + '</div>' +
+      '<div class="section-head"><h2>Read the texts</h2><a href="#/search">Search everything →</a></div>' + readGrid();
     bindAsk();
     loadDebates().then(d => {
       const f = document.getElementById('arena-feature'), n = document.getElementById('deb-count');
       if (n) n.textContent = d.arguments.length;
-      if (f && d.arguments.length) { const day = Math.floor(Date.now() / 864e5), a = d.arguments[day % d.arguments.length], dir = DIR[a.direction] || ['', '', ''];
-        f.innerHTML = '<a class="feature" href="#/d/' + a.id + '"><span class="hp-eyebrow">Debate of the day · ' + esc(dir[0]) + '</span><strong>' + esc(a.title) + '</strong><span class="feature-arg">' + esc(a.argument.slice(0, 220)) + '…</span>' +
-          '<span class="vs"><i class="dot ' + dir[1] + '"></i><span class="small">vs</span><i class="dot ' + dir[2] + '"></i>' + (a.verdict ? '<span class="verdict v-' + a.verdict + '">' + VERDICT[a.verdict] + '</span>' : '') + '<span class="small">Read the verdict →</span></span></a>'; }
-      const el = document.getElementById('home-deb'); if (el) el.innerHTML = d.arguments.length ? mixDirs(d.arguments).slice(0, 8).map(debTile).join('') : '<p class="muted small">Coming soon.</p>'; });
+      if (f && d.arguments.length) { const a = d.arguments[day % d.arguments.length], dir = DIR[a.direction] || ['', '', ''];
+        f.outerHTML = '<a class="today-card dd-card" href="#/d/' + a.id + '"><span class="tag">Debate of the day · ' + esc(dir[0]) + '</span><strong>' + esc(a.title) + '</strong>' +
+          '<span class="vs"><i class="dot ' + dir[1] + '"></i><span class="small">vs</span><i class="dot ' + dir[2] + '"></i>' + (a.verdict ? '<span class="verdict v-' + a.verdict + '">' + VERDICT[a.verdict] + '</span>' : '') + '</span><em>Read the verdict →</em></a>'; }
+    });
   }
   const questionCards = qs => '<ul class="cards">' + qs.map(q =>
     '<li><a href="#/q/' + q.slug + '"><strong>' + esc(q.title) + '</strong><span>' + esc(q.short) + '</span></a></li>').join('') + '</ul>';
@@ -231,6 +234,84 @@
   function bindSearch() {
     const f = app.querySelector('form.searchbox');
     if (f) { f.addEventListener('submit', e => { e.preventDefault(); location.hash = '#/search/' + encodeURIComponent(f.q.value.trim()); }); attachSuggest(f.q); }
+  }
+
+  /* ---------- the hard questions ---------- */
+  let HQ = null;
+  const loadHard = () => HQ ? Promise.resolve(HQ) : getJSON('content/hard.json').then(d => (HQ = d)).catch(() => (HQ = { topics: [] }));
+  async function hard(id) {
+    const rid = renderId, d = await loadHard();
+    if (rid !== renderId) return;
+    if (!id) {
+      document.title = 'The hard questions · Contradiction AI';
+      app.innerHTML = hero('hard', 'The hard questions', d.about) +
+        '<div class="hard-list">' + d.topics.map(t => '<a href="#/hard/' + t.id + '"><strong>' + esc(t.title) + '</strong><span>' + esc(t.short) + '</span>' +
+          '<span class="vs"><i class="dot muslim"></i><i class="dot jewish"></i><i class="dot christian"></i><em>' + Object.values(t.faiths).reduce((n, f) => n + f.texts.length, 0) + ' texts</em></span></a>').join('') + '</div>';
+      return;
+    }
+    const t = d.topics.find(x => x.id === id);
+    if (!t) return notFound();
+    document.title = t.title + ' · Contradiction AI';
+    const order = [['muslim', 'Islam'], ['jewish', 'Judaism'], ['christian', 'Christianity']];
+    app.innerHTML = hero('hard', t.title, t.short, '<div class="hp-actions"><a class="btn" href="#/ask/' + encodeURIComponent(t.ask) + '">Ask the AI about this</a><a class="btn ghost-w" href="#/hard">All hard questions</a></div>') +
+      '<div class="seg even hard-tabs">' + order.map(([k, n], i) => '<a href="javascript:void 0" data-f="' + k + '"' + (i ? '' : ' class="on"') + '>' + GLYPH[k] + ' ' + n + '</a>').join('') + '</div>' +
+      order.map(([k, n], i) => { const f = t.faiths[k]; if (!f) return '';
+        return '<section class="hard-faith ' + k + '" data-f="' + k + '"' + (i ? ' hidden' : '') + '><h2>' + GLYPH[k] + ' ' + n + ': the texts</h2><ol class="hard-texts">' +
+          f.texts.map(([ref, note]) => '<li><span class="ref">' + rich(ref) + '</span><p>' + esc(note) + '</p></li>').join('') + '</ol>' +
+          '<div class="hard-answer"><strong>How ' + (k === 'muslim' ? 'Muslims' : k === 'jewish' ? 'Jews' : 'Christians') + ' answer</strong><p>' + esc(f.answer) + '</p></div></section>'; }).join('') +
+      '<p class="status">Every reference links to the passage. Read them in full before you rely on them.</p>';
+    app.querySelectorAll('.hard-tabs a').forEach(b => b.addEventListener('click', () => {
+      app.querySelectorAll('.hard-tabs a').forEach(x => x.classList.toggle('on', x === b));
+      app.querySelectorAll('.hard-faith').forEach(s => { s.hidden = s.dataset.f !== b.dataset.f; });
+      setFaithTheme(b.dataset.f);
+    }));
+    setFaithTheme('muslim');
+  }
+
+  /* ---------- the debaters: their channels, their arguments here, their latest videos ---------- */
+  const personOf = ch => { const m = ch.name.match(/\(([^)]+)\)/); return m ? m[1] : ch.name; };
+  const slugOf = s => s.toLowerCase().normalize('NFKD').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+  async function debaters(slug) {
+    const rid = renderId;
+    const [ch, vids, d] = await Promise.all([getJSON('content/channels.json').catch(() => ({ channels: [] })), getJSON('content/videos.json').catch(() => ({ videos: [] })), loadDebates()]);
+    if (rid !== renderId) return;
+    const list = ch.channels.filter(c => !/^(whatever|Modern-Day Debate|Premier Unbelievable\?)$/i.test(c.name)).map(c => {
+      const person = personOf(c), last = person.split(/\s+/).pop();
+      const args = d.arguments.filter(x => (x.by || []).concat(x.response_by || []).some(b => b.includes(person) || (last.length > 3 && b.includes(last) && b.includes(person.split(/\s+/)[0]))));
+      return { ...c, person, slug: slugOf(person), args, vids: vids.videos.filter(v => v.channel === c.name) };
+    });
+    const FN = { christian: 'Christian', muslim: 'Muslim', jewish: 'Jewish' };
+    if (!slug) {
+      document.title = 'The debaters · Contradiction AI';
+      app.innerHTML = hero('shamoun', 'The debaters', 'The people whose arguments the faiths trade: their channels, their latest videos, and every argument of theirs tested on this site.', '', 'Debaters') +
+        ['christian', 'muslim', 'jewish'].map(f => { const ps = list.filter(p => p.faith === f); return ps.length ? '<div class="section-head"><h2>' + GLYPH[f] + ' ' + FN[f] + ' debaters</h2></div><div class="debater-grid">' +
+          ps.map(p => '<a class="debater ' + f + '" href="#/debaters/' + p.slug + '"><span class="dav">' + esc(p.person.split(/\s+/).map(w => w[0]).join('').slice(0, 2)) + '</span><strong>' + esc(p.person) + '</strong><span class="muted small">' + esc(p.branch || '') + '</span>' +
+            '<span class="dcount">' + (p.args.length ? p.args.length + ' argument' + (p.args.length > 1 ? 's' : '') + ' tested · ' : '') + p.vids.length + ' recent video' + (p.vids.length === 1 ? '' : 's') + '</span></a>').join('') + '</div>' : ''; }).join('') +
+        '<p class="status">Have a debater to add? The list follows the channels the site tracks for recent videos.</p>';
+      return;
+    }
+    const p = list.find(x => x.slug === slug);
+    if (!p) return notFound();
+    if (/shamoun/.test(slug)) return shamoun();
+    document.title = p.person + ' · Contradiction AI';
+    setFaithTheme(p.faith);
+    app.innerHTML = hero('shamoun', p.person, p.note, '<div class="hp-actions"><a class="btn" href="https://www.youtube.com/channel/' + encodeURIComponent(p.id) + '" target="_blank" rel="noopener">YouTube channel ↗</a>' +
+        '<a class="btn ghost-w" href="#/ask/' + encodeURIComponent('What are ' + p.person + "'s main arguments, and do they hold up against the texts?") + '">Ask the AI about his arguments</a></div>', FN[p.faith] + ' debater · ' + (p.branch || '')) +
+      (p.args.length ? '<div class="section-head"><h2>His arguments, tested</h2></div><div class="tile-row">' + p.args.map(debTile).join('') + '</div>' : '<p class="muted">None of his arguments has its own page here yet. Ask the AI above to test them.</p>') +
+      (p.vids.length ? '<div class="section-head"><h2>Latest videos</h2><a href="#/videos">All recent debates →</a></div><div class="vid-list">' + p.vids.slice(0, 8).map(v =>
+        '<a class="vid-mini" href="https://www.youtube.com/watch?v=' + encodeURIComponent(v.id) + '" target="_blank" rel="noopener"><img loading="lazy" src="https://i.ytimg.com/vi/' + encodeURIComponent(v.id) + '/mqdefault.jpg" alt=""><span><strong>' + esc(v.title) + '</strong><span class="muted small">' + esc(v.date || '') + '</span></span></a>').join('') + '</div>' : '');
+  }
+
+  /* ---------- saved answers (kept in this browser only) ---------- */
+  const savedList = () => { try { return JSON.parse(store.get('saved') || '[]'); } catch (e) { return []; } };
+  function saved() {
+    document.title = 'Saved · Contradiction AI';
+    const s = savedList();
+    app.innerHTML = '<h1>Saved</h1><p class="lede">Answers you saved. They are kept in this browser only.</p>' +
+      (s.length ? s.map((x, i) => '<details class="acc saved-item"' + (i ? '' : ' open') + '><summary><span class="n">' + (i + 1) + '</span>' + esc(x.q) + '</summary><div class="body"><p class="muted small">' + esc(new Date(x.at).toLocaleDateString()) +
+        ' · <a href="#/ask/' + encodeURIComponent(x.q) + '">Ask again</a> · <a href="javascript:void 0" data-del="' + i + '">Remove</a></p><div class="ai-text">' + x.html + '</div></div></details>').join('')
+        : '<p class="muted">Nothing saved yet. Tap the bookmark on any AI answer to keep it here.</p><p><a class="btn brand" href="#/ask">Ask a question</a></p>');
+    app.querySelectorAll('[data-del]').forEach(b => b.addEventListener('click', () => { const l = savedList(); l.splice(+b.dataset.del, 1); store.set('saved', JSON.stringify(l)); saved(); }));
   }
 
   function questions() {
@@ -404,12 +485,18 @@
     const nextL = ch < n ? [link(ch + 1), nameOf(code, ch + 1)] : bi >= 0 && bi < order.length - 1 ? ['#/read/' + t + '/' + order[bi + 1] + '/1', nameOf(order[bi + 1], 1)] : null;
     const pager = '<div class="pager">' + (prevL ? '<a class="btn ghost" href="' + prevL[0] + '">← ' + esc(prevL[1]) + '</a>' : '<span></span>') +
       (nextL ? '<a class="btn brand" href="' + nextL[0] + '">' + esc(nextL[1]) + ' →</a>' : '') + '</div>';
-    app.innerHTML = crumbs + note + '<h1>' + head + '</h1>' + pager.replace('class="pager"', 'class="pager pager-top"') +
+    const recite = trById[t].corpus === 'quran' ? '<div class="recite"><button class="chip" type="button" data-recite="' + code.slice(1) + '">▶ Listen to the recitation</button><span class="muted small">Mishary Alafasy</span></div>' : '';
+    app.innerHTML = crumbs + note + '<h1>' + head + '</h1>' + recite + pager.replace('class="pager"', 'class="pager pager-top"') +
       (WBW_LANG(code) ? '<div class="reader-tools"><button class="chip' + (interlinear ? '" aria-pressed="true' : '') + '" data-wbw>' + LANG_NAME[WBW_LANG(code)] + ' word by word</button><span class="muted small">Tap a verse to compare translations and see the original.</span></div>' : '<p class="muted small">Tap a verse to compare translations.</p>') + '<div class="chapter' + (RTL[lang] ? ' rtl' : '') + '" lang="' + lang + '"' + (RTL[lang] ? ' dir="rtl"' : '') + '>' +
       book[ch - 1].map((txt, i) => txt ? '<p data-v="' + (i + 1) + '"' + (i + 1 >= v1 && i + 1 <= v2 ? ' class="sel"' : '') +
         '><sup>' + (i + 1) + '</sup>' + esc(txt) + '</p>' : '').join('') + '</div>' +
       pager + '</div>';
     bindPicker();
+    const rb = app.querySelector('[data-recite]');
+    if (rb) { let au = null; rb.addEventListener('click', () => {
+      if (!au) { au = new Audio('https://cdn.islamic.network/quran/audio-surah/128/ar.alafasy/' + rb.dataset.recite + '.mp3'); au.addEventListener('ended', () => { rb.textContent = '▶ Listen to the recitation'; }); }
+      if (au.paused) { au.play().catch(() => { rb.textContent = 'Audio unavailable'; }); rb.textContent = '❚❚ Pause'; } else { au.pause(); rb.textContent = '▶ Resume'; } });
+      const stop = () => { if (au) au.pause(); window.removeEventListener('hashchange', stop); }; window.addEventListener('hashchange', stop); }
     const wb = app.querySelector('[data-wbw]');
     if (wb) wb.addEventListener('click', () => { interlinear = !interlinear; store.set('interlinear', interlinear ? '1' : '0'); route(); });
     const box = app.querySelector('.chapter');
@@ -1211,7 +1298,7 @@
       }
       status.textContent = '';
       out.insertAdjacentHTML('beforeend', '<p class="ai-foot">Contradiction AI · numbers link to the passages. Check important points against the sources.</p>');
-      out.insertAdjacentHTML('afterbegin', '<span class="tools">' + copyBtn('.ai-text', 'Copy answer') + (opts ? '' : shareBtn(q, location.origin + location.pathname + '#/ask/' + encodeURIComponent(q), 'ai')) + '</span>');
+      out.insertAdjacentHTML('afterbegin', '<span class="tools">' + (opts ? '' : '<button class="save-btn" type="button" data-q="' + esc(q) + '" aria-label="Save this answer" title="Save">' + ICO_SAVE + '</button>') + copyBtn('.ai-text', 'Copy answer') + (opts ? '' : shareBtn(q, location.origin + location.pathname + '#/ask/' + encodeURIComponent(q), 'ai')) + '</span>');
       return text;
     } catch (e) {
       status.textContent = '';
@@ -1274,7 +1361,7 @@
 
 
   /* ---------- page headers: each section has its own colour and mark ---------- */
-  const HERO = { debates: ['⚔', 'Debates'], trainer: ['🎙', 'Train'], videos: ['▶', 'Watch'], stories: ['📜', 'Stories'], prophecies: ['🔮', 'Prophecy'],
+  const HERO = { hard: ['⚖', 'No softening'], debates: ['⚔', 'Debates'], trainer: ['🎙', 'Train'], videos: ['▶', 'Watch'], stories: ['📜', 'Stories'], prophecies: ['🔮', 'Prophecy'],
     translations: ['✎', 'Words'], timeline: ['⏳', 'History'], shamoun: ['🗣', 'Debater'], explore: ['✦', 'Explore'] };
   const hero = (kind, title, lede, extra, eyebrow) => '<section class="hero-page hp-' + kind + '" data-mark="' + (HERO[kind] || ['', ''])[0] + '"><span class="hp-eyebrow">' + (eyebrow || (HERO[kind] || ['', ''])[1]) + '</span><h1>' + esc(title) + '</h1>' +
     (lede ? '<p>' + esc(lede) + '</p>' : '') + (extra || '') + '</section>';
@@ -1454,6 +1541,14 @@
   const ICO_COPY = '<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2.5"/><path d="M5 15V6.5A2.5 2.5 0 0 1 7.5 4H15"/></svg>';
   const ICO_OK = '<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>';
   const ICO_SHARE = '<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 15V4m0 0L8 8m4-4 4 4"/><path d="M5 12v6a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-6"/></svg>';
+  const ICO_SAVE = '<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h12v18l-6-4-6 4z"/></svg>';
+  document.addEventListener('click', e => {
+    const b = e.target.closest('.save-btn'); if (!b) return;
+    e.preventDefault();
+    const box = b.closest('.ai-text').cloneNode(true); box.querySelectorAll('.tools, .ai-foot').forEach(x => x.remove());
+    const l = savedList().filter(x => x.q !== b.dataset.q); l.unshift({ q: b.dataset.q, html: box.innerHTML, at: Date.now() }); store.set('saved', JSON.stringify(l.slice(0, 60)));
+    b.classList.add('done'); b.title = 'Saved'; b.innerHTML = ICO_OK;
+  });
   const copyBtn = (sel, label) => '<button class="copy-btn" data-copy="' + sel + '" type="button" aria-label="' + label + '" title="' + label + '">' + ICO_COPY + '</button>';
   const shareBtn = (title, url, kind) => '<button class="copy-btn share-btn" data-share="' + esc(url) + '" data-title="' + esc(title) + '" data-kind="' + (kind || '') + '" type="button" aria-label="Share" title="Share">' + ICO_SHARE + '</button>';
   const COPY = copyBtn('.sec', 'Copy this section');
@@ -1473,8 +1568,8 @@
   function shareCard(title, lines) {
     const W = 1080, H = 1350, c = document.createElement('canvas'); c.width = W; c.height = H;
     const g = c.getContext('2d');
-    g.fillStyle = '#faf8f4'; g.fillRect(0, 0, W, H);
-    const grad = g.createLinearGradient(0, 0, W, 0); grad.addColorStop(0, '#8C2F2B'); grad.addColorStop(.5, '#4E6B3A'); grad.addColorStop(1, '#3B5576');
+    g.fillStyle = '#F6EFE2'; g.fillRect(0, 0, W, H);
+    const grad = g.createLinearGradient(0, 0, W, 0); grad.addColorStop(0, '#6F4520'); grad.addColorStop(.5, '#D4AF37'); grad.addColorStop(1, '#8B5A2B');
     g.fillStyle = grad; g.fillRect(0, 0, W, 18);
     const wrap = (text, font, x, y, maxW, lh, maxLines) => { g.font = font; let line = '', n = 0;
       for (const w of text.split(/\s+/)) { const t = line ? line + ' ' + w : w;
@@ -1483,10 +1578,10 @@
     g.fillStyle = '#17171c'; g.textBaseline = 'top';
     let y = wrap(title, '700 64px Georgia, serif', 80, 110, W - 160, 78, 6) + 40;
     for (const [label, text] of lines) { if (!text) continue;
-      g.fillStyle = '#8C2F2B'; g.font = '700 30px system-ui, sans-serif'; g.fillText(label.toUpperCase(), 80, y); y += 48;
+      g.fillStyle = '#8B5A2B'; g.font = '700 30px system-ui, sans-serif'; g.fillText(label.toUpperCase(), 80, y); y += 48;
       g.fillStyle = '#33333b'; y = wrap(text, '400 38px system-ui, sans-serif', 80, y, W - 160, 54, Math.max(2, Math.floor((H - 190 - y) / 54))) + 34;
       if (y > H - 220) break; }
-    g.fillStyle = '#17171c'; g.font = '700 44px Georgia, serif'; g.fillText('Contradiction', 80, H - 130);
+    g.fillStyle = '#1A120B'; g.font = '700 44px Georgia, serif'; g.fillText('Contradiction AI', 80, H - 130);
     g.fillStyle = '#6b6b76'; g.font = '400 30px system-ui, sans-serif'; g.fillText(location.host + location.pathname.replace(/\/$/, ''), 80, H - 74);
     return new Promise(res => c.toBlob(res, 'image/png'));
   }
@@ -1692,6 +1787,17 @@
     };
   }
   document.addEventListener('keydown', e => { if (e.key === 'Escape') sheet.hidden = true; });
+  const MORE = [['#/faiths', '⊕', 'Faiths', 'Each faith in its own words'], ['#/hard', '⚖', 'Hard questions', 'Women, captives, apostasy, war'], ['#/debaters', '🎙', 'Debaters', 'Their channels and arguments'],
+    ['#/videos', '▶', 'Watch recent debates', 'Newest videos, with the AI\'s take'], ['#/trainer', '⚔', 'Debate trainer', 'Argue against the AI'], ['#/topics', '✦', 'Topics and tools', 'Stories, prophecies, timeline'],
+    ['#/lib', '📚', 'Library', 'Hadith, Talmud, Church Fathers'], ['#/search', '⌕', 'Search', 'Every word in every text'], ['#/saved', '🔖', 'Saved', 'Answers you kept'], ['#/about', '◆', 'Why Contradiction AI', 'Why we built it']];
+  document.addEventListener('click', e => {
+    if (!e.target.closest('[data-more]')) return;
+    e.preventDefault();
+    sheet.innerHTML = '<div class="panel more-panel" role="dialog" aria-label="More"><div class="grab"></div><div class="more-grid">' +
+      MORE.map(m => '<a href="' + m[0] + '"><span class="mi">' + m[1] + '</span><strong>' + m[2] + '</strong><span>' + m[3] + '</span></a>').join('') + '</div></div>';
+    sheet.hidden = false;
+    sheet.onclick = ev => { if (ev.target === sheet || ev.target.closest('a')) sheet.hidden = true; };
+  });
   function chooseEdition(id) {
     const m = location.hash.match(/^#\/(read|books)\/[A-Z]+(.*)$/);
     const same = trById[id].corpus === trById[tr].corpus;
@@ -1732,7 +1838,7 @@
   /* ---------- routing ---------- */
   function setTr(t) { tr = t; pref[trById[t].corpus] = t; store.set('tr', t); store.set('tr-' + trById[t].corpus, t); }
   const TAB = { '': '', ask: 'ask', faiths: 'faiths', faith: 'faiths', beliefs: 'faiths', compare: 'faiths', books: 'books', read: 'books', lib: 'lib', go: 'lib',
-    topics: 'topics', t: 'topics', topic: 'topics', q: 'topics', questions: 'topics', search: 'search', debates: 'debates', d: 'debates', videos: 'debates', shamoun: 'debates', trainer: 'debates', stories: 'topics', prophecies: 'topics', translations: 'topics', timeline: 'topics' };
+    topics: 'topics', t: 'topics', topic: 'topics', q: 'topics', questions: 'topics', search: 'search', debates: 'debates', d: 'debates', videos: 'debates', shamoun: 'debates', trainer: 'debates', debaters: 'debates', hard: 'hard', saved: 'saved', stories: 'topics', prophecies: 'topics', translations: 'topics', timeline: 'topics' };
   const THEME_BG = { christian: '#F4DED6', muslim: '#E4EAD3', jewish: '#DCE4EE', '': '#F6EFE2' };
   function setFaithTheme(key) {
     if (key) document.documentElement.dataset.faith = key; else delete document.documentElement.dataset.faith;
@@ -1744,22 +1850,25 @@
     const tab = TAB[name] !== undefined ? TAB[name] : name;
     document.querySelectorAll('.links a, .tabbar a').forEach(l => l.classList.toggle('on', l.getAttribute('href') === '#/' + tab));
     // Slide the tab bar's highlight to the current tab.
-    const tabs = [...document.querySelectorAll('.tabbar a')], ti = tabs.findIndex(l => l.classList.contains('on')), ind = document.querySelector('.tab-ind');
-    if (ind) { ind.style.opacity = ti < 0 ? 0 : 1; if (ti >= 0) ind.style.transform = 'translateX(' + ti * 100 + '%)'; }
+    const tabs = [...document.querySelectorAll('.tabbar a')], ti = tabs.findIndex(l => l.classList.contains('on') && !l.dataset.more), ind = document.querySelector('.tab-ind');
+    const more = document.querySelector('.tabbar [data-more]'); let tj = ti;
+    if (more) { more.classList.toggle('on', ti < 0 && name !== ''); if (ti < 0 && name !== '') tj = tabs.indexOf(more); }
+    if (ind) { ind.style.opacity = tj < 0 ? 0 : 1; if (tj >= 0) ind.style.transform = 'translateX(' + tj * 100 + '%)'; }
     sheet.hidden = true;
     setFaithTheme(name === 'faith' && HUBS[a[0]] ? HUBS[a[0]].key : '');
     app.className = 'enter' + (name === 'ask' || name === 'trainer' ? ' chatmode' : '');
     document.body.classList.toggle('chatting', name === 'ask' || name === 'trainer');
     window.scrollTo(0, 0);
     const views = { '': home, questions, q: question, topic, topics, t: tguide, books, read, search: () => search(a.join('/')), about, lib: () => library(a),
-      beliefs, faiths, faith: hub, compare: compareView, go, ask: () => ask(a.join('/')), debates, d: debate, videos, shamoun, trainer, privacy, terms, stories, prophecies, translations: translationsPage, timeline };
+      beliefs, faiths, faith: hub, compare: compareView, go, ask: () => ask(a.join('/')), debates, d: debate, videos, shamoun, trainer, privacy, terms, stories, prophecies, translations: translationsPage, timeline, hard, debaters, saved };
     Promise.resolve((views[name] || notFound)(...a)).catch(e => {
       app.innerHTML = '<h1>Something went wrong</h1><p class="muted">' + esc(e.message) + '</p>';
     });
   }
 
   Promise.all(['data/index.json', 'content/questions.json', 'content/disputes.json', 'content/beliefs.json', 'content/guide.json'].map(getJSON)
-    .concat(getJSON('content/config.json').catch(() => ({})))).then(([m, c, d, b, g, cfg]) => {
+    .concat(getJSON('content/config.json').catch(() => ({}))).concat(getJSON('content/hard.json').catch(() => ({ topics: [] })))).then(([m, c, d, b, g, cfg, hq]) => {
+    HQ = hq;
     M = m; C = c; B = b; G = g; SITE_CFG = cfg || {};
     C.questions = C.questions.concat(d.questions);
     M.translations.forEach(t => { trById[t.id] = t; t.chapters = Object.fromEntries(t.books); });

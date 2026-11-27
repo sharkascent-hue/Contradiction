@@ -12,7 +12,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=1795749600">
+<link rel="stylesheet" href="style.css?v=1795752000">
 <link rel="icon" type="image/png" href="brand/favicon.png">
 <link rel="apple-touch-icon" href="brand/apple-touch-icon.png">
 <meta property="og:title" content="Contradiction AI">
@@ -23,22 +23,39 @@
 </head>
 <body>
 <div id="intro" aria-hidden="true">
-  <div class="intro-inner">
-    <span class="intro-ring"></span>
-    <img class="intro-emblem" src="brand/emblem.png" alt="" width="132" height="132">
-    <img class="intro-word" src="brand/wordmark.png" alt="" width="300" height="103">
+  <div class="intro-door l"></div><div class="intro-door r"></div>
+  <canvas class="intro-dust"></canvas>
+  <div class="intro-stage">
+    <svg class="intro-sym" viewBox="0 0 300 120" fill="none" stroke="#E8C766" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+      <g class="s1"><path d="M50 18v84M28 44h44"/></g>
+      <g class="s2"><path d="M150 20l26 45H124zM150 100l-26-45h52z"/></g>
+      <g class="s3"><path d="M262 28a34 34 0 1 0 0 64a27 27 0 1 1 0-64z"/><path d="M268 50l3 8h8l-6 5 2 8-7-5-7 5 2-8-6-5h8z"/></g>
+    </svg>
+    <img class="intro-emblem" src="brand/emblem.png" alt="" width="150" height="150">
+    <div class="intro-wordwrap"><img class="intro-word" src="brand/wordmark.png" alt="" width="320" height="142"><span class="intro-shine"></span></div>
   </div>
+  <button class="intro-skip" type="button">Skip</button>
 </div>
 <script>
-// Opening animation: once per visit, never for people who ask for reduced motion. Tap to skip.
+// Opening sequence: once per visit, skipped for reduced motion. Tap anywhere or "Skip" to go straight in.
 (function () {
   var el = document.getElementById('intro'), seen = false;
-  try { seen = sessionStorage.getItem('intro') === '1'; sessionStorage.setItem('intro', '1'); } catch (e) {}
+  try { seen = sessionStorage.getItem('intro2') === '1'; sessionStorage.setItem('intro2', '1'); } catch (e) {}
   if (seen || (window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches)) return el.remove();
   document.documentElement.classList.add('intro-on');
-  var done = function () { if (!el.parentNode) return; el.classList.add('out'); document.documentElement.classList.remove('intro-on'); setTimeout(function () { el.remove(); }, 520); };
+  // drifting gold dust
+  var c = el.querySelector('canvas'), x = c.getContext('2d'), W, H, ps = [], run = true;
+  function size() { W = c.width = innerWidth * devicePixelRatio; H = c.height = innerHeight * devicePixelRatio; }
+  size(); addEventListener('resize', size);
+  for (var i = 0; i < 90; i++) ps.push({ x: Math.random(), y: Math.random(), r: Math.random() * 1.8 + .4, v: Math.random() * .0006 + .0002, a: Math.random() * .6 + .2, p: Math.random() * 6 });
+  (function tick(t) { if (!run) return; x.clearRect(0, 0, W, H);
+    ps.forEach(function (q) { q.y -= q.v; if (q.y < -.02) q.y = 1.02; var tw = .5 + .5 * Math.sin(t / 600 + q.p);
+      x.beginPath(); x.arc(q.x * W + Math.sin(t / 2000 + q.p) * 8, q.y * H, q.r * devicePixelRatio, 0, 7); x.fillStyle = 'rgba(232,199,102,' + q.a * tw + ')'; x.fill(); });
+    requestAnimationFrame(tick); })(0);
+  var done = function () { if (el.classList.contains('out')) return; el.classList.add('out'); document.documentElement.classList.remove('intro-on');
+    setTimeout(function () { run = false; el.remove(); }, 1100); };
   el.addEventListener('click', done);
-  setTimeout(done, 2300);
+  setTimeout(done, 4200);
 })();
 </script>
 <header class="top">
@@ -52,13 +69,13 @@
       <div class="dd-menu" role="menu">
         <a href="#/debates" role="menuitem"><strong>All debates</strong><span>Every argument, with the texts and a verdict</span></a>
         <a href="#/videos" role="menuitem"><strong>Watch recent debates</strong><span>The newest videos, with the AI's take</span></a>
-        <a href="#/shamoun" role="menuitem"><strong>Debaters: Sam Shamoun</strong><span>His arguments and how each debate went</span></a>
+        <a href="#/debaters" role="menuitem"><strong>The debaters</strong><span>Wood, Shamoun, Hijab, Ally, Singer and more</span></a>
         <a href="#/trainer" role="menuitem"><strong>Debate trainer</strong><span>Argue your side against an AI opponent</span></a>
       </div>
     </div>
+    <a href="#/hard">Hard questions</a>
     <a href="#/faiths">Faiths</a>
     <a href="#/books">Read</a>
-    <a href="#/topics">Topics</a>
     <a href="#/lib">Library</a>
     <a href="#/about">Why Contradiction AI</a>
   </nav>
@@ -73,11 +90,11 @@
 <nav class="tabbar" aria-label="Sections"><span class="tab-ind" aria-hidden="true"></span>
   <a href="#/"><svg viewBox="0 0 24 24"><path d="M3 11.5 12 4l9 7.5V20a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></svg><span>Home</span></a>
   <a href="#/ask"><svg viewBox="0 0 24 24"><path d="M4 5h16v11H8l-4 4z"/></svg><span>Ask</span></a>
-  <a href="#/faiths"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><path d="M12 4v16M4 12h16"/></svg><span>Faiths</span></a>
   <a href="#/books"><svg viewBox="0 0 24 24"><path d="M4 5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2zM4 21V5"/></svg><span>Read</span></a>
   <a href="#/debates"><svg viewBox="0 0 24 24"><path d="M3 6h10v7H7l-4 3zM21 10h-6v6h4l2 2z"/></svg><span>Debates</span></a>
+  <a href="javascript:void 0" data-more aria-label="More sections"><svg viewBox="0 0 24 24"><circle cx="5" cy="12" r="1.6"/><circle cx="12" cy="12" r="1.6"/><circle cx="19" cy="12" r="1.6"/></svg><span>More</span></a>
 </nav>
 <div id="sheet" class="sheet" hidden></div>
-<script src="app.js?v=1795749600"></script>
+<script src="app.js?v=1795752000"></script>
 </body>
 </html>
