@@ -617,6 +617,34 @@
       '<p class="muted small">This searches only the edition chosen at the top of the page, in any language.</p>';
   }
 
+  /* ---------- privacy policy and terms ---------- */
+  function privacy() {
+    document.title = 'Privacy · Contradiction';
+    app.innerHTML = '<p class="crumbs"><a href="#/about">About</a></p><h1>Privacy policy</h1><p class="small muted">Last updated 27 November 2026</p>' +
+      '<p>Contradiction is a free learning site. It has no accounts, no advertising, no analytics and no tracking cookies. Here is everything that happens to information when you use it.</p>' +
+      '<h2>What stays on your device</h2><p>Your preferences (the guide you chose, your Bible and Quran edition, your debate trainer settings) are saved in your browser’s local storage so the site remembers them. They never leave your device. Clearing your browser data removes them.</p>' +
+      '<h2>Questions you ask the AI guide or the debate trainer</h2><p>When you ask a question, the question and the recent conversation are sent to our server (run on Cloudflare) and passed to Anthropic’s Claude API, which writes the answer. We do not store your questions or answers on our server and we do not attach them to your name, because there are no accounts. Your IP address is used briefly, in memory, to limit how many questions can be asked per minute, and is not kept. Anthropic processes the request under its commercial terms and privacy policy; it does not use API requests to train its models by default. Please do not type personal details into the questions.</p>' +
+      '<h2>Services that see your IP address</h2><ul>' +
+      '<li><strong>GitHub Pages</strong> hosts the site and, like any web host, receives your IP address and the pages you request.</li>' +
+      '<li><strong>Cloudflare</strong> runs the AI server and the recent-videos list.</li>' +
+      '<li><strong>Google Fonts</strong> serves the site’s fonts.</li>' +
+      '<li><strong>YouTube</strong>: video thumbnails load from YouTube’s image server. A video player only loads when you press play, from youtube-nocookie.com, and YouTube’s own privacy policy applies from then on.</li></ul>' +
+      '<p>Each of these services has its own privacy policy. We do not receive or keep their logs.</p>' +
+      '<h2>Children</h2><p>The site is meant for general audiences studying religion. It does not knowingly collect personal information from anyone, of any age.</p>' +
+      '<h2>Your rights</h2><p>Because we do not keep personal data, there is normally nothing for us to hand over or delete. If you have a question about privacy, contact us through the site’s <a href="https://github.com/sharkascent-hue/Contradiction/issues" target="_blank" rel="noopener">GitHub page</a>.</p>' +
+      '<h2>Changes</h2><p>If this policy changes, the date at the top will change with it.</p>';
+  }
+  function terms() {
+    document.title = 'Terms of use · Contradiction';
+    app.innerHTML = '<p class="crumbs"><a href="#/about">About</a></p><h1>Terms of use</h1><p class="small muted">Last updated 27 November 2026</p>' +
+      '<h2>For learning</h2><p>Contradiction explains what Christianity, Islam and Judaism teach and how their followers argue. It is for education. It is not religious, legal or personal advice, and it does not issue religious rulings. For decisions about your own faith or practice, speak to a qualified priest, imam or rabbi.</p>' +
+      '<h2>Accuracy</h2><p>The site’s summaries and verdicts are drafts and have not yet been reviewed by scholars. The AI guide and the debate trainer can be wrong. Every answer links to its sources; check anything important against them.</p>' +
+      '<h2>Respect</h2><p>The site tests arguments, not people. Verdicts judge whether an argument is supported by its texts, never whether a religion is true. Please use what you learn here to understand others, not to insult them.</p>' +
+      '<h2>Fictional characters</h2><p>The debate trainer’s characters are fictional. They argue in common debating styles and do not speak for, or represent, any real person or organisation.</p>' +
+      '<h2>Texts and videos</h2><p>Scripture and other texts are included only where they are in the public domain or openly licensed; each work names its source and licence. Videos on the Recent debates page belong to their channels and play through YouTube; listing them is not an endorsement.</p>' +
+      '<h2>No warranty</h2><p>The site is provided as it is, free of charge, without any warranty. We are not liable for decisions made using it.</p>';
+  }
+
   async function about() {
     document.title = 'About · Contradiction';
     const id = renderId;
@@ -624,8 +652,19 @@
     if (id !== renderId) return;
     const count = f => lib.filter(w => w.f === f);
     const passages = lib.reduce((n, w) => n + w.items, 0);
-    app.innerHTML = '<h1>About this site</h1>' +
-      '<p>This site holds the source texts of Christianity, Islam and Judaism and answers hard questions about them. Every answer links to the texts it relies on, shows where traditions differ, and gives each faith\'s view in terms its own holders would recognise.</p>' +
+    app.innerHTML = hero('explore', 'About Contradiction', 'A place to learn what Christianity, Islam and Judaism actually teach, from their own texts.') +
+      '<h2>Why the name “Contradiction”?</h2>' +
+      '<p>Christianity, Islam and Judaism share Abraham, Moses and the prophets, and much of the same story. Yet at the points that matter most they say opposite things. Is Jesus God, a prophet, or neither? Was he crucified? Is the Torah eternal, fulfilled, or changed? Was the son on the altar Isaac or Ishmael? Those contradictions are where most arguments between believers start, and where most of the confusion lives.</p>' +
+      '<p>The name is not a verdict that any religion contradicts itself, and it is not a claim that one faith wins. It names the questions this site exists to explain. When two traditions contradict each other, the honest thing is to set out what each says, show the texts each relies on, and let you read them yourself.</p>' +
+      '<h2>What this site is for</h2>' +
+      '<p>Contradiction is for learning. It is not here to convert anyone or to tell you which faith to choose. That is a matter of conscience, and the right people to talk to about it are a priest, an imam or a rabbi you trust.</p>' +
+      '<ul><li><strong>The texts first.</strong> Every page links to the passages it relies on, in English and in the original Hebrew, Greek or Arabic.</li>' +
+      '<li><strong>Each faith in its own words.</strong> Every tradition is explained the way its own scholars explain it, including the differences inside it: Orthodox, Catholic and Protestant; Sunni and Shia; Orthodox, Conservative and Reform.</li>' +
+      '<li><strong>The same standard for everyone.</strong> In the Debates, an argument is judged against what the other side actually teaches. When an argument against Islam overstates the texts, the site says so, and the same goes for arguments against Christianity and Judaism.</li>' +
+      '<li><strong>Verdicts judge arguments, never religions.</strong> A verdict says whether a particular argument is supported by the texts it cites. It never says a faith is true or false.</li>' +
+      '<li><strong>Honest about limits.</strong> Summaries are drafts that have not yet been reviewed by scholars. The AI guide can make mistakes, so its answers link to the passages for you to check.</li></ul>' +
+      '<h2>The AI guide and the debate trainer</h2><p>The AI guide answers from the texts stored here and cites them. The debate trainer’s characters are fictional. They argue in common debating styles and do not represent any real person. Quotations from real debaters elsewhere on the site come from their published videos and writing, with links.</p>' +
+      '<p><a href="#/privacy">Privacy policy</a> · <a href="#/terms">Terms of use</a></p>' +
       '<h2>What is stored</h2><ul>' +
       '<li>' + M.translations.filter(t => t.corpus === 'bible').length + ' editions of the Bible and ' + M.translations.filter(t => t.corpus === 'quran').length + ' of the Quran</li>' +
       '<li>' + lib.length + ' other works, about ' + (Math.round(passages / 1000) * 1000).toLocaleString() + ' passages: ' + count('christian').length + ' Christian, ' + count('islam').length + ' Islamic and ' + count('judaism').length + ' Jewish</li>' +
@@ -1375,7 +1414,7 @@
       sides.map(([k, l]) => '<button data-you="' + k + '" aria-pressed="' + (k === train.you) + '">' + l + '</button>').join('') + '</div>' +
       '<p class="small muted" style="margin:14px 0 6px">Choose your opponent</p><div class="chars">' + CHARS.filter(x => x[1] !== train.you).map(x => charCard(x, x[0] === train.character)).join('') + '</div></div>' +
       '<div class="msgs" id="msgs">' + (train.log.length ? train.log.map(m => m.html).join('') :
-        '<div class="welcome"><div class="vs-line">' + charSvg(train.character, 72) + '<p class="lede"><strong>' + esc(c[2]) + '</strong>, ' + esc(c[3].toLowerCase()) + '. ' + (on ? esc(c[4]) : 'The debate trainer needs the AI guide, which is not available right now.') + '</p></div>' +
+        '<div class="welcome"><div class="vs-line">' + charSvg(train.character, 72) + '<p class="lede"><strong>' + esc(c[2]) + '</strong>, ' + esc(c[3]) + '. ' + (on ? esc(c[4]) : 'The debate trainer needs the AI guide, which is not available right now.') + '</p></div>' +
         (on ? '<p><button class="btn brand" data-start>Let ' + esc(c[2]) + ' open →</button></p><p class="small muted">Or type your own opening argument below. All characters are fictional. They argue in common debating styles and do not represent any real person.</p>' : '') + '</div>') + '</div>' +
       (on ? '<div class="composer">' + askBox('Make your argument to ' + c[2] + '…') + '</div>' : '') + '</div>';
     const turn = async q => {
@@ -1687,7 +1726,7 @@
     document.body.classList.toggle('chatting', name === 'ask' || name === 'trainer');
     window.scrollTo(0, 0);
     const views = { '': home, questions, q: question, topic, topics, t: tguide, books, read, search: () => search(a.join('/')), about, lib: () => library(a),
-      beliefs, faiths, faith: hub, compare: compareView, go, ask: () => ask(a.join('/')), debates, d: debate, videos, shamoun, trainer, stories, prophecies, translations: translationsPage, timeline };
+      beliefs, faiths, faith: hub, compare: compareView, go, ask: () => ask(a.join('/')), debates, d: debate, videos, shamoun, trainer, privacy, terms, stories, prophecies, translations: translationsPage, timeline };
     Promise.resolve((views[name] || notFound)(...a)).catch(e => {
       app.innerHTML = '<h1>Something went wrong</h1><p class="muted">' + esc(e.message) + '</p>';
     });

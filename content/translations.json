@@ -1,1 +1,512 @@
-{"verses": []}
+{
+ "verses": [
+  {
+   "id": "quran-4-34-wadribuhunna",
+   "ref": "Quran 4:34",
+   "faith": "islam",
+   "word": "وَٱضْرِبُوهُنَّ",
+   "translit": "wa-ḍribūhunna",
+   "issue": "Whether the last of the three steps a husband may take with a defiant wife is to hit her, and how hard.",
+   "readings": [
+    {
+     "rendering": "scourge them",
+     "who": "Pickthall"
+    },
+    {
+     "rendering": "beat them (lightly)",
+     "who": "Yusuf Ali; Hilali-Khan adds '(lightly, if it is useful)'"
+    },
+    {
+     "rendering": "strike them [lightly]",
+     "who": "Sahih International; 'hit them' in Abdel Haleem"
+    },
+    {
+     "rendering": "go away from them / separate from them",
+     "who": "Laleh Bakhtiar (2007) and some other modern reformist translators"
+    }
+   ],
+   "what_the_word_means": "The verb is the command form of ḍaraba (root ḍ-r-b), whose basic meaning is 'to strike', as when Moses strikes the rock (Quran 2:60) or Job is told to strike with a bundle of grass (Quran 38:44). With other words attached it has set idiomatic meanings: 'to set out an example' (Quran 14:24), 'to travel in the land' (Quran 4:101), 'to turn something away from' (Quran 43:5). In 4:34 it takes a person as its direct object with no preposition, which is the construction used for hitting, and that is how the classical commentators understood it. The word 'lightly' is not in the Arabic; translators add it in brackets from hadith that limit the blow to one that is not severe.",
+   "why_it_matters": "The verse is the main Quranic text in arguments over domestic violence. Whether it permits a husband to hit his wife at all, and whether a softer translation is honest to the Arabic, depends on this one word."
+  },
+  {
+   "id": "quran-4-157-shubbiha-lahum",
+   "ref": "Quran 4:157",
+   "faith": "islam",
+   "word": "شُبِّهَ لَهُمْ",
+   "translit": "shubbiha lahum",
+   "issue": "Whether the verse says someone else was made to look like Jesus and crucified in his place, or only that the crucifixion was not what it seemed to those who claimed it.",
+   "readings": [
+    {
+     "rendering": "but [another] was made to resemble him to them",
+     "who": "Sahih International; Hilali-Khan; most classical tafsir (substitution)"
+    },
+    {
+     "rendering": "but it appeared so unto them",
+     "who": "Pickthall"
+    },
+    {
+     "rendering": "but so it was made to appear to them",
+     "who": "Yusuf Ali; Abdel Haleem ('though it was made to appear like that to them')"
+    },
+    {
+     "rendering": "it only seemed so to them: they did not have the power over him they claimed",
+     "who": "some modern Muslim and non-Muslim scholars, who read the verse as denying the boast, not the event"
+    }
+   ],
+   "what_the_word_means": "shubbiha is the passive of shabbaha (root sh-b-h), 'to make one thing resemble another' or 'to make something unclear'; lahum is 'to them'. As a passive it has no stated subject, so the Arabic can mean 'he was made to resemble' or, impersonally, 'it was made to seem'. The word 'another' in Sahih International is in brackets because it is not in the Arabic. What is not in doubt is the sentence before it: wa-mā qatalūhu wa-mā ṣalabūhu, 'they did not kill him and they did not crucify him', and the next verse says God raised him to himself (Quran 4:158).",
+   "why_it_matters": "This is the only verse in the Quran that addresses the crucifixion, and it is the sharpest factual disagreement between Islam and Christianity. The substitution story comes from commentary; the Arabic itself says less than either side often claims."
+  },
+  {
+   "id": "quran-3-54-khayru-l-makirin",
+   "ref": "Quran 3:54",
+   "faith": "islam",
+   "word": "خَيْرُ ٱلْمَـٰكِرِينَ",
+   "translit": "khayru l-mākirīn",
+   "issue": "Whether God is being called the best 'planner' or the best 'schemer' or 'deceiver'.",
+   "readings": [
+    {
+     "rendering": "the best of planners",
+     "who": "Sahih International, Yusuf Ali"
+    },
+    {
+     "rendering": "the best of schemers",
+     "who": "Pickthall; Abdel Haleem ('the Best of Schemers')"
+    },
+    {
+     "rendering": "the Best of those who plot",
+     "who": "Hilali-Khan"
+    },
+    {
+     "rendering": "the best of deceivers",
+     "who": "Christian and other critics of the Quran"
+    }
+   ],
+   "what_the_word_means": "mākirīn is the plural active participle of makara (root m-k-r), which means to plot or scheme, normally in secret and to someone's harm; it is a stronger word than the neutral Arabic terms for planning. The same verb is used in the same verse for what Jesus's enemies did (wa-makarū, 'and they schemed'), and again of the Meccans plotting against Muhammad (Quran 8:30). Classical commentators explain that God's makr is his answer to theirs, turning their plot back on them, and that the same word is repeated for both sides as a figure of speech. 'Planner' softens the word; 'deceiver' ignores that the object of God's scheming is the plotters.",
+   "why_it_matters": "Critics use the verse to say the Quran's God deceives; Muslims answer that outwitting people who are plotting murder is justice, not lying. Readers of 'best of planners' do not see that there is anything to argue about."
+  },
+  {
+   "id": "quran-3-55-mutawaffika",
+   "ref": "Quran 3:55",
+   "faith": "islam",
+   "word": "مُتَوَفِّيكَ",
+   "translit": "mutawaffīka",
+   "issue": "Whether God tells Jesus 'I will take you' (alive, to heaven) or 'I will cause you to die'.",
+   "readings": [
+    {
+     "rendering": "I will take you",
+     "who": "Sahih International, Yusuf Ali, Hilali-Khan"
+    },
+    {
+     "rendering": "I am gathering thee",
+     "who": "Pickthall"
+    },
+    {
+     "rendering": "I will take you back",
+     "who": "Abdel Haleem"
+    },
+    {
+     "rendering": "I shall cause you to die",
+     "who": "a report from Ibn ʿAbbās recorded by al-Bukhari; Muhammad Asad and some other modern translators"
+    }
+   ],
+   "what_the_word_means": "mutawaffīka is the active participle of tawaffā (root w-f-y), literally 'to take in full' or 'to receive back what is due'. In the Quran the verb is the normal expression for God or the angels taking a person's soul at death, and it is also used for taking souls in sleep (Quran 39:42, Quran 6:60). The same verb is used again of Jesus, in the past tense, in Quran 5:117 (tawaffaytanī, 'when You took me'). The majority Muslim view is that Jesus was taken up alive and will die after he returns; a minority, with the Ibn ʿAbbās report, takes the word in its usual sense of death.",
+   "why_it_matters": "If the word means death here, the Quran says Jesus died, which changes how Quran 4:157 must be read and comes closer to the Christian account. If it means taking alive, it supports the belief that Jesus never died and will return."
+  },
+  {
+   "id": "quran-2-106-abrogation",
+   "ref": "Quran 2:106",
+   "faith": "islam",
+   "word": "مَا نَنسَخْ مِنْ ءَايَةٍ أَوْ نُنسِهَا",
+   "translit": "mā nansakh min āyatin aw nunsihā",
+   "issue": "Whether the verse teaches that some verses of the Quran cancel others, or is speaking about earlier scriptures or signs.",
+   "readings": [
+    {
+     "rendering": "We do not abrogate a verse or cause it to be forgotten except that We bring forth one better than it or similar",
+     "who": "Sahih International; Hilali-Khan"
+    },
+    {
+     "rendering": "Nothing of our revelation (even a single verse) do we abrogate or cause be forgotten",
+     "who": "Pickthall; Yusuf Ali ('None of Our revelations')"
+    },
+    {
+     "rendering": "Any revelation We cause to be superseded or forgotten, We replace with something better or similar",
+     "who": "Abdel Haleem"
+    },
+    {
+     "rendering": "refers to the earlier scriptures being replaced by the Quran, or to miraculous signs, not to verses of the Quran",
+     "who": "some modern Muslim interpreters who reject abrogation inside the Quran"
+    }
+   ],
+   "what_the_word_means": "nansakh is from nasakha (root n-s-kh), 'to annul, cancel, replace'; the same root also means 'to copy out'. āya means 'sign' and is also the Quran's own word for one of its verses, so the phrase can be 'a verse' or 'a sign'. Some of the canonical reciters read the second verb as nansaʾhā, 'We postpone it', instead of nunsihā, 'We cause it to be forgotten'. Quran 16:101 says something similar with a different verb: wa-idhā baddalnā āyatan makāna āyatin, 'when We substitute a verse in place of a verse', and records that opponents called Muhammad a forger because of it.",
+   "why_it_matters": "The classical doctrine of abrogation (naskh) holds that later rulings in the Quran override earlier ones. That decides which verses are still in force, for example whether verses on fighting limit or cancel verses on tolerance, and critics ask why an all-knowing God would need to replace his own words."
+  },
+  {
+   "id": "quran-9-29-jizya",
+   "ref": "Quran 9:29",
+   "faith": "islam",
+   "word": "حَتَّىٰ يُعْطُوا۟ ٱلْجِزْيَةَ عَن يَدٍ وَهُمْ صَـٰغِرُونَ",
+   "translit": "ḥattā yuʿṭū l-jizyata ʿan yadin wa-hum ṣāghirūn",
+   "issue": "Whether Jews and Christians are to be fought until they pay a tax in humiliation, or simply until they accept the state's authority; and whether all of them are meant or only some.",
+   "readings": [
+    {
+     "rendering": "until they give the jizyah willingly while they are humbled",
+     "who": "Sahih International"
+    },
+    {
+     "rendering": "until they pay the tribute readily, being brought low",
+     "who": "Pickthall"
+    },
+    {
+     "rendering": "until they pay the Jizya with willing submission, and feel themselves subdued",
+     "who": "Yusuf Ali; Hilali-Khan"
+    },
+    {
+     "rendering": "until they pay the tax and agree to submit",
+     "who": "Abdel Haleem"
+    }
+   ],
+   "what_the_word_means": "jizya (root j-z-y, 'to repay, compensate') is a payment made by non-Muslim subjects; in Islamic law it became the poll tax on protected communities. ʿan yadin is literally 'from a hand' or 'by hand', and has been explained as 'in person', 'readily', 'according to their means' or 'in acknowledgment of superior power'; 'willingly' is one interpretation, not a literal rendering. ṣāghirūn is from ṣ-gh-r, 'to be small', and means lowly, humbled or subdued. The command is qātilū, 'fight', and the group is those 'from among those who were given the Scripture' who do not believe or follow the true religion, which can be read as all Jews and Christians or as those among them who fit the description.",
+   "why_it_matters": "This verse is the Quranic basis for the jizya and for the subordinate legal status of Jews and Christians under Muslim rule. It is cited both by critics, as a command of open-ended war on other faiths, and by Muslims who read it as tied to a specific conflict and ending in a tax in place of military service."
+  },
+  {
+   "id": "quran-18-86-muddy-spring",
+   "ref": "Quran 18:86",
+   "faith": "islam",
+   "word": "وَجَدَهَا تَغْرُبُ فِى عَيْنٍ حَمِئَةٍ",
+   "translit": "wajadahā taghrubu fī ʿaynin ḥamiʾatin",
+   "issue": "Whether the Quran says the sun sets in a muddy spring, or only that it looked that way to Dhul-Qarnayn.",
+   "readings": [
+    {
+     "rendering": "he found it setting in a muddy spring",
+     "who": "Pickthall"
+    },
+    {
+     "rendering": "he found it set in a spring of murky water",
+     "who": "Yusuf Ali"
+    },
+    {
+     "rendering": "he found it [as if] setting in a body of dark water",
+     "who": "Sahih International"
+    },
+    {
+     "rendering": "he found it [seemed to be] setting into a muddy spring",
+     "who": "Abdel Haleem"
+    },
+    {
+     "rendering": "a spring of black muddy (or hot) water",
+     "who": "Hilali-Khan, noting the variant reading"
+    }
+   ],
+   "what_the_word_means": "ʿayn means a spring of water (and also 'eye'); ḥamiʾa means muddy, from ḥamaʾ, black mud. Several of the canonical reciters read ḥāmiya, 'hot', instead. wajadahā is 'he found it', a verb that can describe what a person perceives as well as what is so. The words 'as if' and 'seemed to be' are in brackets in the translations because they are not in the Arabic. The same construction is used four verses later for the sunrise: 'he found it rising on a people' (Quran 18:90).",
+   "why_it_matters": "Critics cite the verse as a scientific error taken from legends about Alexander. Muslims reply that it reports what the traveller saw at the western horizon. The added brackets in some translations settle in advance a question the Arabic leaves open."
+  },
+  {
+   "id": "isaiah-7-14-almah",
+   "ref": "Isaiah 7:14",
+   "faith": "jewish",
+   "word": "הָעַלְמָה / παρθένος",
+   "translit": "hāʿalmāh / parthenos",
+   "issue": "Whether the woman who will bear Immanuel is 'the young woman' or 'a virgin'.",
+   "readings": [
+    {
+     "rendering": "the young woman",
+     "who": "Jewish Publication Society (JPS) Tanakh; Rashi; several modern Christian translations such as the NRSV"
+    },
+    {
+     "rendering": "a virgin / the virgin",
+     "who": "King James Version ('a virgin'), World English Bible ('the virgin'), following the Greek Septuagint and Matthew 1:23"
+    },
+    {
+     "rendering": "the young woman is with child (already pregnant)",
+     "who": "JPS, taking the adjective hārāh as present"
+    }
+   ],
+   "what_the_word_means": "ʿalmāh means a young woman of marriageable age; it is used of Rebekah before her marriage (Genesis 24:43), of Moses's sister (Exodus 2:8) and in 'the way of a man with a maiden' (Proverbs 30:19). It does not itself state virginity, though an unmarried girl would normally be assumed to be one. The specific Hebrew word for virgin is bᵉtūlāh, used of Rebekah in Genesis 24:16. The Septuagint translated ʿalmāh here with parthenos, which normally means virgin, and Matthew quotes that Greek; later Jewish translators into Greek (Aquila, Symmachus, Theodotion) used neanis, 'young woman'. The Hebrew also has the definite article, 'the' young woman, as if she were known to the hearers.",
+   "why_it_matters": "Matthew 1:23 rests the virgin birth on this verse as a fulfilled prophecy. If the Hebrew says only 'young woman', the doctrine has to stand on the Gospel accounts alone and the verse is not a prediction of it."
+  },
+  {
+   "id": "psalm-22-16-kaari",
+   "ref": "Psalms 22:16",
+   "faith": "jewish",
+   "word": "כָּאֲרִי / כָּאֲרוּ",
+   "translit": "kāʾărī / kāʾărū",
+   "issue": "Whether the verse says 'they pierced my hands and my feet' or 'like a lion, my hands and my feet'.",
+   "readings": [
+    {
+     "rendering": "like a lion, my hands and my feet",
+     "who": "the traditional Hebrew (Masoretic) text; JPS ('like lions [they maul] my hands and feet'); Rashi"
+    },
+    {
+     "rendering": "they pierced my hands and my feet",
+     "who": "King James Version, World English Bible and most Christian translations"
+    },
+    {
+     "rendering": "they dug my hands and my feet",
+     "who": "the Greek Septuagint (ōryxan); a Dead Sea scroll fragment from Naḥal Ḥever that reads kāʾărū with a final waw"
+    }
+   ],
+   "what_the_word_means": "In Hebrew Bibles this is verse 17. The Masoretic text reads kāʾărī, the preposition kᵉ- ('like') plus ʾărī ('lion'), exactly the form found in Isaiah 38:13; read this way the clause has no verb and one must be supplied. The other reading, kāʾărū, differs by one letter (waw for yod, which look alike in ancient script) and would be a verb, usually connected with kārāh, 'to dig', although the spelling with an aleph is irregular. 'Pierced' is an interpretation of 'dug'; the normal Hebrew verbs for piercing, such as dāqar in Zechariah 12:10, are not used. Lions appear in the psalm just before and just after (22:13, 22:21).",
+   "why_it_matters": "With 'pierced', the verse reads like a description of crucifixion written centuries beforehand. With 'like a lion', it is one more animal image in a prayer for rescue. The New Testament never quotes this line, so the Christian case depends on the translation."
+  },
+  {
+   "id": "isaiah-53-8-lamo",
+   "ref": "Isaiah 53:8",
+   "faith": "jewish",
+   "word": "נֶגַע לָמוֹ",
+   "translit": "negaʿ lāmō",
+   "issue": "Whether the last words say the servant 'was stricken' (one person) or 'a plague came to them' (a group).",
+   "readings": [
+    {
+     "rendering": "for the transgression of my people was he stricken",
+     "who": "King James Version; World English Bible ('stricken for the disobedience of my people')"
+    },
+    {
+     "rendering": "because of the transgression of my people, a plague befell them",
+     "who": "Jewish interpreters who take the plural as showing the servant is a people, Israel; Rashi: 'this plague came to the righteous among them'"
+    },
+    {
+     "rendering": "through the sin of my people, who deserved the punishment",
+     "who": "JPS, taking 'them' as the people rather than the servant"
+    },
+    {
+     "rendering": "he was led to death",
+     "who": "the Greek Septuagint, which seems to have read a different Hebrew word, lammāwet"
+    }
+   ],
+   "what_the_word_means": "negaʿ is a noun meaning a blow or plague. lāmō is a poetic form of the preposition lᵉ- with a pronoun, and it normally means 'to them' or 'for them', as in Deuteronomy 33:2. In at least one place it refers to a single thing: in Isaiah 44:15 a man makes an idol and bows down lāmō, 'to it'. So the form is usually plural but cannot by itself prove the servant is a group, and the grammar also allows 'them' to be 'my people' just mentioned. Everything else said about the servant in this verse is in the singular.",
+   "why_it_matters": "Christians read Isaiah 53 as one man dying for others; the main Jewish reading is that the servant is Israel. A plural here would be direct evidence for the Jewish reading, so the weight put on this small word is large on both sides."
+  },
+  {
+   "id": "genesis-1-26-let-us-make",
+   "ref": "Genesis 1:26",
+   "faith": "jewish",
+   "word": "נַעֲשֶׂה אָדָם בְּצַלְמֵנוּ כִּדְמוּתֵנוּ",
+   "translit": "naʿăseh ʾādām bᵉtsalmēnū kidmūtēnū",
+   "issue": "Why God says 'Let us make man in our image' in the plural, and who 'us' is.",
+   "readings": [
+    {
+     "rendering": "a plurality of persons within the one God (the Trinity)",
+     "who": "traditional Christian interpretation"
+    },
+    {
+     "rendering": "God speaking to the angels of his heavenly court",
+     "who": "Rashi and the midrash he cites; many modern scholars"
+    },
+    {
+     "rendering": "a plural of deliberation or of majesty, God addressing himself",
+     "who": "other Jewish, Christian and academic interpreters"
+    },
+    {
+     "rendering": "the royal 'We' that God also uses throughout the Quran",
+     "who": "Muslim interpreters"
+    }
+   ],
+   "what_the_word_means": "The verb naʿăseh is first person plural, 'let us make', and the suffixes on 'our image' and 'our likeness' are plural as well. The very next verse returns to the singular: 'God created (wayyivrāʾ, singular) man in his image'. The word for God, ʾĕlōhīm, is plural in form but regularly takes singular verbs when it means the God of Israel, as in Genesis 1:1. Similar plurals occur in Genesis 3:22, Genesis 11:7 and Isaiah 6:8, where God is pictured with attendants. The text does not say who is addressed, and it does not give a number.",
+   "why_it_matters": "Christians have long cited the verse as an early hint of the Trinity; Jews and Muslims cite the singular verbs around it as proof of strict oneness. The grammar is compatible with several explanations and does not by itself establish three persons."
+  },
+  {
+   "id": "deuteronomy-6-4-echad",
+   "ref": "Deuteronomy 6:4",
+   "faith": "jewish",
+   "word": "יְהוָה אֱלֹהֵינוּ יְהוָה אֶחָד",
+   "translit": "YHWH ʾĕlōhēnū YHWH ʾeḥād",
+   "issue": "Whether the Shema says God is 'one' in number, that he 'alone' is Israel's God, or that he is a 'compound unity'.",
+   "readings": [
+    {
+     "rendering": "The LORD our God is one LORD / the LORD is one",
+     "who": "King James Version; World English Bible ('Yahweh is our God. Yahweh is one'); Mark 12:29"
+    },
+    {
+     "rendering": "The LORD is our God, the LORD alone",
+     "who": "JPS, following Rashbam and Ibn Ezra"
+    },
+    {
+     "rendering": "one, as a united plurality (a 'compound' one)",
+     "who": "some Christian apologists, comparing 'one flesh' in Genesis 2:24"
+    },
+    {
+     "rendering": "the LORD, now our God only, will one day be acknowledged as the one God by all",
+     "who": "Rashi, with Zechariah 14:9"
+    }
+   ],
+   "what_the_word_means": "The Hebrew has four words and no verb: 'YHWH our-God YHWH one', so translators must decide where to put 'is'. ʾeḥād is the ordinary Hebrew number 'one'. Like English 'one', it can count a single item or a whole made of parts, 'one day' of evening and morning (Genesis 1:5) or man and wife as 'one flesh' (Genesis 2:24); the word itself says nothing either way about inner plurality. The argument that Hebrew would have used yāḥīd ('only', as in Genesis 22:2) for absolute oneness is weak, because ʾeḥād is simply the usual word for 'one'.",
+   "why_it_matters": "This is the central declaration of Jewish faith, and Jesus calls it the first commandment (Mark 12:29). Jews and Muslims cite it against the Trinity; Christians answer that it states one God without ruling out distinctions within him. The word 'one' supports God's oneness but cannot settle that further question."
+  },
+  {
+   "id": "john-1-1-theos",
+   "ref": "John 1:1",
+   "faith": "christian",
+   "word": "καὶ θεὸς ἦν ὁ λόγος",
+   "translit": "kai theos ēn ho logos",
+   "issue": "Whether the last clause says the Word 'was God', 'was a god', or 'was divine'.",
+   "readings": [
+    {
+     "rendering": "and the Word was God",
+     "who": "King James Version, World English Bible and almost all translations"
+    },
+    {
+     "rendering": "and the Word was a god",
+     "who": "New World Translation (Jehovah's Witnesses)"
+    },
+    {
+     "rendering": "and the Word was divine",
+     "who": "Moffatt; Goodspeed"
+    },
+    {
+     "rendering": "the Word was God's spoken command, not a second person",
+     "who": "the usual Muslim understanding of Jesus as God's 'word'"
+    }
+   ],
+   "what_the_word_means": "In the middle clause 'God' has the article (pros ton theon, 'with the God'); in the last clause theos has no article and stands before the verb. Greek has no word for 'a', so a noun without the article can be indefinite, but it does not have to be: a predicate noun placed before the verb regularly drops the article, and the same Gospel uses theos without the article for God himself (John 1:18). Most grammarians therefore take the word here as describing what the Word was, fully God in nature, while the missing article keeps the Word distinct from 'the God' he was with. 'A god' is grammatically possible but not required; 'divine' gives the sense but Greek had a separate adjective for that (theios), which John did not use.",
+   "why_it_matters": "This is the opening statement of John's Gospel about who Jesus is. 'Was God' supports the doctrine that Jesus is fully divine; 'a god' makes him a lesser being. In John 20:28 Thomas addresses Jesus as 'my God' with the article."
+  },
+  {
+   "id": "john-8-58-ego-eimi",
+   "ref": "John 8:58",
+   "faith": "christian",
+   "word": "πρὶν Ἀβραὰμ γενέσθαι ἐγὼ εἰμί",
+   "translit": "prin Abraam genesthai egō eimi",
+   "issue": "Whether Jesus says 'I am', echoing God's name, or only 'I have been in existence' since before Abraham.",
+   "readings": [
+    {
+     "rendering": "Before Abraham was, I am",
+     "who": "King James Version; World English Bible prints 'I AM' in capitals"
+    },
+    {
+     "rendering": "Before Abraham came into existence, I have been",
+     "who": "New World Translation; a few other modern versions translate 'I existed' or 'I was'"
+    },
+    {
+     "rendering": "a claim to have been chosen or existing in God's plan before Abraham, not to be God",
+     "who": "Unitarian and Muslim interpreters"
+    }
+   ],
+   "what_the_word_means": "egō eimi is the plain present tense, 'I am'. Greek can use a present tense with an expression of past time for something that began in the past and still continues, which English puts as 'I have been', so that translation is grammatically possible. On its own the phrase is everyday Greek for 'it is I' or 'I am he': the man born blind says exactly egō eimi in John 9:9. In the Greek Old Testament God's self-description in Exodus 3:14 is egō eimi ho ōn, 'I am the one who is', where the title is ho ōn; the bare egō eimi is used by God in Isaiah 43:10. In John the hearers pick up stones at once (8:59), and elsewhere they accuse him of making himself God (10:33).",
+   "why_it_matters": "If Jesus is using God's own 'I am', this is one of the clearest claims to divinity in the Gospels. On either translation he claims to have existed before Abraham; the dispute is whether he also claims the divine name."
+  },
+  {
+   "id": "romans-9-5-doxology",
+   "ref": "Romans 9:5",
+   "faith": "christian",
+   "word": "ὁ ὢν ἐπὶ πάντων θεὸς εὐλογητὸς εἰς τοὺς αἰῶνας",
+   "translit": "ho ōn epi pantōn theos eulogētos eis tous aiōnas",
+   "issue": "Whether Paul calls Christ 'God over all', or ends his sentence about Christ and then blesses God.",
+   "readings": [
+    {
+     "rendering": "Christ, who is God over all, blessed for ever",
+     "who": "NIV, ESV; the King James Version and World English Bible are similar ('who is over all, God, blessed forever')"
+    },
+    {
+     "rendering": "...the Christ. God who is over all be blessed for ever",
+     "who": "Revised Standard Version; margin of several modern versions"
+    },
+    {
+     "rendering": "Christ, who is over all. God be blessed for ever",
+     "who": "another punctuation offered in margins"
+    }
+   ],
+   "what_the_word_means": "The earliest Greek manuscripts have little or no punctuation, so the choice is made by editors and translators. The words are literally 'the one being over all God blessed to the ages'. In favour of applying them to Christ: 'the one who is' most naturally attaches to the noun just before it, as it does in 2 Corinthians 11:31, and a separate blessing of God would normally begin with 'Blessed', as in 2 Corinthians 1:3. In favour of a separate sentence: Paul's undisputed letters do not otherwise call Christ 'God' so directly. Both readings are grammatically possible.",
+   "why_it_matters": "If the first punctuation is right, this is the earliest place in the New Testament where Jesus is called God, in a letter written about 25 years after his death. If the second is right, Paul keeps the word 'God' for the Father here."
+  },
+  {
+   "id": "philippians-2-6-harpagmos",
+   "ref": "Philippians 2:6",
+   "faith": "christian",
+   "word": "οὐχ ἁρπαγμὸν ἡγήσατο τὸ εἶναι ἴσα θεῷ",
+   "translit": "ouch harpagmon hēgēsato to einai isa theō",
+   "issue": "Whether Christ already had equality with God and did not exploit it, or did not have it and refused to grab it.",
+   "readings": [
+    {
+     "rendering": "thought it not robbery to be equal with God",
+     "who": "King James Version (equality was rightfully his)"
+    },
+    {
+     "rendering": "didn't consider equality with God a thing to be grasped",
+     "who": "World English Bible; the ESV is similar (ambiguous: held on to, or snatched at)"
+    },
+    {
+     "rendering": "did not regard equality with God as something to be exploited",
+     "who": "NRSV and many recent scholars"
+    },
+    {
+     "rendering": "did not try to seize equality with God, which he did not have",
+     "who": "Unitarian, Jehovah's Witness and Muslim interpreters"
+    }
+   ],
+   "what_the_word_means": "harpagmos comes from harpazō, 'to seize, snatch', and occurs only here in the New Testament and rarely anywhere else. It can mean the act of seizing (the King James 'robbery'), a thing to be seized that one does not yet have, or a thing already held that could be clung to or used for one's own advantage. Studies of the idiom 'to consider something harpagmos' favour the last sense, 'something to take advantage of'. The surrounding words say he was 'in the form of God' (en morphē theou) and then 'emptied himself, taking the form of a servant'.",
+   "why_it_matters": "This passage is one of the earliest Christian statements about who Jesus was before his birth. One reading has him equal with God and giving up his privileges; the other has him a lesser being who, unlike Adam, did not reach for equality with God."
+  },
+  {
+   "id": "1-john-5-7-comma",
+   "ref": "1 John 5:7",
+   "faith": "christian",
+   "word": "ἐν τῷ οὐρανῷ, ὁ πατήρ, ὁ λόγος, καὶ τὸ ἅγιον πνεῦμα· καὶ οὗτοι οἱ τρεῖς ἕν εἰσι",
+   "translit": "en tō ouranō, ho patēr, ho logos, kai to hagion pneuma; kai houtoi hoi treis hen eisi",
+   "issue": "Whether the sentence naming the Father, the Word and the Holy Spirit as three who are one (the 'Johannine Comma') belongs in the Bible at all.",
+   "readings": [
+    {
+     "rendering": "For there are three that bear record in heaven, the Father, the Word, and the Holy Ghost: and these three are one",
+     "who": "King James Version and other translations made from the Textus Receptus"
+    },
+    {
+     "rendering": "For there are three who testify: the Spirit, the water, and the blood; and the three agree as one",
+     "who": "World English Bible and virtually all modern translations, which omit the words"
+    },
+    {
+     "rendering": "included only in a footnote",
+     "who": "most modern editions"
+    }
+   ],
+   "what_the_word_means": "This is a question of which words are original, not of how to translate them. The extra words are missing from all early Greek manuscripts and from the quotations of the Greek church fathers, who would have used them in the debates over the Trinity. They first appear in Latin, apparently as a comment that entered the text, and are found in only a handful of very late Greek manuscripts. Erasmus left them out of his first two printed Greek New Testaments and added them in the third (1522), from where they passed into the Textus Receptus and the King James Version. Without them the verse lists three witnesses: the Spirit, the water and the blood.",
+   "why_it_matters": "It was the only verse in the Bible that stated the Trinity outright. Textual scholars of all backgrounds agree it is a later addition, so the doctrine has to be argued from other passages. Muslims often cite it as an example of the Bible's text being changed."
+  },
+  {
+   "id": "mark-16-9-20-longer-ending",
+   "ref": "Mark 16:9-20",
+   "faith": "christian",
+   "word": "Ἀναστὰς δὲ πρωῒ πρώτῃ σαββάτου",
+   "translit": "Anastas de prōi prōtē sabbatou",
+   "issue": "Whether the last twelve verses of Mark, with the resurrection appearances, are part of the original Gospel.",
+   "readings": [
+    {
+     "rendering": "printed as part of the text with no comment",
+     "who": "King James Version"
+    },
+    {
+     "rendering": "printed, but set apart in brackets or with a note that the earliest manuscripts lack it",
+     "who": "most modern translations"
+    },
+    {
+     "rendering": "the Gospel ends at 16:8: 'They said nothing to anyone; for they were afraid'",
+     "who": "the two oldest complete manuscripts, Codex Sinaiticus and Codex Vaticanus; most textual scholars"
+    }
+   ],
+   "what_the_word_means": "Again the question is which text is original. Mark 16:8 ends with the women fleeing the empty tomb, in Greek ephobounto gar, 'for they were afraid'. The two earliest manuscripts that contain the end of Mark, both from the fourth century, stop there; the great majority of later manuscripts continue with verses 9-20, and a few have a different, shorter ending. Verse 9 starts again as if Mary Magdalene had not just been mentioned, and the vocabulary and style differ from the rest of Mark. Most scholars conclude the verses were added in the second century, drawing on the other Gospels and Acts.",
+   "why_it_matters": "If Mark, usually considered the earliest Gospel, ended at 16:8, it reported the empty tomb and an announcement that Jesus had risen but no appearances of the risen Jesus. The disputed verses also contain the sayings about baptism and salvation, handling snakes and drinking poison (16:16-18)."
+  },
+  {
+   "id": "matthew-28-19-baptismal-formula",
+   "ref": "Matthew 28:19",
+   "faith": "christian",
+   "word": "βαπτίζοντες αὐτοὺς εἰς τὸ ὄνομα τοῦ πατρὸς καὶ τοῦ υἱοῦ καὶ τοῦ ἁγίου πνεύματος",
+   "translit": "baptizontes autous eis to onoma tou patros kai tou huiou kai tou hagiou pneumatos",
+   "issue": "Whether Jesus's command to baptize 'in the name of the Father and of the Son and of the Holy Spirit' is original, and whether it teaches the Trinity.",
+   "readings": [
+    {
+     "rendering": "baptizing them in the name of the Father and of the Son and of the Holy Spirit",
+     "who": "all known Greek manuscripts that contain the verse, and all translations"
+    },
+    {
+     "rendering": "'make disciples of all nations in my name' (no three-part formula)",
+     "who": "a shorter form in which Eusebius of Caesarea often quotes the verse; argued by some scholars to be original"
+    },
+    {
+     "rendering": "three names are listed, but the verse does not say the three are one God",
+     "who": "Unitarian and Muslim interpreters"
+    }
+   ],
+   "what_the_word_means": "There is no manuscript evidence for a different wording: every surviving Greek copy and ancient translation of this verse has the three-part formula, and it also appears in the Didache, an early Christian manual. The doubt comes from two facts. Eusebius, in the fourth century, frequently quotes the verse in a short form without it. And in Acts the apostles baptize 'in the name of Jesus Christ' (Acts 2:38, Acts 10:48; similarly Acts 8:16), never with the three names. On the wording itself, eis to onoma is 'into the name', singular, followed by three titles each with its own article.",
+   "why_it_matters": "It is the one saying of Jesus in the Gospels that names Father, Son and Holy Spirit together, and it is the formula used in Christian baptism. Critics say it reflects later church practice placed on Jesus's lips; defenders point to the unanimous manuscripts."
+  }
+ ]
+}
