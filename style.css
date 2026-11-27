@@ -1093,6 +1093,8 @@ main { padding-bottom: 24px; } .foot { margin-top: 12px; }
 /* ---------- opening: a thick leather book, tilted in 3D, opens; printed pages turn; it glows and dissolves into the site ---------- */
 #intro { position: fixed; inset: 0; z-index: 200; display: grid; place-items: center; cursor: pointer; overflow: hidden;
   background: radial-gradient(80% 60% at 50% 48%, #3A2817, #1E140B 60%, #0F0A05); transition: opacity .9s ease; }
+#intro:not(.go) *, #intro:not(.go) *::before, #intro:not(.go) *::after { animation-play-state: paused !important; }
+#intro .bk-scene { opacity: 0; transition: opacity .45s ease; } #intro.go .bk-scene { opacity: 1; }
 #intro.out { opacity: 0; pointer-events: none; }
 html.intro-on { overflow: hidden; }
 .bk-glow { position: absolute; width: 560px; height: 560px; border-radius: 50%; background: radial-gradient(circle, rgba(255, 220, 140, .5), transparent 65%); opacity: 0; animation: bkGlow 1.4s ease 1.2s forwards; }
