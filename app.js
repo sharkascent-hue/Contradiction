@@ -241,7 +241,7 @@
       '<section class="hx"><div class="hx-ms" aria-hidden="true"><img src="brand/ms-christian.jpg" alt=""><img src="brand/ms-muslim.jpg" alt=""><img src="brand/ms-jewish.jpg" alt=""></div><p class="hx-eyebrow"><span>Christianity</span><b>◆</b><span>Islam</span><b>◆</b><span>Judaism</span></p>' +
         '<h1>Three faiths.<br>One question.<br><em>Who do the texts back?</em></h1>' +
         '<p class="hx-lede">Put any claim to the Bible, the Quran, the hadith and the Talmud, and get a straight answer, with the passages.</p>' +
-        askBox('Ask anything: "Was Jesus crucified?"') +
+        askBox('Ask anything…') +
         '<div class="marquee" aria-label="Try a question"><div class="marquee-track">' + [...SUGGEST, ...SUGGEST].map(s => '<a class="chip" href="#/ask/' + encodeURIComponent(s) + '">' + esc(s) + '</a>').join('') + '</div></div></section>' +
       '<section class="today"><a class="today-card qd" href="#/q/' + qd.slug + '"><span class="tag">Question of the day</span><strong>' + esc(qd.title) + '</strong><span>' + esc(qd.short) + '</span><em>See what each faith says →</em></a>' +
         '<div class="today-card dd-card" id="arena-feature"><span class="tag">Debate of the day</span><strong>Loading…</strong></div></section>' +
@@ -299,11 +299,19 @@
   const FAMOUS = {
     christian: ['John 3:16', 'Genesis 1:1', 'Psalm 23:1', 'Matthew 5:9', 'John 11:35', 'Exodus 20:13', 'Romans 3:23', 'John 14:6', 'Matthew 22:39', '1 Corinthians 13:4', 'Philippians 4:13', 'Proverbs 3:5', 'Matthew 28:19', 'Luke 2:7', 'Revelation 21:4', 'Isaiah 53:5', 'Ecclesiastes 3:1', 'Micah 6:8'],
     jewish: ['Genesis 1:1', 'Exodus 20:13', 'Deuteronomy 6:4', 'Leviticus 19:18', 'Exodus 3:14', 'Numbers 6:24', 'Genesis 22:2', 'Exodus 20:8', 'Deuteronomy 6:5', 'Genesis 12:1', 'Leviticus 11:7', 'Exodus 21:24'],
-    surahs: [1, 2, 3, 12, 18, 19, 36, 55, 56, 67, 112, 113, 114, 4, 9, 17, 24, 33]
+    surahs: [1, 2, 3, 4, 5, 6, 7, 9, 10, 11, 12, 14, 17, 18, 19, 20, 21, 24, 25, 31, 33, 36, 47, 48, 49, 55, 56, 62, 67, 71, 73, 87, 93, 96, 97, 103, 108, 109, 110, 112, 113, 114]
   };
   // Generators: each returns a question built from the texts themselves.
   const GEN = {
     christian: [
+      async lvl => { // easy: which scripture is this verse from
+        if (lvl !== 'easy') return null;
+        const src = [['ot', 'The Old Testament'], ['nt', 'The New Testament'], ['q', 'The Quran']][rnd(3)];
+        const code = src[0] === 'q' ? 'Q' + (1 + rnd(114)) : (l => l[rnd(l.length)])(booksOf(src[0]).filter(b => has('WEB', b)));
+        const x = await verseFrom(src[0] === 'q' ? 'PICK' : 'WEB', code, 60, 200); if (!x) return null;
+        const ref = src[0] === 'q' ? 'Quran ' + code.slice(1) + ':' + x.v : bookName[code] + ' ' + x.c + ':' + x.v;
+        return makeQ('g:sc:' + ref, 'christian', 'easy', 'Which scripture is this verse from? ' + quoteOf(x.t), src[1], ['The Old Testament', 'The New Testament', 'The Quran', 'The Talmud'].filter(s => s !== src[1]).slice(0, 3), ref, 'It is ' + ref + '.');
+      },
       async lvl => { // which book is this verse from
         let code, c, v, t;
         if (lvl === 'easy') { const r = parseRef(FAMOUS.christian[rnd(FAMOUS.christian.length)]); code = r.code; c = r.ch; v = r.v1; t = (await loadBook('WEB', code))[c - 1][v - 1]; }
@@ -335,6 +343,13 @@
         const wrong = pickN(Array.from({ length: 114 }, (_, k) => k + 1), 3, n).map(k => bookName['Q' + k].replace(/^\d+\.\s*/, ''));
         return makeQ('g:sn:' + n, 'muslim', lvl, 'What is surah ' + n + ' of the Quran called?', name, wrong, 'Quran ' + n + ':1', 'Surah ' + n + ' is ' + name + '.');
       },
+      async lvl => { // easy: which well-known short surah is this verse from
+        if (lvl !== 'easy') return null;
+        const pool = [1, 36, 55, 67, 78, 87, 93, 94, 95, 96, 97, 99, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114], n = pool[rnd(pool.length)];
+        const vs = (await loadBook('PICK', 'Q' + n))[0], v = rnd(vs.length), t = vs[v]; if (!t || t.length < 25) return null;
+        const nm = k => bookName['Q' + k];
+        return makeQ('g:se:' + n + ':' + (v + 1), 'muslim', 'easy', 'Which surah is this verse from? ' + quoteOf(t), nm(n), pickN(pool, 3, n).map(nm), 'Quran ' + n + ':' + (v + 1), 'It is Quran ' + n + ':' + (v + 1) + ', in ' + nm(n).replace(/^\d+\.\s*/, '') + '.');
+      },
       async lvl => { // which surah is this verse from
         if (lvl === 'easy') return null;
         const n = lvl === 'intermediate' ? FAMOUS.surahs[rnd(FAMOUS.surahs.length)] : 1 + rnd(114), x = await verseFrom('PICK', 'Q' + n, 50, 220); if (!x) return null;
@@ -355,6 +370,13 @@
       }
     ],
     jewish: [
+      async lvl => { // easy: which scripture is this verse from
+        if (lvl !== 'easy') return null;
+        const k = rnd(4), src = k < 2 ? ['JPS', ['GEN', 'EXO', 'LEV', 'NUM', 'DEU'][rnd(5)], 'The Torah'] : k === 2 ? ['WEB', ['MAT', 'MAR', 'LUK', 'JOH'][rnd(4)], 'The Gospels'] : ['PICK', 'Q' + (1 + rnd(114)), 'The Quran'];
+        const x = await verseFrom(src[0], src[1], 60, 200); if (!x) return null;
+        const ref = src[0] === 'PICK' ? 'Quran ' + src[1].slice(1) + ':' + x.v : bookName[src[1]] + ' ' + x.c + ':' + x.v;
+        return makeQ('g:sj:' + ref, 'jewish', 'easy', 'Which scripture is this verse from? ' + quoteOf(x.t), src[2], ['The Torah', 'The Gospels', 'The Quran', 'The Book of Psalms'].filter(s => s !== src[2]).slice(0, 3), ref, 'It is ' + ref + '.');
+      },
       async lvl => { // which book of the Torah
         const five = ['GEN', 'EXO', 'LEV', 'NUM', 'DEU'];
         let code, c, v, t;
@@ -380,15 +402,19 @@
     const lvOk = q => level === 'mixed' || q.level === level;
     const hand = bank.concat(qz.quizzes.flatMap(z => z.questions.map((q, k) => Object.assign({ id: 'qz:' + z.id + ':' + k, faith: z.faith || 'all', level: z.faith ? 'easy' : 'intermediate' }, q))))
       .filter(q => (fs.includes(q.faith) || (faith === 'all' && q.faith === 'all')) && lvOk(q));
-    let seen = seenSet(), fresh = hand.filter(q => !seen.has(q.id));
-    const out = shuffle(fresh).slice(0, Math.ceil(n * .6)), ids = new Set(out.map(q => q.id));
-    for (let tries = 0; out.length < n && tries < n * 12; tries++) {
+    let seen = seenSet(), fresh = shuffle(hand.filter(q => !seen.has(q.id)));
+    const out = fresh.splice(0, Math.ceil(n * .4)), ids = new Set(out.map(q => q.id));
+    for (let tries = 0; out.length < n && tries < n * 25; tries++) {
       const f = fs[rnd(fs.length)], g = GEN[f][rnd(GEN[f].length)], lv = level === 'mixed' ? ['easy', 'intermediate', 'hard'][rnd(3)] : level;
       const q = await g(lv).catch(() => null);
       if (!q || ids.has(q.id) || seen.has(q.id) || new Set(q.options).size < 4 || (level !== 'mixed' && q.level !== level)) continue;
       ids.add(q.id); out.push(q);
     }
-    if (out.length < n) shuffle(hand.filter(q => !ids.has(q.id))).slice(0, n - out.length).forEach(q => { ids.add(q.id); out.push(q); });
+    while (out.length < n && fresh.length) { const q = fresh.shift(); ids.add(q.id); out.push(q); }
+    if (out.length < n) {   // everything here has been seen: start this bank over
+      const hid = new Set(hand.map(q => q.id)); store.set('qz-seen', JSON.stringify([...seen].filter(x => !hid.has(x))));
+      shuffle(hand.filter(q => !ids.has(q.id))).slice(0, n - out.length).forEach(q => { ids.add(q.id); out.push(q); });
+    }
     return shuffle(out).slice(0, n);
   }
   async function quiz(fa, lv, cnt) {
@@ -430,7 +456,7 @@
         app.querySelector('[data-again]').addEventListener('click', () => route());
         return;
       }
-      const q = qs[i];
+      const q = qs[i]; remember([q.id]);
       app.innerHTML = '<p class="crumbs"><a href="#/quiz">Quiz</a> › ' + esc(title) + '</p><div class="qz-bar"><i style="width:' + (i / qs.length * 100) + '%"></i></div>' +
         '<p class="qz-n">Question ' + (i + 1) + ' of ' + qs.length + ' · score ' + score + ' <span class="qz-lv ' + q.level + '">' + (QLEVEL[q.level] || '') + '</span></p><h1 class="qz-q">' + esc(q.q) + '</h1>' +
         '<div class="qz-opts">' + q.options.map((o, k) => '<button type="button" data-k="' + k + '">' + esc(o) + '</button>').join('') + '</div><div class="qz-why" hidden></div>';
@@ -2040,6 +2066,8 @@
   const applyMode = m => { document.documentElement.dataset.mode = m; const b = document.querySelector('.mode-btn'); if (b) b.setAttribute('aria-pressed', m === 'dark'); };
   applyMode(store.get('mode') || 'light');
   document.addEventListener('click', e => { if (!e.target.closest('.mode-btn')) return; const m = document.documentElement.dataset.mode === 'dark' ? 'light' : 'dark'; store.set('mode', m); applyMode(m); });
+  document.addEventListener('focusin', e => { if (e.target.matches('textarea, input')) document.body.classList.add('kb'); });
+  document.addEventListener('focusout', e => { if (e.target.matches('textarea, input')) setTimeout(() => { if (!document.activeElement || !document.activeElement.matches('textarea, input')) document.body.classList.remove('kb'); }, 80); });
   const MORE = [['#/faiths', '⊕', 'Faiths', 'Each faith in its own words'], ['#/hard', '⚖', 'Hard questions', 'Women, captives, apostasy, war'], ['#/debaters', '🎙', 'Debaters', 'Their channels and arguments'],
     ['#/videos', '▶', 'Watch recent debates', 'Newest videos, with the AI\'s take'], ['#/trainer', '⚔', 'Debate trainer', 'Argue against the AI'], ['#/quiz', '?', 'Quiz', 'Easy to hard, never repeats'], ['#/parallel', '⇄', 'Compare editions', 'A verse in every translation'], ['#/topics', '✦', 'Topics and tools', 'Stories, prophecies, timeline'],
     ['#/lib', '📚', 'Library', 'Hadith, Talmud, Church Fathers'], ['#/search', '⌕', 'Search', 'Every word in every text'], ['#/saved', '🔖', 'Saved', 'Answers you kept'], ['javascript:void 0" class="mode-btn', '◐', 'Dark mode', 'Switch light or dark'], ['#/about', '◆', 'Why Contradiction AI', 'Why we built it']];
