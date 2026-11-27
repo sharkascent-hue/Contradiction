@@ -234,14 +234,14 @@
   }
 
   function questions() {
-    document.title = 'Questions · Contradiction';
+    document.title = 'Questions · Contradiction AI';
     app.innerHTML = '<h1>Big questions</h1><p class="lede">Where the faiths disagree, with each side in its own words and the passages behind it.</p>' +
       '<div class="section-head"><h2>Where they disagree</h2></div>' + questionCards(C.questions.filter(isDispute)) +
       '<div class="section-head"><h2>Hard questions</h2></div>' + questionCards(C.questions.filter(q => !isDispute(q)));
   }
 
   function topics() {
-    document.title = 'Topics · Contradiction';
+    document.title = 'Topics · Contradiction AI';
     const sorted = [...G.topics].sort((a, b) => a.title.localeCompare(b.title));
     app.innerHTML = hero('explore', 'Explore', 'Every tool on the site, built on the texts themselves.') + exploreGrid() + '<h2>Topics</h2><p class="lede">Each topic shows what Christians, Muslims and Jews believe, and where it is in their texts.</p>' +
       '<div class="topic-grid">' + sorted.map(t => '<a href="#/t/' + t.id + '">' + esc(t.title) + '</a>').join('') + '</div>' +
@@ -252,7 +252,7 @@
   function topic(slug) {
     const t = C.topics.find(x => x.slug === slug);
     if (!t) return notFound();
-    document.title = t.title + ' · Contradiction';
+    document.title = t.title + ' · Contradiction AI';
     const qs = t.questions.map(s => C.questions.find(q => q.slug === s)).filter(Boolean);
     app.innerHTML = '<p class="crumbs"><a href="#/topics">Topics</a></p><h1>' + esc(t.title) + '</h1><p class="lede">' + esc(t.blurb) + '</p>' +
       '<div class="section-head"><h2>Questions</h2></div>' + questionCards(qs) +
@@ -264,7 +264,7 @@
   function question(slug) {
     const q = C.questions.find(x => x.slug === slug);
     if (!q) return notFound();
-    document.title = q.title + ' · Contradiction';
+    document.title = q.title + ' · Contradiction AI';
     const groups = ['all', 'christian', 'muslim', 'jewish', 'critics'].filter(g => g === 'all' ||
       q.sections.some(s => (VIEW_GROUP[s.view] || s.view) === g));
     if (!groups.includes(viewFilter) || lastQ !== slug) viewFilter = 'all';
@@ -341,7 +341,7 @@
     setTr(t);
     setFaithTheme(quran ? 'muslim' : torah ? 'jewish' : 'christian');
     const bibleT = CANONS[store.get('canon')] && CANONS[store.get('canon')].eds.includes(pref.bible) ? pref.bible : (CANONS[store.get('canon')] || CANONS.protestant).eds[0];
-    document.title = (quran ? 'The Quran' : torah ? 'The Torah' : c.name + ' Bible') + ' · Contradiction';
+    document.title = (quran ? 'The Quran' : torah ? 'The Torah' : c.name + ' Bible') + ' · Contradiction AI';
     let h = '<p class="crumbs">Read</p><div class="seg even">' +
       '<a href="#/books/' + bibleT + '/' + (store.get('canon') || 'protestant') + '"' + (!quran && !torah ? ' class="on"' : '') + '>Bible</a>' +
       '<a href="#/books/' + pref.quran + '/' + (store.get('branch') || 'sunni') + '"' + (quran ? ' class="on"' : '') + '>Quran</a>' +
@@ -384,7 +384,7 @@
     const n = trById[t].chapters[code], id = renderId, lang = trById[t].lang;
     const crumbs = '<div class="reader-bar"><p class="crumbs" style="margin:0;flex:1"><a href="#/books/' + t + '">' + (trById[t].corpus === 'quran' ? 'Quran' : 'Bible') + '</a> › <a href="#/read/' + t + '/' + code + '">' + esc(bookName[code]) + '</a></p>' + pickerBtn(t) + '</div>';
     if (!ch && n > 1) {
-      document.title = bookName[code] + ' · Contradiction';
+      document.title = bookName[code] + ' · Contradiction AI';
       app.innerHTML = crumbs + '<h1>' + esc(bookName[code]) + '</h1><ul class="chlist">' +
         Array.from({ length: n }, (_, i) => '<li><a href="#/read/' + t + '/' + code + '/' + (i + 1) + '">' + (i + 1) + '</a></li>').join('') + '</ul>';
       bindPicker();
@@ -506,7 +506,7 @@
   };
 
   async function search(q) {
-    document.title = (q ? q + ' · ' : '') + 'Search · Contradiction';
+    document.title = (q ? q + ' · ' : '') + 'Search · Contradiction AI';
     const r = q && parseRef(q);
     if (r && r.label.length === q.length && trFor(r.code)) { location.replace(refHref(r)); return; }
     if (smode === 'edition') return searchEdition(q);
@@ -628,7 +628,7 @@
 
   /* ---------- privacy policy and terms ---------- */
   function privacy() {
-    document.title = 'Privacy · Contradiction';
+    document.title = 'Privacy · Contradiction AI';
     app.innerHTML = '<p class="crumbs"><a href="#/about">About</a></p><h1>Privacy policy</h1><p class="small muted">Last updated 27 November 2026</p>' +
       '<p>Contradiction is a free learning site. It has no accounts, no advertising, no analytics and no tracking cookies. Here is everything that happens to information when you use it.</p>' +
       '<h2>What stays on your device</h2><p>Your preferences (the guide you chose, your Bible and Quran edition, your debate trainer settings) are saved in your browser’s local storage so the site remembers them. They never leave your device. Clearing your browser data removes them.</p>' +
@@ -644,7 +644,7 @@
       '<h2>Changes</h2><p>If this policy changes, the date at the top will change with it.</p>';
   }
   function terms() {
-    document.title = 'Terms of use · Contradiction';
+    document.title = 'Terms of use · Contradiction AI';
     app.innerHTML = '<p class="crumbs"><a href="#/about">About</a></p><h1>Terms of use</h1><p class="small muted">Last updated 27 November 2026</p>' +
       '<h2>For learning</h2><p>Contradiction explains what Christianity, Islam and Judaism teach and how their followers argue. It is for education. It is not religious, legal or personal advice, and it does not issue religious rulings. For decisions about your own faith or practice, speak to a qualified priest, imam or rabbi.</p>' +
       '<h2>Accuracy</h2><p>The site’s summaries and verdicts are drafts and have not yet been reviewed by scholars. The AI guide and the debate trainer can be wrong. Every answer links to its sources; check anything important against them.</p>' +
@@ -660,7 +660,7 @@
     if (id !== renderId) return;
     const count = f => lib.filter(w => w.f === f);
     const passages = lib.reduce((n, w) => n + w.items, 0);
-    document.title = 'Why Contradiction AI · Contradiction';
+    document.title = 'Why Contradiction AI · Contradiction AI';
     app.innerHTML = hero('explore', 'Why Contradiction AI', 'We built this so anyone can put the hard questions about Christianity, Islam and Judaism to the actual texts, and get a straight answer.') +
       '<h2>Why we built it</h2>' +
       '<p>Most people meet religion through arguments: a clip of a debate, a claim on social media, a friend who says "your book says…". It is almost impossible to check. The texts are long, spread across scriptures, hadith collections, the Talmud and the Church Fathers, and the answers you find online are usually written by one side to win.</p>' +
@@ -717,7 +717,7 @@
   }
 
   function libHome(coll) {
-    document.title = 'Library · Contradiction';
+    document.title = 'Library · Contradiction AI';
     if (coll) {
       const ws = L.filter(w => w.c === coll);
       if (!ws.length) return notFound();
@@ -754,7 +754,7 @@
   async function libWork(w) {
     const id = renderId, toc = await loadToc(w.id);
     if (id !== renderId) return;
-    document.title = w.t + ' · Contradiction';
+    document.title = w.t + ' · Contradiction AI';
     app.innerHTML = libCrumbs(w) + '<h1>' + esc(w.t) + '</h1>' + (w.a ? '<p class="lede">' + esc(w.a) + '</p>' : '') + libSearchForm(w, '') +
       '<ul class="toc">' + toc.map((p, i) => '<li><a href="#/lib/' + w.id + '/' + i + '">' + esc(p[0]) + '</a> <span class="muted small">' + p[1] + '</span></li>').join('') + '</ul>' +
       '<p class="status">' + esc(w.l) + '</p>';
@@ -1026,7 +1026,7 @@
   async function tguide(id) {
     const t = G.topics.find(x => x.id === id);
     if (!t) return notFound();
-    document.title = t.title + ' · Contradiction';
+    document.title = t.title + ' · Contradiction AI';
     const { groups } = passageList(t);
     app.innerHTML = '<p class="crumbs"><a href="#/topics">Topics</a></p><h1>' + esc(t.title) + '</h1>' +
       '<div class="summary-card">' + rich(t.summary) + '</div>' +
@@ -1122,7 +1122,7 @@
     answer(q);
   }
   async function ask(q) {
-    document.title = 'Ask · Contradiction';
+    document.title = 'Ask · Contradiction AI';
     renderChat();
     const last = chatLog.length && chatLog[chatLog.length - 1];
     if (q && !(last && last.q === q && last.guide === guide)) await answer(q);
@@ -1298,12 +1298,12 @@
     if (rid !== renderId) return;
     const x = id && d.stories.find(s => s.id === id);
     if (!x) {
-      document.title = 'Same story, side by side · Contradiction';
+      document.title = 'Same story, side by side · Contradiction AI';
       app.innerHTML = hero('stories', 'Same story, side by side', 'The stories the Bible and the Quran both tell. Read each telling next to the other and see exactly where they part.') +
         (d.stories.length ? '<div class="deb-grid">' + d.stories.map(s => '<a class="dispute-tile" href="#/stories/' + s.id + '"><strong>' + esc(s.title) + '</strong><span>' + esc(s.summary) + '</span><span class="vs"><i class="dot christian"></i><i class="dot jewish"></i><span class="small muted">and</span><i class="dot muslim"></i><span class="small muted">' + s.differences.length + ' differences</span></span></a>').join('') + '</div>' : '<p class="muted">Being written. Check back shortly.</p>');
       return;
     }
-    document.title = x.title + ' · Contradiction';
+    document.title = x.title + ' · Contradiction AI';
     const i = d.stories.indexOf(x);
     app.innerHTML = '<p class="crumbs"><a href="#/stories">Same story, side by side</a></p><h1>' + esc(x.title) + '</h1><p class="lede">' + rich(x.summary) + '</p>' +
       '<div class="two-col"><section class="sec v-christian">' + COPY + '<span class="tag">In the Bible</span><p>' + rich(x.bible.telling) + '</p>' + refsHtml(x.bible.refs) + '</section>' +
@@ -1321,7 +1321,7 @@
   /* prophecy checker */
   let prophFilter = 'all';
   async function prophecies() {
-    document.title = 'Prophecy checker · Contradiction';
+    document.title = 'Prophecy checker · Contradiction AI';
     const rid = renderId, d = await getJSON('content/prophecies.json').catch(() => ({ prophecies: [] }));
     if (rid !== renderId) return;
     const WHO = { christian: 'Christians say it foretells Jesus', muslim: 'Muslims say it foretells Muhammad', jewish: 'Jews say it is still to come' };
@@ -1341,7 +1341,7 @@
 
   /* where translations differ: the disputed word, then every edition on the site */
   async function translationsPage() {
-    document.title = 'Where translations differ · Contradiction';
+    document.title = 'Where translations differ · Contradiction AI';
     const rid = renderId, d = await getJSON('content/translations.json').catch(() => ({ verses: [] }));
     if (rid !== renderId) return;
     app.innerHTML = hero('translations', 'Where translations differ', 'Verses where the argument turns on one word: the original, how each translation renders it, and every edition side by side.') +
@@ -1370,7 +1370,7 @@
   /* timeline: when the books were written and the oldest copies */
   let tlFilter = 'all';
   async function timeline() {
-    document.title = 'Timeline of the books · Contradiction';
+    document.title = 'Timeline of the books · Contradiction AI';
     const rid = renderId, d = await getJSON('content/timeline.json').catch(() => ({ events: [] }));
     if (rid !== renderId) return;
     const KIND = { written: 'Written', manuscript: 'Oldest copies', event: 'Event', canon: 'Canon and councils' };
@@ -1415,7 +1415,7 @@
   /* ---------- debate trainer: argue one side; the AI plays a strong opponent, then coaches ---------- */
   let train = { you: store.get('train-you') || 'christian', character: CHAR[store.get('train-char')] ? store.get('train-char') : 'yusuf', log: [] };
   async function trainer() {
-    document.title = 'Debate trainer · Contradiction';
+    document.title = 'Debate trainer · Contradiction AI';
     const rid = renderId, on = await probeAI();
     if (rid !== renderId) return;
     if (CHAR[train.character][1] === train.you) train.character = CHARS.find(c => c[1] !== train.you)[0];
@@ -1527,7 +1527,7 @@
     return '<a class="dispute-tile" href="#/d/' + a.id + '"><span class="eyebrow">' + esc(d[0]) + '</span><strong>' + esc(a.title) + '</strong><span>' + esc(a.argument) + '</span>' +
       '<span class="vs"><i class="dot ' + d[1] + '"></i><span class="small muted">vs</span><i class="dot ' + d[2] + '"></i>' + (a.verdict ? '<span class="verdict v-' + a.verdict + '">' + VERDICT[a.verdict] + '</span>' : '') + (a.favours && a.favours.side ? '<span class="small muted">· favours ' + esc(a.favours.side) + '</span>' : '') + '</span></a>'; };
   async function debates() {
-    document.title = 'Debates · Contradiction';
+    document.title = 'Debates · Contradiction AI';
     const id = renderId, d = await loadDebates();
     if (id !== renderId) return;
     const dirs = Object.keys(DIR).filter(k => d.arguments.some(a => a.direction === k));
@@ -1545,7 +1545,7 @@
     if (rid !== renderId) return;
     const a = d.arguments.find(x => x.id === slug);
     if (!a) return notFound();
-    document.title = a.title + ' · Contradiction';
+    document.title = a.title + ' · Contradiction AI';
     const dir = DIR[a.direction] || ['', '', ''];
     const people = (list, cls) => list && list.length ? '<p class="small muted">' + (cls === 'by' ? 'Made by ' : 'Answered by ') + esc(list.join(', ')) + '</p>' : '';
     const texts = (a.texts || []).map(t => typeof t === 'string' ? { ref: t, why: '' } : { ref: t.ref, why: t.note || '' }).map(t => Object.assign(t, { kind: refKind(t.ref) }));
@@ -1578,7 +1578,7 @@
     return getJSON('content/videos.json').catch(() => ({ videos: [] }));
   };
   async function videos() {
-    document.title = 'Recent debates · Contradiction';
+    document.title = 'Recent debates · Contradiction AI';
     const rid = renderId;
     if (!vids) { app.innerHTML = '<h1>Recent debates</h1><p class="muted">Loading the newest videos…</p>'; vids = await loadVids(); }
     if (rid !== renderId) return;
@@ -1599,7 +1599,7 @@
 
   /* ---------- Sam Shamoun: his recurring arguments and documented debates (content/shamoun.json) ---------- */
   async function shamoun() {
-    document.title = 'Sam Shamoun · Contradiction';
+    document.title = 'Sam Shamoun · Contradiction AI';
     const rid = renderId, d = await getJSON('content/shamoun.json');
     if (rid !== renderId) return;
     const refs = list => { const t = (list || []).map(ref => ({ ref, why: '', kind: refKind(ref) })); return t.length ? groupsHtml([...new Set(t.map(x => x.kind))].map(k => [k, t.filter(x => x.kind === k)])) : ''; };
@@ -1629,7 +1629,7 @@
 
   /* ---------- the three faiths ---------- */
   function faiths() {
-    document.title = 'Faiths · Contradiction';
+    document.title = 'Faiths · Contradiction AI';
     app.innerHTML = '<h1>The three faiths</h1><p class="lede">Each in its own words, then side by side. Every point links to the scripture or document it rests on.</p>' + faithCards() +
       '<div class="section-head"><h2>Compare them topic by topic</h2></div><div class="topic-grid">' +
       B.compare.map(c => '<a href="#/compare/' + c.slug + '">' + esc(c.title) + '</a>').join('') + '</div>';
@@ -1639,7 +1639,7 @@
     if (!h) return notFound();
     if (!h.branches.some(b => b[0] === branch)) branch = h.branches[0][0];
     const t = B.traditions.find(x => x.slug === branch);
-    document.title = (branch === h.branches[0][0] ? h.name : t.short) + ' · Contradiction';
+    document.title = (branch === h.branches[0][0] ? h.name : t.short) + ' · Contradiction AI';
     const tops = G.topics.filter(x => x.views[h.key]);
     app.innerHTML = '<section class="banner ' + h.key + '" data-glyph="' + h.glyph + '"><p class="crumbs"><a href="#/faiths">Faiths</a></p><h1>' + h.name + '</h1><p>' + esc(h.blurb) + '</p>' +
       '<a class="btn" href="#/ask" data-set-guide="' + h.key + '">' + h.glyph + ' Ask the ' + FAITH_ADJ[h.key] + ' guide</a></section>' +
@@ -1663,7 +1663,7 @@
     if (!slug) return location.replace('#/faiths');
     const i = B.compare.findIndex(x => x.slug === slug), c = B.compare[i];
     if (!c) return notFound();
-    document.title = c.title + ' compared · Contradiction';
+    document.title = c.title + ' compared · Contradiction AI';
     const qs = (c.more || []).map(m => C.questions.find(q => 'q/' + q.slug === m)).filter(Boolean);
     app.innerHTML = '<p class="crumbs"><a href="#/faiths">Faiths</a> › Compare</p><h1>' + esc(c.title) + '</h1>' +
       '<div class="views">' + c.rows.map(r => { const f = VIEW_GROUP[r[0]] || r[0];
@@ -1743,6 +1743,9 @@
     const [name, ...a] = decodeURIComponent(location.hash.replace(/^#\/?/, '')).split('/');
     const tab = TAB[name] !== undefined ? TAB[name] : name;
     document.querySelectorAll('.links a, .tabbar a').forEach(l => l.classList.toggle('on', l.getAttribute('href') === '#/' + tab));
+    // Slide the tab bar's highlight to the current tab.
+    const tabs = [...document.querySelectorAll('.tabbar a')], ti = tabs.findIndex(l => l.classList.contains('on')), ind = document.querySelector('.tab-ind');
+    if (ind) { ind.style.opacity = ti < 0 ? 0 : 1; if (ti >= 0) ind.style.transform = 'translateX(' + ti * 100 + '%)'; }
     sheet.hidden = true;
     setFaithTheme(name === 'faith' && HUBS[a[0]] ? HUBS[a[0]].key : '');
     app.className = 'enter' + (name === 'ask' || name === 'trainer' ? ' chatmode' : '');
@@ -1764,6 +1767,13 @@
     ['bible', 'quran'].forEach(c => { const v = store.get('tr-' + c); if (trById[v] && trById[v].corpus === c) pref[c] = v; });
     setTr(trById[store.get('tr')] ? store.get('tr') : 'WEB');
     window.addEventListener('hashchange', route);
+    if ('IntersectionObserver' in window && !(window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches)) {
+      const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { rootMargin: '0px 0px -6% 0px' });
+      const watch = () => { if (app.classList.contains('chatmode')) return;
+        [...app.children].forEach(el => { if (el.dataset.rv) return; el.dataset.rv = 1;
+          if (el.getBoundingClientRect().top > innerHeight * .92) { el.classList.add('rv'); io.observe(el); } }); };
+      new MutationObserver(watch).observe(app, { childList: true });
+    }
     const top = document.querySelector('.top');
     window.addEventListener('scroll', () => top.classList.toggle('scrolled', scrollY > 4), { passive: true });
     route();
