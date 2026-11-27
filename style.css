@@ -966,3 +966,9 @@ body { background-color: var(--bg); }
 .top::before, .top::after, .top .corner { display: none !important; content: none; }
 .top, :root[data-faith] .top { background: rgba(248, 241, 229, .97); box-shadow: 0 1px 0 rgba(110, 91, 69, .14), 0 6px 18px rgba(60, 40, 20, .06); backdrop-filter: none; -webkit-backdrop-filter: none; }
 :root[data-mode=dark] .top { background: rgba(26, 19, 12, .97); box-shadow: 0 1px 0 rgba(212, 175, 55, .12); }
+
+/* three-faith colour stripe along the top of the bar */
+.faith-stripe { position: absolute; left: 0; right: 0; top: 0; height: 4px; pointer-events: none;
+  background: linear-gradient(90deg, #8C2F2B 0 33.33%, #4E6B3A 33.33% 66.66%, #3B5576 66.66%); }
+.top { padding-top: max(10px, calc(env(safe-area-inset-top) + 4px)); }
+:root[data-faith=christian] .faith-stripe { background: #8C2F2B; } :root[data-faith=muslim] .faith-stripe { background: #4E6B3A; } :root[data-faith=jewish] .faith-stripe { background: #3B5576; }
