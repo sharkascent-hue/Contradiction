@@ -2354,6 +2354,14 @@
     ['bible', 'quran'].forEach(c => { const v = store.get('tr-' + c); if (trById[v] && trById[v].corpus === c) pref[c] = v; });
     setTr(trById[store.get('tr')] ? store.get('tr') : 'WEB');
     window.addEventListener('hashchange', route);
+    // If a newer version of the site has been published since this page was saved by the browser, load it.
+    try {
+      const mine = (document.querySelector('script[src*="app.js?v="]') || {}).src || '';
+      fetch('index.html?check=' + Date.now(), { cache: 'no-store' }).then(r => r.text()).then(t => {
+        const live = (t.match(/app\.js\?v=(\d+)/) || [])[1];
+        if (live && !mine.includes('v=' + live) && sessionStorage.getItem('reloaded') !== live) { sessionStorage.setItem('reloaded', live); location.reload(); }
+      }).catch(() => {});
+    } catch (e) {}
     let awayTitle = null;
     document.addEventListener('visibilitychange', () => {
       if (document.hidden) { window.__away = document.title; document.title = 'Come back: the texts are waiting · Contradiction AI'; }
