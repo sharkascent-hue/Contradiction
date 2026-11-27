@@ -303,6 +303,7 @@
   }
 
   /* ---------- saved answers (kept in this browser only) ---------- */
+  function updateSavedBadge() { const n = savedList().length, el = document.querySelector('.saved-n'); if (el) { el.hidden = !n; el.textContent = n; } }
   const savedList = () => { try { return JSON.parse(store.get('saved') || '[]'); } catch (e) { return []; } };
   function saved() {
     document.title = 'Saved · Contradiction AI';
@@ -311,7 +312,7 @@
       (s.length ? s.map((x, i) => '<details class="acc saved-item"' + (i ? '' : ' open') + '><summary><span class="n">' + (i + 1) + '</span>' + esc(x.q) + '</summary><div class="body"><p class="muted small">' + esc(new Date(x.at).toLocaleDateString()) +
         ' · <a href="#/ask/' + encodeURIComponent(x.q) + '">Ask again</a> · <a href="javascript:void 0" data-del="' + i + '">Remove</a></p><div class="ai-text">' + x.html + '</div></div></details>').join('')
         : '<p class="muted">Nothing saved yet. Tap the bookmark on any AI answer to keep it here.</p><p><a class="btn brand" href="#/ask">Ask a question</a></p>');
-    app.querySelectorAll('[data-del]').forEach(b => b.addEventListener('click', () => { const l = savedList(); l.splice(+b.dataset.del, 1); store.set('saved', JSON.stringify(l)); saved(); }));
+    app.querySelectorAll('[data-del]').forEach(b => b.addEventListener('click', () => { const l = savedList(); l.splice(+b.dataset.del, 1); store.set('saved', JSON.stringify(l)); saved(); updateSavedBadge(); }));
   }
 
   function questions() {
@@ -1547,7 +1548,7 @@
     e.preventDefault();
     const box = b.closest('.ai-text').cloneNode(true); box.querySelectorAll('.tools, .ai-foot').forEach(x => x.remove());
     const l = savedList().filter(x => x.q !== b.dataset.q); l.unshift({ q: b.dataset.q, html: box.innerHTML, at: Date.now() }); store.set('saved', JSON.stringify(l.slice(0, 60)));
-    b.classList.add('done'); b.title = 'Saved'; b.innerHTML = ICO_OK;
+    b.classList.add('done'); b.title = 'Saved'; b.innerHTML = ICO_OK; updateSavedBadge();
   });
   const copyBtn = (sel, label) => '<button class="copy-btn" data-copy="' + sel + '" type="button" aria-label="' + label + '" title="' + label + '">' + ICO_COPY + '</button>';
   const shareBtn = (title, url, kind) => '<button class="copy-btn share-btn" data-share="' + esc(url) + '" data-title="' + esc(title) + '" data-kind="' + (kind || '') + '" type="button" aria-label="Share" title="Share">' + ICO_SHARE + '</button>';
@@ -1851,6 +1852,7 @@
     document.querySelectorAll('.links a, .tabbar a').forEach(l => l.classList.toggle('on', l.getAttribute('href') === '#/' + tab));
     // Slide the tab bar's highlight to the current tab.
     const tabs = [...document.querySelectorAll('.tabbar a')], ti = tabs.findIndex(l => l.classList.contains('on') && !l.dataset.more), ind = document.querySelector('.tab-ind');
+    updateSavedBadge();
     const more = document.querySelector('.tabbar [data-more]'); let tj = ti;
     if (more) { more.classList.toggle('on', ti < 0 && name !== ''); if (ti < 0 && name !== '') tj = tabs.indexOf(more); }
     if (ind) { ind.style.opacity = tj < 0 ? 0 : 1; if (tj >= 0) ind.style.transform = 'translateX(' + tj * 100 + '%)'; }
