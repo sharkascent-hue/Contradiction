@@ -6,7 +6,10 @@ import { latestVideos } from "../server/videos.js";
 
 export default {
   async fetch(request, env, ctx) {
-    const cors = { "Access-Control-Allow-Origin": env.ALLOWED_ORIGIN || "*", "Access-Control-Allow-Methods": "GET, POST, OPTIONS", "Access-Control-Allow-Headers": "Content-Type" };
+    // ALLOWED_ORIGIN may list several origins, comma separated. The custom domain is always allowed.
+    const allowed = [...(env.ALLOWED_ORIGIN || "").split(","), "https://www.contradictionai.com", "https://contradictionai.com", "https://sharkascent-hue.github.io"].map(s => s.trim()).filter(Boolean);
+    const origin = request.headers.get("Origin") || "";
+    const cors = { "Access-Control-Allow-Origin": env.ALLOWED_ORIGIN === "*" ? "*" : (allowed.includes(origin) ? origin : allowed[0]), "Vary": "Origin", "Access-Control-Allow-Methods": "GET, POST, OPTIONS", "Access-Control-Allow-Headers": "Content-Type" };
     const json = (status, obj) => new Response(JSON.stringify(obj), { status, headers: { ...cors, "Content-Type": "application/json" } });
     if (request.method === "OPTIONS") return new Response(null, { status: 204, headers: cors });
     if (request.method === "GET" && new URL(request.url).searchParams.has("videos")) {
