@@ -1125,3 +1125,6 @@ html.intro-on { overflow: hidden; }
 @keyframes bkGlow { to { opacity: 1; } }
 .bk-lines { position: absolute; inset: 0; display: grid; place-content: center; justify-items: center; gap: 8px; padding: 10px; text-align: center; color: #7A5A30; font: 400 clamp(.7rem, 2.6vw, .95rem)/1.4 "Amiri Quran", "Times New Roman", serif; }
 .bk-lines i { font-style: normal; color: #C9A24B; font-size: .6rem; } .bk-lines [lang=el] { font-style: italic; }
+/* footer logo: its real proportions, with room under it */
+.foot .foot-logo { height: 46px !important; width: 139px !important; max-width: none !important; object-fit: contain; display: block; margin: 0 0 12px; }
+@media (max-width: 759px) { .foot-cols > div:first-child { align-items: flex-start; } }
