@@ -4,7 +4,7 @@ Run from the site folder after editing content/:  python3 tools/build_share.py .
 Set INDEX = True once the site may be listed by search engines."""
 import json, os, sys, html, shutil
 INDEX = False
-SITE = "https://contradictionai.com/"
+SITE = "https://www.contradictionai.com/"
 root = sys.argv[1] if len(sys.argv) > 1 else "."
 J = lambda *p: json.load(open(os.path.join(root, *p), encoding="utf-8"))
 pages = []
