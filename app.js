@@ -497,8 +497,34 @@
     });
   }
 
+  // A YouTube video that only loads from YouTube when the reader presses play.
+  const ytBox = (id, title) => '<button type="button" class="yt yt-lazy" data-yt="' + esc(id) + '" aria-label="Play: ' + esc(title) + '"><img loading="lazy" src="https://i.ytimg.com/vi/' + encodeURIComponent(id) + '/hqdefault.jpg" alt=""><span class="yt-play">▶</span></button>';
+  document.addEventListener('click', e => { const b = e.target.closest('.yt-lazy'); if (!b) return;
+    const f = document.createElement('div'); f.className = 'yt'; f.innerHTML = '<iframe src="https://www.youtube-nocookie.com/embed/' + encodeURIComponent(b.dataset.yt) + '?autoplay=1" title="Video" allow="accelerometer; autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>'; b.replaceWith(f); });
+  /* ---------- sources and copyright ---------- */
+  async function sources() {
+    document.title = 'Sources and copyright · Contradiction AI';
+    const rid = renderId, lib = await loadLib(); if (rid !== renderId) return;
+    const kind = l => { l = (l || '').toLowerCase();
+      return /not been verified|not verified|must be cleared|unsettled|disputed/.test(l) ? 'review' : /by-nc|non-commercial|noncommercial/.test(l) ? 'nc' : /by-sa/.test(l) ? 'sa' : /cc-by|cc by/.test(l) ? 'by' : 'pd'; };
+    const K = { pd: 'Public domain or not under copyright', by: 'Creative Commons Attribution (CC BY)', sa: 'Creative Commons Attribution-ShareAlike (CC BY-SA)', nc: 'Creative Commons Non-Commercial (CC BY-NC)', review: 'Shared openly online; rights not yet confirmed with the translator' };
+    const count = {}; lib.forEach(w => { const k = kind(w.l); count[k] = (count[k] || 0) + 1; });
+    const FN = { christian: 'Christianity', islam: 'Islam', judaism: 'Judaism' };
+    app.innerHTML = hero('sources', 'Sources and copyright', 'Where every text on this site comes from, who translated it, and how to contact us about it.') +
+      '<h2>What this site is</h2><p>Contradiction AI is a free, non-commercial educational site. It has no advertising, sells nothing and charges nothing. It exists so that anyone can read what the Bible, the Quran, the hadith, the Talmud and the other texts of Christianity, Islam and Judaism actually say, and compare them.</p>' +
+      '<h2>How we credit the texts</h2><p>Every work names its author or translator and the source we took it from, at the foot of its pages in the <a href="#/lib">Library</a>, in the list below and on each scripture edition. The original-language texts (Hebrew, Greek, Latin and Arabic) are ancient and not under copyright. The English translations belong to their translators and publishers, and we credit them as such.</p>' +
+      '<ul class="src-sum">' + ['pd', 'by', 'sa', 'nc', 'review'].filter(k => count[k]).map(k => '<li><strong>' + count[k] + '</strong> ' + K[k] + '</li>').join('') + '</ul>' +
+      '<p class="small">Works under Creative Commons licences are used under the terms of those licences, with credit as required. The Non-Commercial licences (for example the Steinsaltz English Talmud and other texts from Sefaria) allow this site because it is not commercial.</p>' +
+      '<h2>If you own the rights to a text</h2><p>If you are a translator or publisher of a text on this site and you want it credited differently, linked to your own site, or taken down, <a href="#/contact?topic=copyright">contact us</a> with the name of the work and what you would like. We will reply and act on it promptly.</p>' +
+      '<h2>Scripture editions</h2><ul class="small">' + M.translations.map(t => '<li><strong>' + esc(t.name) + '</strong>: ' + esc(t.licence) + '</li>').join('') + '</ul>' +
+      '<h2>Every work in the library</h2>' + Object.entries(FN).map(([f, n]) => { const ws = lib.filter(w => w.f === f);
+        return '<details class="plain src-list"><summary>' + n + ' (' + ws.length + ' works)</summary><ul class="small">' + ws.map(w => '<li><a href="#/lib/' + w.id + '">' + esc(w.t) + '</a>' + (w.a ? ', ' + esc(w.a) : '') + '. <span class="muted">' + esc(w.l || '') + '</span></li>').join('') + '</ul></details>'; }).join('') +
+      '<h2>Images</h2><p class="small">The manuscript pages (Codex Sinaiticus, a folio of the Blue Quran in the Chester Beatty Library, and the Aleppo Codex) are public domain images from Wikimedia Commons.</p>' +
+      '<h2>AI answers</h2><p class="small">Answers from the AI guide are written by Anthropic\'s Claude from the texts on this site. They can contain mistakes; every answer links to its passages so you can check them, and you can <a href="#/contact?topic=mistake">report a mistake</a>.</p>';
+  }
+
   /* ---------- contact ---------- */
-  const TOPICS = [['general', 'General question'], ['mistake', 'Report a mistake'], ['debater', 'Suggest a debater or topic'], ['press', 'Press or partnership']];
+  const TOPICS = [['general', 'General question'], ['mistake', 'Report a mistake'], ['copyright', 'Copyright or credit for a text'], ['debater', 'Suggest a debater or topic'], ['press', 'Press or partnership']];
   function contact(q) {
     document.title = 'Contact us · Contradiction AI';
     const pr = new URLSearchParams(q || ''), topic = pr.get('topic') || 'general', page = pr.get('page') || '';
@@ -575,7 +601,7 @@
         ['christian', 'muslim', 'jewish'].map(f => { const ps = list.filter(p => p.faith === f); return ps.length ? '<div class="section-head"><h2>' + GLYPH[f] + ' ' + FN[f] + ' debaters</h2></div><div class="debater-grid">' +
           ps.map(p => '<a class="debater ' + f + '" href="#/debaters/' + p.slug + '"><span class="dav">' + esc(p.person.split(/\s+/).map(w => w[0]).join('').slice(0, 2)) + '</span><strong>' + esc(p.person) + '</strong><span class="muted small">' + esc(p.branch || '') + '</span>' +
             '<span class="dcount">' + (p.args.length ? p.args.length + ' argument' + (p.args.length > 1 ? 's' : '') + ' tested · ' : '') + p.vids.length + ' recent video' + (p.vids.length === 1 ? '' : 's') + '</span></a>').join('') + '</div>' : ''; }).join('') +
-        '<p class="status">Have a debater to add? The list follows the channels the site tracks for recent videos.</p>';
+        '<p class="status">Have a debater to add? The list follows the channels the site tracks for recent videos. Descriptions quote debaters\' own published words and named sources. If you are a debater listed here and something is wrong, <a href="#/contact?topic=mistake&page=%23%2Fdebaters">tell us</a> and we will correct it.</p>';
       return;
     }
     const p = list.find(x => x.slug === slug);
@@ -585,7 +611,7 @@
     setFaithTheme(p.faith);
     app.innerHTML = hero('shamoun', p.person, p.note, '<div class="hp-actions"><a class="btn" href="https://www.youtube.com/channel/' + encodeURIComponent(p.id) + '" target="_blank" rel="noopener">YouTube channel ↗</a>' +
         '<a class="btn ghost-w" href="#/ask/' + encodeURIComponent('What are ' + p.person + "'s main arguments, and do they hold up against the texts?") + '">Ask the AI about his arguments</a></div>', FN[p.faith] + ' debater · ' + (p.branch || '')) +
-      (p.vids.length ? '<section class="deb-video"><div class="section-head"><h2>▶ Latest video</h2><a href="https://www.youtube.com/channel/' + encodeURIComponent(p.id) + '?sub_confirmation=1" target="_blank" rel="noopener">Subscribe on YouTube ↗</a></div><div class="yt"><iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/' + encodeURIComponent(p.vids[0].id) + '" title="' + esc(p.vids[0].title) + '" allow="accelerometer; encrypted-media; picture-in-picture" allowfullscreen></iframe></div><p class="small muted">' + esc(p.vids[0].title) + ' · ' + esc(p.vids[0].date || '') + '</p></section>' : '') +
+      (p.vids.length ? '<section class="deb-video"><div class="section-head"><h2>▶ Latest video</h2><a href="https://www.youtube.com/channel/' + encodeURIComponent(p.id) + '?sub_confirmation=1" target="_blank" rel="noopener">Subscribe on YouTube ↗</a></div>' + ytBox(p.vids[0].id, p.vids[0].title) + '<p class="small muted">' + esc(p.vids[0].title) + ' · ' + esc(p.vids[0].date || '') + '</p></section>' : '') +
       (p.args.length ? '<div class="section-head"><h2>His arguments, tested</h2></div><div class="tile-row">' + p.args.map(debTile).join('') + '</div>' : '<p class="muted">None of his arguments has its own page here yet. Ask the AI above to test them.</p>') +
       (p.vids.length ? '<div class="section-head"><h2>Latest videos</h2><a href="#/videos">All recent debates →</a></div><div class="vid-list">' + p.vids.slice(0, 8).map(v =>
         '<a class="vid-mini" href="https://www.youtube.com/watch?v=' + encodeURIComponent(v.id) + '" target="_blank" rel="noopener"><img loading="lazy" src="https://i.ytimg.com/vi/' + encodeURIComponent(v.id) + '/mqdefault.jpg" alt=""><span><strong>' + esc(v.title) + '</strong><span class="muted small">' + esc(v.date || '') + '</span></span></a>').join('') + '</div>' : '');
@@ -642,7 +668,7 @@
     lastQ = slug;
     const shown = q.sections.filter(s => viewFilter === 'all' || s.view === 'overview' || (VIEW_GROUP[s.view] || s.view) === viewFilter);
     app.innerHTML = '<p class="crumbs"><a href="#/">Home</a> › <a href="#/questions">Questions</a></p>' +
-      '<h1>' + esc(q.title) + '</h1>' +
+      '<h1>' + esc(q.title) + ' ' + shareBtn(q.title, location.origin + location.pathname + 'q/' + q.slug + '/').replace('data-kind=""', 'data-kind="" data-lines="' + esc(JSON.stringify([['Short answer', q.short]])) + '"') + '</h1>' +
       (isDispute(q) ? '<p class="asked">The dispute: ' + esc(q.asked) + '</p>' : '<p class="asked">Asked as: “' + esc(q.asked) + '”</p>') +
       '<p class="lede">' + rich(q.short) + '</p>' +
       '<div class="chips" role="group" aria-label="Show views">' + groups.map(g =>
@@ -1007,7 +1033,7 @@
   function privacy() {
     document.title = 'Privacy · Contradiction AI';
     app.innerHTML = '<p class="crumbs"><a href="#/about">About</a></p><h1>Privacy policy</h1><p class="small muted">Last updated 27 November 2026</p>' +
-      '<p>Contradiction is a free learning site. It has no accounts, no advertising, no analytics and no tracking cookies. Here is everything that happens to information when you use it.</p>' +
+      '<p>Contradiction AI is a free, non-commercial learning site. It has no accounts, no advertising and no tracking cookies. Here is everything that happens to information when you use it.</p>' +
       '<h2>What stays on your device</h2><p>Your preferences (the guide you chose, your Bible and Quran edition, your debate trainer settings) are saved in your browser’s local storage so the site remembers them. They never leave your device. Clearing your browser data removes them.</p>' +
       '<h2>Questions you ask the AI guide or the debate trainer</h2><p>When you ask a question, the question and the recent conversation are sent to our server (run on Cloudflare) and passed to Anthropic’s Claude API, which writes the answer. We do not store your questions or answers on our server and we do not attach them to your name, because there are no accounts. Your IP address is used briefly, in memory, to limit how many questions can be asked per minute, and is not kept. Anthropic processes the request under its commercial terms and privacy policy; it does not use API requests to train its models by default. Please do not type personal details into the questions.</p>' +
       '<h2>Services that see your IP address</h2><ul>' +
@@ -1016,6 +1042,10 @@
       '<li><strong>Google Fonts</strong> serves the site’s fonts.</li>' +
       '<li><strong>YouTube</strong>: video thumbnails load from YouTube’s image server. A video player only loads when you press play, from youtube-nocookie.com, and YouTube’s own privacy policy applies from then on.</li></ul>' +
       '<p>Each of these services has its own privacy policy. We do not receive or keep their logs.</p>' +
+      '<h2>Contact form</h2><p>The contact form does not store anything on our servers. When you press Send, it opens your own email app with the message filled in, and nothing is sent until you send that email. We use what you write only to reply to you.</p>' +
+      '<h2>Saved answers and quiz scores</h2><p>Answers you save, your quiz scores and the quiz questions you have already seen are kept only in your browser\'s local storage. They never leave your device, and clearing your browser data deletes them.</p>' +
+      '<h2>Protection against abuse</h2><p>To stop bots and other websites from using the AI guide, our server checks that each question comes from this site and limits how many questions one address can ask per minute. It uses your IP address only for that count, for about a minute, and does not store it.</p>' +
+      '<h2>Copyright</h2><p>Where each text comes from and who translated it is set out on <a href="#/sources">Sources and copyright</a>.</p>' +
       '<h2>Children</h2><p>The site is meant for general audiences studying religion. It does not knowingly collect personal information from anyone, of any age.</p>' +
       '<h2>Your rights</h2><p>Because we do not keep personal data, there is normally nothing for us to hand over or delete. If you have a question about privacy, contact us through the site’s <a href="https://github.com/sharkascent-hue/Contradiction/issues" target="_blank" rel="noopener">GitHub page</a>.</p>' +
       '<h2>Changes</h2><p>If this policy changes, the date at the top will change with it.</p>';
@@ -1653,7 +1683,7 @@
 
 
   /* ---------- page headers: each section has its own colour and mark ---------- */
-  const HERO = { contact: ['✉', 'Contact'], quiz: ['?', 'Quiz'], compare: ['⇄', 'Compare'], hard: ['⚖', 'No softening'], debates: ['⚔', 'Debates'], trainer: ['🎙', 'Train'], videos: ['▶', 'Watch'], stories: ['📜', 'Stories'], prophecies: ['🔮', 'Prophecy'],
+  const HERO = { sources: ['©', 'Sources'], contact: ['✉', 'Contact'], quiz: ['?', 'Quiz'], compare: ['⇄', 'Compare'], hard: ['⚖', 'No softening'], debates: ['⚔', 'Debates'], trainer: ['🎙', 'Train'], videos: ['▶', 'Watch'], stories: ['📜', 'Stories'], prophecies: ['🔮', 'Prophecy'],
     translations: ['✎', 'Words'], timeline: ['⏳', 'History'], shamoun: ['🗣', 'Debater'], explore: ['✦', 'Explore'] };
   const hero = (kind, title, lede, extra, eyebrow) => '<section class="hero-page hp-' + kind + '" data-mark="' + (HERO[kind] || ['', ''])[0] + '"><span class="hp-eyebrow">' + (eyebrow || (HERO[kind] || ['', ''])[1]) + '</span><h1>' + esc(title) + '</h1>' +
     (lede ? '<p>' + esc(lede) + '</p>' : '') + (extra || '') + '</section>';
@@ -1940,7 +1970,7 @@
     const texts = (a.texts || []).map(t => typeof t === 'string' ? { ref: t, why: '' } : { ref: t.ref, why: t.note || '' }).map(t => Object.assign(t, { kind: refKind(t.ref) }));
     const other = a.other_texts || [];
     app.innerHTML = '<p class="crumbs"><a href="#/debates">Debates</a> › ' + esc(dir[0]) + '</p><h1>' + esc(a.title) + '</h1>' +
-      (a.verdict ? '<div class="meter-big">' + meter(a.verdict) + '<span class="meter-scale"><span>Fails</span><span>Not proven</span><span>Partly</span><span>Strong</span></span></div><p><span class="verdict big v-' + a.verdict + '">Verdict: ' + VERDICT[a.verdict] + '</span> ' + shareBtn(a.title, location.origin + location.pathname + '#/d/' + a.id).replace('data-kind=""', 'data-lines="' + esc(JSON.stringify([['Verdict', VERDICT[a.verdict]], ['Which side makes more sense', a.favours ? a.favours.text : ''], ['Assessment', a.assessment]])) + '"') + '</p>' : '') +
+      (a.verdict ? '<div class="meter-big">' + meter(a.verdict) + '<span class="meter-scale"><span>Fails</span><span>Not proven</span><span>Partly</span><span>Strong</span></span></div><p><span class="verdict big v-' + a.verdict + '">Verdict: ' + VERDICT[a.verdict] + '</span> ' + shareBtn(a.title, location.origin + location.pathname + 'd/' + a.id + '/').replace('data-kind=""', 'data-lines="' + esc(JSON.stringify([['Verdict', VERDICT[a.verdict]], ['Which side makes more sense', a.favours ? a.favours.text : ''], ['Assessment', a.assessment]])) + '"') + '</p>' : '') +
       (a.favours ? '<p class="favours">' + COPY.replace('.sec', '.favours') + (a.favours.side ? '<strong>Makes more sense: ' + esc(a.favours.side) + ' side.</strong> ' : /^Yes, there are/.test(a.favours.text) ? '' : '<strong>Evenly balanced.</strong> ') + rich(a.favours.text.replace(/^Evenly balanced: /, '')) + '</p>' : '') +
       '<section class="sec v-' + dir[1] + '">' + COPY + '<span class="tag">The argument</span>' + people(a.by, 'by') + '<p>' + rich(a.argument) + '</p></section>' +
       (texts.length ? '<div class="section-head"><h2>The texts</h2></div>' + groupsHtml([...new Set(texts.map(t => t.kind))].map(k => [k, texts.filter(t => t.kind === k)])) +
@@ -1962,7 +1992,7 @@
       const v = c && vids.videos.find(x => x.channel === c.name);
       if (!v) return;
       app.insertAdjacentHTML('beforeend', '<section class="deb-video"><div class="section-head"><h2>▶ Latest from ' + esc(personOf(c)) + '</h2><a href="#/debaters/' + slugOf(personOf(c)) + '">More from him →</a></div>' +
-        '<div class="yt"><iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/' + encodeURIComponent(v.id) + '" title="' + esc(v.title) + '" allow="accelerometer; encrypted-media; picture-in-picture" allowfullscreen></iframe></div><p class="small muted">' + esc(v.title) + ' · ' + esc(v.date || '') + '. His newest upload, not necessarily on this argument.</p></section>');
+        ytBox(v.id, v.title) + '<p class="small muted">' + esc(v.title) + ' · ' + esc(v.date || '') + '. His newest upload, not necessarily on this argument.</p></section>');
     });
   }
 
@@ -2098,7 +2128,7 @@
   document.addEventListener('focusout', e => { if (e.target.matches('textarea, input')) setTimeout(() => { if (!document.activeElement || !document.activeElement.matches('textarea, input')) document.body.classList.remove('kb'); }, 80); });
   const MORE = [['#/faiths', '⊕', 'Faiths', 'Each faith in its own words'], ['#/hard', '⚖', 'Hard questions', 'Women, captives, apostasy, war'], ['#/debaters', '🎙', 'Debaters', 'Their channels and arguments'],
     ['#/videos', '▶', 'Watch recent debates', 'Newest videos, with the AI\'s take'], ['#/trainer', '⚔', 'Debate trainer', 'Argue against the AI'], ['#/quiz', '?', 'Quiz', 'Easy to hard, never repeats'], ['#/parallel', '⇄', 'Compare editions', 'A verse in every translation'], ['#/topics', '✦', 'Topics and tools', 'Stories, prophecies, timeline'],
-    ['#/lib', '📚', 'Library', 'Hadith, Talmud, Church Fathers'], ['#/search', '⌕', 'Search', 'Every word in every text'], ['#/saved', '🔖', 'Saved', 'Answers you kept'], ['javascript:void 0" class="mode-btn', '◐', 'Dark mode', 'Switch light or dark'], ['#/about', '◆', 'Why Contradiction AI', 'Why we built it'], ['#/contact', '✉', 'Contact us', 'Questions and corrections']];
+    ['#/lib', '📚', 'Library', 'Hadith, Talmud, Church Fathers'], ['#/search', '⌕', 'Search', 'Every word in every text'], ['#/saved', '🔖', 'Saved', 'Answers you kept'], ['javascript:void 0" class="mode-btn', '◐', 'Dark mode', 'Switch light or dark'], ['#/about', '◆', 'Why Contradiction AI', 'Why we built it'], ['#/contact', '✉', 'Contact us', 'Questions and corrections'], ['#/sources', '©', 'Sources and copyright', 'Where every text comes from']];
   document.addEventListener('click', e => {
     if (!e.target.closest('[data-more]')) return;
     e.preventDefault();
@@ -2173,7 +2203,7 @@
     window.scrollTo(0, 0);
     app.innerHTML = '<div class="skel" aria-label="Loading"><span class="shimmer sk-h"></span><span class="shimmer"></span><span class="shimmer"></span><span class="shimmer short"></span><div class="sk-cards"><span></span><span></span><span></span></div></div>';
     const views = { '': home, questions, q: question, topic, topics, t: tguide, books, read, search: () => search(a.join('/')), about, lib: () => library(a),
-      beliefs, faiths, faith: hub, compare: compareView, go, ask: () => ask(a.join('/')), debates, d: debate, videos, shamoun, trainer, privacy, terms, stories, prophecies, translations: translationsPage, timeline, hard, debaters, saved, quiz, parallel: () => parallel(a.join('/')), contact: () => contact(location.hash.split('?')[1]) };
+      beliefs, faiths, faith: hub, compare: compareView, go, ask: () => ask(a.join('/')), debates, d: debate, videos, shamoun, trainer, privacy, terms, stories, prophecies, translations: translationsPage, timeline, hard, debaters, saved, quiz, parallel: () => parallel(a.join('/')), contact: () => contact(location.hash.split('?')[1]), sources };
     const rid0 = renderId;
     Promise.resolve((views[name] || notFound)(...a)).then(() => { if (rid0 === renderId && ['q', 'd', 't', 'hard', 'faith', 'compare'].includes(name) && a.length) app.insertAdjacentHTML('beforeend', '<p class="report-row">' + reportLink() + '</p>'); }).catch(e => {
       app.innerHTML = '<h1>Something went wrong</h1><p class="muted">' + esc(e.message) + '</p>';

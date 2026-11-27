@@ -25,7 +25,16 @@ export default {
     if (request.method === "GET") return json(env.ANTHROPIC_API_KEY ? 200 : 503, { ok: !!env.ANTHROPIC_API_KEY });
     if (request.method !== "POST") return json(405, { error: "Use POST." });
     if (!env.ANTHROPIC_API_KEY) return json(503, { error: "The AI guide is not switched on: the server has no API key." });
-    if (limited(request.headers.get("cf-connecting-ip") || "unknown")) return json(429, { error: "Too many questions in a short time. Try again in a minute." });
+    // Only this site may use the AI: other websites and scripts without the site's origin are refused.
+    if (!ok) return json(403, { error: "This AI guide only answers questions asked on Contradiction AI." });
+    const ip = request.headers.get("cf-connecting-ip") || "unknown";
+    if (limited(ip)) return json(429, { error: "Too many questions in a short time. Try again in a minute." });
+    // Cloudflare's rate limiter, shared by every server instance: per visitor, and for the whole site.
+    try {
+      const rl = env.RL_IP ? await env.RL_IP.limit({ key: ip }) : null;
+      if (rl && !rl.success) return json(429, { error: "Too many questions in a short time. Try again in a minute." });
+      if (env.RL_ALL && !(await env.RL_ALL.limit({ key: "all" })).success) return json(429, { error: "The AI guide is very busy right now. Try again in a minute." });
+    } catch (e) {}
     const body = await request.json().catch(() => null);
     const bad = checkRequest(body);
     if (bad) return json(400, { error: bad });
