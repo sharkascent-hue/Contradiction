@@ -946,3 +946,18 @@ body { background-color: var(--bg); }
   body.kb .composer { bottom: env(safe-area-inset-bottom); }
   body.kb main { padding-bottom: 20px; }
 }
+
+/* no ribbon on the tab bar */
+.tabbar a.on::before { display: none; }
+.tabbar a.on svg { transform: translateY(-1px) scale(1.08); } .tabbar a.on span { transform: none; }
+.tabbar a { padding-top: 6px; }
+/* more scripture flowing in the background */
+.bwords { justify-content: space-evenly; }
+.bw span { opacity: .17; font-size: clamp(1.1rem, 2.8vw, 2rem); animation-duration: 120s; }
+.bw:nth-child(odd) span { animation-direction: reverse; }
+.bw.r1 span, .bw.r5 span, .bw.r9 span { font-size: clamp(.95rem, 2vw, 1.4rem); opacity: .2; animation-duration: 95s; }
+.bw.r2 span, .bw.r7 span { font-size: clamp(1.8rem, 4.4vw, 3.2rem); opacity: .1; animation-duration: 170s; }
+.bw.r3 span, .bw.r8 span { animation-duration: 140s; font-style: normal; }
+.bw.r4 span, .bw.r10 span { animation-duration: 110s; }
+.bw.r6 span { animation-duration: 200s; font-size: clamp(1.4rem, 3.4vw, 2.4rem); opacity: .13; }
+:root[data-mode=dark] .bw span { opacity: .09; }
