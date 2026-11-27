@@ -102,8 +102,76 @@
   const POPULAR = ['trinity', 'jesus-divinity', 'crucifixion', 'salvation', 'afterlife', 'muhammad-in-bible', 'bible-changed', 'sunni-shia', 'food-laws', 'prayer', 'messiah', 'original-sin'];
   const SUGGEST = ['Explain the Trinity to me, I\'m a Muslim', 'Where is the Trinity in the Old and New Testament?', 'Was Jesus crucified?', 'Is Muhammad in the Bible?',
     'Why don\'t Jews believe in Jesus?', 'What happens after we die?', 'Is pork forbidden?', 'What\'s the difference between Sunni and Shia?'];
+  /* ---------- voice: speak a question, or talk to the AI and hear it answer ---------- */
+  const SR = window.SpeechRecognition || window.webkitSpeechRecognition;
+  const TTS = 'speechSynthesis' in window;
+  const MIC_SVG = '<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></svg>';
+  let voiceMode = false, rec = null;
+  function listen(onText, onDone) {
+    if (!SR) return onDone && onDone('');
+    try { if (rec) rec.abort(); } catch (e) {}
+    rec = new SR(); rec.lang = navigator.language || 'en-GB'; rec.interimResults = true; rec.continuous = false;
+    let final = '';
+    rec.onresult = e => { let t = ''; for (const r of e.results) { t += r[0].transcript; if (r.isFinal) final = t; } onText(t); };
+    rec.onerror = () => {}; rec.onend = () => { rec = null; onDone && onDone(final.trim()); };
+    try { rec.start(); } catch (e) { onDone && onDone(''); }
+  }
+  // Dictation into any question box.
+  document.addEventListener('click', e => {
+    const b = e.target.closest('.mic-btn'); if (!b) return;
+    e.preventDefault();
+    const ta = b.closest('form').querySelector('textarea');
+    if (b.classList.contains('on')) { try { rec && rec.stop(); } catch (x) {} return; }
+    const before = ta.value.trim() ? ta.value.trim() + ' ' : '';
+    b.classList.add('on');
+    listen(t => { ta.value = before + t; ta.dispatchEvent(new Event('input')); }, () => { b.classList.remove('on'); ta.focus(); });
+  });
+  // Text to read aloud: no markdown, citation numbers, links or non-Latin scripts.
+  const spoken = s => s.replace(/\s*\[(\d+)\]/g, '').replace(/[*_#>`]/g, '').replace(/\([^)]*[֐-׿؀-ۿͰ-Ͽ][^)]*\)/g, '')
+    .replace(/[֐-׿؀-ۿݐ-ݿͰ-Ͽἀ-῿«»]+/g, '').replace(/^\s*[-•]\s*/gm, '').replace(/\s+/g, ' ').trim();
+  function pickVoice() { const vs = speechSynthesis.getVoices().filter(v => /^en/i.test(v.lang));
+    return vs.find(v => /natural|premium|enhanced/i.test(v.name)) || vs.find(v => /Samantha|Daniel|Google UK English|Google US English|Serena|Karen|Moira/i.test(v.name)) || vs[0] || null; }
+  function say(text, onEnd) {
+    if (!TTS) return onEnd && onEnd();
+    speechSynthesis.cancel();
+    const parts = spoken(text).match(/[^.!?]+[.!?]*/g) || [];   // short pieces: some phones stop long utterances
+    let i = 0; const v = pickVoice();
+    const next = () => { if (!voiceMode) return; if (i >= parts.length) return onEnd && onEnd();
+      const u = new SpeechSynthesisUtterance(parts[i++].trim()); if (v) u.voice = v; u.rate = 1.02; u.onend = next; u.onerror = next; speechSynthesis.speak(u); };
+    next();
+  }
+  function talk() {
+    if (!SR) { alert('Talking needs a browser with speech recognition: Safari on iPhone, or Chrome. You can still type your question.'); return; }
+    voiceMode = true;
+    const ov = document.createElement('div'); ov.className = 'talk'; ov.innerHTML = '<div class="talk-in"><p class="talk-guide">' + (guide === 'all' ? 'All three faiths' : 'The ' + FAITH_ADJ[guide] + ' guide') + '</p>' +
+      '<button class="talk-orb" type="button" aria-label="Tap to speak"><span></span></button><p class="talk-state">Starting…</p><p class="talk-text"></p><button class="btn talk-end" type="button">End</button></div>';
+    document.body.append(ov);
+    const st = ov.querySelector('.talk-state'), tx = ov.querySelector('.talk-text'), orb = ov.querySelector('.talk-orb');
+    const set = (s, cls) => { st.textContent = s; ov.dataset.s = cls; };
+    const end = () => { voiceMode = false; try { rec && rec.abort(); } catch (e) {} if (TTS) speechSynthesis.cancel(); ov.remove(); };
+    const hear = () => { if (!voiceMode) return; set('Listening… ask your question', 'listen'); tx.textContent = '';
+      listen(t => { tx.textContent = t; }, async q => {
+        if (!voiceMode) return;
+        if (!q) { set('Tap the circle and ask your question', 'idle'); return; }
+        set('Looking it up in the texts…', 'think');
+        if (!/^#\/ask/.test(location.hash)) { location.hash = '#/ask'; await new Promise(r => setTimeout(r, 400)); }
+        const a = await answer(q).catch(() => '');
+        if (!voiceMode) return;
+        if (!a) { set('Sorry, I could not answer that. Tap to try again.', 'idle'); return; }
+        set('Speaking… tap to interrupt', 'speak'); tx.textContent = '';
+        say(a, () => { if (voiceMode) hear(); });
+      }); };
+    orb.addEventListener('click', () => { if (TTS) speechSynthesis.cancel(); try { rec && rec.abort(); } catch (e) {} setTimeout(hear, 150); });
+    ov.querySelector('.talk-end').addEventListener('click', end);
+    // iPhones only allow speech that starts from a tap: say hello now, then listen.
+    if (TTS) { const u = new SpeechSynthesisUtterance('Ask me anything.'); const v = pickVoice(); if (v) u.voice = v; u.onend = hear; u.onerror = hear; speechSynthesis.speak(u); set('Hello', 'speak'); }
+    else hear();
+  }
+  document.addEventListener('click', e => { if (e.target.closest('[data-talk]')) { e.preventDefault(); talk(); } });
+  if (TTS) speechSynthesis.getVoices();
+
   const askBox = ph => '<form class="askbox"><textarea name="q" rows="1" placeholder="' + esc(ph) + '" aria-label="Your question" enterkeyhint="send"></textarea>' +
-    '<button class="send" aria-label="Ask">' + SEND_SVG + '</button></form>';
+    (SR ? '<button class="mic-btn" type="button" aria-label="Speak your question" title="Speak">' + MIC_SVG + '</button>' : '') + '<button class="send" aria-label="Ask">' + SEND_SVG + '</button></form>';
   function bindAsk(onSubmit) {
     const f = app.querySelector('form.askbox');
     if (!f) return;
@@ -241,7 +309,7 @@
       '<section class="hx"><div class="hx-ms" aria-hidden="true"><img src="brand/ms-christian.jpg" alt=""><img src="brand/ms-muslim.jpg" alt=""><img src="brand/ms-jewish.jpg" alt=""></div><p class="hx-eyebrow"><span>Christianity</span><b>◆</b><span>Islam</span><b>◆</b><span>Judaism</span></p>' +
         '<h1>Three faiths.<br>One question.<br><em>Who do the texts back?</em></h1>' +
         '<p class="hx-lede">Put any claim to the Bible, the Quran, the hadith and the Talmud, and get a straight answer, with the passages.</p>' +
-        askBox('Ask anything…') +
+        askBox('Ask anything…') + (SR ? '<button class="talk-home" type="button" data-talk>' + MIC_SVG + ' Or talk to the AI out loud</button>' : '') +
         '<div class="marquee" aria-label="Try a question"><div class="marquee-track">' + [...SUGGEST, ...SUGGEST].map(s => '<a class="chip" href="#/ask/' + encodeURIComponent(s) + '">' + esc(s) + '</a>').join('') + '</div></div></section>' +
       '<section class="today"><a class="today-card qd" href="#/q/' + qd.slug + '"><span class="tag">Question of the day</span><strong>' + esc(qd.title) + '</strong><span>' + esc(qd.short) + '</span><em>See what each faith says →</em></a>' +
         '<div class="today-card dd-card" id="arena-feature"><span class="tag">Debate of the day</span><strong>Loading…</strong></div></section>' +
@@ -1509,7 +1577,7 @@
     // Once the AI check finishes, refresh the welcome screen, but only if no question has been asked yet.
     if (aiReady === null) probeAI().then(ok => { const m = document.getElementById('msgs'); if (ok && m && !m.querySelector('.msg')) m.innerHTML = emptyChat(); });
     app.innerHTML = '<div class="chat"><div class="chat-head"><div class="seg even" role="group" aria-label="Who answers">' +
-      GUIDES.map(([g, l]) => '<button data-guide="' + g + '" aria-pressed="' + (g === guide) + '">' + l + '</button>').join('') + '</div></div>' +
+      GUIDES.map(([g, l]) => '<button data-guide="' + g + '" aria-pressed="' + (g === guide) + '">' + l + '</button>').join('') + '</div>' + (SR ? '<button class="talk-btn" type="button" data-talk>' + MIC_SVG + ' Talk</button>' : '') + '</div>' +
       '<div class="msgs" id="msgs">' + (chatLog.length ? chatLog.map(m => m.html).join('') : emptyChat()) + '</div>' +
       '<div class="composer">' + askBox(guide === 'all' ? 'Ask a question…' : 'Ask the ' + FAITH_ADJ[guide] + ' guide…') + '</div></div>';
     bindAsk(q => send(q));
@@ -1558,6 +1626,7 @@
     }
     chatLog.push({ q, a, guide, html: user + bot.outerHTML });
     if (chatLog.length > 30) chatLog.shift();
+    return a;
   }
 
   // Light formatting for the AI's answer: paragraphs, lists, **bold**, verse links, and [n] citations.
@@ -1600,7 +1669,7 @@
     let text = '';
     try {
       const r = await fetch(aiUrl, { method: 'POST', headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(Object.assign({ messages: history.concat({ role: 'user', content: q.slice(0, 1500) }), guide, context }, opts && opts.extra)) });
+        body: JSON.stringify(Object.assign({ messages: history.concat({ role: 'user', content: q.slice(0, 1500) }), guide, context }, voiceMode && !opts ? { voice: true } : {}, opts && opts.extra)) });
       if (!r.ok) { const e = await r.json().catch(() => null); throw new Error(e && e.error ? e.error : 'The AI guide is not available right now.'); }
       const reader = r.body.getReader(), dec = new TextDecoder();
       let buf = '';

@@ -356,6 +356,8 @@ export async function chatTurn({ body, siteUrl, emit, client = new Anthropic() }
   const last = history.pop();
   const messages = [...history, { role: "user", content: [{ type: "text", text: listed }, { type: "text", text: "Reader's question: " + last.content }] }];
   const system = body.trainer ? trainerPrompt(body.trainer) : SYSTEM + (PERSONA[body.guide] ? "\n\n" + PERSONA[body.guide] : "");
+  const VOICE = "\n\nThe reader is talking to you by voice and will hear your answer read aloud. Answer in natural spoken English, like a knowledgeable friend explaining: 80 to 170 words, short sentences, no lists, no headings, no bold, no bracketed citation numbers, no Arabic, Hebrew or Greek script (give a transliteration instead if a word matters). Name sources in words, for example 'Quran chapter 4, verse 34' or 'Sahih al-Bukhari number 5133'. The same honesty rules apply: say the hard parts plainly. End by offering to go deeper if it helps.";
+  const sys = body.voice === true && !body.trainer ? system + VOICE : system;
   if (body.trainer) messages[messages.length - 1].content[1].text = "The reader's argument (or 'START' to make your opening challenge): " + last.content;
 
   const run = async (name, input) => {
@@ -403,7 +405,7 @@ export async function chatTurn({ body, siteUrl, emit, client = new Anthropic() }
           betas: ["server-side-fallback-2026-07-01"],
           fallbacks: "default",                     // if the model declines, Anthropic's recommended fallback model answers
           output_config: { effort: "medium" },
-          system,
+          system: sys,
           tools: TOOLS,
           ...(round >= MAX_TOOL_ROUNDS || site.count > LOOKUP_BUDGET - 4 ? { tool_choice: { type: "none" } } : {}),
           messages,
@@ -448,6 +450,7 @@ export async function chatTurn({ body, siteUrl, emit, client = new Anthropic() }
 export function errorMessage(e) {
   if (e instanceof Anthropic.AuthenticationError) return [503, "The AI guide is not switched on: the server's API key was rejected."];
   if (e instanceof Anthropic.RateLimitError) return [429, "The AI guide is busy. Try again in a minute."];
+  if (e instanceof Anthropic.BadRequestError && /credit balance|billing|quota/i.test(String(e.message || ""))) return [503, "The AI guide is switched off for a moment. Please try again later."];
   if (e instanceof Anthropic.BadRequestError) return [400, "The AI guide could not accept this question."];
   if (e instanceof Anthropic.APIError) return [502, "The AI service returned an error (" + e.status + ")."];
   return [500, "Something went wrong while writing the answer."];

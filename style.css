@@ -993,3 +993,31 @@ body { background-color: var(--bg); }
 .yt-lazy { display: block; width: 100%; padding: 0; border: 0; cursor: pointer; }
 .yt-lazy img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
 .yt-play { position: absolute; left: 50%; top: 50%; width: 68px; height: 48px; margin: -24px 0 0 -34px; border-radius: 14px; background: rgba(200, 0, 0, .9); color: #fff; font-size: 1.4rem; display: grid; place-items: center; }
+
+/* ---------- voice ---------- */
+.askbox { position: relative; }
+.mic-btn { flex: none; width: 42px; height: 42px; border: 0; border-radius: 50%; display: grid; place-items: center; background: transparent; color: var(--muted); cursor: pointer; margin-right: 4px; transition: color .2s, background .2s; }
+.mic-btn:hover { color: #8B5A2B; background: var(--soft); }
+.mic-btn.on { color: #fff; background: #8C2F2B; animation: micpulse 1.2s ease-in-out infinite; }
+@keyframes micpulse { 50% { box-shadow: 0 0 0 8px rgba(140, 47, 43, .18); } }
+.chat-head { display: flex; align-items: center; gap: 8px; } .chat-head .seg { flex: 1; margin: 0; }
+.talk-btn, .talk-home { display: inline-flex; align-items: center; gap: 6px; border: 0; cursor: pointer; font: 700 .92rem var(--sans); color: #FFFCF5; background: linear-gradient(135deg, #B88A52, #8B5A2B); border-radius: 999px; padding: 10px 14px; box-shadow: var(--shadow); }
+.talk-home { margin: 12px 0 0; background: transparent; color: #8B5A2B; box-shadow: none; padding: 6px 2px; font-size: .95rem; }
+.talk-home:hover { text-decoration: underline; }
+.talk { position: fixed; inset: 0; z-index: 90; display: grid; place-items: center; background: radial-gradient(90% 70% at 50% 40%, rgba(42, 30, 19, .94), rgba(15, 10, 5, .97)); color: #F1E8D8; animation: fadein .3s ease; }
+@keyframes fadein { from { opacity: 0; } }
+.talk-in { display: grid; justify-items: center; gap: 18px; padding: 24px; text-align: center; max-width: 520px; }
+.talk-guide { margin: 0; font: 700 .78rem var(--sans); letter-spacing: .16em; text-transform: uppercase; color: #D4AF37; }
+.talk-orb { width: 168px; height: 168px; border-radius: 50%; border: 0; cursor: pointer; padding: 0; background: radial-gradient(circle at 35% 30%, #F3DFA6, #D4AF37 40%, #8B5A2B 80%); box-shadow: 0 0 60px rgba(212, 175, 55, .35); position: relative; transition: transform .3s; }
+.talk-orb span { position: absolute; inset: -14px; border-radius: 50%; border: 2px solid rgba(232, 199, 102, .5); opacity: 0; }
+.talk[data-s=listen] .talk-orb { animation: orbin 1.4s ease-in-out infinite; } .talk[data-s=listen] .talk-orb span { animation: ring 1.4s ease-out infinite; }
+.talk[data-s=think] .talk-orb { animation: orbthink 1.1s linear infinite; filter: saturate(.7); }
+.talk[data-s=speak] .talk-orb { animation: orbspeak .5s ease-in-out infinite alternate; }
+@keyframes orbin { 50% { transform: scale(1.06); } } @keyframes ring { 0% { opacity: .9; transform: scale(.92); } 100% { opacity: 0; transform: scale(1.35); } }
+@keyframes orbthink { to { transform: rotate(360deg); } } @keyframes orbspeak { from { transform: scale(.97); } to { transform: scale(1.05); box-shadow: 0 0 90px rgba(212, 175, 55, .55); } }
+.talk-state { margin: 0; font: 600 1.05rem var(--sans); }
+.talk-text { margin: 0; min-height: 3em; font: italic 1.15rem/1.5 var(--display); color: #E8DCC4; }
+.talk-end { background: rgba(255, 255, 255, .1); color: #F1E8D8; border: 1px solid rgba(232, 199, 102, .4); padding: 10px 28px; }
+@media (prefers-reduced-motion: reduce) { .talk-orb, .talk-orb span { animation: none !important; } }
+.talk { background: radial-gradient(90% 70% at 50% 40%, #2A1E13, #0F0A05); }
+@media (max-width: 600px) { .chat-head .talk-btn { padding: 10px; font-size: 0; gap: 0; } .chat-head .talk-btn svg { width: 20px; height: 20px; } }
