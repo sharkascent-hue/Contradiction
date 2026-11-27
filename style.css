@@ -1097,11 +1097,11 @@ main { padding-bottom: 24px; } .foot { margin-top: 12px; }
 #intro .bk-scene { opacity: 0; transition: opacity .45s ease; } #intro.go .bk-scene { opacity: 1; }
 #intro.out { opacity: 0; pointer-events: none; }
 html.intro-on { overflow: hidden; }
-.bk-glow { position: absolute; width: 560px; height: 560px; border-radius: 50%; background: radial-gradient(circle, rgba(255, 220, 140, .5), transparent 65%); opacity: 0; animation: bkGlow 1.4s ease 1.2s forwards; }
+.bk-glow { position: absolute; width: 560px; height: 560px; border-radius: 50%; background: radial-gradient(circle, rgba(255, 220, 140, .5), transparent 65%); opacity: 0; animation: bkGlow 1.4s ease 2.1s forwards; }
 .bk-scene { perspective: 1600px; }
 .bk { --w: min(38vw, 180px); --h: calc(var(--w) * 1.42); position: relative; width: var(--w); height: var(--h);
   transform: rotateX(28deg) rotateZ(-8deg) translateX(0) scale(.92); will-change: transform;
-  animation: bkMove 1.3s cubic-bezier(.45, 0, .2, 1) .25s forwards, bkZoom 1s cubic-bezier(.55, 0, .35, 1) 2.75s forwards; }
+  animation: bkMove 1.3s cubic-bezier(.45, 0, .2, 1) 1.15s forwards, bkZoom 1.1s cubic-bezier(.5, 0, .5, 1) 3s forwards; }
 /* the back cover and the block of pages, with visible page edges */
 .bk-base { position: absolute; inset: -4px -6px -6px -2px; border-radius: 3px 9px 9px 3px; background: #2E180A; box-shadow: 0 20px 40px rgba(0, 0, 0, .55), 0 6px 12px rgba(0, 0, 0, .4); }
 .bk-base::after { content: ""; position: absolute; right: 2px; top: 5px; bottom: 7px; width: 6px; border-radius: 0 3px 3px 0;
@@ -1110,7 +1110,7 @@ html.intro-on { overflow: hidden; }
   background: repeating-linear-gradient(180deg, #F2E6CF 0 1px, #D9C6A2 1px 2px); }
 .bk-right, .bk-leaf, .bk-cover { position: absolute; inset: 0; transform-origin: left center; border-radius: 0 6px 6px 0; }
 .bk-right { background: linear-gradient(90deg, #E6D6B8, #F8F0E0 14%, #F8F0E0 92%, #EFE2C8); box-shadow: inset 8px 0 16px rgba(110, 70, 30, .22); }
-.bk-page { position: absolute; inset: 0; display: grid; place-content: center; justify-items: center; gap: 10px; opacity: 0; animation: bkIn .8s ease 1.9s forwards; }
+.bk-page { position: absolute; inset: 0; display: grid; place-content: center; justify-items: center; gap: 10px; opacity: 0; animation: bkIn .6s ease 2.7s forwards; }
 .bk-emb { width: 44%; height: auto; } .bk-word { width: 86%; height: auto; }
 .bk-leaf, .bk-cover { transform-style: preserve-3d; transform: perspective(1600px) rotateY(0deg); will-change: transform; }
 .bk-leaf > div, .bk-cover > div { position: absolute; inset: 0; backface-visibility: hidden; -webkit-backface-visibility: hidden; border-radius: 0 6px 6px 0; overflow: hidden; }
@@ -1118,7 +1118,7 @@ html.intro-on { overflow: hidden; }
 .bk-back { background: linear-gradient(270deg, #E6D6B8, #F8F0E0 14%, #F8F0E0 92%, #EFE2C8); transform: rotateY(180deg); border-radius: 6px 0 0 6px !important; }
 /* a shadow sweeps across each page as it turns */
 .sh { position: absolute; inset: 0; pointer-events: none; background: linear-gradient(90deg, rgba(60, 35, 10, .45), rgba(60, 35, 10, 0) 70%); opacity: 0; }
-.l1 .sh { animation: bkShade .95s ease 1.05s; } .l2 .sh { animation: bkShade .95s ease 1.35s; } .l3 .sh { animation: bkShade .95s ease 1.65s; }
+.l1 .sh { animation: bkShade .95s ease 2s; } .l2 .sh { animation: bkShade .95s ease 2.3s; } .l3 .sh { animation: bkShade .95s ease 2.6s; }
 .pg { position: absolute; inset: 0; padding: 12% 11%; display: flex; flex-direction: column; gap: 6px; text-align: center; align-items: center; justify-content: center; color: #4A321A; }
 .pg-r { font: 700 clamp(.5rem, 1.9vw, .66rem) var(--sans); letter-spacing: .14em; text-transform: uppercase; color: #9C6B34; }
 .pg-o { margin: 0; font: 400 clamp(.7rem, 2.8vw, 1rem)/1.4 "Amiri Quran", "Times New Roman", serif; color: #6F4520; }
@@ -1134,17 +1134,17 @@ html.intro-on { overflow: hidden; }
   box-shadow: inset 0 0 0 8px #3A1F0D, inset 0 0 0 9px rgba(201, 162, 75, .45); }
 /* stacking: the cover on top; each page goes onto the left pile when it passes the middle */
 .bk-right { z-index: 0; } .l3 { z-index: 2; } .l2 { z-index: 3; } .l1 { z-index: 4; } .bk-cover { z-index: 5; }
-.bk-cover { animation: turnC 1.15s cubic-bezier(.45, .05, .25, 1) .3s forwards; }
-.l1 { animation: turn1 .95s cubic-bezier(.45, .05, .25, 1) 1.05s forwards; }
-.l2 { animation: turn2 .95s cubic-bezier(.45, .05, .25, 1) 1.35s forwards; }
-.l3 { animation: turn3 .95s cubic-bezier(.45, .05, .25, 1) 1.65s forwards; }
+.bk-cover { animation: turnC 1.15s cubic-bezier(.45, .05, .25, 1) 1.2s forwards; }
+.l1 { animation: turn1 .95s cubic-bezier(.45, .05, .25, 1) 2s forwards; }
+.l2 { animation: turn2 .95s cubic-bezier(.45, .05, .25, 1) 2.3s forwards; }
+.l3 { animation: turn3 .95s cubic-bezier(.45, .05, .25, 1) 2.6s forwards; }
 @keyframes turnC { 0% { transform: perspective(1600px) rotateY(0); z-index: 5; } 50% { z-index: 1; } 100% { transform: perspective(1600px) rotateY(-176deg); z-index: 1; } }
 @keyframes turn1 { 0% { transform: perspective(1600px) rotateY(0); z-index: 4; } 50% { z-index: 2; } 100% { transform: perspective(1600px) rotateY(-177deg); z-index: 2; } }
 @keyframes turn2 { 0% { transform: perspective(1600px) rotateY(0); z-index: 3; } 50% { z-index: 3; } 100% { transform: perspective(1600px) rotateY(-178deg); z-index: 3; } }
 @keyframes turn3 { 0% { transform: perspective(1600px) rotateY(0); z-index: 2; } 50% { z-index: 4; } 100% { transform: perspective(1600px) rotateY(-179deg); z-index: 4; } }
 @keyframes bkShade { 0% { opacity: 0; } 45% { opacity: 1; } 100% { opacity: 0; } }
 @keyframes bkMove { to { transform: rotateX(14deg) rotateZ(0) translateX(50%) scale(1); } }
-@keyframes bkZoom { from { transform: rotateX(14deg) rotateZ(0) translateX(50%) scale(1); opacity: 1; } to { transform: rotateX(0) translateX(28%) scale(2.6); opacity: 0; } }
+@keyframes bkZoom { from { transform: rotateX(14deg) rotateZ(0) translateX(50%) scale(1); opacity: 1; } to { transform: rotateX(0) translateX(0) scale(4.2); opacity: 1; } }
 @keyframes bkIn { to { opacity: 1; } }
 @keyframes bkGlow { to { opacity: 1; } }
 .bk-lines { position: absolute; inset: 0; display: grid; place-content: center; justify-items: center; gap: 8px; padding: 10px; text-align: center; color: #7A5A30; font: 400 clamp(.7rem, 2.6vw, .95rem)/1.4 "Amiri Quran", "Times New Roman", serif; }
