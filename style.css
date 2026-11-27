@@ -1086,3 +1086,20 @@ main { padding-bottom: 24px; } .foot { margin-top: 12px; }
 :root[data-faith=christian] .top { background: #F4DED6 !important; } :root[data-faith=muslim] .top { background: #E4EAD3 !important; } :root[data-faith=jewish] .top { background: #DCE4EE !important; }
 :root[data-mode=dark] .top { background: #1A130C !important; }
 :root[data-mode=dark][data-faith=christian] .top { background: #1C0F0D !important; } :root[data-mode=dark][data-faith=muslim] .top { background: #10150C !important; } :root[data-mode=dark][data-faith=jewish] .top { background: #0E131C !important; }
+
+/* talk: symbol orb, colours per person, written transcript */
+.talk-orb { display: grid; place-items: center; color: #fff; }
+.orb-sym { display: grid; place-items: center; filter: drop-shadow(0 2px 6px rgba(0, 0, 0, .45)); pointer-events: none; }
+.orb-sym svg, .orb-sym img { display: block; }
+.tp-g, .ld-g { color: #fff; } .tp-g svg, .ld-g svg { filter: drop-shadow(0 1px 2px rgba(0, 0, 0, .4)); }
+.talk-call { width: 100%; }
+.talk-orb { width: 150px; height: 150px; }
+.talk-log { width: 100%; max-height: 32vh; overflow-y: auto; text-align: left; display: flex; flex-direction: column; gap: 10px; padding: 4px 2px; scrollbar-width: thin; }
+.talk-log:empty { display: none; }
+.tl-line { padding: 10px 14px; border-radius: 14px; background: rgba(255, 255, 255, .06); border: 1px solid rgba(232, 199, 102, .15); }
+.tl-line.me { background: rgba(232, 199, 102, .12); align-self: flex-end; max-width: 85%; }
+.tl-line b { display: block; font: 700 .72rem var(--sans); letter-spacing: .1em; text-transform: uppercase; color: #E8C766; margin-bottom: 3px; }
+.tl-line p { margin: 0; font: 400 1.02rem/1.55 var(--reading); color: #F1E8D8; }
+.tl-line span { transition: color .2s, background .2s; border-radius: 4px; }
+.tl-line span.now { color: #fff; background: rgba(232, 199, 102, .22); }
+.talk-text:empty { display: none; }

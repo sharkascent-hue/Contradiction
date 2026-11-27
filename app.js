@@ -139,13 +139,13 @@
     const female = CLERGY[clergy][3] === 'f', pool = vs.filter(v => female ? !MALE.test(v.name) : MALE.test(v.name));
     const same = keys.filter(k => (CLERGY[k][3] === 'f') === female), n = same.indexOf(clergy);
     return pool.length ? pool[n % pool.length] : vs[0] || null; }
-  function say(text, onEnd) {
+  function say(text, onEnd, onPart) {
     if (!TTS) return onEnd && onEnd();
     speechSynthesis.cancel();
     const parts = spoken(text).match(/[^.!?]+[.!?]*/g) || [];   // short pieces: some phones stop long utterances
     let i = 0; const v = pickVoice();
     const next = () => { if (!voiceMode) return; if (i >= parts.length) return onEnd && onEnd();
-      const u = new SpeechSynthesisUtterance(parts[i++].trim()); if (v) u.voice = v; u.rate = clergy ? .92 : 1; u.pitch = clergy && CLERGY[clergy][3] === 'm' ? .88 : 1; u.onend = next; u.onerror = next; speechSynthesis.speak(u); };
+      if (onPart) onPart(i); const u = new SpeechSynthesisUtterance(parts[i++].trim()); if (v) u.voice = v; u.rate = clergy ? .92 : 1; u.pitch = clergy && CLERGY[clergy][3] === 'm' ? .88 : 1; u.onend = next; u.onerror = next; speechSynthesis.speak(u); };
     next();
   }
   const GREET = { '': 'Hello. Ask me anything about Christianity, Islam or Judaism.',
@@ -162,11 +162,13 @@
     const people = [['', '✦', 'Contradiction AI', 'All three faiths', 'all']].concat(Object.entries(CLERGY).map(([k, c]) => [k, GLYPH[c[0]], c[1], c[2], c[0]]));
     const ov = document.createElement('div'); ov.className = 'talk';
     ov.innerHTML = '<div class="talk-in"><div class="talk-pick"><p class="talk-guide">Who would you like to talk to?</p><div class="talk-people">' +
-      people.map(p => '<button type="button" class="tp ' + p[4] + '" data-who="' + p[0] + '"><span class="tp-g">' + p[1] + '</span><strong>' + esc(p[2]) + '</strong><small>' + esc(p[3]) + '</small></button>').join('') + '</div></div>' +
-      '<div class="talk-call" hidden><p class="talk-guide"></p><button class="talk-orb" type="button" aria-label="Tap to speak"><span></span></button><p class="talk-state"></p><p class="talk-text"></p>' +
+      people.map(p => '<button type="button" class="tp ' + p[4] + '" data-who="' + p[0] + '"><span class="tp-g" style="background:' + lookBg(p[0]) + '">' + symSvg(p[0], 26) + '</span><strong>' + esc(p[2]) + '</strong><small>' + esc(p[3]) + '</small></button>').join('') + '</div></div>' +
+      '<div class="talk-call" hidden><p class="talk-guide"></p><button class="talk-orb" type="button" aria-label="Tap to speak"><span></span><i class="orb-sym"></i></button><p class="talk-state"></p><p class="talk-text"></p><div class="talk-log" aria-live="polite"></div>' +
       '<button type="button" class="talk-change">Talk to someone else</button></div><button class="btn talk-end" type="button">End</button></div>';
     document.body.append(ov);
-    const st = ov.querySelector('.talk-state'), tx = ov.querySelector('.talk-text'), orb = ov.querySelector('.talk-orb'), pick = ov.querySelector('.talk-pick'), call = ov.querySelector('.talk-call');
+    const st = ov.querySelector('.talk-state'), tx = ov.querySelector('.talk-text'), orb = ov.querySelector('.talk-orb'), pick = ov.querySelector('.talk-pick'), call = ov.querySelector('.talk-call'), log = ov.querySelector('.talk-log');
+    const whoName = () => clergy ? CLERGY[clergy][1] : 'Contradiction AI';
+    const addLine = (name, text, me) => { const d = document.createElement('div'); d.className = 'tl-line' + (me ? ' me' : ''); d.innerHTML = '<b>' + esc(name) + '</b><p></p>'; d.querySelector('p').textContent = text; log.append(d); log.scrollTop = log.scrollHeight; return d; };
     const set = (s, cls) => { st.textContent = s; ov.dataset.s = cls; };
     const stop = () => { try { rec && rec.abort(); } catch (e) {} if (TTS) speechSynthesis.cancel(); };
     const end = () => { voiceMode = false; stop(); ov.remove(); };
@@ -174,21 +176,26 @@
       listen(t => { tx.textContent = t; }, async q => {
         if (!voiceMode) return;
         if (!q) { set('Tap the circle and speak', 'idle'); return; }
+        tx.textContent = ''; addLine('You', q, true);
         set('Thinking…', 'think');
         if (!/^#\/ask/.test(location.hash)) { location.hash = '#/ask'; await new Promise(r => setTimeout(r, 400)); }
         const a = await answer(q).catch(() => '');
         if (!voiceMode) return;
         if (!a) { set('Sorry, I could not answer that. Tap to try again.', 'idle'); return; }
         set('Speaking… tap to interrupt', 'speak'); tx.textContent = '';
-        say(a, () => { if (voiceMode) hear(); });
+        const line = addLine(whoName(), ''), parts = spoken(a).match(/[^.!?]+[.!?]*/g) || [];
+        line.querySelector('p').innerHTML = parts.map((s, i) => '<span data-i="' + i + '">' + esc(s) + '</span>').join('');
+        say(a, () => { line.querySelectorAll('span').forEach(x => x.classList.remove('now')); if (voiceMode) hear(); },
+          i => { line.querySelectorAll('span').forEach(x => x.classList.toggle('now', +x.dataset.i === i)); const s = line.querySelector('[data-i="' + i + '"]'); if (s) s.scrollIntoView({ block: 'nearest' }); });
       }); };
     const choose = k => {
       clergy = k; store.set('clergy', k); guide = k ? CLERGY[k][0] : 'all'; store.set('guide', guide); chatLog = [];
       if (/^#\/ask/.test(location.hash)) renderChat();
       pick.hidden = true; call.hidden = false;
       call.querySelector('.talk-guide').textContent = k ? CLERGY[k][1] + ' · ' + CLERGY[k][2] : 'Contradiction AI · all three faiths';
+      orb.style.background = lookBg(k); orb.querySelector('.orb-sym').innerHTML = symSvg(k, 74); orb.style.boxShadow = '0 0 70px ' + (LOOK[k] || LOOK[''])[1] + '88'; log.innerHTML = '';
       // iPhones only allow speech that starts from a tap: this greeting comes from the tap on the person.
-      tx.textContent = GREET[k] || GREET[''];
+      tx.textContent = ''; addLine(k ? CLERGY[k][1] : 'Contradiction AI', GREET[k] || GREET['']);
       if (TTS) { speechSynthesis.cancel(); const u = new SpeechSynthesisUtterance(GREET[k] || GREET['']); const v = pickVoice(); if (v) u.voice = v;
         u.rate = k ? .92 : 1; u.pitch = k && CLERGY[k][3] === 'm' ? .88 : 1; u.onend = hear; u.onerror = hear; speechSynthesis.speak(u); set('Speaking…', 'speak'); }
       else hear();
@@ -607,7 +614,7 @@
     document.title = 'Learn about your faith · Contradiction AI';
     const people = [['', '✦', 'Contradiction AI', 'All three faiths, side by side', 'all']].concat(Object.entries(CLERGY).map(([k, c]) => [k, GLYPH[c[0]], c[1], c[2], c[0]]));
     app.innerHTML = hero('talkbot', 'Learn about your faith', 'Talk to a priest, an imam or a rabbi about your faith, your doubts and your questions. Speak out loud and hear them answer, or type. Each one answers from the teaching of his own tradition.', '', 'Our bots') +
-      '<div class="leaders">' + people.map(p => '<div class="leader ' + p[4] + '"><span class="ld-g">' + p[1] + '</span><strong>' + esc(p[2]) + '</strong><small>' + esc(p[3]) + '</small>' +
+      '<div class="leaders">' + people.map(p => '<div class="leader ' + p[4] + '"><span class="ld-g" style="background:' + lookBg(p[0]) + '">' + symSvg(p[0], 30) + '</span><strong>' + esc(p[2]) + '</strong><small>' + esc(p[3]) + '</small>' +
         '<div class="ld-act">' + (SR ? '<button type="button" class="btn brand" data-talk="' + p[0] + '" data-who-set>' + MIC_SVG + ' Talk</button>' : '') +
         '<button type="button" class="btn" data-chat="' + p[0] + '">Type</button></div></div>').join('') + '</div>' +
       '<p class="status">These are AI characters, not real clergy. They explain what each tradition teaches, from its texts. For confession, a ruling or a personal decision, speak to a real priest, imam or rabbi.</p>';
@@ -1609,6 +1616,22 @@
   const CLERGY = { 'orthodox-priest': ['christian', 'Father Peter', 'Orthodox priest', 'm'], 'catholic-priest': ['christian', 'Father Thomas', 'Catholic priest', 'm'],
     'protestant-pastor': ['christian', 'Pastor James', 'Protestant pastor', 'm'], 'sunni-imam': ['muslim', 'Imam Yusuf', 'Sunni imam', 'm'], 'shia-sheikh': ['muslim', 'Sheikh Hasan', 'Shia scholar', 'm'],
     'orthodox-rabbi': ['jewish', 'Rabbi David', 'Orthodox rabbi', 'm'], 'reform-rabbi': ['jewish', 'Rabbi Michael', 'Reform rabbi', 'm'] };
+  // Each faith leader's symbol and colours (drawn here, so they look the same on every device).
+  const SYM = {
+    'orthodox-priest': '<path d="M24 4v40M17 11h14M10 19h28M16 35l16-6" />',
+    'catholic-priest': '<path d="M24 4v40M11 16h26" />',
+    'protestant-pastor': '<path d="M24 4v22M16 11h16" /><path d="M6 30c6-3 12-3 18 1 6-4 12-4 18-1v12c-6-3-12-3-18 1-6-4-12-4-18-1z" />',
+    'sunni-imam': '<path d="M30 8a16 16 0 1 0 0 32a13 13 0 1 1 0-32z" /><path d="M35 17l1.8 4.2 4.5.4-3.4 3 1 4.4-3.9-2.3-3.9 2.3 1-4.4-3.4-3 4.5-.4z" fill="currentColor" stroke="none"/>',
+    'shia-sheikh': '<path d="M24 44v-8M18 36h12M24 36V12M24 12l-5-8M24 12l5-8M21 30h6" />',
+    'orthodox-rabbi': '<path d="M24 5l17 29H7zM24 43L7 14h34z" />',
+    'reform-rabbi': '<path d="M24 10v32M6 14c0 12 8 16 18 16s18-4 18-16M12 14c0 8 5 11 12 11s12-3 12-11M18 14c0 4 2 6 6 6s6-2 6-6M16 42h16" />',
+  };
+  const LOOK = { '': ['#F3DFA6', '#D4AF37', '#8B5A2B'], 'orthodox-priest': ['#F6D58A', '#B8862F', '#5E1A14'], 'catholic-priest': ['#FFF3C4', '#E2B93B', '#7A1E1E'],
+    'protestant-pastor': ['#CFE0F5', '#3E6DA8', '#14284A'], 'sunni-imam': ['#CDEBC6', '#3D8B4A', '#123A1E'], 'shia-sheikh': ['#7A9E7E', '#1F4D2E', '#050A06'],
+    'orthodox-rabbi': ['#E3EEFF', '#3F6FB5', '#0F2347'], 'reform-rabbi': ['#E7DDF7', '#6A4FA0', '#26184A'] };
+  const symSvg = (k, size) => k && SYM[k] ? '<svg viewBox="0 0 48 48" width="' + size + '" height="' + size + '" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' + SYM[k] + '</svg>'
+    : '<img src="brand/emblem.png" alt="" width="' + size + '" height="' + size + '" style="border-radius:50%">';
+  const lookBg = k => { const l = LOOK[k] || LOOK['']; return 'radial-gradient(circle at 35% 30%, ' + l[0] + ', ' + l[1] + ' 45%, ' + l[2] + ' 95%)'; };
   let clergy = CLERGY[store.get('clergy')] && CLERGY[store.get('clergy')][0] === guide ? store.get('clergy') : '';
   // The AI guide runs where content/config.json's aiEndpoint points, or at api/chat on hosts that run server functions.
   let aiProbe = null;
