@@ -5,5 +5,5 @@ compatibility_date = "2025-06-01"
 compatibility_flags = ["nodejs_compat"]
 
 [vars]
-SITE_URL = "https://sharkascent-hue.github.io/Contradiction/"
-ALLOWED_ORIGIN = "https://sharkascent-hue.github.io"
+SITE_URL = "https://raw.githubusercontent.com/sharkascent-hue/Contradiction/main/"
+ALLOWED_ORIGIN = "https://sharkascent-hue.github.io,https://contradictionai.com,https://www.contradictionai.com,http://contradictionai.com,http://www.contradictionai.com"
