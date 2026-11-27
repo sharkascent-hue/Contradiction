@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120">
+  <!-- three faiths as three arcs of one ring, with a question at the centre -->
+  <g fill="none" stroke-width="15" stroke-linecap="round">
+    <path d="M60 14 A46 46 0 0 1 105.8 56" stroke="#2563eb" transform="rotate(-10 60 60)"/>
+    <path d="M60 14 A46 46 0 0 1 105.8 56" stroke="#0f9d6e" transform="rotate(110 60 60)"/>
+    <path d="M60 14 A46 46 0 0 1 105.8 56" stroke="#7c3aed" transform="rotate(230 60 60)"/>
+  </g>
+  <g fill="none" stroke="#F1E8D8" stroke-width="8" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M47 50 C47 38 73 38 73 51 C73 61 60 61 60 72"/>
+  </g>
+  <circle cx="60" cy="86" r="5.2" fill="#D4AF37"/>
+</svg>

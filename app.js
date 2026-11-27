@@ -1722,7 +1722,7 @@
   function setTr(t) { tr = t; pref[trById[t].corpus] = t; store.set('tr', t); store.set('tr-' + trById[t].corpus, t); }
   const TAB = { '': '', ask: 'ask', faiths: 'faiths', faith: 'faiths', beliefs: 'faiths', compare: 'faiths', books: 'books', read: 'books', lib: 'lib', go: 'lib',
     topics: 'topics', t: 'topics', topic: 'topics', q: 'topics', questions: 'topics', search: 'search', debates: 'debates', d: 'debates', videos: 'debates', shamoun: 'debates', trainer: 'debates', stories: 'topics', prophecies: 'topics', translations: 'topics', timeline: 'topics' };
-  const THEME_BG = { christian: '#f3f6ff', muslim: '#f1faf5', jewish: '#f7f3ff', '': '#faf8f4' };
+  const THEME_BG = { christian: '#0F1526', muslim: '#0C1A14', jewish: '#150F26', '': '#1A120B' };
   function setFaithTheme(key) {
     if (key) document.documentElement.dataset.faith = key; else delete document.documentElement.dataset.faith;
     const m = document.querySelector('meta[name=theme-color]'); if (m) m.content = THEME_BG[key];
