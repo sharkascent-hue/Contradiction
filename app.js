@@ -252,8 +252,8 @@
         '<a href="#/trainer" class="arena-card"><span class="arena-chars">' + charSvg('elias', 40) + charSvg('yusuf', 40) + charSvg('avraham', 40) + '</span><strong>Debate trainer</strong><span>Argue against an AI opponent. Scored out of 10.</span></a></div></section>' +
       '<section class="hardband"><div><span class="tag">No softening</span><h2>The hard questions</h2><p>Women, slaves and captives, apostasy, holy war, child marriage, harsh punishments: the texts critics quote, in full, for all three faiths.</p>' +
         '<a class="btn" href="#/hard">Read the hard questions →</a></div><ul>' + (HQ ? HQ.topics : []).map(t => '<li><a href="#/hard/' + t.id + '">' + esc(t.title) + '</a></li>').join('') + '</ul></section>' +
-      '<section class="quizband"><div><span class="tag">Test yourself</span><h2>How well do you know them?</h2><p>A quiz for each faith, and one to guess which book a line comes from.</p></div><div class="qb-row">' +
-        [['christianity', 'christian', 'Christianity'], ['islam', 'muslim', 'Islam'], ['judaism', 'jewish', 'Judaism'], ['which-book', 'mixed', 'Which book?']].map(([id, k, n]) => '<a class="qb ' + k + '" href="#/quiz/' + id + '"><span>' + (GLYPH[k] || '?') + '</span>' + n + '</a>').join('') + '</div></section>' +
+      '<section class="quizband"><div><span class="tag">Test yourself</span><h2>How well do you know them?</h2><p>Easy, intermediate or hard. 10, 20 or 30 questions, never the same twice.</p></div><div class="qb-row">' +
+        [['christianity', 'christian', 'Christianity'], ['islam', 'muslim', 'Islam'], ['judaism', 'jewish', 'Judaism'], ['all', 'mixed', 'All three']].map(([id, k, n]) => '<a class="qb ' + k + '" href="#/quiz/' + id + '"><span>' + (GLYPH[k] || '?') + '</span>' + n + '</a>').join('') + '</div></section>' +
       factCard() + scriptBand() +
       '<div class="section-head"><h2>Go deeper</h2></div><div class="tools-strip">' + [['#/parallel', 'Compare editions', 'One verse in every translation and the original'], ...EXPLORE.filter(e => !/debate|Shamoun/i.test(e[1]))].map(([h, t, d]) => '<a href="' + h + '"><strong>' + t + '</strong><span>' + d + '</span></a>').join('') + '</div>' +
       '<div class="section-head"><h2>Read the texts</h2><a href="#/search">Search everything →</a></div>' + readGrid();
@@ -275,38 +275,161 @@
     if (f) { f.addEventListener('submit', e => { e.preventDefault(); location.hash = '#/search/' + encodeURIComponent(f.q.value.trim()); }); attachSuggest(f.q); }
   }
 
-  /* ---------- quizzes ---------- */
-  let QZ = null;
+  /* ---------- quizzes: choose a faith, a level and a length; questions never repeat until the bank is used up ---------- */
+  let QZ = null, QB = null;
   const loadQuiz = () => QZ ? Promise.resolve(QZ) : getJSON('content/quiz.json').then(d => (QZ = d)).catch(() => (QZ = { quizzes: [], facts: [] }));
-  async function quiz(id) {
-    const rid = renderId, d = await loadQuiz();
+  const loadBank = () => QB ? Promise.resolve(QB) : getJSON('content/quizbank.json').then(d => (QB = d.questions || [])).catch(() => (QB = []));
+  const QFAITH = { christianity: 'christian', islam: 'muslim', judaism: 'jewish', all: 'all' };
+  const QLEVEL = { easy: 'Easy', intermediate: 'Intermediate', hard: 'Hard', mixed: 'Mixed' };
+  const rnd = n => Math.floor(Math.random() * n);
+  const shuffle = l => { l = l.slice(); for (let k = l.length - 1; k > 0; k--) { const m = rnd(k + 1); [l[k], l[m]] = [l[m], l[k]]; } return l; };
+  const pickN = (l, n, not) => shuffle(l.filter(x => x !== not)).slice(0, n);
+  const seenSet = () => { try { return new Set(JSON.parse(store.get('qz-seen') || '[]')); } catch (e) { return new Set(); } };
+  const remember = ids => { const s = [...seenSet(), ...ids]; store.set('qz-seen', JSON.stringify(s.slice(-3000))); };
+  const makeQ = (id, faith, level, q, right, wrongs, ref, why) => { const opts = shuffle([right, ...wrongs]); return { id, faith, level, q, options: opts, a: opts.indexOf(right), ref, why }; };
+  const quoteOf = t => '“' + t.replace(/\s+/g, ' ').trim() + '”';
+  const booksOf = g => M.books.filter(b => b.group === g).map(b => b.code);
+  async function verseFrom(tr, code, minLen = 50, maxLen = 230) {
+    const bk = await loadBook(tr, code); for (let k = 0; k < 25; k++) { const c = rnd(bk.length), ch = bk[c] || [], v = rnd(ch.length), t = ch[v] || '';
+      if (t.length >= minLen && t.length <= maxLen) return { c: c + 1, v: v + 1, t }; } return null;
+  }
+  const FAMOUS = {
+    christian: ['John 3:16', 'Genesis 1:1', 'Psalm 23:1', 'Matthew 5:9', 'John 11:35', 'Exodus 20:13', 'Romans 3:23', 'John 14:6', 'Matthew 22:39', '1 Corinthians 13:4', 'Philippians 4:13', 'Proverbs 3:5', 'Matthew 28:19', 'Luke 2:7', 'Revelation 21:4', 'Isaiah 53:5', 'Ecclesiastes 3:1', 'Micah 6:8'],
+    jewish: ['Genesis 1:1', 'Exodus 20:13', 'Deuteronomy 6:4', 'Leviticus 19:18', 'Exodus 3:14', 'Numbers 6:24', 'Genesis 22:2', 'Exodus 20:8', 'Deuteronomy 6:5', 'Genesis 12:1', 'Leviticus 11:7', 'Exodus 21:24'],
+    surahs: [1, 2, 3, 12, 18, 19, 36, 55, 56, 67, 112, 113, 114, 4, 9, 17, 24, 33]
+  };
+  // Generators: each returns a question built from the texts themselves.
+  const GEN = {
+    christian: [
+      async lvl => { // which book is this verse from
+        let code, c, v, t;
+        if (lvl === 'easy') { const r = parseRef(FAMOUS.christian[rnd(FAMOUS.christian.length)]); code = r.code; c = r.ch; v = r.v1; t = (await loadBook('WEB', code))[c - 1][v - 1]; }
+        else { const pool = lvl === 'hard' ? booksOf('ot').concat(booksOf('nt')) : ['GEN', 'EXO', 'PSA', 'PRO', 'ISA', 'MAT', 'MAR', 'LUK', 'JOH', 'ACT', 'ROM', '1CO', 'REV']; code = pool[rnd(pool.length)]; const x = await verseFrom('WEB', code); if (!x) return null; ({ c, v, t } = x); }
+        const grp = bookGroup[code], same = booksOf(grp).filter(b => has('WEB', b));
+        const wrong = pickN(lvl === 'hard' ? same : booksOf('ot').concat(booksOf('nt')).filter(b => has('WEB', b)), 3, code).map(b => bookName[b]);
+        return makeQ('g:bk:' + code + c + ':' + v, 'christian', lvl, 'Which book of the Bible is this verse from? ' + quoteOf(t), bookName[code], wrong, bookName[code] + ' ' + c + ':' + v, 'It is ' + bookName[code] + ' ' + c + ':' + v + '.');
+      },
+      async lvl => { // which Gospel says this
+        if (lvl === 'easy') return null;
+        const g = ['MAT', 'MAR', 'LUK', 'JOH'], code = g[rnd(4)], x = await verseFrom('WEB', code, 60, 200); if (!x) return null;
+        return makeQ('g:gos:' + code + x.c + ':' + x.v, 'christian', lvl, 'Which Gospel has this verse? ' + quoteOf(x.t), bookName[code], g.filter(b => b !== code).map(b => bookName[b]), bookName[code] + ' ' + x.c + ':' + x.v, 'It is ' + bookName[code] + ' ' + x.c + ':' + x.v + '.');
+      },
+      async lvl => { // which book comes next
+        const grp = rnd(2) ? 'nt' : 'ot', l = booksOf(grp).filter(b => has('WEB', b)), k = rnd(l.length - 1), next = l[k + 1];
+        if (lvl === 'easy' && k > 6 && grp === 'ot') return null;
+        return makeQ('g:nx:' + l[k], 'christian', lvl, 'In the Protestant Bible, which book comes right after ' + bookName[l[k]] + '?', bookName[next], pickN(l, 3, next).filter(b => b !== l[k]).slice(0, 3).map(b => bookName[b]), '', bookName[l[k]] + ' is followed by ' + bookName[next] + '.');
+      },
+      async lvl => { // how many chapters
+        if (lvl !== 'hard') return null;
+        const l = booksOf('ot').concat(booksOf('nt')).filter(b => has('WEB', b) && trById.WEB.chapters[b] > 3), code = l[rnd(l.length)], n = trById.WEB.chapters[code];
+        const wrong = shuffle([n - 2, n - 1, n + 1, n + 2, n + 3, n - 3].filter(x => x > 0 && x !== n)).slice(0, 3).map(String);
+        return makeQ('g:ch:' + code, 'christian', 'hard', 'How many chapters does ' + bookName[code] + ' have?', String(n), wrong, '', bookName[code] + ' has ' + n + ' chapters.');
+      }
+    ],
+    muslim: [
+      async lvl => { // what is surah N called
+        const n = lvl === 'easy' ? FAMOUS.surahs[rnd(FAMOUS.surahs.length)] : 1 + rnd(114), name = bookName['Q' + n].replace(/^\d+\.\s*/, '');
+        const wrong = pickN(Array.from({ length: 114 }, (_, k) => k + 1), 3, n).map(k => bookName['Q' + k].replace(/^\d+\.\s*/, ''));
+        return makeQ('g:sn:' + n, 'muslim', lvl, 'What is surah ' + n + ' of the Quran called?', name, wrong, 'Quran ' + n + ':1', 'Surah ' + n + ' is ' + name + '.');
+      },
+      async lvl => { // which surah is this verse from
+        if (lvl === 'easy') return null;
+        const n = lvl === 'intermediate' ? FAMOUS.surahs[rnd(FAMOUS.surahs.length)] : 1 + rnd(114), x = await verseFrom('PICK', 'Q' + n, 50, 220); if (!x) return null;
+        const nm = k => bookName['Q' + k];
+        return makeQ('g:sv:' + n + ':' + x.v, 'muslim', lvl, 'Which surah is this verse from? ' + quoteOf(x.t), nm(n), pickN(Array.from({ length: 114 }, (_, k) => k + 1), 3, n).map(nm), 'Quran ' + n + ':' + x.v, 'It is Quran ' + n + ':' + x.v + ', in ' + nm(n).replace(/^\d+\.\s*/, '') + '.');
+      },
+      async lvl => { // which number is surah X
+        if (lvl === 'easy') return null;
+        const n = lvl === 'intermediate' ? FAMOUS.surahs[rnd(FAMOUS.surahs.length)] : 1 + rnd(114), name = bookName['Q' + n].replace(/^\d+\.\s*/, '');
+        const wrong = shuffle([n - 3, n - 2, n - 1, n + 1, n + 2, n + 3].filter(k => k > 0 && k <= 114)).slice(0, 3).map(String);
+        return makeQ('g:sx:' + n, 'muslim', lvl, 'Which number is the surah ' + name + '?', String(n), wrong, 'Quran ' + n + ':1', name + ' is surah ' + n + '.');
+      },
+      async lvl => { // how many verses
+        if (lvl !== 'hard') return null;
+        const n = 1 + rnd(114), vs = (await loadBook('PICK', 'Q' + n))[0].length, name = bookName['Q' + n].replace(/^\d+\.\s*/, '');
+        const wrong = shuffle([vs - 3, vs - 2, vs - 1, vs + 1, vs + 2, vs + 4].filter(k => k > 2 && k !== vs)).slice(0, 3).map(String);
+        return makeQ('g:sc:' + n, 'muslim', 'hard', 'How many verses does surah ' + name + ' (' + n + ') have?', String(vs), wrong, 'Quran ' + n + ':1', name + ' has ' + vs + ' verses.');
+      }
+    ],
+    jewish: [
+      async lvl => { // which book of the Torah
+        const five = ['GEN', 'EXO', 'LEV', 'NUM', 'DEU'];
+        let code, c, v, t;
+        if (lvl === 'easy') { const r = parseRef(FAMOUS.jewish[rnd(FAMOUS.jewish.length)]); code = r.code; c = r.ch; v = r.v1; t = (await loadBook('JPS', code))[c - 1][v - 1]; }
+        else { code = five[rnd(5)]; const x = await verseFrom('JPS', code); if (!x) return null; ({ c, v, t } = x); }
+        return makeQ('g:tb:' + code + c + ':' + v, 'jewish', lvl, 'Which book of the Torah is this verse from? ' + quoteOf(t), bookName[code], pickN(five, 3, code).map(b => bookName[b]), bookName[code] + ' ' + c + ':' + v, 'It is ' + bookName[code] + ' ' + c + ':' + v + ' (JPS 1917).');
+      },
+      async lvl => { // which part of the Tanakh
+        const parts = TORAH.jewish.parts, p = rnd(parts.length), l = parts[p][1], code = l[rnd(l.length)], names = ['Torah (the Law)', 'Nevi’im (the Prophets)', 'Ketuvim (the Writings)'];
+        if (lvl === 'easy' && !['GEN', 'EXO', 'DEU', 'ISA', 'PSA', 'JON', 'DAN', 'RUT', 'EST', 'JOB'].includes(code)) return null;
+        return makeQ('g:tp:' + code, 'jewish', lvl, 'In the Jewish Bible (Tanakh), which section is ' + bookName[code] + ' in?', names[p], names.filter((_, k) => k !== p).concat('It is not in the Tanakh'), '', 'The Tanakh is Torah, Nevi’im and Ketuvim; ' + bookName[code] + ' is in ' + names[p] + '.');
+      },
+      async lvl => { // which verse in the Prophets/Writings
+        if (lvl !== 'hard') return null;
+        const pool = ['ISA', 'JER', 'EZE', 'PSA', 'PRO', 'JOB', 'DAN', 'AMO', 'JON', 'RUT', 'ECC', 'LAM'].filter(b => has('JPS', b)), code = pool[rnd(pool.length)], x = await verseFrom('JPS', code); if (!x) return null;
+        return makeQ('g:tv:' + code + x.c + ':' + x.v, 'jewish', 'hard', 'Which book of the Hebrew Bible is this verse from? ' + quoteOf(x.t), bookName[code], pickN(pool, 3, code).map(b => bookName[b]), bookName[code] + ' ' + x.c + ':' + x.v, 'It is ' + bookName[code] + ' ' + x.c + ':' + x.v + ' (JPS 1917).');
+      }
+    ]
+  };
+  async function buildQuiz(faith, level, n) {
+    const [qz, bank] = await Promise.all([loadQuiz(), loadBank()]);
+    const fs = faith === 'all' ? ['christian', 'muslim', 'jewish'] : [faith];
+    const lvOk = q => level === 'mixed' || q.level === level;
+    const hand = bank.concat(qz.quizzes.flatMap(z => z.questions.map((q, k) => Object.assign({ id: 'qz:' + z.id + ':' + k, faith: z.faith || 'all', level: z.faith ? 'easy' : 'intermediate' }, q))))
+      .filter(q => (fs.includes(q.faith) || (faith === 'all' && q.faith === 'all')) && lvOk(q));
+    let seen = seenSet(), fresh = hand.filter(q => !seen.has(q.id));
+    const out = shuffle(fresh).slice(0, Math.ceil(n * .6)), ids = new Set(out.map(q => q.id));
+    for (let tries = 0; out.length < n && tries < n * 12; tries++) {
+      const f = fs[rnd(fs.length)], g = GEN[f][rnd(GEN[f].length)], lv = level === 'mixed' ? ['easy', 'intermediate', 'hard'][rnd(3)] : level;
+      const q = await g(lv).catch(() => null);
+      if (!q || ids.has(q.id) || seen.has(q.id) || new Set(q.options).size < 4 || (level !== 'mixed' && q.level !== level)) continue;
+      ids.add(q.id); out.push(q);
+    }
+    if (out.length < n) shuffle(hand.filter(q => !ids.has(q.id))).slice(0, n - out.length).forEach(q => { ids.add(q.id); out.push(q); });
+    return shuffle(out).slice(0, n);
+  }
+  async function quiz(fa, lv, cnt) {
+    const rid = renderId; await Promise.all([loadQuiz(), loadBank()]);
     if (rid !== renderId) return;
-    if (!id) {
+    const faith = QFAITH[fa] ? fa : null;
+    if (!faith || !QLEVEL[lv] || ![10, 20, 30].includes(+cnt)) {
       document.title = 'Quiz · Contradiction AI';
-      app.innerHTML = hero('quiz', 'How well do you know them?', 'A quiz for each faith, and one to guess which book a line comes from. Every answer links to the passage.') +
-        '<div class="quiz-list">' + d.quizzes.map(z => { const best = +(store.get('quiz-' + z.id) || 0);
-          return '<a class="quiz-card ' + (z.faith || 'mixed') + '" href="#/quiz/' + z.id + '"><span class="qz-glyph">' + (GLYPH[z.faith] || '?') + '</span><strong>' + esc(z.title) + '</strong><span>' + esc(z.blurb) + '</span>' +
-            '<em>' + z.questions.length + ' questions' + (best ? ' · your best: ' + best + '/' + z.questions.length : '') + '</em></a>'; }).join('') + '</div>';
+      let f = faith || store.get('qz-f') || 'all', l = store.get('qz-l') || 'mixed', c = +(store.get('qz-c') || 10);
+      const opt = (name, val, label, cur) => '<button type="button" class="qopt' + (val === cur ? ' on' : '') + '" data-' + name + '="' + val + '">' + label + '</button>';
+      const draw = () => { app.querySelector('.qz-setup').innerHTML =
+        '<h3>Faith</h3><div class="qrow">' + [['christianity', '✝ Christianity'], ['islam', '☪ Islam'], ['judaism', '✡ Judaism'], ['all', '✦ All three']].map(x => opt('f', x[0], x[1], f)).join('') + '</div>' +
+        '<h3>Level</h3><div class="qrow">' + Object.entries(QLEVEL).map(x => opt('l', x[0], x[1], l)).join('') + '</div>' +
+        '<h3>Questions</h3><div class="qrow">' + [10, 20, 30].map(x => opt('c', x, x, c)).join('') + '</div>' +
+        '<a class="btn brand qz-start" href="#/quiz/' + f + '/' + l + '/' + c + '">Start the quiz →</a>';
+        app.querySelectorAll('.qopt').forEach(b => b.addEventListener('click', () => { if (b.dataset.f) f = b.dataset.f; if (b.dataset.l) l = b.dataset.l; if (b.dataset.c) c = +b.dataset.c;
+          store.set('qz-f', f); store.set('qz-l', l); store.set('qz-c', c); draw(); })); };
+      app.innerHTML = hero('quiz', 'How well do you know them?', 'Choose a faith, a level and how many questions. Questions come from a large bank and straight from the scriptures, and you will not see the same one twice until you have been through them all.') +
+        '<section class="qz-setup"></section>';
+      draw();
       return;
     }
-    const z = d.quizzes.find(x => x.id === id);
-    if (!z) return notFound();
-    document.title = z.title + ' · Contradiction AI';
-    if (z.faith) setFaithTheme(z.faith);
+    const n = +cnt, F = QFAITH[faith];
+    document.title = 'Quiz · Contradiction AI';
+    if (F !== 'all') setFaithTheme(F);
+    app.innerHTML = '<div class="skel"><span class="shimmer sk-h"></span><span class="shimmer"></span><span class="shimmer short"></span></div>';
+    const qs = await buildQuiz(F, lv, n);
+    if (rid !== renderId) return;
+    const key = faith + '-' + lv + '-' + n, title = (faith === 'all' ? 'All three faiths' : { christianity: 'Christianity', islam: 'Islam', judaism: 'Judaism' }[faith]) + ' · ' + QLEVEL[lv];
     let i = 0, score = 0;
     const draw = () => {
-      if (i >= z.questions.length) {
-        const best = Math.max(score, +(store.get('quiz-' + z.id) || 0)); store.set('quiz-' + z.id, best);
-        const msg = score === z.questions.length ? 'Perfect score.' : score >= z.questions.length * .7 ? 'Very good.' : score >= z.questions.length * .4 ? 'Not bad. Read on and try again.' : 'Plenty to discover.';
-        app.innerHTML = '<p class="crumbs"><a href="#/quiz">Quiz</a></p><section class="qz-done"><span class="qz-score">' + score + '<small>/' + z.questions.length + '</small></span><h1>' + msg + '</h1><p class="muted">' + esc(z.title) + ' · best ' + best + '/' + z.questions.length + '</p>' +
-          '<div class="hp-actions"><a class="btn brand" href="javascript:void 0" data-again>Try again</a><a class="btn" href="#/quiz">Other quizzes</a>' +
-          shareBtn('I scored ' + score + '/' + z.questions.length + ' on the ' + z.title, location.origin + location.pathname + '#/quiz/' + z.id) + '</div></section>';
-        app.querySelector('[data-again]').addEventListener('click', () => { i = 0; score = 0; draw(); });
+      if (i >= qs.length) {
+        remember(qs.map(q => q.id));
+        const best = Math.max(score, +(store.get('quiz-' + key) || 0)); store.set('quiz-' + key, best);
+        const pct = score / qs.length, msg = pct === 1 ? 'Perfect score.' : pct >= .7 ? 'Very good.' : pct >= .4 ? 'Not bad. Read on and try again.' : 'Plenty to discover.';
+        app.innerHTML = '<p class="crumbs"><a href="#/quiz">Quiz</a></p><section class="qz-done"><span class="qz-score">' + score + '<small>/' + qs.length + '</small></span><h1>' + msg + '</h1><p class="muted">' + esc(title) + ' · best ' + best + '/' + qs.length + '</p>' +
+          '<div class="hp-actions"><a class="btn brand" href="javascript:void 0" data-again>New questions</a><a class="btn" href="#/quiz">Change quiz</a>' +
+          shareBtn('I scored ' + score + '/' + qs.length + ' on the ' + title + ' quiz', location.origin + location.pathname + '#/quiz/' + faith + '/' + lv + '/' + n) + '</div></section>';
+        app.querySelector('[data-again]').addEventListener('click', () => route());
         return;
       }
-      const q = z.questions[i];
-      app.innerHTML = '<p class="crumbs"><a href="#/quiz">Quiz</a> › ' + esc(z.title) + '</p><div class="qz-bar"><i style="width:' + (i / z.questions.length * 100) + '%"></i></div>' +
-        '<p class="qz-n">Question ' + (i + 1) + ' of ' + z.questions.length + ' · score ' + score + '</p><h1 class="qz-q">' + esc(q.q) + '</h1>' +
+      const q = qs[i];
+      app.innerHTML = '<p class="crumbs"><a href="#/quiz">Quiz</a> › ' + esc(title) + '</p><div class="qz-bar"><i style="width:' + (i / qs.length * 100) + '%"></i></div>' +
+        '<p class="qz-n">Question ' + (i + 1) + ' of ' + qs.length + ' · score ' + score + ' <span class="qz-lv ' + q.level + '">' + (QLEVEL[q.level] || '') + '</span></p><h1 class="qz-q">' + esc(q.q) + '</h1>' +
         '<div class="qz-opts">' + q.options.map((o, k) => '<button type="button" data-k="' + k + '">' + esc(o) + '</button>').join('') + '</div><div class="qz-why" hidden></div>';
       app.querySelectorAll('.qz-opts button').forEach(b => b.addEventListener('click', () => {
         if (app.querySelector('.qz-opts.answered')) return;
@@ -314,8 +437,8 @@
         app.querySelector('.qz-opts').classList.add('answered');
         app.querySelectorAll('.qz-opts button').forEach(x => { if (+x.dataset.k === q.a) x.classList.add('right'); else if (x === b) x.classList.add('wrong'); });
         const w = app.querySelector('.qz-why'); w.hidden = false;
-        w.innerHTML = '<strong>' + (ok ? '✓ Correct.' : '✗ Not quite.') + '</strong> ' + esc(q.why) + (q.ref ? ' <span class="ref">' + rich(q.ref) + '</span>' : '') +
-          '<p><button class="btn brand" type="button" data-next>' + (i + 1 < z.questions.length ? 'Next question →' : 'See your score') + '</button></p>';
+        w.innerHTML = '<strong>' + (ok ? '✓ Correct.' : '✗ Not quite.') + '</strong> ' + esc(q.why || '') + (q.ref ? ' <span class="ref">' + rich(q.ref) + '</span>' : '') +
+          '<p><button class="btn brand" type="button" data-next>' + (i + 1 < qs.length ? 'Next question →' : 'See your score') + '</button></p>';
         w.querySelector('[data-next]').addEventListener('click', () => { i++; draw(); window.scrollTo(0, 0); });
       }));
     };
@@ -1915,7 +2038,7 @@
   applyMode(store.get('mode') || 'light');
   document.addEventListener('click', e => { if (!e.target.closest('.mode-btn')) return; const m = document.documentElement.dataset.mode === 'dark' ? 'light' : 'dark'; store.set('mode', m); applyMode(m); });
   const MORE = [['#/faiths', '⊕', 'Faiths', 'Each faith in its own words'], ['#/hard', '⚖', 'Hard questions', 'Women, captives, apostasy, war'], ['#/debaters', '🎙', 'Debaters', 'Their channels and arguments'],
-    ['#/videos', '▶', 'Watch recent debates', 'Newest videos, with the AI\'s take'], ['#/trainer', '⚔', 'Debate trainer', 'Argue against the AI'], ['#/quiz', '?', 'Quiz', 'One for each faith'], ['#/parallel', '⇄', 'Compare editions', 'A verse in every translation'], ['#/topics', '✦', 'Topics and tools', 'Stories, prophecies, timeline'],
+    ['#/videos', '▶', 'Watch recent debates', 'Newest videos, with the AI\'s take'], ['#/trainer', '⚔', 'Debate trainer', 'Argue against the AI'], ['#/quiz', '?', 'Quiz', 'Easy to hard, never repeats'], ['#/parallel', '⇄', 'Compare editions', 'A verse in every translation'], ['#/topics', '✦', 'Topics and tools', 'Stories, prophecies, timeline'],
     ['#/lib', '📚', 'Library', 'Hadith, Talmud, Church Fathers'], ['#/search', '⌕', 'Search', 'Every word in every text'], ['#/saved', '🔖', 'Saved', 'Answers you kept'], ['javascript:void 0" class="mode-btn', '◐', 'Dark mode', 'Switch light or dark'], ['#/about', '◆', 'Why Contradiction AI', 'Why we built it']];
   document.addEventListener('click', e => {
     if (!e.target.closest('[data-more]')) return;
