@@ -155,8 +155,8 @@
     'sunni-imam': 'As-salamu alaykum. I am Imam Yusuf. How can I help you today?',
     'shia-sheikh': 'Salam alaykum. I am Sheikh Hasan. What would you like to ask me?',
     'orthodox-rabbi': 'Shalom. I am Rabbi David. What would you like to talk about?',
-    'reform-rabbi': 'Shalom. I am Rabbi Sarah. How can I help you today?' };
-  function talk() {
+    'reform-rabbi': 'Shalom. I am Rabbi Michael. How can I help you today?' };
+  function talk(who) {
     if (!SR) { alert('Talking needs a browser with speech recognition: Safari on iPhone, or Chrome. You can still type your question.'); return; }
     voiceMode = true;
     const people = [['', '✦', 'Contradiction AI', 'All three faiths', 'all']].concat(Object.entries(CLERGY).map(([k, c]) => [k, GLYPH[c[0]], c[1], c[2], c[0]]));
@@ -197,8 +197,9 @@
     ov.querySelector('.talk-change').addEventListener('click', () => { stop(); call.hidden = true; pick.hidden = false; ov.dataset.s = ''; });
     orb.addEventListener('click', () => { stop(); setTimeout(hear, 150); });
     ov.querySelector('.talk-end').addEventListener('click', end);
+    if (typeof who === 'string') choose(who);
   }
-  document.addEventListener('click', e => { if (e.target.closest('[data-talk]')) { e.preventDefault(); talk(); } });
+  document.addEventListener('click', e => { const t = e.target.closest('[data-talk]'); if (t) { e.preventDefault(); talk(t.dataset.talk === undefined || t.dataset.talk === '' && !t.hasAttribute('data-who-set') ? undefined : t.dataset.talk); } });
   if (TTS) speechSynthesis.getVoices();
 
   const askBox = ph => '<form class="askbox"><textarea name="q" rows="1" placeholder="' + esc(ph) + '" aria-label="Your question" enterkeyhint="send"></textarea>' +
@@ -345,6 +346,7 @@
       '<section class="today"><a class="today-card qd" href="#/q/' + qd.slug + '"><span class="tag">Question of the day</span><strong>' + esc(qd.title) + '</strong><span>' + esc(qd.short) + '</span><em>See what each faith says →</em></a>' +
         '<div class="today-card dd-card" id="arena-feature"><span class="tag">Debate of the day</span><strong>Loading…</strong></div></section>' +
       verseOfDay(day) + scriptBand() +
+      botsBand() +
       '<div class="section-head"><h2>Choose a faith</h2><a href="#/faiths">Compare all three →</a></div>' +
       '<div class="doors">' + door('christian', 'christianity', 'Orthodox · Catholic · Protestant') + door('muslim', 'islam', 'Sunni · Shia') + door('jewish', 'judaism', 'Orthodox · Conservative · Reform') + '</div>' +
       '<section class="arena"><div class="arena-head"><span class="hp-eyebrow">The arena</span><h2>Where the faiths collide</h2><p>Real arguments from real debaters, tested against the texts. Every side gets the same standard.</p></div>' +
@@ -600,6 +602,23 @@
   const ytBox = (id, title) => '<button type="button" class="yt yt-lazy" data-yt="' + esc(id) + '" aria-label="Play: ' + esc(title) + '"><img loading="lazy" src="https://i.ytimg.com/vi/' + encodeURIComponent(id) + '/hqdefault.jpg" alt=""><span class="yt-play">▶</span></button>';
   document.addEventListener('click', e => { const b = e.target.closest('.yt-lazy'); if (!b) return;
     const f = document.createElement('div'); f.className = 'yt'; f.innerHTML = '<iframe src="https://www.youtube-nocookie.com/embed/' + encodeURIComponent(b.dataset.yt) + '?autoplay=1" title="Video" allow="accelerometer; autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>'; b.replaceWith(f); });
+  /* ---------- learn about your faith: the faith leaders ---------- */
+  function faithTalk() {
+    document.title = 'Learn about your faith · Contradiction AI';
+    const people = [['', '✦', 'Contradiction AI', 'All three faiths, side by side', 'all']].concat(Object.entries(CLERGY).map(([k, c]) => [k, GLYPH[c[0]], c[1], c[2], c[0]]));
+    app.innerHTML = hero('talkbot', 'Learn about your faith', 'Talk to a priest, an imam or a rabbi about your faith, your doubts and your questions. Speak out loud and hear them answer, or type. Each one answers from the teaching of his own tradition.', '', 'Our bots') +
+      '<div class="leaders">' + people.map(p => '<div class="leader ' + p[4] + '"><span class="ld-g">' + p[1] + '</span><strong>' + esc(p[2]) + '</strong><small>' + esc(p[3]) + '</small>' +
+        '<div class="ld-act">' + (SR ? '<button type="button" class="btn brand" data-talk="' + p[0] + '" data-who-set>' + MIC_SVG + ' Talk</button>' : '') +
+        '<button type="button" class="btn" data-chat="' + p[0] + '">Type</button></div></div>').join('') + '</div>' +
+      '<p class="status">These are AI characters, not real clergy. They explain what each tradition teaches, from its texts. For confession, a ruling or a personal decision, speak to a real priest, imam or rabbi.</p>';
+    app.querySelectorAll('[data-chat]').forEach(b => b.addEventListener('click', () => { const k = b.dataset.chat;
+      clergy = k; store.set('clergy', k); guide = k ? CLERGY[k][0] : 'all'; store.set('guide', guide); chatLog = []; location.hash = '#/ask'; }));
+  }
+  const botsBand = () => '<section class="bots"><div class="section-head"><h2>Our bots</h2></div><div class="bots-row">' +
+    '<a class="bot-card" href="#/ask"><span class="bc-i">💬</span><strong>Ask the AI</strong><span>Any question about the three faiths, answered from the texts.</span></a>' +
+    '<a class="bot-card" href="#/talk"><span class="bc-i">🎙</span><strong>Learn about your faith</strong><span>Talk out loud to a priest, an imam or a rabbi.</span></a>' +
+    '<a class="bot-card" href="#/trainer"><span class="bc-i">⚔</span><strong>Debate trainer</strong><span>Argue your side against an AI opponent and get scored.</span></a></div></section>';
+
   /* ---------- sources and copyright ---------- */
   async function sources() {
     document.title = 'Sources and copyright · Contradiction AI';
@@ -1589,7 +1608,7 @@
   // Faith leaders (fictional AI characters). The server has the matching instructions.
   const CLERGY = { 'orthodox-priest': ['christian', 'Father Peter', 'Orthodox priest', 'm'], 'catholic-priest': ['christian', 'Father Thomas', 'Catholic priest', 'm'],
     'protestant-pastor': ['christian', 'Pastor James', 'Protestant pastor', 'm'], 'sunni-imam': ['muslim', 'Imam Yusuf', 'Sunni imam', 'm'], 'shia-sheikh': ['muslim', 'Sheikh Hasan', 'Shia scholar', 'm'],
-    'orthodox-rabbi': ['jewish', 'Rabbi David', 'Orthodox rabbi', 'm'], 'reform-rabbi': ['jewish', 'Rabbi Sarah', 'Reform rabbi', 'f'] };
+    'orthodox-rabbi': ['jewish', 'Rabbi David', 'Orthodox rabbi', 'm'], 'reform-rabbi': ['jewish', 'Rabbi Michael', 'Reform rabbi', 'm'] };
   let clergy = CLERGY[store.get('clergy')] && CLERGY[store.get('clergy')][0] === guide ? store.get('clergy') : '';
   // The AI guide runs where content/config.json's aiEndpoint points, or at api/chat on hosts that run server functions.
   let aiProbe = null;
@@ -1798,7 +1817,7 @@
 
 
   /* ---------- page headers: each section has its own colour and mark ---------- */
-  const HERO = { sources: ['©', 'Sources'], contact: ['✉', 'Contact'], quiz: ['?', 'Quiz'], compare: ['⇄', 'Compare'], hard: ['⚖', 'No softening'], debates: ['⚔', 'Debates'], trainer: ['🎙', 'Train'], videos: ['▶', 'Watch'], stories: ['📜', 'Stories'], prophecies: ['🔮', 'Prophecy'],
+  const HERO = { talkbot: ['🎙', 'Talk'], sources: ['©', 'Sources'], contact: ['✉', 'Contact'], quiz: ['?', 'Quiz'], compare: ['⇄', 'Compare'], hard: ['⚖', 'No softening'], debates: ['⚔', 'Debates'], trainer: ['🎙', 'Train'], videos: ['▶', 'Watch'], stories: ['📜', 'Stories'], prophecies: ['🔮', 'Prophecy'],
     translations: ['✎', 'Words'], timeline: ['⏳', 'History'], shamoun: ['🗣', 'Debater'], explore: ['✦', 'Explore'] };
   const hero = (kind, title, lede, extra, eyebrow) => '<section class="hero-page hp-' + kind + '" data-mark="' + (HERO[kind] || ['', ''])[0] + '"><span class="hp-eyebrow">' + (eyebrow || (HERO[kind] || ['', ''])[1]) + '</span><h1>' + esc(title) + '</h1>' +
     (lede ? '<p>' + esc(lede) + '</p>' : '') + (extra || '') + '</section>';
@@ -2241,7 +2260,7 @@
   document.addEventListener('click', e => { if (!e.target.closest('.mode-btn')) return; const m = document.documentElement.dataset.mode === 'dark' ? 'light' : 'dark'; store.set('mode', m); applyMode(m); });
   document.addEventListener('focusin', e => { if (e.target.matches('textarea, input')) document.body.classList.add('kb'); });
   document.addEventListener('focusout', e => { if (e.target.matches('textarea, input')) setTimeout(() => { if (!document.activeElement || !document.activeElement.matches('textarea, input')) document.body.classList.remove('kb'); }, 80); });
-  const MORE = [['#/faiths', '⊕', 'Faiths', 'Each faith in its own words'], ['#/hard', '⚖', 'Hard questions', 'Women, captives, apostasy, war'], ['#/debaters', '🎙', 'Debaters', 'Their channels and arguments'],
+  const MORE = [['#/talk', '🎙', 'Learn about your faith', 'Talk to a priest, imam or rabbi'], ['#/faiths', '⊕', 'Faiths', 'Each faith in its own words'], ['#/hard', '⚖', 'Hard questions', 'Women, captives, apostasy, war'], ['#/debaters', '🎙', 'Debaters', 'Their channels and arguments'],
     ['#/videos', '▶', 'Watch recent debates', 'Newest videos, with the AI\'s take'], ['#/trainer', '⚔', 'Debate trainer', 'Argue against the AI'], ['#/quiz', '?', 'Quiz', 'Easy to hard, never repeats'], ['#/parallel', '⇄', 'Compare editions', 'A verse in every translation'], ['#/topics', '✦', 'Topics and tools', 'Stories, prophecies, timeline'],
     ['#/lib', '📚', 'Library', 'Hadith, Talmud, Church Fathers'], ['#/search', '⌕', 'Search', 'Every word in every text'], ['#/saved', '🔖', 'Saved', 'Answers you kept'], ['javascript:void 0" class="mode-btn', '◐', 'Dark mode', 'Switch light or dark'], ['#/about', '◆', 'Why Contradiction AI', 'Why we built it'], ['#/contact', '✉', 'Contact us', 'Questions and corrections'], ['#/sources', '©', 'Sources and copyright', 'Where every text comes from']];
   document.addEventListener('click', e => {
@@ -2292,7 +2311,7 @@
   /* ---------- routing ---------- */
   function setTr(t) { tr = t; pref[trById[t].corpus] = t; store.set('tr', t); store.set('tr-' + trById[t].corpus, t); }
   const TAB = { '': '', ask: 'ask', faiths: 'faiths', faith: 'faiths', beliefs: 'faiths', compare: 'faiths', books: 'books', read: 'books', lib: 'lib', go: 'lib',
-    topics: 'topics', t: 'topics', topic: 'topics', q: 'topics', questions: 'topics', search: 'search', debates: 'debates', d: 'debates', videos: 'debates', shamoun: 'debates', trainer: 'debates', debaters: 'debates', hard: 'hard', saved: 'saved', quiz: 'quiz', parallel: 'books', stories: 'topics', prophecies: 'topics', translations: 'topics', timeline: 'topics' };
+    topics: 'topics', t: 'topics', topic: 'topics', q: 'topics', questions: 'topics', search: 'search', debates: 'debates', d: 'debates', videos: 'debates', shamoun: 'debates', trainer: 'debates', debaters: 'debates', hard: 'hard', saved: 'saved', quiz: 'quiz', parallel: 'books', talk: 'ask', stories: 'topics', prophecies: 'topics', translations: 'topics', timeline: 'topics' };
   const THEME_BG = { christian: '#F4DED6', muslim: '#E4EAD3', jewish: '#DCE4EE', '': '#F6EFE2' };
   function setFaithTheme(key) {
     const ic = document.querySelector('link[rel=icon]'), F = { christian: ['#8C2F2B', '✝'], muslim: ['#4E6B3A', '☪'], jewish: ['#3B5576', '✡'] }[key];
@@ -2318,7 +2337,7 @@
     window.scrollTo(0, 0);
     app.innerHTML = '<div class="skel" aria-label="Loading"><span class="shimmer sk-h"></span><span class="shimmer"></span><span class="shimmer"></span><span class="shimmer short"></span><div class="sk-cards"><span></span><span></span><span></span></div></div>';
     const views = { '': home, questions, q: question, topic, topics, t: tguide, books, read, search: () => search(a.join('/')), about, lib: () => library(a),
-      beliefs, faiths, faith: hub, compare: compareView, go, ask: () => ask(a.join('/')), debates, d: debate, videos, shamoun, trainer, privacy, terms, stories, prophecies, translations: translationsPage, timeline, hard, debaters, saved, quiz, parallel: () => parallel(a.join('/')), contact: () => contact(location.hash.split('?')[1]), sources };
+      beliefs, faiths, faith: hub, compare: compareView, go, ask: () => ask(a.join('/')), debates, d: debate, videos, shamoun, trainer, privacy, terms, stories, prophecies, translations: translationsPage, timeline, hard, debaters, saved, quiz, parallel: () => parallel(a.join('/')), contact: () => contact(location.hash.split('?')[1]), sources, talk: faithTalk };
     const rid0 = renderId;
     Promise.resolve((views[name] || notFound)(...a)).then(() => { if (rid0 === renderId && ['q', 'd', 't', 'hard', 'faith', 'compare'].includes(name) && a.length) app.insertAdjacentHTML('beforeend', '<p class="report-row">' + reportLink() + '</p>'); }).catch(e => {
       app.innerHTML = '<h1>Something went wrong</h1><p class="muted">' + esc(e.message) + '</p>';

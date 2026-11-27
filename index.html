@@ -12,7 +12,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=Amiri+Quran&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=1795777200">
+<link rel="stylesheet" href="style.css?v=1795779600">
 <link rel="icon" type="image/png" href="brand/favicon.png">
 <link rel="apple-touch-icon" href="brand/apple-touch-icon.png">
 <meta property="og:title" content="Contradiction AI">
@@ -34,7 +34,14 @@
     <img class="brand-logo" src="brand/logo-full.png" alt="Contradiction AI: explore, compare, question" width="212" height="70">
   </a>
   <nav class="links" aria-label="Main">
-    <a href="#/ask">Ask</a>
+    <div class="dd">
+      <a href="#/ask" aria-haspopup="true">Our bots <span class="caret" aria-hidden="true">▾</span></a>
+      <div class="dd-menu" role="menu">
+        <a href="#/ask" role="menuitem"><strong>Ask the AI</strong><span>Any question, answered from the texts</span></a>
+        <a href="#/talk" role="menuitem"><strong>Learn about your faith</strong><span>Talk to a priest, an imam or a rabbi</span></a>
+        <a href="#/trainer" role="menuitem"><strong>Debate trainer</strong><span>Argue against an AI opponent</span></a>
+      </div>
+    </div>
     <div class="dd">
       <a href="#/debates" aria-haspopup="true">Debates <span class="caret" aria-hidden="true">▾</span></a>
       <div class="dd-menu" role="menu">
@@ -49,8 +56,7 @@
     <a href="#/faiths">Faiths</a>
     <a href="#/books">Read</a>
     <a href="#/lib">Library</a>
-    <a href="#/about">Why Contradiction AI</a>
-    <a href="#/contact">Contact</a>
+    <a href="#/about">About</a>
   </nav>
   <button class="icon-btn mode-btn" type="button" aria-label="Dark mode" title="Light or dark"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg></button>
   <a class="icon-btn saved-btn" href="#/saved" aria-label="Saved answers" title="Saved answers"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h12v18l-6-4-6 4z"/></svg><span class="saved-n" hidden></span></a>
@@ -75,6 +81,6 @@
   <a href="javascript:void 0" data-more aria-label="More sections"><svg viewBox="0 0 24 24"><circle cx="5" cy="12" r="1.6"/><circle cx="12" cy="12" r="1.6"/><circle cx="19" cy="12" r="1.6"/></svg><span>More</span></a>
 </nav>
 <div id="sheet" class="sheet" hidden></div>
-<script src="app.js?v=1795777200"></script>
+<script src="app.js?v=1795779600"></script>
 </body>
 </html>

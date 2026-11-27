@@ -1050,3 +1050,24 @@ body { background-color: var(--bg); }
 .talk-call { display: grid; justify-items: center; gap: 18px; }
 .talk-change { background: none; border: 0; color: #E8C766; font: 600 .9rem var(--sans); cursor: pointer; text-decoration: underline; }
 .talk-call[hidden], .talk-pick[hidden] { display: none !important; }
+
+/* our bots */
+.hp-talkbot { background: linear-gradient(135deg, #2A1A10, #6F4520 55%, #B88A52); }
+.leaders { display: grid; gap: 12px; grid-template-columns: repeat(2, 1fr); }
+@media (min-width: 760px) { .leaders { grid-template-columns: repeat(4, 1fr); } }
+.leader { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 2px; padding: 18px 12px 14px; border-radius: 20px; background: var(--surface); border: 1px solid var(--line); box-shadow: var(--shadow); }
+.ld-g { width: 56px; height: 56px; border-radius: 50%; display: grid; place-items: center; font-size: 1.5rem; color: #fff; margin-bottom: 8px; background: linear-gradient(135deg, #D4AF37, #8B5A2B); }
+.leader.christian .ld-g { background: #8C2F2B; } .leader.muslim .ld-g { background: #4E6B3A; } .leader.jewish .ld-g { background: #3B5576; }
+.leader strong { font: 700 1.05rem var(--display); } .leader small { color: var(--muted); font-size: .8rem; }
+.ld-act { display: flex; gap: 6px; margin-top: 10px; flex-wrap: wrap; justify-content: center; }
+.ld-act .btn { padding: 8px 14px; font-size: .88rem; display: inline-flex; align-items: center; gap: 4px; }
+.ld-act .btn:not(.brand) { background: var(--soft); color: var(--ink); border: 1px solid var(--line); }
+.ld-act svg { width: 16px; height: 16px; }
+.bots { margin: 22px 0 6px; } .bots-row { display: grid; gap: 12px; } @media (min-width: 760px) { .bots-row { grid-template-columns: repeat(3, 1fr); } }
+.bot-card { display: flex; flex-direction: column; gap: 6px; padding: 20px; border-radius: 22px; background: linear-gradient(160deg, #2A1E13, #4A3020); color: #F1E8D8; text-decoration: none !important; transition: transform .25s, box-shadow .25s; box-shadow: var(--shadow); }
+.bot-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-lg); }
+.bot-card strong { font: 700 1.2rem var(--display); color: #fff; } .bot-card span:last-child { opacity: .85; font-size: .92rem; } .bc-i { font-size: 1.6rem; }
+.links a, .links .dd > a { white-space: nowrap; }
+.ld-act { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; width: 100%; }
+.ld-act .btn { justify-content: center; padding: 9px 6px; margin: 0; }
+.ld-act:has(> :only-child) { grid-template-columns: 1fr; }
