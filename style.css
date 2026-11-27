@@ -1081,3 +1081,8 @@ body { background-color: var(--bg); }
 /* less empty space between the page and the footer */
 main { padding-bottom: 24px; } .foot { margin-top: 12px; }
 @media (max-width: 859px) { main { padding-bottom: 18px; } }
+/* the top bar is fully solid: nothing shows through it */
+.top, :root[data-faith] .top, :root[data-mode=dark] .top { background: #F8F1E5 !important; backdrop-filter: none !important; -webkit-backdrop-filter: none !important; }
+:root[data-faith=christian] .top { background: #F4DED6 !important; } :root[data-faith=muslim] .top { background: #E4EAD3 !important; } :root[data-faith=jewish] .top { background: #DCE4EE !important; }
+:root[data-mode=dark] .top { background: #1A130C !important; }
+:root[data-mode=dark][data-faith=christian] .top { background: #1C0F0D !important; } :root[data-mode=dark][data-faith=muslim] .top { background: #10150C !important; } :root[data-mode=dark][data-faith=jewish] .top { background: #0E131C !important; }
